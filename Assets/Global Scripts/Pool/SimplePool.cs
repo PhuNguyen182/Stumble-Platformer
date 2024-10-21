@@ -166,9 +166,7 @@ public static class SimplePool
         GameObject[] obs = new GameObject[qty];
         for (int i = 0; i < qty; i++)
         {
-            obs[i] = Spawn(prefab, Vector3.zero, Quaternion.identity);
-            if (newParent != null)
-                obs[i].transform.SetParent(newParent);
+            obs[i] = Spawn(prefab, Vector3.zero, Quaternion.identity, newParent);
         }
 
         // Now despawn them all.
@@ -200,11 +198,11 @@ public static class SimplePool
         return bullet;
     }
 
-    public static GameObject Spawn(GameObject prefab, Vector3 pos, Quaternion rot)
+    public static GameObject Spawn(GameObject prefab, Vector3 pos, Quaternion rot, Transform parent = null)
     {
         Init(prefab);
 
-        return _pools[prefab.GetInstanceID()].Spawn(pos, rot);
+        return _pools[prefab.GetInstanceID()].Spawn(pos, rot, parent);
     }
 
     public static GameObject Spawn(GameObject prefab)
