@@ -163,6 +163,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.DefaultCompany.StumblePlatformer
     Standalone: com.DefaultCompany.Stumble-Platformer
+    iPhone: com.DefaultCompany.Stumble-Platformer
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -848,6 +849,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     Android: ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;UNITASK_DOTWEEN_SUPPORT;UNITASK_ADDRESSABLE_SUPPORT;UNITASK_MESSAGEPIPE_SUPPORT
     Standalone: UNITASK_DOTWEEN_SUPPORT;UNITASK_ADDRESSABLE_SUPPORT;UNITASK_MESSAGEPIPE_SUPPORT;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1
+    iPhone: UNITASK_ADDRESSABLE_SUPPORT;UNITASK_DOTWEEN_SUPPORT;UNITASK_MESSAGEPIPE_SUPPORT;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
