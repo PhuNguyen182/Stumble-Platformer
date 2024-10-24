@@ -1,5 +1,5 @@
 {
-    "name": "Player Input Action",
+    "name": "Player Input",
     "maps": [
         {
             "name": "Player",
@@ -28,7 +28,7 @@
                     "type": "Value",
                     "id": "b625f5af-de34-4d9e-9725-851cd7947fcd",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "interactions": "",
                     "initialStateCheck": true
                 }

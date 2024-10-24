@@ -15,8 +15,8 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
         [SerializeField] private Rigidbody playerBody;
 
         [Header("Settings")]
-        [SerializeField] private CharacterConfig characterConfig;
         [SerializeField] private Transform characterPivot;
+        [SerializeField] private CharacterConfig characterConfig;
 
         private bool _isJumped;
         private bool _isStunning;
@@ -60,6 +60,7 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
 
             playerBody.ClampVelocity(characterConfig.MaxSpeed);
             Vector3 flatMoveVelocity = new Vector3(playerBody.velocity.x, 0, playerBody.velocity.z);
+
             bool isRunning = groundChecker.IsGrounded && flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
             characterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
 
@@ -87,18 +88,26 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
                     _jumpCount = _jumpCount + 1;
                     _moveVelocity = new Vector3(playerBody.velocity.x, characterConfig.JumpHeight, playerBody.velocity.z); 
                     playerBody.velocity = _moveVelocity;
-
-                    characterAnimator.SetTrigger(CharacterAnimationKeys.JumpingUpKey);
                 }
             }
 
             bool isFalling = IsFalling();
+            bool isJumping = IsJumping();
+
+            if(isJumping)
+                characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, true);
             characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingDownKey, isFalling);
         }
 
         private void OnGrounded()
         {
+            characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);
             characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingDownKey, false);
+        }
+
+        private bool IsJumping()
+        {
+            return playerBody.velocity.y >= -characterConfig.CheckFallSpeed;
         }
 
         private bool IsFalling()

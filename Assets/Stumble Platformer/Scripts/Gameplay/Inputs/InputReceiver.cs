@@ -59,8 +59,14 @@ namespace StumblePlatformer.Scripts.Gameplay.Inputs
 
         private void MovementHandle(InputAction.CallbackContext context)
         {
-            Vector2 moveInput = IsActive ? context.ReadValue<Vector2>() : Vector2.zero;
-            Movement = new Vector3(moveInput.x, 0, moveInput.y);
+            if (IsActive)
+            {
+                Vector2 moveInput = context.ReadValue<Vector2>();
+                Vector3 rotatedInput = _mainCamera.transform.rotation * new Vector3(moveInput.x, 0, moveInput.y);
+                Movement = Vector3.Scale(rotatedInput, new Vector3(1, 0, 1)).normalized;
+            }
+
+            else Movement = Vector3.zero;
         }
 
         private bool IsJumpPressDown()
