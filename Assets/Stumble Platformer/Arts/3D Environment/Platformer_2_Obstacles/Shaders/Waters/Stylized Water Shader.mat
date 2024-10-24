@@ -29,7 +29,7 @@ Material:
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap:
@@ -69,12 +69,12 @@ Material:
     - _Foam_Amount: 3
     - _Foam_Cutoff: 1.5
     - _High_Frequency: 10
-    - _Normal_Strength: 0.3
+    - _Normal_Strength: 1.75
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
     - _Refection_Strength: 1
-    - _Smoothness: 0.4
+    - _Smoothness: 0.6
     - _SrcBlend: 5
     - _Surface: 1
     - _Water_Distance: 10
@@ -85,9 +85,9 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Depth_Water_Color: {r: 0, g: 0.6232796, b: 1, a: 0.29803923}
+    - _Depth_Water_Color: {r: 0, g: 0.6232796, b: 1, a: 0.7490196}
     - _Foam_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
-    - _Foam_Scale: {r: 20, g: 20, b: 0, a: 0}
+    - _Foam_Scale: {r: 50, g: 50, b: 0, a: 0}
     - _Foam_Speed: {r: 5, g: 5, b: 0, a: 0}
     - _Refraction_Scale: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _Refraction_Speed: {r: 0.2, g: 0.2, b: 0, a: 0}
