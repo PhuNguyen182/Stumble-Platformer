@@ -61,7 +61,7 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
             playerBody.ClampVelocity(characterConfig.MaxSpeed);
             Vector3 flatMoveVelocity = new Vector3(playerBody.velocity.x, 0, playerBody.velocity.z);
 
-            bool isRunning = groundChecker.IsGrounded && flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
+            bool isRunning = flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
             characterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
 
             float moveThreshold = flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
@@ -96,13 +96,11 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
 
             if(isJumping)
                 characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, true);
-            characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingDownKey, isFalling);
         }
 
         private void OnGrounded()
         {
             characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);
-            characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingDownKey, false);
         }
 
         private bool IsJumping()

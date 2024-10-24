@@ -26,11 +26,6 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters
         {
             _checkPosition = transform.position + groundOffset;
             IsGrounded = Physics.CheckSphere(_checkPosition, checkGroundRadius, groundMask);
-
-            if (IsGrounded)
-                InspectGround();
-            else
-                GroundVelocity = Vector3.zero;
         }
 
         private void InspectGround()
