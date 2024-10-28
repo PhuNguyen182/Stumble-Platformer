@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 02839962f149aeb4b92a76397d189f66
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Arch_V1
+    second: {fileID: 2100000, guid: 220b00a43b2bec0458908b6dda4c86f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Ball_V2
+    second: {fileID: 2100000, guid: c4bfdf22143a6bf49867d9a070be4678, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Bridge_V1
+    second: {fileID: 2100000, guid: 94b2e2217a490e14c85499b6cd41e426, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_CornerRamp_V1
+    second: {fileID: 2100000, guid: 33ef1704e7d4db242a7b6cf2ed089e5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_DroppingPlatform_V1
+    second: {fileID: 2100000, guid: e0cc79ca3ee0b044390b2c8c29b221e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_FloorPanel__V1
+    second: {fileID: 2100000, guid: 8240494613268ad4da0c7fb66988e6be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_FloorPanel__V2
+    second: {fileID: 2100000, guid: 9a11e0cb017407c498b76ca511f0fe87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Floor_V1
+    second: {fileID: 2100000, guid: d31f8422a5c887741bfac3ad605d09f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_GiantPlatform_V1
+    second: {fileID: 2100000, guid: 253187def16e9ce4ebd1131d4a6d0d96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_HoleWall_V1
+    second: {fileID: 2100000, guid: e6745fb5b9b4ee049bdbe05cb4db11ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_HoleWall_V2
+    second: {fileID: 2100000, guid: b0c42a291bb323d4889425fce8667c9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_JumpRing_V1
+    second: {fileID: 2100000, guid: 2db56e5fefa63ef4da70207515ce5700, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_JumpingPlatform_V1
+    second: {fileID: 2100000, guid: 408c31785a60d5a4eab4530bf1835d57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_LargeRamp_V1
+    second: {fileID: 2100000, guid: 173d0659943b41341ada3c06158f7455, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Pillar_V1
+    second: {fileID: 2100000, guid: 8b10af3cc4f67bf478a71c8b5c969079, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Propeller_V1
+    second: {fileID: 2100000, guid: 93641c3c0fe322f4ea1667ddd4a2201d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Pusher_V1
+    second: {fileID: 2100000, guid: c60dc703d873847429003b3adcdbe7d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Pyramid_V1
+    second: {fileID: 2100000, guid: 58fa2e2868cd7f04d9d8d07f9b0c9353, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_RunningBeam_V1
+    second: {fileID: 2100000, guid: 710eb98f6f5f8bd409452ab03e0aeb11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_SpikeDecoration_V1
+    second: {fileID: 2100000, guid: 3e02f8fc48b32954da61baee00eacb3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Spike_V1
+    second: {fileID: 2100000, guid: 08cbf845c92bb2d4ead8727bb643e80f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Spinner_V1
+    second: {fileID: 2100000, guid: 5e05f84f0b7836f49a2ad97a8745224b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Spinner_V2
+    second: {fileID: 2100000, guid: e3b4d8482b9d12b4ab74acdf205deed0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Spinner_V3
+    second: {fileID: 2100000, guid: 76e396122aca008438f4d349b035e820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Spinner_V4
+    second: {fileID: 2100000, guid: ecb725a74734d364a939a7176817a095, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_SpinningPlatform_V1
+    second: {fileID: 2100000, guid: 1136e320107e4cf4eadfc1e7afeb9d1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_SquareWall_V1
+    second: {fileID: 2100000, guid: 70946fca56962af47b19fb291d41d48f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Stairs_V1
+    second: {fileID: 2100000, guid: 133e444dd34a6b643af40a9b51796a72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Structure_V1
+    second: {fileID: 2100000, guid: 2e24dc144bec391468b56cec9ead73d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_SwingBall_V1
+    second: {fileID: 2100000, guid: d3b59aa1730a1914dab59511b6803a42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_TheHammer_V1
+    second: {fileID: 2100000, guid: f11cdab8b88eea145b5b298290dfa62b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_TriangleDecoration_V1
+    second: {fileID: 2100000, guid: f293033e29766484ab35ddf9d0089387, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_TubeEnd_V1
+    second: {fileID: 2100000, guid: b6aecddcd3096a14b82673954c9e96a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Tube_V1
+    second: {fileID: 2100000, guid: 388a8da9f3056824b9a8db489e03f109, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Turntable_V1
+    second: {fileID: 2100000, guid: 788a043e1d5b93a4b94ecef33aac96f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Turntable_V2_2
+    second: {fileID: 2100000, guid: 21187eb7c9a00ab479466e7fd11c8281, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_WallCurve_V1
+    second: {fileID: 2100000, guid: e408251c5b3eefc40accc707a07d31b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_WallCurve_V2
+    second: {fileID: 2100000, guid: fd66f87d1ee3f774081a757049e3bc80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Wave_V1
+    second: {fileID: 2100000, guid: 12ff360a3ce93154bb343704d90cb649, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Wave_V2
+    second: {fileID: 2100000, guid: 177b1bd73b0856a439f032865dca5f40, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
