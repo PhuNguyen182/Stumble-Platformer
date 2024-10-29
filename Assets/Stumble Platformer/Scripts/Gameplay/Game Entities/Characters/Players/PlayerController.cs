@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using GlobalScripts.Extensions;
 
-namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
+namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IDamageable
     {
         [Header("Attachments")]
         [SerializeField] private Animator characterAnimator;
@@ -18,9 +19,13 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
         [SerializeField] private Transform characterPivot;
         [SerializeField] private CharacterConfig characterConfig;
 
-        private bool _isJumped;
+        private bool _isMoving;
+        private bool _isDoubleJump;
+        private bool _isJumpPressed;
         private bool _isStunning;
+
         private int _jumpCount = 0;
+        private float _stunDuration = 0;
 
         private Vector3 _moveInput;
         private Vector3 _moveVelocity;
@@ -28,19 +33,35 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
         private void Update()
         {
             ReceiveInput();
+            StunningTimer();
         }
 
         private void FixedUpdate()
         {
-            Move();
-            Turn();
-            Jump();
+            if (!_isStunning)
+            {
+                Move();
+                Turn();
+                Jump();
+            }
+        }
+
+        private void StunningTimer()
+        {
+            if (_stunDuration > 0)
+                _stunDuration = _stunDuration - Time.deltaTime;
+
+            if (_stunDuration <= 0)
+                _stunDuration = 0;
+
+            _isStunning = _stunDuration > 0;
         }
 
         private void ReceiveInput()
         {
-            _isJumped = inputReceiver.IsJumpPressed;
             _moveInput = inputReceiver.Movement;
+            _isJumpPressed = inputReceiver.IsJumpPressed;
+            _isMoving = _moveInput != Vector3.zero;
 
             if (groundChecker.IsGrounded)
             {
@@ -81,7 +102,7 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
 
         private void Jump()
         {
-            if (_isJumped)
+            if (_isJumpPressed)
             {
                 if (groundChecker.IsGrounded)
                 {
@@ -100,6 +121,7 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
 
         private void OnGrounded()
         {
+            _isDoubleJump = false;
             characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);
         }
 
@@ -111,6 +133,12 @@ namespace StumblePlatformer.Scripts.Gameplay.Characters.Players
         private bool IsFalling()
         {
             return playerBody.velocity.y <= characterConfig.CheckFallSpeed;
+        }
+
+        public void TakeDamage(DamageData damageData)
+        {
+            _stunDuration = damageData.StunDuration;
+
         }
     }
 }

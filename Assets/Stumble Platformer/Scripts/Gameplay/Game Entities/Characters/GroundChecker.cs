@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace StumblePlatformer.Scripts.Gameplay.Characters
+namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
     public class GroundChecker : MonoBehaviour
     {

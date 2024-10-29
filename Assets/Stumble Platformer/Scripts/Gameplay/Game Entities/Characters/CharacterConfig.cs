@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace StumblePlatformer.Scripts.Gameplay.Characters
+namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
     [CreateAssetMenu(fileName = "Character Config", menuName = "Scriptable Objects/Character/Character Config")]
     public class CharacterConfig : ScriptableObject

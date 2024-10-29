@@ -5,7 +5,7 @@ using Cinemachine;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using UnityEngine.InputSystem;
 
-namespace StumblePlatformer.Scripts.Gameplay.Characters
+namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
     public class CameraPointer : MonoBehaviour
     {
