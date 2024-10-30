@@ -23,6 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5809105091951645469}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -30,13 +31,13 @@ Transform:
   m_Children:
   - {fileID: 8765100718267458389}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2166847928565005146
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8765100718267458389}
     m_Modifications:
     - target: {fileID: 7173193759950865323, guid: dc5dca5aacdd1d64990184a8894ec35e, type: 3}
@@ -87,7 +88,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: drone_propeller_2_002
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8751012621744592391, guid: dc5dca5aacdd1d64990184a8894ec35e, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7550176012560750865, guid: dc5dca5aacdd1d64990184a8894ec35e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2005292935428950168}
   m_SourcePrefab: {fileID: 100100000, guid: dc5dca5aacdd1d64990184a8894ec35e, type: 3}
 --- !u!1 &8562941175063093835 stripped
 GameObject:
@@ -96,7 +104,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &2005292935428950168
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -113,12 +121,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &9051809799179860209 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7173193759950865323, guid: dc5dca5aacdd1d64990184a8894ec35e, type: 3}
+  m_PrefabInstance: {fileID: 2166847928565005146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6637000176239370679
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8765100718267458389}
     m_Modifications:
     - target: {fileID: 2645289910874394511, guid: ca5ca6f5d132be742a4fe69cbeda2d35, type: 3}
@@ -169,7 +184,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: drone_propeller_2_001
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3436964366667124361, guid: ca5ca6f5d132be742a4fe69cbeda2d35, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3458242812785956149, guid: ca5ca6f5d132be742a4fe69cbeda2d35, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8010241060938671885}
   m_SourcePrefab: {fileID: 100100000, guid: ca5ca6f5d132be742a4fe69cbeda2d35, type: 3}
 --- !u!1 &8351215202801579138 stripped
 GameObject:
@@ -178,7 +200,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &8010241060938671885
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -195,12 +217,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &8696074119200124472 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2645289910874394511, guid: ca5ca6f5d132be742a4fe69cbeda2d35, type: 3}
+  m_PrefabInstance: {fileID: 6637000176239370679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9090900490394731710
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6599781634951710513}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3c67226a9ca868044ae0f6020628b10b, type: 3}
@@ -252,6 +281,21 @@ PrefabInstance:
       value: drone_002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3c67226a9ca868044ae0f6020628b10b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9051809799179860209}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3c67226a9ca868044ae0f6020628b10b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8696074119200124472}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c67226a9ca868044ae0f6020628b10b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8749350877329028760}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c67226a9ca868044ae0f6020628b10b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6056400337220867435}
   m_SourcePrefab: {fileID: 100100000, guid: 3c67226a9ca868044ae0f6020628b10b, type: 3}
 --- !u!1 &8279925112986810863 stripped
 GameObject:
@@ -260,7 +304,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &8749350877329028760
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -277,7 +321,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6056400337220867435
 MonoBehaviour:
   m_ObjectHideFlags: 0

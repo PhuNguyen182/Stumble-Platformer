@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 91bb3e56425ace943b3413b36363248e
 ModelImporter:
-  serializedVersion: 22102
+  serializedVersion: 22200
   internalIDToNameTable:
   - first:
       74: -3100369314251171874
@@ -47,11 +47,11 @@ ModelImporter:
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Idle' has import animation warnings that might
       lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'DEF-spine.001' is inbetween humanoid transforms and
+      retargeting quality.\n\t'DEF-spine.004' is inbetween humanoid transforms and
       has rotation animation that will be discarded.\n\t'DEF-thigh.L' has scale animation
       that will be discarded.\n\nClip 'Run' has import animation warnings that might
       lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'DEF-spine.001' is inbetween humanoid transforms and
+      retargeting quality.\n\t'DEF-spine.004' is inbetween humanoid transforms and
       has rotation animation that will be discarded.\n\t'DEF-upper_arm.R' has translation
       animation that will be discarded.\n\t'DEF-upper_arm.L' has translation animation
       that will be discarded.\n\t'DEF-thigh.L' has translation animation that will
@@ -62,7 +62,7 @@ ModelImporter:
       has scale animation that will be discarded.\n\t'DEF-foot.R' has scale animation
       that will be discarded.\n\nClip 'Sad' has import animation warnings that might
       lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'DEF-spine.001' is inbetween humanoid transforms and
+      retargeting quality.\n\t'DEF-spine.004' is inbetween humanoid transforms and
       has rotation animation that will be discarded.\n\t'DEF-upper_arm.R' has translation
       animation that will be discarded.\n\t'DEF-upper_arm.L' has translation animation
       that will be discarded.\n\t'DEF-thigh.L' has scale animation that will be discarded.\n\t'DEF-shin.L'
@@ -71,7 +71,7 @@ ModelImporter:
       has scale animation that will be discarded.\n\t'DEF-foot.R' has scale animation
       that will be discarded.\n\nClip 'Song Jump' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'DEF-spine.001' is inbetween humanoid transforms
+      to improve retargeting quality.\n\t'DEF-spine.004' is inbetween humanoid transforms
       and has rotation animation that will be discarded.\n\t'DEF-upper_arm.R' has
       translation animation that will be discarded.\n\t'DEF-upper_arm.L' has translation
       animation that will be discarded.\n\t'DEF-thigh.L' has scale animation that
@@ -80,7 +80,7 @@ ModelImporter:
       that will be discarded.\n\t'DEF-shin.R' has scale animation that will be discarded.\n\t'DEF-foot.R'
       has scale animation that will be discarded.\n\nClip 'Walk' has import animation
       warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'DEF-spine.001' is inbetween
+      DOF on avatar to improve retargeting quality.\n\t'DEF-spine.004' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'DEF-upper_arm.R'
       has translation animation that will be discarded.\n\t'DEF-upper_arm.L' has
       translation animation that will be discarded.\n\t'DEF-thigh.L' has translation
@@ -90,17 +90,18 @@ ModelImporter:
       that will be discarded.\n\t'DEF-shin.R' has scale animation that will be discarded.\n\t'DEF-foot.R'
       has scale animation that will be discarded.\n\nClip 'Win' has import animation
       warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'DEF-spine.001' is inbetween
+      DOF on avatar to improve retargeting quality.\n\t'DEF-spine.004' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'DEF-upper_arm.R'
       has translation animation that will be discarded.\n\t'DEF-upper_arm.R' has
       scale animation that will be discarded.\n\t'DEF-forearm.R' has scale animation
-      that will be discarded.\n\t'DEF-hand.R' has scale animation that will be discarded.\n\t'DEF-thumb.01.R'
-      has translation animation that will be discarded.\n\t'DEF-upper_arm.L' has
-      translation animation that will be discarded.\n\t'DEF-thigh.L' has scale animation
-      that will be discarded.\n\t'DEF-shin.L' has scale animation that will be discarded.\n\t'DEF-foot.L'
-      has scale animation that will be discarded.\n\t'DEF-thigh.R' has scale animation
-      that will be discarded.\n\t'DEF-shin.R' has scale animation that will be discarded.\n\t'DEF-foot.R'
-      has scale animation that will be discarded.\n"
+      that will be discarded.\n\t'DEF-hand.R' has scale animation that will be discarded.\n\t'DEF-f_index.01.R'
+      has translation animation that will be discarded.\n\t'DEF-thumb.01.R' has translation
+      animation that will be discarded.\n\t'DEF-upper_arm.L' has translation animation
+      that will be discarded.\n\t'DEF-thigh.L' has scale animation that will be discarded.\n\t'DEF-shin.L'
+      has scale animation that will be discarded.\n\t'DEF-foot.L' has scale animation
+      that will be discarded.\n\t'DEF-thigh.R' has scale animation that will be discarded.\n\t'DEF-shin.R'
+      has scale animation that will be discarded.\n\t'DEF-foot.R' has scale animation
+      that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -117,10 +118,11 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -853,6 +855,7 @@ ModelImporter:
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0db7a1c8d387c2c418965ad6624cafcd, type: 3}
@@ -84,29 +85,21 @@ PrefabInstance:
       value: tower_008
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0db7a1c8d387c2c418965ad6624cafcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8970269175543305017}
   m_SourcePrefab: {fileID: 100100000, guid: 0db7a1c8d387c2c418965ad6624cafcd, type: 3}
 --- !u!1 &9187278082412179443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0db7a1c8d387c2c418965ad6624cafcd, type: 3}
   m_PrefabInstance: {fileID: 8340294242507543202}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &-3418797435841971928
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9187278082412179443}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1662942576212393778, guid: 0db7a1c8d387c2c418965ad6624cafcd, type: 3}
 --- !u!95 &-8970269175543305017
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,4 +116,5 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

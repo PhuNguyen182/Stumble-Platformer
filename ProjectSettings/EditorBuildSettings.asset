@@ -4,7 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Stumble Platformer/Scenes/Boost.unity
+    guid: d21ef198e84d01f4a8ef857cf8672a47
+  - enabled: 1
+    path: Assets/Stumble Platformer/Scenes/Loading.unity
+    guid: 74116b5f85f683342b1a68ad5e6c98e6
+  - enabled: 1
+    path: Assets/Stumble Platformer/Scenes/Mainhome.unity
+    guid: 909bdd20df9c41042960ee2ecefc2622
+  - enabled: 1
+    path: Assets/Stumble Platformer/Scenes/Gameplay.unity
+    guid: 9e48f6c00c276bc49bc9fbbcea769a2d
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 26792e7767b0f2c45af846b120211ffd, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 69f2201d104ad49448c918fa2d1f67cd, type: 2}

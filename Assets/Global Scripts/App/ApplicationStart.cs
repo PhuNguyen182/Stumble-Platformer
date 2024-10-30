@@ -34,9 +34,9 @@ namespace GlobalScripts.App
 
         private static void RegisterServicesAfterSceneLoad()
         {
-            Register<AppInitializer>("App/App Initializer");
-            Register<UpdateHandlerManager>("Handlers/Update Behaviour Handler");
-            Register<AudioManager>("Managers/Music Manager");
+            //Register<AppInitializer>("App/App Initializer");
+            //Register<UpdateHandlerManager>("Handlers/Update Behaviour Handler");
+            //Register<AudioManager>("Managers/Music Manager");
             //Register<GameManager>("Managers/Game Manager");
         }
 

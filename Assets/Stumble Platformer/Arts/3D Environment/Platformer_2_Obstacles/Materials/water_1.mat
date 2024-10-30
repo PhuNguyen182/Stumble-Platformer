@@ -8,17 +8,20 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: water_1
-  m_Shader: {fileID: 4800000, guid: c022fdf43d9a8df4ab2fc20d4378c8af, type: 3}
+  m_Shader: {fileID: 4800000, guid: 054425febb1ccc94588ec5b490776d38, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ALPHABLEND_ON
   - _EMISSION
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -89,8 +92,8 @@ Material:
     - _BUILTIN_QueueOffset: 0
     - _BumpScale: 1
     - _Caustics_Enabled: 1
-    - _Caustics_Opacity: 1
-    - _Caustics_Scale: 0.364
+    - _Caustics_Opacity: 0
+    - _Caustics_Scale: 0.708
     - _Cutoff: 0.5
     - _Depth: 8.58
     - _DepthMultiply: 2
@@ -98,7 +101,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DisplacementAmount: 0.16
     - _Distortion_Scale: 1000
-    - _Distortion_Speed: 0.00067
+    - _Distortion_Speed: 0.00295
     - _DstBlend: 10
     - _EdgeLength: 30
     - _EnvironmentReflections: 1
@@ -109,7 +112,7 @@ Material:
     - _FoamWidth: 0.4
     - _Foam_Enabled: 1
     - _Foam_Noise_Amplitude: 0.5
-    - _Foam_Noise_Scale: 200
+    - _Foam_Noise_Scale: 0.1
     - _Foam_Size: 0
     - _Foam_Speed: 0.01
     - _FresnelBias: 0
@@ -119,9 +122,9 @@ Material:
     - _Glossiness: 0.139
     - _GlossyReflections: 1
     - _Metallic: 0.378
-    - _Mettalic: 0
+    - _Mettalic: 0.237
     - _Mode: 2
-    - _Normal_Strength: 0.234
+    - _Normal_Strength: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
@@ -143,11 +146,11 @@ Material:
     - _TessEdgeLength: 16
     - _TessMaxDisp: 25
     - _UVSec: 0
-    - _Water_Texture_Opacity: 0.226
+    - _Water_Texture_Opacity: 0
     - _WaveBigPower: 1.98
     - _WaveBigScale: 0.57
     - _WaveBigSpeed: 1.5
-    - _WaveSize: 0.02
+    - _WaveSize: 0.05
     - _WaveSize2: 0.15
     - _WaveSmallPower: 4.4
     - _WaveSmallScale: 1.6
