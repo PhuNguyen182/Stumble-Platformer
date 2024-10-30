@@ -5,17 +5,25 @@ using GlobalScripts.UpdateHandlerPattern;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
-    public abstract class BaseObstacle : MonoBehaviour, IFixedUpdateHandler
+    public abstract class BaseObstacle : MonoBehaviour, IFixedUpdateHandler, ISetObstacleAttack
     {
         [SerializeField] protected Rigidbody obstacleBody;
-        [SerializeField] protected Collider mainCollider;
-        [SerializeField] protected Collider[] componentColliders;
+        [SerializeField] protected ObstacleAttacker[] obstacleAttackers;
 
         public bool IsActive { get; set; }
 
         private void Awake()
         {
             UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
+
+            for (int i = 0; i < obstacleAttackers.Length; i++)
+            {
+                if (obstacleAttackers[i] == null)
+                    continue;
+
+                obstacleAttackers[i].ExitDamage = ExitDamage;
+                obstacleAttackers[i].DamageAttack = DamageCharacter;
+            }
         }
 
         public abstract void ExitDamage(Collision collision);
@@ -27,34 +35,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             IsActive = active;
         }
 
-        public void SetColliderActive(bool active)
+        public void SetObstacleCanAttack(bool canAttack)
         {
-            if(mainCollider != null)
-                mainCollider.enabled = active;
-
-            for (int i = 0; i < componentColliders.Length; i++)
+            for (int i = 0; i < obstacleAttackers.Length; i++)
             {
-                if (componentColliders[i] != null)
-                    componentColliders[i].enabled = active;
+                if (obstacleAttackers[i] != null)
+                    obstacleAttackers[i].CanAttack = canAttack;
             }
         }
 
         public abstract void OnFixedUpdate();
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            DamageCharacter(collision);
-        }
-
-        private void OnCollisionStay(Collision collision)
-        {
-            DamageCharacter(collision);
-        }
-
-        private void OnCollisionExit(Collision collision)
-        {
-            ExitDamage(collision);
-        }
 
         private void OnDestroy()
         {

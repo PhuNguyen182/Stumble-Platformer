@@ -9,6 +9,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
     {
         public float JumpHeight;
         public float MoveSpeed;
+        public float DashSpeed;
         public float MaxSpeed;
         public float MinSpeed;
         public float CheckFallSpeed;

@@ -7,7 +7,7 @@ using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerController : MonoBehaviour, IDamageable
+    public class PlayerController : MonoBehaviour, IDamageable, ISetCharacterActive
     {
         [Header("Attachments")]
         [SerializeField] private Animator characterAnimator;
@@ -20,11 +20,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         [SerializeField] private CharacterConfig characterConfig;
 
         private bool _isMoving;
-        private bool _isDoubleJump;
+        private bool _isAirDashing;
         private bool _isJumpPressed;
         private bool _isStunning;
 
-        private int _jumpCount = 0;
         private float _stunDuration = 0;
 
         private Vector3 _moveInput;
@@ -38,7 +37,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void FixedUpdate()
         {
-            if (!_isStunning)
+            if (!_isStunning && !_isAirDashing)
             {
                 Move();
                 Turn();
@@ -52,7 +51,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 _stunDuration = _stunDuration - Time.deltaTime;
 
             if (_stunDuration <= 0)
+            {
                 _stunDuration = 0;
+                SetFreezeRotation(false);
+            }
 
             _isStunning = _stunDuration > 0;
         }
@@ -65,7 +67,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             if (groundChecker.IsGrounded)
             {
-                _jumpCount = 0;
                 OnGrounded();
             }
         }
@@ -91,7 +92,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Turn()
         {
-            if(_moveInput != Vector3.zero)
+            if(_moveInput != Vector3.zero && !_isStunning)
             {
                 float angle = Mathf.Atan2(playerBody.velocity.x, playerBody.velocity.z) * Mathf.Rad2Deg;
                 Quaternion toRotation = Quaternion.Euler(0, angle, 0);
@@ -106,9 +107,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 if (groundChecker.IsGrounded)
                 {
-                    _jumpCount = _jumpCount + 1;
                     _moveVelocity = new Vector3(playerBody.velocity.x, characterConfig.JumpHeight, playerBody.velocity.z); 
                     playerBody.velocity = _moveVelocity;
+                }
+
+                else
+                {
+                    if (_moveInput != Vector3.zero)
+                    {
+                        _isAirDashing = true;
+                        _moveVelocity = characterPivot.forward * characterConfig.DashSpeed;
+                        playerBody.velocity = _moveVelocity;
+                    }
                 }
             }
 
@@ -121,7 +131,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnGrounded()
         {
-            _isDoubleJump = false;
+            _isAirDashing = false;
             characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);
         }
 
@@ -135,10 +145,30 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             return playerBody.velocity.y <= characterConfig.CheckFallSpeed;
         }
 
+        private void SetFreezeRotation(bool isCharacterStunning)
+        {
+            playerBody.constraints = isCharacterStunning ? RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ
+                                                         : RigidbodyConstraints.FreezeRotation;
+            if (!isCharacterStunning)
+                playerBody.rotation = Quaternion.identity;
+        }
+
+        public void SetCharacterActive(bool active)
+        {
+            playerBody.isKinematic = !active;
+        }
+
         public void TakeDamage(DamageData damageData)
         {
-            _stunDuration = damageData.StunDuration;
+            if (_isStunning)
+                return;
 
+            _stunDuration = damageData.StunDuration;
+            if(damageData.AttackForce != 0 && damageData.ForceDirection != Vector3.zero)
+            {
+                SetFreezeRotation(true);
+                playerBody.AddForce(damageData.AttackForce * damageData.ForceDirection);
+            }
         }
     }
 }

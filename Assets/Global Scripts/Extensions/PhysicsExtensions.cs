@@ -6,9 +6,10 @@ namespace GlobalScripts.Extensions
 {
     public static class PhysicsExtensions
     {
-        public static void ClampVelocity(this Rigidbody rigidbody, float maxLength)
+        public static void ClampVelocity(this Rigidbody rigidbody, float maxMagnitude)
         {
-            rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxLength);
+            if (rigidbody.velocity.sqrMagnitude > maxMagnitude * maxMagnitude)
+                rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxMagnitude);
         }
 
         public static float GetSquaredSpeed(this Rigidbody rigidbody)
