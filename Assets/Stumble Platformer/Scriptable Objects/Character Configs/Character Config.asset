@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpHeight: 4.5
   MoveSpeed: 4
+  DashSpeed: 8
   MaxSpeed: 24
   MinSpeed: 0.2
   CheckFallSpeed: -0.1

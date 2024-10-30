@@ -53,7 +53,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             if (_stunDuration <= 0)
             {
                 _stunDuration = 0;
-                SetFreezeRotation(false);
+                
+                if (!_isAirDashing)
+                    SetStunningState(false);
             }
 
             _isStunning = _stunDuration > 0;
@@ -66,9 +68,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             _isMoving = _moveInput != Vector3.zero;
 
             if (groundChecker.IsGrounded)
-            {
                 OnGrounded();
-            }
         }
 
         private void Move()
@@ -118,6 +118,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                         _isAirDashing = true;
                         _moveVelocity = characterPivot.forward * characterConfig.DashSpeed;
                         playerBody.velocity = _moveVelocity;
+                        characterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, true);
                     }
                 }
             }
@@ -133,6 +134,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             _isAirDashing = false;
             characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);
+         
+            if (!_isStunning)
+                characterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, false);
         }
 
         private bool IsJumping()
@@ -143,6 +147,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private bool IsFalling()
         {
             return playerBody.velocity.y <= characterConfig.CheckFallSpeed;
+        }
+
+        private void SetStunningState(bool isStunning)
+        {
+            SetFreezeRotation(isStunning);
+            characterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, isStunning);
         }
 
         private void SetFreezeRotation(bool isCharacterStunning)
@@ -164,11 +174,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 return;
 
             _stunDuration = damageData.StunDuration;
-            if(damageData.AttackForce != 0 && damageData.ForceDirection != Vector3.zero)
-            {
-                SetFreezeRotation(true);
+            SetStunningState(true);
+
+            if (damageData.AttackForce != 0 && damageData.ForceDirection != Vector3.zero)
                 playerBody.AddForce(damageData.AttackForce * damageData.ForceDirection);
-            }
         }
     }
 }
