@@ -56,8 +56,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wave_V2 Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3451118302482216456, guid: dcc60a324911fa349859c538c91d5812, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
