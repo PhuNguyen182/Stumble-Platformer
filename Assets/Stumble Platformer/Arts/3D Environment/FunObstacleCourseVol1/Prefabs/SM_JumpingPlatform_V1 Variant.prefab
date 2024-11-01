@@ -56,9 +56,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_JumpingPlatform_V1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2ec12c73a068a64c9ca283128a3758a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3451118302482216456, guid: f2ec12c73a068a64c9ca283128a3758a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f2ec12c73a068a64c9ca283128a3758a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6385502408307843274}
   m_SourcePrefab: {fileID: 100100000, guid: f2ec12c73a068a64c9ca283128a3758a, type: 3}
+--- !u!1 &8727307558822197131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f2ec12c73a068a64c9ca283128a3758a, type: 3}
+  m_PrefabInstance: {fileID: 8492933673352465114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &6385502408307843274
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8727307558822197131}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.80000275
+  m_Height: 2.0000052
+  m_Direction: 1
+  m_Center: {x: -0.000000029802322, y: 0.99999994, z: 0}

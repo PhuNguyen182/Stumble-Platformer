@@ -56,8 +56,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_TubeEnd_V1 Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3451118302482216456, guid: 62a07ddd05aa81f4881efb77d82fa28a, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -56,8 +56,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Arch_V1 Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3451118302482216456, guid: e40603f06e180e246ac1789603406c65, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

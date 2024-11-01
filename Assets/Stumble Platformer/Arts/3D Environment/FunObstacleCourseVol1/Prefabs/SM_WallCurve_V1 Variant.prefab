@@ -56,8 +56,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_WallCurve_V1 Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3451118302482216456, guid: 77ca6549b279e6b40bd57c6cca23dcd9, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

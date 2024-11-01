@@ -57,6 +57,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3887185075125053422, guid: 316c3f6929b38384880b3fbceaab8554, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 316c3f6929b38384880b3fbceaab8554, type: 3}
       propertyPath: m_AABB.m_Center.y
       value: 2.6015954
       objectReference: {fileID: 0}
@@ -79,6 +83,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 316c3f6929b38384880b3fbceaab8554, type: 3}
       propertyPath: m_Name
       value: bridge_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 316c3f6929b38384880b3fbceaab8554, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -52,9 +52,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 6.395433
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: -0.000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 3.6825216
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 6.4307437
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 9.664206
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
       propertyPath: m_Name
       value: slide_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -63,6 +95,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
       insertIndex: -1
       addedObject: {fileID: 220762808765036160}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8116988689887380427}
   m_SourcePrefab: {fileID: 100100000, guid: 6dd2ac3f266cd3c4cb2584a2f1bbe034, type: 3}
 --- !u!1 &5015604086712725602 stripped
 GameObject:
@@ -90,3 +125,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!64 &8116988689887380427
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5015604086712725602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}

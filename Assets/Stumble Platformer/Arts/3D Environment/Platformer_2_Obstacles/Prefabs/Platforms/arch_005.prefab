@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: arch_005
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7f11925cce986ed4995692f412c399a7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
