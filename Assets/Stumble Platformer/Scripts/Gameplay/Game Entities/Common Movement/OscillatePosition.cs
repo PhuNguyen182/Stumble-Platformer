@@ -1,23 +1,23 @@
 using UnityEngine;
 
-namespace ithappy
+namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
-    public class OscillateRotation : MonoBehaviour
+    public class OscillatePosition : MonoBehaviour
     {
-        public Vector3 rotationAxis = Vector3.up;
-        public float rotationAngle = 45f;
+        public Vector3 moveAxis = Vector3.up;
+        public float moveDistance = 2f;
         public float duration = 2f;
         public bool useRandomDelay = false; // Toggle random delay
         public float maxRandomDelay = 1f; // Maximum random delay
 
-        private Quaternion startRotation;
+        private Vector3 startPosition;
         private float timeElapsed = 0f;
         private bool isReversing = false;
         private float randomDelay = 0f;
 
-        void Start()
+        private void Start()
         {
-            startRotation = transform.rotation;
+            startPosition = transform.position;
 
             if (useRandomDelay)
             {
@@ -25,7 +25,7 @@ namespace ithappy
             }
         }
 
-        void Update()
+        private void Update()
         {
             if (timeElapsed < randomDelay)
             {
@@ -38,10 +38,10 @@ namespace ithappy
 
             progress = EaseInOut(progress);
 
-            float currentAngle = rotationAngle * (isReversing ? (1 - progress) : progress);
-            Quaternion currentRotation = startRotation * Quaternion.AngleAxis(currentAngle, rotationAxis);
+            float currentDistance = moveDistance * (isReversing ? (1 - progress) : progress);
+            Vector3 currentPosition = startPosition + moveAxis.normalized * currentDistance;
 
-            transform.rotation = currentRotation;
+            transform.position = currentPosition;
 
             timeElapsed += Time.deltaTime;
 

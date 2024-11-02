@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace ithappy
+namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
     public class BlendShapeAnimator : MonoBehaviour
     {

@@ -2,24 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ithappy
+namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
     public class Rnd_Animation : MonoBehaviour
     {
-        Animator anim;
-        float offsetAnim;
+        private Animator anim;
+        private float offsetAnim;
 
-        [SerializeField] string titleAnim;
+        [SerializeField] private string titleAnim;
 
-        void Start()
+        private void Start()
         {
             anim = GetComponent<Animator>();
             offsetAnim = Random.Range(0f, 1f);
             anim.Play(titleAnim, 0, offsetAnim);
-        }
-
-        void Update()
-        {
         }
     }
 }

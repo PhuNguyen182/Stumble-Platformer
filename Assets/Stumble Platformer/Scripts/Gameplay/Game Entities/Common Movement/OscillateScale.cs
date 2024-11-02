@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ithappy
+namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
     public class OscillateScale : MonoBehaviour
     {
@@ -15,7 +15,7 @@ namespace ithappy
         private bool isReversing = false;
         private float randomDelay = 0f;
 
-        void Start()
+        private void Start()
         {
             startScale = transform.localScale;
 
@@ -25,7 +25,7 @@ namespace ithappy
             }
         }
 
-        void Update()
+        private void Update()
         {
             if (timeElapsed < randomDelay)
             {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ithappy
+namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
     public class RotationScript : MonoBehaviour
     {
@@ -14,7 +14,7 @@ namespace ithappy
         public RotationAxis rotationAxis = RotationAxis.Y;
         public float rotationSpeed = 50.0f;
 
-        void Update()
+        private void Update()
         {
             float rotationValue = rotationSpeed * Time.deltaTime;
 
