@@ -14,12 +14,12 @@
 *.shadergraph merge=unityyamlmerge eol=lf
 *.meta merge=unityyamlmerge eol=lf
 *.controller merge=unityyamlmerge eol=lf
-*.terrainlayer filter=lfs diff=lfs merge=lfs -text
-*.asmdef filter=lfs diff=lfs merge=lfs -text
-*.bak filter=lfs diff=lfs merge=lfs -text
-*.renderTexture filter=lfs diff=lfs merge=lfs -text
-*.lighting filter=lfs diff=lfs merge=lfs -text
-*.scenetemplate filter=lfs diff=lfs merge=lfs -text
+*.terrainlayer merge=unityyamlmerge eol=lf
+*.asmdef merge=unityyamlmerge eol=lf
+*.bak merge=unityyamlmerge eol=lf
+*.renderTexture merge=unityyamlmerge eol=lf
+*.lighting merge=unityyamlmerge eol=lf
+*.scenetemplate merge=unityyamlmerge eol=lf
 
 #Image
 *.jpg filter=lfs diff=lfs merge=lfs -text
