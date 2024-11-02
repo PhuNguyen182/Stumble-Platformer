@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GlobalScripts.UpdateHandlerPattern;
+using Sirenix.OdinInspector;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
@@ -46,6 +47,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             IsActive = active;
         }
 
+        public virtual void OnFixedUpdate()
+        {
+            ObstacleAction();
+        }
+
         public void SetObstacleCanAttack(bool canAttack)
         {
             for (int i = 0; i < obstacleAttackers.Length; i++)
@@ -55,7 +61,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             }
         }
 
-        public abstract void OnFixedUpdate();
+        [Button]
+        private void GetObstacleAttackers()
+        {
+            obstacleAttackers = transform.GetComponentsInChildren<ObstacleAttacker>();
+        }
 
         private void OnDestroy()
         {

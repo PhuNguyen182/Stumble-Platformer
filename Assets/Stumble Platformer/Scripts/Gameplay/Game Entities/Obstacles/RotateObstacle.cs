@@ -38,10 +38,5 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             Quaternion rotation = Quaternion.Euler(_rotateAxis * rotateSpeed * Time.fixedDeltaTime);
             obstacleBody.MoveRotation(obstacleBody.rotation * rotation);
         }
-
-        public override void OnFixedUpdate()
-        {
-            ObstacleAction();
-        }
     }
 }

@@ -1,8 +1,9 @@
 using UnityEngine;
+using GlobalScripts.UpdateHandlerPattern;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
-    public class OscillateRotation : MonoBehaviour
+    public class OscillateRotation : MonoBehaviour, IUpdateHandler
     {
         public Vector3 rotationAxis = Vector3.up;
         public float rotationAngle = 45f;
@@ -15,21 +16,26 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
         private bool isReversing = false;
         private float randomDelay = 0f;
 
+        public bool IsActive { get; set; }
+
         private void Start()
         {
+            IsActive = true;
             startRotation = transform.rotation;
 
             if (useRandomDelay)
             {
                 randomDelay = Random.Range(0f, maxRandomDelay);
             }
+
+            UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
         }
 
-        private void Update()
+        public void OnUpdate(float deltaTime)
         {
             if (timeElapsed < randomDelay)
             {
-                timeElapsed += Time.deltaTime;
+                timeElapsed += deltaTime;
                 return;
             }
 
@@ -43,7 +49,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 
             transform.rotation = currentRotation;
 
-            timeElapsed += Time.deltaTime;
+            timeElapsed += deltaTime;
 
             if (timeElapsed >= duration / 2f + randomDelay)
             {
@@ -55,6 +61,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
         private float EaseInOut(float t)
         {
             return t < 0.5f ? 4 * t * t * t : 1 - Mathf.Pow(-2 * t + 2, 3) / 2;
+        }
+
+        private void OnDestroy()
+        {
+            UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);
         }
     }
 }

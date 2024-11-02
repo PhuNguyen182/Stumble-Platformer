@@ -1,8 +1,9 @@
 using UnityEngine;
+using GlobalScripts.UpdateHandlerPattern;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
-    public class RotationScript : MonoBehaviour
+    public class RotationScript : MonoBehaviour, IUpdateHandler
     {
         public enum RotationAxis
         {
@@ -14,9 +15,17 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
         public RotationAxis rotationAxis = RotationAxis.Y;
         public float rotationSpeed = 50.0f;
 
-        private void Update()
+        public bool IsActive { get; set; }
+
+        private void Start()
         {
-            float rotationValue = rotationSpeed * Time.deltaTime;
+            IsActive = true;
+            UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
+        }
+
+        public void OnUpdate(float deltaTime)
+        {
+            float rotationValue = rotationSpeed * deltaTime;
 
             Vector3 axis = Vector3.zero;
             switch (rotationAxis)
@@ -33,6 +42,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
             }
 
             transform.Rotate(axis, rotationValue);
+        }
+
+        private void OnDestroy()
+        {
+            UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);
         }
     }
 }
