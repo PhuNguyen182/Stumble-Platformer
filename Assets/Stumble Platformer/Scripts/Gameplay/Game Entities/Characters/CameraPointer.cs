@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
-using UnityEngine.InputSystem;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
