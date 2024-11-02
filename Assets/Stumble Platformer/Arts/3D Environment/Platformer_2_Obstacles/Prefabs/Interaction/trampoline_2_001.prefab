@@ -69,8 +69,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb94f222cee0abe4db319be560b89a3c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9041400257025121818}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eb94f222cee0abe4db319be560b89a3c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7886376116963479216}
   m_SourcePrefab: {fileID: 100100000, guid: eb94f222cee0abe4db319be560b89a3c, type: 3}
+--- !u!1 &1673481366979108268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eb94f222cee0abe4db319be560b89a3c, type: 3}
+  m_PrefabInstance: {fileID: 2015378142856438013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &-7886376116963479216
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673481366979108268}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.6577747, y: 1.3199812, z: 2.657775}
+  m_Center: {x: 0.00000035762787, y: 0.016239703, z: -0.0000047683716}
 --- !u!4 &2049901730312095510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb94f222cee0abe4db319be560b89a3c, type: 3}
@@ -166,6 +195,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7658407943535113868, guid: 051b4b054e89f07439725df2fb90dee6, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122705857384217816, guid: 051b4b054e89f07439725df2fb90dee6, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

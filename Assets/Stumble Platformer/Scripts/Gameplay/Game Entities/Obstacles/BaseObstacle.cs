@@ -5,7 +5,7 @@ using GlobalScripts.UpdateHandlerPattern;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
-    public abstract class BaseObstacle : MonoBehaviour, IFixedUpdateHandler, ISetObstacleAttack
+    public abstract class BaseObstacle : MonoBehaviour, IObstacle, ISetObstacleAttack, IFixedUpdateHandler
     {
         [SerializeField] protected Rigidbody obstacleBody;
         [SerializeField] protected ObstacleAttacker[] obstacleAttackers;
@@ -14,7 +14,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void Awake()
         {
-            UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
 
             for (int i = 0; i < obstacleAttackers.Length; i++)
             {
@@ -24,11 +23,23 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 obstacleAttackers[i].ExitDamage = ExitDamage;
                 obstacleAttackers[i].DamageAttack = DamageCharacter;
             }
+
+            OnAwake();
+        }
+
+        private void Start()
+        {
+            IsActive = true;
+            UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
 
         public abstract void ExitDamage(Collision collision);
 
         public abstract void DamageCharacter(Collision collision);
+
+        public abstract void ObstacleAction();
+
+        public virtual void OnAwake() { }
 
         public virtual void SetObstacleActive(bool active)
         {

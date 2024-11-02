@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trampoline_1_002
       objectReference: {fileID: 0}
+    - target: {fileID: 4492106135604526021, guid: ab1169b6977af8149b253a42b2a7db23, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5395382418014117907, guid: ab1169b6977af8149b253a42b2a7db23, type: 3}
       propertyPath: m_DirtyAABB
       value: 0
@@ -189,10 +193,39 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d40c1c816796134fa45f0416c7b6668, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3413075515026035598}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d40c1c816796134fa45f0416c7b6668, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -295012141870573579}
   m_SourcePrefab: {fileID: 100100000, guid: 9d40c1c816796134fa45f0416c7b6668, type: 3}
 --- !u!4 &4760793405821227097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d40c1c816796134fa45f0416c7b6668, type: 3}
   m_PrefabInstance: {fileID: 5015608234338318258}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5285656737717635811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d40c1c816796134fa45f0416c7b6668, type: 3}
+  m_PrefabInstance: {fileID: 5015608234338318258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &-295012141870573579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285656737717635811}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4917548, y: 0.6707148, z: 2.4917548}
+  m_Center: {x: 0.000016570091, y: 0.3353574, z: -0.00000059604645}
