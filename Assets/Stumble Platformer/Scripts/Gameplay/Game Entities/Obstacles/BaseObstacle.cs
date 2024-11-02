@@ -15,7 +15,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void Awake()
         {
-
             for (int i = 0; i < obstacleAttackers.Length; i++)
             {
                 if (obstacleAttackers[i] == null)
