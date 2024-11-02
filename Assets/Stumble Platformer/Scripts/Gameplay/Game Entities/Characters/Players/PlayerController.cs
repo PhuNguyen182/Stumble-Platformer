@@ -63,8 +63,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void ReceiveInput()
         {
-            _moveInput = inputReceiver.Movement;
             _isJumpPressed = inputReceiver.IsJumpPressed;
+            _moveInput = inputReceiver.RotateAndScaleInput(inputReceiver.Movement);
             _isMoving = _moveInput != Vector3.zero;
 
             if (groundChecker.IsGrounded)
