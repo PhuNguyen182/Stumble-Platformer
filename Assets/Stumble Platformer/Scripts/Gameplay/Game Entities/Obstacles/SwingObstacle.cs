@@ -63,7 +63,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             else if (targetAngle < -180)
                 targetAngle += 360;
 
-            pendulumRotation.eulerAngles = rotateAxis switch
+            Vector3 newRotation = rotateAxis switch
             {
                 RotateAxis.X => new Vector3(targetAngle, pendulumRotation.eulerAngles.y, pendulumRotation.eulerAngles.z),
                 RotateAxis.Y => new Vector3(pendulumRotation.eulerAngles.x, targetAngle, pendulumRotation.eulerAngles.z),
@@ -71,6 +71,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 _ => Vector3.zero
             };
 
+            pendulumRotation = Quaternion.Euler(newRotation);
             return pendulumRotation;
         }
     }
