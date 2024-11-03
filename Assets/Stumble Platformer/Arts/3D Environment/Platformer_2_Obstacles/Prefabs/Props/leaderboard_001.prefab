@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 2c983d1c7479e2044bcd9e503b9aa040, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 587a84071b5aba2478f8fd88919dc5b1, type: 2}
+      objectReference: {fileID: 2100000, guid: 22d3ae79e25825f4a97a62398d970b5e, type: 2}
     - target: {fileID: 919132149155446097, guid: 2c983d1c7479e2044bcd9e503b9aa040, type: 3}
       propertyPath: m_Name
       value: leaderboard_001

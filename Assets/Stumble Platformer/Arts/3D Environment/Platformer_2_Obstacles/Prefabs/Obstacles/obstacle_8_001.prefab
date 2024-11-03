@@ -125,6 +125,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: obstacle_8_002
       objectReference: {fileID: 0}
+    - target: {fileID: 7783782998658842482, guid: 036b1e8cbacaa764194815f53185a4db, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783782998658842482, guid: 036b1e8cbacaa764194815f53185a4db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2443469378094302153, guid: 036b1e8cbacaa764194815f53185a4db, type: 3}
     m_RemovedGameObjects: []
@@ -133,6 +141,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7783782998658842482, guid: 036b1e8cbacaa764194815f53185a4db, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5853200468133793198}
+    - targetCorrespondingSourceObject: {fileID: 7783782998658842482, guid: 036b1e8cbacaa764194815f53185a4db, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3528778574524633121}
   m_SourcePrefab: {fileID: 100100000, guid: 036b1e8cbacaa764194815f53185a4db, type: 3}
 --- !u!1 &1336302006643655027 stripped
 GameObject:
@@ -156,6 +167,27 @@ MonoBehaviour:
   duration: 2
   useRandomDelay: 1
   maxRandomDelay: 1
+--- !u!65 &3528778574524633121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336302006643655027}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.212388, y: 0.27, z: 4.2246637}
+  m_Center: {x: 0.00000011920929, y: 0.0000010579824, z: 1.88767}
 --- !u!4 &1855675687706516425 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7443990352924026312, guid: 036b1e8cbacaa764194815f53185a4db, type: 3}

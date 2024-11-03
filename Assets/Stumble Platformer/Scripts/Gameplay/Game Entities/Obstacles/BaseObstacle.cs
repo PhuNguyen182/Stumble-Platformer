@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GlobalScripts.UpdateHandlerPattern;
+using Sirenix.OdinInspector;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
-    public abstract class BaseObstacle : MonoBehaviour, IFixedUpdateHandler, ISetObstacleAttack
+    public abstract class BaseObstacle : MonoBehaviour, IObstacle, ISetObstacleAttack, IFixedUpdateHandler
     {
         [SerializeField] protected Rigidbody obstacleBody;
         [SerializeField] protected ObstacleAttacker[] obstacleAttackers;
@@ -14,8 +15,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void Awake()
         {
-            UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
-
             for (int i = 0; i < obstacleAttackers.Length; i++)
             {
                 if (obstacleAttackers[i] == null)
@@ -24,15 +23,32 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 obstacleAttackers[i].ExitDamage = ExitDamage;
                 obstacleAttackers[i].DamageAttack = DamageCharacter;
             }
+
+            OnAwake();
+        }
+
+        private void Start()
+        {
+            IsActive = true;
+            UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
 
         public abstract void ExitDamage(Collision collision);
 
         public abstract void DamageCharacter(Collision collision);
 
+        public abstract void ObstacleAction();
+
+        public virtual void OnAwake() { }
+
         public virtual void SetObstacleActive(bool active)
         {
             IsActive = active;
+        }
+
+        public virtual void OnFixedUpdate()
+        {
+            ObstacleAction();
         }
 
         public void SetObstacleCanAttack(bool canAttack)
@@ -44,7 +60,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             }
         }
 
-        public abstract void OnFixedUpdate();
+        [Button]
+        private void GetObstacleAttackers()
+        {
+            obstacleAttackers = transform.GetComponentsInChildren<ObstacleAttacker>();
+        }
 
         private void OnDestroy()
         {

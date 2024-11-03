@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -7421839311069522995}
   - component: {fileID: 7615926089927727765}
   - component: {fileID: -9125537073840499889}
+  - component: {fileID: 87588340476693131}
   m_Layer: 0
   m_Name: star_002
   m_TagString: Untagged
@@ -26,6 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8567667338576954172}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,7 +35,6 @@ Transform:
   m_Children:
   - {fileID: 3239177738835839970}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-7421839311069522995
 MonoBehaviour:
@@ -83,11 +84,33 @@ MonoBehaviour:
   duration: 2
   useRandomDelay: 1
   maxRandomDelay: 1
+--- !u!65 &87588340476693131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8567667338576954172}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3132648818103069705
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 5651221923702948829}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b11a9f9c69a48f643bc1c868b321963e, type: 3}
@@ -139,6 +162,9 @@ PrefabInstance:
       value: star_002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b11a9f9c69a48f643bc1c868b321963e, type: 3}
 --- !u!4 &3239177738835839970 stripped
 Transform:
