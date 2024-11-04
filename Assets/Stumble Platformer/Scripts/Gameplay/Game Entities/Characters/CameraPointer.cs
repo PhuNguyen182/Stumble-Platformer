@@ -64,7 +64,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         public void ControlCameraAngle()
         {
             mouseDelta = inputReceiver.CameraDelta;
-            cameraPointer.position = _playerTag.transform.position; // Use this for demove dependency of rotation
+            cameraPointer.position = _playerTag.transform.position; // Use this for demove dependency of rotation camera point
 
             adjacentLeg += mouseDelta.y * heightOffsetSpeed;
             yRotation -= mouseDelta.x * rotationSpeed;
