@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 9199364704057940166}
   - component: {fileID: 4954132994282649054}
   m_Layer: 0
-  m_Name: SM_WallCurve_V2
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &788625597294977163
 Transform:
@@ -95,11 +95,11 @@ GameObject:
   - component: {fileID: 3584910545020486119}
   - component: {fileID: 72406510079991399}
   m_Layer: 0
-  m_Name: StaticMesh3
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7780290143969748372
 Transform:
@@ -178,11 +178,11 @@ GameObject:
   - component: {fileID: 4879348633678835590}
   - component: {fileID: 2331431999746352359}
   m_Layer: 0
-  m_Name: StaticMesh1 1
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8481686117130517820
 Transform:
@@ -261,11 +261,11 @@ GameObject:
   - component: {fileID: 8984065029673703930}
   - component: {fileID: 3977217752774059880}
   m_Layer: 0
-  m_Name: StaticMesh6
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5607196929188419735
 Transform:
@@ -344,11 +344,11 @@ GameObject:
   - component: {fileID: 2659132015134329553}
   - component: {fileID: 5639057296214232065}
   m_Layer: 0
-  m_Name: StaticMesh7
+  m_Name: Propeller Wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3191013667916444160
 Transform:
@@ -359,7 +359,7 @@ Transform:
   m_GameObject: {fileID: 5060616594918637775}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.25881988, w: 0.96592563}
-  m_LocalPosition: {x: -0, y: 4.0000005, z: 1.9999994}
+  m_LocalPosition: {x: 0, y: 4, z: 2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -427,11 +427,11 @@ GameObject:
   - component: {fileID: 6927919446389973270}
   - component: {fileID: 4294779566854026269}
   m_Layer: 0
-  m_Name: StaticMesh2 1
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7752464891787518775
 Transform:
@@ -510,11 +510,11 @@ GameObject:
   - component: {fileID: 6224296240740620673}
   - component: {fileID: 7847265167615647014}
   m_Layer: 0
-  m_Name: StaticMesh5
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &584419791482633616
 Transform:
@@ -593,11 +593,11 @@ GameObject:
   - component: {fileID: 633870738968453849}
   - component: {fileID: 2373466476665222522}
   m_Layer: 0
-  m_Name: StaticMesh 1
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8845049978541738011
 Transform:
@@ -679,7 +679,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2781320491467509789
 Transform:
@@ -694,7 +694,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4983828540374565805}
   - {fileID: 788625597294977163}
   - {fileID: 8845049978541738011}
   - {fileID: 8481686117130517820}
@@ -703,6 +702,7 @@ Transform:
   - {fileID: 4560872312251631068}
   - {fileID: 584419791482633616}
   - {fileID: 5607196929188419735}
+  - {fileID: 4983828540374565805}
   - {fileID: 3191013667916444160}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -739,11 +739,11 @@ GameObject:
   - component: {fileID: 4834428658267485921}
   - component: {fileID: 5793365853765572345}
   m_Layer: 0
-  m_Name: StaticMesh4
+  m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4560872312251631068
 Transform:
@@ -822,11 +822,11 @@ GameObject:
   - component: {fileID: 603452782810952640}
   - component: {fileID: 4861639708299741159}
   m_Layer: 0
-  m_Name: SM_Propeller_V1
+  m_Name: Propeller Wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4983828540374565805
 Transform:
@@ -837,7 +837,7 @@ Transform:
   m_GameObject: {fileID: 8710899035416612092}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 4.0000005, z: 5.000002}
+  m_LocalPosition: {x: 0, y: 4, z: 5}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []

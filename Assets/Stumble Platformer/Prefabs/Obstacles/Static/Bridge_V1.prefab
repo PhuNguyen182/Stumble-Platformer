@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7449225394416394386}
   - component: {fileID: 6996175982846773380}
   m_Layer: 8
-  m_Name: StaticMesh2
+  m_Name: Corner Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2861471944337256650, guid: 02839962f149aeb4b92a76397d189f66, type: 3}
 --- !u!1 &2922989753582740490
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 6218094884688670086}
   - component: {fileID: 8415159121909567110}
   m_Layer: 8
-  m_Name: StaticMesh
+  m_Name: Corner Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +209,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2861471944337256650, guid: 02839962f149aeb4b92a76397d189f66, type: 3}
 --- !u!1 &3215592472724325743
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 732738874388393380}
   - component: {fileID: 3476802976962101531}
   m_Layer: 8
-  m_Name: SM_CornerRamp_V1
+  m_Name: Corner Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,7 +350,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2861471944337256650, guid: 02839962f149aeb4b92a76397d189f66, type: 3}
 --- !u!1 &4893638910562255311
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 879459543349584079}
   - component: {fileID: 1603064367678320733}
   m_Layer: 8
-  m_Name: StaticMesh1
+  m_Name: Corner Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -456,6 +456,6 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2861471944337256650, guid: 02839962f149aeb4b92a76397d189f66, type: 3}
