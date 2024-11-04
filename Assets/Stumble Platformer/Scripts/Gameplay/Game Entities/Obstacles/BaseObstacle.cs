@@ -30,6 +30,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         private void Start()
         {
             IsActive = true;
+            SetObstacleCanAttack(true);
             UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
 

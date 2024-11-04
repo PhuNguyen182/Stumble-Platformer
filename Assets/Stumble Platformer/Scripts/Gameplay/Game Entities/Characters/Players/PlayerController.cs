@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
@@ -7,13 +7,14 @@ using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerController : MonoBehaviour, IDamageable, ISetCharacterActive
+    public class PlayerController : MonoBehaviour, ICharacterMovement, IDamageable, ISetCharacterActive
     {
         [Header("Attachments")]
+        [SerializeField] private Rigidbody playerBody;
         [SerializeField] private Animator characterAnimator;
         [SerializeField] private InputReceiver inputReceiver;
         [SerializeField] private GroundChecker groundChecker;
-        [SerializeField] private Rigidbody playerBody;
+        [SerializeField] private CameraPointer cameraPointer;
 
         [Header("Settings")]
         [SerializeField] private Transform characterPivot;
@@ -28,6 +29,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private Vector3 _moveInput;
         private Vector3 _moveVelocity;
+
+        public bool IsStunning => _isStunning;
 
         private void Update()
         {
@@ -160,7 +163,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             playerBody.constraints = isCharacterStunning ? RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ
                                                          : RigidbodyConstraints.FreezeRotation;
             if (!isCharacterStunning)
+            {
                 playerBody.rotation = Quaternion.identity;
+
+                if (_isStunning)
+                {
+                    cameraPointer.ControlCameraAngle();
+                }
+            }
         }
 
         public void SetCharacterActive(bool active)
@@ -173,11 +183,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             if (_isStunning)
                 return;
 
+            _isStunning = true;
             _stunDuration = damageData.StunDuration;
             SetStunningState(true);
 
             if (damageData.AttackForce != 0 && damageData.ForceDirection != Vector3.zero)
-                playerBody.AddForce(damageData.AttackForce * damageData.ForceDirection);
+                playerBody.AddForce(damageData.AttackForce * damageData.ForceDirection, ForceMode.Impulse);
         }
     }
 }

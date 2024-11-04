@@ -1169,7 +1169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4481896159057971256}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2304,10 +2304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad9e0bc6f247b442b9171cfc1e2a15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBody: {fileID: 7314408133217554167}
   characterAnimator: {fileID: 4037431843638726338}
   inputReceiver: {fileID: 8941677375487959025}
   groundChecker: {fileID: 4048378183848726177}
-  playerBody: {fileID: 7314408133217554167}
+  cameraPointer: {fileID: 5324942620933629369}
   characterPivot: {fileID: 8349059590945984002}
   characterConfig: {fileID: 11400000, guid: 9a39b72e91bd0fa428fd8471aafe017a, type: 2}
 --- !u!114 &4048378183848726177
