@@ -7,12 +7,22 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
     public abstract class BasePlatform : MonoBehaviour, IPlatform, IFixedUpdateHandler
     {
+        [SerializeField] protected Rigidbody platformBody;
+
         public bool IsActive { get; set; }
+
+        private void Awake()
+        {
+            OnAwake();
+            IsActive = true;
+        }
 
         private void Start()
         {
             UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
+
+        protected virtual void OnAwake() { }
 
         public virtual void OnFixedUpdate()
         {

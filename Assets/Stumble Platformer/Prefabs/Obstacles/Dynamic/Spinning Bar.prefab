@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0760a35757f853f4a8790dcd518382ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attactForce: 15
   obstacleBody: {fileID: 8886668257741519674}
   obstacleAttackers: []
   rotateSpeed: 30

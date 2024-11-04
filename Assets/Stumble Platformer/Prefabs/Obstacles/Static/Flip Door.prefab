@@ -204,6 +204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768be2c1e29b0444d8ffdf68166f2261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  easeCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   rotationAxis: {x: 1, y: 0, z: 0}
   rotationAngle: -60
   duration: 2

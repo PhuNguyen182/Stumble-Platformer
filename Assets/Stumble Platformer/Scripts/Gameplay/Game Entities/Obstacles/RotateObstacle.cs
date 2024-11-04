@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using StumblePlatformer.Scripts.Gameplay.Common.Enums;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {

@@ -69,7 +69,7 @@ Material:
     - _Foam_Amount: 3
     - _Foam_Cutoff: 1.5
     - _High_Frequency: 10
-    - _Normal_Strength: 1.75
+    - _Normal_Strength: 0.15
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0

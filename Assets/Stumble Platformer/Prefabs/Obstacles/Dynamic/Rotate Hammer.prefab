@@ -183,10 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0760a35757f853f4a8790dcd518382ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attactForce: 15
   obstacleBody: {fileID: 6093667785208165523}
   obstacleAttackers:
   - {fileID: 3254491908135844164}
-  attactForce: 15
   rotateSpeed: 200
   rotateAxis: 2
 --- !u!1 &7679616915074508740
@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f859d194563b34d4c9252b72ed36b348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canFreeCheckBodyType: 0
 --- !u!54 &6690897444789756279
 Rigidbody:
   m_ObjectHideFlags: 0
