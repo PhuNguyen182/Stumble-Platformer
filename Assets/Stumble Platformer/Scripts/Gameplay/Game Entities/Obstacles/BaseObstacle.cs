@@ -1,36 +1,38 @@
+using R3;
+using R3.Triggers;
+using System;
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GlobalScripts.UpdateHandlerPattern;
 using Sirenix.OdinInspector;
+using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
-    public abstract class BaseObstacle : MonoBehaviour, IObstacle, ISetObstacleAttack, IFixedUpdateHandler
+    public abstract class BaseObstacle : MonoBehaviour, IObstacle, IFixedUpdateHandler
     {
+        [SerializeField] protected float attactForce = 15f;
         [SerializeField] protected Rigidbody obstacleBody;
+        [Header("Obstacle Strikers")]
         [SerializeField] protected ObstacleAttacker[] obstacleAttackers;
+
+        protected IDisposable disposable;
+        protected CancellationToken destroyToken;
 
         public bool IsActive { get; set; }
 
         private void Awake()
         {
-            for (int i = 0; i < obstacleAttackers.Length; i++)
-            {
-                if (obstacleAttackers[i] == null)
-                    continue;
-
-                obstacleAttackers[i].ExitDamage = ExitDamage;
-                obstacleAttackers[i].DamageAttack = DamageCharacter;
-            }
-
+            destroyToken = this.GetCancellationTokenOnDestroy();
+            RegisterObstacleAttacker();
             OnAwake();
         }
 
         private void Start()
         {
             IsActive = true;
-            SetObstacleCanAttack(true);
             UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
 
@@ -52,19 +54,27 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             ObstacleAction();
         }
 
-        public void SetObstacleCanAttack(bool canAttack)
-        {
-            for (int i = 0; i < obstacleAttackers.Length; i++)
-            {
-                if (obstacleAttackers[i] != null)
-                    obstacleAttackers[i].CanAttack = canAttack;
-            }
-        }
-
         [Button]
         private void GetObstacleAttackers()
         {
             obstacleAttackers = transform.GetComponentsInChildren<ObstacleAttacker>();
+        }
+
+        private void RegisterObstacleAttacker()
+        {
+            var builder = Disposable.CreateBuilder();
+
+            for (int i = 0; i < obstacleAttackers.Length; i++)
+            {
+                if (obstacleAttackers[i] == null)
+                    continue;
+
+                obstacleAttackers[i].OnCollisionEnterAsObservable().Subscribe(DamageCharacter).AddTo(ref builder);
+                obstacleAttackers[i].OnCollisionStayAsObservable().Subscribe(DamageCharacter).AddTo(ref builder);
+                obstacleAttackers[i].OnCollisionExitAsObservable().Subscribe(ExitDamage).AddTo(ref builder);
+            }
+
+            disposable = builder.RegisterTo(destroyToken);
         }
 
         private void OnDestroy()
