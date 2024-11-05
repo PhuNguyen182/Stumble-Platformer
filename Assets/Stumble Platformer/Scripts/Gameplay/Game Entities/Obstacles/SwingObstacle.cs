@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Gameplay.Common.Enums;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 
