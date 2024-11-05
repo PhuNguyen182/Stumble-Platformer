@@ -2326,7 +2326,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
+  moveableGroundMask:
+    serializedVersion: 2
+    m_Bits: 512
   groundOffset: {x: 0, y: 0, z: 0}
   checkGroundRadius: 0.1
 --- !u!114 &5324942620933629369

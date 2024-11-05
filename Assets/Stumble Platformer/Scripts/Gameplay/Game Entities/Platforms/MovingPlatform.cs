@@ -54,9 +54,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 SetPlatformActive(false);
 
                 if (delayAmount < movementDelayAmount)
-                {
                     delayAmount += Time.fixedDeltaTime;
-                }
 
                 else
                 {
@@ -81,9 +79,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void SwapPivotPositions()
         {
-            firstPosition = firstPosition + lastPosition;
-            lastPosition = firstPosition - lastPosition;
-            firstPosition = firstPosition - lastPosition;
+            (firstPosition, lastPosition) = (lastPosition, firstPosition);
         }
 
         private void SetPlatformActive(bool active)

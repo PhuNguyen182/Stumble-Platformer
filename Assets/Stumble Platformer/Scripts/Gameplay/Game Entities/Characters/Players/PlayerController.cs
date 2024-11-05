@@ -84,13 +84,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             }
 
             playerBody.ClampVelocity(characterConfig.MaxSpeed);
-            Vector3 flatMoveVelocity = new Vector3(playerBody.velocity.x, 0, playerBody.velocity.z);
+            Vector3 flatMoveVelocity = new Vector3(playerBody.velocity.x, 0, playerBody.velocity.z) - groundChecker.FlatGroundVelocity;
 
             bool isRunning = flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
             characterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
 
             float moveThreshold = flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
             characterAnimator.SetFloat(CharacterAnimationKeys.MoveKey, moveThreshold);
+
+            characterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, !groundChecker.IsGrounded && IsFalling());
         }
 
         private void Turn()
@@ -110,8 +112,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 if (groundChecker.IsGrounded)
                 {
-                    _moveVelocity = new Vector3(playerBody.velocity.x, characterConfig.JumpHeight, playerBody.velocity.z); 
-                    playerBody.velocity = _moveVelocity;
+                    _moveVelocity = new Vector3(playerBody.velocity.x, characterConfig.JumpHeight, playerBody.velocity.z);
+                    playerBody.velocity = _moveVelocity + groundChecker.GroundVelocity;
                 }
 
                 else
@@ -126,7 +128,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 }
             }
 
-            bool isFalling = IsFalling();
             bool isJumping = IsJumping();
 
             if(isJumping)
@@ -137,7 +138,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             _isAirDashing = false;
             characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);
-         
+
             if (!_isStunning)
                 characterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, false);
         }
@@ -150,6 +151,19 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private bool IsFalling()
         {
             return playerBody.velocity.y <= characterConfig.CheckFallSpeed;
+        }
+
+        private void ProcessGroundVelocity()
+        {
+            if (groundChecker.HasMoveableGround)
+            {
+                Vector3 moveVelocity = Vector3.zero;
+                Vector3 groundVelocity = groundChecker.GroundVelocity;
+                Vector3 horizontalGroundVelocity = new(groundVelocity.x, 0, groundVelocity.z);
+
+                Vector3 newVelocity = horizontalGroundVelocity + moveVelocity + Vector3.up * groundChecker.GroundVelocity.y;
+                playerBody.velocity = newVelocity;
+            }
         }
 
         private void SetStunningState(bool isStunning)

@@ -55,9 +55,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 SetPlatformActive(false);
 
                 if (delayAmount < movementDelayAmount)
-                {
                     delayAmount += Time.fixedDeltaTime;
-                }
 
                 else
                 {

@@ -7,6 +7,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
     public class RotatePlatform : BasePlatform
     {
+        [SerializeField] private bool checkLocalPosition;
+        [SerializeField] private bool followLocalPosition;
+        [SerializeField] private Vector3 localPosition;
+        [SerializeField] private Transform parent;
+
+        [Header("Rotation")]
         [SerializeField] private float rotateSpeed = 10f;
         [SerializeField] private RotateAxis rotateAxis;
 
@@ -35,8 +41,25 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public override void PlatformAction()
         {
-            Quaternion rotation = Quaternion.Euler(_rotateAxis * rotateSpeed * Time.fixedDeltaTime);
-            platformBody.MoveRotation(platformBody.rotation * rotation);
+            if (followLocalPosition)
+                platformBody.position = parent.TransformPoint(localPosition);
+
+            if (rotateSpeed != 0)
+            {
+                Quaternion rotation = Quaternion.Euler(_rotateAxis * rotateSpeed * Time.fixedDeltaTime);
+                platformBody.MoveRotation(platformBody.rotation * rotation);
+            }
         }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            if (checkLocalPosition)
+            {
+                checkLocalPosition = false;
+                localPosition = transform.localPosition;
+            }
+        }
+#endif
     }
 }
