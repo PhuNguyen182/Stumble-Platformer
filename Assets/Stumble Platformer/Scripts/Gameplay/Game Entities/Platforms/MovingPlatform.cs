@@ -13,6 +13,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
     public class MovingPlatform : BasePlatform
     {
         [Header("Movement")]
+        [SerializeField] protected float slowDownRange = 1f;
         [SerializeField] protected float movementSpeed = 3f;
         [SerializeField] protected float toleranceOffset = 0.1f;
         [SerializeField] protected float movementDelayAmount = 1f;
@@ -22,6 +23,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         [SerializeField] private Vector3 startPosition;
         [SerializeField] private Vector3 endPosition;
 
+        protected bool isActive;
         protected float usedSpeed = 0;
         protected float delayAmount = 0;
         protected Vector3 firstPosition;
@@ -49,6 +51,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public override void PlatformAction()
         {
+            if(transform.IsCloseTo(lastPosition, slowDownRange) && isActive)
+            {
+                float sqrDistance = Vector3.SqrMagnitude(lastPosition - transform.position);
+                usedSpeed = Mathf.Lerp(usedSpeed, movementSpeed * 0.5f, sqrDistance / (slowDownRange * slowDownRange));
+            }
+
             if (transform.IsCloseTo(lastPosition, toleranceOffset))
             {
                 SetPlatformActive(false);
@@ -84,6 +92,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void SetPlatformActive(bool active)
         {
+            isActive = active;
             usedSpeed = active ? movementSpeed : 0;
         }
 

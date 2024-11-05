@@ -80,9 +80,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 _moveVelocity = _moveInput * characterConfig.MoveSpeed;
                 _moveVelocity.y = playerBody.velocity.y;
-                playerBody.velocity = _moveVelocity + groundChecker.GroundVelocity;
+                playerBody.velocity = _moveVelocity + groundChecker.FlatGroundVelocity;
             }
 
+            ProcessGroundVelocity();
             playerBody.ClampVelocity(characterConfig.MaxSpeed);
             Vector3 flatMoveVelocity = new Vector3(playerBody.velocity.x, 0, playerBody.velocity.z) - groundChecker.FlatGroundVelocity;
 
@@ -155,13 +156,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void ProcessGroundVelocity()
         {
-            if (groundChecker.HasMoveableGround)
+            if (groundChecker.HasMoveableGround && _moveInput == Vector3.zero)
             {
-                Vector3 moveVelocity = Vector3.zero;
                 Vector3 groundVelocity = groundChecker.GroundVelocity;
                 Vector3 horizontalGroundVelocity = new(groundVelocity.x, 0, groundVelocity.z);
+                float verticalVelocity = groundChecker.GroundVelocity.y >= 0 ? playerBody.velocity.y
+                                               : groundChecker.GroundVelocity.y + playerBody.velocity.y;
 
-                Vector3 newVelocity = horizontalGroundVelocity + moveVelocity + Vector3.up * groundChecker.GroundVelocity.y;
+                Vector3 newVelocity = horizontalGroundVelocity + Vector3.up * verticalVelocity;
                 playerBody.velocity = newVelocity;
             }
         }
