@@ -31,21 +31,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         {
             usedSpeed = movementSpeed;
 
-            firstPosition = positions[0];
+            firstPosition = transform.position;
             lastPosition = positions[1];
 
             maxStep = positions.Length;
             order = MovingPlatformOrder.Ascending;
-        }
-
-        public override void OnPlatformCollide(Collision collision)
-        {
-
-        }
-
-        public override void OnPlatformExit(Collision collision)
-        {
-
+            RegisterDummyPlatform();
         }
 
         public override void PlatformAction()
@@ -88,13 +79,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 delayAmount = 0;
                 MovePlatform();
             }
-        }
-
-        private void MovePlatform()
-        {
-            Vector3 dir = (lastPosition - firstPosition).normalized;
-            Vector3 movement = platformBody.position + dir * usedSpeed * Time.fixedDeltaTime;
-            platformBody.MovePosition(movement);
         }
 
         private void AscendingPositions()

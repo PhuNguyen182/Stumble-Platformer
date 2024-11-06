@@ -7,7 +7,7 @@ using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerController : MonoBehaviour, ICharacterMovement, IDamageable, ISetCharacterActive
+    public class PlayerController : MonoBehaviour, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
     {
         [Header("Attachments")]
         [SerializeField] private Rigidbody playerBody;
@@ -80,12 +80,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 _moveVelocity = _moveInput * characterConfig.MoveSpeed;
                 _moveVelocity.y = playerBody.velocity.y;
-                playerBody.velocity = _moveVelocity + groundChecker.FlatGroundVelocity;
+                playerBody.velocity = _moveVelocity;
             }
 
-            ProcessGroundVelocity();
             playerBody.ClampVelocity(characterConfig.MaxSpeed);
-            Vector3 flatMoveVelocity = new Vector3(playerBody.velocity.x, 0, playerBody.velocity.z) - groundChecker.FlatGroundVelocity;
+            Vector3 flatMoveVelocity = new Vector3(playerBody.velocity.x, 0, playerBody.velocity.z);
 
             bool isRunning = flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
             characterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
@@ -114,7 +113,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 if (groundChecker.IsGrounded)
                 {
                     _moveVelocity = new Vector3(playerBody.velocity.x, characterConfig.JumpHeight, playerBody.velocity.z);
-                    playerBody.velocity = _moveVelocity + groundChecker.GroundVelocity;
+                    playerBody.velocity = _moveVelocity;
                 }
 
                 else
@@ -154,20 +153,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             return playerBody.velocity.y <= characterConfig.CheckFallSpeed;
         }
 
-        private void ProcessGroundVelocity()
-        {
-            if (groundChecker.HasMoveableGround && _moveInput == Vector3.zero)
-            {
-                Vector3 groundVelocity = groundChecker.GroundVelocity;
-                Vector3 horizontalGroundVelocity = new(groundVelocity.x, 0, groundVelocity.z);
-                float verticalVelocity = groundChecker.GroundVelocity.y >= 0 ? playerBody.velocity.y
-                                               : groundChecker.GroundVelocity.y + playerBody.velocity.y;
-
-                Vector3 newVelocity = horizontalGroundVelocity + Vector3.up * verticalVelocity;
-                playerBody.velocity = newVelocity;
-            }
-        }
-
         private void SetStunningState(bool isStunning)
         {
             SetFreezeRotation(isStunning);
@@ -187,6 +172,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                     cameraPointer.ControlCameraAngle();
                 }
             }
+        }
+
+        public void SetParent(Transform parent, bool stayWorldPosition = true)
+        {
+            if(parent != null)
+                transform.SetParent(parent, stayWorldPosition);
+            else 
+                transform.SetParent(null);
         }
 
         public void SetCharacterActive(bool active)

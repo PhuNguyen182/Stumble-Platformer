@@ -1,6 +1,10 @@
+using R3;
+using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using GlobalScripts.Extensions;
 
 #if UNITY_EDITOR
@@ -10,22 +14,29 @@ using UnityEditor;
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
     [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(BoxCollider))]
     public class MovingPlatform : BasePlatform
     {
+        [SerializeField] protected BoxCollider platformCollider;
+        [SerializeField] protected DummyPlatform dummyPlatform;
+
         [Header("Movement")]
-        [SerializeField] protected float slowDownRange = 1f;
         [SerializeField] protected float movementSpeed = 3f;
         [SerializeField] protected float toleranceOffset = 0.1f;
         [SerializeField] protected float movementDelayAmount = 1f;
+
+        [Header("Platform Tools")]
         [SerializeField] protected bool resetWaypoints;
+        [SerializeField] protected bool checkDummyPlatform;
+        [SerializeField] protected float dummyPlatformHeight = 0.1f;
 
         [Header("Pivots")]
         [SerializeField] private Vector3 startPosition;
         [SerializeField] private Vector3 endPosition;
 
-        protected bool isActive;
         protected float usedSpeed = 0;
         protected float delayAmount = 0;
+
         protected Vector3 firstPosition;
         protected Vector3 lastPosition;
 
@@ -37,9 +48,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             usedSpeed = movementSpeed;
             firstPosition = startPosition;
             lastPosition = endPosition;
+            RegisterDummyPlatform();
         }
 
         public override void OnPlatformCollide(Collision collision)
+        {
+            
+        }
+
+        public override void OnPlatformStay(Collision collision)
         {
 
         }
@@ -51,12 +68,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public override void PlatformAction()
         {
-            if(transform.IsCloseTo(lastPosition, slowDownRange) && isActive)
-            {
-                float sqrDistance = Vector3.SqrMagnitude(lastPosition - transform.position);
-                usedSpeed = Mathf.Lerp(usedSpeed, movementSpeed * 0.5f, sqrDistance / (slowDownRange * slowDownRange));
-            }
-
             if (transform.IsCloseTo(lastPosition, toleranceOffset))
             {
                 SetPlatformActive(false);
@@ -78,11 +89,49 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             }
         }
 
-        private void MovePlatform()
+        protected void OnPlatformTriggerEnter(Collider collider)
+        {
+            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
+            {
+                parentSetter.SetParent(transform);
+            }
+        }
+
+        protected void OnPlatformTriggerExit(Collider collider)
+        {
+            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
+            {
+                parentSetter.SetParent(null);
+            }
+        }
+
+
+        protected virtual void ResetWaypoints()
+        {
+            startPosition = transform.position;
+            endPosition = transform.position;
+        }
+
+        protected void RegisterDummyPlatform()
+        {
+            var builder = Disposable.CreateBuilder();
+            
+            dummyPlatform.OnTriggerEnterAsObservable()
+                         .Subscribe(OnPlatformTriggerEnter)
+                         .AddTo(ref builder);
+            
+            dummyPlatform.OnTriggerExitAsObservable()
+                         .Subscribe(OnPlatformTriggerExit)
+                         .AddTo(ref builder);
+            
+            builder.RegisterTo(this.destroyCancellationToken);
+        }
+
+        protected void MovePlatform()
         {
             Vector3 dir = (lastPosition - firstPosition).normalized;
             Vector3 movement = platformBody.position + dir * usedSpeed * Time.fixedDeltaTime;
-            platformBody.MovePosition(movement);
+            platformBody.transform.position = movement;
         }
 
         private void SwapPivotPositions()
@@ -92,14 +141,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void SetPlatformActive(bool active)
         {
-            isActive = active;
             usedSpeed = active ? movementSpeed : 0;
-        }
-
-        protected virtual void ResetWaypoints()
-        {
-            startPosition = transform.position;
-            endPosition = transform.position;
         }
 
 #if UNITY_EDITOR
@@ -113,11 +155,29 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         private void OnValidate()
         {
             platformBody ??= GetComponent<Rigidbody>();
+            platformCollider ??= GetComponent<BoxCollider>();
 
             if (resetWaypoints)
             {
                 resetWaypoints = false;
                 ResetWaypoints();
+            }
+
+            if (checkDummyPlatform)
+            {
+                checkDummyPlatform = false;
+                if (transform.childCount <= 0)
+                    return;
+
+                dummyPlatform = transform.GetChild(0).GetComponent<DummyPlatform>();
+
+                if (dummyPlatform == null)
+                    return;
+
+                float height = platformCollider.size.y / 2 + dummyPlatformHeight * 0.5f / transform.localScale.y;
+                Vector3 size = new Vector3(platformCollider.size.x, dummyPlatformHeight / transform.localScale.y, platformCollider.size.z);
+                Vector3 center = new Vector3(platformCollider.center.x, height, platformCollider.center.z);
+                dummyPlatform.SetSizeAndCenter(size, center);
             }
         }
 #endif

@@ -34,6 +34,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             
         }
 
+        public override void OnPlatformStay(Collision collision)
+        {
+            
+        }
+
         public override void OnPlatformExit(Collision collision)
         {
             

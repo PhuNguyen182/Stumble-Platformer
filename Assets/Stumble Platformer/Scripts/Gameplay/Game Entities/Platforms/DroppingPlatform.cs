@@ -8,7 +8,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
     {
         [SerializeField] private float droppingDuration = 6f;
 
-        public override void OnPlatformCollide(Collision collision)
+        public override void OnPlatformStay(Collision collision)
         {
             
         }
@@ -19,6 +19,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         }
 
         public override void PlatformAction()
+        {
+            
+        }
+
+        public override void OnPlatformCollide(Collision collision)
         {
             
         }

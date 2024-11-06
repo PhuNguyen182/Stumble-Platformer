@@ -33,6 +33,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public abstract void OnPlatformCollide(Collision collision);
 
+        public abstract void OnPlatformStay(Collision collision);
+
         public abstract void OnPlatformExit(Collision collision);
 
         private void OnCollisionEnter(Collision collision)
@@ -42,7 +44,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void OnCollisionStay(Collision collision)
         {
-            OnPlatformCollide(collision);
+            OnPlatformStay(collision);
         }
 
         private void OnCollisionExit(Collision collision)
