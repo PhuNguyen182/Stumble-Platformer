@@ -78,13 +78,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             if (_moveInput != Vector3.zero)
             {
-                _moveVelocity = _moveInput * characterConfig.MoveSpeed;
+                _moveVelocity = _moveInput.normalized * characterConfig.MoveSpeed;
                 _moveVelocity.y = playerBody.velocity.y;
                 playerBody.velocity = _moveVelocity;
             }
 
             playerBody.ClampVelocity(characterConfig.MaxSpeed);
-            Vector3 flatMoveVelocity = new Vector3(playerBody.velocity.x, 0, playerBody.velocity.z);
+            Vector3 flatMoveVelocity = playerBody.GetFlatVelocity();
 
             bool isRunning = flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
             characterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
@@ -99,8 +99,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             if(_moveInput != Vector3.zero && !_isStunning)
             {
+                Quaternion inversedRotation = Quaternion.Inverse(transform.localRotation);
                 float angle = Mathf.Atan2(playerBody.velocity.x, playerBody.velocity.z) * Mathf.Rad2Deg;
-                Quaternion toRotation = Quaternion.Euler(0, angle, 0);
+                Quaternion toRotation = Quaternion.Euler(0, angle + inversedRotation.eulerAngles.y, 0);
+                
+                if (transform.parent != null)
+                    toRotation = toRotation * Quaternion.Inverse(transform.parent.rotation);
+
                 characterPivot.localRotation = Quaternion.Slerp(characterPivot.localRotation, toRotation
                                                                 , Time.deltaTime * characterConfig.RotationSmoothFactor);
             }
@@ -162,16 +167,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private void SetFreezeRotation(bool isCharacterStunning)
         {
             playerBody.constraints = isCharacterStunning ? RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ
-                                                         : RigidbodyConstraints.FreezeRotation;
-            if (!isCharacterStunning)
-            {
-                playerBody.rotation = Quaternion.identity;
-
-                if (_isStunning)
-                {
-                    cameraPointer.ControlCameraAngle();
-                }
-            }
+                                                         : RigidbodyConstraints.FreezeRotation;            
         }
 
         public void SetParent(Transform parent, bool stayWorldPosition = true)

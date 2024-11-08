@@ -5,16 +5,18 @@ using UnityEngine;
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs
 {
     [RequireComponent(typeof(Rigidbody))]
-    [RequireComponent(typeof(BoxCollider))]
     public class DummyPlatform : MonoBehaviour
     {
         [SerializeField] private bool isCustomCheck;
-        [SerializeField] private BoxCollider platformCollider;
+        [SerializeField] private Collider platformCollider;
 
         public void SetSizeAndCenter(Vector3 size, Vector3 center)
         {
-            platformCollider.size = size;
-            platformCollider.center = center;
+            if (platformCollider is BoxCollider collider)
+            {
+                collider.size = size;
+                collider.center = center;
+            }
         }
 
 #if UNITY_EDITOR
@@ -23,7 +25,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs
         private void OnValidate()
         {
             _rigidbody ??= GetComponent<Rigidbody>();
-            platformCollider ??= GetComponent<BoxCollider>();
+            platformCollider ??= GetComponent<Collider>();
 
             if (!isCustomCheck)
             {

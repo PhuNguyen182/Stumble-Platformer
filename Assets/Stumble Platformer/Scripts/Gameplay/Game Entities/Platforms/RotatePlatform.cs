@@ -1,22 +1,31 @@
+using R3;
+using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Common.Enums;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
     public class RotatePlatform : BasePlatform
     {
+        [SerializeField] private DummyPlatform dummyPlatform;
+
+        [Space(10)]
         [SerializeField] private bool checkLocalPosition;
         [SerializeField] private bool followLocalPosition;
         [SerializeField] private Vector3 localPosition;
         [SerializeField] private Transform parent;
 
         [Header("Rotation")]
+        [SerializeField] private bool usePhysics;
         [SerializeField] private float rotateSpeed = 10f;
         [SerializeField] private RotateAxis rotateAxis;
 
         private Vector3 _rotateAxis;
+        private Quaternion _rotation;
 
         protected override void OnAwake()
         {
@@ -27,6 +36,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 RotateAxis.Z => Vector3.forward,
                 _ => Vector3.zero
             };
+
+            RegisterPlatform();
         }
 
         public override void OnPlatformCollide(Collision collision)
@@ -51,8 +62,47 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
             if (rotateSpeed != 0)
             {
-                Quaternion rotation = Quaternion.Euler(_rotateAxis * rotateSpeed * Time.fixedDeltaTime);
-                platformBody.MoveRotation(platformBody.rotation * rotation);
+                _rotation = Quaternion.Euler(_rotateAxis * rotateSpeed * Time.fixedDeltaTime);
+                _rotation = platformBody.rotation * _rotation;
+                
+                if (usePhysics)
+                    platformBody.MoveRotation(_rotation);
+                else
+                    platformBody.transform.rotation = _rotation;
+            }
+        }
+
+        private void RegisterPlatform()
+        {
+            if (dummyPlatform == null)
+                return;
+
+            var builder = Disposable.CreateBuilder();
+            
+            dummyPlatform.OnTriggerEnterAsObservable()
+                         .Subscribe(OnPlatformTriggerEnter)
+                         .AddTo(ref builder);
+            
+            dummyPlatform.OnTriggerExitAsObservable()
+                         .Subscribe(OnPlatformTriggerExit)
+                         .AddTo(ref builder);
+            
+            builder.RegisterTo(this.destroyCancellationToken);
+        }
+
+        private void OnPlatformTriggerEnter(Collider collider)
+        {
+            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
+            {
+                parentSetter.SetParent(transform);
+            }
+        }
+
+        private void OnPlatformTriggerExit(Collider collider)
+        {
+            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
+            {
+                parentSetter.SetParent(null);
             }
         }
 
