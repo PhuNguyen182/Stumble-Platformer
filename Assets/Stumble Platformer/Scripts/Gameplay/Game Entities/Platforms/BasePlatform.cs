@@ -19,10 +19,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void Start()
         {
+            OnStart();
             UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
 
         protected virtual void OnAwake() { }
+
+        protected virtual void OnStart() { }
 
         public virtual void OnFixedUpdate()
         {
