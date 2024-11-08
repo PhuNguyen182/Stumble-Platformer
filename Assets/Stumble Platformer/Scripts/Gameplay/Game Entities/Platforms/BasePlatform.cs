@@ -5,7 +5,7 @@ using GlobalScripts.UpdateHandlerPattern;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
-    public abstract class BasePlatform : MonoBehaviour, IPlatform, IFixedUpdateHandler
+    public abstract class BasePlatform : MonoBehaviour, IPlatform, ISetPlatformActive, IFixedUpdateHandler
     {
         [SerializeField] protected Rigidbody platformBody;
 
@@ -27,6 +27,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         public virtual void OnFixedUpdate()
         {
             PlatformAction();
+        }
+
+        public void SetPlatformActive(bool active)
+        {
+            IsActive = active;
         }
 
         public abstract void PlatformAction();

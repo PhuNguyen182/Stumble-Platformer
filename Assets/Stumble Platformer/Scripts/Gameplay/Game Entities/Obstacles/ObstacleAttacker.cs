@@ -10,7 +10,26 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
     {
         [SerializeField] private bool canFreeCheckBodyType;
 
-        public bool CanAttack { get; set; }
+        private bool _canAttack;
+        private bool _hasCollider;
+        private Collider _collider;
+
+        public bool CanAttack 
+        {
+            get => _canAttack;
+            set
+            {
+                _canAttack = value;
+
+                if (_hasCollider)
+                    _collider.enabled = _canAttack;
+            }
+        }
+
+        private void Awake()
+        {
+            _hasCollider = TryGetComponent<Collider>(out _collider);
+        }
 
 #if UNITY_EDITOR
         private Rigidbody _attactBody;

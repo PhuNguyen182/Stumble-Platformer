@@ -1,13 +1,10 @@
 using R3;
 using R3.Triggers;
-using System;
-using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GlobalScripts.UpdateHandlerPattern;
 using Sirenix.OdinInspector;
-using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
@@ -15,17 +12,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
     {
         [SerializeField] protected float attactForce = 15f;
         [SerializeField] protected Rigidbody obstacleBody;
+        
         [Header("Obstacle Strikers")]
         [SerializeField] protected ObstacleAttacker[] obstacleAttackers;
-
-        protected IDisposable disposable;
-        protected CancellationToken destroyToken;
 
         public bool IsActive { get; set; }
 
         private void Awake()
         {
-            destroyToken = this.GetCancellationTokenOnDestroy();
             RegisterObstacleAttacker();
             OnAwake();
         }
@@ -47,6 +41,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         public virtual void SetObstacleActive(bool active)
         {
             IsActive = active;
+
+            for (int i = 0; i < obstacleAttackers.Length; i++)
+            {
+                obstacleAttackers[i].CanAttack = active;
+            }
         }
 
         public virtual void OnFixedUpdate()
@@ -69,12 +68,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 if (obstacleAttackers[i] == null)
                     continue;
 
-                obstacleAttackers[i].OnCollisionEnterAsObservable().Subscribe(DamageCharacter).AddTo(ref builder);
-                obstacleAttackers[i].OnCollisionStayAsObservable().Subscribe(DamageCharacter).AddTo(ref builder);
-                obstacleAttackers[i].OnCollisionExitAsObservable().Subscribe(ExitDamage).AddTo(ref builder);
+                obstacleAttackers[i].OnCollisionEnterAsObservable()
+                                    .Subscribe(DamageCharacter)
+                                    .AddTo(ref builder);
+                
+                obstacleAttackers[i].OnCollisionStayAsObservable()
+                                    .Subscribe(DamageCharacter)
+                                    .AddTo(ref builder);
+                
+                obstacleAttackers[i].OnCollisionExitAsObservable()
+                                    .Subscribe(ExitDamage)
+                                    .AddTo(ref builder);
             }
 
-            disposable = builder.RegisterTo(destroyToken);
+            builder.RegisterTo(this.destroyCancellationToken);
         }
 
         private void OnDestroy()
