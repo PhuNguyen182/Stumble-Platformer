@@ -3,9 +3,9 @@ using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Common.Enums;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
