@@ -11,7 +11,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
     public class RotatePlatform : BasePlatform
     {
-        [SerializeField] private DummyPlatform dummyPlatform;
+        [SerializeField] private DummyPlatform[] dummyPlatforms;
 
         [Space(10)]
         [SerializeField] private bool checkLocalPosition;
@@ -74,18 +74,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void RegisterPlatform()
         {
-            if (dummyPlatform == null)
-                return;
-
             var builder = Disposable.CreateBuilder();
-            
-            dummyPlatform.OnTriggerEnterAsObservable()
-                         .Subscribe(OnPlatformTriggerEnter)
-                         .AddTo(ref builder);
-            
-            dummyPlatform.OnTriggerExitAsObservable()
-                         .Subscribe(OnPlatformTriggerExit)
-                         .AddTo(ref builder);
+
+            for (int i = 0; i < dummyPlatforms.Length; i++)
+            {
+                if (dummyPlatforms[i] == null)
+                    continue;
+
+                dummyPlatforms[i].OnTriggerEnterAsObservable()
+                                 .Subscribe(OnPlatformTriggerEnter)
+                                 .AddTo(ref builder);
+
+                dummyPlatforms[i].OnTriggerExitAsObservable()
+                                 .Subscribe(OnPlatformTriggerExit)
+                                 .AddTo(ref builder);
+            }
             
             builder.RegisterTo(this.destroyCancellationToken);
         }

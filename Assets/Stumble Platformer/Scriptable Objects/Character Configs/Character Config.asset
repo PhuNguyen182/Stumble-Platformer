@@ -18,4 +18,5 @@ MonoBehaviour:
   MaxSpeed: 24
   MinSpeed: 1.5
   CheckFallSpeed: -0.1
-  RotationSmoothFactor: 12
+  RotateVelocityThreshold: 0.01
+  RotationSmoothFactor: 18

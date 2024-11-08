@@ -28,6 +28,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private float _stunDuration = 0;
 
         private Vector3 _moveInput;
+        private Vector3 _flatMoveVelocity;
         private Vector3 _moveVelocity;
 
         public bool IsStunning => _isStunning;
@@ -84,12 +85,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             }
 
             playerBody.ClampVelocity(characterConfig.MaxSpeed);
-            Vector3 flatMoveVelocity = playerBody.GetFlatVelocity();
+            _flatMoveVelocity = playerBody.GetFlatVelocity();
 
-            bool isRunning = flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
+            bool isRunning = _flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
             characterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
 
-            float moveThreshold = flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
+            float moveThreshold = _flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
             characterAnimator.SetFloat(CharacterAnimationKeys.MoveKey, moveThreshold);
 
             characterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, !groundChecker.IsGrounded && IsFalling());
@@ -97,7 +98,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Turn()
         {
-            if(_moveInput != Vector3.zero && !_isStunning)
+            if(_flatMoveVelocity.sqrMagnitude > characterConfig.RotateVelocityThreshold && !_isStunning)
             {
                 Quaternion inversedRotation = Quaternion.Inverse(transform.localRotation);
                 float angle = Mathf.Atan2(playerBody.velocity.x, playerBody.velocity.z) * Mathf.Rad2Deg;
