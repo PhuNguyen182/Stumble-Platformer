@@ -6,11 +6,13 @@ using UnityEngine;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Common.Enums;
+using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
     public class RotatePlatform : BasePlatform
     {
+        [SerializeField] private LayerMask playerMask;
         [SerializeField] private DummyPlatform[] dummyPlatforms;
 
         [Space(10)]
@@ -26,6 +28,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private Vector3 _rotateAxis;
         private Quaternion _rotation;
+        private bool _hasPlayerStandOn;
 
         protected override void OnAwake()
         {
@@ -42,17 +45,17 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public override void OnPlatformCollide(Collision collision)
         {
-            
+            _hasPlayerStandOn = collision.HasLayer(playerMask);
         }
 
         public override void OnPlatformStay(Collision collision)
         {
-            
+            _hasPlayerStandOn = collision.HasLayer(playerMask);
         }
 
         public override void OnPlatformExit(Collision collision)
         {
-            
+            _hasPlayerStandOn = false;
         }
 
         public override void PlatformAction()
@@ -85,6 +88,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                                  .Subscribe(OnPlatformTriggerEnter)
                                  .AddTo(ref builder);
 
+                dummyPlatforms[i].OnTriggerStayAsObservable()
+                                 .Subscribe(OnPlatformTriggerStay)
+                                 .AddTo(ref builder);
+
                 dummyPlatforms[i].OnTriggerExitAsObservable()
                                  .Subscribe(OnPlatformTriggerExit)
                                  .AddTo(ref builder);
@@ -95,6 +102,23 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void OnPlatformTriggerEnter(Collider collider)
         {
+            if (!_hasPlayerStandOn)
+                return;
+
+            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
+            {
+                parentSetter.SetParent(transform);
+            }
+        }
+
+        private void OnPlatformTriggerStay(Collider collider)
+        {
+            if (!_hasPlayerStandOn)
+                return;
+
+            if (collider.transform.parent != null && collider.transform.parent.GetInstanceID() != this.GetInstanceID())
+                return;
+
             if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
             {
                 parentSetter.SetParent(transform);

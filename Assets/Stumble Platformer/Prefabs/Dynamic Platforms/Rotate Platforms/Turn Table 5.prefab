@@ -97,6 +97,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1760277020924984004}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  dummyPlatforms: []
+  checkLocalPosition: 0
+  followLocalPosition: 0
+  localPosition: {x: 0, y: 0, z: 0}
+  parent: {fileID: 0}
+  usePhysics: 0
   rotateSpeed: 30
   rotateAxis: 3
 --- !u!1 &1238926663396939716

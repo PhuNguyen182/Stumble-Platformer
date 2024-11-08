@@ -130,6 +130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 6223801605178619259}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 8
   dummyPlatforms:
   - {fileID: 4357138294302436671}
   - {fileID: 225912650559780456}
@@ -195,7 +198,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.15, y: 0.5, z: 3.35}
+  m_Size: {x: 8.75, y: 0.5, z: 3.62}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6281954736121341675
 Rigidbody:
@@ -291,7 +294,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.15, y: 0.5, z: 3.35}
+  m_Size: {x: 8.75, y: 0.5, z: 3.62}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7403740195608813529
 Rigidbody:
@@ -387,7 +390,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.15, y: 0.5, z: 3.35}
+  m_Size: {x: 8.75, y: 0.5, z: 3.62}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &9113974384007764166
 Rigidbody:
@@ -483,7 +486,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.15, y: 0.5, z: 3.35}
+  m_Size: {x: 8.75, y: 0.5, z: 3.62}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4563965303238873344
 Rigidbody:

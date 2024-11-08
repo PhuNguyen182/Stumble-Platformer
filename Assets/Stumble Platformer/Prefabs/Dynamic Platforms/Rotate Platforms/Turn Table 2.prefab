@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1, z: 1.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4617546402438342298}
@@ -53,7 +53,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.15, y: 0.5, z: 3.35}
+  m_Size: {x: 8.75, y: 0.5, z: 3.62}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3932356917150145617
 Rigidbody:
@@ -125,7 +125,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1, z: 1.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4617546402438342298}
@@ -149,7 +149,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.15, y: 0.5, z: 3.35}
+  m_Size: {x: 8.75, y: 0.5, z: 3.62}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1839669189061944154
 Rigidbody:
@@ -327,7 +327,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1, z: 1.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4617546402438342298}
@@ -351,7 +351,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.15, y: 0.5, z: 3.35}
+  m_Size: {x: 8.75, y: 0.5, z: 3.62}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6008273871986207857
 Rigidbody:
@@ -423,7 +423,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1, z: 1.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4617546402438342298}
@@ -447,7 +447,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.15, y: 0.5, z: 3.35}
+  m_Size: {x: 8.75, y: 0.5, z: 3.62}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4097229603910264775
 Rigidbody:
@@ -620,6 +620,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 3686672575203659586}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 8
   dummyPlatforms:
   - {fileID: 3370156543696016317}
   - {fileID: 962685397644283372}

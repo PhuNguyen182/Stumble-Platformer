@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 9031650497770284040}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 8
   dummyPlatforms:
   - {fileID: 4025414070306149075}
   - {fileID: 500684414156806293}
