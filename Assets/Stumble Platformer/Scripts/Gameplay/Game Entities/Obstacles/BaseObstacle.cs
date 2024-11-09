@@ -8,7 +8,7 @@ using Sirenix.OdinInspector;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
-    public abstract class BaseObstacle : MonoBehaviour, IObstacle, IFixedUpdateHandler
+    public abstract class BaseObstacle : MonoBehaviour, IObstacle, IObstacleDamager, IObstacleCollider, IFixedUpdateHandler
     {
         [SerializeField] protected float attactForce = 15f;
         [SerializeField] protected Rigidbody obstacleBody;

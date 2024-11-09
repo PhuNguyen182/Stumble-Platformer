@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4030615233739951182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2477282424438851450}
+  m_Layer: 0
+  m_Name: Shot Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2477282424438851450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030615233739951182}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.09229599, y: -0.7010574, z: -0.09229599, w: 0.7010574}
+  m_LocalPosition: {x: -1.3, y: 0.772, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6850549182554701006}
+  m_LocalEulerAnglesHint: {x: -15, y: -90, z: 0}
 --- !u!1 &6850549182554701005
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6850549182554701006}
+  - component: {fileID: 6545434070216708604}
   m_Layer: 0
   m_Name: Cannon_2
   m_TagString: Untagged
@@ -29,9 +61,31 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2477282424438851450}
   - {fileID: 6850549182787190355}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6545434070216708604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6850549182554701005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d707e70806de5d4e9838164a9d665a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attactForce: 15
+  obstacleBody: {fileID: 0}
+  obstacleAttackers: []
+  shotPoint: {fileID: 2477282424438851450}
+  cannonANimator: {fileID: 0}
+  check: 0
+  bulletPrefab: {fileID: 1046229702157034313, guid: 9897c5ba80067c84e82ea3be9e5d7b3d, type: 3}
+  shotVelocity: 12
+  shotInterval: 2
 --- !u!1001 &6850549182786790611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97,49 +151,97 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6ca10976f33e7ed47803d218650a53ba, type: 2}
+    - target: {fileID: 2300002, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2300002, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2c8c5cf7fe3cda24fb913d39cee9efc5, type: 2}
     - target: {fileID: 2300004, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300004, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2c8c5cf7fe3cda24fb913d39cee9efc5, type: 2}
+    - target: {fileID: 2300006, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2300006, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2c8c5cf7fe3cda24fb913d39cee9efc5, type: 2}
     - target: {fileID: 2300008, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a7938256da7a2674b9acd5f42417da16, type: 2}
+    - target: {fileID: 2300010, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2300010, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a7938256da7a2674b9acd5f42417da16, type: 2}
     - target: {fileID: 2300012, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300012, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 293cfe2579e56fe4a9b9e7c97db0f0fd, type: 2}
+    - target: {fileID: 2300014, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2300014, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2c8c5cf7fe3cda24fb913d39cee9efc5, type: 2}
     - target: {fileID: 2300016, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300016, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 80665229ffa284b4485ad04e5ded7842, type: 2}
+    - target: {fileID: 2300018, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2300018, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 293cfe2579e56fe4a9b9e7c97db0f0fd, type: 2}
     - target: {fileID: 2300020, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300020, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cf4835099f2239a4281254649628c990, type: 2}
+    - target: {fileID: 2300022, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2300022, guid: 3e2224ed8ee0546b6b907176c4baf88a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1465828555447153772}
+  - component: {fileID: 1166904363980215763}
   m_Layer: 0
   m_Name: Cannon_15
   m_TagString: Untagged
@@ -29,9 +30,62 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2171824982654110474}
   - {fileID: 1465828556777573020}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1166904363980215763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465828555447153773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d707e70806de5d4e9838164a9d665a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attactForce: 15
+  obstacleBody: {fileID: 0}
+  obstacleAttackers: []
+  shotPoint: {fileID: 2171824982654110474}
+  cannonANimator: {fileID: 0}
+  check: 0
+  bulletPrefab: {fileID: 7389352377691518391, guid: fa62e3df76fa85a4fb675097924f2532, type: 3}
+  shotVelocity: 12
+  shotInterval: 2
+--- !u!1 &8612712626841291127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2171824982654110474}
+  m_Layer: 0
+  m_Name: Shot Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2171824982654110474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612712626841291127}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.091772005, y: -0.7011262, z: -0.091772005, w: 0.7011262}
+  m_LocalPosition: {x: -1.399, y: 0.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1465828555447153772}
+  m_LocalEulerAnglesHint: {x: -14.914, y: -90, z: 0}
 --- !u!1001 &1465828556777967644
 PrefabInstance:
   m_ObjectHideFlags: 0
