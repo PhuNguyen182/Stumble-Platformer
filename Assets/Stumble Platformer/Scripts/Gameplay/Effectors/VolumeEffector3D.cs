@@ -10,6 +10,7 @@ namespace StumblePlatformer.Scripts.Gameplay.Effectors
         [SerializeField] private float forceVariation;
         [SerializeField] private Vector3 forceDirection;
         [SerializeField] private ForceMode forceMode = ForceMode.Force;
+        [SerializeField] private bool useLocalRotation;
 
         private bool _hasColliderAttached;
         private Vector3 _forceDirection;
@@ -17,7 +18,8 @@ namespace StumblePlatformer.Scripts.Gameplay.Effectors
 
         private void Awake()
         {
-            _forceDirection = forceDirection.normalized;
+            _forceDirection = useLocalRotation ? transform.localRotation * forceDirection.normalized 
+                                               : forceDirection.normalized;
             _hasColliderAttached = TryGetComponent(out _currentCollider);
         }
 
