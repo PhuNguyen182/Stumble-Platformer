@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2874989204995700374}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -130,7 +130,7 @@ Animator:
   m_GameObject: {fileID: 2874989204995700374}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: efdb3e22e996b62489d9ccf546fac638, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -153,10 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e04a77dadf45494b9717303efd10c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackOnce: 0
   attactForce: 15
   obstacleBody: {fileID: 0}
   obstacleAttackers: []
-  pushForce: 8
+  pushForce: 10
   dummyPlatform: {fileID: 7093604208726853114}
   platformAnimator: {fileID: 4038992851965009480}
 --- !u!1 &8141697514113682313
@@ -189,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 8141697514113682313}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.65, z: 0}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -18,7 +18,7 @@ namespace StumblePlatformer.Scripts.Gameplay.Effectors
 
         private void Awake()
         {
-            _forceDirection = useLocalRotation ? transform.localRotation * forceDirection.normalized 
+            _forceDirection = useLocalRotation ? transform.rotation * forceDirection.normalized 
                                                : forceDirection.normalized;
             _hasColliderAttached = TryGetComponent(out _currentCollider);
         }

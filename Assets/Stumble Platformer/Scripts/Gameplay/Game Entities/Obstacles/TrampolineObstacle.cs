@@ -13,6 +13,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         [SerializeField] private DummyPlatform dummyPlatform;
         [SerializeField] private Animator platformAnimator;
 
+        private readonly int _pushHash = Animator.StringToHash("Push");
+
         public override void OnAwake()
         {
             RegisterTrampoline();
@@ -43,6 +45,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             if(collider.attachedRigidbody != null)
             {
                 collider.attachedRigidbody.velocity = transform.up * pushForce;
+                platformAnimator.SetTrigger(_pushHash);
             }
         }
     }

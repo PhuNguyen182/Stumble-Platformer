@@ -10,6 +10,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
     public abstract class BaseObstacle : MonoBehaviour, IObstacle, IObstacleDamager, IObstacleCollider, IFixedUpdateHandler
     {
+        [SerializeField] protected bool attackOnce;
         [SerializeField] protected float attactForce = 15f;
         [SerializeField] protected Rigidbody obstacleBody;
         
@@ -53,6 +54,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             ObstacleAction();
         }
 
+        protected void DamageTargetOnStay(Collision collision)
+        {
+            if (!attackOnce)
+                DamageCharacter(collision);
+        }
+
         [Button]
         private void GetObstacleAttackers()
         {
@@ -73,7 +80,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                                     .AddTo(ref builder);
                 
                 obstacleAttackers[i].OnCollisionStayAsObservable()
-                                    .Subscribe(DamageCharacter)
+                                    .Subscribe(DamageTargetOnStay)
                                     .AddTo(ref builder);
                 
                 obstacleAttackers[i].OnCollisionExitAsObservable()
