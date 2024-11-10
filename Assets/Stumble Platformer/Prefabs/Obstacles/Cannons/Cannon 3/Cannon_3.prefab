@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6949557379714755764}
+  - component: {fileID: 2535091757891219277}
   - component: {fileID: 5786083782391279146}
   m_Layer: 0
   m_Name: Cannon_3
@@ -65,6 +66,27 @@ Transform:
   - {fileID: 6949557378510248363}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2535091757891219277
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6949557379714755765}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de8766b4c25a54248883e938071cc6ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5786083782391279146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,13 +99,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d707e70806de5d4e9838164a9d665a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackOnce: 0
   attactForce: 15
   obstacleBody: {fileID: 0}
   obstacleAttackers: []
   shotPoint: {fileID: 2852047298674691790}
-  cannonANimator: {fileID: 0}
+  cannonAnimator: {fileID: 2535091757891219277}
   check: 0
   bulletPrefab: {fileID: 7919678537165849118, guid: 611a06193e37d7a4e843c581d6c55391, type: 3}
+  shotDelay: 0.33333334
   shotVelocity: 12
   shotInterval: 2
 --- !u!1001 &6949557378510111531

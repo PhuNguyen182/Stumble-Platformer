@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using StumblePlatformer.Scripts.Common.Containers;
+using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
     public class CannonObstacle : BaseObstacle
     {
         [SerializeField] private Transform shotPoint;
-        [SerializeField] private Animator cannonANimator;
+        [SerializeField] private Animator cannonAnimator;
         [SerializeField] private bool check;
 
         [Header("Shooting")]
         [SerializeField] private CannonBullet bulletPrefab;
+        [SerializeField] private float shotDelay = 0;
         [SerializeField] private float shotVelocity = 12;
         [SerializeField] private float shotInterval = 2f;
 
         private float _shotDelay = 0;
+        private readonly int _fireHash = Animator.StringToHash("Fire");
 
         public override void DamageCharacter(Collision collision)
         {
@@ -35,12 +38,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             if(_shotDelay > shotInterval)
             {
                 _shotDelay = 0;
-                ShootBullet();
+                ShootBullet().Forget();
             }
         }
 
-        private void ShootBullet()
+        private async UniTask ShootBullet()
         {
+            cannonAnimator.SetTrigger(_fireHash);
+            await UniTask.WaitForSeconds(shotDelay, cancellationToken: destroyCancellationToken);
+
             Vector3 shotForce = shotPoint.forward * shotVelocity;
             CannonBullet cannonBullet = SimplePool.Spawn(bulletPrefab, BulletContainer.Transform
                                                          , shotPoint.position, Quaternion.identity);
