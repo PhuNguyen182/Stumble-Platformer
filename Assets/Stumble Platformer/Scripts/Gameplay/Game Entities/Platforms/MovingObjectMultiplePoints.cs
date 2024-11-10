@@ -95,11 +95,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             stepCount = (stepCount - 1) % positions.Length;
         }
 
-        private void SetPlatformActive(bool active)
-        {
-            usedSpeed = active ? movementSpeed : 0;
-        }
-
         protected override void ResetWaypoints()
         {
             for (int i = 0; i < positions.Length; i++)
