@@ -13,6 +13,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         public float MaxSpeed;
         public float MinSpeed;
         public float CheckFallSpeed;
+        public float RotateVelocityThreshold;
         public float RotationSmoothFactor;
     }
 }

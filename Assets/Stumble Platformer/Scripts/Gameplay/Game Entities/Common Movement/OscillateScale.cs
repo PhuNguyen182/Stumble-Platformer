@@ -5,16 +5,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
     public class OscillateScale : MonoBehaviour, IUpdateHandler
     {
-        public Vector3 scaleAxis = Vector3.one;
-        public float scaleFactor = 2f;
-        public float duration = 2f;
-        public bool useRandomDelay = false; // Toggle random delay
-        public float maxRandomDelay = 1f; // Maximum random delay
+        [Header("Movement")]
+        [SerializeField] private AnimationCurve easeCurve;
+        [SerializeField] private Vector3 scaleAxis = Vector3.one;
+        [SerializeField] private float scaleFactor = 2f;
+        [SerializeField] private float duration = 2f;
 
-        private Vector3 startScale;
-        private float timeElapsed = 0f;
+        [Header("Delay")]
+        [SerializeField] private bool useRandomDelay = false;
+        [SerializeField] private float maxRandomDelay = 1f;
+
         private bool isReversing = false;
+        private float timeElapsed = 0f;
         private float randomDelay = 0f;
+        private Vector3 startScale;
 
         public bool IsActive { get; set; }
 
@@ -22,12 +26,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
         {
             IsActive = true;
             startScale = transform.localScale;
-
-            if (useRandomDelay)
-            {
-                randomDelay = Random.Range(0f, maxRandomDelay);
-            }
-
+            randomDelay = useRandomDelay ? Random.Range(0f, maxRandomDelay) : maxRandomDelay;
             UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
         }
 
@@ -41,20 +40,22 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 
             float progress = (timeElapsed - randomDelay) / (duration / 2f);
             progress = Mathf.Clamp01(progress);
-
-            progress = EaseInOut(progress);
+            progress = EaseByCurve(progress);
 
             Vector3 currentScale = startScale + scaleAxis.normalized * (scaleFactor - 1) * (isReversing ? (1 - progress) : progress);
-
             transform.localScale = currentScale;
 
             timeElapsed += deltaTime;
-
             if (timeElapsed >= duration / 2f + randomDelay)
             {
                 timeElapsed = randomDelay;
                 isReversing = !isReversing;
             }
+        }
+
+        private float EaseByCurve(float t)
+        {
+            return easeCurve.Evaluate(t);
         }
 
         private float EaseInOut(float t)

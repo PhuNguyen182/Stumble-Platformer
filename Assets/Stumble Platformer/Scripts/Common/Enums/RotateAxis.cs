@@ -1,6 +1,6 @@
 using System;
 
-namespace StumblePlatformer.Scripts.Gameplay.Common.Enums
+namespace StumblePlatformer.Scripts.Common.Enums
 {
     [Serializable]
     public enum RotateAxis

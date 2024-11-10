@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
@@ -7,13 +7,14 @@ using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerController : MonoBehaviour, IDamageable, ISetCharacterActive
+    public class PlayerController : MonoBehaviour, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
     {
         [Header("Attachments")]
+        [SerializeField] private Rigidbody playerBody;
         [SerializeField] private Animator characterAnimator;
         [SerializeField] private InputReceiver inputReceiver;
         [SerializeField] private GroundChecker groundChecker;
-        [SerializeField] private Rigidbody playerBody;
+        [SerializeField] private CameraPointer cameraPointer;
 
         [Header("Settings")]
         [SerializeField] private Transform characterPivot;
@@ -27,7 +28,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private float _stunDuration = 0;
 
         private Vector3 _moveInput;
+        private Vector3 _flatMoveVelocity;
         private Vector3 _moveVelocity;
+
+        public bool IsStunning => _isStunning;
 
         private void Update()
         {
@@ -75,27 +79,34 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             if (_moveInput != Vector3.zero)
             {
-                _moveVelocity = _moveInput * characterConfig.MoveSpeed;
+                _moveVelocity = _moveInput.normalized * characterConfig.MoveSpeed;
                 _moveVelocity.y = playerBody.velocity.y;
-                playerBody.velocity = _moveVelocity + groundChecker.GroundVelocity;
+                playerBody.velocity = _moveVelocity;
             }
 
             playerBody.ClampVelocity(characterConfig.MaxSpeed);
-            Vector3 flatMoveVelocity = new Vector3(playerBody.velocity.x, 0, playerBody.velocity.z);
+            _flatMoveVelocity = playerBody.GetFlatVelocity();
 
-            bool isRunning = flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
+            bool isRunning = _flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
             characterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
 
-            float moveThreshold = flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
+            float moveThreshold = _flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
             characterAnimator.SetFloat(CharacterAnimationKeys.MoveKey, moveThreshold);
+
+            characterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, !groundChecker.IsGrounded && IsFalling());
         }
 
         private void Turn()
         {
-            if(_moveInput != Vector3.zero && !_isStunning)
+            if(_flatMoveVelocity.sqrMagnitude > characterConfig.RotateVelocityThreshold && !_isStunning)
             {
+                Quaternion inversedRotation = Quaternion.Inverse(transform.localRotation);
                 float angle = Mathf.Atan2(playerBody.velocity.x, playerBody.velocity.z) * Mathf.Rad2Deg;
-                Quaternion toRotation = Quaternion.Euler(0, angle, 0);
+                Quaternion toRotation = Quaternion.Euler(0, angle + inversedRotation.eulerAngles.y, 0);
+                
+                if (transform.parent != null)
+                    toRotation = toRotation * Quaternion.Inverse(transform.parent.rotation);
+
                 characterPivot.localRotation = Quaternion.Slerp(characterPivot.localRotation, toRotation
                                                                 , Time.deltaTime * characterConfig.RotationSmoothFactor);
             }
@@ -107,7 +118,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 if (groundChecker.IsGrounded)
                 {
-                    _moveVelocity = new Vector3(playerBody.velocity.x, characterConfig.JumpHeight, playerBody.velocity.z); 
+                    _moveVelocity = new Vector3(playerBody.velocity.x, characterConfig.JumpHeight, playerBody.velocity.z);
                     playerBody.velocity = _moveVelocity;
                 }
 
@@ -123,7 +134,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 }
             }
 
-            bool isFalling = IsFalling();
             bool isJumping = IsJumping();
 
             if(isJumping)
@@ -134,7 +144,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             _isAirDashing = false;
             characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);
-         
+
             if (!_isStunning)
                 characterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, false);
         }
@@ -158,9 +168,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private void SetFreezeRotation(bool isCharacterStunning)
         {
             playerBody.constraints = isCharacterStunning ? RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ
-                                                         : RigidbodyConstraints.FreezeRotation;
-            if (!isCharacterStunning)
-                playerBody.rotation = Quaternion.identity;
+                                                         : RigidbodyConstraints.FreezeRotation;            
+        }
+
+        public void SetParent(Transform parent, bool stayWorldPosition = true)
+        {
+            if(parent != null)
+                transform.SetParent(parent, stayWorldPosition);
+            else 
+                transform.SetParent(null);
         }
 
         public void SetCharacterActive(bool active)
@@ -173,11 +189,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             if (_isStunning)
                 return;
 
+            _isStunning = true;
             _stunDuration = damageData.StunDuration;
             SetStunningState(true);
 
             if (damageData.AttackForce != 0 && damageData.ForceDirection != Vector3.zero)
-                playerBody.AddForce(damageData.AttackForce * damageData.ForceDirection);
+                playerBody.AddForce(damageData.AttackForce * damageData.ForceDirection, ForceMode.Impulse);
         }
     }
 }

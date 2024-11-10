@@ -5,28 +5,43 @@ using UnityEngine;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class ObstacleAttacker : MonoBehaviour
     {
-        public bool CanAttack { get; set; }
+        [SerializeField] private bool canFreeCheckBodyType;
 
-        public Action<Collision> ExitDamage;
-        public Action<Collision> DamageAttack;
+        private bool _canAttack;
+        private bool _hasCollider;
+        private Collider _collider;
 
-        private void OnCollisionEnter(Collision collision)
+        public bool CanAttack 
         {
-            if (CanAttack)
-                DamageAttack?.Invoke(collision);
+            get => _canAttack;
+            set
+            {
+                _canAttack = value;
+
+                if (_hasCollider)
+                    _collider.enabled = _canAttack;
+            }
         }
 
-        private void OnCollisionStay(Collision collision)
+        private void Awake()
         {
-            if (CanAttack)
-                DamageAttack?.Invoke(collision);
+            _hasCollider = TryGetComponent<Collider>(out _collider);
         }
 
-        private void OnCollisionExit(Collision collision)
+#if UNITY_EDITOR
+        private Rigidbody _attactBody;
+
+        private void OnValidate()
         {
-            ExitDamage?.Invoke(collision);
+            _attactBody ??= GetComponent<Rigidbody>();
+
+            if (_attactBody != null && !canFreeCheckBodyType)
+                _attactBody.isKinematic = true;
+
         }
+#endif
     }
 }

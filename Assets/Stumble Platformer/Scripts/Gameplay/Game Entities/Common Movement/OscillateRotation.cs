@@ -5,16 +5,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
     public class OscillateRotation : MonoBehaviour, IUpdateHandler
     {
-        public Vector3 rotationAxis = Vector3.up;
-        public float rotationAngle = 45f;
-        public float duration = 2f;
-        public bool useRandomDelay = false; // Toggle random delay
-        public float maxRandomDelay = 1f; // Maximum random delay
+        [Header("Movement")]
+        [SerializeField] private AnimationCurve easeCurve;
+        [SerializeField] private Vector3 rotationAxis = Vector3.up;
+        [SerializeField] private float rotationAngle = 45f;
+        [SerializeField] private float duration = 2f;
 
-        private Quaternion startRotation;
-        private float timeElapsed = 0f;
+        [Header("Delay")]
+        [SerializeField] private bool useRandomDelay = false;
+        [SerializeField] private float maxRandomDelay = 1f;
+
         private bool isReversing = false;
+        private float timeElapsed = 0f;
         private float randomDelay = 0f;
+        private Quaternion startRotation;
 
         public bool IsActive { get; set; }
 
@@ -22,12 +26,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
         {
             IsActive = true;
             startRotation = transform.rotation;
-
-            if (useRandomDelay)
-            {
-                randomDelay = Random.Range(0f, maxRandomDelay);
-            }
-
+            randomDelay = useRandomDelay ? Random.Range(0f, maxRandomDelay) : maxRandomDelay;
             UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
         }
 
@@ -41,21 +40,23 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 
             float progress = (timeElapsed - randomDelay) / (duration / 2f);
             progress = Mathf.Clamp01(progress);
-
-            progress = EaseInOut(progress);
+            progress = EaseByCurve(progress);
 
             float currentAngle = rotationAngle * (isReversing ? (1 - progress) : progress);
             Quaternion currentRotation = startRotation * Quaternion.AngleAxis(currentAngle, rotationAxis);
-
             transform.rotation = currentRotation;
 
             timeElapsed += deltaTime;
-
             if (timeElapsed >= duration / 2f + randomDelay)
             {
                 timeElapsed = randomDelay;
                 isReversing = !isReversing;
             }
+        }
+
+        private float EaseByCurve(float t)
+        {
+            return easeCurve.Evaluate(t);
         }
 
         private float EaseInOut(float t)
