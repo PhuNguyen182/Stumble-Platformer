@@ -35,6 +35,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private Vector3 _moveVelocity;
 
         public bool IsStunning => _isStunning;
+        public PlayerGraphics PlayerGraphics => playerGraphics;
 
         private void Start()
         {

@@ -20,9 +20,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         public Vector3 GetRandomSpawnPosition()
         {
-            float x = Random.Range(rangeCenter.x - rangeSize.x / 2, rangeCenter.x + rangeSize.x / 2);
-            float z = Random.Range(rangeCenter.z - rangeSize.z / 2, rangeCenter.z + rangeSize.z / 2);
-            Vector3 position = new Vector3(x, rangeCenter.y + height, z);
+            float x = Random.Range(Center.x - rangeSize.x / 2, Center.x + rangeSize.x / 2);
+            float z = Random.Range(Center.z - rangeSize.z / 2, Center.z + rangeSize.z / 2);
+            Vector3 position = new Vector3(x, Center.y + height, z);
             return position;
         }
 
