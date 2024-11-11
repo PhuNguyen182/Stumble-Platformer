@@ -10,7 +10,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
     public class CameraPointer : MonoBehaviour
     {
         [SerializeField] private Transform cameraPointer;
-        [SerializeField] private InputReceiver inputReceiver;
         [SerializeField] private CinemachineVirtualCamera virtualCamera;
 
         [Header("Settings")]
@@ -63,7 +62,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         public void ControlCameraAngle()
         {
-            mouseDelta = inputReceiver.CameraDelta;
+            mouseDelta = InputReceiver.Instance.CameraDelta;
             cameraPointer.position = _playerTag.transform.position; // Use this for demove dependency of rotation camera point
 
             adjacentLeg += mouseDelta.y * heightOffsetSpeed;

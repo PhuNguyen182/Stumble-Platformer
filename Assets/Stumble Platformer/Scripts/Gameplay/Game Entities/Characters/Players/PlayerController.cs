@@ -12,7 +12,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         [Header("Attachments")]
         [SerializeField] private Rigidbody playerBody;
         [SerializeField] private Animator characterAnimator;
-        [SerializeField] private InputReceiver inputReceiver;
         [SerializeField] private GroundChecker groundChecker;
         [SerializeField] private CameraPointer cameraPointer;
 
@@ -67,8 +66,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void ReceiveInput()
         {
-            _isJumpPressed = inputReceiver.IsJumpPressed;
-            _moveInput = inputReceiver.RotateAndScaleInput(inputReceiver.Movement);
+            _isJumpPressed = InputReceiver.Instance.IsJumpPressed;
+            _moveInput = InputReceiver.Instance.RotateAndScaleInput(InputReceiver.Instance.Movement);
             _isMoving = _moveInput != Vector3.zero;
 
             if (groundChecker.IsGrounded)

@@ -782,7 +782,7 @@ Transform:
   m_GameObject: {fileID: 2692513404783572885}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7275613, y: 0.016569724, z: -0.013122717, w: 0.68571705}
-  m_LocalPosition: {x: -0.000060926955, y: -0.000019953246, z: 0.003103977}
+  m_LocalPosition: {x: -0.000060926974, y: -0.000019953246, z: 0.0031039778}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1190,16 +1190,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 4fc73e76e9f629c438315cfdc6f388fa, type: 2}
   m_DrawDistance: 1000
-  m_FadeScale: 0.9
-  m_StartAngleFade: 0
-  m_EndAngleFade: 180
+  m_FadeScale: 0.194
+  m_StartAngleFade: 60.708256
+  m_EndAngleFade: 123.08586
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 1
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 7.425}
   m_Size: {x: 1, y: 1, z: 15}
-  m_FadeFactor: 1
+  m_FadeFactor: 0.7
 --- !u!1 &4526791355381153411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,7 +2201,6 @@ GameObject:
   - component: {fileID: 1526033933705026549}
   - component: {fileID: 7314408133217554167}
   - component: {fileID: 7134820915393017844}
-  - component: {fileID: 8941677375487959025}
   - component: {fileID: 5956835733577522111}
   - component: {fileID: 4048378183848726177}
   - component: {fileID: 5324942620933629369}
@@ -2257,7 +2256,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &7134820915393017844
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2281,18 +2280,6 @@ CapsuleCollider:
   m_Height: 1.3
   m_Direction: 1
   m_Center: {x: 0, y: 0.65, z: 0}
---- !u!114 &8941677375487959025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8904596792843684380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d222c5c478c9e8940a7bc13d8e495537, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5956835733577522111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2307,7 +2294,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBody: {fileID: 7314408133217554167}
   characterAnimator: {fileID: 4037431843638726338}
-  inputReceiver: {fileID: 8941677375487959025}
   groundChecker: {fileID: 4048378183848726177}
   cameraPointer: {fileID: 5324942620933629369}
   characterPivot: {fileID: 8349059590945984002}
@@ -2345,7 +2331,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPointer: {fileID: 5271778737421668773}
-  inputReceiver: {fileID: 8941677375487959025}
   virtualCamera: {fileID: 0}
   heightAngle: 60
   cameraDistance: 4.925
