@@ -9,7 +9,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
     {
         [SerializeField] private Vector3 mainCharacterSpawnPosition;
         [SerializeField] private Vector3[] characterSpawnPositions;
-
+        
         public Vector3 MainCharacterSpawnPosition => mainCharacterSpawnPosition;
         public Vector3[] CharacterSpawnPositions => characterSpawnPositions;
 
@@ -18,7 +18,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         {
             Gizmos.color = Color.green;
             Gizmos.DrawSphere(mainCharacterSpawnPosition + transform.position, 0.075f);
-
+            
             if (characterSpawnPositions == null || characterSpawnPositions.Length <= 0)
                 return;
 

@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnAreas: []
+  spawnCharacterArea: {fileID: 0}
   respawnContainer: {fileID: 1818662739129231026}
   obstacleContainer: {fileID: 7194576271237153599}
   platformContainer: {fileID: 8942037371035748699}
@@ -201,7 +202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7053760610615269164, guid: c397b7c41926c4e469b679a055c88dc5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7053760610615269164, guid: c397b7c41926c4e469b679a055c88dc5, type: 3}
       propertyPath: m_LocalRotation.w
