@@ -9,11 +9,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
     public class PlayerController : MonoBehaviour, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
     {
-        [Header("Attachments")]
+        [Header("Movement")]
         [SerializeField] private Rigidbody playerBody;
-        [SerializeField] private Animator characterAnimator;
+        [SerializeField] private PlayerPhysics playerPhysics;
         [SerializeField] private GroundChecker groundChecker;
         [SerializeField] private CameraPointer cameraPointer;
+
+        [Header("Graphics")]
+        [SerializeField] private PlayerGraphics playerGraphics;
+        [SerializeField] private CharacterVisual characterVisual;
 
         [Header("Settings")]
         [SerializeField] private Transform characterPivot;
@@ -31,6 +35,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private Vector3 _moveVelocity;
 
         public bool IsStunning => _isStunning;
+
+        private void Start()
+        {
+            if (playerGraphics.CharacterVisual != null)
+                characterVisual = playerGraphics.CharacterVisual;
+        }
 
         private void Update()
         {
@@ -87,12 +97,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             _flatMoveVelocity = playerBody.GetFlatVelocity();
 
             bool isRunning = _flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
-            characterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
+            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
 
             float moveThreshold = _flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
-            characterAnimator.SetFloat(CharacterAnimationKeys.MoveKey, moveThreshold);
+            characterVisual.CharacterAnimator.SetFloat(CharacterAnimationKeys.MoveKey, moveThreshold);
 
-            characterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, !groundChecker.IsGrounded && IsFalling());
+            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, !groundChecker.IsGrounded && playerPhysics.IsFalling());
         }
 
         private void Turn()
@@ -128,46 +138,30 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                         _isAirDashing = true;
                         _moveVelocity = characterPivot.forward * characterConfig.DashSpeed;
                         playerBody.velocity = _moveVelocity;
-                        characterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, true);
+                        characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, true);
                     }
                 }
             }
 
-            bool isJumping = IsJumping();
+            bool isJumping = playerPhysics.IsJumping();
 
             if(isJumping)
-                characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, true);
+                characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, true);
         }
 
         private void OnGrounded()
         {
             _isAirDashing = false;
-            characterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);
+            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);
 
             if (!_isStunning)
-                characterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, false);
-        }
-
-        private bool IsJumping()
-        {
-            return playerBody.velocity.y >= -characterConfig.CheckFallSpeed;
-        }
-
-        private bool IsFalling()
-        {
-            return playerBody.velocity.y <= characterConfig.CheckFallSpeed;
+                characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, false);
         }
 
         private void SetStunningState(bool isStunning)
         {
-            SetFreezeRotation(isStunning);
-            characterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, isStunning);
-        }
-
-        private void SetFreezeRotation(bool isCharacterStunning)
-        {
-            playerBody.constraints = isCharacterStunning ? RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ
-                                                         : RigidbodyConstraints.FreezeRotation;            
+            playerPhysics.SetFreezeRotation(isStunning);
+            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, isStunning);
         }
 
         public void SetParent(Transform parent, bool stayWorldPosition = true)
@@ -180,7 +174,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         public void SetCharacterActive(bool active)
         {
-            playerBody.isKinematic = !active;
+            playerPhysics.SetCharacterActive(active);
         }
 
         public void TakeDamage(DamageData damageData)
@@ -190,10 +184,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             _isStunning = true;
             _stunDuration = damageData.StunDuration;
-            SetStunningState(true);
 
-            if (damageData.AttackForce != 0 && damageData.ForceDirection != Vector3.zero)
-                playerBody.AddForce(damageData.AttackForce * damageData.ForceDirection, ForceMode.Impulse);
+            SetStunningState(true);
+            playerPhysics.TakeDamage(damageData);
         }
     }
 }
