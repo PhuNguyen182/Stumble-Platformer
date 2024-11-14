@@ -29,6 +29,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private bool _isStunning;
 
         private float _stunDuration = 0;
+        private InputReceiver _inputReceiver;
 
         private Vector3 _moveInput;
         private Vector3 _flatMoveVelocity;
@@ -39,6 +40,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Start()
         {
+            _inputReceiver = InputReceiver.Instance;
+
             if (playerGraphics.CharacterVisual != null)
                 characterVisual = playerGraphics.CharacterVisual;
         }
@@ -77,8 +80,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void ReceiveInput()
         {
-            _isJumpPressed = InputReceiver.Instance.IsJumpPressed;
-            _moveInput = InputReceiver.Instance.RotateAndScaleInput(InputReceiver.Instance.Movement);
+            _isJumpPressed = _inputReceiver.IsJumpPressed;
+            _moveInput = _inputReceiver.RotateAndScaleInput(_inputReceiver.Movement);
             _isMoving = _moveInput != Vector3.zero;
 
             if (groundChecker.IsGrounded)

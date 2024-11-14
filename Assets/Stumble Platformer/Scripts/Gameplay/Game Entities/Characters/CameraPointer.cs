@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using StumblePlatformer.Scripts.Gameplay.GameHandlers;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
-using StumblePlatformer.Scripts.Gameplay.GameHandlers;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
@@ -32,6 +31,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         private PlayerTag _playerTag;
         private Transform _cameraPointer;
+        private InputReceiver _inputReceiver;
         private CinemachineVirtualCamera _virtualCamera;
         private CinemachineTransposer _transposer;
 
@@ -45,10 +45,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             if (_hasPlayerTag)
                 FollowPosition(_playerTag.transform.position);
 
-            _cameraPointer = GameplayManager.Instance.CameraHandler.CameraPointer;
-            _maxHeight = cameraDistance * Mathf.Sin(heightAngle * Mathf.Deg2Rad);
+            _inputReceiver = InputReceiver.Instance;
             _virtualCamera = GameplayManager.Instance.CameraHandler.FollowPlayerCamera;
             _transposer = _virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+
+            _cameraPointer = GameplayManager.Instance.CameraHandler.CameraPointer;
+            _maxHeight = cameraDistance * Mathf.Sin(heightAngle * Mathf.Deg2Rad);
 
             ResetCamera();
         }
@@ -78,7 +80,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         private void ReceiveInput()
         {
-            _mouseDelta = InputReceiver.Instance.CameraDelta;
+            _mouseDelta = _inputReceiver.CameraDelta;
         }
 
         private void ResetCamera()
