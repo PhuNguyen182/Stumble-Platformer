@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Common.Messages;
 using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
@@ -23,8 +24,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 
         private void AddMeggageBrokers()
         {
-            // To do: define some message type and add later
-            //_builder.AddMessageBroker<DecreaseMoveMessage>();
+            _builder.AddMessageBroker<InitializeLevelMessage>();
         }
     }
 }

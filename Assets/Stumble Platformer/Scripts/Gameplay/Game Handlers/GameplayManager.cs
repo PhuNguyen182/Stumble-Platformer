@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
+using Cysharp.Threading.Tasks;
+using GlobalScripts.Utils;
+using UnityEngine.SceneManagement;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 {
@@ -28,9 +31,19 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             _messageBroketManager = new();
         }
 
-        public void OnPlaygroundLoaded(EnvironmentIdentifier environment)
+        private void Update()
         {
-            // To do: after a playground is loaded, do execute essential logic for level
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                TestLoadScene().Forget();
+            }
+        }
+
+        private async UniTask TestLoadScene()
+        {
+            string path = $"Templates/Template Level.unity";
+            Scene scene = SceneManager.GetActiveScene();
+            await AddressablesUtils.LoadSceneViaAddressableAndSetParentContainer(path, scene, LoadSceneMode.Additive);
         }
     }
 }

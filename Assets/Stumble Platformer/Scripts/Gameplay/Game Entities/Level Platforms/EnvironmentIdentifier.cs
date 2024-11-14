@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using StumblePlatformer.Scripts.Gameplay.GameHandlers;
+using StumblePlatformer.Scripts.Common.Messages;
+using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 {
@@ -13,12 +14,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public CinemachineDollyCart TearserFollower;
         [SerializeField] public CinemachineSmoothPath TeaserPath;
 
+        private IPublisher<InitializeLevelMessage> _initLevelPublisher;
+
         private void Awake()
         {
-            if(GameplayManager.Instance != null)
+            _initLevelPublisher = GlobalMessagePipe.GetPublisher<InitializeLevelMessage>();
+            _initLevelPublisher.Publish(new InitializeLevelMessage
             {
-                GameplayManager.Instance.OnPlaygroundLoaded(this);
-            }
+                EnvironmentIdentifier = this
+            });
         }
     }
 }

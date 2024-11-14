@@ -9,10 +9,32 @@ using UnityEngine.ResourceManagement.ResourceLocations;
 using Cysharp.Threading.Tasks;
 #endif
 
+#if REFLEX_SUPPORT
+using Reflex.Core;
+using Reflex.Extensions;
+#endif
+
 namespace GlobalScripts.Utils
 {
     public static class AddressablesUtils
     {
+#if REFLEX_SUPPORT && UNITASK_ADDRESSABLE_SUPPORT
+        public static async UniTask LoadSceneViaAddressableAndSetParentContainer(string key, Scene parentScene
+            , LoadSceneMode loadMode = LoadSceneMode.Single, bool activateOnLoad = true, int priority = 100
+            , CancellationToken cancellationToken = default)
+        {
+            bool isKeyValid = await IsKeyValid(key);
+
+            if (!isKeyValid)
+                return;
+
+            var handle = Addressables.LoadSceneAsync(key, loadMode, activateOnLoad, priority);
+            await handle.Task;
+
+            ReflexSceneManager.OverrideSceneParentContainer(handle.Result.Scene, parentScene.GetSceneContainer());
+        }
+#endif
+
 #if UNITASK_ADDRESSABLE_SUPPORT
         public static async UniTask LoadSceneViaAddressable(string key, LoadSceneMode loadMode = LoadSceneMode.Single
             , bool activateOnLoad = true, int priority = 100, CancellationToken cancellationToken = default)
