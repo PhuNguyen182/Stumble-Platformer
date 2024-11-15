@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Common.Messages;
+using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
@@ -21,7 +22,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
         private PlayerController _currentPlayer;
         private GameStateController _gameStateController;
         
-        private IPlayeRule _playeRule;
+        private IPlayRule _playeRule;
         private IDisposable _initLevelDisposable;
 
         private ISubscriber<RespawnMessage> __respawnSubscriber;
@@ -33,7 +34,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
         private void Awake()
         {
             if (isTesting)
+            {
                 _currentPlayer = playerPrefab;
+                _currentPlayer.PlayerHealth.SetHealth(CharacterConstants.MaxLife);
+            }
         }
 
         private void Start()

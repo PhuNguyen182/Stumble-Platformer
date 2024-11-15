@@ -29,12 +29,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 
         private readonly StateMachine<State, Trigger> _gameStateMachine;
         private readonly StateMachine<State, Trigger>.TriggerWithParameters<EndResult> _endGameTrigger;
-        private readonly StateMachine<State, Trigger>.TriggerWithParameters<EndResult> _finishTrigger;
 
         public GameStateController()
         {
             _gameStateMachine = new StateMachine<State, Trigger>(State.Start);
-            _finishTrigger = _gameStateMachine.SetTriggerParameters<EndResult>(Trigger.Finish);
             _endGameTrigger = _gameStateMachine.SetTriggerParameters<EndResult>(Trigger.EndGame);
 
             _gameStateMachine.Configure(State.Start)
@@ -43,10 +41,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 
             _gameStateMachine.Configure(State.Playing)
                              .OnEntry(PlayGame)
-                             .Permit(_finishTrigger.Trigger, State.Finished);
+                             .Permit(Trigger.Finish, State.Finished);
 
             _gameStateMachine.Configure(State.Finished)
-                             .OnEntryFrom(_finishTrigger, result => OnFinished(result))
+                             .OnEntryFrom(Trigger.Finish, OnFinished)
                              .Permit(_endGameTrigger.Trigger, State.EndGame)
                              .Permit(Trigger.Watch, State.Watching)
                              .Permit(Trigger.Quit, State.Quit);
@@ -73,7 +71,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 
         }
 
-        private void OnFinished(EndResult result)
+        private void OnFinished()
         {
 
         }
@@ -93,11 +91,19 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 
         }
 
-        public void FinishLevel(EndResult result)
+        public void FinishLevel()
         {
-            if (_gameStateMachine.CanFire(_finishTrigger.Trigger))
+            if (_gameStateMachine.CanFire(Trigger.Finish))
             {
-                _gameStateMachine.Fire(_finishTrigger, result);
+                _gameStateMachine.Fire(Trigger.Finish);
+            }
+        }
+
+        public void EndGame(EndResult result)
+        {
+            if (_gameStateMachine.CanFire(_endGameTrigger.Trigger))
+            {
+                _gameStateMachine.Fire(_endGameTrigger, result);
             }
         }
     }

@@ -6,12 +6,17 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
     public class RacingRule : BasePlayRule
     {
-        public override void OnPlayerFall()
+        public override void OnPlayerFinish()
         {
             
         }
 
-        public override void OnPlayerFinish()
+        public override void OnPlayerLose()
+        {
+            
+        }
+
+        public override void OnPlayerWin()
         {
             
         }

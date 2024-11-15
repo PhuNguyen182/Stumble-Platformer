@@ -16,11 +16,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public CinemachineSmoothPath TeaserPath;
 
         private IPublisher<InitializeLevelMessage> _initLevelPublisher;
-        public IPlayeRule PlayRule { get; private set; }
+        public IPlayRule PlayRule { get; private set; }
 
         private void Start()
         {
-            PlayRule = GetComponent<IPlayeRule>();
+            PlayRule = GetComponent<IPlayRule>();
             _initLevelPublisher = GlobalMessagePipe.GetPublisher<InitializeLevelMessage>();
             
             _initLevelPublisher.Publish(new InitializeLevelMessage

@@ -63,11 +63,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             await UniTask.WaitForSeconds(deadDelayAmount, cancellationToken: destroyCancellationToken);
             playerController.SetCharacterActive(false);
 
-            await UniTask.WaitForSeconds(respawnDelayAmount, cancellationToken: destroyCancellationToken);
-            _respawnPublisher.Publish(new RespawnMessage
+            //if (_healthPoint > 0)
             {
-                ID = gameObject.GetInstanceID()
-            });
+                await UniTask.WaitForSeconds(respawnDelayAmount, cancellationToken: destroyCancellationToken);
+                _respawnPublisher.Publish(new RespawnMessage
+                {
+                    ID = gameObject.GetInstanceID()
+                });
+            }
         }
 
         public void TakeDamage(int damage)

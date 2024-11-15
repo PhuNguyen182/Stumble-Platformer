@@ -39,6 +39,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         public bool IsActive { get; set; }
         public bool IsStunning => _isStunning;
         public PlayerGraphics PlayerGraphics => playerGraphics;
+        public PlayerHealth PlayerHealth => playerHealth;
 
         private void Start()
         {

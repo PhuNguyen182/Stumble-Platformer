@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Common.Messages;
+using StumblePlatformer.Scripts.Gameplay.GameHandlers;
+using StumblePlatformer.Scripts.Common.Enums;
 using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
-    public abstract class BasePlayRule : MonoBehaviour, IPlayeRule
+    public abstract class BasePlayRule : MonoBehaviour, IPlayRule
     {
-        protected IDisposable _messageDisposable;
-        protected ISubscriber<ReportPlayerHealthMessage> _playerHealthSubscriber;
+        protected IDisposable messageDisposable;
+        protected ISubscriber<ReportPlayerHealthMessage> playerHealthSubscriber;
+        protected GameStateController gameStateController;
 
         public int PlayerHealth { get; private set; }
 
@@ -19,26 +22,35 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             RegisterMessage();
         }
 
+        public abstract void OnPlayerWin();
         public abstract void OnPlayerFinish();
-        public abstract void OnPlayerFall();
+        public abstract void OnPlayerLose();
+        
+        public void Finish()
+        {
+            gameStateController.FinishLevel();
+            OnPlayerFinish();
+        }
 
         public void Win()
         {
-            
+            gameStateController.EndGame(EndResult.Win);
+            OnPlayerWin();
         }
 
         public void Lose()
         {
-            
+            gameStateController.EndGame(EndResult.Lose);
+            OnPlayerLose();
         }
 
         protected void RegisterMessage()
         {
             var builder = DisposableBag.CreateBuilder();
-            _playerHealthSubscriber = GlobalMessagePipe.GetSubscriber<ReportPlayerHealthMessage>();
-            _playerHealthSubscriber.Subscribe(UpdateHealth)
+            playerHealthSubscriber = GlobalMessagePipe.GetSubscriber<ReportPlayerHealthMessage>();
+            playerHealthSubscriber.Subscribe(UpdateHealth)
                                    .AddTo(builder);
-            _messageDisposable = builder.Build();
+            messageDisposable = builder.Build();
         }
 
         protected void UpdateHealth(ReportPlayerHealthMessage message)
@@ -46,9 +58,14 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             PlayerHealth = message.Health;
         }
 
+        public void SetStateController(GameStateController gameStateController)
+        {
+            this.gameStateController = gameStateController;
+        }
+
         private void OnDestroy()
         {
-            _messageDisposable.Dispose();
+            messageDisposable.Dispose();
         }
     }
 }
