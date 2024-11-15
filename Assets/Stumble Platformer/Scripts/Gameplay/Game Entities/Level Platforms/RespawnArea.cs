@@ -33,6 +33,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
             {
                 rangeCenter = range.center;
                 rangeSize = range.size;
+                Vector3 scaledSize = new Vector3
+                (
+                    rangeSize.x * transform.localScale.x,
+                    rangeSize.y * transform.localScale.y,
+                    rangeSize.z * transform.localScale.z
+                );
+
+                rangeSize = scaledSize;
             }
         }
 

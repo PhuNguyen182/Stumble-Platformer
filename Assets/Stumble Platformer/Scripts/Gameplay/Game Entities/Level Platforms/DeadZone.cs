@@ -11,6 +11,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] private Vector3 offset;
         [SerializeField] private DeadZoneEnvironment deadZoneEnvironment;
         [SerializeField] private BoxCollider deadZoneCollider;
+        [SerializeField] private bool drawGizmo = true;
 
         public DeadZoneEnvironment Environment => deadZoneEnvironment;
 
@@ -22,6 +23,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
+            if (!drawGizmo)
+                return;
+
             Vector3 boxSize = deadZoneCollider.size;
             Vector3 scaledSize = new Vector3
                 (

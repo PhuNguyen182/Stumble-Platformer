@@ -18,7 +18,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         private IPublisher<InitializeLevelMessage> _initLevelPublisher;
         public IPlayeRule PlayRule { get; private set; }
 
-        private void Awake()
+        private void Start()
         {
             PlayRule = GetComponent<IPlayeRule>();
             _initLevelPublisher = GlobalMessagePipe.GetPublisher<InitializeLevelMessage>();
