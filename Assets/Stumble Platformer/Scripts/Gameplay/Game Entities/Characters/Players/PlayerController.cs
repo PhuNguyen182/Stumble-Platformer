@@ -13,7 +13,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         [SerializeField] private Rigidbody playerBody;
         [SerializeField] private PlayerPhysics playerPhysics;
         [SerializeField] private GroundChecker groundChecker;
-        [SerializeField] private CameraPointer cameraPointer;
 
         [Header("Graphics")]
         [SerializeField] private PlayerGraphics playerGraphics;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using Cinemachine;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
@@ -10,9 +11,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
     {
         [SerializeField] private Transform followTarget;
         [SerializeField] private CinemachineVirtualCamera followPlayerCamera;
+        [SerializeField] private CameraPointer cameraPointer;
 
         public Transform CameraPointer => followTarget;
         public CinemachineVirtualCamera FollowPlayerCamera => followPlayerCamera;
+
+        public void SetFollowTarget(Transform followTarget)
+        {
+            cameraPointer.SetFollowTarget(followTarget);
+            cameraPointer.SetupCameraOnStart();
+        }
 
         public void FollowPosition(Vector3 position)
         {

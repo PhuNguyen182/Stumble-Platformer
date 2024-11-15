@@ -31,19 +31,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         private PlayerTag _playerTag;
         private Transform _cameraPointer;
+        private Transform _followTarget;
         private InputReceiver _inputReceiver;
         private CinemachineVirtualCamera _virtualCamera;
         private CinemachineTransposer _transposer;
 
-        private void Awake()
+        private void FixedUpdate()
         {
-            _hasPlayerTag = TryGetComponent(out _playerTag);
+            ReceiveInput();
+            ControlCameraAngle();
         }
 
-        private void Start()
+        public void SetupCameraOnStart()
         {
-            if (_hasPlayerTag)
-                FollowPosition(_playerTag.transform.position);
+            FollowPosition(_followTarget.position);
 
             _inputReceiver = InputReceiver.Instance;
             _virtualCamera = GameplayManager.Instance.CameraHandler.FollowPlayerCamera;
@@ -55,15 +56,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             ResetCamera();
         }
 
-        private void FixedUpdate()
+        public void SetFollowTarget(Transform target)
         {
-            ReceiveInput();
-            ControlCameraAngle();
+            _followTarget = target;
         }
 
         public void ControlCameraAngle()
         {
-            FollowPosition(_playerTag.transform.position);
+            FollowPosition(_followTarget.position);
 
             _adjacentLeg += _mouseDelta.y * heightOffsetSpeed;
             _yRotation -= _mouseDelta.x * rotationSpeed;

@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using Cysharp.Threading.Tasks;
 using GlobalScripts.Utils;
-using UnityEngine.SceneManagement;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 {
@@ -13,6 +12,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
     {
         [SerializeField] private CameraHandler cameraHandler;
         [SerializeField] private InputReceiver inputReceiver;
+        [SerializeField] private PlayGroundController playGroundController;
 
         private MessageBroketManager _messageBroketManager;
 
@@ -26,9 +26,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             InitializeService();
         }
 
+        private void Start()
+        {
+            InitGameplay().Forget();
+        }
+
         private void InitializeService()
         {
             _messageBroketManager = new();
+        }
+
+        private async UniTask InitGameplay()
+        {
+            cameraHandler.SetFollowTarget(playGroundController.CurrentPlayer.transform);
+            await playGroundController.GenerateLevelAsync();
+            playGroundController.SpawnPlayer();
         }
 
         private void Update()
