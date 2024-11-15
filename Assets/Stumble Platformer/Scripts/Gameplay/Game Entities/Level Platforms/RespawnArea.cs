@@ -35,5 +35,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                 rangeSize = range.size;
             }
         }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            Vector3 boxSize = range.size;
+            Vector3 scaledSize = new Vector3
+                (
+                    boxSize.x * transform.localScale.x,
+                    boxSize.y * transform.localScale.y,
+                    boxSize.z * transform.localScale.z
+                );
+
+            Gizmos.color = new Color(0, 1, 0, 0.45f);
+            Gizmos.DrawCube(transform.position, scaledSize);
+        }
+#endif
     }
 }
