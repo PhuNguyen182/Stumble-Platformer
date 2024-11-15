@@ -22,6 +22,20 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             RegisterMessage();
         }
 
+        protected void RegisterMessage()
+        {
+            var builder = DisposableBag.CreateBuilder();
+            playerHealthSubscriber = GlobalMessagePipe.GetSubscriber<ReportPlayerHealthMessage>();
+            playerHealthSubscriber.Subscribe(UpdateHealth)
+                                  .AddTo(builder);
+            messageDisposable = builder.Build();
+        }
+
+        protected void UpdateHealth(ReportPlayerHealthMessage message)
+        {
+            PlayerHealth = message.Health;
+        }
+
         public abstract void OnPlayerWin();
         public abstract void OnPlayerFinish();
         public abstract void OnPlayerLose();
@@ -42,20 +56,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             gameStateController.EndGame(EndResult.Lose);
             OnPlayerLose();
-        }
-
-        protected void RegisterMessage()
-        {
-            var builder = DisposableBag.CreateBuilder();
-            playerHealthSubscriber = GlobalMessagePipe.GetSubscriber<ReportPlayerHealthMessage>();
-            playerHealthSubscriber.Subscribe(UpdateHealth)
-                                   .AddTo(builder);
-            messageDisposable = builder.Build();
-        }
-
-        protected void UpdateHealth(ReportPlayerHealthMessage message)
-        {
-            PlayerHealth = message.Health;
         }
 
         public void SetStateController(GameStateController gameStateController)
