@@ -10,7 +10,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
     public class PlayerController : MonoBehaviour, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
     {
         [Header("Movement")]
-        [SerializeField] private Rigidbody playerBody;
         [SerializeField] private PlayerPhysics playerPhysics;
         [SerializeField] private GroundChecker groundChecker;
 
@@ -34,12 +33,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private Vector3 _flatMoveVelocity;
         private Vector3 _moveVelocity;
 
+        private Rigidbody _playerBody;
         public bool IsStunning => _isStunning;
         public PlayerGraphics PlayerGraphics => playerGraphics;
 
         private void Start()
         {
             _inputReceiver = InputReceiver.Instance;
+            _playerBody = playerPhysics.GetPlayerBody();
 
             if (playerGraphics.CharacterVisual != null)
                 characterVisual = playerGraphics.CharacterVisual;
@@ -92,12 +93,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             if (_moveInput != Vector3.zero)
             {
                 _moveVelocity = _moveInput.normalized * characterConfig.MoveSpeed;
-                _moveVelocity.y = playerBody.velocity.y;
-                playerBody.velocity = _moveVelocity;
+                _moveVelocity.y = _playerBody.velocity.y;
+                _playerBody.velocity = _moveVelocity;
             }
 
-            playerBody.ClampVelocity(characterConfig.MaxSpeed);
-            _flatMoveVelocity = playerBody.GetFlatVelocity();
+            _playerBody.ClampVelocity(characterConfig.MaxSpeed);
+            _flatMoveVelocity = _playerBody.GetFlatVelocity();
 
             bool isRunning = _flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
             characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
@@ -113,7 +114,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             if(_flatMoveVelocity.sqrMagnitude > characterConfig.RotateVelocityThreshold && !_isStunning)
             {
                 Quaternion inversedRotation = Quaternion.Inverse(transform.localRotation);
-                float angle = Mathf.Atan2(playerBody.velocity.x, playerBody.velocity.z) * Mathf.Rad2Deg;
+                float angle = Mathf.Atan2(_playerBody.velocity.x, _playerBody.velocity.z) * Mathf.Rad2Deg;
                 Quaternion toRotation = Quaternion.Euler(0, angle + inversedRotation.eulerAngles.y, 0);
                 
                 if (transform.parent != null)
@@ -130,8 +131,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 if (groundChecker.IsGrounded)
                 {
-                    _moveVelocity = new Vector3(playerBody.velocity.x, characterConfig.JumpHeight, playerBody.velocity.z);
-                    playerBody.velocity = _moveVelocity;
+                    _moveVelocity = new Vector3(_playerBody.velocity.x, characterConfig.JumpHeight, _playerBody.velocity.z);
+                    _playerBody.velocity = _moveVelocity;
                 }
 
                 else
@@ -140,7 +141,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                     {
                         _isAirDashing = true;
                         _moveVelocity = characterPivot.forward * characterConfig.DashSpeed;
-                        playerBody.velocity = _moveVelocity;
+                        _playerBody.velocity = _moveVelocity;
                         characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, true);
                     }
                 }

@@ -10,6 +10,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         [SerializeField] private Rigidbody playerBody;
         [SerializeField] private CharacterConfig characterConfig;
 
+        public Rigidbody GetPlayerBody()
+        {
+            return playerBody;
+        }
+
         public void SetCharacterActive(bool active)
         {
             playerBody.isKinematic = !active;

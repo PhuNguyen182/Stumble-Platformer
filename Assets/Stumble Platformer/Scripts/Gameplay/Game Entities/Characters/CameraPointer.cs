@@ -10,6 +10,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
     public class CameraPointer : MonoBehaviour
     {
+        [SerializeField] private Transform cameraPointer;
+        [SerializeField] private CinemachineVirtualCamera virtualCamera;
+
         [Header("Settings")]
         [SerializeField] private float heightAngle = 60f;
         [SerializeField] private float cameraDistance = 4.75f;
@@ -30,10 +33,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         private Vector2 _mouseDelta;
 
         private PlayerTag _playerTag;
-        private Transform _cameraPointer;
         private Transform _followTarget;
         private InputReceiver _inputReceiver;
-        private CinemachineVirtualCamera _virtualCamera;
         private CinemachineTransposer _transposer;
 
         private void FixedUpdate()
@@ -47,10 +48,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             FollowPosition(_followTarget.position);
 
             _inputReceiver = InputReceiver.Instance;
-            _virtualCamera = GameplayManager.Instance.CameraHandler.FollowPlayerCamera;
-            _transposer = _virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
-
-            _cameraPointer = GameplayManager.Instance.CameraHandler.CameraPointer;
+            _transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
             _maxHeight = cameraDistance * Mathf.Sin(heightAngle * Mathf.Deg2Rad);
 
             ResetCamera();
@@ -75,7 +73,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             _transposer.m_FollowOffset = _offsetVector;
 
             Quaternion targetRotation = Quaternion.Euler(new(0, _yRotation, 0));
-            _cameraPointer.rotation = targetRotation;
+            cameraPointer.rotation = targetRotation;
         }
 
         private void ReceiveInput()
@@ -85,13 +83,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         private void ResetCamera()
         {
-            _yRotation = _cameraPointer.eulerAngles.y - 180;
+            _yRotation = cameraPointer.eulerAngles.y - 180;
             _adjacentLeg = _transposer.m_FollowOffset.y;
         }
 
         private void FollowPosition(Vector3 position)
         {
-            GameplayManager.Instance.CameraHandler.FollowPosition(position);
+            cameraPointer.position = position;
         }
     }
 }

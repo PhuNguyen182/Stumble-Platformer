@@ -13,18 +13,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
         [SerializeField] private CinemachineVirtualCamera followPlayerCamera;
         [SerializeField] private CameraPointer cameraPointer;
 
-        public Transform CameraPointer => followTarget;
-        public CinemachineVirtualCamera FollowPlayerCamera => followPlayerCamera;
-
         public void SetFollowTarget(Transform followTarget)
         {
             cameraPointer.SetFollowTarget(followTarget);
             cameraPointer.SetupCameraOnStart();
-        }
-
-        public void FollowPosition(Vector3 position)
-        {
-            followTarget.position = position;
         }
 
 #if UNITY_EDITOR
