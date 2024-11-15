@@ -92,6 +92,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             
             Vector3 respawnPosition = currentCheckPoint.GetRandomSpawnPosition();
             _currentPlayer.transform.position = respawnPosition;
+
+            _currentPlayer.SetCharacterActive(true);
             _currentPlayer.IsActive = true;
         }
 
