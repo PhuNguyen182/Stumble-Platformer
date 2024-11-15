@@ -9,7 +9,7 @@ using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerHealth : MonoBehaviour, IDamageable, ICharacterHealth
+    public class PlayerHealth : MonoBehaviour, ICharacterHealth
     {
         [SerializeField] private float deadDelayAmount = 1f;
         [SerializeField] private float respawnDelayAmount = 1f;
@@ -17,15 +17,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private int _healthPoint = 0;
         private int _checkPointIndex = 0;
+
         private IPublisher<RespawnMessage> _respawnPublisher;
+        private IPublisher<ReportPlayerHealthMessage> _reportPlayerHealthPublisher;
 
         public int CheckPointIndex => _checkPointIndex;
 
-        public int HealthPoint => throw new System.NotImplementedException();
+        public int HealthPoint => _healthPoint;
 
         private void Start()
         {
             _respawnPublisher = GlobalMessagePipe.GetPublisher<RespawnMessage>();
+            _reportPlayerHealthPublisher = GlobalMessagePipe.GetPublisher<ReportPlayerHealthMessage>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -46,6 +49,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                     DamageAmount = 1
                 });
 
+                _reportPlayerHealthPublisher.Publish(new ReportPlayerHealthMessage
+                {
+                    Health = HealthPoint
+                });
+
                 OnDeadZoneDelay().Forget();
             }
         }
@@ -62,14 +70,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             });
         }
 
-        public void TakeDamage(DamageData damageData)
-        {
-            TakeDamage(damageData.DamageAmount);
-        }
-
         public void TakeDamage(int damage)
         {
             _healthPoint = _healthPoint - damage;
+        }
+
+        public void SetHealth(int health)
+        {
+            _healthPoint = health;
         }
     }
 }

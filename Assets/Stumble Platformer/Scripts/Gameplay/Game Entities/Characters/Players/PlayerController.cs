@@ -194,10 +194,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 return;
 
             _isStunning = true;
+            SetStunningState(true);
             _stunDuration = damageData.StunDuration;
 
-            SetStunningState(true);
             playerPhysics.TakeDamage(damageData);
+            playerHealth.TakeDamage(damageData.DamageAmount);
         }
 
         public int GetCheckPointIndex()

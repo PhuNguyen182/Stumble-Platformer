@@ -1,7 +1,7 @@
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
