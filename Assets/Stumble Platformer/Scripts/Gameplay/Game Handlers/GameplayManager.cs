@@ -42,20 +42,5 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             await playGroundController.GenerateLevelAsync();
             playGroundController.SpawnPlayer();
         }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                TestLoadScene().Forget();
-            }
-        }
-
-        private async UniTask TestLoadScene()
-        {
-            string path = $"Templates/Template Level.unity";
-            Scene scene = SceneManager.GetActiveScene();
-            await AddressablesUtils.LoadSceneViaAddressableAndSetParentContainer(path, scene, LoadSceneMode.Additive);
-        }
     }
 }

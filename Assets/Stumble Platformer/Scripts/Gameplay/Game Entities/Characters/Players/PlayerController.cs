@@ -9,6 +9,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
     public class PlayerController : MonoBehaviour, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
     {
+        [SerializeField] private PlayerHealth playerHealth;
+
         [Header("Movement")]
         [SerializeField] private PlayerPhysics playerPhysics;
         [SerializeField] private GroundChecker groundChecker;
@@ -34,11 +36,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private Vector3 _moveVelocity;
 
         private Rigidbody _playerBody;
+        public bool IsActive { get; set; }
         public bool IsStunning => _isStunning;
         public PlayerGraphics PlayerGraphics => playerGraphics;
 
         private void Start()
         {
+            IsActive = true;
             _inputReceiver = InputReceiver.Instance;
             _playerBody = playerPhysics.GetPlayerBody();
 
@@ -80,6 +84,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void ReceiveInput()
         {
+            if (!IsActive)
+                return;
+
             _isJumpPressed = _inputReceiver.IsJumpPressed;
             _moveInput = _inputReceiver.RotateAndScaleInput(_inputReceiver.Movement);
             _isMoving = _moveInput != Vector3.zero;
@@ -191,6 +198,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             SetStunningState(true);
             playerPhysics.TakeDamage(damageData);
+        }
+
+        public int GetCheckPointIndex()
+        {
+            return playerHealth.CheckPointIndex;
         }
     }
 }

@@ -24,6 +24,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 
         private void AddMeggageBrokers()
         {
+            _builder.AddMessageBroker<RespawnMessage>();
             _builder.AddMessageBroker<InitializeLevelMessage>();
         }
     }

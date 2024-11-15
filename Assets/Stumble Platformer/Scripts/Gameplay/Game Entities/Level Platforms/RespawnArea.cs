@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 {
@@ -12,7 +13,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] private Vector3 rangeCenter;
         [SerializeField] private Vector3 rangeSize;
         [SerializeField] private float height = 0;
-        [SerializeField] private bool updateRange;
 
         public int AreaIndex => areaIndex;
         public Vector3 Size => rangeSize;
@@ -26,23 +26,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
             return position;
         }
 
-#if UNITY_EDITOR
-        private void OnValidate()
+        [Button]
+        private void UpdateRange()
         {
-            range ??= GetComponent<BoxCollider>();
-            range.isTrigger = true;
-
-            if (updateRange)
+            if (range != null)
             {
-                updateRange = false;
-
-                if (range != null)
-                {
-                    rangeCenter = range.center;
-                    rangeSize = range.size;
-                }
+                rangeCenter = range.center;
+                rangeSize = range.size;
             }
         }
-#endif
     }
 }

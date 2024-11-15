@@ -9,17 +9,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
     [ExecuteAlways]
     public class CameraHandler : MonoBehaviour
     {
-        [SerializeField] private Transform followTarget;
         [SerializeField] private CinemachineVirtualCamera followPlayerCamera;
         [SerializeField] private CameraPointer cameraPointer;
 
-        public void SetFollowTarget(Transform followTarget)
-        {
-            cameraPointer.SetFollowTarget(followTarget);
-            cameraPointer.SetupCameraOnStart();
-        }
-
 #if UNITY_EDITOR
+        [Header("Testing")]
+        [SerializeField] private Transform followTarget; 
         [SerializeField] private Transform testPlayerPoint;
 
         private void Update()
@@ -34,5 +29,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
                 followTarget.position = testPlayerPoint.position;
         }
 #endif
+
+        public void SetFollowTarget(Transform followTarget)
+        {
+            // This function can be used to switch to other players
+            cameraPointer.SetFollowTarget(followTarget);
+            cameraPointer.SetupCameraOnStart();
+        }
     }
 }

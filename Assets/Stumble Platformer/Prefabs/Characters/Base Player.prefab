@@ -132,9 +132,8 @@ GameObject:
   - component: {fileID: 5956835733577522111}
   - component: {fileID: 7834813393693615432}
   - component: {fileID: 4048378183848726177}
-  - component: {fileID: 5324942620933629369}
-  - component: {fileID: 2672130858858309034}
   - component: {fileID: 3524437742818262208}
+  - component: {fileID: 5226881117910915648}
   m_Layer: 3
   m_Name: Base Player
   m_TagString: Untagged
@@ -222,12 +221,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad9e0bc6f247b442b9171cfc1e2a15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBody: {fileID: 7314408133217554167}
-  playerGraphics: {fileID: 7834813393693615432}
+  playerHealth: {fileID: 5226881117910915648}
   playerPhysics: {fileID: 3524437742818262208}
-  characterVisual: {fileID: 0}
   groundChecker: {fileID: 4048378183848726177}
-  cameraPointer: {fileID: 5324942620933629369}
+  playerGraphics: {fileID: 7834813393693615432}
+  characterVisual: {fileID: 0}
   characterPivot: {fileID: 8349059590945984002}
   characterConfig: {fileID: 11400000, guid: 9a39b72e91bd0fa428fd8471aafe017a, type: 2}
 --- !u!114 &7834813393693615432
@@ -264,35 +262,6 @@ MonoBehaviour:
     m_Bits: 512
   groundOffset: {x: 0, y: 0, z: 0}
   checkGroundRadius: 0.1
---- !u!114 &5324942620933629369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8904596792843684380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57044850940bb74ab4dbb2379e3934e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heightAngle: 60
-  cameraDistance: 4.925
-  minCameraHeight: 0.5
-  rotationSpeed: 0.15
-  heightOffsetSpeed: 0.01
---- !u!114 &2672130858858309034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8904596792843684380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d09751afeb7b2e4b8ee96f4345b94de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3524437742818262208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,3 +276,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBody: {fileID: 7314408133217554167}
   characterConfig: {fileID: 11400000, guid: 9a39b72e91bd0fa428fd8471aafe017a, type: 2}
+--- !u!114 &5226881117910915648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8904596792843684380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea65e52318947574c833aa90648f650e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayAmount: 1
+  playerController: {fileID: 5956835733577522111}

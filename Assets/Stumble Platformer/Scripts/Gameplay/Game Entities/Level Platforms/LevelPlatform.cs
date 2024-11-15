@@ -23,6 +23,17 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         public SpawnCharacterArea SpawnCharacterArea => spawnCharacterArea;
 
+        public RespawnArea GetCheckPointByIndex(int index)
+        {
+            for (int i = 0; i < respawnAreas.Length; i++)
+            {
+                if (respawnAreas[i].AreaIndex == index)
+                    return respawnAreas[i];
+            }
+
+            return null;
+        }
+
         public void SetLevelActive(bool active)
         {
             for (int i = 0; i < obstacles.Length; i++)

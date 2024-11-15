@@ -32,7 +32,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         private Vector3 _offsetVector;
         private Vector2 _mouseDelta;
 
-        private PlayerTag _playerTag;
         private Transform _followTarget;
         private InputReceiver _inputReceiver;
         private CinemachineTransposer _transposer;

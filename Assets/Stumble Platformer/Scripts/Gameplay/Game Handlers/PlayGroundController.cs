@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Common.Messages;
-using StumblePlatformer.Scripts.Gameplay.PlayRules;
+using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
-using StumblePlatformer.Scripts.Common.SingleConfigs;
+using StumblePlatformer.Scripts.Gameplay.PlayRules;
 using Cysharp.Threading.Tasks;
 using MessagePipe;
 
@@ -22,8 +22,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
         private GameStateController _gameStateController;
         
         private IPlayeRule _playeRule;
-        private ISubscriber<InitializeLevelMessage> _initLevelSubscriber;
         private IDisposable _initLevelDisposable;
+
+        private ISubscriber<RespawnMessage> __respawnSubscriber;
+        private ISubscriber<InitializeLevelMessage> _initLevelSubscriber;
 
         public PlayerController CurrentPlayer => _currentPlayer;
         public EnvironmentIdentifier EnvironmentIdentifier { get; private set; }
@@ -48,9 +50,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
         private void InitLevel()
         {
             var builder = DisposableBag.CreateBuilder();
+            __respawnSubscriber = GlobalMessagePipe.GetSubscriber<RespawnMessage>();
             _initLevelSubscriber = GlobalMessagePipe.GetSubscriber<InitializeLevelMessage>();
+
             _initLevelSubscriber.Subscribe(message => SetEnvironmentIdentifier(message.EnvironmentIdentifier))
                                 .AddTo(builder);
+            __respawnSubscriber.Subscribe(message => RespawnPlayer(message.ID))
+                               .AddTo(builder);
             _initLevelDisposable = builder.Build();
         }
 
@@ -73,6 +79,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             EnvironmentIdentifier = environmentIdentifier;
             _playeRule = EnvironmentIdentifier.PlayRule;
             SetupEnvironment();
+        }
+
+        public void RespawnPlayer(int respawnId)
+        {
+            if (_currentPlayer.gameObject.GetInstanceID() != respawnId)
+                return;
+
+            int checkPointIndex = _currentPlayer.GetCheckPointIndex();
+            RespawnArea currentCheckPoint = EnvironmentIdentifier.PlayLevel
+                                            .GetCheckPointByIndex(checkPointIndex);
+            
+            Vector3 respawnPosition = currentCheckPoint.GetRandomSpawnPosition();
+            _currentPlayer.transform.position = respawnPosition;
+            _currentPlayer.IsActive = true;
         }
 
         private void SetupEnvironment()
