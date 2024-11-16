@@ -10,7 +10,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
     public class LevelPlatform : MonoBehaviour
     {
         [SerializeField] private RespawnArea[] respawnAreas;
-        [SerializeField] private SpawnCharacterArea spawnCharacterArea;
 
         [Header("Containers")]
         [SerializeField] private Transform respawnContainer;
@@ -20,8 +19,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [Header("Hazzard Objects")]
         [SerializeField] private BaseObstacle[] obstacles;
         [SerializeField] private BasePlatform[] platforms;
-
-        public SpawnCharacterArea SpawnCharacterArea => spawnCharacterArea;
 
         public RespawnArea GetCheckPointByIndex(int index)
         {

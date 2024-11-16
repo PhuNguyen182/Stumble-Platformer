@@ -15,6 +15,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 {
     public class PlayGroundController : MonoBehaviour
     {
+        [SerializeField] private CameraHandler cameraHandler;
         [SerializeField] private PlayerController playerPrefab;
         [SerializeField] private EnvironmentSetup environmentSetup;
         [SerializeField] private bool isTesting;
@@ -25,7 +26,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
         private IPlayRule _playeRule;
         private IDisposable _initLevelDisposable;
 
-        private ISubscriber<RespawnMessage> __respawnSubscriber;
+        private ISubscriber<RespawnMessage> _respawnSubscriber;
         private ISubscriber<InitializeLevelMessage> _initLevelSubscriber;
 
         public PlayerController CurrentPlayer => _currentPlayer;
@@ -54,13 +55,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
         private void InitLevel()
         {
             var builder = DisposableBag.CreateBuilder();
-            __respawnSubscriber = GlobalMessagePipe.GetSubscriber<RespawnMessage>();
+            _respawnSubscriber = GlobalMessagePipe.GetSubscriber<RespawnMessage>();
             _initLevelSubscriber = GlobalMessagePipe.GetSubscriber<InitializeLevelMessage>();
 
-            _initLevelSubscriber.Subscribe(message => SetEnvironmentIdentifier(message.EnvironmentIdentifier))
+            _initLevelSubscriber.Subscribe(message => SetEnvironmentIdentifier(message.EnvironmentIdentifier).Forget())
                                 .AddTo(builder);
-            __respawnSubscriber.Subscribe(message => RespawnPlayer(message.ID))
-                               .AddTo(builder);
+            _respawnSubscriber.Subscribe(message => RespawnPlayer(message.ID))
+                              .AddTo(builder);
             _initLevelDisposable = builder.Build();
         }
 
@@ -69,7 +70,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             // Spawn player here, spawn player and disable it, then play teaser line for camera, then activate player and play
         }
 
-        public async UniTask GenerateLevelAsync()
+        public async UniTask GenerateLevel()
         {
             if (PlayGameConfig.Current != null)
             {
@@ -78,11 +79,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             }
         }
 
-        public void SetEnvironmentIdentifier(EnvironmentIdentifier environmentIdentifier)
+        public async UniTask WaitForTeaser()
+        {
+            cameraHandler.SetTeaserCameraActive(true);
+            EnvironmentIdentifier.SetTeaserActive(true);
+            await EnvironmentIdentifier.WaitForEndOfTeaser();
+            cameraHandler.SetTeaserCameraActive(false);
+        }
+
+        public async UniTask SetEnvironmentIdentifier(EnvironmentIdentifier environmentIdentifier)
         {
             EnvironmentIdentifier = environmentIdentifier;
             _playeRule = EnvironmentIdentifier.PlayRule;
+            _playeRule.SetStateController(_gameStateController);
             SetupEnvironment();
+            await WaitForTeaser();
         }
 
         public void RespawnPlayer(int respawnId)
@@ -104,6 +115,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
         private void SetupEnvironment()
         {
             environmentSetup.SetupSky(EnvironmentIdentifier.Skybox);
+            cameraHandler.SetupTeaserCamera(EnvironmentIdentifier.TeaserFollower.transform, EnvironmentIdentifier.TeaserPath);
         }
 
         private void OnDestroy()

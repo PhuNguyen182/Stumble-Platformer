@@ -41,8 +41,10 @@ namespace GlobalScripts.Utils
         {
             bool isKeyValid = await IsKeyValid(key);
 
-            if (isKeyValid)
-                await Addressables.LoadSceneAsync(key, loadMode, activateOnLoad, priority).WithCancellation(cancellationToken);
+            if (!isKeyValid)
+                return;
+
+            await Addressables.LoadSceneAsync(key, loadMode, activateOnLoad, priority).WithCancellation(cancellationToken);
         }
 
         public static async UniTask<bool> DownloadContent(string key, bool autoRelease = true, CancellationToken cancellationToken = default)

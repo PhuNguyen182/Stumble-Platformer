@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using Cysharp.Threading.Tasks;
-using GlobalScripts.Utils;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 {
@@ -38,9 +36,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 
         private async UniTask InitGameplay()
         {
-            cameraHandler.SetFollowTarget(playGroundController.CurrentPlayer.transform);
-            await playGroundController.GenerateLevelAsync();
             playGroundController.SpawnPlayer();
+            cameraHandler.SetFollowTarget(playGroundController.CurrentPlayer.transform);
+
+            // To do: load level later
+            await playGroundController.GenerateLevel();
         }
     }
 }
