@@ -18,7 +18,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnPlayerLose()
         {
-            Debug.Log("<color=#110000>Race Lose Game</color>");
+            Debug.Log("<color=#ff0000>Race Lose Game</color>");
         }
 
         public override void OnPlayerWin()

@@ -19,6 +19,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         protected GameStateController gameStateController;
 
         public int PlayerHealth { get; private set; }
+        public int CurrentPlayerID { get; set; }
 
         private void Start()
         {
@@ -35,9 +36,9 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             playerLoseSubscriber = GlobalMessagePipe.GetSubscriber<PlayerLoseMessage>();
 
             playerHealthSubscriber.Subscribe(UpdateHealth).AddTo(builder);
-            playerFinishSubscriber.Subscribe(_ => Finish()).AddTo(builder);
-            playerFallSubscriber.Subscribe(_ => Fall()).AddTo(builder);
-            playerLoseSubscriber.Subscribe(_ => Lose()).AddTo(builder);
+            playerFinishSubscriber.Subscribe(Finish).AddTo(builder);
+            playerFallSubscriber.Subscribe(Fall).AddTo(builder);
+            playerLoseSubscriber.Subscribe(Lose).AddTo(builder);
 
             messageDisposable = builder.Build();
         }
@@ -52,7 +53,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         public abstract void OnPlayerLose();
         public abstract void OnPlayerFall();
 
-        public void Finish()
+        public void Finish(PlayerFinishMessage message)
         {
             gameStateController.FinishLevel();
             OnPlayerFinish();
@@ -64,14 +65,20 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             OnPlayerWin();
         }
 
-        public void Lose()
+        public void Lose(PlayerLoseMessage message)
         {
+            if (CurrentPlayerID != message.ID)
+                return;
+
             gameStateController.EndGame(EndResult.Lose);
             OnPlayerLose();
         }
 
-        public void Fall()
+        public void Fall(PlayerFallMessage message)
         {
+            if (CurrentPlayerID != message.ID)
+                return;
+
             OnPlayerFall();
         }
 

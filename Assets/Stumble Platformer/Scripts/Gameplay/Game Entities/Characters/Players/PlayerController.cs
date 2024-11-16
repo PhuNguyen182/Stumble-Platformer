@@ -38,6 +38,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private Rigidbody _playerBody;
         public bool IsActive { get; set; }
         public bool IsStunning => _isStunning;
+        public int PlayerID => gameObject.GetInstanceID();
         public PlayerGraphics PlayerGraphics => playerGraphics;
         public PlayerHealth PlayerHealth => playerHealth;
 

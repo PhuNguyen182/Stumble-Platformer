@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using StumblePlatformer.Scripts.Gameplay.GameHandlers;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
@@ -36,6 +34,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         private InputReceiver _inputReceiver;
         private CinemachineTransposer _transposer;
 
+        private void Start()
+        {
+            _inputReceiver = InputReceiver.Instance;
+        }
+
         private void FixedUpdate()
         {
             ReceiveInput();
@@ -46,7 +49,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         {
             FollowPosition(_followTarget.position);
 
-            _inputReceiver = InputReceiver.Instance;
             _transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
             _maxHeight = cameraDistance * Mathf.Sin(heightAngle * Mathf.Deg2Rad);
 
@@ -77,7 +79,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         private void ReceiveInput()
         {
-            _mouseDelta = _inputReceiver.CameraDelta;
+            if (_inputReceiver != null)
+                _mouseDelta = _inputReceiver.CameraDelta;
         }
 
         private void ResetCamera()

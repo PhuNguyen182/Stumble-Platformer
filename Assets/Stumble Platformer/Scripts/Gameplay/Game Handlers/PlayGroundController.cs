@@ -92,6 +92,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             EnvironmentIdentifier = environmentIdentifier;
             _playeRule = EnvironmentIdentifier.PlayRule;
             _playeRule.SetStateController(_gameStateController);
+            _playeRule.CurrentPlayerID = _currentPlayer.PlayerID;
+
             SetupEnvironment();
             await WaitForTeaser();
         }
