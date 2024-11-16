@@ -1,11 +1,12 @@
-using System;
-
-namespace StumblePlatformer.Scripts.Gameplay.Common.SingleConfigs
+namespace StumblePlatformer.Scripts.Common.SingleConfigs
 {
-    public abstract class BaseSingleConfig<TConfig> : IDisposable
+    public abstract class BaseSingleConfig<TConfig>
     {
         public static TConfig Current;
 
-        public abstract void Dispose();
+        public static void Dispose()
+        {
+            Current = default;
+        }
     }
 }

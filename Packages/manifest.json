@@ -4,9 +4,10 @@
     "com.cysharp.r3": "1.2.9",
     "com.cysharp.unitask": "2.5.10",
     "com.github-glitchenzo.nugetforunity": "4.1.1",
+    "com.gustavopsantos.reflex": "9.0.1",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.addressables": "1.21.21",
-    "com.unity.cinemachine": "2.10.2",
+    "com.unity.cinemachine": "2.10.3",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.device-simulator.devices": "1.0.0",
     "com.unity.feature.development": "1.0.1",
@@ -61,7 +62,8 @@
         "com.cysharp.unitask",
         "games.corundum.stateless-for-unity",
         "com.cysharp.r3",
-        "com.cysharp.messagepipe"
+        "com.cysharp.messagepipe",
+        "com.gustavopsantos.reflex"
       ]
     }
   ]

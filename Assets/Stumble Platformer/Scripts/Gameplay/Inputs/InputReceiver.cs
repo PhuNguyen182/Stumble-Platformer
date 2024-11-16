@@ -17,9 +17,11 @@ namespace StumblePlatformer.Scripts.Gameplay.Inputs
         public Vector2 CameraDelta { get; private set; }
 
         public bool IsActive { get; set; }
+        public static InputReceiver Instance { get; private set; }
 
         private void Awake()
         {
+            Instance = this;
             IsActive = true;
             _playerInput = new();
 

@@ -139,11 +139,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             (firstPosition, lastPosition) = (lastPosition, firstPosition);
         }
 
-        private void SetPlatformActive(bool active)
-        {
-            usedSpeed = active ? movementSpeed : 0;
-        }
-
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {

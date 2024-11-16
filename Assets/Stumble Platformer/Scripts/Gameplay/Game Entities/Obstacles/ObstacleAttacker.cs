@@ -28,7 +28,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void Awake()
         {
-            _hasCollider = TryGetComponent<Collider>(out _collider);
+            _hasCollider = TryGetComponent(out _collider);
         }
 
 #if UNITY_EDITOR
