@@ -47,8 +47,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             _inputReceiver = InputReceiver.Instance;
             _playerBody = playerPhysics.GetPlayerBody();
 
-            if (playerGraphics.CharacterVisual != null)
-                characterVisual = playerGraphics.CharacterVisual;
+            SetupPlayerGraphic();
         }
 
         private void Update()
@@ -65,6 +64,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 Turn();
                 Jump();
             }
+        }
+
+        // To do: THis method should be call when player enter Gameplay Scene
+        public void SetupPlayerGraphic()
+        {
+            if (playerGraphics.CharacterVisual != null)
+                characterVisual = playerGraphics.CharacterVisual;
         }
 
         private void StunningTimer()

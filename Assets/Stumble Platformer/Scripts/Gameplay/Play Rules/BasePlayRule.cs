@@ -13,6 +13,9 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
     {
         protected IDisposable messageDisposable;
         protected ISubscriber<ReportPlayerHealthMessage> playerHealthSubscriber;
+        protected ISubscriber<PlayerFinishMessage> playerFinishSubscriber;
+        protected ISubscriber<PlayerFallMessage> playerFallSubscriber;
+        protected ISubscriber<PlayerLoseMessage> playerLoseSubscriber;
         protected GameStateController gameStateController;
 
         public int PlayerHealth { get; private set; }
@@ -25,9 +28,17 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         protected void RegisterMessage()
         {
             var builder = DisposableBag.CreateBuilder();
+
             playerHealthSubscriber = GlobalMessagePipe.GetSubscriber<ReportPlayerHealthMessage>();
-            playerHealthSubscriber.Subscribe(UpdateHealth)
-                                  .AddTo(builder);
+            playerFinishSubscriber = GlobalMessagePipe.GetSubscriber<PlayerFinishMessage>();
+            playerFallSubscriber = GlobalMessagePipe.GetSubscriber<PlayerFallMessage>();
+            playerLoseSubscriber = GlobalMessagePipe.GetSubscriber<PlayerLoseMessage>();
+
+            playerHealthSubscriber.Subscribe(UpdateHealth).AddTo(builder);
+            playerFinishSubscriber.Subscribe(_ => Finish()).AddTo(builder);
+            playerFallSubscriber.Subscribe(_ => Fall()).AddTo(builder);
+            playerLoseSubscriber.Subscribe(_ => Lose()).AddTo(builder);
+
             messageDisposable = builder.Build();
         }
 
@@ -39,7 +50,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         public abstract void OnPlayerWin();
         public abstract void OnPlayerFinish();
         public abstract void OnPlayerLose();
-        
+        public abstract void OnPlayerFall();
+
         public void Finish()
         {
             gameStateController.FinishLevel();
@@ -56,6 +68,11 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             gameStateController.EndGame(EndResult.Lose);
             OnPlayerLose();
+        }
+
+        public void Fall()
+        {
+            OnPlayerFall();
         }
 
         public void SetStateController(GameStateController gameStateController)

@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Common.Messages;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
+using StumblePlatformer.Scripts.Common.Messages;
 using Cysharp.Threading.Tasks;
 using MessagePipe;
 
@@ -20,6 +21,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private IPublisher<RespawnMessage> _respawnPublisher;
         private IPublisher<ReportPlayerHealthMessage> _reportPlayerHealthPublisher;
+        private IPublisher<PlayerFinishMessage> _playerFinishPublisher;
+        private IPublisher<PlayerFallMessage> _playerFallPublisher;
+        private IPublisher<PlayerLoseMessage> _playerLosePublisher;
 
         public int CheckPointIndex => _checkPointIndex;
 
@@ -29,37 +33,26 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             _respawnPublisher = GlobalMessagePipe.GetPublisher<RespawnMessage>();
             _reportPlayerHealthPublisher = GlobalMessagePipe.GetPublisher<ReportPlayerHealthMessage>();
+            _playerFinishPublisher = GlobalMessagePipe.GetPublisher<PlayerFinishMessage>();
+            _playerFallPublisher = GlobalMessagePipe.GetPublisher<PlayerFallMessage>();
+            _playerLosePublisher = GlobalMessagePipe.GetPublisher<PlayerLoseMessage>();
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if(other.TryGetComponent(out FinishZone finishZone))
             {
-                finishZone.ReportFinish(playerController);
+                OnFinishZone(finishZone);
             }
 
             if(other.TryGetComponent(out RespawnArea respawnArea))
             {
-                if (respawnArea.AreaIndex > _checkPointIndex)
-                    _checkPointIndex = respawnArea.AreaIndex;
+                OnRespawnArea(respawnArea);
             }
 
             if(other.TryGetComponent(out DeadZone deadZone))
             {
-                playerController.IsActive = false;
-                deadZone.PlayDeathEffect(transform.position);
-                
-                playerController.TakeDamage(new DamageData
-                {
-                    DamageAmount = 1
-                });
-
-                _reportPlayerHealthPublisher.Publish(new ReportPlayerHealthMessage
-                {
-                    Health = HealthPoint
-                });
-
-                OnDeadZoneDelay().Forget();
+                OnDeadZone(deadZone);
             }
         }
 
@@ -86,6 +79,45 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         public void SetHealth(int health)
         {
             _healthPoint = health;
+        }
+
+        private void OnFinishZone(FinishZone finishZone)
+        {
+            finishZone.ReportFinish(playerController);
+
+            _playerFinishPublisher.Publish(new PlayerFinishMessage
+            {
+                ID = gameObject.GetInstanceID()
+            });
+        }
+
+        private void OnRespawnArea(RespawnArea respawnArea)
+        {
+            if (respawnArea.AreaIndex > _checkPointIndex)
+                _checkPointIndex = respawnArea.AreaIndex;
+        }
+
+        private void OnDeadZone(DeadZone deadZone)
+        {
+            playerController.IsActive = false;
+            deadZone.PlayDeathEffect(transform.position);
+
+            playerController.TakeDamage(new DamageData
+            {
+                DamageAmount = DeadZone.GamePlayMode == GamePlayMode.SinglePlayer ? 1 : 0
+            });
+
+            _playerFallPublisher.Publish(new PlayerFallMessage
+            {
+                ID = gameObject.GetInstanceID()
+            });
+
+            _reportPlayerHealthPublisher.Publish(new ReportPlayerHealthMessage
+            {
+                Health = HealthPoint
+            });
+
+            OnDeadZoneDelay().Forget();
         }
     }
 }

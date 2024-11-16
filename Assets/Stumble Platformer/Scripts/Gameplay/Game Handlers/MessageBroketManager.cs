@@ -27,6 +27,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             _builder.AddMessageBroker<RespawnMessage>();
             _builder.AddMessageBroker<ReportPlayerHealthMessage>();
             _builder.AddMessageBroker<InitializeLevelMessage>();
+            _builder.AddMessageBroker<PlayerFinishMessage>();
+            _builder.AddMessageBroker<PlayerFallMessage>();
+            _builder.AddMessageBroker<PlayerLoseMessage>();
         }
     }
 }

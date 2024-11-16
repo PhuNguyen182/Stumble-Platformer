@@ -13,7 +13,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] private BoxCollider deadZoneCollider;
         [SerializeField] private bool drawGizmo = true;
 
-        public DeadZoneEnvironment Environment => deadZoneEnvironment;
+        public static GamePlayMode GamePlayMode;
 
         public void PlayDeathEffect(Vector3 position)
         {

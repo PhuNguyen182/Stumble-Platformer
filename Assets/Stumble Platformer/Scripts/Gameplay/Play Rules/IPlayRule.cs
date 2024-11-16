@@ -7,8 +7,10 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         public void Win();
         public void Lose();
         public void Finish();
+        public void Fall();
         public void OnPlayerWin();
         public void OnPlayerLose();
+        public void OnPlayerFall();
         public void OnPlayerFinish();
         public void SetStateController(GameStateController gameStateController);
     }
