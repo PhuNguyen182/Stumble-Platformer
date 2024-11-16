@@ -33,6 +33,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnTriggerEnter(Collider other)
         {
+            if(other.TryGetComponent(out FinishZone finishZone))
+            {
+                finishZone.ReportFinish(playerController);
+            }
+
             if(other.TryGetComponent(out RespawnArea respawnArea))
             {
                 if (respawnArea.AreaIndex > _checkPointIndex)
