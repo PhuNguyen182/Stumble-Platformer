@@ -5,7 +5,7 @@ using UnityEngine;
 using StumblePlatformer.Scripts.Common.Messages;
 using MessagePipe;
 
-namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
+namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     public class MessageBroketManager
     {

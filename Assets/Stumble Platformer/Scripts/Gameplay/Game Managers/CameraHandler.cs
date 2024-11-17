@@ -5,7 +5,7 @@ using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using Cinemachine;
 
-namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
+namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     [ExecuteAlways]
     public class CameraHandler : MonoBehaviour

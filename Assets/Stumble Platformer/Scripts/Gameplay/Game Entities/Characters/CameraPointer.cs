@@ -47,12 +47,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         public void SetupCameraOnStart()
         {
-            FollowPosition(_followTarget.position);
+            if (_followTarget != null)
+            {
+                FollowPosition(_followTarget.position);
 
-            _transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
-            _maxHeight = cameraDistance * Mathf.Sin(heightAngle * Mathf.Deg2Rad);
+                _transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+                _maxHeight = cameraDistance * Mathf.Sin(heightAngle * Mathf.Deg2Rad);
 
-            ResetCamera();
+                ResetCamera();
+            }
         }
 
         public void SetFollowTarget(Transform target)
@@ -62,19 +65,22 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         public void ControlCameraAngle()
         {
-            FollowPosition(_followTarget.position);
+            if (_followTarget != null)
+            {
+                FollowPosition(_followTarget.position);
 
-            _adjacentLeg += _mouseDelta.y * heightOffsetSpeed;
-            _yRotation -= _mouseDelta.x * rotationSpeed;
+                _adjacentLeg += _mouseDelta.y * heightOffsetSpeed;
+                _yRotation -= _mouseDelta.x * rotationSpeed;
 
-            _adjacentLeg = Mathf.Clamp(_adjacentLeg, minCameraHeight, _maxHeight);
-            _oppositeLeg = Mathf.Sqrt(cameraDistance * cameraDistance - _adjacentLeg * _adjacentLeg);
+                _adjacentLeg = Mathf.Clamp(_adjacentLeg, minCameraHeight, _maxHeight);
+                _oppositeLeg = Mathf.Sqrt(cameraDistance * cameraDistance - _adjacentLeg * _adjacentLeg);
 
-            _offsetVector = new Vector3(0, _adjacentLeg, _oppositeLeg);
-            _transposer.m_FollowOffset = _offsetVector;
+                _offsetVector = new Vector3(0, _adjacentLeg, _oppositeLeg);
+                _transposer.m_FollowOffset = _offsetVector;
 
-            Quaternion targetRotation = Quaternion.Euler(new(0, _yRotation, 0));
-            cameraPointer.rotation = targetRotation;
+                Quaternion targetRotation = Quaternion.Euler(new(0, _yRotation, 0));
+                cameraPointer.rotation = targetRotation;
+            }
         }
 
         private void ReceiveInput()

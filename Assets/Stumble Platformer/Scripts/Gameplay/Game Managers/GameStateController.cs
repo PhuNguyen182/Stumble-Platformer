@@ -4,7 +4,7 @@ using UnityEngine;
 using StumblePlatformer.Scripts.Common.Enums;
 using Stateless;
 
-namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
+namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     public class GameStateController
     {

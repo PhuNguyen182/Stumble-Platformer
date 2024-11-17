@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
 using GlobalScripts.Utils;
 
-namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
+namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     public class EnvironmentSetup : MonoBehaviour
     {

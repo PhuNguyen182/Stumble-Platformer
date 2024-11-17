@@ -4,18 +4,17 @@ using UnityEngine;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using Cysharp.Threading.Tasks;
 
-namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
+namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     public class GameplayManager : MonoBehaviour
     {
         [SerializeField] private CameraHandler cameraHandler;
-        [SerializeField] private InputReceiver inputReceiver;
         [SerializeField] private PlayGroundController playGroundController;
+        [SerializeField] private PlayDataCollectionInitializer playDataCollectionInitializer;
 
         private MessageBroketManager _messageBroketManager;
 
-        public CameraHandler CameraHandler => cameraHandler;
-        public InputReceiver InputReceiver => inputReceiver;
+        public PlayDataCollectionInitializer PlayDataCollectionInitializer => playDataCollectionInitializer;
         public static GameplayManager Instance { get; private set; }
 
         private void Awake()
@@ -24,17 +23,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             InitializeService();
         }
 
-        private void Start()
-        {
-            InitGameplay().Forget();
-        }
+        //private void Start()
+        //{
+        //    InitGameplay().Forget();
+        //}
 
         private void InitializeService()
         {
             _messageBroketManager = new();
+            playDataCollectionInitializer.Initialize();
         }
 
-        private async UniTask InitGameplay()
+        public async UniTask InitGameplay()
         {
             playGroundController.SpawnPlayer();
             cameraHandler.SetFollowTarget(playGroundController.CurrentPlayer.transform);

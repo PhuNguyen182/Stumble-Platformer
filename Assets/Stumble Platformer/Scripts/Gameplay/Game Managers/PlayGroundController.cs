@@ -7,11 +7,12 @@ using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
 using Cysharp.Threading.Tasks;
 using MessagePipe;
 
-namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
+namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     public class PlayGroundController : MonoBehaviour
     {
@@ -37,7 +38,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             if (isTesting)
             {
                 _currentPlayer = playerPrefab;
-                _currentPlayer.PlayerHealth.SetHealth(CharacterConstants.MaxLife);
             }
         }
 
@@ -68,7 +68,17 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
         public void SpawnPlayer()
         {
             // Spawn player prefab, then update its appearance via skin menu
-            // Spawn player here, spawn player and disable it, then play teaser line for camera, then activate player and play
+            Vector3 playerPosition = EnvironmentIdentifier.SpawnCharacterArea.MainCharacterSpawnPosition;
+            _currentPlayer = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
+
+            CharacterSkin characterSkin; // Get a temp skin
+            bool hasSkin = GameplayManager.Instance.PlayDataCollectionInitializer
+                                          .CharacterVisualDatabase
+                                          .TryGetCharacterSkin("21", out characterSkin);
+            if (hasSkin)
+                _currentPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);
+
+            _currentPlayer.PlayerHealth.SetHealth(CharacterConstants.MaxLife);
             _currentPlayer.IsActive = false;
         }
 
@@ -94,9 +104,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
             EnvironmentIdentifier = environmentIdentifier;
             _playeRule = EnvironmentIdentifier.PlayRule;
             _playeRule.SetStateController(_gameStateController);
-            _playeRule.CurrentPlayerID = _currentPlayer.PlayerID;
 
             SetupEnvironment();
+            await GameplayManager.Instance.InitGameplay();
+            _playeRule.CurrentPlayerID = _currentPlayer.PlayerID;
+
             await WaitForTeaser();
             _currentPlayer.IsActive = true;
         }

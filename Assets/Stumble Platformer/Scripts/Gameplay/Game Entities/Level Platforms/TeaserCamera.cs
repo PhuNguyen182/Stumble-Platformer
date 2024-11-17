@@ -7,7 +7,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 {
     public class TeaserCamera : MonoBehaviour
     {
+        [SerializeField] private Camera mainCamera;
         [SerializeField] private CinemachineVirtualCamera teaserCamera;
+        [SerializeField] private LayerMask normalCullingMask;
+        [SerializeField] private LayerMask teaserCullingMask;
 
         private CinemachineTrackedDolly _trackedDolly;
 
@@ -28,6 +31,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         public void SetCameraActive(bool active)
         {
+            mainCamera.cullingMask = active ? teaserCullingMask : normalCullingMask;
             teaserCamera.gameObject.SetActive(active);
         }
     }

@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 950352264}
   - component: {fileID: 950352266}
   - component: {fileID: 950352267}
+  - component: {fileID: 950352268}
   m_Layer: 0
   m_Name: Gameplay Manager
   m_TagString: Untagged
@@ -359,8 +360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraHandler: {fileID: 700064963}
-  inputReceiver: {fileID: 1004334421}
   playGroundController: {fileID: 950352266}
+  playDataCollectionInitializer: {fileID: 950352268}
 --- !u!4 &950352265
 Transform:
   m_ObjectHideFlags: 0
@@ -389,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraHandler: {fileID: 700064963}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 5956835733577522111, guid: 4af7a8d5f86130e40936b0fb4e7d9edb, type: 3}
   environmentSetup: {fileID: 950352267}
   isTesting: 0
 --- !u!114 &950352267
@@ -404,6 +405,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f807e949d9141243a07c6f5341a8eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &950352268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950352263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5cd544de6e34e428cf34e0a61a0235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterVisualDatabase: {fileID: 11400000, guid: 7c2f0542b40533a4f9e576063465884e, type: 2}
 --- !u!1 &957534381
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,7 +818,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08742b5ad11a2948a0af0e0edf51d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1247918892}
   teaserCamera: {fileID: 1301356035}
+  normalCullingMask:
+    serializedVersion: 2
+    m_Bits: 1001
+  teaserCullingMask:
+    serializedVersion: 2
+    m_Bits: 993
 --- !u!1 &1301356033
 GameObject:
   m_ObjectHideFlags: 0

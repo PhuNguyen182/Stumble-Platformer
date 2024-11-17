@@ -1,5 +1,5 @@
 using StumblePlatformer.Scripts.Common.Messages;
-using StumblePlatformer.Scripts.Gameplay.GameHandlers;
+using StumblePlatformer.Scripts.Gameplay.GameManagers;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {

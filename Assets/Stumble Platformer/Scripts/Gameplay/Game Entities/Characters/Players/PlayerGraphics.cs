@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
@@ -11,12 +12,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         public CharacterVisual CharacterVisual => characterVisual;
 
-        public void SetCharacterVisual(CharacterVisual characterVisual)
+        public void SetCharacterVisual(CharacterSkin characterSkin)
         {
-            if (characterVisual == null)
-                return;
-
-            this.characterVisual ??= Instantiate(characterVisual, characterPivot.position, characterPivot.rotation, characterPivot);
+            characterVisual.UpdateSkin(characterSkin);
         }
     }
 }
