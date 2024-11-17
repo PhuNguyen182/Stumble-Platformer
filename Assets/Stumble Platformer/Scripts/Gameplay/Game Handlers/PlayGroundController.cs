@@ -67,7 +67,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 
         public void SpawnPlayer()
         {
+            // Spawn player prefab, then update its appearance via skin menu
             // Spawn player here, spawn player and disable it, then play teaser line for camera, then activate player and play
+            _currentPlayer.IsActive = false;
         }
 
         public async UniTask GenerateLevel()
@@ -96,6 +98,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameHandlers
 
             SetupEnvironment();
             await WaitForTeaser();
+            _currentPlayer.IsActive = true;
         }
 
         public void RespawnPlayer(int respawnId)

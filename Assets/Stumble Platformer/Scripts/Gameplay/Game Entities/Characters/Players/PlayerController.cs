@@ -44,7 +44,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Start()
         {
-            IsActive = true;
             _inputReceiver = InputReceiver.Instance;
             _playerBody = playerPhysics.GetPlayerBody();
 
