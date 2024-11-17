@@ -1,124 +1,50 @@
-using System;
-using System.IO;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using GlobalScripts.Encryption;
-using Newtonsoft.Json;
-
 namespace GlobalScripts.SaveSystem
 {
     public static class SimpleSaveSystem<T>
     {
-        public static T LoadData(string name)
+        private static ISerializer<T> s_JsonSerializer;
+        private static ISerializer<T> s_EncryptedJsonSerializer;
+
+        private static IDataService<T> s_JsonDataService;
+        private static IDataService<T> s_EncryptedJsonDataService;
+
+        static SimpleSaveSystem()
         {
-            string dataPath = Path.Combine(Application.persistentDataPath, $"{name}.dat");
+            s_JsonSerializer = new JsonSerializer<T>();
+            s_EncryptedJsonSerializer = new EncryptedJsonSerializer<T>();
 
-            if (File.Exists(dataPath))
-            {
-                T data;
-                using (StreamReader streamReader = new(dataPath))
-                {
-                    string json = streamReader.ReadToEnd();
-                    using (StringReader stringReader = new(json))
-                    {
-                        using (JsonReader jsonReader = new JsonTextReader(stringReader))
-                        {
-                            JsonSerializer jsonSerializer = new();
-                            data = jsonSerializer.Deserialize<T>(jsonReader);
-                        }
+            s_JsonDataService = new FileDataService<T>(s_JsonSerializer);
+            s_EncryptedJsonDataService = new FileDataService<T>(s_EncryptedJsonSerializer);
+        }
 
-                        stringReader.Close();
-                    }
-
-                    streamReader.Close();
-                }
-
-                return data;
-            }
-
-            return default;
+        public static T LoadDataByJson(string name)
+        {
+            return s_JsonDataService.LoadData(name);
         }
 
         public static T LoadDataWithEncryption(string name)
         {
-            string dataPath = Path.Combine(Application.persistentDataPath, $"{name}.dat");
-
-            if (File.Exists(dataPath))
-            {
-                T data;
-                using (StreamReader streamReader = new(dataPath))
-                {
-                    string cipheredJson = streamReader.ReadToEnd();
-                    double cipheredValue = double.Parse(cipheredJson);
-                    byte[] cipheredArray = BitConverter.GetBytes(cipheredValue);
-                    string decryptedJson = AesEncryptor.Decrypt(cipheredArray);
-
-                    using (StringReader stringReader = new(decryptedJson))
-                    {
-                        using (JsonReader jsonReader = new JsonTextReader(stringReader))
-                        {
-                            JsonSerializer jsonSerializer = new();
-                            data = jsonSerializer.Deserialize<T>(jsonReader);
-                        }
-
-                        stringReader.Close();
-                    }
-
-                    streamReader.Close();
-                }
-
-                return data;
-            }
-
-            return default;
+            return s_EncryptedJsonDataService.LoadData(name);
         }
 
-        public static void SaveData(string name, T data)
+        public static void SaveDataByJson(string name, T data)
         {
-            string dataPath = Path.Combine(Application.persistentDataPath, $"{name}.dat");
-
-            using (StreamWriter writer = new(dataPath))
-            {
-                JsonSerializerSettings settings = new()
-                {
-                    Formatting = Formatting.Indented,
-                };
-
-                string json = JsonConvert.SerializeObject(data, settings);
-                writer.Write(json);
-                writer.Close();
-            }
+            s_JsonDataService.SaveData(name, data);
         }
 
         public static void SaveDataWithEncryption(string name, T data)
         {
-            string dataPath = Path.Combine(Application.persistentDataPath, $"{name}.dat");
-
-            using (StreamWriter writer = new(dataPath))
-            {
-                JsonSerializerSettings settings = new()
-                {
-                    Formatting = Formatting.Indented,
-                };
-
-                string json = JsonConvert.SerializeObject(data, settings);
-                byte[] cipheredJson = AesEncryptor.Encrypt(json);
-                string encryptedJson = $"{BitConverter.ToDouble(cipheredJson)}";
-
-                writer.Write(encryptedJson);
-                writer.Close();
-            }
+            s_EncryptedJsonDataService.SaveData(name, data);
         }
 
-        public static void DeleteData(string name)
+        public static void DeleteJsonData(string name)
         {
-            string dataPath = Path.Combine(Application.persistentDataPath, $"{name}.dat");
+            s_JsonDataService.DeleteData(name);
+        }
 
-            if (File.Exists(dataPath))
-            {
-                File.Delete(dataPath);
-            }
+        public static void DeleteEncryptedJsonData(string name)
+        {
+            s_EncryptedJsonDataService.DeleteData(name);
         }
     }
 }
