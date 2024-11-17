@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d870513d870ab4cbcd9953e03465bf, type: 3}
+  m_Name: Character Skin 20
+  m_EditorClassIdentifier: 
+  SkinMesh: {fileID: -3529028288821891885, guid: 4e2726fc6aa39ae41aae55bf5e7ae30f, type: 3}
+  SkinAvatar: {fileID: 9000000, guid: 4e2726fc6aa39ae41aae55bf5e7ae30f, type: 3}
+  SkinMaterials:
+  - {fileID: 2100000, guid: c89700343fe812c40984349263f3e944, type: 2}
+  - {fileID: 2100000, guid: c89700343fe812c40984349263f3e944, type: 2}

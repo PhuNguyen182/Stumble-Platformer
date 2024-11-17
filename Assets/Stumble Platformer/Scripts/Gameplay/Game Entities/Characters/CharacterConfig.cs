@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
-    [CreateAssetMenu(fileName = "Character Config", menuName = "Scriptable Objects/Character/Character Config")]
+    [CreateAssetMenu(fileName = "Character Config", menuName = "Scriptable Objects/Characters/Character Config")]
     public class CharacterConfig : ScriptableObject
     {
         public float JumpHeight;
