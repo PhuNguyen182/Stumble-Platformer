@@ -7,6 +7,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
     public struct CharacterAnimationKeys
     {
         private const string Move = "Move";
+        private const string Lose = "Lose";
         private const string IsRunning = "IsRunning";
         private const string IsFalling = "IsFalling";
         private const string IsJumpingUp = "IsJumpingUp";
@@ -15,6 +16,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         private const string Win = "Win";
 
         public static readonly int MoveKey = Animator.StringToHash(Move);
+        public static readonly int LoseKey = Animator.StringToHash(Lose);
         public static readonly int IsRunningKey = Animator.StringToHash(IsRunning);
         public static readonly int IsFallingKey = Animator.StringToHash(IsFalling);
         public static readonly int IsJumpingUpKey = Animator.StringToHash(IsJumpingUp);

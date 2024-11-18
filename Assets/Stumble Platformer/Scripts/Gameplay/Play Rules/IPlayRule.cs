@@ -1,3 +1,4 @@
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Gameplay.GameManagers;
 
@@ -7,14 +8,13 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
     {
         public int CurrentPlayerID { get; set; }
 
-        public void Win();
-        public void Lose(PlayerLoseMessage message);
-        public void Finish(PlayerFinishMessage message);
+        public void EndGame(EndGameMessage message);
+        public void EndLevel(LevelEndMessage message);
         public void Fall(PlayerFallMessage message);
-        public void OnPlayerWin();
-        public void OnPlayerLose();
+        public void OnEndGame(EndResult endResult);
+        public void OnLevelEnded(EndResult endResult);
         public void OnPlayerFall();
-        public void OnPlayerFinish();
+        public void OnPlayerHealthUpdate();
         public void SetStateController(GameStateController gameStateController);
     }
 }

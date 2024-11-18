@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,17 +14,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
     public class PlayerHealth : MonoBehaviour, ICharacterHealth
     {
         [SerializeField] private float deadDelayAmount = 1f;
-        [SerializeField] private float respawnDelayAmount = 1f;
         [SerializeField] private PlayerController playerController;
 
         private int _healthPoint = 0;
         private int _checkPointIndex = 0;
+        private bool _hasFinishLevel;
 
         private IPublisher<RespawnMessage> _respawnPublisher;
         private IPublisher<ReportPlayerHealthMessage> _reportPlayerHealthPublisher;
-        private IPublisher<PlayerFinishMessage> _playerFinishPublisher;
+        private IPublisher<LevelEndMessage> _playerFinishPublisher;
         private IPublisher<PlayerFallMessage> _playerFallPublisher;
-        private IPublisher<PlayerLoseMessage> _playerLosePublisher;
+        private ISubscriber<KillCharactersMessage> _killCharacterSubscriber;
+        private IDisposable _messageDisposable;
 
         public int CheckPointIndex => _checkPointIndex;
 
@@ -31,11 +33,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Start()
         {
+            _hasFinishLevel = false;
             _respawnPublisher = GlobalMessagePipe.GetPublisher<RespawnMessage>();
             _reportPlayerHealthPublisher = GlobalMessagePipe.GetPublisher<ReportPlayerHealthMessage>();
-            _playerFinishPublisher = GlobalMessagePipe.GetPublisher<PlayerFinishMessage>();
+            _playerFinishPublisher = GlobalMessagePipe.GetPublisher<LevelEndMessage>();
             _playerFallPublisher = GlobalMessagePipe.GetPublisher<PlayerFallMessage>();
-            _playerLosePublisher = GlobalMessagePipe.GetPublisher<PlayerLoseMessage>();
+
+            var builder = DisposableBag.CreateBuilder();
+            _killCharacterSubscriber = GlobalMessagePipe.GetSubscriber<KillCharactersMessage>();
+            _killCharacterSubscriber.Subscribe(message => Kill()).AddTo(builder);
+            _messageDisposable = builder.Build();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -52,7 +59,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             if(other.TryGetComponent(out DeadZone deadZone))
             {
-                OnDeadZone(deadZone);
+                if (_healthPoint > 0)
+                {
+                    OnDeadZone(deadZone);
+                }
             }
         }
 
@@ -63,20 +73,22 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             if (_healthPoint > 0)
             {
-                await UniTask.WaitForSeconds(respawnDelayAmount, cancellationToken: destroyCancellationToken);
                 _respawnPublisher.Publish(new RespawnMessage
                 {
                     ID = gameObject.GetInstanceID()
                 });
             }
 
-            else
-            {
-                _playerLosePublisher.Publish(new PlayerLoseMessage
-                {
-                    ID = gameObject.GetInstanceID()
-                });
-            }
+            else Kill();
+        }
+
+        private void Kill()
+        {
+            if (_hasFinishLevel) 
+                return;
+
+            playerController.SetCharacterActive(false);
+            playerController.PlayerGraphics.CharacterVisual.CharacterAnimator.SetTrigger(CharacterAnimationKeys.LoseKey);
         }
 
         public void TakeDamage(int damage)
@@ -91,11 +103,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnFinishZone(FinishZone finishZone)
         {
+            _hasFinishLevel = true;
             finishZone.ReportFinish(playerController);
+            playerController.IsActive = false;
 
-            _playerFinishPublisher.Publish(new PlayerFinishMessage
+            _playerFinishPublisher.Publish(new LevelEndMessage
             {
-                ID = gameObject.GetInstanceID()
+                ID = gameObject.GetInstanceID(),
+                Result = EndResult.Win
             });
         }
 
@@ -115,17 +130,23 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 DamageAmount = DeadZone.GamePlayMode == GamePlayMode.SinglePlayer ? 1 : 0
             });
 
+            _reportPlayerHealthPublisher.Publish(new ReportPlayerHealthMessage
+            {
+                Health = HealthPoint,
+                PlayerID = gameObject.GetInstanceID()
+            });
+
             _playerFallPublisher.Publish(new PlayerFallMessage
             {
                 ID = gameObject.GetInstanceID()
             });
 
-            _reportPlayerHealthPublisher.Publish(new ReportPlayerHealthMessage
-            {
-                Health = HealthPoint
-            });
-
             OnDeadZoneDelay().Forget();
+        }
+
+        private void OnDestroy()
+        {
+            _messageDisposable.Dispose();
         }
     }
 }

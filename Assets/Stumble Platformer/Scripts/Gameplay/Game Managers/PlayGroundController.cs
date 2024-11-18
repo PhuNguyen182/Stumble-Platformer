@@ -1,3 +1,4 @@
+using R3;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         [SerializeField] private CameraHandler cameraHandler;
         [SerializeField] private PlayerController playerPrefab;
         [SerializeField] private EnvironmentSetup environmentSetup;
+        [SerializeField] private PlayDataCollectionInitializer playDataCollectionInitializer;
         [SerializeField] private bool isTesting;
 
         private PlayerController _currentPlayer;
@@ -49,12 +51,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void SetupGameplay()
         {
+            var builder = Disposable.CreateBuilder();
             _gameStateController = new();
+            _gameStateController.AddTo(ref builder);
+            builder.RegisterTo(this.destroyCancellationToken);
         }
 
         private void InitLevel()
         {
-            var builder = DisposableBag.CreateBuilder();
+            var builder = MessagePipe.DisposableBag.CreateBuilder();
             _respawnSubscriber = GlobalMessagePipe.GetSubscriber<RespawnMessage>();
             _initLevelSubscriber = GlobalMessagePipe.GetSubscriber<InitializeLevelMessage>();
 
@@ -72,14 +77,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             _currentPlayer = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
 
             CharacterSkin characterSkin; // Get a temp skin
-            bool hasSkin = GameplayManager.Instance.PlayDataCollectionInitializer
-                                          .CharacterVisualDatabase
-                                          .TryGetCharacterSkin("21", out characterSkin);
+            bool hasSkin = playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin("21", out characterSkin);
+            
             if (hasSkin)
                 _currentPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);
 
             _currentPlayer.PlayerHealth.SetHealth(CharacterConstants.MaxLife);
-            _currentPlayer.IsActive = false;
+            SetPlayerActive(false);
         }
 
         public async UniTask GenerateLevel()
@@ -110,7 +114,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             _playeRule.CurrentPlayerID = _currentPlayer.PlayerID;
 
             await WaitForTeaser();
-            _currentPlayer.IsActive = true;
+            SetPlayerActive(true);
+        }
+
+        public void SetPlayerActive(bool active)
+        {
+            _currentPlayer.IsActive = active;
         }
 
         public void RespawnPlayer(int respawnId)
@@ -126,7 +135,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             _currentPlayer.transform.position = respawnPosition;
 
             _currentPlayer.SetCharacterActive(true);
-            _currentPlayer.IsActive = true;
+            SetPlayerActive(true);
         }
 
         private void SetupEnvironment()
