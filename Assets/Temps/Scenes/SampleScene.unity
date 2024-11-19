@@ -1059,14 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08742b5ad11a2948a0af0e0edf51d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 963194227}
   teaserCamera: {fileID: 419258978}
-  normalCullingMask:
-    serializedVersion: 2
-    m_Bits: 1001
-  teaserCullingMask:
-    serializedVersion: 2
-    m_Bits: 993
 --- !u!1 &1267902384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,6 +1150,7 @@ MonoBehaviour:
   cameraHandler: {fileID: 1267902386}
   playGroundController: {fileID: 1270006435}
   playDataCollectionInitializer: {fileID: 1270006437}
+  isTesting: 1
 --- !u!4 &1270006434
 Transform:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         [SerializeField] private CameraHandler cameraHandler;
         [SerializeField] private PlayGroundController playGroundController;
         [SerializeField] private PlayDataCollectionInitializer playDataCollectionInitializer;
+        [SerializeField] private bool isTesting;
 
         private MessageBroketManager _messageBroketManager;
 
@@ -23,11 +24,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             InitializeService();
         }
 
-        //private void Start()
-        //{
-        //    InitGameplay().Forget();
-        //}
-
         private void InitializeService()
         {
             _messageBroketManager = new();
@@ -36,11 +32,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public async UniTask InitGameplay()
         {
+            if(!isTesting)
+                await playGroundController.GenerateLevel();
+            
             playGroundController.SpawnPlayer();
             cameraHandler.SetFollowTarget(playGroundController.CurrentPlayer.transform);
-
-            // To do: load level later
-            await playGroundController.GenerateLevel();
         }
     }
 }

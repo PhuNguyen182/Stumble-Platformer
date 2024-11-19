@@ -21,7 +21,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         [SerializeField] private PlayerController playerPrefab;
         [SerializeField] private EnvironmentSetup environmentSetup;
         [SerializeField] private PlayDataCollectionInitializer playDataCollectionInitializer;
-        [SerializeField] private bool isTesting;
 
         private PlayerController _currentPlayer;
         private GameStateController _gameStateController;
@@ -34,14 +33,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public PlayerController CurrentPlayer => _currentPlayer;
         public EnvironmentIdentifier EnvironmentIdentifier { get; private set; }
-
-        private void Awake()
-        {
-            if (isTesting)
-            {
-                _currentPlayer = playerPrefab;
-            }
-        }
 
         private void Start()
         {

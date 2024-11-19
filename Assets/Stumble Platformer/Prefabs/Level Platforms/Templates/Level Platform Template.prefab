@@ -96,6 +96,7 @@ Transform:
   - {fileID: 7194576271237153599}
   - {fileID: 8942037371035748699}
   - {fileID: 8275122384252431527}
+  - {fileID: 166326831735590082}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6675362383200654569
@@ -111,12 +112,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnAreas: []
-  spawnCharacterArea: {fileID: 0}
   respawnContainer: {fileID: 1818662739129231026}
   obstacleContainer: {fileID: 7194576271237153599}
   platformContainer: {fileID: 8942037371035748699}
   obstacles: []
   platforms: []
+--- !u!1 &6388396180584971247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166326831735590082}
+  m_Layer: 0
+  m_Name: Decoration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &166326831735590082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6388396180584971247}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6217122716307758031}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6799689621846118741
 GameObject:
   m_ObjectHideFlags: 0
