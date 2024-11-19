@@ -91,7 +91,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7662771987688561167}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: bfd621eac08a2434592a97f13e189751, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -103,7 +103,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.76
-  m_Height: 2.0234046
+  m_Radius: 0.78
+  m_Height: 3.0301492
   m_Direction: 1
-  m_Center: {x: 0, y: 1.015218, z: 0}
+  m_Center: {x: 0.000056266785, y: 1.5035859, z: -0.00000023841858}

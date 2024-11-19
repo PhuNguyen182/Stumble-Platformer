@@ -11,6 +11,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 {
     public class EnvironmentIdentifier : MonoBehaviour
     {
+        public bool IsTest;
+
         [Header("Environment")]
         [SerializeField] public Material Skybox;
         [SerializeField] public LevelPlatform PlayLevel;
@@ -41,6 +43,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         public void SetTeaserActive(bool active)
         {
+            if (IsTest)
+                return;
+
             TeaserFollower.m_Speed = active ? teaserDefaultSpeed : 0;
         }
 

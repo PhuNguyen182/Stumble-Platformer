@@ -11,6 +11,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
     public abstract class BasePlayRule : MonoBehaviour, IPlayRule
     {
+        [SerializeField] protected string objectiveTitle;
+
         protected IDisposable messageDisposable;
         protected DisposableBagBuilder bagBuilder;
 
@@ -22,6 +24,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public int CurrentPlayerID { get; set; }
         public int PlayerHealth { get; protected set; }
+        public string ObjectiveTitle => objectiveTitle;
 
         private void Start()
         {
