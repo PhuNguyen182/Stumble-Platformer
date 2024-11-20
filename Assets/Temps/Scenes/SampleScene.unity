@@ -1147,6 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33001b47dfe9e4a4ab8a5339043680e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputReceiver: {fileID: 1182122303}
   cameraHandler: {fileID: 1267902386}
   playGroundController: {fileID: 1270006435}
   playDataCollectionInitializer: {fileID: 1270006437}

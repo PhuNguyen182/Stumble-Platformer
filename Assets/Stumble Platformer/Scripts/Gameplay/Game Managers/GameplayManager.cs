@@ -8,6 +8,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     public class GameplayManager : MonoBehaviour
     {
+        [SerializeField] private InputReceiver inputReceiver;
         [SerializeField] private CameraHandler cameraHandler;
         [SerializeField] private PlayGroundController playGroundController;
         [SerializeField] private PlayDataCollectionInitializer playDataCollectionInitializer;
@@ -37,6 +38,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             
             playGroundController.SpawnPlayer();
             cameraHandler.SetFollowTarget(playGroundController.CurrentPlayer.transform);
+        }
+
+        public void SetInputActive(bool active)
+        {
+            inputReceiver.IsActive = active;
         }
     }
 }

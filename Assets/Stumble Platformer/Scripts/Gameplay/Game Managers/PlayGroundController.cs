@@ -96,6 +96,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public async UniTask SetEnvironmentIdentifier(EnvironmentIdentifier environmentIdentifier)
         {
+            GameplayManager.Instance.SetInputActive(false);
             EnvironmentIdentifier = environmentIdentifier;
             _playeRule = EnvironmentIdentifier.PlayRule;
             _playeRule.SetStateController(_gameStateController);
@@ -106,6 +107,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             await WaitForTeaser();
             SetPlayerActive(true);
+            GameplayManager.Instance.SetInputActive(true);
         }
 
         public void SetPlayerActive(bool active)

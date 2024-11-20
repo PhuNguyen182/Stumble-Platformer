@@ -66,7 +66,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             }
         }
 
-        // To do: THis method should be call when player enter Gameplay Scene
         public void SetupPlayerGraphic()
         {
             if (playerGraphics.CharacterVisual != null)
@@ -82,7 +81,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 _stunDuration = 0;
                 
-                if (!_isAirDashing)
+                if (!_isAirDashing && groundChecker.IsGrounded)
                     SetStunningState(false);
             }
 
@@ -121,13 +120,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             _playerBody.ClampVelocity(characterConfig.MaxSpeed);
             _flatMoveVelocity = _playerBody.GetFlatVelocity();
 
-            bool isRunning = _flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
+            bool isRunning = _flatMoveVelocity.magnitude > characterConfig.MinSpeed && groundChecker.IsGrounded;
             characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
+            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsMoveInputKey, _moveInput != Vector3.zero);
 
             float moveThreshold = _flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
             characterVisual.CharacterAnimator.SetFloat(CharacterAnimationKeys.MoveKey, moveThreshold);
 
-            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, !groundChecker.IsGrounded && playerPhysics.IsFalling());
+            bool isFalling = !groundChecker.IsGrounded && playerPhysics.IsFalling();
+            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, isFalling);
         }
 
         private void Turn()
@@ -174,7 +175,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, true);
         }
 
-        private void OnGrounded()
+        public void OnGrounded()
         {
             _isAirDashing = false;
             characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);

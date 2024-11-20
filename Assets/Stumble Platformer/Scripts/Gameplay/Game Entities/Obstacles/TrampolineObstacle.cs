@@ -3,6 +3,7 @@ using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
@@ -44,6 +45,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         {
             if(collider.attachedRigidbody != null)
             {
+                if (collider.TryGetComponent(out ICharacterMovement characterMovement))
+                    characterMovement.OnGrounded();
+
                 collider.attachedRigidbody.velocity = transform.up * pushForce;
                 platformAnimator.SetTrigger(_pushHash);
             }
