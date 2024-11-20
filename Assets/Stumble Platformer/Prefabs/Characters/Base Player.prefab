@@ -2556,7 +2556,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadDelayAmount: 1
-  respawnDelayAmount: 1
   playerController: {fileID: 5956835733577522111}
 --- !u!1 &9111487040463002854
 GameObject:

@@ -56,7 +56,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                 );
 
             Gizmos.color = new Color(0, 1, 0, 0.45f);
-            Gizmos.DrawCube(transform.position, scaledSize);
+            Gizmos.DrawCube(transform.position + rangeCenter, scaledSize);
         }
 #endif
     }

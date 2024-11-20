@@ -32,10 +32,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         }
 #endif
 
-        public void SetTeaserCameraActive(bool active)
-        {
-            teaserCamera.SetCameraActive(active);
-        }
+        public void SetFollowCameraActive(bool active) => cameraPointer.SetFollowActive(active);
+
+        public void SetTeaserCameraActive(bool active) => teaserCamera.SetCameraActive(active);
 
         public void SetFollowTarget(Transform followTarget)
         {

@@ -21,7 +21,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         [Range(0.0f, 1.0f)]
         [SerializeField] private float heightOffsetSpeed = 0.1f;
 
-        private bool _hasPlayerTag;
+        private bool _active;
         private float _adjacentLeg;
         private float _yRotation;
         private float _maxHeight;
@@ -36,6 +36,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         private void Start()
         {
+            _active = true;
             _inputReceiver = InputReceiver.Instance;
         }
 
@@ -58,10 +59,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             }
         }
 
-        public void SetFollowTarget(Transform target)
-        {
-            _followTarget = target;
-        }
+        public void SetFollowActive(bool active) => _active = active;
+
+        public void SetFollowTarget(Transform target) => _followTarget = target;
 
         public void ControlCameraAngle()
         {

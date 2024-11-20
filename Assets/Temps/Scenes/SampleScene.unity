@@ -1182,7 +1182,6 @@ MonoBehaviour:
   playerPrefab: {fileID: 5956835733577522111, guid: 4af7a8d5f86130e40936b0fb4e7d9edb, type: 3}
   environmentSetup: {fileID: 1270006436}
   playDataCollectionInitializer: {fileID: 1270006437}
-  isTesting: 0
 --- !u!114 &1270006436
 MonoBehaviour:
   m_ObjectHideFlags: 0

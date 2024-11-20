@@ -45,7 +45,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             EndGame(new EndGameMessage
             {
                 ID = CurrentPlayerID,
-                Result = EndResult.Lose
+                Result = endResult
             });
         }
 
