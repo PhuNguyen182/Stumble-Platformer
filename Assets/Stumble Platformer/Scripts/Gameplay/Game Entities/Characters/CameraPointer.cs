@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
+using Cinemachine;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
     public class CameraPointer : MonoBehaviour
     {
-        [SerializeField] private Transform cameraPointer;
+        [SerializeField] private InputReceiver inputReceiver;
         [SerializeField] private CinemachineVirtualCamera virtualCamera;
+        [SerializeField] private Transform cameraPointer;
 
         [Header("Settings")]
         [SerializeField] private float heightAngle = 60f;
@@ -21,7 +22,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         [Range(0.0f, 1.0f)]
         [SerializeField] private float heightOffsetSpeed = 0.1f;
 
-        private bool _active;
+        private bool _active = true;
         private float _adjacentLeg;
         private float _yRotation;
         private float _maxHeight;
@@ -31,14 +32,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         private Vector2 _mouseDelta;
 
         private Transform _followTarget;
-        private InputReceiver _inputReceiver;
         private CinemachineTransposer _transposer;
-
-        private void Start()
-        {
-            _active = true;
-            _inputReceiver = InputReceiver.Instance;
-        }
 
         private void FixedUpdate()
         {
@@ -65,28 +59,22 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         public void ControlCameraAngle()
         {
-            if (_followTarget != null)
-            {
-                FollowPosition(_followTarget.position);
+            if (_followTarget == null)
+                return;
 
-                _adjacentLeg += _mouseDelta.y * heightOffsetSpeed;
-                _yRotation -= _mouseDelta.x * rotationSpeed;
+            FollowPosition(_followTarget.position);
 
-                _adjacentLeg = Mathf.Clamp(_adjacentLeg, minCameraHeight, _maxHeight);
-                _oppositeLeg = Mathf.Sqrt(cameraDistance * cameraDistance - _adjacentLeg * _adjacentLeg);
+            _adjacentLeg += _mouseDelta.y * heightOffsetSpeed;
+            _yRotation -= _mouseDelta.x * rotationSpeed;
 
-                _offsetVector = new Vector3(0, _adjacentLeg, _oppositeLeg);
-                _transposer.m_FollowOffset = _offsetVector;
+            _adjacentLeg = Mathf.Clamp(_adjacentLeg, minCameraHeight, _maxHeight);
+            _oppositeLeg = Mathf.Sqrt(cameraDistance * cameraDistance - _adjacentLeg * _adjacentLeg);
 
-                Quaternion targetRotation = Quaternion.Euler(new(0, _yRotation, 0));
-                cameraPointer.rotation = targetRotation;
-            }
-        }
+            _offsetVector = new Vector3(0, _adjacentLeg, _oppositeLeg);
+            _transposer.m_FollowOffset = _offsetVector;
 
-        private void ReceiveInput()
-        {
-            if (_inputReceiver != null)
-                _mouseDelta = _inputReceiver.CameraDelta;
+            Quaternion targetRotation = Quaternion.Euler(new(0, _yRotation, 0));
+            cameraPointer.rotation = targetRotation;
         }
 
         private void ResetCamera()
@@ -95,9 +83,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             _adjacentLeg = _transposer.m_FollowOffset.y;
         }
 
-        private void FollowPosition(Vector3 position)
-        {
-            cameraPointer.position = position;
-        }
+        private void ReceiveInput() => _mouseDelta = inputReceiver.CameraDelta;
+
+        private void FollowPosition(Vector3 position) => cameraPointer.position = position;
     }
 }

@@ -340,6 +340,8 @@ GameObject:
   - component: {fileID: 950352266}
   - component: {fileID: 950352267}
   - component: {fileID: 950352268}
+  - component: {fileID: 950352270}
+  - component: {fileID: 950352269}
   m_Layer: 0
   m_Name: Gameplay Manager
   m_TagString: Untagged
@@ -359,8 +361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33001b47dfe9e4a4ab8a5339043680e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraHandler: {fileID: 700064963}
-  playGroundController: {fileID: 950352266}
   playDataCollectionInitializer: {fileID: 950352268}
 --- !u!4 &950352265
 Transform:
@@ -389,11 +389,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7505d7bfb1bf2bd438a36dd1975c58fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraHandler: {fileID: 700064963}
-  playerPrefab: {fileID: 5956835733577522111, guid: 4af7a8d5f86130e40936b0fb4e7d9edb, type: 3}
-  environmentSetup: {fileID: 950352267}
-  playDataCollectionInitializer: {fileID: 950352268}
   isTesting: 0
+  inputReceiver: {fileID: 1004334421}
+  cameraHandler: {fileID: 700064963}
+  playerHandler: {fileID: 950352270}
+  environmentHandler: {fileID: 950352267}
 --- !u!114 &950352267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f807e949d9141243a07c6f5341a8eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraHandler: {fileID: 700064963}
 --- !u!114 &950352268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +420,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterVisualDatabase: {fileID: 11400000, guid: 7c2f0542b40533a4f9e576063465884e, type: 2}
+--- !u!114 &950352269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950352263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f807e949d9141243a07c6f5341a8eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraHandler: {fileID: 700064963}
+--- !u!114 &950352270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950352263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059f4bd8c45f5fc449021f8bbd922b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReceiver: {fileID: 1004334421}
+  playerPrefab: {fileID: 5956835733577522111, guid: 4af7a8d5f86130e40936b0fb4e7d9edb, type: 3}
+  environmentHandler: {fileID: 950352267}
+  playDataCollectionInitializer: {fileID: 950352268}
 --- !u!1 &957534381
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,14 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08742b5ad11a2948a0af0e0edf51d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1247918892}
   teaserCamera: {fileID: 1301356035}
-  normalCullingMask:
-    serializedVersion: 2
-    m_Bits: 1001
-  teaserCullingMask:
-    serializedVersion: 2
-    m_Bits: 993
 --- !u!1 &1301356033
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,8 +982,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57044850940bb74ab4dbb2379e3934e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPointer: {fileID: 1462723939}
+  inputReceiver: {fileID: 1004334421}
   virtualCamera: {fileID: 682400820}
+  cameraPointer: {fileID: 1462723939}
   heightAngle: 60
   cameraDistance: 4.925
   minCameraHeight: 0.5

@@ -26,7 +26,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public float stopTimeAmount = 2f;
         [SerializeField] public float teaserDefaultSpeed = 0.25f;
 
-        private IPublisher<InitializeLevelMessage> _initLevelPublisher;
+        private IPublisher<SetupLevelMessage> _initLevelPublisher;
         public IPlayRule PlayRule { get; private set; }
 
         private void Awake()
@@ -37,9 +37,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         private void Start()
         {
-            _initLevelPublisher = GlobalMessagePipe.GetPublisher<InitializeLevelMessage>();
+            _initLevelPublisher = GlobalMessagePipe.GetPublisher<SetupLevelMessage>();
             
-            _initLevelPublisher.Publish(new InitializeLevelMessage
+            _initLevelPublisher.Publish(new SetupLevelMessage
             {
                 EnvironmentIdentifier = this
             });

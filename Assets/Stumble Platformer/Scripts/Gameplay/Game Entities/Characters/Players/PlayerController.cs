@@ -7,7 +7,7 @@ using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerController : MonoBehaviour, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
+    public class PlayerController : MonoBehaviour, ISetCharacterInput, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
     {
         [SerializeField] private PlayerHealth playerHealth;
 
@@ -44,10 +44,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Start()
         {
-            _inputReceiver = InputReceiver.Instance;
-            _playerBody = playerPhysics.GetPlayerBody();
-
             SetupPlayerGraphic();
+            _playerBody = playerPhysics.GetPlayerBody();
         }
 
         private void Update()
@@ -64,6 +62,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 Turn();
                 Jump();
             }
+        }
+
+        public void SetCharacterInput(InputReceiver inputReceiver)
+        {
+            _inputReceiver = inputReceiver;
         }
 
         public void SetupPlayerGraphic()
