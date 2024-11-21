@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackOnce: 0
-  attactForce: 10
+  attactForce: 6
   obstacleBody: {fileID: 6093667785208165523}
   obstacleAttackers:
   - {fileID: 3254491908135844164}

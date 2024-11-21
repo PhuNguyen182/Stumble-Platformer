@@ -12,6 +12,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
     public class EnvironmentIdentifier : MonoBehaviour
     {
         public bool IsTest;
+        [SerializeField] public string LevelName;
 
         [Header("Environment")]
         [SerializeField] public Material Skybox;

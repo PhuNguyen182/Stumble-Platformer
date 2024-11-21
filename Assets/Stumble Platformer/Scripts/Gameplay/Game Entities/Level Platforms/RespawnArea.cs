@@ -48,6 +48,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         private void OnDrawGizmos()
         {
             Vector3 boxSize = range.size;
+            Vector3 center = range.center;
             Vector3 scaledSize = new Vector3
                 (
                     boxSize.x * transform.localScale.x,
@@ -56,7 +57,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                 );
 
             Gizmos.color = new Color(0, 1, 0, 0.45f);
-            Gizmos.DrawCube(transform.position + rangeCenter, scaledSize);
+            Gizmos.DrawCube(transform.position + center, scaledSize);
         }
 #endif
     }
