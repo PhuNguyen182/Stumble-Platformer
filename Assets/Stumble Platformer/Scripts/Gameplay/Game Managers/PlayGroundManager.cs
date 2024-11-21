@@ -31,6 +31,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private ISubscriber<RespawnMessage> _respawnSubscriber;
         private ISubscriber<SetupLevelMessage> _initLevelSubscriber;
 
+        private void Awake()
+        {
+#if !UNITY_EDITOR
+            Cursor.lockState = CursorLockMode.Locked;
+#endif
+        }
+
         private void Start()
         {
             SetupGameplay();

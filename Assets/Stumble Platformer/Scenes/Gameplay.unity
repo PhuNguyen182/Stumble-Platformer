@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 950352268}
   - component: {fileID: 950352270}
   - component: {fileID: 950352269}
+  - component: {fileID: 950352271}
   m_Layer: 0
   m_Name: Gameplay Manager
   m_TagString: Untagged
@@ -449,6 +450,20 @@ MonoBehaviour:
   playerPrefab: {fileID: 5956835733577522111, guid: 4af7a8d5f86130e40936b0fb4e7d9edb, type: 3}
   environmentHandler: {fileID: 950352267}
   playDataCollectionInitializer: {fileID: 950352268}
+--- !u!114 &950352271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950352263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad4add66c6102f468200d2112351364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useDesiredValue: 0
+  desiredFramerate: 60
 --- !u!1 &957534381
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
     public interface IPlayRule
     {
+        public string ObjectiveTitle { get; }
         public int CurrentPlayerID { get; set; }
 
         public void EndGame(EndGameMessage message);

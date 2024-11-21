@@ -21,9 +21,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private bool _hasFinishLevel;
 
         private IPublisher<RespawnMessage> _respawnPublisher;
-        private IPublisher<ReportPlayerHealthMessage> _reportPlayerHealthPublisher;
         private IPublisher<LevelEndMessage> _playerFinishPublisher;
         private IPublisher<PlayerFallMessage> _playerFallPublisher;
+        private IPublisher<ReportPlayerHealthMessage> _reportPlayerHealthPublisher;
         private ISubscriber<KillCharactersMessage> _killCharacterSubscriber;
         private IDisposable _messageDisposable;
 
