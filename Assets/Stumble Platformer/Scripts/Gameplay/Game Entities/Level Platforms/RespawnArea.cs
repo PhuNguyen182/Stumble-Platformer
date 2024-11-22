@@ -12,6 +12,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] private BoxCollider range;
         [SerializeField] private Vector3 rangeCenter;
         [SerializeField] private Vector3 rangeSize;
+        [SerializeField] private Vector3 respawnRange;
         [SerializeField] private float height = 0;
 
         public int AreaIndex => areaIndex;
@@ -20,8 +21,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         public Vector3 GetRandomSpawnPosition()
         {
-            float x = Random.Range(Center.x - rangeSize.x / 2, Center.x + rangeSize.x / 2);
-            float z = Random.Range(Center.z - rangeSize.z / 2, Center.z + rangeSize.z / 2);
+            float x = Random.Range(Center.x - respawnRange.x / 2, Center.x + respawnRange.x / 2);
+            float z = Random.Range(Center.z - respawnRange.z / 2, Center.z + respawnRange.z / 2);
             Vector3 position = new Vector3(x, Center.y + height, z);
             return position;
         }
@@ -41,6 +42,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                 );
 
                 rangeSize = scaledSize;
+                float x = Mathf.Clamp(respawnRange.x, 0, rangeSize.x);
+                float y = Mathf.Clamp(respawnRange.y, 0, rangeSize.y);
+                float z = Mathf.Clamp(respawnRange.z, 0, rangeSize.z);
+                respawnRange = new Vector3(x, y, z);
             }
         }
 
@@ -56,8 +61,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                     boxSize.z * transform.localScale.z
                 );
 
-            Gizmos.color = new Color(0, 1, 0, 0.45f);
+            Gizmos.color = new Color(0, 1, 0, 0.4f);
             Gizmos.DrawCube(transform.position + center, scaledSize);
+            Gizmos.color = new Color(0.5f, 1, 0, 0.6f);
+            Gizmos.DrawCube(transform.position + center, respawnRange);
         }
 #endif
     }
