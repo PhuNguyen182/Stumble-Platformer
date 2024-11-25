@@ -10,11 +10,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         [SerializeField] protected Rigidbody platformBody;
 
         public bool IsActive { get; set; }
+        public bool IsPlatformActive { get; set; }
 
         private void Awake()
         {
             OnAwake();
             IsActive = true;
+            IsPlatformActive = true;
         }
 
         private void Start()
@@ -34,7 +36,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public void SetPlatformActive(bool active)
         {
-            IsActive = active;
+            IsPlatformActive = active;
         }
 
         public abstract void PlatformAction();

@@ -10,7 +10,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] private Vector3 mainCharacterSpawnPosition;
         [SerializeField] private Vector3[] characterSpawnPositions;
         
-        public Vector3 MainCharacterSpawnPosition => mainCharacterSpawnPosition;
+        public Vector3 MainCharacterSpawnPosition => mainCharacterSpawnPosition + transform.position;
         public Vector3[] CharacterSpawnPositions => characterSpawnPositions;
 
 #if UNITY_EDITOR

@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 776684121762139383}
   - component: {fileID: 2987407148428296906}
   m_Layer: 8
-  m_Name: Jumping Platform
+  m_Name: Push Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

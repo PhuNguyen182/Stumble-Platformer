@@ -68,6 +68,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public override void PlatformAction()
         {
+            usedSpeed = IsPlatformActive ? movementSpeed : 0;
             if (transform.IsCloseTo(lastPosition, toleranceOffset))
             {
                 SetPlatformActive(false);
@@ -104,7 +105,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 parentSetter.SetParent(null);
             }
         }
-
 
         protected virtual void ResetWaypoints()
         {

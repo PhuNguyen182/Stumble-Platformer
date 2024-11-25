@@ -90,6 +90,6 @@ Material:
     - _Foam_Scale: {r: 50, g: 50, b: 0, a: 0}
     - _Foam_Speed: {r: 5, g: 5, b: 0, a: 0}
     - _Refraction_Scale: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _Refraction_Speed: {r: 0.2, g: 0.2, b: 0, a: 0}
+    - _Refraction_Speed: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _Shallow_Water_Color: {r: 0.41981116, g: 0.8984528, b: 1, a: 0.101960786}
   m_BuildTextureStacks: []

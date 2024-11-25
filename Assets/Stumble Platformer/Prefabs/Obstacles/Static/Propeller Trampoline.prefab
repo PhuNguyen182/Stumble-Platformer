@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5301768994694887552}
   - component: {fileID: 7852488270975402740}
   - component: {fileID: 4537403717380330499}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Effector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,6 +183,9 @@ GameObject:
   - component: {fileID: 7614450425093279172}
   - component: {fileID: 113811501203692753}
   - component: {fileID: 2501460892413918994}
+  - component: {fileID: 1156989710963546859}
+  - component: {fileID: 3514460336138863274}
+  - component: {fileID: 7766909928693171484}
   m_Layer: 8
   m_Name: Propeller Trampoline
   m_TagString: Untagged
@@ -282,3 +285,60 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.75, y: 2.17, z: 4.75}
   m_Center: {x: 0, y: 0.43, z: 0}
+--- !u!54 &1156989710963546859
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421233143497231966}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3514460336138863274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421233143497231966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4caae7adfba103c429493dabec0853d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackOnce: 0
+  attactForce: 15
+  obstacleBody: {fileID: 1156989710963546859}
+  obstacleAttackers:
+  - {fileID: 7766909928693171484}
+--- !u!114 &7766909928693171484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421233143497231966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f859d194563b34d4c9252b72ed36b348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFreeCheckBodyType: 0
