@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 1277649934961077246}
   - component: {fileID: 6055729786529083395}
   - component: {fileID: 3773442262204289232}
+  - component: {fileID: 8063113881631685446}
   m_Layer: 0
   m_Name: obstacle_22_003
   m_TagString: Untagged
@@ -191,7 +192,8 @@ SkinnedMeshRenderer:
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 2553113148541732484, guid: dad33bf0328cdc0498bb0e3ee5260c9d, type: 3}
   m_Bones: []
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: -0.09780139, y: 0.07440734, z: 0.030892491}
@@ -266,6 +268,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8063113881631685446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100567926613183028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f859d194563b34d4c9252b72ed36b348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFreeCheckBodyType: 0
 --- !u!1 &5349342662885530767
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +293,7 @@ GameObject:
   - component: {fileID: 7404954629668360563}
   - component: {fileID: 2607137885012450173}
   - component: {fileID: 2873670699592668672}
+  - component: {fileID: 7416864701722174965}
   m_Layer: 8
   m_Name: Punch Boxer
   m_TagString: Untagged
@@ -358,7 +374,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5349342662885530767}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: bfd621eac08a2434592a97f13e189751, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -372,6 +388,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.5437245, y: 3.543725, z: 4.361614}
   m_Center: {x: -0.000011920929, y: 0, z: -0.3218699}
+--- !u!114 &7416864701722174965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349342662885530767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8657b0f1fde8c4b89230aa83c56e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackOnce: 0
+  attactForce: 12.5
+  obstacleBody: {fileID: 3773442262204289232}
+  obstacleAttackers:
+  - {fileID: 8063113881631685446}
+  attackThreshold: 0.4
+  attackTrigger: 3
+  punchBoxerSkin: {fileID: 790482840000958877}
 --- !u!1 &8431563757379791358
 GameObject:
   m_ObjectHideFlags: 0

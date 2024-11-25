@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4181874075384306525
 Transform:
@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5a0844f8c66c749bb30e64a41defef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  areaIndex: 0
   range: {fileID: 2289759499882988596}
   rangeCenter: {x: 0, y: 0, z: 0}
   rangeSize: {x: 1, y: 1, z: 1}
-  updateRange: 0
+  height: 0
 --- !u!65 &2289759499882988596
 BoxCollider:
   m_ObjectHideFlags: 0

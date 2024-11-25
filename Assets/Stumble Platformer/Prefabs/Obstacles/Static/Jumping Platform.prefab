@@ -221,6 +221,6 @@ MonoBehaviour:
   obstacleBody: {fileID: 0}
   obstacleAttackers:
   - {fileID: 6253850534141036058}
-  pushForce: 4
+  pushForce: 5
   stunDuration: 1.5
   platformAnimator: {fileID: 776684121762139383}

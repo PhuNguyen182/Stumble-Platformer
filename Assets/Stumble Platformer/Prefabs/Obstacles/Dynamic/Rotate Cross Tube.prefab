@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0760a35757f853f4a8790dcd518382ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attactForce: 15
+  attackOnce: 0
+  attactForce: 6
   obstacleBody: {fileID: 1538327023810782198}
   obstacleAttackers:
   - {fileID: 8278752040969486394}
@@ -215,10 +216,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.43
-  m_Height: 5.894605
+  m_Radius: 0.5
+  m_Height: 5.78
   m_Direction: 2
-  m_Center: {x: 0, y: 0.0093797445, z: -0.0067794323}
+  m_Center: {x: 0, y: 0.0093797445, z: 0.03673601}
 --- !u!114 &4101575446087097110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,10 +313,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.43
-  m_Height: 5.894605
+  m_Radius: 0.5
+  m_Height: 5.78
   m_Direction: 2
-  m_Center: {x: 0, y: 0.0093797445, z: -0.0067794323}
+  m_Center: {x: 0, y: 0.0093797445, z: -0.050294876}
 --- !u!114 &937267079460504059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,10 +410,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.43
-  m_Height: 5.8855247
+  m_Radius: 0.5
+  m_Height: 5.78
   m_Direction: 0
-  m_Center: {x: 0.07869196, y: -0.01870519, z: 0}
+  m_Center: {x: 0.12655878, y: -0.01870519, z: 0}
 --- !u!114 &8278752040969486394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,10 +507,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.43
-  m_Height: 5.8855247
+  m_Radius: 0.5
+  m_Height: 5.78
   m_Direction: 0
-  m_Center: {x: 0.07869196, y: -0.01870519, z: 0}
+  m_Center: {x: 0.030825138, y: -0.01870519, z: 0}
 --- !u!114 &1547518815472949625
 MonoBehaviour:
   m_ObjectHideFlags: 0

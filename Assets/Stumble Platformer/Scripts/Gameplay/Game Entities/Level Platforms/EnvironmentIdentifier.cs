@@ -11,8 +11,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 {
     public class EnvironmentIdentifier : MonoBehaviour
     {
+        public bool IsTest;
+        [SerializeField] public string LevelName;
+
         [Header("Environment")]
+        [SerializeField] public bool FogEnable;
+        [SerializeField] public Color FogColor;
+        [SerializeField] public FogMode FogMode;
+        [SerializeField] public float FogDensity;
         [SerializeField] public Material Skybox;
+        [SerializeField] public Color AmbientColor = new(0.5f, 0.5f, 0.5f, 1);
         [SerializeField] public LevelPlatform PlayLevel;
         [SerializeField] public SpawnCharacterArea SpawnCharacterArea;
 
@@ -24,16 +32,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public float stopTimeAmount = 2f;
         [SerializeField] public float teaserDefaultSpeed = 0.25f;
 
-        private IPublisher<InitializeLevelMessage> _initLevelPublisher;
+        private IPublisher<SetupLevelMessage> _initLevelPublisher;
         public IPlayRule PlayRule { get; private set; }
 
-        private void Start()
+        private void Awake()
         {
             SetTeaserActive(false);
             PlayRule = GetComponent<IPlayRule>();
-            _initLevelPublisher = GlobalMessagePipe.GetPublisher<InitializeLevelMessage>();
+        }
+
+        private void Start()
+        {
+            _initLevelPublisher = GlobalMessagePipe.GetPublisher<SetupLevelMessage>();
             
-            _initLevelPublisher.Publish(new InitializeLevelMessage
+            _initLevelPublisher.Publish(new SetupLevelMessage
             {
                 EnvironmentIdentifier = this
             });
@@ -41,6 +53,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         public void SetTeaserActive(bool active)
         {
+            if (IsTest)
+                return;
+
             TeaserFollower.m_Speed = active ? teaserDefaultSpeed : 0;
         }
 

@@ -1030,7 +1030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4032283911152163397, guid: 068c8ae863d9965459152b8a495b082c, type: 3}
       propertyPath: areaIndex
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4032283911152163397, guid: 068c8ae863d9965459152b8a495b082c, type: 3}
       propertyPath: rangeSize.x
@@ -1853,7 +1853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4032283911152163397, guid: 068c8ae863d9965459152b8a495b082c, type: 3}
       propertyPath: areaIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4032283911152163397, guid: 068c8ae863d9965459152b8a495b082c, type: 3}
       propertyPath: rangeSize.x
@@ -2551,7 +2551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4032283911152163397, guid: 068c8ae863d9965459152b8a495b082c, type: 3}
       propertyPath: areaIndex
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4032283911152163397, guid: 068c8ae863d9965459152b8a495b082c, type: 3}
       propertyPath: rangeSize.x

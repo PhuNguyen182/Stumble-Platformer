@@ -7,7 +7,7 @@ using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerController : MonoBehaviour, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
+    public class PlayerController : MonoBehaviour, ISetCharacterInput, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
     {
         [SerializeField] private PlayerHealth playerHealth;
 
@@ -44,11 +44,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Start()
         {
-            IsActive = true;
-            _inputReceiver = InputReceiver.Instance;
-            _playerBody = playerPhysics.GetPlayerBody();
-
             SetupPlayerGraphic();
+            _playerBody = playerPhysics.GetPlayerBody();
         }
 
         private void Update()
@@ -67,7 +64,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             }
         }
 
-        // To do: THis method should be call when player enter Gameplay Scene
+        public void SetCharacterInput(InputReceiver inputReceiver)
+        {
+            _inputReceiver = inputReceiver;
+        }
+
         public void SetupPlayerGraphic()
         {
             if (playerGraphics.CharacterVisual != null)
@@ -83,7 +84,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 _stunDuration = 0;
                 
-                if (!_isAirDashing)
+                if (!_isAirDashing && groundChecker.IsGrounded)
                     SetStunningState(false);
             }
 
@@ -92,12 +93,19 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void ReceiveInput()
         {
-            if (!IsActive)
-                return;
+            if (IsActive)
+            {
+                _isJumpPressed = _inputReceiver.IsJumpPressed;
+                _moveInput = _inputReceiver.RotateAndScaleInput(_inputReceiver.Movement);
+                _isMoving = _moveInput != Vector3.zero;
+            }
 
-            _isJumpPressed = _inputReceiver.IsJumpPressed;
-            _moveInput = _inputReceiver.RotateAndScaleInput(_inputReceiver.Movement);
-            _isMoving = _moveInput != Vector3.zero;
+            else
+            {
+                _isJumpPressed = false;
+                _moveInput = Vector3.zero;
+                _isMoving = false;
+            }
 
             if (groundChecker.IsGrounded)
                 OnGrounded();
@@ -115,13 +123,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             _playerBody.ClampVelocity(characterConfig.MaxSpeed);
             _flatMoveVelocity = _playerBody.GetFlatVelocity();
 
-            bool isRunning = _flatMoveVelocity.sqrMagnitude > characterConfig.MinSpeed * characterConfig.MinSpeed;
+            bool isRunning = _flatMoveVelocity.magnitude > characterConfig.MinSpeed && groundChecker.IsGrounded;
             characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
+            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsMoveInputKey, _moveInput != Vector3.zero);
 
             float moveThreshold = _flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
             characterVisual.CharacterAnimator.SetFloat(CharacterAnimationKeys.MoveKey, moveThreshold);
 
-            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, !groundChecker.IsGrounded && playerPhysics.IsFalling());
+            bool isFalling = !groundChecker.IsGrounded && playerPhysics.IsFalling();
+            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, isFalling);
         }
 
         private void Turn()
@@ -168,7 +178,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, true);
         }
 
-        private void OnGrounded()
+        public void OnGrounded()
         {
             _isAirDashing = false;
             characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);

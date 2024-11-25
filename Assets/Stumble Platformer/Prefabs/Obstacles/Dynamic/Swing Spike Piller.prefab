@@ -461,7 +461,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47eda8203ed73944b9992d5309d4ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attactForce: 24
+  attackOnce: 0
+  attactForce: 12
   obstacleBody: {fileID: 578900498216856955}
   obstacleAttackers:
   - {fileID: 1337726159544110842}

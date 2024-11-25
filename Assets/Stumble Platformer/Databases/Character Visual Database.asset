@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9886ce0d7c1f43459abe4f4585f8135, type: 3}
+  m_Name: Character Visual Database
+  m_EditorClassIdentifier: 
+  CharacterSkins:
+  - SkinID: 1
+    CharacterSkin: {fileID: 11400000, guid: 97465b9ef9578d145beaefbad86c58f6, type: 2}
+  - SkinID: 2
+    CharacterSkin: {fileID: 11400000, guid: 812fbabd8d69bfe4eaaf3a3e4a43fcf7, type: 2}
+  - SkinID: 3
+    CharacterSkin: {fileID: 11400000, guid: ad599ada6ed31ec48a64fafa15b3be86, type: 2}
+  - SkinID: 4
+    CharacterSkin: {fileID: 11400000, guid: 55d87b8caee9a524dac0ad561c2ff86e, type: 2}
+  - SkinID: 5
+    CharacterSkin: {fileID: 11400000, guid: 417a7ca560c93b04b9c6b320aad7dc0c, type: 2}
+  - SkinID: 6
+    CharacterSkin: {fileID: 11400000, guid: d31b770bc68c84f4da930a603b626fc1, type: 2}
+  - SkinID: 7
+    CharacterSkin: {fileID: 11400000, guid: 558b3cf520824be43b44c07eb8964202, type: 2}
+  - SkinID: 8
+    CharacterSkin: {fileID: 11400000, guid: 3b3d1f2cfd3f05a468620ec4a4133e82, type: 2}
+  - SkinID: 9
+    CharacterSkin: {fileID: 11400000, guid: 496bbdee17b01254b9d3702134dfc706, type: 2}
+  - SkinID: 10
+    CharacterSkin: {fileID: 11400000, guid: 892a18c86394a6a44addd9167a0a2137, type: 2}
+  - SkinID: 11
+    CharacterSkin: {fileID: 11400000, guid: 0a7483dfe3d518a49bc7fda937c5e8e3, type: 2}
+  - SkinID: 12
+    CharacterSkin: {fileID: 11400000, guid: a42efcb69f6df2b45b022b5375c5781f, type: 2}
+  - SkinID: 13
+    CharacterSkin: {fileID: 11400000, guid: 9c39757f0aa0ead438910cca49abf2b1, type: 2}
+  - SkinID: 14
+    CharacterSkin: {fileID: 11400000, guid: 0ab354a8614972b46ab31b307830ef98, type: 2}
+  - SkinID: 15
+    CharacterSkin: {fileID: 11400000, guid: 4bda6cd43cf29204e8a332ab7c62e4b3, type: 2}
+  - SkinID: 16
+    CharacterSkin: {fileID: 11400000, guid: 2699c7b7c3829ad47abd3e5570da3582, type: 2}
+  - SkinID: 17
+    CharacterSkin: {fileID: 11400000, guid: f154bf3bbaa7ca94195d6596a7701d28, type: 2}
+  - SkinID: 18
+    CharacterSkin: {fileID: 11400000, guid: be6263b11ee05b34fac376dc6c1eb331, type: 2}
+  - SkinID: 19
+    CharacterSkin: {fileID: 11400000, guid: f97f9f48eb723a949962089ea0b7ccef, type: 2}
+  - SkinID: 20
+    CharacterSkin: {fileID: 11400000, guid: bf0f5daea211b8145ab5cf2f60da300a, type: 2}
+  - SkinID: 21
+    CharacterSkin: {fileID: 11400000, guid: f3e209046a05abf4b8c93f758b695065, type: 2}
+  - SkinID: 22
+    CharacterSkin: {fileID: 11400000, guid: 9ab15d37564de61499294a4fb2aa65ca, type: 2}
+  - SkinID: 23
+    CharacterSkin: {fileID: 11400000, guid: d1506e6858216c34299a110a1447a208, type: 2}
+  - SkinID: 24
+    CharacterSkin: {fileID: 11400000, guid: 7b39d78c7e3e9284eb34f390199a8cfc, type: 2}
+  - SkinID: 25
+    CharacterSkin: {fileID: 11400000, guid: 3860d7ed258c55a44a5604c8a9659855, type: 2}

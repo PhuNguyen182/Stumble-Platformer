@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 4456398601591147369}
   - component: {fileID: 4535706099024596877}
   - component: {fileID: 774532018289810169}
-  - component: {fileID: 8578695631010487346}
+  - component: {fileID: 8769094299324411703}
   m_Layer: 0
   m_Name: Arrowed Board Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5766010826102662695
 Transform:
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9202762867464791413}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -107,7 +107,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &8578695631010487346
+--- !u!65 &8769094299324411703
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,5 +126,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.000001, y: 0.24965225, z: 8.000002}
+  m_Size: {x: 4.000245, y: 0.24989639, z: 8.000246}
   m_Center: {x: 0.00000023841858, y: 0.124826126, z: 0}
