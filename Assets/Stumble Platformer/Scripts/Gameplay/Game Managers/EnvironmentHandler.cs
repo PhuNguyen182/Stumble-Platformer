@@ -28,16 +28,40 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             cameraHandler.SetTeaserCameraActive(false);
         }
 
-        private void SetupSky(Material skybox)
+        private void SetupSky()
         {
-            RenderSettings.skybox = skybox;
+            RenderSettings.skybox = EnvironmentIdentifier.Skybox;
+        }
+
+        private void SetupAmbient()
+        {
+            RenderSettings.ambientLight = EnvironmentIdentifier.AmbientColor;
             DynamicGI.UpdateEnvironment();
+        }
+
+        private void SetupFog()
+        {
+            RenderSettings.fog = EnvironmentIdentifier.FogEnable;
+
+            if (!EnvironmentIdentifier.FogEnable)
+                return;
+
+            RenderSettings.fogMode = EnvironmentIdentifier.FogMode;
+            RenderSettings.fogColor = EnvironmentIdentifier.FogColor;
+            RenderSettings.fogDensity = EnvironmentIdentifier.FogDensity;
+        }
+
+        private void SetupCamera()
+        {
+            cameraHandler.SetupTeaserCamera(EnvironmentIdentifier.TeaserFollower.transform, EnvironmentIdentifier.TeaserPath);
         }
 
         private void SetupEnvironment()
         {
-            SetupSky(EnvironmentIdentifier.Skybox);
-            cameraHandler.SetupTeaserCamera(EnvironmentIdentifier.TeaserFollower.transform, EnvironmentIdentifier.TeaserPath);
+            SetupSky();
+            SetupFog();
+            SetupAmbient();
+            SetupCamera();
         }
 
         public async UniTask GenerateLevel(string levelName)

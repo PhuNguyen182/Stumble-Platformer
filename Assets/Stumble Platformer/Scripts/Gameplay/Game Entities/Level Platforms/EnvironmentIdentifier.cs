@@ -15,7 +15,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public string LevelName;
 
         [Header("Environment")]
+        [SerializeField] public bool FogEnable;
+        [SerializeField] public Color FogColor;
+        [SerializeField] public FogMode FogMode;
+        [SerializeField] public float FogDensity;
         [SerializeField] public Material Skybox;
+        [SerializeField] public Color AmbientColor = new(0.5f, 0.5f, 0.5f, 1);
         [SerializeField] public LevelPlatform PlayLevel;
         [SerializeField] public SpawnCharacterArea SpawnCharacterArea;
 
