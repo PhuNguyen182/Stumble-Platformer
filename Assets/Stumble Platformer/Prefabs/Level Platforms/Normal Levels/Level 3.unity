@@ -19255,9 +19255,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotate Cross Tube
       objectReference: {fileID: 0}
+    - target: {fileID: 4498418783509105765, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157065267954080140, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5454427547545618187, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
       propertyPath: rotateSpeed
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7107090723513738805, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424103333883301793, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176005445425565981, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

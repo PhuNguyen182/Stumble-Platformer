@@ -1001,7 +1001,7 @@ MonoBehaviour:
   virtualCamera: {fileID: 682400820}
   cameraPointer: {fileID: 1462723939}
   heightAngle: 60
-  cameraDistance: 4.925
+  cameraDistance: 6
   minCameraHeight: 0.5
   rotationSpeed: 0.15
   heightOffsetSpeed: 0.01
