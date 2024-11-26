@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: indicator_light_001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 59da6d14a2494424c9023c940fb6b38d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
