@@ -5030,7 +5030,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTest: 0
   LevelName: 
+  FogEnable: 0
+  FogColor: {r: 0, g: 0, b: 0, a: 0}
+  FogMode: 0
+  FogDensity: 0
   Skybox: {fileID: 2100000, guid: 68c8b082fc060462297a19b76efbc1e1, type: 2}
+  AmbientColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  SunSource: {fileID: 328498386}
   PlayLevel: {fileID: 1724201788}
   SpawnCharacterArea: {fileID: 231218960}
   TeaserFollower: {fileID: 1176312562}

@@ -35,6 +35,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             RenderSettings.skybox = EnvironmentIdentifier.Skybox;
         }
 
+        private void SetupLight()
+        {
+            if (EnvironmentIdentifier.SunSource != null)
+                RenderSettings.sun = EnvironmentIdentifier.SunSource;
+        }
+
         private void SetupAmbient()
         {
             RenderSettings.ambientLight = EnvironmentIdentifier.AmbientColor;
@@ -62,6 +68,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         {
             SetupSky();
             SetupFog();
+            SetupLight();
             SetupAmbient();
             SetupCamera();
         }
