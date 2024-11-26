@@ -1,6 +1,6 @@
 using StumblePlatformer.Scripts.Common.Enums;
-using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Gameplay.GameManagers;
+using StumblePlatformer.Scripts.Common.Messages;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {

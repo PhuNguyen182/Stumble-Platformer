@@ -44,6 +44,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
             }
         }
 
+#if UNITY_EDITOR
         [Button]
         [HorizontalGroup(GroupID = "Hazzards")]
         public void GetObstacles()
@@ -64,5 +65,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         {
             respawnAreas = respawnContainer.GetComponentsInChildren<RespawnArea>();
         }
+#endif
     }
 }

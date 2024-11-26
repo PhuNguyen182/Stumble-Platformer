@@ -1,31 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
-    public class PunchBoxerObstacle : BaseObstacle
+    public class SliderObstacle : BaseObstacle
     {
-        [SerializeField] private float attackThreshold;
-        [SerializeField] private float attackTrigger = 0.05f; // Use blend key to check
-        [SerializeField] private SkinnedMeshRenderer punchBoxerSkin;
+        [SerializeField] private OscillatePosition oscillatePosition;
 
-        private bool _canAttack;
+        public override void SetObstacleActive(bool active)
+        {
+            base.SetObstacleActive(active);
+            oscillatePosition.IsActive = active;
+        }
 
         public override void DamageCharacter(Collision collision)
         {
             if (!collision.transform.TryGetComponent(out ICharacterMovement characterMovement))
                 return;
 
-            if (!collision.collider.TryGetComponent(out IDamageable damageable))
-                return;
-
-            if (collision.impulse.sqrMagnitude < attackThreshold * attackThreshold)
-                return;
-
-            if (_canAttack)
+            if (collision.collider.TryGetComponent(out IDamageable damageable))
             {
                 Vector3 forceDirection = collision.GetContact(0).normal;
 
@@ -51,7 +48,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         public override void ObstacleAction()
         {
-            _canAttack = punchBoxerSkin.GetBlendShapeWeight(0) < attackTrigger;
+            
         }
     }
 }

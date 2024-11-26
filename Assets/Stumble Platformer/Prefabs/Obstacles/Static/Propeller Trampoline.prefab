@@ -271,7 +271,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5421233143497231966}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: bfd621eac08a2434592a97f13e189751, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -329,6 +329,9 @@ MonoBehaviour:
   obstacleBody: {fileID: 1156989710963546859}
   obstacleAttackers:
   - {fileID: 7766909928693171484}
+  interactibleLayer:
+    serializedVersion: 2
+    m_Bits: 9
 --- !u!114 &7766909928693171484
 MonoBehaviour:
   m_ObjectHideFlags: 0

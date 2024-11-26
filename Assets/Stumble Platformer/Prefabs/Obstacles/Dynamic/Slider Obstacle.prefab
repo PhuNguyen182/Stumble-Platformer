@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8384447001122736629}
   - component: {fileID: 8114011831873635075}
   - component: {fileID: 5045852007339594686}
+  - component: {fileID: 8638371888576789993}
   m_Layer: 8
   m_Name: Slider Obstacle
   m_TagString: Untagged
@@ -84,6 +85,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8638371888576789993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734873191053309627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc0a0bead97619458ee3a47bfcc1ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackOnce: 0
+  attactForce: 6
+  stunDuration: 1.5
+  obstacleBody: {fileID: 0}
+  obstacleAttackers:
+  - {fileID: 8939087255180391996}
+  oscillatePosition: {fileID: 1390177518590301655}
 --- !u!1 &3689806123981602853
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,9 +115,10 @@ GameObject:
   - component: {fileID: 5079167160998702139}
   - component: {fileID: 5121060360463410348}
   - component: {fileID: 5332739425377654479}
-  - component: {fileID: 1390177518590301655}
-  - component: {fileID: 3826716546948378478}
   - component: {fileID: 8088918691815284419}
+  - component: {fileID: 3826716546948378478}
+  - component: {fileID: 1390177518590301655}
+  - component: {fileID: 8939087255180391996}
   m_Layer: 0
   m_Name: obstacle_7_002
   m_TagString: Untagged
@@ -170,6 +191,54 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &8088918691815284419
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689806123981602853}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &3826716546948378478
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689806123981602853}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.6723332, y: 1.6265552, z: 0.25440153}
+  m_Center: {x: 0, y: -0.1325475, z: 0}
 --- !u!114 &1390177518590301655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,51 +280,16 @@ MonoBehaviour:
   duration: 2
   useRandomDelay: 0
   maxRandomDelay: 1
---- !u!65 &3826716546948378478
-BoxCollider:
+--- !u!114 &8939087255180391996
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3689806123981602853}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.6723332, y: 1.6265552, z: 0.25440153}
-  m_Center: {x: 0, y: -0.1325475, z: 0}
---- !u!54 &8088918691815284419
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3689806123981602853}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f859d194563b34d4c9252b72ed36b348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFreeCheckBodyType: 0

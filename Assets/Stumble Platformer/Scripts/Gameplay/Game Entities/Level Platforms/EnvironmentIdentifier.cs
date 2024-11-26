@@ -37,6 +37,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         private void Awake()
         {
+            SetLevelActive(true);
             SetTeaserActive(false);
             PlayRule = GetComponent<IPlayRule>();
         }
@@ -50,6 +51,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                 EnvironmentIdentifier = this
             });
         }
+
+        public void SetLevelActive(bool active) => PlayLevel.SetLevelActive(active);
 
         public void SetTeaserActive(bool active)
         {

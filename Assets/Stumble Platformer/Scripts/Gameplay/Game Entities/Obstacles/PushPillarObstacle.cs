@@ -8,7 +8,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
     public class PushPillarObstacle : BaseObstacle
     {
         [SerializeField] private float pushForce = 6;
-        [SerializeField] private float stunDuration = 1.5f;
         [SerializeField] private Animator platformAnimator;
 
         private readonly int _pushHash = Animator.StringToHash("Push");
