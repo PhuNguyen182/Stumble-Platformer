@@ -1996,7 +1996,7 @@ MonoBehaviour:
   cameraDistance: 6.5
   minCameraHeight: 0.5
   rotationSpeed: 0.15
-  heightOffsetSpeed: 0.01
+  heightOffsetSpeed: 0.015
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1005,7 +1005,7 @@ MonoBehaviour:
   cameraDistance: 6.5
   minCameraHeight: 0.5
   rotationSpeed: 0.15
-  heightOffsetSpeed: 0.01
+  heightOffsetSpeed: 0.015
 --- !u!4 &1746482444
 Transform:
   m_ObjectHideFlags: 0
