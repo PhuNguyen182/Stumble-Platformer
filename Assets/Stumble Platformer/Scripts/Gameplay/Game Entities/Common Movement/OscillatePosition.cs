@@ -6,14 +6,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
     public class OscillatePosition : MonoBehaviour, IUpdateHandler
     {
         [Header("Movement")]
-        [SerializeField] private AnimationCurve easeCurve;
-        [SerializeField] private Vector3 moveAxis = Vector3.up;
-        [SerializeField] private float moveDistance = 2f;
-        [SerializeField] private float duration = 2f;
+        [SerializeField] public AnimationCurve easeCurve;
+        [SerializeField] public Vector3 moveAxis = Vector3.up;
+        [SerializeField] public float moveDistance = 2f;
+        [SerializeField] public float duration = 2f;
 
         [Header("Delay")]
-        [SerializeField] private bool useRandomDelay = false;
-        [SerializeField] private float maxRandomDelay = 1f;
+        [SerializeField] public bool useRandomDelay = false;
+        [SerializeField] public float maxRandomDelay = 1f;
 
         private bool isReversing = false;
         private float timeElapsed = 0f;

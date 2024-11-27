@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 9074900207602089958}
   - component: {fileID: 8676896093740731999}
   - component: {fileID: 8767815009039503983}
+  - component: {fileID: 4424142825840815407}
   - component: {fileID: 4251295857923937528}
   - component: {fileID: -7340481700778909292}
+  - component: {fileID: 3437711500828187635}
   m_Layer: 0
   m_Name: Tower 2
   m_TagString: Untagged
@@ -107,6 +109,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &4424142825840815407
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2792580087097471771}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!136 &4251295857923937528
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -146,6 +175,20 @@ MonoBehaviour:
   attactForce: 15
   stunDuration: 1.5
   obstacleBody: {fileID: 0}
-  obstacleAttackers: []
+  obstacleAttackers:
+  - {fileID: 3437711500828187635}
   pushForce: 6
   platformAnimator: {fileID: 8767815009039503983}
+--- !u!114 &3437711500828187635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2792580087097471771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f859d194563b34d4c9252b72ed36b348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFreeCheckBodyType: 0

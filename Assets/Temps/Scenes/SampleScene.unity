@@ -1219,6 +1219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059f4bd8c45f5fc449021f8bbd922b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsTest: 1
   inputReceiver: {fileID: 1182122303}
   playerPrefab: {fileID: 5956835733577522111, guid: 4af7a8d5f86130e40936b0fb4e7d9edb, type: 3}
   environmentHandler: {fileID: 1270006436}
