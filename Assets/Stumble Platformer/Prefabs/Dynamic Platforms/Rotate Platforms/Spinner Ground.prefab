@@ -368,7 +368,7 @@ MonoBehaviour:
   localPosition: {x: 0, y: 0, z: 0}
   parent: {fileID: 0}
   usePhysics: 0
-  rotateSpeed: 100
+  rotateSpeed: 75
   rotateAxis: 2
 --- !u!1 &8184297121886807005
 GameObject:
