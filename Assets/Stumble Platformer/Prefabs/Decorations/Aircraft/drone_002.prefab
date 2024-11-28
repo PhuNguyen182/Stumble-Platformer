@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &6599781634951710513
 Transform:
@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: drone_002
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c67226a9ca868044ae0f6020628b10b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -335,6 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74dd6ca550c8bac4e9ab35778865fa4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 8749350877329028760}
   titleAnim: Drone_Animation
 --- !u!4 &8765100718267458389 stripped
 Transform:

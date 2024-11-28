@@ -7,10 +7,6 @@ using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using GlobalScripts.Extensions;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
     [RequireComponent(typeof(Rigidbody))]
@@ -68,6 +64,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public override void PlatformAction()
         {
+            usedSpeed = IsPlatformActive ? movementSpeed : 0;
             if (transform.IsCloseTo(lastPosition, toleranceOffset))
             {
                 SetPlatformActive(false);
@@ -105,7 +102,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             }
         }
 
-
         protected virtual void ResetWaypoints()
         {
             startPosition = transform.position;
@@ -134,9 +130,26 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             platformBody.transform.position = movement;
         }
 
-        private void SwapPivotPositions()
+        private void SwapPivotPositions() => (firstPosition, lastPosition) = (lastPosition, firstPosition);
+
+        private void CheckDummyPlatform()
         {
-            (firstPosition, lastPosition) = (lastPosition, firstPosition);
+            if (transform.childCount <= 0)
+                return;
+
+            if (transform.GetChild(0).TryGetComponent(out dummyPlatform))
+            {
+                float height = platformCollider.size.y / 2 + dummyPlatformHeight * 0.5f / transform.localScale.y;
+                Vector3 size = new Vector3(platformCollider.size.x, dummyPlatformHeight / transform.localScale.y, platformCollider.size.z);
+                Vector3 center = new Vector3(platformCollider.center.x, height, platformCollider.center.z);
+                dummyPlatform.SetSizeAndCenter(size, center);
+            }
+        }
+
+        private void FetchComponents()
+        {
+            platformBody ??= GetComponent<Rigidbody>();
+            platformCollider ??= GetComponent<BoxCollider>();
         }
 
 #if UNITY_EDITOR
@@ -149,8 +162,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void OnValidate()
         {
-            platformBody ??= GetComponent<Rigidbody>();
-            platformCollider ??= GetComponent<BoxCollider>();
+            FetchComponents();
 
             if (resetWaypoints)
             {
@@ -161,41 +173,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             if (checkDummyPlatform)
             {
                 checkDummyPlatform = false;
-                if (transform.childCount <= 0)
-                    return;
-
-                dummyPlatform = transform.GetChild(0).GetComponent<DummyPlatform>();
-
-                if (dummyPlatform == null)
-                    return;
-
-                float height = platformCollider.size.y / 2 + dummyPlatformHeight * 0.5f / transform.localScale.y;
-                Vector3 size = new Vector3(platformCollider.size.x, dummyPlatformHeight / transform.localScale.y, platformCollider.size.z);
-                Vector3 center = new Vector3(platformCollider.center.x, height, platformCollider.center.z);
-                dummyPlatform.SetSizeAndCenter(size, center);
+                CheckDummyPlatform();
             }
         }
 #endif
     }
-
-#if UNITY_EDITOR
-    [CustomEditor(typeof(MovingPlatform)), CanEditMultipleObjects]
-    public class MovingPlatformPositionHandle : Editor
-    {
-        protected virtual void OnSceneGUI()
-        {
-            MovingPlatform movingPlatform = (MovingPlatform)target;
-
-            EditorGUI.BeginChangeCheck();
-            Vector3 newStartPosition = Handles.PositionHandle(movingPlatform.StartPosition, Quaternion.identity);
-            Vector3 newEndPosition = Handles.PositionHandle(movingPlatform.EndPosition, Quaternion.identity);
-
-            if (EditorGUI.EndChangeCheck())
-            {
-                movingPlatform.StartPosition = newStartPosition;
-                movingPlatform.EndPosition = newEndPosition;
-            }
-        }
-    }
-#endif
 }

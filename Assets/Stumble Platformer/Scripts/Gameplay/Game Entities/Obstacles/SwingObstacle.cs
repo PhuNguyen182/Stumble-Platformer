@@ -37,7 +37,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             {
                 Vector3 forceDirection = collision.GetContact(0).normal;
 
-                if (forceDirection.y < 0)
+                if (forceDirection.y > 0)
                 {
                     forceDirection.y = 0;
                     forceDirection.Normalize();
@@ -47,7 +47,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 {
                     AttackForce = -attactForce,
                     ForceDirection = forceDirection,
-                    StunDuration = 1.5f,
+                    StunDuration = stunDuration,
                 });
             }
         }

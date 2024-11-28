@@ -25,11 +25,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private GameStateController _gameStateController;
         
-        private IPlayRule _playeRule;
         private IDisposable _initLevelDisposable;
-
-        private ISubscriber<RespawnMessage> _respawnSubscriber;
         private ISubscriber<SetupLevelMessage> _initLevelSubscriber;
+        private ISubscriber<RespawnMessage> _respawnSubscriber;
+
+        public IPlayRule PlayRule { get; private set; }
 
         private void Awake()
         {
@@ -92,12 +92,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         {
             await environmentHandler.WaitForTeaser();
 
-            _playeRule = environmentHandler.EnvironmentIdentifier.PlayRule;
-            _playeRule.SetStateController(_gameStateController);
+            PlayRule = environmentHandler.EnvironmentIdentifier.PlayRule;
+            PlayRule.SetStateController(_gameStateController);
 
             playerHandler.SpawnPlayer();
             cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
-            _playeRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
+            PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
 
             playerHandler.SetPlayerActive(true);
             inputReceiver.IsActive = true;

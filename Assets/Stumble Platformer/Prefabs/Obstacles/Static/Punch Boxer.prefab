@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &5232960146583408845
 Transform:
@@ -128,7 +128,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &1752208104733266770
 Transform:
@@ -402,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackOnce: 0
   attactForce: 12.5
+  stunDuration: 1.5
   obstacleBody: {fileID: 3773442262204289232}
   obstacleAttackers:
   - {fileID: 8063113881631685446}
@@ -422,7 +423,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &1062878827193255463
 Transform:

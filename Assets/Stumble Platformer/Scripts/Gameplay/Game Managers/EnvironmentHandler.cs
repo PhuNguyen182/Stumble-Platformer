@@ -14,6 +14,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public EnvironmentIdentifier EnvironmentIdentifier { get; private set; }
 
+        public void SetLevelActive(bool active) => EnvironmentIdentifier.SetLevelActive(active);
+
         public void SetEnvironmentIdentifier(EnvironmentIdentifier environmentIdentifier)
         {
             EnvironmentIdentifier = environmentIdentifier;
@@ -31,6 +33,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private void SetupSky()
         {
             RenderSettings.skybox = EnvironmentIdentifier.Skybox;
+        }
+
+        private void SetupLight()
+        {
+            if (EnvironmentIdentifier.SunSource != null)
+                RenderSettings.sun = EnvironmentIdentifier.SunSource;
         }
 
         private void SetupAmbient()
@@ -60,6 +68,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         {
             SetupSky();
             SetupFog();
+            SetupLight();
             SetupAmbient();
             SetupCamera();
         }

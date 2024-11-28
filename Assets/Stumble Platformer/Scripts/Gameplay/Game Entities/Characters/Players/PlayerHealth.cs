@@ -28,7 +28,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private IDisposable _messageDisposable;
 
         public int CheckPointIndex => _checkPointIndex;
-
         public int HealthPoint => _healthPoint;
 
         private void Start()

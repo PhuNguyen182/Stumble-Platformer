@@ -39,7 +39,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 {
                     AttackForce = -attactForce,
                     ForceDirection = forceDirection,
-                    StunDuration = 1.5f,
+                    StunDuration = stunDuration,
                 });
             }
         }

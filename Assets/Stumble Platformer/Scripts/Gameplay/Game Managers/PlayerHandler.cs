@@ -11,11 +11,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     public class PlayerHandler : MonoBehaviour
     {
+        public bool IsTest;
         [SerializeField] private InputReceiver inputReceiver;
         [SerializeField] private PlayerController playerPrefab;
         [SerializeField] private EnvironmentHandler environmentHandler;
         [SerializeField] private PlayDataCollectionInitializer playDataCollectionInitializer;
 
+        private RespawnArea _currentCheckPoint;
         private PlayerController _currentPlayer;
 
         public PlayerController CurrentPlayer => _currentPlayer;
@@ -33,7 +35,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             if (hasSkin)
                 _currentPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);
 
-            _currentPlayer.PlayerHealth.SetHealth(CharacterConstants.MaxLife);
+            int lifeCount = IsTest ? 1000 : CharacterConstants.MaxLife;
+            _currentPlayer.PlayerHealth.SetHealth(lifeCount);
             _currentPlayer.SetCharacterInput(inputReceiver);
         }
 
@@ -42,10 +45,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         public void RespawnPlayer()
         {
             int checkPointIndex = _currentPlayer.GetCheckPointIndex();
-            RespawnArea currentCheckPoint = environmentHandler.EnvironmentIdentifier.PlayLevel
-                                            .GetCheckPointByIndex(checkPointIndex);
+            _currentCheckPoint = environmentHandler.EnvironmentIdentifier.PlayLevel
+                                                   .GetCheckPointByIndex(checkPointIndex);
             
-            Vector3 respawnPosition = currentCheckPoint.GetRandomSpawnPosition();
+            Vector3 respawnPosition = _currentCheckPoint.GetRandomSpawnPosition();
             _currentPlayer.transform.position = respawnPosition;
 
             _currentPlayer.SetCharacterActive(true);

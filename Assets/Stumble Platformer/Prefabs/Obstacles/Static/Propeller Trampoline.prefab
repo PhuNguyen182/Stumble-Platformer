@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5301768994694887552}
   - component: {fileID: 7852488270975402740}
   - component: {fileID: 4537403717380330499}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Effector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &5301768994694887552
 Transform:
@@ -53,9 +53,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2.375
-  m_Height: 9
+  m_Height: 11
   m_Direction: 1
-  m_Center: {x: 0, y: 4, z: 0}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!114 &4537403717380330499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &8473987324485708271
 Transform:
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationAxis: 1
-  rotationSpeed: 1250
+  rotationSpeed: 1300
 --- !u!1 &5421233143497231966
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,12 +183,15 @@ GameObject:
   - component: {fileID: 7614450425093279172}
   - component: {fileID: 113811501203692753}
   - component: {fileID: 2501460892413918994}
+  - component: {fileID: 1156989710963546859}
+  - component: {fileID: 3514460336138863274}
+  - component: {fileID: 7766909928693171484}
   m_Layer: 8
   m_Name: Propeller Trampoline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &266053040904790612
 Transform:
@@ -268,7 +271,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5421233143497231966}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: bfd621eac08a2434592a97f13e189751, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -282,3 +285,64 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.75, y: 2.17, z: 4.75}
   m_Center: {x: 0, y: 0.43, z: 0}
+--- !u!54 &1156989710963546859
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421233143497231966}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3514460336138863274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421233143497231966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4caae7adfba103c429493dabec0853d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackOnce: 0
+  attactForce: 15
+  stunDuration: 1.5
+  obstacleBody: {fileID: 1156989710963546859}
+  obstacleAttackers:
+  - {fileID: 7766909928693171484}
+  interactibleLayer:
+    serializedVersion: 2
+    m_Bits: 9
+--- !u!114 &7766909928693171484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421233143497231966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f859d194563b34d4c9252b72ed36b348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFreeCheckBodyType: 0

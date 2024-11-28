@@ -12,6 +12,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
     {
         [SerializeField] protected bool attackOnce;
         [SerializeField] protected float attactForce = 15f;
+        [SerializeField] protected float stunDuration = 1.5f;
         [SerializeField] protected Rigidbody obstacleBody;
         
         [Header("Obstacle Strikers")]
@@ -27,7 +28,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void Start()
         {
-            IsActive = true;
             UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
 

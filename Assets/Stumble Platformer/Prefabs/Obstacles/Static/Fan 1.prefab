@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 3191013667916444160}
   - component: {fileID: 2659132015134329553}
   - component: {fileID: 5639057296214232065}
+  - component: {fileID: 4946801686829711475}
   m_Layer: 0
   m_Name: Propeller Wing
   m_TagString: Untagged
@@ -488,6 +489,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4946801686829711475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060616594918637775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84a6c6322e9876498f71830c10fecfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAxis: 2
+  rotationSpeed: 1785
 --- !u!1 &6229540666774641068
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +910,7 @@ GameObject:
   - component: {fileID: 4983828540374565805}
   - component: {fileID: 603452782810952640}
   - component: {fileID: 4861639708299741159}
+  - component: {fileID: 6420672813471331112}
   m_Layer: 0
   m_Name: Propeller Wing
   m_TagString: Untagged
@@ -967,3 +983,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6420672813471331112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8710899035416612092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84a6c6322e9876498f71830c10fecfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAxis: 2
+  rotationSpeed: 1785

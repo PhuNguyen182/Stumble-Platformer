@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &8883768760204177263
 Transform:
@@ -111,11 +111,11 @@ GameObject:
   - component: {fileID: 776684121762139383}
   - component: {fileID: 2987407148428296906}
   m_Layer: 8
-  m_Name: Jumping Platform
+  m_Name: Push Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &4077484426468497579
 Transform:
@@ -218,9 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackOnce: 1
   attactForce: 3
+  stunDuration: 1.5
   obstacleBody: {fileID: 0}
   obstacleAttackers:
   - {fileID: 6253850534141036058}
   pushForce: 5
-  stunDuration: 1.5
   platformAnimator: {fileID: 776684121762139383}

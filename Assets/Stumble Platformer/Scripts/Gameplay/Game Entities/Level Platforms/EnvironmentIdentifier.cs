@@ -21,6 +21,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public float FogDensity;
         [SerializeField] public Material Skybox;
         [SerializeField] public Color AmbientColor = new(0.5f, 0.5f, 0.5f, 1);
+        [SerializeField] public Light SunSource;
         [SerializeField] public LevelPlatform PlayLevel;
         [SerializeField] public SpawnCharacterArea SpawnCharacterArea;
 
@@ -37,6 +38,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         private void Awake()
         {
+            SetLevelActive(true);
             SetTeaserActive(false);
             PlayRule = GetComponent<IPlayRule>();
         }
@@ -50,6 +52,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                 EnvironmentIdentifier = this
             });
         }
+
+        public void SetLevelActive(bool active) => PlayLevel.SetLevelActive(active);
 
         public void SetTeaserActive(bool active)
         {
