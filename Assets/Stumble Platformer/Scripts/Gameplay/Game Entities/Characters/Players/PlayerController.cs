@@ -23,7 +23,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         [SerializeField] private Transform characterPivot;
         [SerializeField] private CharacterConfig characterConfig;
 
-        private bool _isMoving;
         private bool _isAirDashing;
         private bool _isJumpPressed;
         private bool _isStunning;
@@ -97,14 +96,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 _isJumpPressed = _inputReceiver.IsJumpPressed;
                 _moveInput = _inputReceiver.RotateAndScaleInput(_inputReceiver.Movement);
-                _isMoving = _moveInput != Vector3.zero;
             }
 
             else
             {
                 _isJumpPressed = false;
                 _moveInput = Vector3.zero;
-                _isMoving = false;
             }
 
             if (groundChecker.IsGrounded)
