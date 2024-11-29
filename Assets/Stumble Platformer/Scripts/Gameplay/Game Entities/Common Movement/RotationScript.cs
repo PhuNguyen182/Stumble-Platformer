@@ -3,7 +3,7 @@ using GlobalScripts.UpdateHandlerPattern;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
-    public class RotationScript : MonoBehaviour, IUpdateHandler
+    public class RotationScript : MonoBehaviour, IFixedUpdateHandler
     {
         public enum RotationAxis
         {
@@ -20,12 +20,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
         private void Start()
         {
             IsActive = true;
-            UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
+            UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
 
-        public void OnUpdate(float deltaTime)
+        public void OnFixedUpdate()
         {
-            float rotationValue = rotationSpeed * deltaTime;
+            float rotationValue = rotationSpeed * Time.fixedDeltaTime;
 
             Vector3 axis = Vector3.zero;
             switch (rotationAxis)
@@ -46,7 +46,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 
         private void OnDestroy()
         {
-            UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);
+            UpdateHandlerManager.Instance.RemoveFixedUpdateBehaviour(this);
         }
     }
 }
