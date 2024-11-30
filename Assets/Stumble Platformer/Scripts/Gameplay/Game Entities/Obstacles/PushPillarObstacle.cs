@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
@@ -19,34 +20,40 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
             if (collision.collider.TryGetComponent(out IDamageable damageable))
             {
-                damageable.TakeDamage(new DamageData
-                {
-                    AttackForce = hitImpulse + attactForce,
-                    ForceDirection = -hitNormal,
-                    StunDuration = stunDuration
-                });
+                if (damageable is ICharacterMovement characterMovement && characterMovement.IsStunning)
+                    NormalPush(collision, hitNormal, hitImpulse);
 
-                platformAnimator.SetTrigger(_pushHash);
+                else
+                    AttackCharacter(damageable, hitNormal, hitImpulse);
             }
 
             else
+                NormalPush(collision, hitNormal, hitImpulse);
+        }
+
+        private void AttackCharacter(IDamageable damageable, Vector3 hitNormal, float hitImpulse)
+        {
+            damageable.TakeDamage(new DamageData
             {
-                if (collision.collider.attachedRigidbody != null)
-                {
-                    collision.collider.attachedRigidbody.velocity = -hitNormal * (hitImpulse + pushForce);
-                    platformAnimator.SetTrigger(_pushHash);
-                }
+                AttackForce = hitImpulse + attactForce,
+                ForceDirection = -hitNormal,
+                StunDuration = stunDuration
+            });
+
+            platformAnimator.SetTrigger(_pushHash);
+        }
+
+        private void NormalPush(Collision collision, Vector3 hitNormal, float hitImpulse)
+        {
+            if (collision.collider.attachedRigidbody != null)
+            {
+                collision.collider.attachedRigidbody.velocity = -hitNormal * (hitImpulse + pushForce);
+                platformAnimator.SetTrigger(_pushHash);
             }
         }
 
-        public override void ExitDamage(Collision collision)
-        {
-            
-        }
+        public override void ExitDamage(Collision collision) { }
 
-        public override void ObstacleAction()
-        {
-            
-        }
+        public override void ObstacleAction() { }
     }
 }

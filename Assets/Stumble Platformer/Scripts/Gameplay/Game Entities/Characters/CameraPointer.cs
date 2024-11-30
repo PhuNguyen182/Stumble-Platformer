@@ -46,7 +46,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             {
                 FollowPosition(_followTarget.position);
 
-                _transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+                _transposer ??= virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
                 _maxHeight = cameraDistance * Mathf.Sin(heightAngle * Mathf.Deg2Rad);
 
                 ResetCamera();
@@ -79,6 +79,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         private void ResetCamera()
         {
+            cameraPointer.rotation = Quaternion.identity;
             _yRotation = cameraPointer.eulerAngles.y - 180;
             _adjacentLeg = _transposer.m_FollowOffset.y;
         }

@@ -52,6 +52,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             _currentPlayer.transform.position = respawnPosition;
 
             _currentPlayer.SetCharacterActive(true);
+            _currentPlayer.transform.rotation = _currentCheckPoint.transform.rotation;
+            _currentPlayer.ResetPlayerOrientation(_currentCheckPoint.transform.localRotation);
+            environmentHandler.CameraHandler.ResetCurrentCameraFollow();
             SetPlayerActive(true);
         }
     }

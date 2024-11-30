@@ -12,7 +12,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
     {
         [SerializeField] private TeaserCamera teaserCamera;
         [SerializeField] private CameraPointer cameraPointer;
-        [SerializeField] private CinemachineVirtualCamera followPlayerCamera;
 
 #if UNITY_EDITOR
         [Header("Testing")]
@@ -42,6 +41,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             cameraPointer.SetFollowTarget(followTarget);
             cameraPointer.SetupCameraOnStart();
         }
+
+        public void ResetCurrentCameraFollow() => cameraPointer.SetupCameraOnStart();
 
         public void SetupTeaserCamera(Transform target, CinemachinePathBase path)
         {

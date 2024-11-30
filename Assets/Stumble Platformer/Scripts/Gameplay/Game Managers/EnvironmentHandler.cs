@@ -12,6 +12,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
     {
         [SerializeField] private CameraHandler cameraHandler;
 
+        public CameraHandler CameraHandler => cameraHandler;
         public EnvironmentIdentifier EnvironmentIdentifier { get; private set; }
 
         public void SetLevelActive(bool active) => EnvironmentIdentifier.SetLevelActive(active);

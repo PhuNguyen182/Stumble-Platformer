@@ -63,6 +63,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             }
         }
 
+        public void ResetPlayerOrientation(Quaternion orientation)
+        {
+            characterPivot.localRotation = orientation;
+        }
+
         public void SetCharacterInput(InputReceiver inputReceiver)
         {
             _inputReceiver = inputReceiver;
