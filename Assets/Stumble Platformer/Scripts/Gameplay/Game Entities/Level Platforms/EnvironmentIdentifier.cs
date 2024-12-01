@@ -5,6 +5,7 @@ using Cinemachine;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
 using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector;
 using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
@@ -78,6 +79,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
             await teaserTask;
             await UniTask.WaitForSeconds(stopTimeAmount, cancellationToken: destroyCancellationToken);
+        }
+
+        [Button]
+        public void GatherEnvironmentSpecs()
+        {
+            Skybox = RenderSettings.skybox;
+            SunSource = RenderSettings.sun;
+            AmbientColor = RenderSettings.ambientLight;
+            FogEnable = RenderSettings.fog;
+            FogMode = RenderSettings.fogMode;
+            FogColor = RenderSettings.fogColor;
+            FogDensity = RenderSettings.fogDensity;
         }
     }
 }

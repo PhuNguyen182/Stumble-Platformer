@@ -642,7 +642,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teaserCamera: {fileID: 1247963786}
   cameraPointer: {fileID: 2113077217}
-  followPlayerCamera: {fileID: 1296743010}
   followTarget: {fileID: 483140208}
   testPlayerPoint: {fileID: 0}
 --- !u!1 &1270006432

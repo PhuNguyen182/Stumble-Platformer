@@ -5304,7 +5304,7 @@ MonoBehaviour:
   FogMode: 0
   FogDensity: 0
   Skybox: {fileID: 2100000, guid: 9b5bbce29c63f4ab5a5b63354c67d6ca, type: 2}
-  AmbientColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  AmbientColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   SunSource: {fileID: 328498386}
   PlayLevel: {fileID: 1724201788}
   SpawnCharacterArea: {fileID: 231218960}
