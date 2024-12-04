@@ -13,23 +13,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         [SerializeField] private Transform cameraPointer;
 
         [Header("Settings")]
-        [SerializeField] private float heightAngle = 60f;
-        [SerializeField] private float cameraDistance = 4.75f;
-        [SerializeField] private float minCameraHeight = 0;
+        [SerializeField][Range(15f, 90f)] private float heightAngle = 60f;
+        [SerializeField][Range(4f, 15f)] private float cameraDistance = 4.75f;
+        [SerializeField][Range(0f, 10f)] private float minCameraHeight = 0;
+        [SerializeField][Range(0.0f, 1.0f)] private float rotationSpeed = 0.5f;
+        [SerializeField][Range(0.0f, 1.0f)] private float heightOffsetSpeed = 0.1f;
 
-        [Range(0.0f, 1.0f)]
-        [SerializeField] private float rotationSpeed = 0.5f;
-        [Range(0.0f, 1.0f)]
-        [SerializeField] private float heightOffsetSpeed = 0.1f;
-
-        private bool _active = true;
-        private float _adjacentLeg;
         private float _yRotation;
         private float _maxHeight;
+        private float _adjacentLeg;
         private float _oppositeLeg;
+        private bool _active;
 
-        private Vector3 _offsetVector;
         private Vector2 _mouseDelta;
+        private Vector3 _offsetVector;
 
         private Transform _followTarget;
         private CinemachineTransposer _transposer;
@@ -42,15 +39,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         public void SetupCameraOnStart()
         {
-            if (_followTarget != null)
-            {
-                FollowPosition(_followTarget.position);
+            if (_followTarget == null)
+                return;
 
-                _transposer ??= virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
-                _maxHeight = cameraDistance * Mathf.Sin(heightAngle * Mathf.Deg2Rad);
-
-                ResetCamera();
-            }
+            FollowPosition(_followTarget.position);
+            SetupCamera();
+            ResetCamera();
         }
 
         public void SetFollowActive(bool active) => _active = active;
@@ -75,6 +69,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
             Quaternion targetRotation = Quaternion.Euler(new(0, _yRotation, 0));
             cameraPointer.rotation = targetRotation;
+        }
+
+        private void SetupCamera()
+        {
+            _transposer ??= virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+            _maxHeight = cameraDistance * Mathf.Sin(heightAngle * Mathf.Deg2Rad);
         }
 
         private void ResetCamera()
