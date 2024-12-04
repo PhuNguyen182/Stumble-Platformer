@@ -3,7 +3,7 @@ using GlobalScripts.UpdateHandlerPattern;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 {
-    public class OscillatePosition : MonoBehaviour, IUpdateHandler
+    public class OscillatePosition : MonoBehaviour, IFixedUpdateHandler
     {
         [Header("Movement")]
         [SerializeField] public AnimationCurve easeCurve;
@@ -27,14 +27,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
             IsActive = true;
             startPosition = transform.position;
             randomDelay = useRandomDelay ? Random.Range(0f, maxRandomDelay) : maxRandomDelay;
-            UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
+            UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
 
-        public void OnUpdate(float deltaTime)
+        public void OnFixedUpdate()
         {
             if (timeElapsed < randomDelay)
             {
-                timeElapsed += deltaTime;
+                timeElapsed += Time.fixedDeltaTime;
                 return;
             }
 
@@ -46,7 +46,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
             Vector3 currentPosition = startPosition + moveAxis.normalized * currentDistance;
             transform.position = currentPosition;
 
-            timeElapsed += deltaTime;
+            timeElapsed += Time.fixedDeltaTime;
             if (timeElapsed >= duration / 2f + randomDelay)
             {
                 timeElapsed = randomDelay;
@@ -66,7 +66,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
 
         private void OnDestroy()
         {
-            UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);
+            UpdateHandlerManager.Instance.RemoveFixedUpdateBehaviour(this);
         }
     }
 }

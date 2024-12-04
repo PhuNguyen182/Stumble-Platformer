@@ -330,7 +330,7 @@ MonoBehaviour:
   TeaserFollower: {fileID: 1176312562}
   TeaserPath: {fileID: 1430614590}
   stopTimeAmount: 2
-  teaserDefaultSpeed: 0.25
+  teaserDefaultSpeed: 0.15
 --- !u!4 &668785592
 Transform:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1927913563014314638}
   - component: {fileID: 3495804718471409535}
   - component: {fileID: 2366406636872630418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tower_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,6 +104,6 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.78
-  m_Height: 3.0301492
+  m_Height: 2.155
   m_Direction: 1
-  m_Center: {x: 0.000056266785, y: 1.5035859, z: -0.00000023841858}
+  m_Center: {x: 0, y: 1.065, z: 0}

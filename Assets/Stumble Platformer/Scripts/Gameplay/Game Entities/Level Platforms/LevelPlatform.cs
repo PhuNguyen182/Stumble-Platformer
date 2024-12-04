@@ -20,6 +20,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] private BaseObstacle[] obstacles;
         [SerializeField] private BasePlatform[] platforms;
 
+        public int CheckPointCount => respawnAreas.Length;
+
         public RespawnArea GetCheckPointByIndex(int index)
         {
             for (int i = 0; i < respawnAreas.Length; i++)

@@ -6,12 +6,14 @@ using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
+using TMPro;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     public class PlayerHandler : MonoBehaviour
     {
-        public bool IsTest;
+        [SerializeField] private bool isTest;
+        [SerializeField] private TMP_Text checkPointText;
         [SerializeField] private InputReceiver inputReceiver;
         [SerializeField] private PlayerController playerPrefab;
         [SerializeField] private EnvironmentHandler environmentHandler;
@@ -22,6 +24,27 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public PlayerController CurrentPlayer => _currentPlayer;
         public int PlayerInstanceID => _currentPlayer.gameObject.GetInstanceID();
+
+#if UNITY_EDITOR
+        private bool _isCheckPointJump;
+        private int _testCheckPointIndex = 0;
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.J) && isTest)
+            {
+                JumpCheckPoint();
+            }
+        }
+
+        private void JumpCheckPoint()
+        {
+            _isCheckPointJump = true;
+            _testCheckPointIndex += 1;
+            _testCheckPointIndex = _testCheckPointIndex % environmentHandler.EnvironmentIdentifier.PlayLevel.CheckPointCount;
+            checkPointText?.SetText($"{_testCheckPointIndex}");
+        }
+#endif
 
         public void SpawnPlayer()
         {
@@ -35,7 +58,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             if (hasSkin)
                 _currentPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);
 
-            int lifeCount = IsTest ? 1000 : CharacterConstants.MaxLife;
+            int lifeCount = isTest ? 1000 : CharacterConstants.MaxLife;
             _currentPlayer.PlayerHealth.SetHealth(lifeCount);
             _currentPlayer.SetCharacterInput(inputReceiver);
         }
@@ -44,14 +67,23 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public void RespawnPlayer()
         {
-            int checkPointIndex = _currentPlayer.GetCheckPointIndex();
+            int checkPointIndex = 0;
+#if UNITY_EDITOR
+            checkPointIndex = _isCheckPointJump ? _testCheckPointIndex 
+                              : _currentPlayer.GetCheckPointIndex();
+            _isCheckPointJump = false;
+#else
+            checkPointIndex = _currentPlayer.GetCheckPointIndex();
+#endif
             _currentCheckPoint = environmentHandler.EnvironmentIdentifier.PlayLevel
                                                    .GetCheckPointByIndex(checkPointIndex);
-            
             Vector3 respawnPosition = _currentCheckPoint.GetRandomSpawnPosition();
             _currentPlayer.transform.position = respawnPosition;
 
             _currentPlayer.SetCharacterActive(true);
+            _currentPlayer.transform.rotation = _currentCheckPoint.transform.rotation;
+            _currentPlayer.ResetPlayerOrientation(_currentCheckPoint.transform.localRotation);
+            environmentHandler.CameraHandler.ResetCurrentCameraFollow();
             SetPlayerActive(true);
         }
     }
