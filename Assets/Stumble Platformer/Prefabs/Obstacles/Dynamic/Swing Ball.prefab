@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 120005212734065730}
   - component: {fileID: 3253073357511964882}
   - component: {fileID: 9038811971711372265}
-  - component: {fileID: 4152787638598601364}
+  - component: {fileID: 3277758062604372887}
   m_Layer: 0
   m_Name: Swing Ball
   m_TagString: Untagged
@@ -114,7 +114,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4152787638598601364
+--- !u!114 &3277758062604372887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 638853447646506587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a47eda8203ed73944b9992d5309d4ae9, type: 3}
+  m_Script: {fileID: 11500000, guid: abc912c23061f174fb75264099dd3f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackOnce: 0
@@ -132,12 +132,10 @@ MonoBehaviour:
   obstacleBody: {fileID: 9038811971711372265}
   obstacleAttackers:
   - {fileID: 8638561340252938513}
-  rotateAxis: 3
-  maceObject: {fileID: 0}
-  startTime: 0.5
-  swingSpeed: 3
-  swingAngle: 60
-  maceSpinningSpeed: 12
+  swingSpeed: 1.5
+  rotateSpeed: 350
+  swingAngle: 45
+  minSwingPercent: 0.4
 --- !u!1 &2719640650412189022
 GameObject:
   m_ObjectHideFlags: 0
