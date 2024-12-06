@@ -215,12 +215,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackOnce: 0
-  attactForce: 10
+  attactForce: 6.5
   stunDuration: 1.5
   obstacleBody: {fileID: 2867282813558781987}
   obstacleAttackers:
   - {fileID: 1103353277837438427}
-  rotateSpeed: 80
+  rotateSpeed: 150
   rotateAxis: 3
 --- !u!1 &5297544367350146822
 GameObject:
