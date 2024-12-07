@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Path: {fileID: 1430614590}
   m_UpdateMethod: 2
   m_PositionUnits: 2
-  m_Speed: 0.3
+  m_Speed: 0.15
   m_Position: 0
 --- !u!4 &1176312563
 Transform:
