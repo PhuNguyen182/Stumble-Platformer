@@ -72,6 +72,9 @@ MonoBehaviour:
   forceVariation: 3
   forceDirection: {x: 0, y: 0, z: 1}
   forceMode: 0
+  interactibleLayer:
+    serializedVersion: 2
+    m_Bits: 9
   useLocalRotation: 1
 --- !u!1 &586455474213667858
 GameObject:

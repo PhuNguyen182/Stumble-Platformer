@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f7948b43d25864bb0336d94ba7947c, type: 3}
   m_Name: Character Config
   m_EditorClassIdentifier: 
-  JumpHeight: 4
+  JumpHeight: 4.5
   MoveSpeed: 3
   DashSpeed: 6
   MaxSpeed: 24

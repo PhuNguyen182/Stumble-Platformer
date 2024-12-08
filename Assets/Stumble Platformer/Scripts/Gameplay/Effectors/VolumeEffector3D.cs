@@ -1,3 +1,4 @@
+using GlobalScripts.Extensions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace StumblePlatformer.Scripts.Gameplay.Effectors
         [SerializeField] private float forceVariation;
         [SerializeField] private Vector3 forceDirection;
         [SerializeField] private ForceMode forceMode = ForceMode.Force;
+        [SerializeField] private LayerMask interactibleLayer;
         [SerializeField] private bool useLocalRotation;
 
         private bool _hasColliderAttached;
@@ -25,12 +27,18 @@ namespace StumblePlatformer.Scripts.Gameplay.Effectors
 
         private void OnTriggerEnter(Collider other)
         {
+            if (!other.HasLayer(interactibleLayer))
+                return;
+
             if (other.attachedRigidbody != null)
                 AddForceToCollider(other.attachedRigidbody);
         }
 
         private void OnTriggerStay(Collider other)
         {
+            if (!other.HasLayer(interactibleLayer))
+                return;
+
             if (other.attachedRigidbody != null)
                 AddForceToCollider(other.attachedRigidbody);
         }
