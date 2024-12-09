@@ -10,7 +10,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
         [SerializeField] public Vector3 moveAxis = Vector3.up;
         [SerializeField] public float moveDistance = 2f;
         [SerializeField] public float duration = 2f;
-        [SerializeField] public bool useRotationAsDiraction;
+        [SerializeField] public bool useRotationAsDirection;
 
         [Header("Delay")]
         [SerializeField] public bool useRandomDelay = false;
@@ -44,7 +44,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement
             progress = EaseByCurve(progress);
 
             float currentDistance = moveDistance * (isReversing ? (1 - progress) : progress);
-            Vector3 direction = useRotationAsDiraction ? transform.rotation * moveAxis.normalized : moveAxis.normalized;
+            Vector3 direction = useRotationAsDirection ? transform.rotation * moveAxis.normalized : moveAxis.normalized;
             Vector3 currentPosition = startPosition + direction * currentDistance;
             transform.position = currentPosition;
 

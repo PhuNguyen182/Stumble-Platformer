@@ -12,9 +12,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         [SerializeField] private float rotateSpeed = 3f;
         [SerializeField][Range(15, 90)] private float swingAngle = 60;
         [SerializeField][Range(0, 1)] private float minSwingPercent = 0.4f;
+        [SerializeField][Range(0f, 1f)] private float startTime = 0.5f;
 
         private float _startTime;
         private float _damageAttack;
+
+        public override void OnAwake()
+        {
+            base.OnAwake();
+            _startTime = startTime;
+        }
 
         public override void DamageCharacter(Collision collision)
         {

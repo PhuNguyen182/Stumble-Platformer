@@ -136,6 +136,7 @@ MonoBehaviour:
   rotateSpeed: 350
   swingAngle: 45
   minSwingPercent: 0.4
+  startTime: 0
 --- !u!1 &2719640650412189022
 GameObject:
   m_ObjectHideFlags: 0

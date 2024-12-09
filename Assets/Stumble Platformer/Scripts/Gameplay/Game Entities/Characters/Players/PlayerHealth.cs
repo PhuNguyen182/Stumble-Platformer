@@ -121,6 +121,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnDeadZone(DeadZone deadZone)
         {
+            if (!playerController.IsActive)
+                return;
+
             playerController.IsActive = false;
             deadZone.PlayDeathEffect(transform.position);
 
