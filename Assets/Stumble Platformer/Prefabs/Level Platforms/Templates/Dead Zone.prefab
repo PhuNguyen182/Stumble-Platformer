@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8625303186282554848}
   m_Layer: 0
   m_Name: Dead Zone
-  m_TagString: Untagged
+  m_TagString: DeadZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84eb8038509b684d8fbc063021984e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
   deadZoneEnvironment: 0
   deadZoneCollider: {fileID: 8625303186282554848}
   drawGizmo: 1

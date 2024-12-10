@@ -28443,7 +28443,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5007538398890988719, guid: 1ce84ecba7428b545b4b2d4fcbd47617, type: 3}
       propertyPath: drawGizmo
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8625303186282554848, guid: 1ce84ecba7428b545b4b2d4fcbd47617, type: 3}
       propertyPath: m_Size.x

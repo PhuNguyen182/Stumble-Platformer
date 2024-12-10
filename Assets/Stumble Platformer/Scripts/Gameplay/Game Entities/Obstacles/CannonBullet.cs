@@ -13,6 +13,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         [SerializeField] private float stunDuration = 3f;
         [SerializeField] private Rigidbody bulletBody;
 
+        private const string DeadZoneTag = "DeadZone";
         private HashSet<int> _characterIdCollection = new();
 
         private void OnEnable()
@@ -51,6 +52,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         private void OnCollisionEnter(Collision collision)
         {
             DamageCharacter(collision);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag(DeadZoneTag))
+            {
+                SimplePool.Despawn(this.gameObject);
+            }
         }
 
         private void ResetBulletIDCollection()
