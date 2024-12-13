@@ -27,8 +27,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
             return position;
         }
 
-        [Button]
-        [HorizontalGroup(GroupID = "Update")]
+        [Button][HorizontalGroup(GroupID = "Update")]
         private void UpdateRange()
         {
             if (range != null)
@@ -50,20 +49,22 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
             }
         }
 
-        [Button]
-        [HorizontalGroup(GroupID = "Update")]
+        [Button][HorizontalGroup(GroupID = "Update")]
         private void UpdateName() => gameObject.name = $"Respawn Area {areaIndex}";
 
-        [Button]
-        [HorizontalGroup(GroupID = "Respawn Index")]
+        [Button][HorizontalGroup(GroupID = "Respawn Index")]
         private void IncreaseIndex() => areaIndex++;
 
-        [Button]
-        [HorizontalGroup(GroupID = "Respawn Index")]
+        [Button][HorizontalGroup(GroupID = "Respawn Index")]
         private void DecreaseIndex() => areaIndex--;
 
 #if UNITY_EDITOR
         private void OnDrawGizmos()
+        {
+            DrawRespawnRange();
+        }
+
+        private void DrawRespawnRange()
         {
             Vector3 boxSize = range.size;
             Vector3 center = range.center;

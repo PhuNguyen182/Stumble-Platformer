@@ -47,15 +47,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         }
 
 #if UNITY_EDITOR
-        [Button]
-        [HorizontalGroup(GroupID = "Hazzards")]
+        [Button][HorizontalGroup(GroupID = "Hazzards")]
         public void GetObstacles()
         {
             obstacles = obstacleContainer.GetComponentsInChildren<BaseObstacle>();
         }
 
-        [Button]
-        [HorizontalGroup(GroupID = "Hazzards")]
+        [Button][HorizontalGroup(GroupID = "Hazzards")]
         public void GetPlatforms()
         {
             platforms = platformContainer.GetComponentsInChildren<BasePlatform>();

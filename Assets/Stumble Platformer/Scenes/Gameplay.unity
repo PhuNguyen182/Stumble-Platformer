@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 0.8}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -303,7 +303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teaserCamera: {fileID: 1276222070}
   cameraPointer: {fileID: 1746482443}
-  followPlayerCamera: {fileID: 682400820}
   followTarget: {fileID: 1462723939}
   testPlayerPoint: {fileID: 0}
 --- !u!4 &700064964
@@ -446,7 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059f4bd8c45f5fc449021f8bbd922b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsTest: 0
+  isTest: 0
+  checkPointText: {fileID: 0}
   inputReceiver: {fileID: 1004334421}
   playerPrefab: {fileID: 5956835733577522111, guid: 4af7a8d5f86130e40936b0fb4e7d9edb, type: 3}
   environmentHandler: {fileID: 950352267}

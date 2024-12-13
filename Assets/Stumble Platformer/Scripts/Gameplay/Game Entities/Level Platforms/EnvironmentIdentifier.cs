@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
-using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using MessagePipe;
 
@@ -81,8 +81,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
             await UniTask.WaitForSeconds(stopTimeAmount, cancellationToken: destroyCancellationToken);
         }
 
-        [Button]
-        public void GatherEnvironmentSpecs()
+        [HorizontalGroup("Setup")][Button]
+        private void GetEnvironmentProperty()
         {
             Skybox = RenderSettings.skybox;
             SunSource = RenderSettings.sun;
@@ -91,6 +91,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
             FogMode = RenderSettings.fogMode;
             FogColor = RenderSettings.fogColor;
             FogDensity = RenderSettings.fogDensity;
+        }
+
+        [HorizontalGroup("Setup")][Button]
+        private void SetEnvironmentProperty()
+        {
+            RenderSettings.skybox = Skybox;
+            RenderSettings.sun = SunSource;
+            RenderSettings.ambientLight = AmbientColor;
+            RenderSettings.fog = FogEnable;
+            RenderSettings.fogMode = FogMode;
+            RenderSettings.fogColor = FogColor;
+            RenderSettings.fogDensity = FogDensity;
         }
     }
 }
