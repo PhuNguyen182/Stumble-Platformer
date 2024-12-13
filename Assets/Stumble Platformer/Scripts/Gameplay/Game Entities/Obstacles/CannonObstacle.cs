@@ -50,7 +50,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             Vector3 shotForce = shotPoint.forward * shotVelocity;
             CannonBullet cannonBullet = SimplePool.Spawn(bulletPrefab, BulletContainer.Transform
                                                          , shotPoint.position, Quaternion.identity);
-            cannonBullet.transform.localScale = transform.localScale;
+            cannonBullet.ModifyScale(transform.localScale);
             cannonBullet.Shoot(shotForce);
         }
 

@@ -13,8 +13,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         [SerializeField] private float stunDuration = 3f;
         [SerializeField] private Rigidbody bulletBody;
 
+        private Vector3 _currentScale;
         private const string DeadZoneTag = "DeadZone";
         private HashSet<int> _characterIdCollection = new();
+
+        private void Awake()
+        {
+            _currentScale = transform.localScale;
+        }
 
         private void OnEnable()
         {
@@ -65,6 +71,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         private void ResetBulletIDCollection()
         {
             _characterIdCollection.Clear();
+        }
+
+        public void ModifyScale(Vector3 scale)
+        {
+            transform.localScale = Vector3.Scale(_currentScale, scale);
         }
 
 #if UNITY_EDITOR
