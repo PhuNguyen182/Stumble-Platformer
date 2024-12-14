@@ -14,6 +14,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         [Header("Movement")]
         [SerializeField] private AnimationCurve easeCurve;
         [SerializeField] private Vector3 moveAxis = Vector3.up;
+        [SerializeField] private bool useRotationAsDirection;
         [SerializeField] private float moveDistance = 2f;
         [SerializeField] private float duration = 2f;
 
@@ -69,6 +70,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 oscillatePosition.moveAxis = moveAxis;
                 oscillatePosition.moveDistance = moveDistance;
                 oscillatePosition.duration = duration;
+                oscillatePosition.useRotationAsDirection = useRotationAsDirection;
                 oscillatePosition.useRandomDelay = useRandomDelay;
                 oscillatePosition.maxRandomDelay = maxRandomDelay;
             }

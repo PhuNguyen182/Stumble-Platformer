@@ -13,7 +13,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         [SerializeField] private float stunDuration = 3f;
         [SerializeField] private Rigidbody bulletBody;
 
+        private const float MaxImpactForce = 9;
+        private const string DeadZoneTag = "DeadZone";
+        
+        private Vector3 _currentScale;
         private HashSet<int> _characterIdCollection = new();
+
+        private void Awake()
+        {
+            _currentScale = transform.localScale;
+        }
 
         private void OnEnable()
         {
@@ -35,11 +44,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             if (!_characterIdCollection.Contains(characterID))
             {
                 Vector3 hitNormal = collision.GetContact(0).normal;
-                float hitImpulse = collision.GetContact(0).impulse.magnitude * 1.5f;
+                float hitImpulse = collision.GetContact(0).impulse.magnitude;
+
+                hitImpulse = hitImpulse + attackForce;
+                hitImpulse = Mathf.Clamp(hitImpulse, 0, MaxImpactForce);
 
                 damageable.TakeDamage(new DamageData
                 {
-                    AttackForce = attackForce + hitImpulse,
+                    AttackForce = hitImpulse,
                     ForceDirection = -hitNormal,
                     StunDuration = stunDuration
                 });
@@ -53,9 +65,22 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             DamageCharacter(collision);
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag(DeadZoneTag))
+            {
+                SimplePool.Despawn(this.gameObject);
+            }
+        }
+
         private void ResetBulletIDCollection()
         {
             _characterIdCollection.Clear();
+        }
+
+        public void ModifyScale(Vector3 scale)
+        {
+            transform.localScale = Vector3.Scale(_currentScale, scale);
         }
 
 #if UNITY_EDITOR

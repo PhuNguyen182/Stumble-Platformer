@@ -32,5 +32,5 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             }
         }
     }
-#endif
 }
+#endif

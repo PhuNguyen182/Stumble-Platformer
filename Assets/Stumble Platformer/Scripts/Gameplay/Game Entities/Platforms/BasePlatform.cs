@@ -34,7 +34,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             PlatformAction();
         }
 
-        public void SetPlatformActive(bool active)
+        public virtual void SetPlatformActive(bool active)
         {
             IsPlatformActive = active;
         }

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1840612639264959580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5299479400613316756}
+  - component: {fileID: 2314541552780211860}
+  - component: {fileID: 7639584775360691740}
+  m_Layer: 0
+  m_Name: Level Identifier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5299479400613316756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840612639264959580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2314541552780211860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840612639264959580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a542ba09a0bfae24c9617b44719608fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsTest: 0
+  LevelName: 
+  FogEnable: 0
+  FogColor: {r: 0, g: 0, b: 0, a: 0}
+  FogMode: 0
+  FogDensity: 0
+  Skybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  AmbientColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  SunSource: {fileID: 0}
+  PlayLevel: {fileID: 0}
+  SpawnCharacterArea: {fileID: 0}
+  TeaserFollower: {fileID: 0}
+  TeaserPath: {fileID: 0}
+  stopTimeAmount: 2
+  teaserDefaultSpeed: 0.15
+--- !u!114 &7639584775360691740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840612639264959580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3534569e4122d6f4ab58d93f02bf48f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveTitle: 

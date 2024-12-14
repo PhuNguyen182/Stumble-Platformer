@@ -22,7 +22,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private bool _isSteppedOn = false;
         private float _platformDuration = 0;
-        private MaterialPropertyBlock block;
+        private MaterialPropertyBlock _block;
 
         private readonly int _dropHash = Animator.StringToHash("Drop");
         private readonly int _steppedOnHash = Animator.StringToHash("StepOn");
@@ -30,7 +30,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected override void OnAwake()
         {
-            block = new();
+            _block = new();
         }
 
         protected override void OnStart()
@@ -53,9 +53,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public override void PlatformAction() { }
 
+        public override void SetPlatformActive(bool active)
+        {
+            base.SetPlatformActive(active);
+            IsActive = active;
+        }
+
         public override void OnPlatformCollide(Collision collision)
         {
-            if (!_isSteppedOn)
+            if (!_isSteppedOn && IsActive)
             {
                 _isSteppedOn = true;
                 OnStepped().Forget();
@@ -68,9 +74,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void SetPlatformColor(bool isSteppedOn)
         {
-            platformRenderer.GetPropertyBlock(block);
-            block.SetColor(_colorProperty, isSteppedOn ? steppedOnColor : originalColor);
-            platformRenderer.SetPropertyBlock(block);
+            platformRenderer.GetPropertyBlock(_block);
+            _block.SetColor(_colorProperty, isSteppedOn ? steppedOnColor : originalColor);
+            platformRenderer.SetPropertyBlock(_block);
         }
 
         private async UniTask OnStepped()
@@ -92,7 +98,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void OnDestroy()
         {
-            block.Clear();
+            _block.Clear();
             UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);
         }
     }

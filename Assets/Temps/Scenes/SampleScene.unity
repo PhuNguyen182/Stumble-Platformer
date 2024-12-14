@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 0.8}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 3d38b03a3b42643f88764e21cfa8a5db, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 7d4383e4437f4436ab0d8fbf37c4d6c9, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1226,7 +1226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 228.4833, y: 156.5825}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2106856322

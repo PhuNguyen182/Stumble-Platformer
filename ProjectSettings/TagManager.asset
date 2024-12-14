@@ -16,7 +16,7 @@ TagManager:
   - IgnoreCollision
   - Ground
   - MoveableGround
-  - 
+  - Dummy
   - 
   - 
   - 

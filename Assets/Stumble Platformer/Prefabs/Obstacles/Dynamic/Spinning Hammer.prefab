@@ -215,12 +215,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackOnce: 0
-  attactForce: 10
+  attactForce: 6.5
   stunDuration: 1.5
   obstacleBody: {fileID: 2867282813558781987}
   obstacleAttackers:
   - {fileID: 1103353277837438427}
-  rotateSpeed: 80
+  rotateSpeed: 150
   rotateAxis: 3
 --- !u!1 &5297544367350146822
 GameObject:
@@ -273,10 +273,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.40022233
-  m_Height: 1.5425916
+  m_Radius: 0.415
+  m_Height: 1.6
   m_Direction: 2
-  m_Center: {x: 0, y: -0.0012958348, z: 0.6751194}
+  m_Center: {x: 0, y: 0, z: 0.675}
 --- !u!1 &7745226054375620853
 GameObject:
   m_ObjectHideFlags: 0

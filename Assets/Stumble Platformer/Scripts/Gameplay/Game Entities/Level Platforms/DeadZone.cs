@@ -8,7 +8,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
     [RequireComponent(typeof(BoxCollider))]
     public class DeadZone : MonoBehaviour
     {
-        [SerializeField] private Vector3 offset;
         [SerializeField] private DeadZoneEnvironment deadZoneEnvironment;
         [SerializeField] private BoxCollider deadZoneCollider;
         [SerializeField] private bool drawGizmo = true;
@@ -27,6 +26,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                 return;
 
             Vector3 boxSize = deadZoneCollider.size;
+            Vector3 offset = deadZoneCollider.center;
             Vector3 scaledSize = new Vector3
                 (
                     boxSize.x * transform.localScale.x,
@@ -35,7 +35,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                 );
 
             Gizmos.color = new Color(1, 0, 0, 0.45f);
-            Gizmos.DrawCube(transform.position, scaledSize);
+            Gizmos.DrawCube(transform.position + offset, scaledSize);
         }
 
         private void OnValidate()
