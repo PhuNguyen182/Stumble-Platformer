@@ -58,6 +58,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [Button][HorizontalGroup(GroupID = "Respawn Index")]
         private void DecreaseIndex() => areaIndex--;
 
+        [Button]
+        private void CopyRange() => respawnRange = rangeSize;
+
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
