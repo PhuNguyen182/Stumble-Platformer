@@ -28,8 +28,11 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         private void Start()
         {
+            OnStart();
             RegisterCommonMessage();
         }
+
+        protected virtual void OnStart() { }
 
         protected void RegisterCommonMessage()
         {
