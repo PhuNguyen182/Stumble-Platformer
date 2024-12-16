@@ -68,14 +68,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60499ed6139161e4a8620b75346ce793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLocalRotation: 1
   forceMagnitude: 30
   forceVariation: 3
   forceDirection: {x: 0, y: 0, z: 1}
   forceMode: 0
+  effectorMode: 1
   interactibleLayer:
     serializedVersion: 2
     m_Bits: 9
-  useLocalRotation: 1
 --- !u!1 &586455474213667858
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +93,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!4 &788625597294977163
 Transform:
@@ -175,7 +176,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!4 &7780290143969748372
 Transform:
@@ -258,7 +259,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!4 &8481686117130517820
 Transform:
@@ -341,7 +342,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!4 &5607196929188419735
 Transform:
@@ -522,7 +523,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!4 &7752464891787518775
 Transform:
@@ -605,7 +606,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!4 &584419791482633616
 Transform:
@@ -688,7 +689,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!4 &8845049978541738011
 Transform:
@@ -835,7 +836,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!4 &4560872312251631068
 Transform:
