@@ -25,6 +25,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         public PlayerController CurrentPlayer => _currentPlayer;
         public int PlayerInstanceID => _currentPlayer.gameObject.GetInstanceID();
 
+        #region Test Checkpoint, Editor only
 #if UNITY_EDITOR
         private bool _isCheckPointJump;
         private int _testCheckPointIndex = 0;
@@ -45,6 +46,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             checkPointText?.SetText($"{_testCheckPointIndex}");
         }
 #endif
+        #endregion
 
         public void SpawnPlayer()
         {

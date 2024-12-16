@@ -18,12 +18,12 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         public float PlayDuration => playDuration;
         public float CurrentTimer => _currentTimer;
 
-        private void Update()
+        public override void OnUpdate(float deltatime)
         {
-            if(_currentTimer > 0)
+            // Continously counting if no falling down
+            if(_currentTimer > 0 && !_hasFallen)
             {
                 _currentTimer -= Time.deltaTime;
-
                 if(_currentTimer <= 0 && !_hasFallen)
                 {
                     // Win game
@@ -49,6 +49,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnEndGame(EndResult endResult)
         {
+#if UNITY_EDITOR
             string endColor = endResult switch
             {
                 EndResult.Win => "#00ff00",
@@ -64,11 +65,14 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             };
 
             Debug.Log($"<color={endColor}>{result}</color>");
+#endif
         }
 
         public override void OnLevelEnded(EndResult endResult)
         {
-            Debug.Log($"Player End Racing: {endResult}");
+#if UNITY_EDITOR
+            Debug.Log($"Player End Survival: {endResult}");
+#endif
             EndGame(new EndGameMessage
             {
                 ID = CurrentPlayerID,

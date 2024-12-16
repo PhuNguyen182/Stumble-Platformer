@@ -28,6 +28,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             Quit
         }
 
+        // To do: Assign game UIs in this class, use them to control game flow
         private readonly StateMachine<State, Trigger> _gameStateMachine;
         private readonly StateMachine<State, Trigger>.TriggerWithParameters<EndResult> _endLevelTrigger;
         private readonly StateMachine<State, Trigger>.TriggerWithParameters<EndResult> _endGameTrigger;

@@ -2,14 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Gameplay.GameManagers;
-using StumblePlatformer.Scripts.Common.Enums;
+using GlobalScripts.UpdateHandlerPattern;
 using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
-    public abstract class BasePlayRule : MonoBehaviour, IPlayRule
+    public abstract class BasePlayRule : MonoBehaviour, IPlayRule, IUpdateHandler
     {
         [SerializeField] protected string objectiveTitle;
 
@@ -24,12 +25,14 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public int CurrentPlayerID { get; set; }
         public int PlayerHealth { get; protected set; }
+        public bool IsActive { get; set; }
         public string ObjectiveTitle => objectiveTitle;
 
         private void Start()
         {
             OnStart();
             RegisterCommonMessage();
+            UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
         }
 
         protected virtual void OnStart() { }
@@ -38,13 +41,13 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             bagBuilder = DisposableBag.CreateBuilder();
 
-            playerHealthSubscriber = GlobalMessagePipe.GetSubscriber<ReportPlayerHealthMessage>();
             endGameSubscriber = GlobalMessagePipe.GetSubscriber<EndGameMessage>();
             levelEndSubscriber = GlobalMessagePipe.GetSubscriber<LevelEndMessage>();
+            playerHealthSubscriber = GlobalMessagePipe.GetSubscriber<ReportPlayerHealthMessage>();
             playerFallSubscriber = GlobalMessagePipe.GetSubscriber<PlayerFallMessage>();
 
-            playerHealthSubscriber.Subscribe(UpdateHealth).AddTo(bagBuilder);
             levelEndSubscriber.Subscribe(EndLevel).AddTo(bagBuilder);
+            playerHealthSubscriber.Subscribe(UpdateHealth).AddTo(bagBuilder);
             playerFallSubscriber.Subscribe(Fall).AddTo(bagBuilder);
 
             RegisterCustomMessages();
@@ -62,6 +65,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             OnPlayerHealthUpdate();
         }
 
+        public abstract void OnUpdate(float deltaTime);
         public abstract void OnEndGame(EndResult endResult);
         public abstract void OnLevelEnded(EndResult endResult);
         public abstract void OnPlayerFall();
@@ -101,6 +105,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         private void OnDestroy()
         {
             messageDisposable.Dispose();
+            UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);
         }
     }
 }

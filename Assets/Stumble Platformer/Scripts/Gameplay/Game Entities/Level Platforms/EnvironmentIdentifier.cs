@@ -35,13 +35,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public float teaserDefaultSpeed = 0.25f;
 
         private IPublisher<SetupLevelMessage> _initLevelPublisher;
-        public IPlayRule PlayRule { get; private set; }
+        public BasePlayRule PlayRule { get; private set; }
 
         private void Awake()
         {
             SetLevelActive(true);
             SetTeaserActive(false);
-            PlayRule = GetComponent<IPlayRule>();
+            PlayRule = GetComponent<BasePlayRule>();
         }
 
         private void Start()
