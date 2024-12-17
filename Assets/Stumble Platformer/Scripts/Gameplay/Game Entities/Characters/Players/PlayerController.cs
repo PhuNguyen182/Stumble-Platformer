@@ -44,7 +44,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private void Start()
         {
             SetupPlayerGraphic();
-            _playerBody = playerPhysics.GetPlayerBody();
+            _playerBody = playerPhysics.PlayerBody;
         }
 
         private void Update()
@@ -158,7 +158,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 if (groundChecker.IsGrounded)
                 {
-                    _moveVelocity = new Vector3(_playerBody.velocity.x, characterConfig.JumpHeight, _playerBody.velocity.z);
+                    float jumpHeight = characterConfig.JumpHeight * playerPhysics.JumpRestriction;
+                    _moveVelocity = new Vector3(_playerBody.velocity.x, jumpHeight, _playerBody.velocity.z);
                     _playerBody.velocity = _moveVelocity;
                 }
 
