@@ -11425,10 +11425,16 @@ MonoBehaviour:
   SunSource: {fileID: 328498386}
   PlayLevel: {fileID: 1724201788}
   SpawnCharacterArea: {fileID: 231218960}
+  TeaserLookAt: {fileID: 0}
   TeaserFollower: {fileID: 1176312562}
   TeaserPath: {fileID: 1430614590}
+  transposer: {fileID: 0}
+  virtualCamera: {fileID: 0}
   stopTimeAmount: 2
   teaserDefaultSpeed: 0.225
+  CameraBodyMode: 0
+  TransposerConfig: {fileID: 11400000, guid: 281eb1e63636a51449a12c3168be92a1, type: 2}
+  TrackedDollyConfig: {fileID: 11400000, guid: f3f2d7f3dfedb974d98eba44765daa1b, type: 2}
 --- !u!4 &668785592
 Transform:
   m_ObjectHideFlags: 0

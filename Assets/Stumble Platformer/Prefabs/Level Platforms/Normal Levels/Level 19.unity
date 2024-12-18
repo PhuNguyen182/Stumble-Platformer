@@ -713,7 +713,7 @@ Transform:
   m_GameObject: {fileID: 55355683}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.5557022, z: 0}
+  m_LocalPosition: {x: -1, y: 0.475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5509,7 +5509,7 @@ Transform:
   m_GameObject: {fileID: 443307607}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.5557022, z: 0}
+  m_LocalPosition: {x: -1, y: 0.475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5698,7 +5698,7 @@ Transform:
   m_GameObject: {fileID: 454707031}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.5557022, z: 0}
+  m_LocalPosition: {x: -1, y: 0.475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8591,10 +8591,16 @@ MonoBehaviour:
   SunSource: {fileID: 328498386}
   PlayLevel: {fileID: 1724201788}
   SpawnCharacterArea: {fileID: 231218960}
+  TeaserLookAt: {fileID: 0}
   TeaserFollower: {fileID: 1176312562}
   TeaserPath: {fileID: 1430614590}
+  transposer: {fileID: 0}
+  virtualCamera: {fileID: 0}
   stopTimeAmount: 2
   teaserDefaultSpeed: 0.2
+  CameraBodyMode: 0
+  TransposerConfig: {fileID: 11400000, guid: 281eb1e63636a51449a12c3168be92a1, type: 2}
+  TrackedDollyConfig: {fileID: 11400000, guid: f3f2d7f3dfedb974d98eba44765daa1b, type: 2}
 --- !u!4 &668785592
 Transform:
   m_ObjectHideFlags: 0
@@ -8976,7 +8982,7 @@ Transform:
   m_GameObject: {fileID: 731602916}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.5557022, z: 0}
+  m_LocalPosition: {x: -1, y: 0.475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10501,7 +10507,7 @@ Transform:
   m_GameObject: {fileID: 843883207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.5557022, z: 0}
+  m_LocalPosition: {x: -1, y: 0.475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

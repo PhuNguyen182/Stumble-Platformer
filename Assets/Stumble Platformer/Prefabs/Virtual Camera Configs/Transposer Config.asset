@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a8cb17281d12f4d809233360538598, type: 3}
+  m_Name: Transposer Config
+  m_EditorClassIdentifier: 
+  BindingMode: 1
+  FollowOffset: {x: 0, y: 3, z: -10}
+  XDamping: 1
+  YDamping: 1
+  ZDamping: 1
+  AngularDampingMode: 0
+  PitchDamping: 0
+  YawDamping: 0
+  RollDamping: 0

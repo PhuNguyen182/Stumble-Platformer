@@ -81,6 +81,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private async UniTask SetupPlayLevel(EnvironmentIdentifier environmentIdentifier)
         {
             inputReceiver.IsActive = false;
+            cameraHandler.SetupVirtualCameraBody(environmentIdentifier);
             environmentHandler.SetEnvironmentIdentifier(environmentIdentifier);
             await StartGame();
         }
@@ -99,6 +100,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             PlayRule.IsActive = true;
             playerHandler.SetPlayerActive(true);
+            playerHandler.SetPlayerPhysicsActive(true);
             inputReceiver.IsActive = true;
         }
 

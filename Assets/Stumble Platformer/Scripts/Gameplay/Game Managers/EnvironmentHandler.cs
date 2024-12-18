@@ -62,7 +62,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void SetupCamera()
         {
-            cameraHandler.SetupTeaserCamera(EnvironmentIdentifier.TeaserFollower.transform, EnvironmentIdentifier.TeaserPath);
+            cameraHandler.SetupTeaserCamera(EnvironmentIdentifier.TeaserFollower.transform
+                                            , EnvironmentIdentifier.TeaserLookAt
+                                            , EnvironmentIdentifier.TeaserPath);
         }
 
         private void SetupEnvironment()

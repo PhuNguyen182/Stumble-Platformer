@@ -31,6 +31,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         protected override void OnAwake()
         {
             _block = new();
+            SetPlatformColor(false);
         }
 
         protected override void OnStart()
@@ -95,6 +96,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                                 , cancellationToken: destroyCancellationToken);
             gameObject.SetActive(false);
         }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = originalColor;
+            Gizmos.DrawWireSphere(transform.position + Vector3.up * 0.15f, 0.15f);
+        }
+#endif
 
         private void OnDestroy()
         {

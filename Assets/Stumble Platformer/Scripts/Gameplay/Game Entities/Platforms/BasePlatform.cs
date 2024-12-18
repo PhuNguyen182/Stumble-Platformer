@@ -16,7 +16,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         {
             OnAwake();
             IsActive = true;
-            IsPlatformActive = true;
         }
 
         private void Start()

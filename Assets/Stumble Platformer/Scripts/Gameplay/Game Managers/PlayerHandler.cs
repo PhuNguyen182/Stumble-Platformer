@@ -63,9 +63,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             int lifeCount = isTest ? 1000 : CharacterConstants.MaxLife;
             _currentPlayer.PlayerHealth.SetHealth(lifeCount);
             _currentPlayer.SetCharacterInput(inputReceiver);
+            SetPlayerPhysicsActive(false);
         }
 
         public void SetPlayerActive(bool active) => _currentPlayer.IsActive = active;
+
+        public void SetPlayerPhysicsActive(bool active) => _currentPlayer.SetCharacterActive(active);
 
         public void RespawnPlayer()
         {
@@ -82,7 +85,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             Vector3 respawnPosition = _currentCheckPoint.GetRandomSpawnPosition();
             _currentPlayer.transform.position = respawnPosition;
 
-            _currentPlayer.SetCharacterActive(true);
+            SetPlayerPhysicsActive(true);
             _currentPlayer.transform.rotation = _currentCheckPoint.transform.rotation;
             _currentPlayer.ResetPlayerOrientation(_currentCheckPoint.transform.localRotation);
             environmentHandler.CameraHandler.ResetCurrentCameraFollow();
