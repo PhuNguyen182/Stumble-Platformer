@@ -57,7 +57,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         public void SetTeaserTrackPath(CinemachinePathBase cinemachinePath)
         {
-            _trackedDolly.m_Path = cinemachinePath;
+            if(_trackedDolly)
+                _trackedDolly.m_Path = cinemachinePath;
         }
 
         public void SetFollowTarget(Transform target)

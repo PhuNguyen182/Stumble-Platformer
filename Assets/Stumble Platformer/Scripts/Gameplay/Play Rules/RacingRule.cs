@@ -40,7 +40,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnEndGame(EndResult endResult)
         {
-            _killCharactersPublisher.Publish(new KillCharactersMessage { });
+            _killCharactersPublisher.Publish(new KillCharactersMessage());
 
 #if UNITY_EDITOR
             string endColor = endResult switch

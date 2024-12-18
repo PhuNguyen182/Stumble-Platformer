@@ -40,6 +40,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         {
             for (int i = 0; i < _groundCollider.Length; i++)
             {
+                if (!_groundCollider[i])
+                    continue;
+
                 if (_groundCollider[i].TryGetComponent(out WalkableSurface walkableSurface))
                 {
                     playerPhysics.SetLinearDrag(walkableSurface.LinearDrag);

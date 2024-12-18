@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.Messages;
+using StumblePlatformer.Scripts.Gameplay.GameManagers;
+using StumblePlatformer.Scripts.Common.Enums;
 using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
-    public class SurvivalRule : BasePlayRule
+    public class SurvivalRule : BasePlayRule, ISetPlayerHandler
     {
         [SerializeField] private float playDuration = 30f;
 
         private bool _hasFallen;
         private float _currentTimer;
+
+        private PlayerHandler _playerHandler;
         private IPublisher<LevelEndMessage> _levelEndPublisher;
 
         public float PlayDuration => playDuration;
@@ -47,8 +50,16 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             _levelEndPublisher = GlobalMessagePipe.GetPublisher<LevelEndMessage>();
         }
 
+        public void SetPlayerHandler(PlayerHandler playerHandler)
+        {
+            _playerHandler = playerHandler;
+        }
+
         public override void OnEndGame(EndResult endResult)
         {
+            _playerHandler.SetPlayerActive(false);
+            _playerHandler.SetPlayerPhysicsActive(false);
+
 #if UNITY_EDITOR
             string endColor = endResult switch
             {
