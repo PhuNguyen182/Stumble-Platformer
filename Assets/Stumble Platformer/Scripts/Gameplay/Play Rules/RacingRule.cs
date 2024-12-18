@@ -34,6 +34,9 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnEndGame(EndResult endResult)
         {
+            if (endResult == EndResult.Win)
+                playerHandler.SetPlayerCompleteLevel(true);
+
             _killCharactersPublisher.Publish(new KillCharactersMessage());
             cameraHandler.SetFollowCameraActive(false);
 

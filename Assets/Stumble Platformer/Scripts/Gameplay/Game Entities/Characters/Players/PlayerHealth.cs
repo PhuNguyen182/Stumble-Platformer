@@ -33,7 +33,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Start()
         {
-            _hasFinishLevel = false;
             _respawnPublisher = GlobalMessagePipe.GetPublisher<RespawnMessage>();
             _reportPlayerHealthPublisher = GlobalMessagePipe.GetPublisher<ReportPlayerHealthMessage>();
             _playerFinishPublisher = GlobalMessagePipe.GetPublisher<LevelEndMessage>();
@@ -91,6 +90,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             playerController.PlayerGraphics.CharacterVisual.CharacterAnimator.SetTrigger(CharacterAnimationKeys.LoseKey);
         }
 
+        public void SetPlayerCompleteLevel(bool isCompleted)
+        {
+            _hasFinishLevel = isCompleted;
+        }
+
         public void OnRespawn()
         {
             playerGraphics.SetPlayerGraphicActive(true);
@@ -114,7 +118,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnFinishZone(FinishZone finishZone)
         {
-            _hasFinishLevel = true;
             finishZone.ReportFinish(playerController);
             playerController.IsActive = false;
 

@@ -63,8 +63,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             int lifeCount = isTest ? 1000 : CharacterConstants.MaxLife;
             _currentPlayer.PlayerHealth.SetHealth(lifeCount);
             _currentPlayer.SetCharacterInput(inputReceiver);
+
+            SetPlayerCompleteLevel(false);
             SetPlayerPhysicsActive(false);
         }
+
+        public void SetPlayerCompleteLevel(bool isCompleted) 
+        { 
+            _currentPlayer.PlayerHealth.SetPlayerCompleteLevel(isCompleted);
+        } 
 
         public void SetPlayerActive(bool active) => _currentPlayer.IsActive = active;
 
