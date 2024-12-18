@@ -85,10 +85,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             Vector3 respawnPosition = _currentCheckPoint.GetRandomSpawnPosition();
             _currentPlayer.transform.position = respawnPosition;
 
-            SetPlayerPhysicsActive(true);
+            _currentPlayer.AfterRespawn();
             _currentPlayer.transform.rotation = _currentCheckPoint.transform.rotation;
             _currentPlayer.ResetPlayerOrientation(_currentCheckPoint.transform.localRotation);
             environmentHandler.CameraHandler.ResetCurrentCameraFollow();
+
+            SetPlayerPhysicsActive(true);
             SetPlayerActive(true);
         }
     }

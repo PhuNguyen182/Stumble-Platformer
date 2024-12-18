@@ -1,18 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Common.Messages;
-using StumblePlatformer.Scripts.Gameplay.GameManagers;
 using StumblePlatformer.Scripts.Common.Enums;
 using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
-    public class RacingRule : BasePlayRule, ISetPlayerHandler
+    public class RacingRule : BasePlayRule
     {
-        private PlayerHandler _playerHandler;
-
         private IPublisher<LevelEndMessage> _levelEndPublisher;
         private IPublisher<KillCharactersMessage> _killCharactersPublisher;
         private ISubscriber<RespawnMessage> _respawnSubscriber;
@@ -27,20 +23,19 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         private void RespawnPlayer(RespawnMessage message)
         {
-            if (_playerHandler.PlayerInstanceID == message.ID)
-                _playerHandler.RespawnPlayer();
+            if (playerHandler.PlayerInstanceID == message.ID)
+            {
+                playerHandler.RespawnPlayer();
+                cameraHandler.SetFollowCameraActive(true);
+            }
         }
 
         public override void OnUpdate(float deltaTime) { }
 
-        public void SetPlayerHandler(PlayerHandler playerHandler)
-        {
-            _playerHandler = playerHandler;
-        }
-
         public override void OnEndGame(EndResult endResult)
         {
             _killCharactersPublisher.Publish(new KillCharactersMessage());
+            cameraHandler.SetFollowCameraActive(false);
 
 #if UNITY_EDITOR
             string endColor = endResult switch
@@ -75,6 +70,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnPlayerFall()
         {
+            cameraHandler.SetFollowCameraActive(false);
 #if UNITY_EDITOR
             Debug.Log("Player Fall In Racing");
 #endif

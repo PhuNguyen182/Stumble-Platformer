@@ -2557,6 +2557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadDelayAmount: 1
   playerController: {fileID: 5956835733577522111}
+  playerGraphics: {fileID: 7834813393693615432}
 --- !u!1 &9111487040463002854
 GameObject:
   m_ObjectHideFlags: 0

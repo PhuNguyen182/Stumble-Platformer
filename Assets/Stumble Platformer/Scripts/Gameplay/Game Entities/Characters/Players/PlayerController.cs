@@ -79,6 +79,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 characterVisual = playerGraphics.CharacterVisual;
         }
 
+        public void AfterRespawn()
+        {
+            _stunDuration = 0;
+            _isStunning = false;
+            playerHealth.OnRespawn();
+        }
+
         private void StunningTimer()
         {
             if (_stunDuration > 0)
@@ -219,7 +226,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             _stunDuration = damageData.StunDuration;
 
             playerPhysics.TakeDamage(damageData);
-            playerHealth.TakeDamage(damageData.DamageAmount);
+            playerHealth.TakeDamage(damageData);
         }
 
         public int GetCheckPointIndex()

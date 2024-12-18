@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Common.Enums;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using StumblePlatformer.Scripts.Common.Messages;
 using Cysharp.Threading.Tasks;
 using MessagePipe;
@@ -15,6 +15,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
     {
         [SerializeField] private float deadDelayAmount = 1f;
         [SerializeField] private PlayerController playerController;
+        [SerializeField] private PlayerGraphics playerGraphics;
 
         private int _healthPoint = 0;
         private int _checkPointIndex = 0;
@@ -90,9 +91,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             playerController.PlayerGraphics.CharacterVisual.CharacterAnimator.SetTrigger(CharacterAnimationKeys.LoseKey);
         }
 
-        public void TakeDamage(int damage)
+        public void OnRespawn()
         {
-            _healthPoint = _healthPoint - damage;
+            playerGraphics.SetPlayerGraphicActive(true);
+        }
+
+        public void TakeDamage(DamageData damage)
+        {
+            _healthPoint = _healthPoint - damage.DamageAmount;
+
+            if(damage.DamageType == DamageType.Energy)
+            {
+                playerGraphics.PlayDeadEffect();
+                playerGraphics.SetPlayerGraphicActive(false);
+            }
         }
 
         public void SetHealth(int health)
@@ -129,6 +141,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             playerController.TakeDamage(new DamageData
             {
+                DamageType = deadZone.DamageType,
                 DamageAmount = DeadZone.GamePlayMode == GamePlayMode.SinglePlayer ? 1 : 0
             });
 

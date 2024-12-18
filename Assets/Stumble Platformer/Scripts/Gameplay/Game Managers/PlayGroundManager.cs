@@ -95,6 +95,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             SetupPlayRule(PlayRule);
 
             playerHandler.SpawnPlayer();
+            cameraHandler.SetFollowCameraActive(true);
             cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
             PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
 
@@ -108,6 +109,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         {
             if (playRule is ISetPlayerHandler playerHandlerSetter)
                 playerHandlerSetter.SetPlayerHandler(playerHandler);
+
+            if (playRule is ISetCameraHandler cameraHandlerSetter)
+                cameraHandlerSetter.SetCameraHandler(cameraHandler);
         }
 
         private void OnDestroy()

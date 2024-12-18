@@ -10,12 +10,14 @@ using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
-    public abstract class BasePlayRule : MonoBehaviour, IPlayRule, IUpdateHandler
+    public abstract class BasePlayRule : MonoBehaviour, IPlayRule, IUpdateHandler, ISetPlayerHandler, ISetCameraHandler
     {
         [SerializeField] protected string objectiveTitle;
 
         protected IDisposable messageDisposable;
         protected DisposableBagBuilder bagBuilder;
+        protected PlayerHandler playerHandler;
+        protected CameraHandler cameraHandler;
 
         protected ISubscriber<ReportPlayerHealthMessage> playerHealthSubscriber;
         protected ISubscriber<EndGameMessage> endGameSubscriber;
@@ -70,6 +72,16 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         public abstract void OnLevelEnded(EndResult endResult);
         public abstract void OnPlayerFall();
         public abstract void OnPlayerHealthUpdate();
+
+        public void SetPlayerHandler(PlayerHandler playerHandler)
+        {
+            this.playerHandler = playerHandler;
+        }
+
+        public void SetCameraHandler(CameraHandler cameraHandler)
+        {
+            this.cameraHandler = cameraHandler;
+        }
 
         public void EndLevel(LevelEndMessage message)
         {

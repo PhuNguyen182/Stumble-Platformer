@@ -8,10 +8,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
     [RequireComponent(typeof(BoxCollider))]
     public class DeadZone : MonoBehaviour
     {
+        [SerializeField] private DamageType damageType;
         [SerializeField] private DeadZoneEnvironment deadZoneEnvironment;
         [SerializeField] private BoxCollider deadZoneCollider;
         [SerializeField] private bool drawGizmo = true;
 
+        public DamageType DamageType => damageType;
         public static GamePlayMode GamePlayMode;
 
         public void PlayDeathEffect(Vector3 position)
