@@ -9,15 +9,13 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
     public class RacingRule : BasePlayRule
     {
-        private IPublisher<LevelEndMessage> _levelEndPublisher;
-        private IPublisher<KillCharactersMessage> _killCharactersPublisher;
         private ISubscriber<RespawnMessage> _respawnSubscriber;
+        private IPublisher<KillCharactersMessage> _killCharactersPublisher;
 
         protected override void RegisterCustomMessages()
         {
-            _levelEndPublisher = GlobalMessagePipe.GetPublisher<LevelEndMessage>();
-            _killCharactersPublisher = GlobalMessagePipe.GetPublisher<KillCharactersMessage>();
             _respawnSubscriber = GlobalMessagePipe.GetSubscriber<RespawnMessage>();
+            _killCharactersPublisher = GlobalMessagePipe.GetPublisher<KillCharactersMessage>();
             _respawnSubscriber.Subscribe(RespawnPlayer).AddTo(bagBuilder);
         }
 
@@ -30,8 +28,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             }
         }
 
-        public override void OnUpdate(float deltaTime) { }
-
         public override void OnEndGame(EndResult endResult)
         {
             if (endResult == EndResult.Win)
@@ -43,6 +39,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnLevelEnded(EndResult endResult)
         {
+            // If in single mode
             EndGame(new EndGameMessage
             {
                 ID = CurrentPlayerID,
@@ -59,7 +56,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             if(PlayerHealth <= 0)
             {
-                _levelEndPublisher.Publish(new LevelEndMessage
+                EndLevel(new LevelEndMessage
                 {
                     ID = CurrentPlayerID,
                     Result = EndResult.Lose

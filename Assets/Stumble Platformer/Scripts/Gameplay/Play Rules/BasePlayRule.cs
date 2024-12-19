@@ -23,7 +23,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         protected ISubscriber<ReportPlayerHealthMessage> playerHealthSubscriber;
         protected ISubscriber<EndGameMessage> endGameSubscriber;
         protected ISubscriber<LevelEndMessage> levelEndSubscriber;
-        protected ISubscriber<PlayerDamageMessage> playerFallSubscriber;
+        protected ISubscriber<PlayerDamageMessage> playerDamageSubscriber;
         protected GameStateController gameStateController;
 
         public int CurrentPlayerID { get; set; }
@@ -47,17 +47,25 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             endGameSubscriber = GlobalMessagePipe.GetSubscriber<EndGameMessage>();
             levelEndSubscriber = GlobalMessagePipe.GetSubscriber<LevelEndMessage>();
             playerHealthSubscriber = GlobalMessagePipe.GetSubscriber<ReportPlayerHealthMessage>();
-            playerFallSubscriber = GlobalMessagePipe.GetSubscriber<PlayerDamageMessage>();
+            playerDamageSubscriber = GlobalMessagePipe.GetSubscriber<PlayerDamageMessage>();
 
             levelEndSubscriber.Subscribe(EndLevel).AddTo(bagBuilder);
             playerHealthSubscriber.Subscribe(UpdateHealth).AddTo(bagBuilder);
-            playerFallSubscriber.Subscribe(DamagePlayer).AddTo(bagBuilder);
+            playerDamageSubscriber.Subscribe(DamagePlayer).AddTo(bagBuilder);
 
             RegisterCustomMessages();
             messageDisposable = bagBuilder.Build();
         }
 
         protected virtual void RegisterCustomMessages() { }
+
+        public void DamagePlayer(PlayerDamageMessage message)
+        {
+            if (CurrentPlayerID != message.ID)
+                return;
+
+            OnPlayerDamage();
+        }
 
         protected void UpdateHealth(ReportPlayerHealthMessage message)
         {
@@ -68,12 +76,14 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             OnPlayerHealthUpdate();
         }
 
-        public abstract void OnUpdate(float deltaTime);
         public abstract void OnEndGame(EndResult endResult);
         public abstract void OnLevelEnded(EndResult endResult);
         public abstract void OnPlayerDamage();
-        public abstract void OnPlayerHealthUpdate();
 
+        public virtual void OnPlayerHealthUpdate() { }
+        public virtual void OnUpdate(float deltaTime) { }
+
+        #region Handler Setters
         public void SetPlayerHandler(PlayerHandler playerHandler)
         {
             this.playerHandler = playerHandler;
@@ -88,6 +98,12 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             this.cameraHandler = cameraHandler;
         }
+
+        public void SetStateController(GameStateController gameStateController)
+        {
+            this.gameStateController = gameStateController;
+        }
+        #endregion
 
         public void EndLevel(LevelEndMessage message)
         {
@@ -106,19 +122,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
             gameStateController.EndGame(message.Result);
             OnEndGame(message.Result);
-        }
-
-        public void DamagePlayer(PlayerDamageMessage message)
-        {
-            if (CurrentPlayerID != message.ID)
-                return;
-
-            OnPlayerDamage();
-        }
-
-        public void SetStateController(GameStateController gameStateController)
-        {
-            this.gameStateController = gameStateController;
         }
 
         private void OnDestroy()

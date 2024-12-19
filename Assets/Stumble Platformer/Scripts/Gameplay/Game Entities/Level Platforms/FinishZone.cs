@@ -19,6 +19,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         public void ReportFinish(PlayerController playerController)
         {
+            // If in single mode
             _playerFinishPublisher.Publish(new LevelEndMessage
             {
                 ID = playerController.gameObject.GetInstanceID(),

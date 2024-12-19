@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Common.Enums;
-using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
@@ -14,10 +13,14 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         private bool _hasLosedGame;
         private float _currentTimer;
 
-        private IPublisher<LevelEndMessage> _levelEndPublisher;
-
         public float PlayDuration => playDuration;
         public float CurrentTimer => _currentTimer;
+
+        protected override void OnStart()
+        {
+            _hasLosedGame = false;
+            _currentTimer = playDuration;
+        }
 
         public override void OnUpdate(float deltatime)
         {
@@ -26,6 +29,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
                 _currentTimer -= Time.deltaTime;
                 if(_currentTimer <= 0 && !_hasLosedGame)
                 {
+                    // If in siggle mode
                     EndGame(new EndGameMessage
                     {
                         ID = CurrentPlayerID,
@@ -33,17 +37,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
                     });
                 }
             }
-        }
-
-        protected override void OnStart()
-        {
-            _hasLosedGame = false;
-            _currentTimer = playDuration;
-        }
-
-        protected override void RegisterCustomMessages()
-        {
-            _levelEndPublisher = GlobalMessagePipe.GetPublisher<LevelEndMessage>();
         }
 
         public override void OnEndGame(EndResult endResult)
@@ -58,6 +51,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnLevelEnded(EndResult endResult)
         {
+            // If in single mode
             EndGame(new EndGameMessage
             {
                 ID = CurrentPlayerID,
@@ -68,13 +62,11 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         public override void OnPlayerDamage()
         {
             _hasLosedGame = true;
-            _levelEndPublisher.Publish(new LevelEndMessage
-            {
+            EndLevel(new LevelEndMessage
+            {            
                 ID = CurrentPlayerID,
                 Result = EndResult.Lose
             });
         }
-
-        public override void OnPlayerHealthUpdate() { }
     }
 }

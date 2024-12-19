@@ -19,8 +19,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private int _healthPoint = 0;
         private int _checkPointIndex = 0;
-        private bool _hasFinishLevel;
-        private bool _canTakeDamage;
+
+        private bool _hasFinishLevel = false;
+        private bool _canTakeDamage = true;
 
         private IPublisher<RespawnMessage> _respawnPublisher;
         private IPublisher<PlayerDamageMessage> _playerDamagePublisher;
@@ -33,7 +34,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Start()
         {
-            _canTakeDamage = true;
             _respawnPublisher = GlobalMessagePipe.GetPublisher<RespawnMessage>();
             _reportPlayerHealthPublisher = GlobalMessagePipe.GetPublisher<ReportPlayerHealthMessage>();
             _playerDamagePublisher = GlobalMessagePipe.GetPublisher<PlayerDamageMessage>();
