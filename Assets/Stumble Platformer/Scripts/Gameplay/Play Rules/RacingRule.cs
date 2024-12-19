@@ -39,31 +39,10 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
             _killCharactersPublisher.Publish(new KillCharactersMessage());
             cameraHandler.SetFollowCameraActive(false);
-
-#if UNITY_EDITOR
-            string endColor = endResult switch
-            {
-                EndResult.Win => "#00ff00",
-                EndResult.Lose => "#ff0000",
-                _ => ""
-            };
-
-            string result = endResult switch
-            {
-                EndResult.Win => "Win Race",
-                EndResult.Lose => "Lose Race",
-                _ => ""
-            };
-
-            Debug.Log($"<color={endColor}>{result}</color>");
-#endif
         }
 
         public override void OnLevelEnded(EndResult endResult)
         {
-#if UNITY_EDITOR
-            Debug.Log($"Player End Racing: {endResult}");
-#endif
             EndGame(new EndGameMessage
             {
                 ID = CurrentPlayerID,
@@ -71,12 +50,9 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             });
         }
 
-        public override void OnPlayerFall()
+        public override void OnPlayerDamage()
         {
             cameraHandler.SetFollowCameraActive(false);
-#if UNITY_EDITOR
-            Debug.Log("Player Fall In Racing");
-#endif
         }
 
         public override void OnPlayerHealthUpdate()

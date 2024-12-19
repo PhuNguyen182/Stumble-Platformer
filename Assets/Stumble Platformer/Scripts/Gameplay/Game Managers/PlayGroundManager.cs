@@ -112,6 +112,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             if (playRule is ISetCameraHandler cameraHandlerSetter)
                 cameraHandlerSetter.SetCameraHandler(cameraHandler);
+
+            if (playRule is ISetEnvironmentHandler environmentHandlerSetter)
+                environmentHandlerSetter.SetEnvironmentHandler(environmentHandler);
         }
 
         private void OnDestroy()

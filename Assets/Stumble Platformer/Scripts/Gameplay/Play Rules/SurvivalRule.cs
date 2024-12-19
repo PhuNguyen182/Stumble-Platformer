@@ -11,7 +11,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
     {
         [SerializeField] private float playDuration = 30f;
 
-        private bool _hasFallen;
+        private bool _hasLosedGame;
         private float _currentTimer;
 
         private IPublisher<LevelEndMessage> _levelEndPublisher;
@@ -21,13 +21,11 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnUpdate(float deltatime)
         {
-            // Continously counting if no falling down
-            if(_currentTimer > 0 && !_hasFallen)
+            if(_currentTimer > 0 && !_hasLosedGame)
             {
                 _currentTimer -= Time.deltaTime;
-                if(_currentTimer <= 0 && !_hasFallen)
+                if(_currentTimer <= 0 && !_hasLosedGame)
                 {
-                    // Win game
                     EndGame(new EndGameMessage
                     {
                         ID = CurrentPlayerID,
@@ -39,7 +37,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         protected override void OnStart()
         {
-            _hasFallen = false;
+            _hasLosedGame = false;
             _currentTimer = playDuration;
         }
 
@@ -56,31 +54,10 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             playerHandler.SetPlayerActive(false);
             playerHandler.SetPlayerPhysicsActive(false);
             cameraHandler.SetFollowCameraActive(false);
-
-#if UNITY_EDITOR
-            string endColor = endResult switch
-            {
-                EndResult.Win => "#00ff00",
-                EndResult.Lose => "#ff0000",
-                _ => ""
-            };
-
-            string result = endResult switch
-            {
-                EndResult.Win => "You are survived!",
-                EndResult.Lose => "You are dead!",
-                _ => ""
-            };
-
-            Debug.Log($"<color={endColor}>{result}</color>");
-#endif
         }
 
         public override void OnLevelEnded(EndResult endResult)
         {
-#if UNITY_EDITOR
-            Debug.Log($"Player End Survival: {endResult}");
-#endif
             EndGame(new EndGameMessage
             {
                 ID = CurrentPlayerID,
@@ -88,10 +65,9 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             });
         }
 
-        public override void OnPlayerFall()
+        public override void OnPlayerDamage()
         {
-            // If fall, lose immediately
-            _hasFallen = true;
+            _hasLosedGame = true;
             _levelEndPublisher.Publish(new LevelEndMessage
             {
                 ID = CurrentPlayerID,
@@ -99,9 +75,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             });
         }
 
-        public override void OnPlayerHealthUpdate()
-        {
-            
-        }
+        public override void OnPlayerHealthUpdate() { }
     }
 }

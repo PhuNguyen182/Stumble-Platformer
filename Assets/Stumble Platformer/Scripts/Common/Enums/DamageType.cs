@@ -1,8 +1,11 @@
+using System;
+
 namespace StumblePlatformer.Scripts.Common.Enums
 {
+    [Serializable]
     public enum DamageType
     {
-        Physics = 0,
+        Physical = 0,
         Energy = 1
     }
 }

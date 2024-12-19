@@ -11,14 +11,18 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 36ee359c4d953a24aaa5e118536ab6ab, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - SHADOWCASTER
+  - DepthOnly
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -37,13 +41,26 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Edge_Smoothness: 2
-    - _Laser_Angle_Cell: 169
-    - _Laser_Scale: 2
-    - _Thickness: 1.25
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _CastShadows: 0
+    - _Cull: 2
+    - _DstBlend: 10
+    - _Edge_Smoothness: 8.4
+    - _Laser_Angle_Cell: 180
+    - _Laser_Scale: 25
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _SrcBlend: 5
+    - _Surface: 1
+    - _Thickness: 2
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 57.00732, g: 9.411585, b: 9.411585, a: 1}
-    - _Laser_Speed: {r: 3, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.6091614, g: 5.050373, b: 43.04748, a: 1}
+    - _Laser_Speed: {r: 6, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4961088230306515698
 MonoBehaviour:

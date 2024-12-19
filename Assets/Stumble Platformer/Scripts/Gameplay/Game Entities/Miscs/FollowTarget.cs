@@ -18,6 +18,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs
         [Space(10)]
         public bool UseTransform;
         public bool LookAtTarget;
+        public Vector3 Offset;
         [ShowIf("UseTransform", true)] public Transform TargetPoint;
         [HideIf("UseTransform", true)] public Vector3 ToPosition;
 
@@ -59,7 +60,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs
             else
                 _targetPosition = transform.position;
 
-            transform.position = _targetPosition;
+            transform.position = _targetPosition + Offset;
             
             if (LookAtTarget && TargetPoint)
                 transform.LookAt(TargetPoint);

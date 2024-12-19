@@ -216,16 +216,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             playerPhysics.SetCharacterActive(active);
         }
 
-        public void TakeDamage(DamageData damageData)
+        public void TakePhysicalAttack(PhysicalDamage damageData)
         {
-            if (_isStunning)
-                return;
+            if (!_isStunning)
+            {
+                _isStunning = true;
+                _stunDuration = damageData.StunDuration;
 
-            _isStunning = true;
-            SetStunningState(true);
-            _stunDuration = damageData.StunDuration;
+                playerPhysics.TakePhysicsDamage(damageData);
+                SetStunningState(true);
+            }
+        }
 
-            playerPhysics.TakeDamage(damageData);
+        public void TakeHealthDamage(HealthDamage damageData)
+        {
             playerHealth.TakeDamage(damageData);
         }
 

@@ -5,7 +5,7 @@ using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerPhysics : MonoBehaviour, IDamageable
+    public class PlayerPhysics : MonoBehaviour
     {
         [SerializeField] private Rigidbody playerBody;
         [SerializeField] private CharacterConfig characterConfig;
@@ -48,7 +48,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         
         public bool IsFalling() => playerBody.velocity.y <= characterConfig.CheckFallSpeed;
         
-        public void TakeDamage(DamageData damageData)
+        public void TakePhysicsDamage(PhysicalDamage damageData)
         {
             if (damageData.AttackForce != 0 && damageData.ForceDirection != Vector3.zero)
                 playerBody.AddForce(damageData.AttackForce * damageData.ForceDirection, ForceMode.Impulse);

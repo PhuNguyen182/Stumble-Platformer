@@ -10,23 +10,24 @@ using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
-    public abstract class BasePlayRule : MonoBehaviour, IPlayRule, IUpdateHandler, ISetPlayerHandler, ISetCameraHandler
+    public abstract class BasePlayRule : MonoBehaviour, IPlayRule, IUpdateHandler, ISetPlayerHandler, ISetCameraHandler, ISetEnvironmentHandler
     {
         [SerializeField] protected string objectiveTitle;
 
         protected IDisposable messageDisposable;
         protected DisposableBagBuilder bagBuilder;
         protected PlayerHandler playerHandler;
+        protected EnvironmentHandler environmentHandler;
         protected CameraHandler cameraHandler;
 
         protected ISubscriber<ReportPlayerHealthMessage> playerHealthSubscriber;
         protected ISubscriber<EndGameMessage> endGameSubscriber;
         protected ISubscriber<LevelEndMessage> levelEndSubscriber;
-        protected ISubscriber<PlayerFallMessage> playerFallSubscriber;
+        protected ISubscriber<PlayerDamageMessage> playerFallSubscriber;
         protected GameStateController gameStateController;
 
         public int CurrentPlayerID { get; set; }
-        public int PlayerHealth { get; protected set; }
+        public int PlayerHealth { get; set; }
         public bool IsActive { get; set; }
         public string ObjectiveTitle => objectiveTitle;
 
@@ -46,11 +47,11 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             endGameSubscriber = GlobalMessagePipe.GetSubscriber<EndGameMessage>();
             levelEndSubscriber = GlobalMessagePipe.GetSubscriber<LevelEndMessage>();
             playerHealthSubscriber = GlobalMessagePipe.GetSubscriber<ReportPlayerHealthMessage>();
-            playerFallSubscriber = GlobalMessagePipe.GetSubscriber<PlayerFallMessage>();
+            playerFallSubscriber = GlobalMessagePipe.GetSubscriber<PlayerDamageMessage>();
 
             levelEndSubscriber.Subscribe(EndLevel).AddTo(bagBuilder);
             playerHealthSubscriber.Subscribe(UpdateHealth).AddTo(bagBuilder);
-            playerFallSubscriber.Subscribe(Fall).AddTo(bagBuilder);
+            playerFallSubscriber.Subscribe(DamagePlayer).AddTo(bagBuilder);
 
             RegisterCustomMessages();
             messageDisposable = bagBuilder.Build();
@@ -70,12 +71,17 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         public abstract void OnUpdate(float deltaTime);
         public abstract void OnEndGame(EndResult endResult);
         public abstract void OnLevelEnded(EndResult endResult);
-        public abstract void OnPlayerFall();
+        public abstract void OnPlayerDamage();
         public abstract void OnPlayerHealthUpdate();
 
         public void SetPlayerHandler(PlayerHandler playerHandler)
         {
             this.playerHandler = playerHandler;
+        }
+
+        public void SetEnvironmentHandler(EnvironmentHandler environmentHandler)
+        {
+            this.environmentHandler = environmentHandler;
         }
 
         public void SetCameraHandler(CameraHandler cameraHandler)
@@ -88,6 +94,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             if (CurrentPlayerID != message.ID)
                 return;
 
+            environmentHandler.SetLevelActive(false);
             gameStateController.EndLevel(message.Result);
             OnLevelEnded(message.Result);
         }
@@ -101,12 +108,12 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             OnEndGame(message.Result);
         }
 
-        public void Fall(PlayerFallMessage message)
+        public void DamagePlayer(PlayerDamageMessage message)
         {
             if (CurrentPlayerID != message.ID)
                 return;
 
-            OnPlayerFall();
+            OnPlayerDamage();
         }
 
         public void SetStateController(GameStateController gameStateController)
