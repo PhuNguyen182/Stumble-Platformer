@@ -111,6 +111,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
                 return;
 
             environmentHandler.SetLevelActive(false);
+            environmentHandler.SetLevelSecondaryComponentActive(false);
             gameStateController.EndLevel(message.Result);
             OnLevelEnded(message.Result);
         }

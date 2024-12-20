@@ -17,6 +17,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public void SetLevelActive(bool active) => EnvironmentIdentifier.SetLevelActive(active);
 
+        public void SetLevelSecondaryComponentActive(bool active)
+        {
+            EnvironmentIdentifier.PlayLevel.SetSecondaryLevelComponentActive(active);
+        }
+
         public void SetEnvironmentIdentifier(EnvironmentIdentifier environmentIdentifier)
         {
             EnvironmentIdentifier = environmentIdentifier;

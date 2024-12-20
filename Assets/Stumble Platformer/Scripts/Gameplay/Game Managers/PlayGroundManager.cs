@@ -102,6 +102,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             PlayRule.IsActive = true;
             playerHandler.SetPlayerActive(true);
             playerHandler.SetPlayerPhysicsActive(true);
+            environmentHandler.SetLevelSecondaryComponentActive(true);
             inputReceiver.IsActive = true;
         }
 
