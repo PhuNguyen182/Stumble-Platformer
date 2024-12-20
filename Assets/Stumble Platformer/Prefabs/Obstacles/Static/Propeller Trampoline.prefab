@@ -334,9 +334,11 @@ MonoBehaviour:
   obstacleBody: {fileID: 1156989710963546859}
   obstacleAttackers:
   - {fileID: 7766909928693171484}
+  force: 24
   interactibleLayer:
     serializedVersion: 2
     m_Bits: 9
+  volumeEffector: {fileID: 4537403717380330499}
 --- !u!114 &7766909928693171484
 MonoBehaviour:
   m_ObjectHideFlags: 0

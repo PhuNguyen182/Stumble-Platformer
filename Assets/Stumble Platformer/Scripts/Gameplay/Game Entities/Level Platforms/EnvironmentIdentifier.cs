@@ -32,8 +32,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public Transform TeaserLookAt;
         [SerializeField] public CinemachineDollyCart TeaserFollower;
         [SerializeField] public CinemachineSmoothPath TeaserPath;
-        [SerializeField] public CinemachineTransposer transposer;
-        [SerializeField] public CinemachineVirtualCamera virtualCamera;
 
         [Header("Settings")]
         [SerializeField] public float stopTimeAmount = 2f;
