@@ -1,5 +1,6 @@
 using R3;
 using R3.Triggers;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +10,21 @@ using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
+    [Serializable]
+    public enum MovingType
+    {
+        None = 0,
+        Restart = 1,
+        PingPong = 2
+    }
+
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(BoxCollider))]
     public class MovingPlatform : BasePlatform
     {
         [SerializeField] protected BoxCollider platformCollider;
         [SerializeField] protected DummyPlatform dummyPlatform;
+        [SerializeField] protected MovingType movingType = MovingType.PingPong;
 
         [Header("Movement")]
         [SerializeField] protected float movementSpeed = 3f;
@@ -74,7 +84,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
                 else
                 {
-                    SwapPivotPositions();
+                    OnPlatformTargeted();
                     SetPlatformActive(true);
                 }
             }
@@ -129,6 +139,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             Vector3 movement = platformBody.position + dir * usedSpeed * Time.fixedDeltaTime;
             platformBody.transform.position = movement;
         }
+
+        protected virtual void OnPlatformTargeted()
+        {
+            switch (movingType)
+            {
+                case MovingType.Restart:
+                    SwitchToStartPosition();
+                    break;
+                case MovingType.PingPong:
+                    SwapPivotPositions();
+                    break;
+            }
+        }
+
+        private void SwitchToStartPosition() => transform.position = firstPosition;
 
         private void SwapPivotPositions() => (firstPosition, lastPosition) = (lastPosition, firstPosition);
 

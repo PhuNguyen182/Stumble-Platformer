@@ -20,13 +20,17 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         [SerializeField] private Renderer platformRenderer;
         [SerializeField] private Collider platformCollider;
 
+        private const string DropProperty = "Drop";
+        private const string StepOnProperty = "StepOn";
+        private const string ColorProperty = "_BaseColor";
+
         private bool _isSteppedOn = false;
         private float _platformDuration = 0;
         private MaterialPropertyBlock _block;
 
-        private readonly int _dropHash = Animator.StringToHash("Drop");
-        private readonly int _steppedOnHash = Animator.StringToHash("StepOn");
-        private readonly int _colorProperty = Shader.PropertyToID("_BaseColor");
+        private readonly int _dropHash = Animator.StringToHash(DropProperty);
+        private readonly int _steppedOnHash = Animator.StringToHash(StepOnProperty);
+        private readonly int _colorProperty = Shader.PropertyToID(ColorProperty);
 
         protected override void OnAwake()
         {
