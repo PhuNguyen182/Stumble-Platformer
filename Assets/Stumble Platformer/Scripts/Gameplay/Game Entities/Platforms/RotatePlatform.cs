@@ -28,7 +28,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private Vector3 _rotateAxis;
         private Quaternion _rotation;
-        private bool _hasPlayerStandOn;
 
         protected override void OnAwake()
         {
@@ -41,6 +40,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             };
 
             RegisterPlatform();
+        }
+
+        public override void SetPlatformActive(bool active)
+        {
+            base.SetPlatformActive(active);
+            IsActive = active;
         }
 
         public override void OnPlatformCollide(Collision collision)

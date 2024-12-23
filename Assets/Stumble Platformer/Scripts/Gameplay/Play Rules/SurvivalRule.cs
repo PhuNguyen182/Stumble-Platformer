@@ -30,7 +30,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
                 if(_currentTimer <= 0 && !_hasLosedGame)
                 {
                     // If in siggle mode
-                    EndGame(new EndGameMessage
+                    EndLevel(new LevelEndMessage
                     {
                         ID = CurrentPlayerID,
                         Result = EndResult.Win
