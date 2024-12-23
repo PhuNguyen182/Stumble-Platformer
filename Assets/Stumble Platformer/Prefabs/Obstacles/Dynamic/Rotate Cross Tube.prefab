@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2503561251351620621}
   - component: {fileID: 1538327023810782198}
   - component: {fileID: 5454427547545618187}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rotate Cross Tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
