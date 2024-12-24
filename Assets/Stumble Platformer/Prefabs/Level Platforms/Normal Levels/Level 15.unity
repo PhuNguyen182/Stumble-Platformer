@@ -3237,6 +3237,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: usePhysics
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9970,8 +9974,6 @@ MonoBehaviour:
   TeaserLookAt: {fileID: 0}
   TeaserFollower: {fileID: 1176312562}
   TeaserPath: {fileID: 1430614590}
-  transposer: {fileID: 0}
-  virtualCamera: {fileID: 0}
   stopTimeAmount: 2
   teaserDefaultSpeed: 0.2
   CameraBodyMode: 0
@@ -11961,6 +11963,10 @@ PrefabInstance:
     - target: {fileID: 7143511723358041957, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: usePhysics
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22125,6 +22131,10 @@ PrefabInstance:
     - target: {fileID: 7143511723358041957, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: usePhysics
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
