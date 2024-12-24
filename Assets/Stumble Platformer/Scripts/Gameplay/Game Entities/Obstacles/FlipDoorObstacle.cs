@@ -51,7 +51,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             if (!_hasStepped)
                 return;
 
-            if(_duration < activateDuration)
+            if(_duration < activateDuration && obstacleBody.isKinematic)
             {
                 _duration += Time.deltaTime;
                 if (_duration >= activateDuration && IsActive)

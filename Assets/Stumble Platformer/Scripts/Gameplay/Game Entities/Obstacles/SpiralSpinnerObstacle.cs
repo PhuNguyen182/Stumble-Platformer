@@ -11,6 +11,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
     {
         [Header("Spin Spiral")]
         [SerializeField] private Vector3 spiralCenter;
+        [SerializeField] private float phase = 0;
         [SerializeField] private float spiralRadiusTime = 6f;
         [SerializeField] private float spiralRotateSpeed = 10f;
         [SerializeField] private float minSpiralRadius = 1f;
@@ -78,8 +79,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             float radiusInterpolation = 0.5f * (Mathf.Sin(_spiralTime * spiralRadiusTime) + 1);
             float radius = Mathf.Lerp(minSpiralRadius, maxSpiralRadius, radiusInterpolation);
 
-            float x = radius * Mathf.Cos(_spiralTime * spiralRotateSpeed);
-            float z = radius * Mathf.Sin(_spiralTime * spiralRotateSpeed);
+            float x = radius * Mathf.Cos(_spiralTime * spiralRotateSpeed + Mathf.Deg2Rad * phase);
+            float z = radius * Mathf.Sin(_spiralTime * spiralRotateSpeed + Mathf.Deg2Rad * phase);
 
             Vector3 position = new Vector3(x, 0, z) + spiralCenter + _originalPosition;
             obstacleBody.position = position;

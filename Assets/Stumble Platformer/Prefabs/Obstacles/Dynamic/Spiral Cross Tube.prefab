@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackOnce: 0
-  attactForce: 15
+  attactForce: 7
   stunDuration: 1.5
   obstacleBody: {fileID: 6450396235564221757}
   obstacleAttackers:
@@ -551,8 +551,9 @@ MonoBehaviour:
   - {fileID: 2818459745484384433}
   - {fileID: 612678620333220589}
   spiralCenter: {x: 0, y: 0, z: 0}
+  phase: 0
   spiralRadiusTime: 0.5
-  spiralRotateSpeed: 2
+  spiralRotateSpeed: 1
   minSpiralRadius: 5
   maxSpiralRadius: 10
   selfRotateSpeed: 100
