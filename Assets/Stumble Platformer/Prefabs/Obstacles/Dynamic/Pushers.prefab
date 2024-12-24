@@ -146,6 +146,7 @@ MonoBehaviour:
   obstacleBody: {fileID: 0}
   obstacleAttackers: []
   dummyPlatform: {fileID: 6532826655248409470}
+  oscillatePosition: {fileID: 1484906641935574950}
 --- !u!1 &1700439727608628316
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +411,7 @@ MonoBehaviour:
   obstacleBody: {fileID: 0}
   obstacleAttackers: []
   dummyPlatform: {fileID: 8537021293317461616}
+  oscillatePosition: {fileID: 1946935849513747681}
 --- !u!1 &3350250556006099264
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +558,7 @@ MonoBehaviour:
   obstacleBody: {fileID: 0}
   obstacleAttackers: []
   dummyPlatform: {fileID: 6381124442860682533}
+  oscillatePosition: {fileID: 4343375028166175763}
 --- !u!1 &4342060277072569973
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,16 +1,18 @@
 using R3;
 using R3.Triggers;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
     public class PusherObstacle : BaseObstacle
     {
         [SerializeField] private DummyPlatform dummyPlatform;
+        [SerializeField] private OscillatePosition oscillatePosition;
 
         public override void OnAwake()
         {
@@ -46,6 +48,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             {
                 parentSetter.SetParent(null);
             }
+        }
+
+        public override void SetObstacleActive(bool active)
+        {
+            base.SetObstacleActive(active);
+            oscillatePosition.IsActive = active;
         }
 
         public override void DamageCharacter(Collision collision)
