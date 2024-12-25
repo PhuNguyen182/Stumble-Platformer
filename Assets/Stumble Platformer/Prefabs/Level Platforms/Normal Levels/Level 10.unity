@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: c5f04866166bda5429aa367652663288
+  m_OcclusionCullingData: {fileID: 36300000, guid: e44c92840d4bae3458c69d5cd95248bd, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -10439,8 +10439,6 @@ MonoBehaviour:
   TeaserLookAt: {fileID: 0}
   TeaserFollower: {fileID: 1176312562}
   TeaserPath: {fileID: 1430614590}
-  transposer: {fileID: 0}
-  virtualCamera: {fileID: 0}
   stopTimeAmount: 2
   teaserDefaultSpeed: 0.15
   CameraBodyMode: 0
@@ -12667,6 +12665,7 @@ MonoBehaviour:
   platformBody: {fileID: 833371883}
   platformCollider: {fileID: 833371882}
   dummyPlatform: {fileID: 94908283}
+  movingType: 2
   movementSpeed: 9
   toleranceOffset: 0.1
   movementDelayAmount: 0.75
@@ -15971,6 +15970,7 @@ MonoBehaviour:
   platformBody: {fileID: 1025240036}
   platformCollider: {fileID: 1025240035}
   dummyPlatform: {fileID: 1642864904}
+  movingType: 2
   movementSpeed: 15
   toleranceOffset: 0.1
   movementDelayAmount: 1
@@ -21043,6 +21043,7 @@ MonoBehaviour:
   platformBody: {fileID: 1287593540}
   platformCollider: {fileID: 1287593539}
   dummyPlatform: {fileID: 815917140}
+  movingType: 2
   movementSpeed: 9
   toleranceOffset: 0.1
   movementDelayAmount: 0.75
@@ -22238,6 +22239,7 @@ MonoBehaviour:
   platformBody: {fileID: 1342572236}
   platformCollider: {fileID: 1342572235}
   dummyPlatform: {fileID: 1081529762}
+  movingType: 2
   movementSpeed: 9
   toleranceOffset: 0.1
   movementDelayAmount: 1
@@ -24716,6 +24718,7 @@ MonoBehaviour:
   platformBody: {fileID: 1507141102}
   platformCollider: {fileID: 1507141101}
   dummyPlatform: {fileID: 294853984}
+  movingType: 2
   movementSpeed: 9
   toleranceOffset: 0.1
   movementDelayAmount: 1
@@ -28049,6 +28052,7 @@ MonoBehaviour:
   platformBody: {fileID: 1719059447}
   platformCollider: {fileID: 1719059446}
   dummyPlatform: {fileID: 1092610338}
+  movingType: 2
   movementSpeed: 15
   toleranceOffset: 0.1
   movementDelayAmount: 1
@@ -30113,6 +30117,7 @@ MonoBehaviour:
   platformBody: {fileID: 1735542362}
   platformCollider: {fileID: 1735542361}
   dummyPlatform: {fileID: 599335589}
+  movingType: 2
   movementSpeed: 15
   toleranceOffset: 0.1
   movementDelayAmount: 1
@@ -36986,6 +36991,7 @@ MonoBehaviour:
   platformBody: {fileID: 2123282371}
   platformCollider: {fileID: 2123282370}
   dummyPlatform: {fileID: 944305412}
+  movingType: 2
   movementSpeed: 15
   toleranceOffset: 0.1
   movementDelayAmount: 1
