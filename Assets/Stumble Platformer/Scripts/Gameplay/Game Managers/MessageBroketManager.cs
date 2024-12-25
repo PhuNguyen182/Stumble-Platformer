@@ -28,7 +28,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             _builder.AddMessageBroker<ReportPlayerHealthMessage>();
             _builder.AddMessageBroker<SetupLevelMessage>();
             _builder.AddMessageBroker<KillCharactersMessage>();
-            _builder.AddMessageBroker<PlayerFallMessage>();
+            _builder.AddMessageBroker<PlayerDamageMessage>();
             _builder.AddMessageBroker<EndGameMessage>();
             _builder.AddMessageBroker<LevelEndMessage>();
         }

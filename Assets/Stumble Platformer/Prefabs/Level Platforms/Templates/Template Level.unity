@@ -286,6 +286,57 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &414594161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 414594162}
+  - component: {fileID: 414594163}
+  m_Layer: 0
+  m_Name: Teaser Look At
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &414594162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414594161}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &414594163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414594161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab27f5812898794297b11321d9fcd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FollowX: 0
+  FollowY: 1
+  FollowZ: 0
+  UseTransform: 1
+  LookAtTarget: 1
+  TargetPoint: {fileID: 1176312563}
+  ToPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &816809803
 GameObject:
   m_ObjectHideFlags: 3
@@ -650,7 +701,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 414594162}
   m_Follow: {fileID: 1176312563}
   m_Lens:
     FieldOfView: 60.000004
@@ -947,10 +998,16 @@ MonoBehaviour:
   SunSource: {fileID: 328498386}
   PlayLevel: {fileID: 1724201788}
   SpawnCharacterArea: {fileID: 231218960}
+  TeaserLookAt: {fileID: 414594162}
   TeaserFollower: {fileID: 1176312562}
   TeaserPath: {fileID: 1430614590}
+  transposer: {fileID: 0}
+  virtualCamera: {fileID: 0}
   stopTimeAmount: 2
   teaserDefaultSpeed: 0.15
+  CameraBodyMode: 0
+  TransposerConfig: {fileID: 11400000, guid: 281eb1e63636a51449a12c3168be92a1, type: 2}
+  TrackedDollyConfig: {fileID: 11400000, guid: f3f2d7f3dfedb974d98eba44765daa1b, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -961,5 +1018,6 @@ SceneRoots:
   - {fileID: 231218961}
   - {fileID: 1869150051}
   - {fileID: 1176312563}
+  - {fileID: 414594162}
   - {fileID: 1430614589}
   - {fileID: 1724201787}

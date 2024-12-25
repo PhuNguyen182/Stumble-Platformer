@@ -3,12 +3,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
-using Cysharp.Threading.Tasks;
 using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
@@ -27,9 +27,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         
         private IDisposable _initLevelDisposable;
         private ISubscriber<SetupLevelMessage> _initLevelSubscriber;
-        private ISubscriber<RespawnMessage> _respawnSubscriber;
 
-        public IPlayRule PlayRule { get; private set; }
+        public BasePlayRule PlayRule { get; private set; }
 
         private void Awake()
         {
@@ -55,12 +54,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void InitializeMessage()
         {
-            _respawnSubscriber = GlobalMessagePipe.GetSubscriber<RespawnMessage>();
             _initLevelSubscriber = GlobalMessagePipe.GetSubscriber<SetupLevelMessage>();
 
             var builder = MessagePipe.DisposableBag.CreateBuilder();
             _initLevelSubscriber.Subscribe(SetupLevel).AddTo(builder);
-            _respawnSubscriber.Subscribe(RespawnPlayer).AddTo(builder);
             _initLevelDisposable = builder.Build();
         }
 
@@ -84,6 +81,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private async UniTask SetupPlayLevel(EnvironmentIdentifier environmentIdentifier)
         {
             inputReceiver.IsActive = false;
+            cameraHandler.SetupVirtualCameraBody(environmentIdentifier);
             environmentHandler.SetEnvironmentIdentifier(environmentIdentifier);
             await StartGame();
         }
@@ -94,21 +92,30 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             PlayRule = environmentHandler.EnvironmentIdentifier.PlayRule;
             PlayRule.SetStateController(_gameStateController);
+            SetupPlayRule(PlayRule);
 
             playerHandler.SpawnPlayer();
+            cameraHandler.SetFollowCameraActive(true);
             cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
             PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
 
+            PlayRule.IsActive = true;
             playerHandler.SetPlayerActive(true);
+            playerHandler.SetPlayerPhysicsActive(true);
+            environmentHandler.SetLevelSecondaryComponentActive(true);
             inputReceiver.IsActive = true;
         }
 
-        private void RespawnPlayer(RespawnMessage message)
+        private void SetupPlayRule(BasePlayRule playRule)
         {
-            if (playerHandler.PlayerInstanceID == message.ID)
-            {
-                playerHandler.RespawnPlayer();
-            }
+            if (playRule is ISetPlayerHandler playerHandlerSetter)
+                playerHandlerSetter.SetPlayerHandler(playerHandler);
+
+            if (playRule is ISetCameraHandler cameraHandlerSetter)
+                cameraHandlerSetter.SetCameraHandler(cameraHandler);
+
+            if (playRule is ISetEnvironmentHandler environmentHandlerSetter)
+                environmentHandlerSetter.SetEnvironmentHandler(environmentHandler);
         }
 
         private void OnDestroy()

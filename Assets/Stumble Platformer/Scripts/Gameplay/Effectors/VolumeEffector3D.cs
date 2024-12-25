@@ -9,15 +9,15 @@ namespace StumblePlatformer.Scripts.Gameplay.Effectors
     public class VolumeEffector3D : MonoBehaviour
     {
         [Header("Movement")]
-        [SerializeField] private bool useLocalRotation;
-        [SerializeField] private float forceMagnitude;
-        [SerializeField] private float forceVariation;
-        [SerializeField] private Vector3 forceDirection;
+        [SerializeField] public bool useLocalRotation;
+        [SerializeField] public float forceMagnitude;
+        [SerializeField] public float forceVariation;
+        [SerializeField] public Vector3 forceDirection;
 
         [Header("Mode")]
-        [SerializeField] private ForceMode forceMode = ForceMode.Force;
-        [SerializeField] private EffectorMode effectorMode = EffectorMode.Force;
-        [SerializeField] private LayerMask interactibleLayer;
+        [SerializeField] public ForceMode forceMode = ForceMode.Force;
+        [SerializeField] public EffectorMode effectorMode = EffectorMode.Force;
+        [SerializeField] public LayerMask interactibleLayer;
 
         private Vector3 _forceDirection;
 

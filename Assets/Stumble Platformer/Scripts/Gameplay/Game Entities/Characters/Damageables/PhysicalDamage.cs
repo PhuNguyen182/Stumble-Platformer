@@ -2,11 +2,10 @@ using UnityEngine;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables
 {
-    public struct DamageData
+    public struct PhysicalDamage
     {
-        public int DamageAmount;
-        public float StunDuration;
-        public Vector3 ForceDirection;
         public float AttackForce;
+        public Vector3 ForceDirection;
+        public float StunDuration;
     }
 }

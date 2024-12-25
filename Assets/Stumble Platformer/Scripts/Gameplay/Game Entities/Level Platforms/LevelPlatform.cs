@@ -15,10 +15,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] private Transform respawnContainer;
         [SerializeField] private Transform obstacleContainer;
         [SerializeField] private Transform platformContainer;
+        [SerializeField] private Transform secondaryObstacleContainer;
+        [SerializeField] private Transform secondaryPlatformContainer;
 
         [Header("Hazzard Objects")]
         [SerializeField] private BaseObstacle[] obstacles;
         [SerializeField] private BasePlatform[] platforms;
+
+        [Header("Secondary")]
+        [SerializeField] private BaseObstacle[] secondaryObstacles;
+        [SerializeField] private BasePlatform[] secondaryPlatforms;
 
         public int CheckPointCount => respawnAreas.Length;
 
@@ -31,6 +37,19 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
             }
 
             return null;
+        }
+
+        public void SetSecondaryLevelComponentActive(bool active)
+        {
+            for (int i = 0; i < secondaryObstacles.Length; i++)
+            {
+                secondaryObstacles[i].SetObstacleActive(active);
+            }
+
+            for (int i = 0; i < secondaryPlatforms.Length; i++)
+            {
+                secondaryPlatforms[i].SetPlatformActive(active);
+            }
         }
 
         public void SetLevelActive(bool active)
@@ -59,11 +78,22 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
             platforms = platformContainer.GetComponentsInChildren<BasePlatform>();
         }
 
-        [Button]
-        [HorizontalGroup(GroupID = "Hazzards")]
+        [Button][HorizontalGroup(GroupID = "Hazzards")]
         public void GetSpawnAreas()
         {
             respawnAreas = respawnContainer.GetComponentsInChildren<RespawnArea>();
+        }
+
+        [Button][HorizontalGroup(GroupID = "Secondary")]
+        public void GetSecondaryObstacles()
+        {
+            secondaryObstacles = secondaryObstacleContainer.GetComponentsInChildren<BaseObstacle>();
+        }
+
+        [Button][HorizontalGroup(GroupID = "Secondary")]
+        public void GetSecondaryPlatforms()
+        {
+            secondaryPlatforms = secondaryPlatformContainer.GetComponentsInChildren<BasePlatform>();
         }
 #endif
     }

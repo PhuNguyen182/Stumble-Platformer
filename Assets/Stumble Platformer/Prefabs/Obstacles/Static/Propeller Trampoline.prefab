@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!4 &5301768994694887552
 Transform:
@@ -68,14 +68,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60499ed6139161e4a8620b75346ce793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useLocalRotation: 0
   forceMagnitude: 24
   forceVariation: 0
   forceDirection: {x: 0, y: 1, z: 0}
   forceMode: 0
+  effectorMode: 1
   interactibleLayer:
     serializedVersion: 2
     m_Bits: 9
-  useLocalRotation: 0
 --- !u!1 &2956185522845426276
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +195,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 18
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!4 &266053040904790612
 Transform:
@@ -333,9 +334,11 @@ MonoBehaviour:
   obstacleBody: {fileID: 1156989710963546859}
   obstacleAttackers:
   - {fileID: 7766909928693171484}
+  force: 24
   interactibleLayer:
     serializedVersion: 2
     m_Bits: 9
+  volumeEffector: {fileID: 4537403717380330499}
 --- !u!114 &7766909928693171484
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,6 +17,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public void SetLevelActive(bool active) => EnvironmentIdentifier.SetLevelActive(active);
 
+        public void SetLevelSecondaryComponentActive(bool active)
+        {
+            EnvironmentIdentifier.PlayLevel.SetSecondaryLevelComponentActive(active);
+        }
+
         public void SetEnvironmentIdentifier(EnvironmentIdentifier environmentIdentifier)
         {
             EnvironmentIdentifier = environmentIdentifier;
@@ -62,7 +67,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void SetupCamera()
         {
-            cameraHandler.SetupTeaserCamera(EnvironmentIdentifier.TeaserFollower.transform, EnvironmentIdentifier.TeaserPath);
+            cameraHandler.SetupTeaserCamera(EnvironmentIdentifier.TeaserFollower.transform
+                                            , EnvironmentIdentifier.TeaserLookAt
+                                            , EnvironmentIdentifier.TeaserPath);
         }
 
         private void SetupEnvironment()

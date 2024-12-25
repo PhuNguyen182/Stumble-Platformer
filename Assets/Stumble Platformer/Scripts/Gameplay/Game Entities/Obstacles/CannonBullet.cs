@@ -49,7 +49,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 hitImpulse = hitImpulse + attackForce;
                 hitImpulse = Mathf.Clamp(hitImpulse, 0, MaxImpactForce);
 
-                damageable.TakeDamage(new DamageData
+                damageable.TakePhysicalAttack(new PhysicalDamage
                 {
                     AttackForce = hitImpulse,
                     ForceDirection = -hitNormal,

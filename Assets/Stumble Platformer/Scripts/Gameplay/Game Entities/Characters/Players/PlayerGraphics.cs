@@ -16,5 +16,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             characterVisual.UpdateSkin(characterSkin);
         }
+
+        public void SetPlayerGraphicActive(bool active)
+        {
+            characterVisual.gameObject.SetActive(active);
+        }
+
+        public void PlayDeadEffect()
+        {
+
+        }
     }
 }

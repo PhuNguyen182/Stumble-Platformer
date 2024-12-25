@@ -62,6 +62,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6217122716307758031}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3278555610256210146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4119061909202946252}
+  m_Layer: 0
+  m_Name: Secondary Obstacle Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4119061909202946252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3278555610256210146}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6217122716307758031}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3992423111416506940
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +157,8 @@ Transform:
   - {fileID: 1818662739129231026}
   - {fileID: 7194576271237153599}
   - {fileID: 8942037371035748699}
+  - {fileID: 4119061909202946252}
+  - {fileID: 3683549547985437259}
   - {fileID: 8275122384252431527}
   - {fileID: 166326831735590082}
   - {fileID: 2391556380488944170}
@@ -148,8 +181,43 @@ MonoBehaviour:
   respawnContainer: {fileID: 1818662739129231026}
   obstacleContainer: {fileID: 7194576271237153599}
   platformContainer: {fileID: 8942037371035748699}
+  secondaryObstacleContainer: {fileID: 4119061909202946252}
+  secondaryPlatformContainer: {fileID: 3683549547985437259}
   obstacles: []
   platforms: []
+  secondaryObstacles: []
+  secondaryPlatforms: []
+--- !u!1 &4821497439721062071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3683549547985437259}
+  m_Layer: 0
+  m_Name: Secondary Platform Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3683549547985437259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4821497439721062071}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6217122716307758031}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6388396180584971247
 GameObject:
   m_ObjectHideFlags: 0

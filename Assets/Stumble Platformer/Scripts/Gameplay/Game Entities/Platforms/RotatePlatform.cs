@@ -28,7 +28,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private Vector3 _rotateAxis;
         private Quaternion _rotation;
-        private bool _hasPlayerStandOn;
 
         protected override void OnAwake()
         {
@@ -43,19 +42,25 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             RegisterPlatform();
         }
 
+        public override void SetPlatformActive(bool active)
+        {
+            base.SetPlatformActive(active);
+            IsActive = active;
+        }
+
         public override void OnPlatformCollide(Collision collision)
         {
-            _hasPlayerStandOn = collision.HasLayer(playerMask);
+            
         }
 
         public override void OnPlatformStay(Collision collision)
         {
-            _hasPlayerStandOn = collision.HasLayer(playerMask);
+            
         }
 
         public override void OnPlatformExit(Collision collision)
         {
-            _hasPlayerStandOn = false;
+            
         }
 
         public override void PlatformAction()
@@ -102,26 +107,26 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void OnPlatformTriggerEnter(Collider collider)
         {
-            if (!_hasPlayerStandOn)
-                return;
-
-            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
+            if (!collider.HasLayer(playerMask))
             {
-                parentSetter.SetParent(transform);
+                if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
+                {
+                    parentSetter.SetParent(platformBody.transform);
+                }
             }
         }
 
         private void OnPlatformTriggerStay(Collider collider)
         {
-            if (!_hasPlayerStandOn)
+            if (collider.transform.parent != null && collider.transform.parent.GetInstanceID() != platformBody.transform.GetInstanceID())
                 return;
 
-            if (collider.transform.parent != null && collider.transform.parent.GetInstanceID() != this.GetInstanceID())
-                return;
-
-            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
+            if (collider.HasLayer(playerMask))
             {
-                parentSetter.SetParent(transform);
+                if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
+                {
+                    parentSetter.SetParent(platformBody.transform);
+                }
             }
         }
 

@@ -44,7 +44,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private void Start()
         {
             SetupPlayerGraphic();
-            _playerBody = playerPhysics.GetPlayerBody();
+            _playerBody = playerPhysics.PlayerBody;
         }
 
         private void Update()
@@ -77,6 +77,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             if (playerGraphics.CharacterVisual != null)
                 characterVisual = playerGraphics.CharacterVisual;
+        }
+
+        public void AfterRespawn()
+        {
+            _stunDuration = 0;
+            _isStunning = false;
+            playerHealth.OnRespawn();
         }
 
         private void StunningTimer()
@@ -158,7 +165,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 if (groundChecker.IsGrounded)
                 {
-                    _moveVelocity = new Vector3(_playerBody.velocity.x, characterConfig.JumpHeight, _playerBody.velocity.z);
+                    float jumpHeight = characterConfig.JumpHeight * playerPhysics.JumpRestriction;
+                    _moveVelocity = new Vector3(_playerBody.velocity.x, jumpHeight, _playerBody.velocity.z);
                     _playerBody.velocity = _moveVelocity;
                 }
 
@@ -208,17 +216,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             playerPhysics.SetCharacterActive(active);
         }
 
-        public void TakeDamage(DamageData damageData)
+        public void TakePhysicalAttack(PhysicalDamage damageData)
         {
-            if (_isStunning)
-                return;
+            if (!_isStunning)
+            {
+                _isStunning = true;
+                _stunDuration = damageData.StunDuration;
 
-            _isStunning = true;
-            SetStunningState(true);
-            _stunDuration = damageData.StunDuration;
+                playerPhysics.TakePhysicsDamage(damageData);
+                SetStunningState(true);
+            }
+        }
 
-            playerPhysics.TakeDamage(damageData);
-            playerHealth.TakeDamage(damageData.DamageAmount);
+        public void TakeHealthDamage(HealthDamage damageData)
+        {
+            playerHealth.TakeDamage(damageData);
         }
 
         public int GetCheckPointIndex()

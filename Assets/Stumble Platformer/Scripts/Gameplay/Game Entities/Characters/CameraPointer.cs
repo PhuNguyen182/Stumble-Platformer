@@ -23,7 +23,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         private float _maxHeight;
         private float _adjacentLeg;
         private float _oppositeLeg;
-        private bool _active;
+        private bool _rotationActive;
 
         private Vector2 _mouseDelta;
         private Vector3 _offsetVector;
@@ -47,7 +47,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             ResetCamera();
         }
 
-        public void SetFollowActive(bool active) => _active = active;
+        public void SetFollowActive(bool active) => _rotationActive = active;
 
         public void SetFollowTarget(Transform target) => _followTarget = target;
 
@@ -58,17 +58,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
             FollowPosition(_followTarget.position);
 
-            _adjacentLeg += _mouseDelta.y * heightOffsetSpeed;
-            _yRotation -= _mouseDelta.x * rotationSpeed;
+            if (_rotationActive)
+            {
+                _adjacentLeg += _mouseDelta.y * heightOffsetSpeed;
+                _yRotation -= _mouseDelta.x * rotationSpeed;
 
-            _adjacentLeg = Mathf.Clamp(_adjacentLeg, minCameraHeight, _maxHeight);
-            _oppositeLeg = Mathf.Sqrt(cameraDistance * cameraDistance - _adjacentLeg * _adjacentLeg);
+                _adjacentLeg = Mathf.Clamp(_adjacentLeg, minCameraHeight, _maxHeight);
+                _oppositeLeg = Mathf.Sqrt(cameraDistance * cameraDistance - _adjacentLeg * _adjacentLeg);
 
-            _offsetVector = new Vector3(0, _adjacentLeg, _oppositeLeg);
-            _transposer.m_FollowOffset = _offsetVector;
+                _offsetVector = new Vector3(0, _adjacentLeg, _oppositeLeg);
+                _transposer.m_FollowOffset = _offsetVector;
 
-            Quaternion targetRotation = Quaternion.Euler(new(0, _yRotation, 0));
-            cameraPointer.rotation = targetRotation;
+                Quaternion targetRotation = Quaternion.Euler(new(0, _yRotation, 0));
+                cameraPointer.rotation = targetRotation;
+            }
         }
 
         private void SetupCamera()

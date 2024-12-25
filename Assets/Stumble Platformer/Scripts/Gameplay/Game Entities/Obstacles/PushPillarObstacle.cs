@@ -33,7 +33,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void AttackCharacter(IDamageable damageable, Vector3 hitNormal, float hitImpulse)
         {
-            damageable.TakeDamage(new DamageData
+            damageable.TakePhysicalAttack(new PhysicalDamage
             {
                 AttackForce = hitImpulse + attactForce,
                 ForceDirection = -hitNormal,

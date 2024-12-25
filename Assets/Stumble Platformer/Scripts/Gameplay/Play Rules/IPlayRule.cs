@@ -11,10 +11,10 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public void EndGame(EndGameMessage message);
         public void EndLevel(LevelEndMessage message);
-        public void Fall(PlayerFallMessage message);
+        public void DamagePlayer(PlayerDamageMessage message);
         public void OnEndGame(EndResult endResult);
         public void OnLevelEnded(EndResult endResult);
-        public void OnPlayerFall();
+        public void OnPlayerDamage();
         public void OnPlayerHealthUpdate();
         public void SetStateController(GameStateController gameStateController);
     }

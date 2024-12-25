@@ -25,6 +25,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         public PlayerController CurrentPlayer => _currentPlayer;
         public int PlayerInstanceID => _currentPlayer.gameObject.GetInstanceID();
 
+        #region Test Checkpoint, Editor only
 #if UNITY_EDITOR
         private bool _isCheckPointJump;
         private int _testCheckPointIndex = 0;
@@ -45,6 +46,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             checkPointText?.SetText($"{_testCheckPointIndex}");
         }
 #endif
+        #endregion
 
         public void SpawnPlayer()
         {
@@ -61,9 +63,19 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             int lifeCount = isTest ? 1000 : CharacterConstants.MaxLife;
             _currentPlayer.PlayerHealth.SetHealth(lifeCount);
             _currentPlayer.SetCharacterInput(inputReceiver);
+
+            SetPlayerCompleteLevel(false);
+            SetPlayerPhysicsActive(false);
         }
 
+        public void SetPlayerCompleteLevel(bool isCompleted) 
+        { 
+            _currentPlayer.PlayerHealth.SetPlayerCompleteLevel(isCompleted);
+        } 
+
         public void SetPlayerActive(bool active) => _currentPlayer.IsActive = active;
+
+        public void SetPlayerPhysicsActive(bool active) => _currentPlayer.SetCharacterActive(active);
 
         public void RespawnPlayer()
         {
@@ -80,10 +92,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             Vector3 respawnPosition = _currentCheckPoint.GetRandomSpawnPosition();
             _currentPlayer.transform.position = respawnPosition;
 
-            _currentPlayer.SetCharacterActive(true);
+            _currentPlayer.AfterRespawn();
             _currentPlayer.transform.rotation = _currentCheckPoint.transform.rotation;
             _currentPlayer.ResetPlayerOrientation(_currentCheckPoint.transform.localRotation);
             environmentHandler.CameraHandler.ResetCurrentCameraFollow();
+
+            SetPlayerPhysicsActive(true);
             SetPlayerActive(true);
         }
     }

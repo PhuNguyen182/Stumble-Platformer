@@ -35,7 +35,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                     forceDirection.Normalize();
                 }
 
-                damageable.TakeDamage(new DamageData
+                damageable.TakePhysicalAttack(new PhysicalDamage
                 {
                     AttackForce = -attactForce,
                     ForceDirection = forceDirection,

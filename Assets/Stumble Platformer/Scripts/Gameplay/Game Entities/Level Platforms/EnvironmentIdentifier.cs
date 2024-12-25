@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using Cysharp.Threading.Tasks;
-using StumblePlatformer.Scripts.Common.Messages;
+using StumblePlatformer.Scripts.Common.Enums;
+using StumblePlatformer.Scripts.Gameplay.Cameras;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
+using StumblePlatformer.Scripts.Common.Messages;
 using Sirenix.OdinInspector;
 using MessagePipe;
 
@@ -27,6 +29,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public SpawnCharacterArea SpawnCharacterArea;
 
         [Header("Teaser Path")]
+        [SerializeField] public Transform TeaserLookAt;
         [SerializeField] public CinemachineDollyCart TeaserFollower;
         [SerializeField] public CinemachineSmoothPath TeaserPath;
 
@@ -34,14 +37,19 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public float stopTimeAmount = 2f;
         [SerializeField] public float teaserDefaultSpeed = 0.25f;
 
+        [Header("Camera")]
+        [SerializeField] public CameraBodyMode CameraBodyMode; 
+        [SerializeField] public TransposerConfig TransposerConfig;
+        [SerializeField] public TrackedDollyConfig TrackedDollyConfig;
+
         private IPublisher<SetupLevelMessage> _initLevelPublisher;
-        public IPlayRule PlayRule { get; private set; }
+        public BasePlayRule PlayRule { get; private set; }
 
         private void Awake()
         {
             SetLevelActive(true);
             SetTeaserActive(false);
-            PlayRule = GetComponent<IPlayRule>();
+            PlayRule = GetComponent<BasePlayRule>();
         }
 
         private void Start()

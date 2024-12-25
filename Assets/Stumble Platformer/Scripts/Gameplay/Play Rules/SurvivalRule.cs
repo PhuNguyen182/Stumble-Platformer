@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.Messages;
-using MessagePipe;
+using StumblePlatformer.Scripts.Common.Enums;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
@@ -11,23 +10,27 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
     {
         [SerializeField] private float playDuration = 30f;
 
-        private bool _hasFallen;
+        private bool _hasLosedGame;
         private float _currentTimer;
-        private IPublisher<LevelEndMessage> _levelEndPublisher;
 
         public float PlayDuration => playDuration;
         public float CurrentTimer => _currentTimer;
 
-        private void Update()
+        protected override void OnStart()
         {
-            if(_currentTimer > 0)
+            _hasLosedGame = false;
+            _currentTimer = playDuration;
+        }
+
+        public override void OnUpdate(float deltatime)
+        {
+            if(_currentTimer > 0 && !_hasLosedGame)
             {
                 _currentTimer -= Time.deltaTime;
-
-                if(_currentTimer <= 0 && !_hasFallen)
+                if(_currentTimer <= 0 && !_hasLosedGame)
                 {
-                    // Win game
-                    EndGame(new EndGameMessage
+                    // If in siggle mode
+                    EndLevel(new LevelEndMessage
                     {
                         ID = CurrentPlayerID,
                         Result = EndResult.Win
@@ -36,39 +39,19 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             }
         }
 
-        protected override void OnStart()
-        {
-            _hasFallen = false;
-            _currentTimer = playDuration;
-        }
-
-        protected override void RegisterCustomMessages()
-        {
-            _levelEndPublisher = GlobalMessagePipe.GetPublisher<LevelEndMessage>();
-        }
-
         public override void OnEndGame(EndResult endResult)
         {
-            string endColor = endResult switch
-            {
-                EndResult.Win => "#00ff00",
-                EndResult.Lose => "#ff0000",
-                _ => ""
-            };
+            if (endResult == EndResult.Win)
+                playerHandler.SetPlayerCompleteLevel(true);
 
-            string result = endResult switch
-            {
-                EndResult.Win => "You are survived!",
-                EndResult.Lose => "You are dead!",
-                _ => ""
-            };
-
-            Debug.Log($"<color={endColor}>{result}</color>");
+            playerHandler.SetPlayerActive(false);
+            playerHandler.SetPlayerPhysicsActive(false);
+            cameraHandler.SetFollowCameraActive(false);
         }
 
         public override void OnLevelEnded(EndResult endResult)
         {
-            Debug.Log($"Player End Racing: {endResult}");
+            // If in single mode
             EndGame(new EndGameMessage
             {
                 ID = CurrentPlayerID,
@@ -76,20 +59,14 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             });
         }
 
-        public override void OnPlayerFall()
+        public override void OnPlayerDamage()
         {
-            // If fall, lose immediately
-            _hasFallen = true;
-            _levelEndPublisher.Publish(new LevelEndMessage
-            {
+            _hasLosedGame = true;
+            EndLevel(new LevelEndMessage
+            {            
                 ID = CurrentPlayerID,
                 Result = EndResult.Lose
             });
-        }
-
-        public override void OnPlayerHealthUpdate()
-        {
-            
         }
     }
 }

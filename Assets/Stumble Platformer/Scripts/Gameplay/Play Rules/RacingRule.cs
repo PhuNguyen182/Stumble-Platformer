@@ -1,47 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.Messages;
+using StumblePlatformer.Scripts.Common.Enums;
 using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
     public class RacingRule : BasePlayRule
     {
-        private IPublisher<LevelEndMessage> _levelEndPublisher;
+        private ISubscriber<RespawnMessage> _respawnSubscriber;
         private IPublisher<KillCharactersMessage> _killCharactersPublisher;
 
         protected override void RegisterCustomMessages()
         {
-            _levelEndPublisher = GlobalMessagePipe.GetPublisher<LevelEndMessage>();
+            _respawnSubscriber = GlobalMessagePipe.GetSubscriber<RespawnMessage>();
             _killCharactersPublisher = GlobalMessagePipe.GetPublisher<KillCharactersMessage>();
+            _respawnSubscriber.Subscribe(RespawnPlayer).AddTo(bagBuilder);
+        }
+
+        private void RespawnPlayer(RespawnMessage message)
+        {
+            if (playerHandler.PlayerInstanceID == message.ID)
+            {
+                playerHandler.RespawnPlayer();
+                cameraHandler.SetFollowCameraActive(true);
+            }
         }
 
         public override void OnEndGame(EndResult endResult)
         {
-            _killCharactersPublisher.Publish(new KillCharactersMessage { });
+            if (endResult == EndResult.Win)
+                playerHandler.SetPlayerCompleteLevel(true);
 
-            string endColor = endResult switch
-            {
-                EndResult.Win => "#00ff00",
-                EndResult.Lose => "#ff0000",
-                _ => ""
-            };
-
-            string result = endResult switch
-            {
-                EndResult.Win => "Win Race",
-                EndResult.Lose => "Lose Race",
-                _ => ""
-            };
-
-            Debug.Log($"<color={endColor}>{result}</color>");
+            _killCharactersPublisher.Publish(new KillCharactersMessage());
+            cameraHandler.SetFollowCameraActive(false);
         }
 
         public override void OnLevelEnded(EndResult endResult)
         {
-            Debug.Log($"Player End Racing: {endResult}");
+            // If in single mode
             EndGame(new EndGameMessage
             {
                 ID = CurrentPlayerID,
@@ -49,16 +47,16 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             });
         }
 
-        public override void OnPlayerFall()
+        public override void OnPlayerDamage()
         {
-            Debug.Log("Player Fall In Racing");
+            cameraHandler.SetFollowCameraActive(false);
         }
 
         public override void OnPlayerHealthUpdate()
         {
             if(PlayerHealth <= 0)
             {
-                _levelEndPublisher.Publish(new LevelEndMessage
+                EndLevel(new LevelEndMessage
                 {
                     ID = CurrentPlayerID,
                     Result = EndResult.Lose
