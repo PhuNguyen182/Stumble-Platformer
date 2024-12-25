@@ -7,14 +7,49 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
     public class CharacterVisual : MonoBehaviour
     {
-        public Animator CharacterAnimator;
-        public SkinnedMeshRenderer CharacterRenderer;
+        [SerializeField] public Animator CharacterAnimator;
+        [SerializeField] public SkinnedMeshRenderer CharacterRenderer;
 
         public void UpdateSkin(CharacterSkin characterSkin)
         {
             UpdateMesh(characterSkin.SkinMesh);
             UpdateMaterials(characterSkin.SkinMaterials);
             UpdateAvatar(characterSkin.SkinAvatar);
+        }
+
+        public void SetRunning(bool isRunning)
+        {
+            CharacterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
+        }
+
+        public void SetInputMoving(bool isInputMoving)
+        {
+            CharacterAnimator.SetBool(CharacterAnimationKeys.IsMoveInputKey, isInputMoving);
+        }
+
+        public void SetMove(float move)
+        {
+            CharacterAnimator.SetFloat(CharacterAnimationKeys.MoveKey, move);
+        }
+
+        public void SetFalling(bool isFalling)
+        {
+            CharacterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, isFalling);
+        }
+
+        public void SetStumble(bool isStumble)
+        {
+            CharacterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, isStumble);
+        }
+
+        public void SetJump(bool isJumping)
+        {
+            CharacterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, isJumping);
+        }
+
+        public void SetLose()
+        {
+            CharacterAnimator.SetTrigger(CharacterAnimationKeys.LoseKey);
         }
 
         private void UpdateAvatar(Avatar avatar)

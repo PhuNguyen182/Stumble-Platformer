@@ -2401,6 +2401,7 @@ GameObject:
   - component: {fileID: 4048378183848726177}
   - component: {fileID: 3524437742818262208}
   - component: {fileID: 5226881117910915648}
+  - component: {fileID: 8558976192308636935}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -2558,6 +2559,20 @@ MonoBehaviour:
   deadDelayAmount: 1
   playerController: {fileID: 5956835733577522111}
   playerGraphics: {fileID: 7834813393693615432}
+  playerMessages: {fileID: 8558976192308636935}
+--- !u!114 &8558976192308636935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8904596792843684380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a31e1963f8c90d43840d4d37611fc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 5226881117910915648}
 --- !u!1 &9111487040463002854
 GameObject:
   m_ObjectHideFlags: 0

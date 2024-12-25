@@ -132,15 +132,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             _playerBody.ClampVelocity(characterConfig.MaxSpeed);
             _flatMoveVelocity = _playerBody.GetFlatVelocity();
 
+            bool isInputMoving = _moveInput != Vector3.zero;
             bool isRunning = _flatMoveVelocity.magnitude > characterConfig.MinSpeed && groundChecker.IsGrounded;
-            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsRunningKey, isRunning);
-            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsMoveInputKey, _moveInput != Vector3.zero);
-
-            float moveThreshold = _flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
-            characterVisual.CharacterAnimator.SetFloat(CharacterAnimationKeys.MoveKey, moveThreshold);
-
             bool isFalling = !groundChecker.IsGrounded && playerPhysics.IsFalling();
-            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsFallingKey, isFalling);
+            float moveThreshold = _flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
+
+            characterVisual.SetRunning(isRunning);
+            characterVisual.SetInputMoving(isInputMoving);
+            characterVisual.SetMove(moveThreshold);
+            characterVisual.SetFalling(isFalling);
         }
 
         private void Turn()
@@ -177,30 +177,28 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                         _isAirDashing = true;
                         _moveVelocity = characterPivot.forward * characterConfig.DashSpeed;
                         _playerBody.velocity = _moveVelocity;
-                        characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, true);
+                        characterVisual.SetStumble(true);
                     }
                 }
             }
 
-            bool isJumping = playerPhysics.IsJumping();
-
-            if(isJumping)
-                characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, true);
+            if (playerPhysics.IsJumping())
+                characterVisual.SetJump(true);
         }
 
         public void OnGrounded()
         {
             _isAirDashing = false;
-            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsJumpingUpKey, false);
+            characterVisual.SetJump(false);
 
             if (!_isStunning)
-                characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, false);
+                characterVisual.SetStumble(false);
         }
 
         private void SetStunningState(bool isStunning)
         {
             playerPhysics.SetFreezeRotation(isStunning);
-            characterVisual.CharacterAnimator.SetBool(CharacterAnimationKeys.IsStumbledKey, isStunning);
+            characterVisual.SetStumble(isStunning);
         }
 
         public void SetParent(Transform parent, bool stayWorldPosition = true)

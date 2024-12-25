@@ -34,7 +34,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
                 playerHandler.SetPlayerCompleteLevel(true);
 
             _killCharactersPublisher.Publish(new KillCharactersMessage());
-            cameraHandler.SetFollowCameraActive(false);
         }
 
         public override void OnLevelEnded(EndResult endResult)
