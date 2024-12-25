@@ -65,7 +65,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 return;
 
             playerController.SetCharacterActive(false);
-            playerController.PlayerGraphics.CharacterVisual.SetLose();
+            playerGraphics.CharacterVisual.SetLose();
         }
 
         public void SetPlayerCompleteLevel(bool isCompleted)

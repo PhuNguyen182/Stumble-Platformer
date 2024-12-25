@@ -7,7 +7,7 @@ namespace GlobalScripts.Effects
 {
     public class EffectManager : MonoBehaviour
     {
-        //[SerializeField] private EffectDatabase effectDatabase;
+        //[SerializeField] private PlayerEffectDatabase effectDatabase;
 
         public static EffectManager Instance { get; private set; }
 

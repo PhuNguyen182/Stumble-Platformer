@@ -141,6 +141,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             characterVisual.SetInputMoving(isInputMoving);
             characterVisual.SetMove(moveThreshold);
             characterVisual.SetFalling(isFalling);
+            playerGraphics.SetDustEffectActive(groundChecker.IsGrounded);
         }
 
         private void Turn()
