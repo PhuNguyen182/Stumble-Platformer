@@ -6,8 +6,9 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
+using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using MessagePipe;
 
@@ -22,6 +23,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         [SerializeField] private CameraHandler cameraHandler;
         [SerializeField] private PlayerHandler playerHandler;
         [SerializeField] private EnvironmentHandler environmentHandler;
+
+        [Header("UIs")]
+        [SerializeField] private PlayGamePanel playGamePanel;
+        [SerializeField] private EndGamePanel endGamePanel;
 
         private GameStateController _gameStateController;
         
@@ -46,7 +51,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void SetupGameplay()
         {
-            _gameStateController = new();
+            _gameStateController = new(cameraHandler, environmentHandler, endGamePanel);
             var builder = Disposable.CreateBuilder();
             _gameStateController.AddTo(ref builder);
             builder.RegisterTo(this.destroyCancellationToken);
@@ -88,11 +93,23 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private async UniTask StartGame()
         {
-            await environmentHandler.WaitForTeaser();
-
             PlayRule = environmentHandler.EnvironmentIdentifier.PlayRule;
             PlayRule.SetStateController(_gameStateController);
+
+            playGamePanel?.ResetCountdown();
+            playGamePanel?.SetLevelNameActive(true);
+            playGamePanel?.SetPlayObjectActive(false);
+            playGamePanel?.SetLevelObjective(PlayRule.ObjectiveTitle);
+            playGamePanel?.SetLevelName(environmentHandler.EnvironmentIdentifier.LevelName);
             SetupPlayRule(PlayRule);
+
+            await environmentHandler.WaitForTeaser();
+            
+            if (playGamePanel)
+                await playGamePanel.CountDown();
+
+            playGamePanel?.SetLevelNameActive(false);
+            playGamePanel?.SetPlayObjectActive(true);
 
             playerHandler.SpawnPlayer();
             cameraHandler.SetFollowCameraActive(true);

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Common.Enums;
 using Stateless;
+using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -30,14 +31,19 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private CameraHandler _cameraHandler;
         private EnvironmentHandler _environmentHandler;
+        private EndGamePanel _endGamePanel;
 
         // To do: Assign game UIs in this class, use them to control game flow
         private readonly StateMachine<State, Trigger> _gameStateMachine;
         private readonly StateMachine<State, Trigger>.TriggerWithParameters<EndResult> _endLevelTrigger;
         private readonly StateMachine<State, Trigger>.TriggerWithParameters<EndResult> _endGameTrigger;
 
-        public GameStateController()
+        public GameStateController(CameraHandler cameraHandler, EnvironmentHandler environmentHandler, EndGamePanel endGamePanel)
         {
+            _cameraHandler = cameraHandler;
+            _environmentHandler = environmentHandler;
+            _endGamePanel = endGamePanel;
+
             _gameStateMachine = new StateMachine<State, Trigger>(State.Start);
             _endLevelTrigger = _gameStateMachine.SetTriggerParameters<EndResult>(Trigger.EndLevel);
             _endGameTrigger = _gameStateMachine.SetTriggerParameters<EndResult>(Trigger.EndGame);
@@ -84,11 +90,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private void OnLevelEnded(EndResult endResult)
         {
             Debug.Log($"Level Ended {endResult}");
+            _endGamePanel?.SetLevelEndBannerActive(endResult, true);
         }
 
         private void OnWatching()
         {
-
+            _endGamePanel?.SetLevelEndBannerActive(EndResult.None, false);
         }
 
         private void OnEndGame(EndResult result)

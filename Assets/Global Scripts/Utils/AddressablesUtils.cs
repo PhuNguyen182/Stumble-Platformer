@@ -16,7 +16,7 @@ using Reflex.Extensions;
 
 namespace GlobalScripts.Utils
 {
-    public static class AddressablesUtils
+    public struct AddressablesUtils
     {
 #if REFLEX_SUPPORT && UNITASK_ADDRESSABLE_SUPPORT
         public static async UniTask LoadSceneViaAddressableAndSetParentContainer(string key, Scene parentScene
