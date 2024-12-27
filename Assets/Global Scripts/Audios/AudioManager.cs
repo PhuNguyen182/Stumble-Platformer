@@ -3,21 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-//using CandyMatch3.Scripts.Common.Databases;
-//using CandyMatch3.Scripts.Common.Enums;
+using StumblePlatformer.Scripts.Common.Constants;
+using StumblePlatformer.Scripts.Gameplay.Databases;
+using StumblePlatformer.Scripts.Common.Enums;
 
 namespace GlobalScripts.Audios
 {
     public class AudioManager : Singleton<AudioManager>
     {
-        [SerializeField] private bool playSequence;
         [SerializeField] private AudioMixer audioMixer;
+        
+        [Header("Audio Sources")]
         [SerializeField] private AudioSource musicSource;
         [SerializeField] private AudioSource sfxSource;
         [SerializeField] private AudioSource itemSource;
-        //[SerializeField] private SoundEffectDatabase effectDatabase;
-        //[SerializeField] private MusicDatabase musicDatabase;
-        [SerializeField] private PlaySequenceMusic sequenceMusicPlayer;
+        
+        [Header("Audio Collections")]
+        [SerializeField] private SoundEffectCollection effectDatabase;
+        [SerializeField] private MusicCollection musicDatabase;
 
         public static event Action<float> OnMasterChange;
         public static event Action<float> OnMusicChange;
@@ -33,7 +36,7 @@ namespace GlobalScripts.Audios
 
         public float MasterVolume
         {
-            get => PlayerPrefs.GetFloat(MasterVolumeKey, 1);
+            get => PlayerPrefs.GetFloat(MasterVolumeKey, SettingConstants.DefaultMasterVolume);
             set
             {
                 PlayerPrefs.SetFloat(MasterVolumeKey, value);
@@ -43,7 +46,7 @@ namespace GlobalScripts.Audios
 
         public float MusicVolume
         {
-            get => PlayerPrefs.GetFloat(MusicVolumeKey, 1);
+            get => PlayerPrefs.GetFloat(MusicVolumeKey, SettingConstants.DefaultMusicVolume);
             set
             {
                 PlayerPrefs.SetFloat(MusicVolumeKey, value);
@@ -53,7 +56,7 @@ namespace GlobalScripts.Audios
 
         public float SoundVolume
         {
-            get => PlayerPrefs.GetFloat(SoundVolumeKey, 1);
+            get => PlayerPrefs.GetFloat(SoundVolumeKey, SettingConstants.DefaultSoundVolume);
             set
             {
                 PlayerPrefs.SetFloat(SoundVolumeKey, value);
@@ -63,8 +66,8 @@ namespace GlobalScripts.Audios
 
         protected override void OnAwake()
         {
-            //effectDatabase.Initialize();
-            //musicDatabase.Initialize();
+            effectDatabase.Initialize();
+            musicDatabase.Initialize();
         }
 
         private void Start()
@@ -76,11 +79,6 @@ namespace GlobalScripts.Audios
             MasterVolume += 0;
             MusicVolume += 0;
             SoundVolume += 0;
-
-//#if UNITY_EDITOR
-            if (playSequence)
-                sequenceMusicPlayer.PlayMusicSequence();
-//#endif
         }
 
         public bool IsMusicPlaying()
@@ -100,21 +98,21 @@ namespace GlobalScripts.Audios
             musicSource.Play();
         }
 
-        //public void PlayItemSound(SoundEffectType soundEffect, float volumeScale = 1, bool loop = false)
-        //{
-        //    AudioClip sound = effectDatabase.SoundEffectCollection[soundEffect];
+        public void PlayItemSound(SoundEffectType soundEffect, float volumeScale = 1, bool loop = false)
+        {
+            AudioClip sound = effectDatabase.SoundFXCollection[soundEffect];
 
-        //    if (sound != null)
-        //        PlayItemSound(sound, volumeScale, loop);
-        //}
+            if (sound != null)
+                PlayItemSound(sound, volumeScale, loop);
+        }
 
-        //public void PlaySoundEffect(SoundEffectType soundEffect, float volumeScale = 1, bool loop = false)
-        //{
-        //    AudioClip sound = effectDatabase.GetSoundEffect(soundEffect);
+        public void PlaySoundEffect(SoundEffectType soundEffect, float volumeScale = 1, bool loop = false)
+        {
+            AudioClip sound = effectDatabase.GetSoundEffect(soundEffect);
 
-        //    if (sound != null)
-        //        PlaySoundEffect(sound, volumeScale, loop);
-        //}
+            if (sound != null)
+                PlaySoundEffect(sound, volumeScale, loop);
+        }
 
         public void PlayItemSound(AudioClip soundClip, float volumeScale = 1, bool loop = false)
         {
@@ -134,13 +132,13 @@ namespace GlobalScripts.Audios
             sfxSource.PlayOneShot(soundClip, volumeScale);
         }
 
-        //public void PlayBackgroundMusic(BackgroundMusicType backgroundMusicType, bool loop = true, float volume = 1)
-        //{
-        //    AudioClip bgm = musicDatabase.GetBackgroundMusic(backgroundMusicType);
+        public void PlayBackgroundMusic(BackgroundMusicType backgroundMusicType, bool loop = true, float volume = 1)
+        {
+            AudioClip bgm = musicDatabase.GetBackgroundMusic(backgroundMusicType);
 
-        //    if (bgm != null)
-        //        PlayMusic(bgm, loop, volume);
-        //}
+            if (bgm != null)
+                PlayMusic(bgm, loop, volume);
+        }
 
         public void StopMusic()
         {

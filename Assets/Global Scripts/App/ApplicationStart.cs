@@ -34,10 +34,10 @@ namespace GlobalScripts.App
 
         private static void RegisterServicesAfterSceneLoad()
         {
-            //Register<AppInitializer>("App/App Initializer");
             Register<UIBlocker>("Handlers/UI Blocker");
+            Register<AppInitializer>("App/App Initializer");
             Register<UpdateHandlerManager>("Handlers/Update Behaviour Handler");
-            //Register<AudioManager>("Managers/Music Manager");
+            Register<AudioManager>("Managers/Audio Manager");
             //Register<GameManager>("Managers/Game Manager");
         }
 
