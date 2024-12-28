@@ -110,11 +110,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             playerHandler.SpawnPlayer();
             cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
 
+            cameraHandler.ResetCurrentCameraFollow();
+            cameraHandler.SetFollowCameraActive(true);
+            await UniTask.NextFrame(destroyCancellationToken);
+            cameraHandler.SetFollowCameraActive(false);
+
             if (playGamePanel)
                 await playGamePanel.CountDown();
             
             cameraHandler.SetFollowCameraActive(true);
-            cameraHandler.ResetCurrentCameraFollow();
             PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
             PlayRule.IsActive = true;
 
