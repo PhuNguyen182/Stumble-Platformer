@@ -9,11 +9,24 @@ namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
     public class PlayGamePanel : MonoBehaviour
     {
         [SerializeField] private CountDown countDown;
+        [SerializeField] private PlayRuleTimer playRuleTimer;
         [SerializeField] private GameObject playGameObject;
         [SerializeField] private GameObject levelNameHolder;
         [SerializeField] private GameObject qualifyCount;
         [SerializeField] private TMP_Text levelName;
         [SerializeField] private TMP_Text levelObjective;
+
+        public PlayRuleTimer PlayRuleTimer => playRuleTimer;
+
+        public void SetPlayRuleTimerActive(bool active)
+        {
+            playRuleTimer.gameObject.SetActive(active);
+        }
+
+        public void UpdateTimeRule(float time)
+        {
+            playRuleTimer.UpdateTime(time);
+        }
 
         public void ResetCountdown()
         {

@@ -28,6 +28,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             }
         }
 
+        public override void StartGame() { }
+
         public override void OnEndGame(EndResult endResult)
         {
             if (endResult == EndResult.Win)

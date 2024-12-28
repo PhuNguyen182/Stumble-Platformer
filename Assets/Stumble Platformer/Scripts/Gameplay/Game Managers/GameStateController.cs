@@ -127,7 +127,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private async UniTask OnFinishLevel(EndResult endResult)
         {
             // In single mode
-            await UniTask.WaitForSeconds(2f, cancellationToken: _token);
+            await UniTask.WaitForSeconds(3f, cancellationToken: _token);
             
             if (endResult == EndResult.Win)
                 _finalePanel.Show();

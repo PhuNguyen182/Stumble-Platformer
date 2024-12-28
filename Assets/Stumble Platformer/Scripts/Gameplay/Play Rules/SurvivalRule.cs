@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Common.Enums;
+using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
@@ -12,9 +13,9 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         private bool _hasLosedGame;
         private float _currentTimer;
+        private PlayRuleTimer _playRuleTimer;
 
         public float PlayDuration => playDuration;
-        public float CurrentTimer => _currentTimer;
 
         protected override void OnStart()
         {
@@ -22,13 +23,28 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             _currentTimer = playDuration;
         }
 
+        public override void StartGame()
+        {
+            _playRuleTimer.gameObject.SetActive(true);
+        }
+
+        public void SetPlayRuleTimer(PlayRuleTimer playRuleTimer)
+        {
+            _playRuleTimer = playRuleTimer;
+        }
+
         public override void OnUpdate(float deltatime)
         {
             if(_currentTimer > 0 && !_hasLosedGame)
             {
                 _currentTimer -= Time.deltaTime;
-                if(_currentTimer <= 0 && !_hasLosedGame)
+                _playRuleTimer.UpdateTime(_currentTimer);
+
+                if (_currentTimer <= 0 && !_hasLosedGame)
                 {
+                    _currentTimer = 0;
+                    _playRuleTimer.UpdateTime(_currentTimer);
+
                     // If in siggle mode
                     EndLevel(new LevelEndMessage
                     {

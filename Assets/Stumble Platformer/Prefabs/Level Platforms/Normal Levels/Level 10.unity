@@ -10426,7 +10426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTest: 0
-  LevelName: 
+  LevelName: Joyful Park
   FogEnable: 0
   FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   FogMode: 3
@@ -10471,7 +10471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3534569e4122d6f4ab58d93f02bf48f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveTitle: 
+  objectiveTitle: Race To Finish
 --- !u!114 &669869415 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3307389963919175602, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}

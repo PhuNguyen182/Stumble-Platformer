@@ -11415,7 +11415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTest: 0
-  LevelName: 
+  LevelName: Larger Ground?
   FogEnable: 0
   FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   FogMode: 3
@@ -11460,7 +11460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3534569e4122d6f4ab58d93f02bf48f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveTitle: 
+  objectiveTitle: Race To Finish
 --- !u!1001 &669844547
 PrefabInstance:
   m_ObjectHideFlags: 0

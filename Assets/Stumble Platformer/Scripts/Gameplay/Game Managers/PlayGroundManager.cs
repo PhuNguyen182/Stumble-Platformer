@@ -109,11 +109,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             playGamePanel?.SetPlayObjectActive(true);
             playerHandler.SpawnPlayer();
             cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
+            PlayRule.StartGame();
 
             cameraHandler.ResetCurrentCameraFollow();
             cameraHandler.SetFollowCameraActive(true);
             await UniTask.NextFrame(destroyCancellationToken);
             cameraHandler.SetFollowCameraActive(false);
+
 
             if (playGamePanel)
                 await playGamePanel.CountDown();
@@ -138,6 +140,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             if (playRule is ISetEnvironmentHandler environmentHandlerSetter)
                 environmentHandlerSetter.SetEnvironmentHandler(environmentHandler);
+
+            if (playRule is SurvivalRule survivalRule)
+            {
+                playGamePanel.UpdateTimeRule(survivalRule.PlayDuration);
+                survivalRule.SetPlayRuleTimer(playGamePanel.PlayRuleTimer);
+            }
         }
 
         private void OnDestroy()

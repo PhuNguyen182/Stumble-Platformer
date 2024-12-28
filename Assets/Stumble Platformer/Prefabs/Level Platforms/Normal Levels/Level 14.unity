@@ -425,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419415251488694453, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: swingSpeed
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5997,7 +5997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419415251488694453, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: swingSpeed
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8870,7 +8870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTest: 0
-  LevelName: 
+  LevelName: Slope Down? Playground!
   FogEnable: 0
   FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   FogMode: 3
@@ -8915,7 +8915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3534569e4122d6f4ab58d93f02bf48f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveTitle: 
+  objectiveTitle: Race To Finish
 --- !u!1001 &678689244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21679,7 +21679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7419415251488694453, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: swingSpeed
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

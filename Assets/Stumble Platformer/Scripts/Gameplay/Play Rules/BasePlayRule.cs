@@ -28,7 +28,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public int CurrentPlayerID { get; set; }
         public int PlayerHealth { get; set; }
-        public bool IsActive { get; set; }
+        public virtual bool IsActive { get; set; }
         public string ObjectiveTitle => objectiveTitle;
 
         private void Start()
@@ -76,6 +76,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             OnPlayerHealthUpdate();
         }
 
+
+        public abstract void StartGame();
         public abstract void OnEndGame(EndResult endResult);
         public abstract void OnLevelEnded(EndResult endResult);
         public abstract void OnPlayerDamage();
