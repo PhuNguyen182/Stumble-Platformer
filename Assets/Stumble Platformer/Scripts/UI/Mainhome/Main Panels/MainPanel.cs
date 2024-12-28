@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using StumblePlatformer.Scripts.Gameplay.Databases;
 using StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.UI.Mainhome.SettingPanels;
+using StumblePlatformer.Scripts.Common.SingleConfigs;
+using GlobalScripts.SceneUtils;
+using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 {
@@ -21,6 +25,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         [Space(10)]
         [SerializeField] private CharacterVisual characterVisual;
+        [SerializeField] private LevelNameCollection levelNameCollection;
 
         private void Awake()
         {
@@ -59,7 +64,13 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         private void PlayGame()
         {
+            string levelName = levelNameCollection.GetRandomName();
+            PlayGameConfig.Current = new PlayGameConfig
+            {
+                PlayLevelName = levelName
+            };
 
+            SceneBridge.LoadNextScene(SceneConstants.Gameplay).Forget();
         }
     }
 }

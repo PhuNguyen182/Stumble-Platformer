@@ -27,6 +27,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         [Header("UIs")]
         [SerializeField] private PlayGamePanel playGamePanel;
         [SerializeField] private EndGamePanel endGamePanel;
+        [SerializeField] private FinalePanel finalePanel;
 
         private GameStateController _gameStateController;
         
@@ -51,7 +52,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void SetupGameplay()
         {
-            _gameStateController = new(cameraHandler, environmentHandler, endGamePanel);
+            _gameStateController = new(cameraHandler, environmentHandler, endGamePanel, finalePanel);
             var builder = Disposable.CreateBuilder();
             _gameStateController.AddTo(ref builder);
             builder.RegisterTo(this.destroyCancellationToken);
@@ -86,6 +87,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private async UniTask SetupPlayLevel(EnvironmentIdentifier environmentIdentifier)
         {
             inputReceiver.IsActive = false;
+            playGamePanel?.ResetCountdown();
             cameraHandler.SetupVirtualCameraBody(environmentIdentifier);
             environmentHandler.SetEnvironmentIdentifier(environmentIdentifier);
             await StartGame();
@@ -96,7 +98,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             PlayRule = environmentHandler.EnvironmentIdentifier.PlayRule;
             PlayRule.SetStateController(_gameStateController);
 
-            playGamePanel?.ResetCountdown();
             playGamePanel?.SetLevelNameActive(true);
             playGamePanel?.SetPlayObjectActive(false);
             playGamePanel?.SetLevelObjective(PlayRule.ObjectiveTitle);
@@ -104,19 +105,19 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             SetupPlayRule(PlayRule);
 
             await environmentHandler.WaitForTeaser();
-            
-            if (playGamePanel)
-                await playGamePanel.CountDown();
-
             playGamePanel?.SetLevelNameActive(false);
             playGamePanel?.SetPlayObjectActive(true);
-
             playerHandler.SpawnPlayer();
-            cameraHandler.SetFollowCameraActive(true);
             cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
-            PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
 
+            if (playGamePanel)
+                await playGamePanel.CountDown();
+            
+            cameraHandler.SetFollowCameraActive(true);
+            cameraHandler.ResetCurrentCameraFollow();
+            PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
             PlayRule.IsActive = true;
+
             playerHandler.SetPlayerActive(true);
             playerHandler.SetPlayerPhysicsActive(true);
             environmentHandler.SetLevelSecondaryComponentActive(true);

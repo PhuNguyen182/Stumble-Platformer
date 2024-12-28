@@ -7,10 +7,4 @@ namespace StumblePlatformer.Scripts.Common.Enums
     {
         None = 0,
     }
-
-    [Serializable]
-    public enum BackgroundMusicType
-    {
-        None = 0,
-    }
 }

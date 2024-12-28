@@ -18567,6 +18567,7 @@ MonoBehaviour:
   settingButton: {fileID: 1868371408}
   customizeButton: {fileID: 1236455265}
   characterVisual: {fileID: 4828266362010710197}
+  levelNameCollection: {fileID: 11400000, guid: fd89008e496229440adb120e27af0562, type: 2}
 --- !u!4 &58270969903100680
 Transform:
   m_ObjectHideFlags: 0
