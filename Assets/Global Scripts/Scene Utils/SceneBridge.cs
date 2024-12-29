@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using UnityEngine.SceneManagement;
 
 namespace GlobalScripts.SceneUtils
 {

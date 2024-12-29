@@ -11,9 +11,9 @@ public class WaitingPopup : MonoBehaviour
     private static WaitingPopup _instance;
     private IDisposable _waitDispose;
 
-    public const string WaitingBoxPath = "Popups/WaitingPopup";
+    public const string WaitingBoxPath = "Popups/Waiting Popup";
 
-    public static WaitingPopup Setup()
+    public static WaitingPopup Setup(bool persistant = false)
     {
         if (_instance == null)
         {
@@ -21,6 +21,9 @@ public class WaitingPopup : MonoBehaviour
         }
 
         _instance.gameObject.SetActive(true);
+        if (persistant)
+            DontDestroyOnLoad(_instance);
+        
         return _instance;
     }
 

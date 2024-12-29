@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
+using GlobalScripts.SceneUtils;
 using Cysharp.Threading.Tasks;
 using Stateless;
-using GlobalScripts.SceneUtils;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {

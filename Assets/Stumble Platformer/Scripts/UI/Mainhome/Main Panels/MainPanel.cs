@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using StumblePlatformer.Scripts.Gameplay.Databases;
 using StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;

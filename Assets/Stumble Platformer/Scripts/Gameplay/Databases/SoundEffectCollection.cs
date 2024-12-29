@@ -16,6 +16,9 @@ namespace StumblePlatformer.Scripts.Gameplay.Databases
 
         public void Initialize()
         {
+            if (SoundEffects == null || SoundEffects.Length <= 0)
+                return;
+
             SoundFXCollection = SoundEffects.ToDictionary(kvp => kvp.SoundEffectType, kvp => kvp.SoundFXClip);
         }
 

@@ -11,6 +11,7 @@ using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using MessagePipe;
+using GlobalScripts.SceneUtils;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -76,6 +77,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             {
                 string levelName = PlayGameConfig.Current.PlayLevelName;
                 await environmentHandler.GenerateLevel(levelName);
+                WaitingPopup.Setup().HideWaiting();
             }
         }
 

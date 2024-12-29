@@ -22,6 +22,23 @@ namespace GlobalScripts.SceneUtils
             await sceneOperator.ToUniTask(progress);
         }
 
+        public static async UniTask LoadSceneWithCondition(string sceneName, LoadSceneCondition condition, LoadSceneMode loadMode = LoadSceneMode.Single)
+        {
+            AsyncOperation sceneOperator = SceneManager.LoadSceneAsync(sceneName, loadMode);
+            sceneOperator.allowSceneActivation = false;
+
+            while (!sceneOperator.isDone)
+            {
+                if(sceneOperator.progress >= 0.9f)
+                {
+                    if (condition.AllowSceneLoad)
+                        sceneOperator.allowSceneActivation = true;
+                }
+
+                await UniTask.NextFrame();
+            }
+        }
+
 #if UNITASK_ADDRESSABLE_SUPPORT
         public static async UniTask LoadSceneViaAddressable(string key, LoadSceneMode loadMode = LoadSceneMode.Single
             , bool activateOnLoad = true, int priority = 100, CancellationToken cancellationToken = default)

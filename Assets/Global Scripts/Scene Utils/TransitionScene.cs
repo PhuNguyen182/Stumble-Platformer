@@ -3,6 +3,7 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using StumblePlatformer.Scripts.Common.Enums;
 using Cysharp.Threading.Tasks;
 using GlobalScripts.Audios;
@@ -16,8 +17,11 @@ namespace GlobalScripts.SceneUtils
         private CancellationToken _token;
         private readonly int _outHash = Animator.StringToHash("Out");
 
+        public static TransitionScene Instance { get; private set; }
+
         private void Awake()
         {
+            Instance = this;
             _token = this.GetCancellationTokenOnDestroy();
 
 #if !UNITY_EDITOR
@@ -27,6 +31,7 @@ namespace GlobalScripts.SceneUtils
 
         private void Start()
         {
+            WaitingPopup.Setup(true).ShowWaiting();
             LoadNextScene().Forget();
         }
 
@@ -60,6 +65,11 @@ namespace GlobalScripts.SceneUtils
                 return BackgroundMusicType.Gameplay;
 
             return BackgroundMusicType.None;
+        }
+
+        public async UniTask UnloadTransition()
+        {
+            await SceneManager.UnloadSceneAsync(SceneConstants.Transition);
         }
     }
 }
