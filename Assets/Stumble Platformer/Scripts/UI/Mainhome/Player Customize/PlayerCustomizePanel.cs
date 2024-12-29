@@ -21,6 +21,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
         private void Awake()
         {
             RegisterPlayerCells();
+            characterVisualDatabase.Initialize();
         }
 
         private void Start()

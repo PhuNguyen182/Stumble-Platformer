@@ -61,6 +61,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 Turn();
                 Jump();
             }
+
+            else
+            {
+                playerGraphics.SetDustEffectActive(false);
+            }
         }
 
         public void ResetPlayerOrientation(Quaternion orientation)
@@ -141,7 +146,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             characterVisual.SetInputMoving(isInputMoving);
             characterVisual.SetMove(moveThreshold);
             characterVisual.SetFalling(isFalling);
-            playerGraphics.SetDustEffectActive(groundChecker.IsGrounded && isInputMoving && !_isStunning);
+
+            bool isDustEffect = _isStunning ? false : groundChecker.IsGrounded && isInputMoving;
+            playerGraphics.SetDustEffectActive(isDustEffect);
         }
 
         private void Turn()

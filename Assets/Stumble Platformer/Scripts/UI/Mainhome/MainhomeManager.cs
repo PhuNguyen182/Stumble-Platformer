@@ -17,5 +17,10 @@ namespace StumblePlatformer.Scripts.UI.Mainhome
         {
             Instance = this;
         }
+
+        private void Start()
+        {
+            WaitingPopup.Setup().HideWaiting();
+        }
     }
 }

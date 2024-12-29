@@ -36,7 +36,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         private void Start()
         {
-            EnterImmediately();
+            EnterPanel();
         }
 
         private void RegisterButtonClicks()

@@ -12,9 +12,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         public void UpdateSkin(CharacterSkin characterSkin)
         {
+            var currentState = CharacterAnimator.GetCurrentAnimatorStateInfo(0);
+            float currentTime = currentState.normalizedTime;
+            int stateHash = currentState.fullPathHash;
+
             UpdateMesh(characterSkin.SkinMesh);
             UpdateMaterials(characterSkin.SkinMaterials);
             UpdateAvatar(characterSkin.SkinAvatar);
+            CharacterAnimator.Play(stateHash, 0, currentTime);
         }
 
         public void SetRunning(bool isRunning)

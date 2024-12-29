@@ -118,7 +118,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             await UniTask.NextFrame(destroyCancellationToken);
             cameraHandler.SetFollowCameraActive(false);
 
-
             if (playGamePanel)
                 await playGamePanel.CountDown();
             
