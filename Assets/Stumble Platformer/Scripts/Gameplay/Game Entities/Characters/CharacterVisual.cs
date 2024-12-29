@@ -57,6 +57,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             CharacterAnimator.SetTrigger(CharacterAnimationKeys.LoseKey);
         }
 
+        public void PlayWin()
+        {
+            CharacterAnimator.SetTrigger(CharacterAnimationKeys.WinKey);
+        }
+
         private void UpdateAvatar(Avatar avatar)
         {
             CharacterAnimator.avatar = avatar;

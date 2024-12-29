@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Common.Enums;
 
 namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
@@ -11,6 +12,7 @@ namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
     {
         [SerializeField] private Button claimButton;
         [SerializeField] private Button continueButton;
+        [SerializeField] private CharacterVisual characterVisual;
 
         public Action OnQuitGame;
 
@@ -30,6 +32,7 @@ namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
             switch (endResult)
             {
                 case EndResult.Win:
+                    characterVisual.PlayWin();
                     claimButton.gameObject.SetActive(true);
                     continueButton.gameObject.SetActive(false);
                     break;
