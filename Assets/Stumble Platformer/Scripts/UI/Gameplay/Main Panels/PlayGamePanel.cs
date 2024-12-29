@@ -10,18 +10,19 @@ namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
     {
         [SerializeField] private CountDown countDown;
         [SerializeField] private PlayRuleTimer playRuleTimer;
+        [SerializeField] private LifeCounter lifeCounter;
+
+        [Space]
         [SerializeField] private GameObject playGameObject;
         [SerializeField] private GameObject levelNameHolder;
         [SerializeField] private GameObject qualifyCount;
+        
+        [Space]
         [SerializeField] private TMP_Text levelName;
         [SerializeField] private TMP_Text levelObjective;
 
         public PlayRuleTimer PlayRuleTimer => playRuleTimer;
-
-        public void SetPlayRuleTimerActive(bool active)
-        {
-            playRuleTimer.gameObject.SetActive(active);
-        }
+        public LifeCounter LifeCounter => lifeCounter;
 
         public void UpdateTimeRule(float time)
         {

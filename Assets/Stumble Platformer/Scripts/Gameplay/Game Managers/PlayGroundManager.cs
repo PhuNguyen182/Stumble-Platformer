@@ -11,7 +11,6 @@ using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using MessagePipe;
-using GlobalScripts.SceneUtils;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -104,19 +103,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             playGamePanel?.SetPlayObjectActive(false);
             playGamePanel?.SetLevelObjective(PlayRule.ObjectiveTitle);
             playGamePanel?.SetLevelName(environmentHandler.EnvironmentIdentifier.LevelName);
+
+            playerHandler.SpawnPlayer();
+            cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
+            cameraHandler.ResetCurrentCameraFollow();
+
+            cameraHandler.SetFollowCameraActive(true);
+            await UniTask.NextFrame(destroyCancellationToken);
+            cameraHandler.SetFollowCameraActive(false);
             SetupPlayRule(PlayRule);
 
             await environmentHandler.WaitForTeaser();
             playGamePanel?.SetLevelNameActive(false);
             playGamePanel?.SetPlayObjectActive(true);
-            playerHandler.SpawnPlayer();
-            cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
             PlayRule.StartGame();
-
-            cameraHandler.ResetCurrentCameraFollow();
-            cameraHandler.SetFollowCameraActive(true);
-            await UniTask.NextFrame(destroyCancellationToken);
-            cameraHandler.SetFollowCameraActive(false);
 
             if (playGamePanel)
                 await playGamePanel.CountDown();
@@ -141,6 +141,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             if (playRule is ISetEnvironmentHandler environmentHandlerSetter)
                 environmentHandlerSetter.SetEnvironmentHandler(environmentHandler);
+
+            if(playRule is RacingRule racingRule)
+            {
+                racingRule.PlayerHealth = playerHandler.OriginPlayerHealth;
+                racingRule.SetLifeCounter(playGamePanel.LifeCounter);
+            }
 
             if (playRule is SurvivalRule survivalRule)
             {

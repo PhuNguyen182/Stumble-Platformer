@@ -24,6 +24,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public PlayerController CurrentPlayer => _currentPlayer;
         public int PlayerInstanceID => _currentPlayer.gameObject.GetInstanceID();
+        public int OriginPlayerHealth { get; private set; }
 
         #region Test Checkpoint, Editor only
 #if UNITY_EDITOR
@@ -61,6 +62,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 _currentPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);
 
             int lifeCount = isTest ? 1000 : CharacterConstants.MaxLife;
+            OriginPlayerHealth = lifeCount;
             _currentPlayer.PlayerHealth.SetHealth(lifeCount);
             _currentPlayer.SetCharacterInput(inputReceiver);
 

@@ -82,8 +82,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         private void ResetCamera()
         {
-            _yRotation = -180;
-            cameraPointer.rotation = Quaternion.identity;
+            cameraPointer.rotation = Quaternion.Euler(0, 0, 0);
+            _yRotation = cameraPointer.eulerAngles.y - 180;
             _adjacentLeg = _transposer.m_FollowOffset.y;
         }
 
