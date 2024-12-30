@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.UI;
+using StumblePlatformer.Scripts.GameManagers;
 using GlobalScripts.UpdateHandlerPattern;
 using GlobalScripts.Audios;
 
@@ -38,7 +39,7 @@ namespace GlobalScripts.App
             Register<AppInitializer>("App/App Initializer");
             Register<UpdateHandlerManager>("Handlers/Update Behaviour Handler");
             Register<AudioManager>("Managers/Audio Manager");
-            //Register<GameManager>("Managers/Game Manager");
+            Register<GameManager>("Managers/Game Manager");
         }
 
         private static T Register<T>(string serviceName) where T : Component

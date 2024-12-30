@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Common.Constants;
+using StumblePlatformer.Scripts.Gameplay.Inputs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
-using StumblePlatformer.Scripts.Gameplay.Inputs;
+using StumblePlatformer.Scripts.Common.Constants;
+using StumblePlatformer.Scripts.GameDatas;
 using TMPro;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
@@ -55,8 +56,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                                     .SpawnCharacterArea.MainCharacterSpawnPosition;
             _currentPlayer = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
 
-            CharacterSkin characterSkin; // Get a temp skin
-            bool hasSkin = playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin("21", out characterSkin);
+            CharacterSkin characterSkin;
+            string skin = GameDataManager.Instance.PlayerGameData.SkinName;
+            bool hasSkin = playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin(skin, out characterSkin);
 
             if (hasSkin)
                 _currentPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);

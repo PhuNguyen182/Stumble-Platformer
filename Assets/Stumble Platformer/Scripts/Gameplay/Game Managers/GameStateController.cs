@@ -121,6 +121,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void QuitPlay()
         {
+            WaitingPopup.Setup().ShowWaiting();
             SceneBridge.LoadNextScene(SceneConstants.Mainhome).Forget();
         }
 

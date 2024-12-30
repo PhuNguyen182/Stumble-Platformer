@@ -31,8 +31,8 @@ namespace GlobalScripts.SceneUtils
 
         private void Start()
         {
-            WaitingPopup.Setup(true).ShowWaiting();
             LoadNextScene().Forget();
+            WaitingPopup.Setup().HideWaiting();
         }
 
         private async UniTask LoadNextScene()
@@ -70,6 +70,11 @@ namespace GlobalScripts.SceneUtils
         public async UniTask UnloadTransition()
         {
             await SceneManager.UnloadSceneAsync(SceneConstants.Transition);
+        }
+
+        private void OnDisable()
+        {
+            WaitingPopup.Setup(true).ShowWaiting();
         }
     }
 }

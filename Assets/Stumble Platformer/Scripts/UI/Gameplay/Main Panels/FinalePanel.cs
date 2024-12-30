@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using StumblePlatformer.Scripts.GameDatas;
+using StumblePlatformer.Scripts.Gameplay.Databases;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Common.Enums;
 
@@ -12,6 +14,7 @@ namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
     {
         [SerializeField] private Button claimButton;
         [SerializeField] private Button continueButton;
+        [SerializeField] private CharacterVisualDatabase characterVisualDatabase;
         [SerializeField] private CharacterVisual characterVisual;
 
         public Action OnQuitGame;
@@ -20,6 +23,8 @@ namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
         {
             claimButton.onClick.AddListener(ClaimReward);
             continueButton.onClick.AddListener(ExitGame);
+            characterVisualDatabase.Initialize();
+            UpdateSkin();
         }
 
         public void Show()
@@ -41,6 +46,13 @@ namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
                     continueButton.gameObject.SetActive(true);
                     break;
             }
+        }
+
+        private void UpdateSkin()
+        {
+            string skin = GameDataManager.Instance.PlayerGameData.SkinName;
+            if (characterVisualDatabase.TryGetCharacterSkin(skin, out var characterSkin))
+                characterVisual.UpdateSkin(characterSkin);
         }
 
         private void ClaimReward()
