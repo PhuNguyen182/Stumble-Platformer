@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace StumblePlatformer.Scripts.UI
 {
-    public class UIBlocker : Singleton<UIBlocker>
+    public class UIBlocker : PersistentSingleton<UIBlocker>
     {
         [SerializeField] private Image blocker;
 

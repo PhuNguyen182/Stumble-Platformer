@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
+using StumblePlatformer.Scripts.Common.Constants;
 using Cinemachine;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
@@ -19,6 +20,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         [SerializeField][Range(0.0f, 1.0f)] private float rotationSpeed = 0.5f;
         [SerializeField][Range(0.0f, 1.0f)] private float heightOffsetSpeed = 0.1f;
 
+        private const string RotateXSaveKey = "RotateX";
+        private const string RotateYSaveKey = "RotateY";
+
         private float _yRotation;
         private float _maxHeight;
         private float _adjacentLeg;
@@ -30,6 +34,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         private Transform _followTarget;
         private CinemachineTransposer _transposer;
+
+        private void Awake()
+        {
+            SetUpCameraRotateSpeed();
+        }
 
         private void FixedUpdate()
         {
@@ -85,6 +94,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             cameraPointer.rotation = Quaternion.Euler(0, 0, 0);
             _yRotation = cameraPointer.eulerAngles.y - 180;
             _adjacentLeg = _transposer.m_FollowOffset.y;
+        }
+
+        private void SetUpCameraRotateSpeed()
+        {
+            rotationSpeed = PlayerPrefs.GetFloat(RotateXSaveKey, CharacterConstants.DefaultRotateXCamera);
+            heightOffsetSpeed = PlayerPrefs.GetFloat(RotateYSaveKey, CharacterConstants.DefaultRotateYCamera);
         }
 
         private void ReceiveInput() => _mouseDelta = inputReceiver.CameraDelta;

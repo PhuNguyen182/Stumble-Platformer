@@ -7,12 +7,12 @@
 /// 
 /// As a note, this is made as MonoBehaviour because we need Coroutines.
 /// </summary>
-public class Singleton<T> : MonoBehaviour where T : Component
+public class PersistentSingleton<T> : MonoBehaviour where T : Component
 {
     protected static T _instance;
 
     /// <summary>
-    /// Singleton design pattern
+    /// PersistentSingleton design pattern
     /// </summary>
     /// <value>The instance.</value>
     public static T Instance
@@ -42,7 +42,7 @@ public class Singleton<T> : MonoBehaviour where T : Component
     {
         if (_instance == null)
         {
-            //If I am the first instance, make me the Singleton
+            //If I am the first instance, make me the PersistentSingleton
             _instance = this as T;
             DontDestroyOnLoad(this.gameObject);
             OnAwake();
@@ -50,7 +50,7 @@ public class Singleton<T> : MonoBehaviour where T : Component
 
         else
         {
-            //If a Singleton already exists and you find
+            //If a PersistentSingleton already exists and you find
             //another reference in scene, destroy it!
             if (this != _instance)
             {

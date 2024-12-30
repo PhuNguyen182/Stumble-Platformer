@@ -7010,6 +7010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   claimButton: {fileID: 1453235710}
   continueButton: {fileID: 1108466712}
+  characterVisualDatabase: {fileID: 11400000, guid: 7c2f0542b40533a4f9e576063465884e, type: 2}
   characterVisual: {fileID: 1083571420}
 --- !u!1 &1613124017
 GameObject:

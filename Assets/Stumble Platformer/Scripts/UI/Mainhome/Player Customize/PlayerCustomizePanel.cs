@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using StumblePlatformer.Scripts.GameDatas;
 using StumblePlatformer.Scripts.Gameplay.Databases;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
@@ -28,6 +29,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
         {
             ExitImmediately();
             InitCharacterCells();
+            UpdateSkinOnStart();
         }
 
         [Button]
@@ -41,6 +43,19 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
                 string key = characterVisualDatabase.SkinCollections.Keys.ElementAt(i);
                 characterCells[i].SetID(key);
             }
+        }
+
+        private void UpdateSkinOnStart()
+        {
+            string skinName = GameDataManager.Instance.PlayerGameData.SkinName;
+            
+            if (string.IsNullOrEmpty(skinName))
+            {
+                skinName = characterVisualDatabase.SkinCollections.Keys.ElementAt(0);
+                GameDataManager.Instance.PlayerGameData.SkinName = skinName;
+            }
+
+            SelectSkin(skinName);
         }
 
         private void RegisterPlayerCells()
@@ -73,9 +88,11 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
 
             if(characterVisualDatabase.TryGetCharacterSkin(skinId, out CharacterSkin characterSkin))
             {
-                // To do: Update character skin
                 if (characterVisual)
+                {
                     characterVisual.UpdateSkin(characterSkin);
+                    GameDataManager.Instance.PlayerGameData.SkinName = skinId;
+                }
             }
         }
     }

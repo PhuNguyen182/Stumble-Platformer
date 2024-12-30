@@ -9,7 +9,7 @@ using StumblePlatformer.Scripts.Common.Enums;
 
 namespace GlobalScripts.Audios
 {
-    public class AudioManager : Singleton<AudioManager>
+    public class AudioManager : PersistentSingleton<AudioManager>
     {
         [SerializeField] private AudioMixer audioMixer;
         

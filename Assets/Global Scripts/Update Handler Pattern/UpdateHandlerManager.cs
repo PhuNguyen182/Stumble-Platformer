@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GlobalScripts.UpdateHandlerPattern
 {
-    public class UpdateHandlerManager : Singleton<UpdateHandlerManager>
+    public class UpdateHandlerManager : PersistentSingleton<UpdateHandlerManager>
     {
         private HashSet<IUpdateHandler> _updateHandlers = new();
         private HashSet<IFixedUpdateHandler> _fixedUpdateHandlers = new();
