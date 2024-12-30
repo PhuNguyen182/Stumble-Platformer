@@ -27,6 +27,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
         private void Start()
         {
             ExitImmediately();
+            InitCharacterCells();
         }
 
         [Button]
@@ -49,6 +50,16 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
             {
                 var cell = characterCells[i];
                 cell.OnCellClick = SelectSkin;
+            }
+        }
+
+        private void InitCharacterCells()
+        {
+            for (int i = 0; i < characterCells.Length; i++)
+            {
+                string id = characterCells[i].ID;
+                if (characterVisualDatabase.TryGetCharacterSkin(id, out var characterSkin))
+                    characterCells[i].SetAvatar(characterSkin.Avatar);
             }
         }
 

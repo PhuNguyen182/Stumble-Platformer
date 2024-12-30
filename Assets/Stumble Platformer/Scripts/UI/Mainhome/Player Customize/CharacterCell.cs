@@ -30,5 +30,10 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
         {
             this.id = id;
         }
+
+        public void SetAvatar(Sprite avatar)
+        {
+            icon.sprite = avatar;
+        }
     }
 }

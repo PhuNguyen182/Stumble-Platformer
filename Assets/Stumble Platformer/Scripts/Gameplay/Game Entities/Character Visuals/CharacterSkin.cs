@@ -9,6 +9,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals
     public class CharacterSkin : ScriptableObject
     {
         [PreviewField(80, Alignment = ObjectFieldAlignment.Left)]
+        [SerializeField] public Sprite Avatar;
+        [PreviewField(80, Alignment = ObjectFieldAlignment.Left)]
         [SerializeField] public Mesh SkinMesh;
         [SerializeField] public Avatar SkinAvatar;
         [SerializeField] public Material[] SkinMaterials;
