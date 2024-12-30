@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 8c185e04cd2bc304ea53f72ae97569bd
+  m_OcclusionCullingData: {fileID: 36300000, guid: e44c92840d4bae3458c69d5cd95248bd, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -1061,6 +1061,7 @@ MonoBehaviour:
   platformBody: {fileID: 99043146}
   platformCollider: {fileID: 99043145}
   dummyPlatform: {fileID: 392690086}
+  movingType: 2
   movementSpeed: 20
   toleranceOffset: 0.125
   movementDelayAmount: 1.5
@@ -7701,7 +7702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTest: 0
-  LevelName: 
+  LevelName: Bounce In The Bounds
   FogEnable: 0
   FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   FogMode: 3
@@ -7714,8 +7715,6 @@ MonoBehaviour:
   TeaserLookAt: {fileID: 0}
   TeaserFollower: {fileID: 1176312562}
   TeaserPath: {fileID: 1430614590}
-  transposer: {fileID: 0}
-  virtualCamera: {fileID: 0}
   stopTimeAmount: 2
   teaserDefaultSpeed: 0.2
   CameraBodyMode: 0
@@ -7748,7 +7747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3534569e4122d6f4ab58d93f02bf48f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveTitle: 
+  objectiveTitle: Race To Finish
 --- !u!1001 &676615660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8381,6 +8380,7 @@ MonoBehaviour:
   platformBody: {fileID: 724332984}
   platformCollider: {fileID: 724332983}
   dummyPlatform: {fileID: 370687409}
+  movingType: 2
   movementSpeed: 20
   toleranceOffset: 0.125
   movementDelayAmount: 1.5
@@ -15376,6 +15376,7 @@ MonoBehaviour:
   platformBody: {fileID: 1521332021}
   platformCollider: {fileID: 1521332020}
   dummyPlatform: {fileID: 678342890}
+  movingType: 2
   movementSpeed: 20
   toleranceOffset: 0.125
   movementDelayAmount: 1.5

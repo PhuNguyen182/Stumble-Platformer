@@ -11,8 +11,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
     [ExecuteAlways]
     public class CameraHandler : MonoBehaviour
     {
+        [SerializeField] private CinemachineBrain cinemachineBrain;
         [SerializeField] private TeaserCamera teaserCamera;
         [SerializeField] private CameraPointer cameraPointer;
+
+        private void Awake()
+        {
+            if (cinemachineBrain != null)
+                cinemachineBrain.useGUILayout = false;
+        }
 
         #region Editor Only
 #if UNITY_EDITOR

@@ -8,7 +8,8 @@ namespace GlobalScripts.Extensions
     {
         public static void ClampVelocity(this Rigidbody rigidbody, float maxMagnitude)
         {
-            rigidbody.maxLinearVelocity = maxMagnitude;
+            if (rigidbody.velocity.sqrMagnitude > maxMagnitude * maxMagnitude)
+                rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxMagnitude);
         }
 
         public static Vector3 GetFlatVelocity(this Rigidbody rigidbody)

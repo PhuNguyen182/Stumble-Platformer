@@ -6,8 +6,9 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
+using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using MessagePipe;
 
@@ -22,6 +23,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         [SerializeField] private CameraHandler cameraHandler;
         [SerializeField] private PlayerHandler playerHandler;
         [SerializeField] private EnvironmentHandler environmentHandler;
+
+        [Header("UIs")]
+        [SerializeField] private PlayGamePanel playGamePanel;
+        [SerializeField] private EndGamePanel endGamePanel;
+        [SerializeField] private FinalePanel finalePanel;
 
         private GameStateController _gameStateController;
         
@@ -46,7 +52,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void SetupGameplay()
         {
-            _gameStateController = new();
+            _gameStateController = new(cameraHandler, environmentHandler, endGamePanel, finalePanel);
             var builder = Disposable.CreateBuilder();
             _gameStateController.AddTo(ref builder);
             builder.RegisterTo(this.destroyCancellationToken);
@@ -70,6 +76,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             {
                 string levelName = PlayGameConfig.Current.PlayLevelName;
                 await environmentHandler.GenerateLevel(levelName);
+                WaitingPopup.Setup().HideWaiting();
             }
         }
 
@@ -81,6 +88,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private async UniTask SetupPlayLevel(EnvironmentIdentifier environmentIdentifier)
         {
             inputReceiver.IsActive = false;
+            playGamePanel?.ResetCountdown();
             cameraHandler.SetupVirtualCameraBody(environmentIdentifier);
             environmentHandler.SetEnvironmentIdentifier(environmentIdentifier);
             await StartGame();
@@ -88,18 +96,35 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private async UniTask StartGame()
         {
-            await environmentHandler.WaitForTeaser();
-
             PlayRule = environmentHandler.EnvironmentIdentifier.PlayRule;
             PlayRule.SetStateController(_gameStateController);
-            SetupPlayRule(PlayRule);
+
+            playGamePanel?.SetLevelNameActive(true);
+            playGamePanel?.SetPlayObjectActive(false);
+            playGamePanel?.SetLevelObjective(PlayRule.ObjectiveTitle);
+            playGamePanel?.SetLevelName(environmentHandler.EnvironmentIdentifier.LevelName);
 
             playerHandler.SpawnPlayer();
-            cameraHandler.SetFollowCameraActive(true);
             cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
-            PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
+            cameraHandler.ResetCurrentCameraFollow();
 
+            cameraHandler.SetFollowCameraActive(true);
+            await UniTask.NextFrame(destroyCancellationToken);
+            cameraHandler.SetFollowCameraActive(false);
+            SetupPlayRule(PlayRule);
+
+            await environmentHandler.WaitForTeaser();
+            playGamePanel?.SetLevelNameActive(false);
+            playGamePanel?.SetPlayObjectActive(true);
+            PlayRule.StartGame();
+
+            if (playGamePanel)
+                await playGamePanel.CountDown();
+            
+            cameraHandler.SetFollowCameraActive(true);
+            PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
             PlayRule.IsActive = true;
+
             playerHandler.SetPlayerActive(true);
             playerHandler.SetPlayerPhysicsActive(true);
             environmentHandler.SetLevelSecondaryComponentActive(true);
@@ -116,6 +141,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             if (playRule is ISetEnvironmentHandler environmentHandlerSetter)
                 environmentHandlerSetter.SetEnvironmentHandler(environmentHandler);
+
+            if(playRule is RacingRule racingRule)
+            {
+                racingRule.PlayerHealth = playerHandler.OriginPlayerHealth;
+                racingRule.SetLifeCounter(playGamePanel.LifeCounter);
+            }
+
+            if (playRule is SurvivalRule survivalRule)
+            {
+                playGamePanel.UpdateTimeRule(survivalRule.PlayDuration);
+                survivalRule.SetPlayRuleTimer(playGamePanel.PlayRuleTimer);
+            }
         }
 
         private void OnDestroy()

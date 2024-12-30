@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 06af4df2bd3676e4fa3b189e0953f957
+  m_OcclusionCullingData: {fileID: 36300000, guid: e44c92840d4bae3458c69d5cd95248bd, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -4077,7 +4077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTest: 0
-  LevelName: 
+  LevelName: Spiral Things
   FogEnable: 0
   FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   FogMode: 3
@@ -4107,7 +4107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e16e394439c7c4082ab6cea6bf1941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveTitle: 
+  objectiveTitle: Don't Fall
   playDuration: 60
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

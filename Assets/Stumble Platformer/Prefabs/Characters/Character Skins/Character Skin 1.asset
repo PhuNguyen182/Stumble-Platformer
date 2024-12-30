@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d870513d870ab4cbcd9953e03465bf, type: 3}
   m_Name: Character Skin 1
   m_EditorClassIdentifier: 
+  Avatar: {fileID: 21300000, guid: ed8406dd302d3464d9c68f3415ac6100, type: 3}
   SkinMesh: {fileID: -5083298690019172076, guid: 356aa0b1fc796a541b7a3fa9054c9c2a, type: 3}
   SkinAvatar: {fileID: 9000000, guid: 356aa0b1fc796a541b7a3fa9054c9c2a, type: 3}
   SkinMaterials:

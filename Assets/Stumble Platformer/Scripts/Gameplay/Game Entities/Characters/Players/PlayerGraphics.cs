@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
+using StumblePlatformer.Scripts.Gameplay.Databases;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
@@ -9,6 +10,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
     {
         [SerializeField] private Transform characterPivot;
         [SerializeField] private CharacterVisual characterVisual;
+        [SerializeField] private ParticleSystem dustStep;
+        [SerializeField] private PlayerEffectDatabase effectCollection;
 
         public CharacterVisual CharacterVisual => characterVisual;
 
@@ -22,9 +25,17 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             characterVisual.gameObject.SetActive(active);
         }
 
+        public void SetDustEffectActive(bool isActive)
+        {
+            var emission = dustStep.emission;
+            emission.enabled = isActive;
+        }
+
         public void PlayDeadEffect()
         {
-
+            Vector3 position = transform.position + Vector3.up * 0.5f;
+            SimplePool.Spawn(effectCollection.LaserDeadEffect, EffectContainer.Transform
+                             , position, Quaternion.identity);
         }
     }
 }

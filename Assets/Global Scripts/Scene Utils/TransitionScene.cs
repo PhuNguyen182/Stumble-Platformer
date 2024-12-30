@@ -3,28 +3,13 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using StumblePlatformer.Scripts.Common.Enums;
 using Cysharp.Threading.Tasks;
-//using CandyMatch3.Scripts.Common.Enums;
 using GlobalScripts.Audios;
 
 namespace GlobalScripts.SceneUtils
 {
-    public static class SceneBridge
-    {
-        public static string Bridge;
-
-        /// <summary>
-        /// Load target scene via a transition scene
-        /// </summary>
-        /// <param name="destinationSceneName">Desired scene name to load</param>
-        /// <returns></returns>
-        public static async UniTask LoadNextScene(string destinationSceneName)
-        {
-            Bridge = destinationSceneName;
-            await SceneLoader.LoadScene(SceneConstants.Transition);
-        }
-    }
-
     public class TransitionScene : MonoBehaviour
     {
         [SerializeField] private Animator darkCurtain;
@@ -32,8 +17,11 @@ namespace GlobalScripts.SceneUtils
         private CancellationToken _token;
         private readonly int _outHash = Animator.StringToHash("Out");
 
+        public static TransitionScene Instance { get; private set; }
+
         private void Awake()
         {
+            Instance = this;
             _token = this.GetCancellationTokenOnDestroy();
 
 #if !UNITY_EDITOR
@@ -43,6 +31,7 @@ namespace GlobalScripts.SceneUtils
 
         private void Start()
         {
+            WaitingPopup.Setup(true).ShowWaiting();
             LoadNextScene().Forget();
         }
 
@@ -52,30 +41,35 @@ namespace GlobalScripts.SceneUtils
             if (!string.IsNullOrEmpty(nextSceneName))
             {
                 await UniTask.Delay(TimeSpan.FromSeconds(1.5f), cancellationToken: _token);
-                darkCurtain.SetTrigger(_outHash);
+
+                if (darkCurtain)
+                    darkCurtain.SetTrigger(_outHash);
 
                 await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: _token);
                 await SceneLoader.LoadScene(nextSceneName);
 
-#if !UNITY_EDITOR
-                //MusicManager.Instance.StopMusic();
-                //BackgroundMusicType bgm = GetMusicBySceneName(nextSceneName);
-                //MusicManager.Instance.PlayBackgroundMusic(bgm, volume: 0.6f);
-#endif
+                AudioManager.Instance.StopMusic();
+                BackgroundMusicType bgm = GetMusicBySceneName(nextSceneName);
+                AudioManager.Instance.PlayBackgroundMusic(bgm, volume: 0.6f);
 
                 SceneBridge.Bridge = null;
             }
         }
 
-        //private BackgroundMusicType GetMusicBySceneName(string sceneName)
-        //{
-        //    if (string.CompareOrdinal(sceneName, SceneConstants.Mainhome) == 0)
-        //        return BackgroundMusicType.Mainhome;
-            
-        //    if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
-        //        return BackgroundMusicType.Gameplay;
+        private BackgroundMusicType GetMusicBySceneName(string sceneName)
+        {
+            if (string.CompareOrdinal(sceneName, SceneConstants.Mainhome) == 0)
+                return BackgroundMusicType.Mainhome;
 
-        //    return BackgroundMusicType.None;
-        //}
+            if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
+                return BackgroundMusicType.Gameplay;
+
+            return BackgroundMusicType.None;
+        }
+
+        public async UniTask UnloadTransition()
+        {
+            await SceneManager.UnloadSceneAsync(SceneConstants.Transition);
+        }
     }
 }

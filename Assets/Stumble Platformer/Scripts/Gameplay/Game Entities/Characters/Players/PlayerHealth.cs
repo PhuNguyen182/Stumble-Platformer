@@ -1,13 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
-using StumblePlatformer.Scripts.Common.Messages;
+using StumblePlatformer.Scripts.Common.Enums;
 using Cysharp.Threading.Tasks;
-using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
@@ -16,6 +13,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         [SerializeField] private float deadDelayAmount = 1f;
         [SerializeField] private PlayerController playerController;
         [SerializeField] private PlayerGraphics playerGraphics;
+        [SerializeField] private PlayerMessages playerMessages;
 
         private int _healthPoint = 0;
         private int _checkPointIndex = 0;
@@ -23,25 +21,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private bool _hasFinishLevel = false;
         private bool _canTakeDamage = true;
 
-        private IPublisher<RespawnMessage> _respawnPublisher;
-        private IPublisher<PlayerDamageMessage> _playerDamagePublisher;
-        private IPublisher<ReportPlayerHealthMessage> _reportPlayerHealthPublisher;
-        private ISubscriber<KillCharactersMessage> _killCharacterSubscriber;
-        private IDisposable _messageDisposable;
-
         public int CheckPointIndex => _checkPointIndex;
         public int HealthPoint => _healthPoint;
 
         private void Start()
         {
-            _respawnPublisher = GlobalMessagePipe.GetPublisher<RespawnMessage>();
-            _reportPlayerHealthPublisher = GlobalMessagePipe.GetPublisher<ReportPlayerHealthMessage>();
-            _playerDamagePublisher = GlobalMessagePipe.GetPublisher<PlayerDamageMessage>();
-
-            var builder = DisposableBag.CreateBuilder();
-            _killCharacterSubscriber = GlobalMessagePipe.GetSubscriber<KillCharactersMessage>();
-            _killCharacterSubscriber.Subscribe(message => Kill()).AddTo(builder);
-            _messageDisposable = builder.Build();
+            playerMessages.InitializeMessages();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -59,9 +44,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             if(other.TryGetComponent(out DeadZone deadZone))
             {
                 if (_healthPoint > 0)
-                {
                     OnDeadZone(deadZone);
-                }
             }
         }
 
@@ -71,23 +54,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             playerController.SetCharacterActive(false);
 
             if (_healthPoint > 0)
-            {
-                _respawnPublisher.Publish(new RespawnMessage
-                {
-                    ID = gameObject.GetInstanceID()
-                });
-            }
-
-            else Kill();
+                playerMessages.RespawnPlayer();
+            else 
+                Kill();
         }
 
-        private void Kill()
+        public void Kill()
         {
             if (_hasFinishLevel) 
                 return;
 
             playerController.SetCharacterActive(false);
-            playerController.PlayerGraphics.CharacterVisual.CharacterAnimator.SetTrigger(CharacterAnimationKeys.LoseKey);
+            playerGraphics.CharacterVisual.SetLose();
         }
 
         public void SetPlayerCompleteLevel(bool isCompleted)
@@ -126,8 +104,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             playerController.IsActive = false;
             finishZone.ReportFinish(playerController);
-
-            
         }
 
         private void OnRespawnArea(RespawnArea respawnArea)
@@ -156,23 +132,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void KillOneLife(HealthDamage damageData)
         {
-            playerController.TakeHealthDamage(damageData);
-
-            _reportPlayerHealthPublisher.Publish(new ReportPlayerHealthMessage
-            {
-                Health = HealthPoint,
-                PlayerID = gameObject.GetInstanceID()
-            });
-
-            _playerDamagePublisher.Publish(new PlayerDamageMessage
-            {
-                ID = gameObject.GetInstanceID()
-            });
-        }
-
-        private void OnDestroy()
-        {
-            _messageDisposable.Dispose();
+            TakeDamage(damageData);
+            playerMessages.ReportHealth(HealthPoint);
+            playerMessages.PlayerDamage();
         }
     }
 }
