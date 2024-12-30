@@ -12118,6 +12118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563e64f477af0974f9a8a17acc766c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationType: 3
   panelAnimator: {fileID: 29139879}
   backButton: {fileID: 1174788282}
   cellContainer: {fileID: 321539589}
@@ -17759,6 +17760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dafea4baca6dec49b4381847c8d8ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationType: 3
   panelAnimator: {fileID: 321163474}
   backButton: {fileID: 417212481}
   rotateXCamera: {fileID: 2079606525}
@@ -21068,6 +21070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e68cdb49c369a664f90c3d5fe9c3ae23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationType: 2
   panelAnimator: {fileID: 487598204}
   settingPanel: {fileID: 1936285045}
   playerCustomizePanel: {fileID: 1276514818}

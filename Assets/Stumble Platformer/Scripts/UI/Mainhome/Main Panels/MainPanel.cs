@@ -34,11 +34,6 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
             RegisterButtonClicks();
         }
 
-        private void Start()
-        {
-            EnterPanel();
-        }
-
         private void RegisterButtonClicks()
         {
             playButton.onClick.AddListener(PlayGame);

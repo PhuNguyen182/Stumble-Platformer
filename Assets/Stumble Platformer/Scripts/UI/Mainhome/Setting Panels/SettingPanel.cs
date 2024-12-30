@@ -25,10 +25,10 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.SettingPanels
             RegisterSliders();
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             GetSettingValues();
-            ExitImmediately();
         }
 
         private void RegisterSliders()
