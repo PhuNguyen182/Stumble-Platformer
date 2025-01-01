@@ -25,9 +25,9 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
             characterVisualDatabase.Initialize();
         }
 
-        private void Start()
+        protected override void Start()
         {
-            ExitImmediately();
+            base.Start();
             InitCharacterCells();
             UpdateSkinOnStart();
         }

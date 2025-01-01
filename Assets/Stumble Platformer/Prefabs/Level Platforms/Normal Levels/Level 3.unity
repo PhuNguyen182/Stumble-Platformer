@@ -1567,7 +1567,7 @@ MonoBehaviour:
   platformCollider: {fileID: 212170571}
   dummyPlatform: {fileID: 2090648422}
   movingType: 2
-  movementSpeed: 9
+  movementSpeed: 12
   toleranceOffset: 0.1
   movementDelayAmount: 1
   resetWaypoints: 0

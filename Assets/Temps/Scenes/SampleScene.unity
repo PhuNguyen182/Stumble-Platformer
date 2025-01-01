@@ -689,6 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e4a753934fafe4998ee21383fff9b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinemachineBrain: {fileID: 0}
   teaserCamera: {fileID: 1247963786}
   cameraPointer: {fileID: 2113077217}
   followTarget: {fileID: 483140208}
@@ -759,6 +760,9 @@ MonoBehaviour:
   cameraHandler: {fileID: 1267902386}
   playerHandler: {fileID: 1270006438}
   environmentHandler: {fileID: 1270006436}
+  playGamePanel: {fileID: 0}
+  endGamePanel: {fileID: 0}
+  finalePanel: {fileID: 0}
 --- !u!114 &1270006436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1419,6 +1423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57044850940bb74ab4dbb2379e3934e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTest: 1
   inputReceiver: {fileID: 1182122303}
   virtualCamera: {fileID: 1296743010}
   cameraPointer: {fileID: 483140208}

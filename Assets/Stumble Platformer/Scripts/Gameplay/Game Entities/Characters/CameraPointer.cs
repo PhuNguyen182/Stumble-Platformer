@@ -9,6 +9,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
     public class CameraPointer : MonoBehaviour
     {
+        [SerializeField] private bool isTest;
         [SerializeField] private InputReceiver inputReceiver;
         [SerializeField] private CinemachineVirtualCamera virtualCamera;
         [SerializeField] private Transform cameraPointer;
@@ -98,6 +99,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
         private void SetUpCameraRotateSpeed()
         {
+            if (isTest)
+                return;
+
             rotationSpeed = PlayerPrefs.GetFloat(RotateXSaveKey, CharacterConstants.DefaultRotateXCamera);
             heightOffsetSpeed = PlayerPrefs.GetFloat(RotateYSaveKey, CharacterConstants.DefaultRotateYCamera);
         }
