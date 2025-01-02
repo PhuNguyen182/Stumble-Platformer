@@ -12,6 +12,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
     {
         [SerializeField] private float deadDelayAmount = 1f;
         [SerializeField] private PlayerController playerController;
+        [SerializeField] private NetworkPlayerController networkPlayerController;
         [SerializeField] private PlayerGraphics playerGraphics;
         [SerializeField] private PlayerMessages playerMessages;
 
@@ -20,9 +21,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private bool _hasFinishLevel = false;
         private bool _canTakeDamage = true;
+        private bool _hasPlayerController;
+        private bool _hasNetworkPlayer;
 
         public int CheckPointIndex => _checkPointIndex;
         public int HealthPoint => _healthPoint;
+
+        private void Awake()
+        {
+            _hasPlayerController = TryGetComponent(out playerController);
+            if (!_hasPlayerController)
+                _hasNetworkPlayer = TryGetComponent(out networkPlayerController);
+        }
 
         private void Start()
         {
@@ -51,11 +61,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private async UniTask OnDeadZoneDelay()
         {
             await UniTask.WaitForSeconds(deadDelayAmount, cancellationToken: destroyCancellationToken);
-            playerController.SetCharacterActive(false);
+
+            if (_hasPlayerController)
+                playerController.SetCharacterActive(false);
+            
+            else if (_hasNetworkPlayer)
+                networkPlayerController.SetCharacterActive(false);
 
             if (_healthPoint > 0)
                 playerMessages.RespawnPlayer();
-            else 
+            else
                 Kill();
         }
 
@@ -64,7 +79,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             if (_hasFinishLevel) 
                 return;
 
-            playerController.SetCharacterActive(false);
+            if (_hasPlayerController)
+                playerController.SetCharacterActive(false);
+            else if (_hasNetworkPlayer)
+                networkPlayerController.SetCharacterActive(false);
+
             playerGraphics.CharacterVisual.SetLose();
         }
 
@@ -102,8 +121,17 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnFinishZone(FinishZone finishZone)
         {
-            playerController.IsActive = false;
-            finishZone.ReportFinish(playerController);
+            if (_hasPlayerController)
+            {
+                playerController.IsActive = false;
+                finishZone.ReportFinish(playerController);
+            }
+
+            else if (_hasNetworkPlayer)
+            {
+                networkPlayerController.IsActive = false;
+                // To do: report finish zone
+            }
         }
 
         private void OnRespawnArea(RespawnArea respawnArea)
@@ -114,7 +142,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnDeadZone(DeadZone deadZone)
         {
-            if (!playerController.IsActive)
+            // To do: implement logic for multiplayer
+            if (_hasPlayerController && !playerController.IsActive)
                 return;
 
             playerController.IsActive = false;
