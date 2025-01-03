@@ -19,7 +19,6 @@ namespace StumblePlatformer.Scripts.Multiplayers
 {
     public class LobbyManager : PersistentSingleton<LobbyManager>
     {
-        private const int MaxPlayerCount = 4;
         private const float MaxHeartBeatTime = 15f;
         private const string KeyRelayJoinCode = "RelayJoinCode";
 
@@ -55,7 +54,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
         {
             try
             {
-                Allocation relayAllocation = await RelayService.Instance.CreateAllocationAsync(MaxPlayerCount - 1);
+                Allocation relayAllocation = await RelayService.Instance.CreateAllocationAsync(MultiplayerManager.MaxPlayerCount - 1);
                 return relayAllocation;
             }
             catch(RelayServiceException e)
@@ -113,7 +112,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                     IsPrivate = isPrivate
                 };
 
-                _joinedLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, MaxPlayerCount, options);
+                _joinedLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, MultiplayerManager.MaxPlayerCount, options);
                 Allocation relayAllocation = await AllocateRelay();
                 string relayAllocationCode = await GetRelayJoinCode(relayAllocation);
 
@@ -128,7 +127,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 if (NetworkManager.Singleton.TryGetComponent(out UnityTransport transport))
                     transport.SetRelayServerData(new RelayServerData(relayAllocation, "dtls"));
 
-                NetworkManager.Singleton.StartHost();
+                MultiplayerManager.Instance.StartHost();
                 // To do: Load play scene here
             }
             catch (LobbyServiceException e)
@@ -152,7 +151,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 if (NetworkManager.Singleton.TryGetComponent(out UnityTransport transport))
                     transport.SetRelayServerData(new RelayServerData(joinAllocation, "dtls"));
 
-                NetworkManager.Singleton.StartClient();
+                MultiplayerManager.Instance.StartClient();
             }
             catch (LobbyServiceException e)
             {

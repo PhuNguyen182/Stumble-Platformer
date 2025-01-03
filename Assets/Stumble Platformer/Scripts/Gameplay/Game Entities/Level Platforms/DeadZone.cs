@@ -14,7 +14,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] private bool drawGizmo = true;
 
         public DamageType DamageType => damageType;
-        public static GamePlayMode GamePlayMode;
 
         public void PlayDeathEffect(Vector3 position)
         {

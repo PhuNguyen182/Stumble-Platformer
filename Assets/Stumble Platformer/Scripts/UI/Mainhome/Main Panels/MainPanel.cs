@@ -10,6 +10,7 @@ using StumblePlatformer.Scripts.UI.Mainhome.SettingPanels;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
 using GlobalScripts.SceneUtils;
 using Cysharp.Threading.Tasks;
+using StumblePlatformer.Scripts.UI.Mainhome.Popups;
 
 namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 {
@@ -26,12 +27,18 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         [Space(10)]
         [SerializeField] private CharacterVisual characterVisual;
-        [SerializeField] private LevelNameCollection levelNameCollection;
+
+        private const string PlayGamePopupPath = "Popups/Mainhome/Play Game Popup.prefab";
 
         private void Awake()
         {
-            UpdateSkin();
+            PreloadPopups();
             RegisterButtonClicks();
+        }
+
+        private void PreloadPopups()
+        {
+            PlayModePopup.PreloadFromAddress(PlayGamePopupPath).Forget();
         }
 
         private void RegisterButtonClicks()
@@ -39,11 +46,6 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
             playButton.onClick.AddListener(PlayGame);
             customizeButton.onClick.AddListener(OpenCharacterCustomize);
             settingButton.onClick.AddListener(OpenSetting);
-        }
-
-        public void UpdateSkin()
-        {
-            // To do: get skin index and update the visual
         }
 
         private void OpenSetting()
@@ -60,13 +62,12 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         private void PlayGame()
         {
-            string levelName = levelNameCollection.GetRandomName();
-            PlayGameConfig.Current = new PlayGameConfig
-            {
-                PlayLevelName = levelName
-            };
+            PlayModePopup.CreateFromAddress(PlayGamePopupPath).Forget();
+        }
 
-            SceneBridge.LoadNextScene(SceneConstants.Gameplay).Forget();
+        private void OnDestroy()
+        {
+            PlayModePopup.Release();
         }
     }
 }

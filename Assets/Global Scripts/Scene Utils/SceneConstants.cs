@@ -6,5 +6,6 @@ namespace GlobalScripts.SceneUtils
         public const string Mainhome = "Mainhome";
         public const string Gameplay = "Gameplay";
         public const string Transition = "Transition";
+        public const string Lobby = "Lobby";
     }
 }
