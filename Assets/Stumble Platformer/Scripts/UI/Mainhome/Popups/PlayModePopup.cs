@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using StumblePlatformer.Scripts.Gameplay;
+using Cysharp.Threading.Tasks;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.Databases;
+using StumblePlatformer.Scripts.Gameplay;
 using GlobalScripts.SceneUtils;
-using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
 {
@@ -35,7 +36,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
 
         private void SelectSinglePlayMode()
         {
-            GameplayMode.PlayMode = Common.Enums.PlayMode.SinglePlayer;
+            GameplayMode.PlayMode = GameMode.SinglePlayer;
             string levelName = levelNameCollection.GetRandomName();
             PlayGameConfig.Current = new PlayGameConfig
             {
@@ -47,7 +48,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
 
         private void SelectMultiPlayMode()
         {
-            GameplayMode.PlayMode = Common.Enums.PlayMode.Multiplayer;
+            GameplayMode.PlayMode = Common.Enums.GameMode.Multiplayer;
             // To do: load lobby scene
         }
 
