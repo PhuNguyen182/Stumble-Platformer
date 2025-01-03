@@ -57,7 +57,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             _currentPlayer = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
 
             CharacterSkin characterSkin;
-            string skin = GameDataManager.Instance.PlayerGameData.SkinName;
+            string skin = GameDataManager.Instance.PlayerProfile.SkinName;
             bool hasSkin = playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin(skin, out characterSkin);
 
             if (hasSkin)

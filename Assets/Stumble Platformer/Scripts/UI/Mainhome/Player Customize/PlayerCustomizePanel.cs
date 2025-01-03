@@ -47,12 +47,12 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
 
         private void UpdateSkinOnStart()
         {
-            string skinName = GameDataManager.Instance.PlayerGameData.SkinName;
+            string skinName = GameDataManager.Instance.PlayerProfile.SkinName;
             
             if (string.IsNullOrEmpty(skinName))
             {
                 skinName = characterVisualDatabase.SkinCollections.Keys.ElementAt(0);
-                GameDataManager.Instance.PlayerGameData.SkinName = skinName;
+                GameDataManager.Instance.PlayerProfile.SkinName = skinName;
             }
 
             SelectSkin(skinName);
@@ -91,7 +91,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
                 if (characterVisual)
                 {
                     characterVisual.UpdateSkin(characterSkin);
-                    GameDataManager.Instance.PlayerGameData.SkinName = skinId;
+                    GameDataManager.Instance.PlayerProfile.SkinName = skinId;
                 }
             }
         }

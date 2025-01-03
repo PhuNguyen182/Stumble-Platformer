@@ -4,13 +4,13 @@ namespace StumblePlatformer.Scripts.GameDatas
 {
     public class GameDataManager : SingletonClass<GameDataManager>
     {
-        private PlayerGameData _playerGameData;
+        private PlayerProfile _playerProfile;
         private GameResourceData _gameResourceData;
 
-        private const string PlayerDataKey = "PlayerGameData";
+        private const string PlayerDataKey = "PlayerProfile";
         private const string GameResourceDataKey = "GameResources";
 
-        public PlayerGameData PlayerGameData => _playerGameData;
+        public PlayerProfile PlayerProfile => _playerProfile;
         public GameResourceData GameResourceData => _gameResourceData;
 
         private void ReleaseBackData()
@@ -25,20 +25,20 @@ namespace StumblePlatformer.Scripts.GameDatas
 
         public void LoadData()
         {
-            _playerGameData = SimpleSaveSystem<PlayerGameData>.LoadDataByJson(PlayerDataKey) ?? new();
+            _playerProfile = SimpleSaveSystem<PlayerProfile>.LoadDataByJson(PlayerDataKey) ?? new();
             _gameResourceData = SimpleSaveSystem<GameResourceData>.LoadDataByJson(GameResourceDataKey) ?? new();
         }
 
         public void SaveData()
         {
             ReleaseBackData();
-            SimpleSaveSystem<PlayerGameData>.SaveDataByJson(PlayerDataKey, _playerGameData);
+            SimpleSaveSystem<PlayerProfile>.SaveDataByJson(PlayerDataKey, _playerProfile);
             SimpleSaveSystem<GameResourceData>.SaveDataByJson(GameResourceDataKey, _gameResourceData);
         }
 
         public void DeleteData()
         {
-            SimpleSaveSystem<PlayerGameData>.DeleteJsonData(PlayerDataKey);
+            SimpleSaveSystem<PlayerProfile>.DeleteJsonData(PlayerDataKey);
             SimpleSaveSystem<GameResourceData>.DeleteJsonData(GameResourceDataKey);
         }
     }

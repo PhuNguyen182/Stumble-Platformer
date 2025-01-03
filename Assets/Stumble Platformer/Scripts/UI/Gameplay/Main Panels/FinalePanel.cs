@@ -50,7 +50,7 @@ namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
 
         private void UpdateSkin()
         {
-            string skin = GameDataManager.Instance.PlayerGameData.SkinName;
+            string skin = GameDataManager.Instance.PlayerProfile.SkinName;
             if (characterVisualDatabase.TryGetCharacterSkin(skin, out var characterSkin))
                 characterVisual.UpdateSkin(characterSkin);
         }
