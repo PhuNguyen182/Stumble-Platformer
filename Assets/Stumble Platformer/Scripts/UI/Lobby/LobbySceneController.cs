@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GlobalScripts.SceneUtils;
 using StumblePlatformer.Scripts.UI.Lobby.Popups;
 using Cysharp.Threading.Tasks;
 
@@ -9,6 +10,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby
 {
     public class LobbySceneController : MonoBehaviour
     {
+        [SerializeField] private Button backHomeButton;
         [SerializeField] private Button createRoomButton;
         [SerializeField] private Button joinPublicRoomButton;
         [SerializeField] private Button joinPrivateRoomButton;
@@ -35,9 +37,16 @@ namespace StumblePlatformer.Scripts.UI.Lobby
 
         private void RegisterButtons()
         {
+            backHomeButton.onClick.AddListener(BackToMainHome);
             createRoomButton.onClick.AddListener(OnOpenCreateRoom);
             joinPublicRoomButton.onClick.AddListener(OnJoinPublicRoom);
             joinPrivateRoomButton.onClick.AddListener(OnJoinPrivateRoom);
+        }
+
+        private void BackToMainHome()
+        {
+            WaitingPopup.Setup().ShowWaiting();
+            SceneLoader.LoadScene(SceneConstants.Mainhome).Forget();
         }
 
         private void OnOpenCreateRoom()
