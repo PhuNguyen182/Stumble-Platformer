@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
+using StumblePlatformer.Scripts.GameDatas;
 using StumblePlatformer.Scripts.Multiplayers.Datas;
 using Unity.Services.Authentication;
 using GlobalScripts.SceneUtils;
@@ -21,6 +22,8 @@ namespace StumblePlatformer.Scripts.Multiplayers
         public Action OnFailToJoinGame;
         public Action OnTryingToJoinGame;
         public Action OnPlayerDataNetworkListChanged;
+        
+        public int PlayerAmount { get; set; }
 
         protected override void OnAwake()
         {
@@ -86,6 +89,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 ClientID = clientId
             });
 
+            SetPlayerNameServerRpc(GameDataManager.Instance.PlayerProfile.PlayerName);
             SetPlayerIDServerRpc(AuthenticationService.Instance.PlayerId);
         }
 
@@ -100,6 +104,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         private void OnClientConnectedCallback_Client(ulong clientId)
         {
+            SetPlayerNameServerRpc(GameDataManager.Instance.PlayerProfile.PlayerName);
             SetPlayerIDServerRpc(AuthenticationService.Instance.PlayerId);
         }
 

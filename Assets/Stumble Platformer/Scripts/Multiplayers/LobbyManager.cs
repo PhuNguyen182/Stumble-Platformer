@@ -11,6 +11,7 @@ using Unity.Services.Lobbies.Models;
 using Unity.Services.Relay.Models;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
+using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
 using Random = UnityEngine.Random;
 using GlobalScripts;
@@ -20,10 +21,21 @@ namespace StumblePlatformer.Scripts.Multiplayers
     public class LobbyManager : PersistentSingleton<LobbyManager>
     {
         private const float MaxHeartBeatTime = 15f;
+        private const float ListLobbiesTimerMax = 3f;
         private const string KeyRelayJoinCode = "RelayJoinCode";
 
         private float _heartBeatTime = 0;
+        private float _listLobbiesTimer = 0;
         private Lobby _joinedLobby;
+
+        public Action OnCreateLobbyStarted;
+        public Action OnCreateLobbyFailed;
+
+        public Action OnJoinStarted;
+        public Action OnQuickJoinFailed;
+        public Action OnJoinFailed;
+        
+        public Action<List<Lobby>> OnLobbyListChanged;
 
         protected override void OnAwake()
         {
@@ -33,6 +45,29 @@ namespace StumblePlatformer.Scripts.Multiplayers
         private void Update()
         {
             ListenHeartBeat();
+            HandlePeriodicListLobbies();
+        }
+
+        private void HandlePeriodicListLobbies()
+        {
+            if (_joinedLobby != null)
+                return;
+
+            if (UnityServices.State != ServicesInitializationState.Initialized)
+                return;
+
+            if (!AuthenticationService.Instance.IsSignedIn)
+                return;
+
+            if (string.CompareOrdinal(SceneManager.GetActiveScene().name, "LobbyScene") != 0)
+                return;
+
+            _listLobbiesTimer -= Time.deltaTime;
+            if (_listLobbiesTimer <= 0f)
+            {
+                _listLobbiesTimer = ListLobbiesTimerMax;
+                ListLobbies().Forget();
+            }
         }
 
         private void ListenHeartBeat()
@@ -48,7 +83,10 @@ namespace StumblePlatformer.Scripts.Multiplayers
             }
         }
 
-        private bool IsHostLobby() => _joinedLobby != null && string.CompareOrdinal(_joinedLobby.HostId, AuthenticationService.Instance.PlayerId) == 0;
+        private bool IsHostLobby()
+        {
+            return _joinedLobby != null && string.CompareOrdinal(_joinedLobby.HostId, AuthenticationService.Instance.PlayerId) == 0;
+        }
 
         private async UniTask<Allocation> AllocateRelay()
         {
@@ -73,6 +111,32 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 await UnityServices.InitializeAsync(initializationOptions);
                 await AuthenticationService.Instance.SignInAnonymouslyAsync();
             }
+        }
+
+        private async UniTask ListLobbies()
+        {
+            try
+            {
+                QueryLobbiesOptions lobbiesOptions = new()
+                {
+                    Filters = new()
+                    {
+                        new QueryFilter(QueryFilter.FieldOptions.AvailableSlots, "0", QueryFilter.OpOptions.GT)
+                    }
+                };
+
+                QueryResponse queryResponse = await LobbyService.Instance.QueryLobbiesAsync(lobbiesOptions);
+                OnLobbyListChanged?.Invoke(queryResponse.Results);
+            }
+            catch(LobbyServiceException e)
+            {
+                DebugUtils.LogError(e.Message);
+            }
+        }
+
+        public Lobby GetCurrentLobby()
+        {
+            return _joinedLobby;
         }
 
         public async UniTask<string> GetRelayJoinCode(Allocation allocation)
@@ -105,6 +169,8 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         public async UniTask CreateLobby(string lobbyName, bool isPrivate)
         {
+            OnCreateLobbyStarted?.Invoke();
+
             try
             {
                 CreateLobbyOptions options = new()
@@ -133,15 +199,19 @@ namespace StumblePlatformer.Scripts.Multiplayers
             catch (LobbyServiceException e)
             {
                 DebugUtils.LogError(e.Message);
+                OnCreateLobbyFailed?.Invoke();
             }
         }
 
         public async UniTask JoinLobby(string joinCode = null)
         {
+            OnJoinStarted?.Invoke();
+            bool hasNoJoinCode = string.IsNullOrEmpty(joinCode);
+
             try
             {
-                if(string.IsNullOrEmpty(joinCode))
-                _joinedLobby = await LobbyService.Instance.QuickJoinLobbyAsync();
+                if (hasNoJoinCode)
+                    _joinedLobby = await LobbyService.Instance.QuickJoinLobbyAsync();
                 else 
                     _joinedLobby = await LobbyService.Instance.JoinLobbyByCodeAsync(joinCode);
 
@@ -156,6 +226,11 @@ namespace StumblePlatformer.Scripts.Multiplayers
             catch (LobbyServiceException e)
             {
                 DebugUtils.LogError(e.Message);
+
+                if (hasNoJoinCode)
+                    OnQuickJoinFailed?.Invoke();
+                else
+                    OnJoinFailed?.Invoke();
             }
         }
 
@@ -182,6 +257,21 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 try
                 {
                     await LobbyService.Instance.RemovePlayerAsync(_joinedLobby.Id, AuthenticationService.Instance.PlayerId);
+                }
+                catch (LobbyServiceException e)
+                {
+                    DebugUtils.LogError(e.Message);
+                }
+            }
+        }
+
+        public async UniTask RemovePlayer(string playerId)
+        {
+            if (IsHostLobby())
+            {
+                try
+                {
+                    await LobbyService.Instance.RemovePlayerAsync(_joinedLobby.Id, playerId);
                 }
                 catch (LobbyServiceException e)
                 {

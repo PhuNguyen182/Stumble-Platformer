@@ -48,7 +48,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
 
         private void SelectMultiPlayMode()
         {
-            GameplayMode.PlayMode = Common.Enums.GameMode.Multiplayer;
+            GameplayMode.PlayMode = GameMode.Multiplayer;
             // To do: load lobby scene
         }
 
