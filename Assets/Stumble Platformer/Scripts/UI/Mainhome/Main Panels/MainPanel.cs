@@ -53,6 +53,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
         private void OpenCharacterCustomize()
         {
             ExitPanel();
+            playerCustomizePanel.ScrollToCurrentSkin();
             playerCustomizePanel.EnterPanel();
         }
 

@@ -8,7 +8,6 @@ using StumblePlatformer.Scripts.Gameplay.Databases;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using Cysharp.Threading.Tasks;
-using Sirenix.OdinInspector;
 
 namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
 {
@@ -17,6 +16,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
         [SerializeField] private Button backButton;
         [SerializeField] private ScrollRect characterCellScroller;
         [SerializeField] private float focusSpeed = 9;
+        [SerializeField] private bool check;
 
         [Space(10)]
         [SerializeField] private Transform cellContainer;
@@ -24,10 +24,12 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
         [SerializeField] private CharacterVisualDatabase characterVisualDatabase;
         [SerializeField] private CharacterVisual characterVisual;
 
+        private string _currentSkin;
+
         private void Awake()
         {
             RegisterPlayerCells();
-            characterVisualDatabase.Initialize();
+            GetCharacterCells();
         }
 
         protected override void Start()
@@ -37,7 +39,6 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
             UpdateSkinOnStart();
         }
 
-        [Button]
         public void GetCharacterCells()
         {
             characterVisualDatabase.Initialize();
@@ -47,22 +48,21 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
             {
                 string key = characterVisualDatabase.SkinCollections.Keys.ElementAt(i);
                 characterCells[i].SetID(key);
+                characterCells[i].gameObject.name = $"Character Skin {key}";
             }
         }
 
         private void UpdateSkinOnStart()
         {
-            string skinName = GameDataManager.Instance.PlayerProfile.SkinName;
+            _currentSkin = GameDataManager.Instance.PlayerProfile.SkinName;
             
-            if (string.IsNullOrEmpty(skinName))
+            if (string.IsNullOrEmpty(_currentSkin))
             {
-                skinName = characterVisualDatabase.SkinCollections.Keys.ElementAt(0);
-                GameDataManager.Instance.PlayerProfile.SkinName = skinName;
+                _currentSkin = characterVisualDatabase.SkinCollections.Keys.ElementAt(0);
+                GameDataManager.Instance.PlayerProfile.SkinName = _currentSkin;
             }
 
-            int skinIndex = GetSkinIndex(skinName);
-            SelectSkin(skinName);
-            ScrollTo(skinIndex).Forget();
+            SelectSkin(_currentSkin);
         }
 
         private int GetSkinIndex(string skin)
@@ -110,15 +110,31 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
                 {
                     characterVisual.UpdateSkin(characterSkin);
                     GameDataManager.Instance.PlayerProfile.SkinName = skinId;
+                    _currentSkin = skinId;
                 }
             }
         }
 
         private async UniTask ScrollTo(int index)
         {
-            var cell = characterCells[index];
-            var rect = cell.GetComponent<RectTransform>();
-            await characterCellScroller.FocusOnItemCoroutine(rect, focusSpeed);
+            await characterCellScroller.FocusOnItemCoroutine(characterCells[index].RectTransform, focusSpeed);
         }
+
+        public void ScrollToCurrentSkin()
+        {
+            int skinIndex = GetSkinIndex(_currentSkin);
+            ScrollTo(skinIndex).Forget();
+        }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            if (check)
+            {
+                check = false;
+                GetCharacterCells();
+            }
+        }
+#endif
     }
 }

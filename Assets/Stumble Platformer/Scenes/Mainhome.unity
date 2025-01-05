@@ -620,7 +620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 15
+      value: Character Skin 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1454,7 +1454,7 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 1
   m_StartCorner: 0
-  m_StartAxis: 1
+  m_StartAxis: 0
   m_CellSize: {x: 200, y: 200}
   m_Spacing: {x: 10, y: 11.5}
   m_Constraint: 1
@@ -2063,7 +2063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 13
+      value: Character Skin 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3016,7 +3016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 17
+      value: Character Skin 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3129,7 +3129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 11
+      value: Character Skin 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3242,7 +3242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 21
+      value: Character Skin 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3601,7 +3601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 24
+      value: Character Skin 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4014,7 +4014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 19
+      value: Character Skin 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4163,7 +4163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 7
+      value: Character Skin 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5719,7 +5719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 6
+      value: Character Skin 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5832,7 +5832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 20
+      value: Character Skin 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5945,7 +5945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 25
+      value: Character Skin 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6556,7 +6556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 10
+      value: Character Skin 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6755,7 +6755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 18
+      value: Character Skin 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7084,7 +7084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 5
+      value: Character Skin 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7272,8 +7272,9 @@ MonoBehaviour:
   animationType: 3
   panelAnimator: {fileID: 29139879}
   backButton: {fileID: 1174788282}
-  characterCellScroller: {fileID: 0}
+  characterCellScroller: {fileID: 1673961370}
   focusSpeed: 9
+  check: 0
   cellContainer: {fileID: 321539589}
   characterCells:
   - {fileID: 1369959883}
@@ -7393,7 +7394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 4
+      value: Character Skin 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7506,7 +7507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 22
+      value: Character Skin 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8062,7 +8063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 3
+      value: Character Skin 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8924,7 +8925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 2
+      value: Character Skin 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9037,7 +9038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 23
+      value: Character Skin 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9150,7 +9151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 8
+      value: Character Skin 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9263,7 +9264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 12
+      value: Character Skin 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9520,7 +9521,7 @@ MonoBehaviour:
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 514009365}
   m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 2
+  m_VerticalScrollbarVisibility: 1
   m_HorizontalScrollbarSpacing: -3
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
@@ -9729,7 +9730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 14
+      value: Character Skin 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10564,7 +10565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 9
+      value: Character Skin 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12341,7 +12342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 16
+      value: Character Skin 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13242,7 +13243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577260360708211193, guid: b05f06a9085926d489cb7ebcc9e33c8e, type: 3}
       propertyPath: m_Name
-      value: Character Cell 1
+      value: Character Skin 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

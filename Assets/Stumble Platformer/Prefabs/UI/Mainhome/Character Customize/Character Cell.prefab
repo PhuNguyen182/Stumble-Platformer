@@ -141,6 +141,7 @@ MonoBehaviour:
   icon: {fileID: 2555428928071051731}
   selectMark: {fileID: 8888607194558684501}
   cellButton: {fileID: 3399783568674466380}
+  rectTransform: {fileID: 393516742186852881}
 --- !u!1 &3637591156475908779
 GameObject:
   m_ObjectHideFlags: 0
