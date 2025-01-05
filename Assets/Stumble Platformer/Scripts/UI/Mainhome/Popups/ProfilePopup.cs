@@ -62,7 +62,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
             if (PopupAnimator)
             {
                 PopupAnimator.SetTrigger(_closePopupHash);
-                await UniTask.WaitForSeconds(0.25f, cancellationToken: destroyCancellationToken);
+                await UniTask.WaitForSeconds(0.167f, cancellationToken: destroyCancellationToken);
             }
             base.DoClose();
         }

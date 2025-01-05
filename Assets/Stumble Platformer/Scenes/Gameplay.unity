@@ -2654,7 +2654,7 @@ Transform:
   m_GameObject: {fileID: 682573049}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 160, z: 2000}
+  m_LocalPosition: {x: 0, y: 200, z: 2000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4590,7 +4590,7 @@ Transform:
   m_GameObject: {fileID: 1083571419}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 2373}
+  m_LocalPosition: {x: 0, y: 0, z: 2400}
   m_LocalScale: {x: 250, y: 250, z: 250}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5899,7 +5899,7 @@ GameObject:
   - component: {fileID: 1342139162}
   - component: {fileID: 1342139161}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: Character Look
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7312,6 +7312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57044850940bb74ab4dbb2379e3934e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTest: 0
   inputReceiver: {fileID: 1004334421}
   virtualCamera: {fileID: 682400820}
   cameraPointer: {fileID: 1462723939}

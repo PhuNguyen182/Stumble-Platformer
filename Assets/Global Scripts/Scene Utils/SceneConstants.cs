@@ -7,5 +7,6 @@ namespace GlobalScripts.SceneUtils
         public const string Gameplay = "Gameplay";
         public const string Transition = "Transition";
         public const string Lobby = "Lobby";
+        public const string Waiting = "Waiting";
     }
 }

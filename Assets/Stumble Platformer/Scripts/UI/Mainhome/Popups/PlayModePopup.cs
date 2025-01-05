@@ -36,20 +36,23 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
 
         private void SelectSinglePlayMode()
         {
-            GameplayMode.PlayMode = GameMode.SinglePlayer;
+            GameplaySetup.PlayMode = GameMode.SinglePlayer;
             string levelName = levelNameCollection.GetRandomName();
-            PlayGameConfig.Current = new PlayGameConfig
+
+            PlayGameConfig.Current = new()
             {
                 PlayLevelName = levelName
             };
 
+            WaitingPopup.Setup().ShowWaiting();
             SceneBridge.LoadNextScene(SceneConstants.Gameplay).Forget();
         }
 
         private void SelectMultiPlayMode()
         {
-            GameplayMode.PlayMode = GameMode.Multiplayer;
-            // To do: load lobby scene
+            GameplaySetup.PlayMode = GameMode.Multiplayer;
+            WaitingPopup.Setup().ShowWaiting();
+            SceneLoader.LoadScene(SceneConstants.Lobby).Forget();
         }
 
         protected override void DoClose()
@@ -62,7 +65,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
             if (PopupAnimator)
             {
                 PopupAnimator.SetTrigger(_closePopupHash);
-                await UniTask.WaitForSeconds(0.25f, cancellationToken: destroyCancellationToken);
+                await UniTask.WaitForSeconds(0.167f, cancellationToken: destroyCancellationToken);
             }
             base.DoClose();
         }

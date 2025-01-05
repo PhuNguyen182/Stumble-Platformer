@@ -46,6 +46,8 @@ namespace GlobalScripts.SceneUtils
                     darkCurtain.SetTrigger(_outHash);
 
                 await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: _token);
+
+                WaitingPopup.Setup().ShowWaiting();
                 await SceneLoader.LoadScene(nextSceneName);
 
                 AudioManager.Instance.StopMusic();
