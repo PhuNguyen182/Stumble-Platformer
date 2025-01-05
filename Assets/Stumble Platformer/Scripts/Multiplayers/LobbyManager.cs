@@ -50,7 +50,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         private void HandlePeriodicListLobbies()
         {
-            if (_joinedLobby != null)
+            if (HasLobby())
                 return;
 
             if (UnityServices.State != ServicesInitializationState.Initialized)
@@ -85,7 +85,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         private bool IsHostLobby()
         {
-            return _joinedLobby != null && string.CompareOrdinal(_joinedLobby.HostId, AuthenticationService.Instance.PlayerId) == 0;
+            return HasLobby() && string.CompareOrdinal(_joinedLobby.HostId, AuthenticationService.Instance.PlayerId) == 0;
         }
 
         private async UniTask<Allocation> AllocateRelay()
@@ -132,6 +132,11 @@ namespace StumblePlatformer.Scripts.Multiplayers
             {
                 DebugUtils.LogError(e.Message);
             }
+        }
+
+        public bool HasLobby()
+        {
+            return _joinedLobby != null;
         }
 
         public Lobby GetCurrentLobby()
@@ -236,7 +241,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         public async UniTask DeleteLobby()
         {
-            if (_joinedLobby != null)
+            if (HasLobby())
             {
                 try
                 {
@@ -252,7 +257,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         public async UniTask LeaveLobby()
         {
-            if(_joinedLobby != null)
+            if(HasLobby())
             {
                 try
                 {

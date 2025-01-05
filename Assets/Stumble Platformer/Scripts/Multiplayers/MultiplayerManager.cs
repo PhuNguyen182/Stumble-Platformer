@@ -15,8 +15,8 @@ namespace StumblePlatformer.Scripts.Multiplayers
     {
         private NetworkList<PlayerData> _playerDatas;
 
-        public const int MaxPlayerCount = 4;
         public const int MinPlayerCount = 1;
+        public const int MaxPlayerCount = 7;
         public const int AcceptablePlayerCount = 2;
 
         public Action OnFailToJoinGame;

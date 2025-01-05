@@ -16,7 +16,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
         [SerializeField] private TMP_InputField playerCountField;
 
         private const int MinPlayerCount = 1;
-        private const int MaxPlayerCount = 16;
+        private const int MaxPlayerCount = 7;
         private const string ClosePopupTrigger = "Close";
         private readonly int _closePopupHash = Animator.StringToHash(ClosePopupTrigger);
 

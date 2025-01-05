@@ -7,6 +7,7 @@ using StumblePlatformer.Scripts.GameDatas;
 using StumblePlatformer.Scripts.Gameplay.Databases;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 
 namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
@@ -14,6 +15,10 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
     public class PlayerCustomizePanel : DerivedPanel
     {
         [SerializeField] private Button backButton;
+        [SerializeField] private ScrollRect characterCellScroller;
+        [SerializeField] private float focusSpeed = 9;
+
+        [Space(10)]
         [SerializeField] private Transform cellContainer;
         [SerializeField] private CharacterCell[] characterCells;
         [SerializeField] private CharacterVisualDatabase characterVisualDatabase;
@@ -55,7 +60,20 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
                 GameDataManager.Instance.PlayerProfile.SkinName = skinName;
             }
 
+            int skinIndex = GetSkinIndex(skinName);
             SelectSkin(skinName);
+            ScrollTo(skinIndex).Forget();
+        }
+
+        private int GetSkinIndex(string skin)
+        {
+            for (int i = 0; i < characterCells.Length; i++)
+            {
+                if (string.CompareOrdinal(skin, characterCells[i].ID) == 0)
+                    return i;
+            }
+
+            return -1;
         }
 
         private void RegisterPlayerCells()
@@ -94,6 +112,13 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
                     GameDataManager.Instance.PlayerProfile.SkinName = skinId;
                 }
             }
+        }
+
+        private async UniTask ScrollTo(int index)
+        {
+            var cell = characterCells[index];
+            var rect = cell.GetComponent<RectTransform>();
+            await characterCellScroller.FocusOnItemCoroutine(rect, focusSpeed);
         }
     }
 }
