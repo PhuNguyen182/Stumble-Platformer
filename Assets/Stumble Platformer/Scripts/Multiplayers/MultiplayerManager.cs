@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
+using StumblePlatformer.Scripts.Gameplay;
 using StumblePlatformer.Scripts.GameDatas;
 using StumblePlatformer.Scripts.Multiplayers.Datas;
+using StumblePlatformer.Scripts.Common.Enums;
 using Unity.Services.Authentication;
 using GlobalScripts.SceneUtils;
 
 namespace StumblePlatformer.Scripts.Multiplayers
 {
-    public class MultiplayerManager : PersistentSingleton<MultiplayerManager>
+    public class MultiplayerManager : NetworkSingleton<MultiplayerManager>
     {
         private NetworkList<PlayerData> _playerDatas;
 
@@ -47,6 +49,24 @@ namespace StumblePlatformer.Scripts.Multiplayers
             NetworkManager.Singleton.StartClient();
         }
 
+        public void Shutdown()
+        {
+            if (GameplaySetup.PlayerType == PlayerType.Host)
+            {
+                NetworkManager.Singleton.ConnectionApprovalCallback -= ConnectionApprovalCallback;
+                NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback_Server;
+                NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback_Server;
+            }
+
+            else if(GameplaySetup.PlayerType == PlayerType.Client)
+            {
+                NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback_Client;
+                NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback_Client;
+            }
+
+            NetworkManager.Singleton.Shutdown();
+        }
+
         public int GetPlayerDataIndexFromClientId(ulong clientId)
         {
             for (int i = 0; i < _playerDatas.Count; i++)
@@ -63,14 +83,14 @@ namespace StumblePlatformer.Scripts.Multiplayers
             if(NetworkManager.Singleton.ConnectedClientsIds.Count > MaxPlayerCount)
             {
                 approvalResponse.Approved = false;
-                approvalResponse.Reason = "Game Is Full!";
+                approvalResponse.Reason = "Room is full!";
                 return;
             }
 
             if(string.CompareOrdinal(SceneManager.GetActiveScene().name, SceneConstants.Lobby) != 0)
             {
                 approvalResponse.Approved = false;
-                approvalResponse.Reason = "Game Has Been Started!";
+                approvalResponse.Reason = "Game has been started!";
                 return;
             }
 

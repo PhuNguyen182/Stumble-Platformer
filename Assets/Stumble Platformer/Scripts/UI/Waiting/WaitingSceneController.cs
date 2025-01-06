@@ -21,6 +21,8 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         [SerializeField] private CharacterVisual characterVisual;
         [SerializeField] private CharacterVisualDatabase characterVisualDatabase;
         [SerializeField] private GameObject hostNotice;
+
+        [Header("UI Elements")]
         [SerializeField] private TMP_Text roomCodeText;
         [SerializeField] private Button readyButton;
         [SerializeField] private Button backButton;
@@ -79,7 +81,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         private async UniTask OnLeaveRoom()
         {
             await LobbyManager.Instance.LeaveLobby();
-            NetworkManager.Singleton.Shutdown();
+            MultiplayerManager.Instance.Shutdown();
             WaitingPopup.Setup().ShowWaiting();
             await SceneLoader.LoadScene(SceneConstants.Mainhome);
         }

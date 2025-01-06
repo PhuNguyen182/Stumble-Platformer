@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using StumblePlatformer.Scripts.Gameplay;
+using GlobalScripts.SceneUtils;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.Common.Enums;
-using GlobalScripts.SceneUtils;
+using StumblePlatformer.Scripts.Gameplay;
 using Cysharp.Threading.Tasks;
 using TMPro;
 
@@ -63,6 +63,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 
         private void CreatePublicRoom()
         {
+            Close();
             GameplaySetup.PlayerType = PlayerType.Host;
             MultiplayerManager.Instance.PlayerAmount = _playerCount;
             CreateRoomAsync(false).Forget();
@@ -70,6 +71,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 
         private void CreatePrivateRoom()
         {
+            Close();
             GameplaySetup.PlayerType = PlayerType.Host;
             MultiplayerManager.Instance.PlayerAmount = _playerCount;
             CreateRoomAsync(true).Forget();

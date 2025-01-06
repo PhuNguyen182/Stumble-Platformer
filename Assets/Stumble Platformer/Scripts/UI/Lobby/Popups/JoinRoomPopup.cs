@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
-using Sirenix.OdinInspector;
-using TMPro;
 using StumblePlatformer.Scripts.Multiplayers;
 using GlobalScripts.SceneUtils;
+using Sirenix.OdinInspector;
+using TMPro;
 
 namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 {
