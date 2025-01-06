@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using TMPro;
+using StumblePlatformer.Scripts.Multiplayers;
+using GlobalScripts.SceneUtils;
 
 namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 {
@@ -32,7 +34,27 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 
         private void JoinRoom()
         {
-            // Only private room need join code
+            JoinRoomAsync().Forget();
+        }
+
+        private async UniTask JoinRoomAsync()
+        {
+            MessagePopup.Setup().ShowWaiting().SetMessage("Joining Room").ShowCloseButton(false);
+            bool canJoin = await LobbyManager.Instance.JoinLobby(roomCodeField.text);
+
+            if (canJoin)
+            {
+                MessagePopup.Setup().HideWaiting();
+                await SceneLoader.LoadScene(SceneConstants.Waiting);
+            }
+
+            else
+            {
+                Close();
+                MessagePopup.Setup().ShowWaiting()
+                            .SetMessage("Room not found!")
+                            .ShowCloseButton(true);
+            }
         }
 
         protected override void DoDisappear()

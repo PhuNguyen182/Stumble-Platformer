@@ -1,6 +1,5 @@
-﻿using R3;
-using System;
 using UnityEngine;
+using UnityEngine.UI;
 using GlobalScripts.Utils;
 using TMPro;
 
@@ -10,28 +9,43 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.AddressableAssets;
 #endif
 
-public class WaitingPopup : MonoBehaviour
+public class MessagePopup : MonoBehaviour
 {
-    [SerializeField] TMP_Text messageText;
+    [SerializeField] private TMP_Text messageText;
+    [SerializeField] private Button closeButton;
 
-    private Action _onTimeOut;
-    private static WaitingPopup _instance;
-    private IDisposable _waitDispose;
-
+    private static MessagePopup _instance;
     public static bool IsPreload { get; set; }
-    public const string WaitingBoxPath = "Popups/Waiting Popup";
+    public const string MessagePopupPath = "Popups/Message Popup";
 
-    public static WaitingPopup Setup(bool persistant = true)
+    private void Awake()
+    {
+        closeButton.onClick.AddListener(() => HideWaiting(false));
+    }
+
+    public static MessagePopup Setup(bool persistant = true)
     {
         if (_instance == null)
         {
-            _instance = Instantiate(Resources.Load<WaitingPopup>(WaitingBoxPath));
+            _instance = Instantiate(Resources.Load<MessagePopup>(MessagePopupPath));
         }
 
         _instance.gameObject.SetActive(true);
         if (persistant)
             DontDestroyOnLoad(_instance);
-        
+
+        return _instance;
+    }
+
+    public MessagePopup SetMessage(string message)
+    {
+        messageText.text = message;
+        return _instance;
+    }
+
+    public MessagePopup ShowCloseButton(bool active = false)
+    {
+        closeButton.gameObject.SetActive(active);
         return _instance;
     }
 
@@ -68,51 +82,23 @@ public class WaitingPopup : MonoBehaviour
     }
 #endif
 
-    public void ShowWaiting()
+    public MessagePopup ShowWaiting()
     {
         PopupController.Instance.isLockEscape = true;
         gameObject.SetActive(true);
+        return _instance;
     }
 
 
-    public void HideWaiting(bool isLockEscape = false)
+    public MessagePopup HideWaiting(bool isLockEscape = false)
     {
         PopupController.Instance.isLockEscape = isLockEscape;
-
         gameObject.SetActive(false);
-
-        if (_waitDispose != null)
-            _waitDispose.Dispose();
-    }
-
-    public void ShowWaiting(float time)
-    {
-        _onTimeOut = null;
-        ShowWaiting();
-        TimeOut(time);
-    }
-
-    public void ShowWaiting(float time, Action action)
-    {
-        ShowWaiting();
-        _onTimeOut = action;
-        TimeOut(time);
-    }
-
-    private void TimeOut(float time)
-    {
-        _waitDispose?.Dispose();
-        _waitDispose = Observable.Timer(TimeSpan.FromSeconds(time))
-                       .Subscribe(_ =>
-                       {
-                            HideWaiting();
-                            _onTimeOut?.Invoke();
-                       });
+        return _instance;
     }
 
     private void OnDestroy()
     {
-        _waitDispose?.Dispose();
         Release();
     }
 }

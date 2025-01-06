@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using StumblePlatformer.Scripts.Gameplay;
 using StumblePlatformer.Scripts.Multiplayers;
+using StumblePlatformer.Scripts.Common.Enums;
+using GlobalScripts.SceneUtils;
 using Cysharp.Threading.Tasks;
 using TMPro;
 
@@ -14,6 +17,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
         [SerializeField] private Button createPublicRoomButton;
         [SerializeField] private Button createPrivateRoomButton;
         [SerializeField] private TMP_InputField playerCountField;
+        [SerializeField] private TMP_InputField roomName;
 
         private const int MinPlayerCount = 1;
         private const int MaxPlayerCount = 7;
@@ -40,6 +44,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
             createPublicRoomButton.onClick.AddListener(CreatePublicRoom);
             createPrivateRoomButton.onClick.AddListener(CreatePrivateRoom);
             playerCountField.onValueChanged.AddListener(UpdatePlayerCount);
+            roomName.text = $"PlayRoom{Random.Range(100000, 1000000)}";
         }
 
         private void UpdatePlayerCount(string value)
@@ -58,14 +63,35 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 
         private void CreatePublicRoom()
         {
+            GameplaySetup.PlayerType = PlayerType.Host;
             MultiplayerManager.Instance.PlayerAmount = _playerCount;
-            // To do: create public room
+            CreateRoomAsync(false).Forget();
         }
 
         private void CreatePrivateRoom()
         {
+            GameplaySetup.PlayerType = PlayerType.Host;
             MultiplayerManager.Instance.PlayerAmount = _playerCount;
-            // To do: create private room
+            CreateRoomAsync(true).Forget();
+        }
+
+        private async UniTask CreateRoomAsync(bool isPrivate)
+        {
+            MessagePopup.Setup().ShowWaiting().SetMessage("Creating Room").ShowCloseButton(false);
+            bool canCreateRoom = await LobbyManager.Instance.CreateLobby(roomName.text, isPrivate);
+
+            if (canCreateRoom)
+            {
+                MessagePopup.Setup().HideWaiting();
+                await SceneLoader.LoadScene(SceneConstants.Waiting);
+            }
+
+            else
+            {
+                MessagePopup.Setup().ShowWaiting()
+                            .SetMessage("Cannot create play room now!")
+                            .ShowCloseButton(true);
+            }
         }
 
         protected override void DoClose()

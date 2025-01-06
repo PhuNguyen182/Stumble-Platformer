@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GlobalScripts.SceneUtils;
 using StumblePlatformer.Scripts.UI.Lobby.Popups;
+using StumblePlatformer.Scripts.Multiplayers;
 using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.UI.Lobby
@@ -56,12 +57,28 @@ namespace StumblePlatformer.Scripts.UI.Lobby
 
         private void OnJoinPublicRoom()
         {
-
+            JoinPublicRoomAsync().Forget();
         }
 
         private void OnJoinPrivateRoom()
         {
             JoinRoomPopup.CreateFromAddress(JoinRoomPopupPath).Forget();
+        }
+
+        private async UniTask JoinPublicRoomAsync()
+        {
+            MessagePopup.Setup().ShowWaiting().SetMessage("Joining Room").ShowCloseButton(false);
+            bool canJoin = await LobbyManager.Instance.JoinLobby();
+
+            if (canJoin)
+            {
+                MessagePopup.Setup().HideWaiting();
+                await SceneLoader.LoadScene(SceneConstants.Waiting);
+            }
+            else
+            {
+                MessagePopup.Setup().ShowWaiting().SetMessage("Cannot find open room!").ShowCloseButton(true);
+            }
         }
 
         private void ReleasePopups()

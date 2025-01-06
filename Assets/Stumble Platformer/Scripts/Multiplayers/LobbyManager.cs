@@ -172,7 +172,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
             }
         }
 
-        public async UniTask CreateLobby(string lobbyName, bool isPrivate)
+        public async UniTask<bool> CreateLobby(string lobbyName, bool isPrivate)
         {
             OnCreateLobbyStarted?.Invoke();
 
@@ -200,15 +200,17 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
                 MultiplayerManager.Instance.StartHost();
                 // To do: Load play scene here
+                return true;
             }
             catch (LobbyServiceException e)
             {
                 DebugUtils.LogError(e.Message);
                 OnCreateLobbyFailed?.Invoke();
+                return false;
             }
         }
 
-        public async UniTask JoinLobby(string joinCode = null)
+        public async UniTask<bool> JoinLobby(string joinCode = null)
         {
             OnJoinStarted?.Invoke();
             bool hasNoJoinCode = string.IsNullOrEmpty(joinCode);
@@ -227,6 +229,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                     transport.SetRelayServerData(new RelayServerData(joinAllocation, "dtls"));
 
                 MultiplayerManager.Instance.StartClient();
+                return true;
             }
             catch (LobbyServiceException e)
             {
@@ -236,10 +239,12 @@ namespace StumblePlatformer.Scripts.Multiplayers
                     OnQuickJoinFailed?.Invoke();
                 else
                     OnJoinFailed?.Invoke();
+                
+                return false;
             }
         }
 
-        public async UniTask DeleteLobby()
+        public async UniTask<bool> DeleteLobby()
         {
             if (HasLobby())
             {
@@ -247,42 +252,54 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 {
                     await LobbyService.Instance.DeleteLobbyAsync(_joinedLobby.Id);
                     _joinedLobby = null;
+                    return true;
                 }
                 catch (LobbyServiceException e)
                 {
                     DebugUtils.LogError(e.Message);
+                    return false;
                 }
             }
+
+            return false;
         }
 
-        public async UniTask LeaveLobby()
+        public async UniTask<bool> LeaveLobby()
         {
             if(HasLobby())
             {
                 try
                 {
                     await LobbyService.Instance.RemovePlayerAsync(_joinedLobby.Id, AuthenticationService.Instance.PlayerId);
+                    return true;
                 }
                 catch (LobbyServiceException e)
                 {
                     DebugUtils.LogError(e.Message);
+                    return false;
                 }
             }
+
+            return false;
         }
 
-        public async UniTask RemovePlayer(string playerId)
+        public async UniTask<bool> RemovePlayer(string playerId)
         {
             if (IsHostLobby())
             {
                 try
                 {
                     await LobbyService.Instance.RemovePlayerAsync(_joinedLobby.Id, playerId);
+                    return true;
                 }
                 catch (LobbyServiceException e)
                 {
                     DebugUtils.LogError(e.Message);
+                    return false;
                 }
             }
+
+            return false;
         }
     }
 }

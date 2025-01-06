@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.GameDatas;
+using UnityEngine.UI;
+using Unity.Netcode;
+using StumblePlatformer.Scripts.Gameplay;
+using StumblePlatformer.Scripts.Multiplayers;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.Databases;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
-using StumblePlatformer.Scripts.Multiplayers;
+using StumblePlatformer.Scripts.GameDatas;
+using GlobalScripts.SceneUtils;
+using Cysharp.Threading.Tasks;
 using TMPro;
 
 namespace StumblePlatformer.Scripts.UI.Waiting
@@ -16,14 +22,28 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         [SerializeField] private CharacterVisualDatabase characterVisualDatabase;
         [SerializeField] private GameObject hostNotice;
         [SerializeField] private TMP_Text roomCodeText;
+        [SerializeField] private Button readyButton;
+        [SerializeField] private Button backButton;
 
         private void Awake()
         {
+            RegisterButtons();
             characterVisualDatabase.Initialize();
             UpdateSkin();
 
             characterVisual.SetMove(moveSpeed);
             characterVisual.SetRunning(true);
+        }
+
+        private void Start()
+        {
+            SetHostNoticeActive();
+        }
+
+        private void RegisterButtons()
+        {
+            readyButton.onClick.AddListener(ReadyToPlay);
+            backButton.onClick.AddListener(BackMainHome);
         }
 
         private void UpdateSkin()
@@ -35,13 +55,33 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             }
         }
 
-        public void SetHostNoticeActive(bool active)
+        private void SetHostNoticeActive()
         {
+            bool active = GameplaySetup.PlayerType == PlayerType.Host;
             hostNotice.SetActive(active);
             if(active && LobbyManager.Instance.HasLobby())
             {
                 roomCodeText.text = LobbyManager.Instance.GetCurrentLobby().LobbyCode;
             }
+        }
+
+        private void ReadyToPlay()
+        {
+            WaitingPopup.Setup().ShowWaiting();
+            SceneLoader.LoadScene(SceneConstants.Gameplay).Forget();
+        }
+
+        private void BackMainHome()
+        {
+            OnLeaveRoom().Forget();
+        }
+
+        private async UniTask OnLeaveRoom()
+        {
+            await LobbyManager.Instance.LeaveLobby();
+            NetworkManager.Singleton.Shutdown();
+            WaitingPopup.Setup().ShowWaiting();
+            await SceneLoader.LoadScene(SceneConstants.Mainhome);
         }
     }
 }
