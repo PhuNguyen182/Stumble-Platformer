@@ -199,7 +199,6 @@ namespace StumblePlatformer.Scripts.Multiplayers
                     transport.SetRelayServerData(new RelayServerData(relayAllocation, "dtls"));
 
                 MultiplayerManager.Instance.StartHost();
-                // To do: Load play scene here
                 return true;
             }
             catch (LobbyServiceException e)
