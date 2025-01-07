@@ -51,8 +51,8 @@ public class WaitingPopup : MonoBehaviour
 
             if (_opHandle.Status == AsyncOperationStatus.Succeeded)
             {
-                instance = SimplePool.Spawn(_opHandle.Result).GetComponent<WaitingPopup>();
-                instance.gameObject.SetActive(true);
+                if (SimplePool.Spawn(_opHandle.Result).TryGetComponent(out instance))
+                    instance.gameObject.SetActive(true);
             }
 
             else Release();
