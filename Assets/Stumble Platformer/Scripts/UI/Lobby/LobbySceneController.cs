@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GlobalScripts.SceneUtils;
-using StumblePlatformer.Scripts.UI.Lobby.Popups;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Multiplayers;
+using StumblePlatformer.Scripts.UI.Lobby.Popups;
+using StumblePlatformer.Scripts.Gameplay;
 using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.UI.Lobby
@@ -47,7 +49,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby
         private void BackToMainHome()
         {
             WaitingPopup.Setup().ShowWaiting();
-            SceneLoader.LoadScene(SceneConstants.Mainhome).Forget();
+            SceneLoader.LoadNetworkScene(SceneConstants.Mainhome);
         }
 
         private void OnOpenCreateRoom()
@@ -73,7 +75,8 @@ namespace StumblePlatformer.Scripts.UI.Lobby
             if (canJoin)
             {
                 MessagePopup.Setup().HideWaiting();
-                await SceneLoader.LoadScene(SceneConstants.Waiting);
+                GameplaySetup.PlayerType = PlayerType.Client;
+                SceneLoader.LoadNetworkScene(SceneConstants.Waiting);
             }
             else
             {

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Multiplayers;
+using StumblePlatformer.Scripts.Gameplay;
 using GlobalScripts.SceneUtils;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -45,7 +47,8 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
             if (canJoin)
             {
                 MessagePopup.Setup().HideWaiting();
-                await SceneLoader.LoadScene(SceneConstants.Waiting);
+                GameplaySetup.PlayerType = PlayerType.Client;
+                SceneLoader.LoadNetworkScene(SceneConstants.Waiting);
             }
 
             else

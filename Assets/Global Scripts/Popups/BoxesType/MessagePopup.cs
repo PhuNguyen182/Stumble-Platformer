@@ -13,10 +13,17 @@ public class MessagePopup : MonoBehaviour
 {
     [SerializeField] private TMP_Text messageText;
     [SerializeField] private Button closeButton;
+    [SerializeField] private Animator popupAnimator;
 
     private static MessagePopup _instance;
     public static bool IsPreload { get; set; }
     public const string MessagePopupPath = "Popups/Message Popup";
+
+    private const string OpenTrigger = "Open";
+    private const string CloseTrigger = "Close";
+
+    private readonly int _openHash = Animator.StringToHash(OpenTrigger);
+    private readonly int _closeHash = Animator.StringToHash(CloseTrigger);
 
     private void Awake()
     {
@@ -89,12 +96,17 @@ public class MessagePopup : MonoBehaviour
         return _instance;
     }
 
-
-    public MessagePopup HideWaiting(bool isLockEscape = false)
+    public void HideWaiting(bool isLockEscape = false)
     {
+        ClosePopup(isLockEscape).Forget();
+    }
+
+    private async UniTask ClosePopup(bool isLockEscape)
+    {
+        popupAnimator.SetTrigger(_closeHash);
         PopupController.Instance.isLockEscape = isLockEscape;
+        await UniTask.WaitForSeconds(0.167f, cancellationToken: destroyCancellationToken);
         gameObject.SetActive(false);
-        return _instance;
     }
 
     private void OnDestroy()

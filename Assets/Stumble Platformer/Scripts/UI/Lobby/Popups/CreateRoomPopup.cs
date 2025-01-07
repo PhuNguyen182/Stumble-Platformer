@@ -85,7 +85,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
             if (canCreateRoom)
             {
                 MessagePopup.Setup().HideWaiting();
-                await SceneLoader.LoadScene(SceneConstants.Waiting);
+                SceneLoader.LoadNetworkScene(SceneConstants.Waiting);
             }
 
             else

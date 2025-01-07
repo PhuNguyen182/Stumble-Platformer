@@ -70,7 +70,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         private void ReadyToPlay()
         {
             WaitingPopup.Setup().ShowWaiting();
-            SceneLoader.LoadScene(SceneConstants.Gameplay).Forget();
+            SceneLoader.LoadNetworkScene(SceneConstants.Gameplay);
         }
 
         private void BackMainHome()

@@ -253,7 +253,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1264530748673031837}
   m_Father: {fileID: 7205516191599364589}
@@ -980,3 +980,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageText: {fileID: 2168542274949482864}
   closeButton: {fileID: 4229195200749049742}
+  popupAnimator: {fileID: 4740835737451745366}

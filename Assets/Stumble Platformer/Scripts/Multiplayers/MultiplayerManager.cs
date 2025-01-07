@@ -24,7 +24,10 @@ namespace StumblePlatformer.Scripts.Multiplayers
         public Action OnFailToJoinGame;
         public Action OnTryingToJoinGame;
         public Action OnPlayerDataNetworkListChanged;
-        
+
+        public Action<ulong> OnPlayerDisconnected;
+        public Action<string, LoadSceneMode, List<ulong>, List<ulong>> OnSceneLoadEventCompleted;
+
         public int PlayerAmount { get; set; }
 
         protected override void OnAwake()
@@ -39,6 +42,12 @@ namespace StumblePlatformer.Scripts.Multiplayers
             NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback_Server;
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback_Server;
             NetworkManager.Singleton.StartHost();
+            NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
+        }
+
+        private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
+        {
+            OnSceneLoadEventCompleted?.Invoke(sceneName, loadSceneMode, clientsCompleted, clientsTimedOut);
         }
 
         public void StartClient()
@@ -115,6 +124,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         private void OnClientDisconnectCallback_Server(ulong clientId)
         {
+            OnPlayerDisconnected?.Invoke(clientId);
             for (int i = 0; i < _playerDatas.Count; i++)
             {
                 if (_playerDatas[i].ClientID == clientId)
@@ -131,6 +141,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
         private void OnClientDisconnectCallback_Client(ulong clientId)
         {
             OnFailToJoinGame?.Invoke();
+            OnPlayerDisconnected?.Invoke(clientId);
         }
 
         [ServerRpc(RequireOwnership = false)]
