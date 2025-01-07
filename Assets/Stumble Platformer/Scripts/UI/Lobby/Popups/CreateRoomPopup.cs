@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using GlobalScripts.SceneUtils;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.Common.Enums;
+using StumblePlatformer.Scripts.Multiplayers.Carriers;
 using StumblePlatformer.Scripts.Gameplay;
 using Cysharp.Threading.Tasks;
 using TMPro;
@@ -86,6 +87,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
             {
                 MessagePopup.Setup().HideWaiting();
                 SceneLoader.LoadNetworkScene(SceneConstants.Waiting);
+                InjectPlayEntry();
             }
 
             else
@@ -94,6 +96,16 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
                             .SetMessage("Cannot create play room now!")
                             .ShowCloseButton(true);
             }
+        }
+
+        private void InjectPlayEntry()
+        {
+            PlayEntryData playEntry = new()
+            {
+                PlayLevelName = MultiplayerManager.Instance.CarrierCollection.PlayEntryCarrier.GetRandomLevelName()
+            };
+
+            MultiplayerManager.Instance.CarrierCollection.PlayEntryCarrier.Initialize(playEntry);
         }
 
         protected override void DoClose()

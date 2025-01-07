@@ -4,6 +4,7 @@ using UnityEngine;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using GlobalScripts.Extensions;
+using Unity.Netcode;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
@@ -37,9 +38,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private Rigidbody _playerBody;
         public bool IsActive { get; set; }
         public bool IsStunning => _isStunning;
+
         public int PlayerID => gameObject.GetInstanceID();
+        public NetworkObject NetworkObject { get; private set; }
         public PlayerGraphics PlayerGraphics => playerGraphics;
         public PlayerHealth PlayerHealth => playerHealth;
+
+        private void Awake()
+        {
+            NetworkObject = GetComponent<NetworkObject>();
+        }
 
         private void Start()
         {
@@ -51,10 +59,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             ReceiveInput();
             StunningTimer();
+            playerGraphics.UpdateCanvas();
         }
 
         private void FixedUpdate()
         {
+            groundChecker.CheckGround();
             if (!_isStunning && !_isAirDashing)
             {
                 Move();
@@ -147,7 +157,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             characterVisual.SetMove(moveThreshold);
             characterVisual.SetFalling(isFalling);
 
-            bool isDustEffect = _isStunning ? false : groundChecker.IsGrounded && isInputMoving;
+            bool isDustEffect = _isStunning ? false : groundChecker.IsGrounded && !groundChecker.IsPlatformGround && isInputMoving;
             playerGraphics.SetDustEffectActive(isDustEffect);
         }
 

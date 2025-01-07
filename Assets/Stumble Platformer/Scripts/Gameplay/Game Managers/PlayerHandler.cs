@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
@@ -8,10 +9,12 @@ using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
 using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.GameDatas;
 using TMPro;
+using StumblePlatformer.Scripts.Multiplayers;
+using StumblePlatformer.Scripts.Multiplayers.Datas;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
-    public class PlayerHandler : MonoBehaviour
+    public class PlayerHandler : NetworkBehaviour
     {
         [SerializeField] private bool isTest;
         [SerializeField] private TMP_Text checkPointText;
@@ -70,6 +73,30 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             SetPlayerCompleteLevel(false);
             SetPlayerPhysicsActive(false);
+        }
+
+        public void SpawnNetworksPlayer()
+        {
+            foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+            {
+                int playerIndex = MultiplayerManager.Instance.GetPlayerDataIndexFromClientId(clientId);
+                Vector3 playerPosition = environmentHandler.EnvironmentIdentifier.SpawnCharacterArea
+                                                           .CharacterSpawnPositions[playerIndex];
+
+                PlayerData playerData = MultiplayerManager.Instance.GetPlayerData(playerIndex);
+                PlayerController player = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
+                player.NetworkObject.SpawnAsPlayerObject(clientId, true);
+                
+                if(string.CompareOrdinal(playerData.PlayerID.Value, MultiplayerManager.Instance.GetCurrentPlayerID()) == 0)
+                    _currentPlayer = player;
+
+                CharacterSkin characterSkin;
+                string skin = playerData.PlayerSkin.Value;
+                bool hasSkin = playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin(skin, out characterSkin);
+
+                if (hasSkin)
+                    player.PlayerGraphics.SetCharacterVisual(characterSkin);
+            }
         }
 
         public void SetPlayerCompleteLevel(bool isCompleted) 

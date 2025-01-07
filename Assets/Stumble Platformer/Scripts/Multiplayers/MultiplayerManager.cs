@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using StumblePlatformer.Scripts.Gameplay;
 using StumblePlatformer.Scripts.GameDatas;
 using StumblePlatformer.Scripts.Multiplayers.Datas;
+using StumblePlatformer.Scripts.Multiplayers.Carriers;
 using StumblePlatformer.Scripts.Common.Enums;
 using Unity.Services.Authentication;
 using GlobalScripts.SceneUtils;
@@ -15,7 +16,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
 {
     public class MultiplayerManager : NetworkSingleton<MultiplayerManager>
     {
-        private NetworkList<PlayerData> _playerDatas;
+        [SerializeField] public CarrierCollection CarrierCollection;
 
         public const int MinPlayerCount = 1;
         public const int MaxPlayerCount = 7;
@@ -30,10 +31,18 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         public int PlayerAmount { get; set; }
 
+        private NetworkList<PlayerData> _playerDatas;
+
         protected override void OnAwake()
         {
             _playerDatas = new();
             _playerDatas.OnListChanged += OnPlayerDatasListChanged;
+            CarrierCollection ??= GetComponent<CarrierCollection>();
+        }
+
+        public string GetCurrentPlayerID()
+        {
+            return AuthenticationService.Instance.PlayerId;
         }
 
         public void StartHost()
@@ -43,11 +52,6 @@ namespace StumblePlatformer.Scripts.Multiplayers
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback_Server;
             NetworkManager.Singleton.StartHost();
             NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
-        }
-
-        private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
-        {
-            OnSceneLoadEventCompleted?.Invoke(sceneName, loadSceneMode, clientsCompleted, clientsTimedOut);
         }
 
         public void StartClient()
@@ -76,6 +80,14 @@ namespace StumblePlatformer.Scripts.Multiplayers
             NetworkManager.Singleton.Shutdown();
         }
 
+        public PlayerData GetPlayerData(int index)
+        {
+            if (index < 0 || index >= _playerDatas.Count)
+                return default;
+
+            return _playerDatas[index];
+        }
+
         public int GetPlayerDataIndexFromClientId(ulong clientId)
         {
             for (int i = 0; i < _playerDatas.Count; i++)
@@ -87,9 +99,14 @@ namespace StumblePlatformer.Scripts.Multiplayers
             return -1;
         }
 
+        private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
+        {
+            OnSceneLoadEventCompleted?.Invoke(sceneName, loadSceneMode, clientsCompleted, clientsTimedOut);
+        }
+
         private void ConnectionApprovalCallback(NetworkManager.ConnectionApprovalRequest approvalRequest, NetworkManager.ConnectionApprovalResponse approvalResponse)
         {
-            if(NetworkManager.Singleton.ConnectedClientsIds.Count > MaxPlayerCount)
+            if(NetworkManager.Singleton.ConnectedClientsIds.Count > PlayerAmount)
             {
                 approvalResponse.Approved = false;
                 approvalResponse.Reason = "Room is full!";
@@ -118,6 +135,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 ClientID = clientId
             });
 
+            SetPlayerSkinServerRpc(GameDataManager.Instance.PlayerProfile.SkinName);
             SetPlayerNameServerRpc(GameDataManager.Instance.PlayerProfile.PlayerName);
             SetPlayerIDServerRpc(AuthenticationService.Instance.PlayerId);
         }
@@ -134,6 +152,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         private void OnClientConnectedCallback_Client(ulong clientId)
         {
+            SetPlayerSkinServerRpc(GameDataManager.Instance.PlayerProfile.SkinName);
             SetPlayerNameServerRpc(GameDataManager.Instance.PlayerProfile.PlayerName);
             SetPlayerIDServerRpc(AuthenticationService.Instance.PlayerId);
         }
@@ -142,6 +161,15 @@ namespace StumblePlatformer.Scripts.Multiplayers
         {
             OnFailToJoinGame?.Invoke();
             OnPlayerDisconnected?.Invoke(clientId);
+        }
+
+        [ServerRpc(RequireOwnership = false)]
+        private void SetPlayerSkinServerRpc(string playerSkin, ServerRpcParams serverRpcParams = default)
+        {
+            int playerIndex = GetPlayerDataIndexFromClientId(serverRpcParams.Receive.SenderClientId);
+            PlayerData playerData = _playerDatas[playerIndex];
+            playerData.PlayerSkin = playerSkin;
+            _playerDatas[playerIndex] = playerData;
         }
 
         [ServerRpc(RequireOwnership = false)]

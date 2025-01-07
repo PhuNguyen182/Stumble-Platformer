@@ -5,10 +5,10 @@ using Cinemachine;
 using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.Cameras;
+using StumblePlatformer.Scripts.Gameplay.GameManagers;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
 using StumblePlatformer.Scripts.Common.Messages;
 using Sirenix.OdinInspector;
-using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 {
@@ -42,7 +42,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         [SerializeField] public TransposerConfig TransposerConfig;
         [SerializeField] public TrackedDollyConfig TrackedDollyConfig;
 
-        private IPublisher<SetupLevelMessage> _initLevelPublisher;
         public BasePlayRule PlayRule { get; private set; }
 
         private void Awake()
@@ -54,12 +53,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         private void Start()
         {
-            _initLevelPublisher = GlobalMessagePipe.GetPublisher<SetupLevelMessage>();
-            
-            _initLevelPublisher.Publish(new SetupLevelMessage
-            {
-                EnvironmentIdentifier = this
-            });
+            PlayGroundManager.Instance.SetupLevel(this);
         }
 
         public void SetLevelActive(bool active) => PlayLevel.SetLevelActive(active);
@@ -90,7 +84,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         }
 
         [HorizontalGroup("Setup")][Button]
-        private void GetEnvironmentProperty()
+        public void GetEnvironmentProperty()
         {
             Skybox = RenderSettings.skybox;
             SunSource = RenderSettings.sun;
@@ -102,7 +96,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         }
 
         [HorizontalGroup("Setup")][Button]
-        private void SetEnvironmentProperty()
+        public void SetEnvironmentProperty()
         {
             RenderSettings.skybox = Skybox;
             RenderSettings.sun = SunSource;

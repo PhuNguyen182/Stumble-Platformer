@@ -1,17 +1,14 @@
 using R3;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
-using Cysharp.Threading.Tasks;
-using StumblePlatformer.Scripts.Common.Messages;
-using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
+using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
-using MessagePipe;
+using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -32,22 +29,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private GameStateController _gameStateController;
         
-        private IDisposable _initLevelDisposable;
-        private ISubscriber<SetupLevelMessage> _initLevelSubscriber;
-
         public BasePlayRule PlayRule { get; private set; }
+        public CameraHandler CameraHandler => cameraHandler;
+        public static PlayGroundManager Instance { get; private set; }
 
         private void Awake()
         {
+            Instance = this;
 #if !UNITY_EDITOR
             Cursor.lockState = CursorLockMode.Locked;
 #endif
+            SetupGameplay();
         }
 
         private void Start()
         {
-            SetupGameplay();
-            InitializeMessage();
             GenerateLevel().Forget();
         }
 
@@ -57,15 +53,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             var builder = Disposable.CreateBuilder();
             _gameStateController.AddTo(ref builder);
             builder.RegisterTo(this.destroyCancellationToken);
-        }
-
-        private void InitializeMessage()
-        {
-            _initLevelSubscriber = GlobalMessagePipe.GetSubscriber<SetupLevelMessage>();
-
-            var builder = MessagePipe.DisposableBag.CreateBuilder();
-            _initLevelSubscriber.Subscribe(SetupLevel).AddTo(builder);
-            _initLevelDisposable = builder.Build();
         }
 
         private async UniTask GenerateLevel()
@@ -81,9 +68,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             }
         }
 
-        private void SetupLevel(SetupLevelMessage message)
+        public void SetupLevel(EnvironmentIdentifier environmentIdentifier)
         {
-            SetupPlayLevel(message.EnvironmentIdentifier).Forget();
+            SetupPlayLevel(environmentIdentifier).Forget();
         }
 
         private async UniTask SetupPlayLevel(EnvironmentIdentifier environmentIdentifier)
@@ -159,7 +146,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         public override void OnDestroy()
         {
             base.OnDestroy();
-            _initLevelDisposable.Dispose();
         }
     }
 }
