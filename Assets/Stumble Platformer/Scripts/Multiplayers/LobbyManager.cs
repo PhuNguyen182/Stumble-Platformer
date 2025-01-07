@@ -59,7 +59,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
             if (!AuthenticationService.Instance.IsSignedIn)
                 return;
 
-            if (string.CompareOrdinal(SceneManager.GetActiveScene().name, "LobbyScene") != 0)
+            if (string.CompareOrdinal(SceneManager.GetActiveScene().name, "Lobby") != 0)
                 return;
 
             _listLobbiesTimer -= Time.deltaTime;

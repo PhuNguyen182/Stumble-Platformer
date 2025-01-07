@@ -49,7 +49,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby
         private void BackToMainHome()
         {
             WaitingPopup.Setup().ShowWaiting();
-            SceneLoader.LoadNetworkScene(SceneConstants.Mainhome);
+            SceneLoader.LoadScene(SceneConstants.Mainhome).Forget();
         }
 
         private void OnOpenCreateRoom()
