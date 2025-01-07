@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
@@ -14,7 +15,7 @@ using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
-    public class PlayGroundManager : MonoBehaviour
+    public class PlayGroundManager : NetworkBehaviour
     {
         [SerializeField] private bool isTesting;
         
@@ -155,8 +156,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             }
         }
 
-        private void OnDestroy()
+        public override void OnDestroy()
         {
+            base.OnDestroy();
             _initLevelDisposable.Dispose();
         }
     }

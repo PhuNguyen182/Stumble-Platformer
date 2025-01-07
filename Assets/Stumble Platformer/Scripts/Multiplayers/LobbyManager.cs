@@ -85,7 +85,13 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         private bool IsHostLobby()
         {
-            return HasLobby() && string.CompareOrdinal(_joinedLobby.HostId, AuthenticationService.Instance.PlayerId) == 0;
+            if (!HasLobby())
+                return false;
+
+            if(string.CompareOrdinal(_joinedLobby.HostId, AuthenticationService.Instance.PlayerId) != 0)
+                return false;
+
+            return true;
         }
 
         private async UniTask<Allocation> AllocateRelay()
