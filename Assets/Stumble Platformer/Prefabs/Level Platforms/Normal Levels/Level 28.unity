@@ -305,6 +305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flip Door (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6621917031203909070, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: activateDuration
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7974083397757602902, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -619,8 +623,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e820ba8ee7db5c74fb390162c663f55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  labelColor: {r: 0, g: 0, b: 0, a: 1}
   mainCharacterSpawnPosition: {x: 0, y: 0.1, z: 0}
-  characterSpawnPositions: []
+  characterSpawnPositions:
+  - {x: 0, y: 0.1, z: 0}
+  - {x: -3, y: 0.1, z: 0}
+  - {x: 3, y: 0.1, z: 0}
+  - {x: 0, y: 0.1, z: 1}
+  - {x: 0, y: 0.1, z: -1}
+  - {x: 0, y: 0.1, z: 3}
+  - {x: 0, y: 0.1, z: -3}
 --- !u!4 &231218961
 Transform:
   m_ObjectHideFlags: 0
@@ -2247,6 +2259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flip Door (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6621917031203909070, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: activateDuration
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7974083397757602902, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.125
@@ -3389,6 +3405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flip Door (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6621917031203909070, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: activateDuration
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7974083397757602902, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.125
@@ -3556,6 +3576,10 @@ PrefabInstance:
     - target: {fileID: 4049745283082159242, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_Name
       value: Flip Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621917031203909070, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: activateDuration
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7974083397757602902, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_LocalPosition.x

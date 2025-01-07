@@ -2685,8 +2685,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e820ba8ee7db5c74fb390162c663f55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  labelColor: {r: 0, g: 0, b: 0, a: 1}
   mainCharacterSpawnPosition: {x: 0, y: 0.75, z: 0}
-  characterSpawnPositions: []
+  characterSpawnPositions:
+  - {x: 0, y: 0.75, z: 0}
+  - {x: -1, y: 0.75, z: 0}
+  - {x: 1, y: 0.75, z: 0}
+  - {x: -2, y: 0.75, z: 0}
+  - {x: 2, y: 0.75, z: 0}
+  - {x: -3, y: 0.75, z: 0}
+  - {x: 3, y: 0.75, z: 0}
 --- !u!4 &231218961
 Transform:
   m_ObjectHideFlags: 0
