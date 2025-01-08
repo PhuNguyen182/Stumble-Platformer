@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using StumblePlatformer.Scripts.Common.Constants;
 using Cinemachine;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 {
-    public class CameraPointer : MonoBehaviour
+    public class CameraPointer : NetworkBehaviour
     {
         [SerializeField] private bool isTest;
         [SerializeField] private InputReceiver inputReceiver;

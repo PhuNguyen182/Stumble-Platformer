@@ -293,6 +293,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2084613840
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (8)
@@ -370,6 +374,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3514361409
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (9)
@@ -1089,6 +1097,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3956621238
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (21)
@@ -1826,6 +1838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2729989710
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (23)
@@ -1976,6 +1992,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2212394494
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (19)
@@ -2687,6 +2707,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2064389044
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (13)
@@ -2926,6 +2950,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 218099273
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (14)
@@ -3076,6 +3104,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 639691682
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (4)
@@ -4045,6 +4077,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2529860884
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (16)
@@ -4308,6 +4344,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 942355060
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (6)
@@ -5327,6 +5367,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1870604441
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (17)
@@ -5400,6 +5444,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3993113919
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (10)
@@ -7337,6 +7385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2741371403
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (11)
@@ -7600,6 +7652,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 338344469
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (12)
@@ -8738,6 +8794,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 455255473
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (15)
@@ -8815,6 +8875,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 720947493
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (22)
@@ -9060,6 +9124,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3195114830
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (7)
@@ -9137,6 +9205,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 218164938
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (20)
@@ -9398,6 +9470,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3096196648
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (18)
@@ -9826,6 +9902,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2913268876
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (5)

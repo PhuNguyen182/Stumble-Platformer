@@ -66,7 +66,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
         {
             Close();
             GameplaySetup.PlayerType = PlayerType.Host;
-            MultiplayerManager.Instance.PlayerAmount = _playerCount;
+            MultiplayerManager.Instance.SetPlayerCountInRoom(_playerCount);
             CreateRoomAsync(false).Forget();
         }
 
@@ -74,7 +74,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
         {
             Close();
             GameplaySetup.PlayerType = PlayerType.Host;
-            MultiplayerManager.Instance.PlayerAmount = _playerCount;
+            MultiplayerManager.Instance.SetPlayerCountInRoom(_playerCount);
             CreateRoomAsync(true).Forget();
         }
 

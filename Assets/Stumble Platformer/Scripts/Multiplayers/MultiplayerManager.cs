@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using GlobalScripts.SceneUtils;
 using UnityEngine.SceneManagement;
 using StumblePlatformer.Scripts.Gameplay;
 using StumblePlatformer.Scripts.GameDatas;
@@ -10,13 +11,16 @@ using StumblePlatformer.Scripts.Multiplayers.Datas;
 using StumblePlatformer.Scripts.Multiplayers.Carriers;
 using StumblePlatformer.Scripts.Common.Enums;
 using Unity.Services.Authentication;
-using GlobalScripts.SceneUtils;
+using Unity.Netcode.Transports.UTP;
 
 namespace StumblePlatformer.Scripts.Multiplayers
 {
     public class MultiplayerManager : NetworkSingleton<MultiplayerManager>
     {
         [SerializeField] public CarrierCollection CarrierCollection;
+
+        private const string DefaultIP = "127.0.0.1";
+        private const ushort DefaultPort = 7777;
 
         public const int MinPlayerCount = 1;
         public const int MaxPlayerCount = 7;
@@ -29,7 +33,8 @@ namespace StumblePlatformer.Scripts.Multiplayers
         public Action<ulong> OnPlayerDisconnected;
         public Action<string, LoadSceneMode, List<ulong>, List<ulong>> OnSceneLoadEventCompleted;
 
-        public int PlayerAmount { get; set; }
+        public int PlayerAmount { get; private set; }
+        public int CurrentParticipant { get; private set; }
 
         private NetworkList<PlayerData> _playerDatas;
 
@@ -43,6 +48,14 @@ namespace StumblePlatformer.Scripts.Multiplayers
         public string GetCurrentPlayerID()
         {
             return AuthenticationService.Instance.PlayerId;
+        }
+
+        public void StartSingleMode()
+        {
+            if (NetworkManager.Singleton.TryGetComponent(out UnityTransport transport))
+                transport.SetConnectionData(DefaultIP, DefaultPort);
+            
+            NetworkManager.Singleton.StartHost();
         }
 
         public void StartHost()
@@ -80,6 +93,11 @@ namespace StumblePlatformer.Scripts.Multiplayers
             NetworkManager.Singleton.Shutdown();
         }
 
+        public void SetPlayerCountInRoom(int amount)
+        {
+            PlayerAmount = amount;
+        }
+
         public PlayerData GetPlayerData(int index)
         {
             if (index < 0 || index >= _playerDatas.Count)
@@ -97,6 +115,12 @@ namespace StumblePlatformer.Scripts.Multiplayers
             }
 
             return -1;
+        }
+
+        public void RemovePlayer(ulong clientId)
+        {
+            NetworkManager.Singleton.DisconnectClient(clientId);
+            OnClientDisconnectCallback_Server(clientId);
         }
 
         private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
@@ -120,6 +144,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 return;
             }
 
+            CurrentParticipant = NetworkManager.Singleton.ConnectedClientsIds.Count;
             approvalResponse.Approved = true;
         }
 
@@ -146,7 +171,10 @@ namespace StumblePlatformer.Scripts.Multiplayers
             for (int i = 0; i < _playerDatas.Count; i++)
             {
                 if (_playerDatas[i].ClientID == clientId)
+                {
                     _playerDatas.RemoveAt(i);
+                    return;
+                }
             }
         }
 

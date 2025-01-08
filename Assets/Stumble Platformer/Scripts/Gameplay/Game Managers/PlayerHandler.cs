@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
+using StumblePlatformer.Scripts.Multiplayers.Datas;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
 using StumblePlatformer.Scripts.Common.Constants;
+using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.GameDatas;
 using TMPro;
-using StumblePlatformer.Scripts.Multiplayers;
-using StumblePlatformer.Scripts.Multiplayers.Datas;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -57,7 +57,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         {
             Vector3 playerPosition = environmentHandler.EnvironmentIdentifier
                                     .SpawnCharacterArea.MainCharacterSpawnPosition;
+
             _currentPlayer = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
+            _currentPlayer.NetworkObject.SpawnAsPlayerObject(0, true);
 
             CharacterSkin characterSkin;
             string skin = GameDataManager.Instance.PlayerProfile.SkinName;
@@ -85,7 +87,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
                 PlayerData playerData = MultiplayerManager.Instance.GetPlayerData(playerIndex);
                 PlayerController player = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
-                player.NetworkObject.SpawnAsPlayerObject(clientId, true);
+                
+                if (player.NetworkObject != null)
+                    player.NetworkObject.SpawnAsPlayerObject(clientId, true);
                 
                 if(string.CompareOrdinal(playerData.PlayerID.Value, MultiplayerManager.Instance.GetCurrentPlayerID()) == 0)
                     _currentPlayer = player;

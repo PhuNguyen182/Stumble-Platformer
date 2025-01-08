@@ -8,7 +8,7 @@ using Unity.Netcode;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerController : MonoBehaviour, ISetCharacterInput, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
+    public class PlayerController : NetworkBehaviour, ISetCharacterInput, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
     {
         [SerializeField] private PlayerHealth playerHealth;
 
@@ -40,14 +40,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         public bool IsStunning => _isStunning;
 
         public int PlayerID => gameObject.GetInstanceID();
-        public NetworkObject NetworkObject { get; private set; }
         public PlayerGraphics PlayerGraphics => playerGraphics;
         public PlayerHealth PlayerHealth => playerHealth;
-
-        private void Awake()
-        {
-            NetworkObject = GetComponent<NetworkObject>();
-        }
 
         private void Start()
         {
@@ -64,7 +58,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void FixedUpdate()
         {
-            groundChecker.CheckGround();
+            if (IsOwner)
+                groundChecker.CheckGround();
+
             if (!_isStunning && !_isAirDashing)
             {
                 Move();
@@ -72,10 +68,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 Jump();
             }
 
-            else
-            {
-                playerGraphics.SetDustEffectActive(false);
-            }
+            else playerGraphics.SetDustEffectActive(false);
         }
 
         public void ResetPlayerOrientation(Quaternion orientation)
@@ -119,6 +112,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void ReceiveInput()
         {
+            if (!IsOwner)
+                return;
+
             if (IsActive)
             {
                 _isJumpPressed = _inputReceiver.IsJumpPressed;
@@ -225,6 +221,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 transform.SetParent(parent, stayWorldPosition);
             else 
                 transform.SetParent(null);
+        }
+
+        public bool SetNetworkParent(NetworkObject parent)
+        {
+            if (!IsOwner) return false;
+            return parent ? NetworkObject.TrySetParent(parent) : NetworkObject.TryRemoveParent();
         }
 
         public void SetCharacterActive(bool active)

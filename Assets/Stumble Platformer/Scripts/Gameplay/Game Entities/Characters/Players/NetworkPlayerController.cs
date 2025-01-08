@@ -244,5 +244,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             return playerHealth.CheckPointIndex;
         }
+
+        public bool SetNetworkParent(NetworkObject parent)
+        {
+            return false;
+        }
     }
 }

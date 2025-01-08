@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GlobalScripts.UpdateHandlerPattern;
+using StumblePlatformer.Scripts.Common.Enums;
+using StumblePlatformer.Scripts.Multiplayers;
+using Unity.Netcode;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
-    public abstract class BasePlatform : MonoBehaviour, IPlatform, ISetPlatformActive, IFixedUpdateHandler
+    public abstract class BasePlatform : NetworkBehaviour, IPlatform, ISetPlatformActive, IFixedUpdateHandler
     {
         [SerializeField] protected Rigidbody platformBody;
+        [SerializeField] protected NetworkObject networkObject;
 
         public bool IsActive { get; set; }
         public bool IsPlatformActive { get; set; }
@@ -22,6 +26,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         {
             OnStart();
             UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
+            SpawnNetworkObject();
         }
 
         protected virtual void OnAwake() { }
@@ -61,7 +66,27 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             OnPlatformExit(collision);
         }
 
-        private void OnDestroy()
+        private void SpawnNetworkObject()
+        {
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            {
+                if (!IsSpawned)
+                {
+                    networkObject.Spawn();
+                    platformBody.isKinematic = true;
+                }
+            }
+            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
+            {
+                if (MultiplayerManager.Instance.IsHost || MultiplayerManager.Instance.IsServer)
+                {
+                    networkObject.Spawn();
+                    platformBody.isKinematic = true;
+                }
+            }
+        }
+
+        public override void OnDestroy()
         {
             UpdateHandlerManager.Instance.RemoveFixedUpdateBehaviour(this);
         }

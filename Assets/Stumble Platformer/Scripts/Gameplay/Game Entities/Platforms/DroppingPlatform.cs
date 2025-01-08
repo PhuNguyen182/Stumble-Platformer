@@ -40,6 +40,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected override void OnStart()
         {
+            base.OnStart();
             UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
         }
 
@@ -109,8 +110,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         }
 #endif
 
-        private void OnDestroy()
+        public override void OnDestroy()
         {
+            base.OnDestroy();
             _block.Clear();
             UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);
         }

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using StumblePlatformer.Scripts.Multiplayers;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
 using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
@@ -44,7 +46,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void Start()
         {
-            GenerateLevel().Forget();
+            
         }
 
         private void SetupGameplay()
@@ -65,6 +67,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 string levelName = PlayGameConfig.Current.PlayLevelName;
                 await environmentHandler.GenerateLevel(levelName);
                 WaitingPopup.Setup().HideWaiting();
+            }
+        }
+
+        public override void OnNetworkSpawn()
+        {
+            base.OnNetworkSpawn();
+            
+            if(GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            {
+                GenerateLevel().Forget();
+            }
+
+            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
+            {
+                // To do: generate level and setup playground here
             }
         }
 
@@ -91,7 +108,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             playGamePanel?.SetPlayObjectActive(false);
             playGamePanel?.SetLevelObjective(PlayRule.ObjectiveTitle);
             playGamePanel?.SetLevelName(environmentHandler.EnvironmentIdentifier.LevelName);
-
+            
             playerHandler.SpawnPlayer();
             cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
             cameraHandler.ResetCurrentCameraFollow();

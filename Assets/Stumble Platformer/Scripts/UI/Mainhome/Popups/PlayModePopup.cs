@@ -6,6 +6,7 @@ using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.Databases;
+using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.Gameplay;
 using GlobalScripts.SceneUtils;
 
@@ -45,7 +46,8 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
             };
 
             WaitingPopup.Setup().ShowWaiting();
-            SceneBridge.LoadNextScene(SceneConstants.Gameplay).Forget();
+            MultiplayerManager.Instance.StartSingleMode();
+            SceneLoader.LoadNetworkScene(SceneConstants.Gameplay);
         }
 
         private void SelectMultiPlayMode()

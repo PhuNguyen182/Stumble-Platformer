@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Common.Enums;
@@ -9,7 +10,7 @@ using Cinemachine;
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     [ExecuteAlways]
-    public class CameraHandler : MonoBehaviour
+    public class CameraHandler : NetworkBehaviour
     {
         [SerializeField] private CinemachineBrain cinemachineBrain;
         [SerializeField] private TeaserCamera teaserCamera;
