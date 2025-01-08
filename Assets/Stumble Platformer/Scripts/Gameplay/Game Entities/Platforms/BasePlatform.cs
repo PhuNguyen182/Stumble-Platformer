@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using GlobalScripts.UpdateHandlerPattern;
 using StumblePlatformer.Scripts.Common.Enums;
-using StumblePlatformer.Scripts.Multiplayers;
 using Unity.Netcode;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
@@ -78,7 +77,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             }
             else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
             {
-                if (MultiplayerManager.Instance.IsHost || MultiplayerManager.Instance.IsServer)
+                if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
                 {
                     networkObject.Spawn();
                     platformBody.isKinematic = true;

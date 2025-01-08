@@ -40,7 +40,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected override void OnStart()
         {
-            base.OnStart();
             UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
         }
 

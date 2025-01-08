@@ -217,7 +217,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         public void SetParent(Transform parent, bool stayWorldPosition = true)
         {
-            if(parent != null)
+            if (!IsOwner) 
+                return;
+
+            if (parent != null)
                 transform.SetParent(parent, stayWorldPosition);
             else 
                 transform.SetParent(null);

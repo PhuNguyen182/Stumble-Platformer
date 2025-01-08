@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.UI.Mainhome.MainPanels;
+using StumblePlatformer.Scripts.Gameplay;
 
 namespace StumblePlatformer.Scripts.UI.Mainhome
 {
@@ -21,6 +23,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome
         private void Start()
         {
             WaitingPopup.Setup().HideWaiting();
+            GameplaySetup.PlayerType = PlayerType.None;
         }
     }
 }
