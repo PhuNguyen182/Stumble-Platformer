@@ -67,12 +67,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void SpawnNetworkObject()
         {
+            bool isKinematic = platformBody.isKinematic;
             if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
                 if (!IsSpawned)
                 {
                     networkObject.Spawn();
-                    platformBody.isKinematic = true;
+                    platformBody.isKinematic = isKinematic;
                 }
             }
             else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
@@ -80,7 +81,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
                 {
                     networkObject.Spawn();
-                    platformBody.isKinematic = true;
+                    platformBody.isKinematic = isKinematic;
                 }
             }
         }

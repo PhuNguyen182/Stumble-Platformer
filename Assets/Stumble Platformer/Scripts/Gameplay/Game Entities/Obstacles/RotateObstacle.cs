@@ -24,6 +24,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         public override void OnAwake()
         {
+            base.OnAwake();
             _rotateAxis = rotateAxis switch
             {
                 RotateAxis.X => Vector3.right,

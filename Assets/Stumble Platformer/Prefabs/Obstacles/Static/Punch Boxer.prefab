@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 7404954629668360563}
   - component: {fileID: 2607137885012450173}
   - component: {fileID: 2873670699592668672}
+  - component: {fileID: 5059827492609364305}
   - component: {fileID: 7416864701722174965}
   m_Layer: 8
   m_Name: Punch Boxer
@@ -388,6 +389,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.5437245, y: 3.543725, z: 4.361614}
   m_Center: {x: -0.000011920929, y: 0, z: -0.3218699}
+--- !u!114 &5059827492609364305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349342662885530767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 93771854
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &7416864701722174965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,6 +426,7 @@ MonoBehaviour:
   attactForce: 12.5
   stunDuration: 1.5
   obstacleBody: {fileID: 3773442262204289232}
+  networkObject: {fileID: 5059827492609364305}
   obstacleAttackers:
   - {fileID: 8063113881631685446}
   attackThreshold: 0.4

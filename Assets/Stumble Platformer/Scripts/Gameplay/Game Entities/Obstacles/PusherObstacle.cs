@@ -16,6 +16,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         public override void OnAwake()
         {
+            base.OnAwake();
             RegisterDummyPlatform();
         }
 

@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6960314791875191536}
+  - component: {fileID: -5786030131016960841}
   - component: {fileID: 4648515608146427299}
   m_Layer: 0
   m_Name: Cannon_5
@@ -65,6 +66,27 @@ Transform:
   - {fileID: 6960314793367322044}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5786030131016960841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960314791875191537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 82190753
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &4648515608146427299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,13 +99,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d707e70806de5d4e9838164a9d665a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackOnce: 0
   attactForce: 15
+  stunDuration: 1.5
   obstacleBody: {fileID: 0}
+  networkObject: {fileID: 0}
   obstacleAttackers: []
   shotPoint: {fileID: 4448442874601781512}
-  cannonANimator: {fileID: 0}
+  cannonAnimator: {fileID: 0}
   check: 0
   bulletPrefab: {fileID: 2262030475640506073, guid: 9534c151376bf3d4a96da7257b82b33d, type: 3}
+  shotDelay: 0
   shotVelocity: 12
   shotInterval: 2
 --- !u!1001 &6960314793366923068

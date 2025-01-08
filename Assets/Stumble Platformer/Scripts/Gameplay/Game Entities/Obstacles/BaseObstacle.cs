@@ -3,17 +3,20 @@ using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using GlobalScripts.UpdateHandlerPattern;
+using StumblePlatformer.Scripts.Common.Enums;
 using Sirenix.OdinInspector;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
-    public abstract class BaseObstacle : MonoBehaviour, IObstacle, IObstacleDamager, IObstacleCollider, IFixedUpdateHandler
+    public abstract class BaseObstacle : NetworkBehaviour, IObstacle, IObstacleDamager, IObstacleCollider, IFixedUpdateHandler
     {
         [SerializeField] protected bool attackOnce;
         [SerializeField] protected float attactForce = 15f;
         [SerializeField] protected float stunDuration = 1.5f;
         [SerializeField] protected Rigidbody obstacleBody;
+        [SerializeField] protected NetworkObject networkObject;
         
         [Header("Obstacle Strikers")]
         [SerializeField] protected ObstacleAttacker[] obstacleAttackers;
@@ -28,6 +31,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void Start()
         {
+            SpawnNetworkObject();
             UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
 
@@ -37,7 +41,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         public abstract void ObstacleAction();
 
-        public virtual void OnAwake() { }
+        public virtual void OnAwake()
+        {
+            networkObject ??= GetComponent<NetworkObject>();
+        }
 
         public virtual void SetObstacleActive(bool active)
         {
@@ -61,7 +68,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         }
 
         [Button]
-        private void GetObstacleAttackers()
+        public void GetObstacleAttackers()
         {
             obstacleAttackers = transform.GetComponentsInChildren<ObstacleAttacker>();
         }
@@ -91,8 +98,42 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             builder.RegisterTo(this.destroyCancellationToken);
         }
 
-        private void OnDestroy()
+        private void SpawnNetworkObject()
         {
+            bool isKinematic = obstacleBody ?? obstacleBody.isKinematic;
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            {
+                if (!IsSpawned)
+                {
+                    if (networkObject == null) Debug.Log(gameObject.name);
+                    networkObject.Spawn();
+
+                    if (obstacleBody)
+                        obstacleBody.isKinematic = isKinematic;
+                }
+            }
+            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
+            {
+                if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
+                {
+                    networkObject.Spawn();
+
+                    if (obstacleBody)
+                        obstacleBody.isKinematic = isKinematic;
+                }
+            }
+        }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            networkObject ??= GetComponent<NetworkObject>();
+        }
+#endif
+
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
             UpdateHandlerManager.Instance.RemoveFixedUpdateBehaviour(this);
         }
     }

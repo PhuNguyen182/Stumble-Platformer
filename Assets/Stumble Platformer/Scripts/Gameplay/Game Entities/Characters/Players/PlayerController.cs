@@ -239,6 +239,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         public void TakePhysicalAttack(PhysicalDamage damageData)
         {
+            if (!IsOwner)
+                return;
+
             if (!_isStunning)
             {
                 _isStunning = true;
@@ -251,7 +254,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         public void TakeHealthDamage(HealthDamage damageData)
         {
-            playerHealth.TakeDamage(damageData);
+            if (IsOwner)
+                playerHealth.TakeDamage(damageData);
         }
 
         public int GetCheckPointIndex()

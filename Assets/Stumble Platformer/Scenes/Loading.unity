@@ -316,9 +316,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582997180371379008, guid: e2fad4eff957c2f4baa80cbb33192f78, type: 3}
-      propertyPath: NetworkConfig.Prefabs.NetworkPrefabsLists.Array.data[1]
+      propertyPath: NetworkConfig.Prefabs.NetworkPrefabsLists.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 6267cd8b7ffa0de46b901bc569d38726, type: 2}
+    - target: {fileID: 1582997180371379008, guid: e2fad4eff957c2f4baa80cbb33192f78, type: 3}
+      propertyPath: NetworkConfig.Prefabs.NetworkPrefabsLists.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 281392dfb588a404093603a4aabcdf3d, type: 2}
+    - target: {fileID: 1582997180371379008, guid: e2fad4eff957c2f4baa80cbb33192f78, type: 3}
+      propertyPath: NetworkConfig.Prefabs.NetworkPrefabsLists.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 281392dfb588a404093603a4aabcdf3d, type: 2}
     - target: {fileID: 2781759394595854557, guid: e2fad4eff957c2f4baa80cbb33192f78, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
