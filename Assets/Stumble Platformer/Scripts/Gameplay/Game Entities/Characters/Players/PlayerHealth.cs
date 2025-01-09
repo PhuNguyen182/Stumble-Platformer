@@ -12,7 +12,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
     {
         [SerializeField] private float deadDelayAmount = 1f;
         [SerializeField] private PlayerController playerController;
-        [SerializeField] private NetworkPlayerController networkPlayerController;
         [SerializeField] private PlayerGraphics playerGraphics;
         [SerializeField] private PlayerMessages playerMessages;
 
@@ -22,7 +21,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private bool _hasFinishLevel = false;
         private bool _canTakeDamage = true;
         private bool _hasPlayerController;
-        private bool _hasNetworkPlayer;
 
         public int CheckPointIndex => _checkPointIndex;
         public int HealthPoint => _healthPoint;
@@ -30,8 +28,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private void Awake()
         {
             _hasPlayerController = TryGetComponent(out playerController);
-            if (!_hasPlayerController)
-                _hasNetworkPlayer = TryGetComponent(out networkPlayerController);
         }
 
         private void Start()
@@ -65,9 +61,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             if (_hasPlayerController)
                 playerController.SetCharacterActive(false);
             
-            else if (_hasNetworkPlayer)
-                networkPlayerController.SetCharacterActive(false);
-
             if (_healthPoint > 0)
                 playerMessages.RespawnPlayer();
             else
@@ -81,8 +74,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             if (_hasPlayerController)
                 playerController.SetCharacterActive(false);
-            else if (_hasNetworkPlayer)
-                networkPlayerController.SetCharacterActive(false);
 
             playerGraphics.CharacterVisual.SetLose();
         }
@@ -125,12 +116,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 playerController.IsActive = false;
                 finishZone.ReportFinish(playerController);
-            }
-
-            else if (_hasNetworkPlayer)
-            {
-                networkPlayerController.IsActive = false;
-                // To do: report finish zone
             }
         }
 
