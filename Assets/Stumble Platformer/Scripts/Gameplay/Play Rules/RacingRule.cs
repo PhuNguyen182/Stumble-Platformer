@@ -32,7 +32,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void StartGame()
         {
-            _lifeCounter.gameObject.SetActive(true);
+            bool active = GameplaySetup.PlayMode == GameMode.SinglePlayer;
+            _lifeCounter.gameObject.SetActive(active);
         }
 
         public void SetLifeCounter(LifeCounter lifeCounter)
@@ -66,15 +67,18 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnPlayerHealthUpdate()
         {
-            _lifeCounter.UpdateLife(PlayerHealth);
-
-            if (PlayerHealth <= 0)
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
-                EndLevel(new LevelEndMessage
+                _lifeCounter.UpdateLife(PlayerHealth);
+
+                if (PlayerHealth <= 0)
                 {
-                    ID = CurrentPlayerID,
-                    Result = EndResult.Lose
-                });
+                    EndLevel(new LevelEndMessage
+                    {
+                        ID = CurrentPlayerID,
+                        Result = EndResult.Lose
+                    });
+                }
             }
         }
     }

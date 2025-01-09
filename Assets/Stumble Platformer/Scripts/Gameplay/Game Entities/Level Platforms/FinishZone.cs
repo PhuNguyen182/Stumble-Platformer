@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
 using StumblePlatformer.Scripts.Common.Enums;
@@ -19,12 +20,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         public void ReportFinish(PlayerController playerController)
         {
-            // If in single mode
-            _playerFinishPublisher.Publish(new LevelEndMessage
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
-                ID = playerController.gameObject.GetInstanceID(),
-                Result = EndResult.Win
-            });
+                _playerFinishPublisher.Publish(new LevelEndMessage
+                {
+                    ID = playerController.gameObject.GetInstanceID(),
+                    Result = EndResult.Win
+                });
+            }
+            else if(GameplaySetup.PlayMode == GameMode.Multiplayer)
+            {
+                ulong clientId = NetworkManager.Singleton.LocalClient.ClientId;
+            }
         }
     }
 }

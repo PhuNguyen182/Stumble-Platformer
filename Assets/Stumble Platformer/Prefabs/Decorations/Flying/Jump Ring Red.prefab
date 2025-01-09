@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1919492900850721064}
+  - component: {fileID: -6313713609196651590}
   - component: {fileID: 2886769836442878592}
   m_Layer: 0
   m_Name: Jump Ring Red
@@ -33,6 +34,27 @@ Transform:
   - {fileID: 158126546623457294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6313713609196651590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427041090933605358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 4013321531
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &2886769836442878592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,13 +71,17 @@ MonoBehaviour:
   attactForce: 0.1
   stunDuration: 1.5
   obstacleBody: {fileID: 2522119571227911121}
+  networkObject: {fileID: -6313713609196651590}
   obstacleAttackers:
   - {fileID: 7718314491082540071}
   - {fileID: 2935970058734158893}
   - {fileID: 2507680035101034616}
   - {fileID: 8585382880171316243}
   rotateSpeed: -750
+  invertTimer: 6
+  nextInversionTimer: 3
   rotateAxis: 3
+  rotateMode: 0
 --- !u!1 &2574617277782945631
 GameObject:
   m_ObjectHideFlags: 0

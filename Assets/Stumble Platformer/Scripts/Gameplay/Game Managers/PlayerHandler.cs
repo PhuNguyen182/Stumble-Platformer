@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using StumblePlatformer.Scripts.Multiplayers.Datas;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
@@ -55,6 +56,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public void SpawnPlayer()
         {
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+                SpawnSinglePlayer();
+            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
+                SpawnMultiplayerPlayer();
+        }
+
+        private void SpawnSinglePlayer()
+        {
             Vector3 playerPosition = environmentHandler.EnvironmentIdentifier
                                     .SpawnCharacterArea.MainCharacterSpawnPosition;
 
@@ -77,7 +86,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             SetPlayerPhysicsActive(false);
         }
 
-        public void SpawnNetworksPlayer()
+        private void SpawnMultiplayerPlayer()
         {
             foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
             {
@@ -100,6 +109,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
                 if (hasSkin)
                     player.PlayerGraphics.SetCharacterVisual(characterSkin);
+
+                SetPlayerPhysicsActive(player, false);
             }
         }
 
@@ -111,6 +122,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         public void SetPlayerActive(bool active) => _currentPlayer.IsActive = active;
 
         public void SetPlayerPhysicsActive(bool active) => _currentPlayer.SetCharacterActive(active);
+
+        public void SetPlayerPhysicsActive(PlayerController player, bool active) => player.SetCharacterActive(active);
 
         public void RespawnPlayer()
         {

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StumblePlatformer.Scripts.Common.Messages;
-using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
+using StumblePlatformer.Scripts.Common.Enums;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
@@ -25,7 +25,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void StartGame()
         {
-            _playRuleTimer.gameObject.SetActive(true);
+            bool active = GameplaySetup.PlayMode == GameMode.SinglePlayer;
+            _playRuleTimer.gameObject.SetActive(active);
         }
 
         public void SetPlayRuleTimer(PlayRuleTimer playRuleTimer)
@@ -35,22 +36,25 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnUpdate(float deltatime)
         {
-            if(_currentTimer > 0 && !_hasLosedGame)
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
-                _currentTimer -= Time.deltaTime;
-                _playRuleTimer.UpdateTime(_currentTimer);
-
-                if (_currentTimer <= 0 && !_hasLosedGame)
+                if (_currentTimer > 0 && !_hasLosedGame)
                 {
-                    _currentTimer = 0;
+                    _currentTimer -= Time.deltaTime;
                     _playRuleTimer.UpdateTime(_currentTimer);
 
-                    // If in siggle mode
-                    EndLevel(new LevelEndMessage
+                    if (_currentTimer <= 0 && !_hasLosedGame)
                     {
-                        ID = CurrentPlayerID,
-                        Result = EndResult.Win
-                    });
+                        _currentTimer = 0;
+                        _playRuleTimer.UpdateTime(_currentTimer);
+
+                        // If in siggle mode
+                        EndLevel(new LevelEndMessage
+                        {
+                            ID = CurrentPlayerID,
+                            Result = EndResult.Win
+                        });
+                    }
                 }
             }
         }

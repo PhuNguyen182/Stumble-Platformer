@@ -105,7 +105,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             {
                 if (!IsSpawned)
                 {
-                    if (networkObject == null) Debug.Log(gameObject.name);
                     networkObject.Spawn();
 
                     if (obstacleBody)

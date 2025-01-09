@@ -11,6 +11,7 @@ using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using Cysharp.Threading.Tasks;
+using UnityEngine.SceneManagement;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -44,11 +45,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             SetupGameplay();
         }
 
-        private void Start()
-        {
-            
-        }
-
         private void SetupGameplay()
         {
             _gameStateController = new(cameraHandler, environmentHandler, endGamePanel, finalePanel);
@@ -62,26 +58,30 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             if (isTesting)
                 return;
 
-            if (PlayGameConfig.Current != null)
+            string levelName = "";
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
-                string levelName = PlayGameConfig.Current.PlayLevelName;
-                await environmentHandler.GenerateLevel(levelName);
-                WaitingPopup.Setup().HideWaiting();
+                if (PlayGameConfig.Current != null)
+                    levelName = PlayGameConfig.Current.PlayLevelName;
             }
+
+            else if(GameplaySetup.PlayMode == GameMode.Multiplayer)
+                levelName = MultiplayerManager.Instance.CarrierCollection.PlayEntryCarrier.NetworkData.Value.PlayLevelName.Value;
+
+            await environmentHandler.GenerateLevel(levelName);
         }
 
         public override void OnNetworkSpawn()
         {
-            base.OnNetworkSpawn();
-            
-            if(GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
                 GenerateLevel().Forget();
             }
 
-            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
+            else if(GameplaySetup.PlayMode == GameMode.Multiplayer)
             {
-                // To do: generate level and setup playground here
+                if (IsServer)
+                    MultiplayerManager.Instance.OnSceneLoadEventCompleted += HandleSceneLoadEventCompleted;
             }
         }
 
@@ -118,6 +118,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             cameraHandler.SetFollowCameraActive(false);
             SetupPlayRule(PlayRule);
 
+            WaitingPopup.Setup().HideWaiting();
             await environmentHandler.WaitForTeaser();
             playGamePanel?.SetLevelNameActive(false);
             playGamePanel?.SetPlayObjectActive(true);
@@ -160,8 +161,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             }
         }
 
+        private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut) 
+        {
+            GenerateLevel().Forget();
+        }
+
+        public override void OnNetworkDespawn()
+        {
+            if (IsServer)
+                MultiplayerManager.Instance.OnSceneLoadEventCompleted -= HandleSceneLoadEventCompleted;
+        }
+
         public override void OnDestroy()
         {
+            NetworkManager.Singleton?.Shutdown();
             base.OnDestroy();
         }
     }

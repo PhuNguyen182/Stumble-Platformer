@@ -2,12 +2,13 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using Cysharp.Threading.Tasks;
 using TMPro;
 
 namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
 {
-    public class CountDown : MonoBehaviour
+    public class CountDown : NetworkBehaviour
     {
         [SerializeField] private TMP_Text countDownText;
 

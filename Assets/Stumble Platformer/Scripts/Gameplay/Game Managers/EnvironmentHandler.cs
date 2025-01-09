@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
+using GlobalScripts.Utils;
 using UnityEngine.SceneManagement;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
+using StumblePlatformer.Scripts.Common.Enums;
 using Cysharp.Threading.Tasks;
-using GlobalScripts.Utils;
+using StumblePlatformer.Scripts.Multiplayers;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
-    public class EnvironmentHandler : MonoBehaviour
+    public class EnvironmentHandler : NetworkBehaviour
     {
         [SerializeField] private CameraHandler cameraHandler;
 

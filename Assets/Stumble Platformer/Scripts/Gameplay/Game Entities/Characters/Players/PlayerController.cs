@@ -59,16 +59,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         private void FixedUpdate()
         {
             if (IsOwner)
+            {
                 groundChecker.CheckGround();
 
-            if (!_isStunning && !_isAirDashing)
-            {
-                Move();
-                Turn();
-                Jump();
-            }
+                if (!_isStunning && !_isAirDashing)
+                {
+                    Move();
+                    Turn();
+                    Jump();
+                }
 
-            else playerGraphics.SetDustEffectActive(false);
+                else playerGraphics.SetDustEffectActive(false);
+            }
         }
 
         public void ResetPlayerOrientation(Quaternion orientation)

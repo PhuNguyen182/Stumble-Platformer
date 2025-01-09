@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using StumblePlatformer.Scripts.Common.Enums;
-using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
@@ -37,6 +37,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnTriggerEnter(Collider other)
         {
+            if (!playerController.IsOwner)
+                return;
+
             if(other.TryGetComponent(out FinishZone finishZone))
             {
                 OnFinishZone(finishZone);
@@ -60,11 +63,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             if (_hasPlayerController)
                 playerController.SetCharacterActive(false);
-            
-            if (_healthPoint > 0)
-                playerMessages.RespawnPlayer();
-            else
-                Kill();
+
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            {
+                if (_healthPoint > 0)
+                    playerMessages.RespawnPlayer();
+                else
+                    Kill();
+            }
+
+            else playerMessages.RespawnPlayer();
         }
 
         public void Kill()
@@ -127,20 +135,22 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnDeadZone(DeadZone deadZone)
         {
-            // To do: implement logic for multiplayer
             if (_hasPlayerController && !playerController.IsActive)
                 return;
 
             playerController.IsActive = false;
             deadZone.PlayDeathEffect(transform.position);
 
-            HealthDamage damage = new HealthDamage
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
-                DamageAmount = 1,
-                DamageType = deadZone.DamageType
-            };
+                HealthDamage damage = new HealthDamage
+                {
+                    DamageAmount = 1,
+                    DamageType = deadZone.DamageType
+                };
+                KillOneLife(damage);
+            }
 
-            KillOneLife(damage);
             OnDeadZoneDelay().Forget();
         }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Gameplay.GameManagers;
@@ -10,7 +11,7 @@ using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
-    public abstract class BasePlayRule : MonoBehaviour, IPlayRule, IUpdateHandler, ISetPlayerHandler, ISetCameraHandler, ISetEnvironmentHandler
+    public abstract class BasePlayRule : NetworkBehaviour, IPlayRule, IUpdateHandler, ISetPlayerHandler, ISetCameraHandler, ISetEnvironmentHandler
     {
         [SerializeField] protected string objectiveTitle;
 
@@ -127,7 +128,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             OnEndGame(message.Result);
         }
 
-        private void OnDestroy()
+        public override void OnDestroy()
         {
             messageDisposable.Dispose();
             UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);

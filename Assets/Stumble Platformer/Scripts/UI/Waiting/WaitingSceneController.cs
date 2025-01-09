@@ -27,6 +27,8 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         [SerializeField] private Button readyButton;
         [SerializeField] private Button backButton;
 
+        private Dictionary<ulong, bool> _playerIdCollection = new();
+
         private void Awake()
         {
             RegisterButtons();
@@ -70,7 +72,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         private void ReadyToPlay()
         {
             WaitingPopup.Setup().ShowWaiting();
-            SceneLoader.LoadNetworkScene(SceneConstants.Gameplay);
+            SetPlayerReady();
         }
 
         private void BackMainHome()
@@ -84,6 +86,45 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             MultiplayerManager.Instance.Shutdown();
             WaitingPopup.Setup().ShowWaiting();
             await SceneLoader.LoadScene(SceneConstants.Mainhome);
+        }
+
+        private void SetPlayerReady()
+        {
+            SetPlayerIdServerRpc();
+        }
+
+        [ServerRpc]
+        private void SetPlayerIdServerRpc(ServerRpcParams rpcParams = default)
+        {
+            bool allPlayerReady = true;
+            SetPlayerIdClientRpc(rpcParams.Receive.SenderClientId);
+            _playerIdCollection[rpcParams.Receive.SenderClientId] = true;
+
+            foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+            {
+                if (!_playerIdCollection.ContainsKey(clientId) || !_playerIdCollection[clientId])
+                {
+                    allPlayerReady = false;
+                    break;
+                }
+            }
+
+            if (allPlayerReady)
+            {
+                LoadPlayScene().Forget();
+            }
+        }
+
+        [ClientRpc]
+        private void SetPlayerIdClientRpc(ulong clientId)
+        {
+            _playerIdCollection[clientId] = true;
+        }
+
+        private async UniTask LoadPlayScene()
+        {
+            await LobbyManager.Instance.DeleteLobby();
+            SceneLoader.LoadNetworkScene(SceneConstants.Gameplay);
         }
     }
 }

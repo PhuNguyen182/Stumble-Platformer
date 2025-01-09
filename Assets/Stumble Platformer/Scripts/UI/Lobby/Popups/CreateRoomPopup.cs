@@ -5,10 +5,10 @@ using UnityEngine.UI;
 using GlobalScripts.SceneUtils;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.Common.Enums;
-using StumblePlatformer.Scripts.Multiplayers.Carriers;
 using StumblePlatformer.Scripts.Gameplay;
 using Cysharp.Threading.Tasks;
 using TMPro;
+using StumblePlatformer.Scripts.Multiplayers.Datas;
 
 namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 {
