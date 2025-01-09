@@ -24,9 +24,11 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
         [Header("UI Elements")]
         [SerializeField] private TMP_Text roomCodeText;
+        [SerializeField] private TMP_Text participantCount;
         [SerializeField] private Button readyButton;
         [SerializeField] private Button backButton;
 
+        private bool _isReady = false;
         private Dictionary<ulong, bool> _playerIdCollection = new();
 
         private void Awake()
@@ -37,10 +39,13 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
             characterVisual.SetMove(moveSpeed);
             characterVisual.SetRunning(true);
+
+            MultiplayerManager.Instance.OnClientApprove += OnClientApprove;
         }
 
         private void Start()
         {
+            OnClientApprove();
             SetHostNoticeActive();
         }
 
@@ -48,6 +53,16 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         {
             readyButton.onClick.AddListener(ReadyToPlay);
             backButton.onClick.AddListener(BackMainHome);
+        }
+
+        private void OnClientApprove()
+        {
+            int participants = MultiplayerManager.Instance.ParticipantCount.Value;
+            int maxPlayerCount = MultiplayerManager.Instance.MaxPlayerAmount.Value;
+            participantCount.text = $"{participants}/{maxPlayerCount}";
+
+            _isReady = participants >= maxPlayerCount;
+            readyButton.interactable = _isReady;
         }
 
         private void UpdateSkin()
@@ -61,9 +76,11 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
         private void SetHostNoticeActive()
         {
-            bool active = GameplaySetup.PlayerType == PlayerType.Host;
-            hostNotice.SetActive(active);
-            if(active && LobbyManager.Instance.HasLobby())
+            bool isHost = GameplaySetup.PlayerType == PlayerType.Host;
+            bool isPrivate = MultiplayerManager.Instance.IsPrivateRoom.Value;
+
+            hostNotice.SetActive(isHost && isPrivate);
+            if(isHost && isPrivate && LobbyManager.Instance.HasLobby())
             {
                 roomCodeText.text = LobbyManager.Instance.GetCurrentLobby().LobbyCode;
             }
@@ -90,14 +107,14 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
         private void SetPlayerReady()
         {
-            SetPlayerIdServerRpc();
+            SetPlayerIdRpc();
         }
 
-        [ServerRpc]
-        private void SetPlayerIdServerRpc(ServerRpcParams rpcParams = default)
+        [Rpc(SendTo.Server, RequireOwnership = false)]
+        private void SetPlayerIdRpc(ServerRpcParams rpcParams = default)
         {
             bool allPlayerReady = true;
-            SetPlayerIdClientRpc(rpcParams.Receive.SenderClientId);
+            SetPlayerIdRpc(rpcParams.Receive.SenderClientId);
             _playerIdCollection[rpcParams.Receive.SenderClientId] = true;
 
             foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
@@ -109,14 +126,14 @@ namespace StumblePlatformer.Scripts.UI.Waiting
                 }
             }
 
-            if (allPlayerReady)
+            if (allPlayerReady && _isReady)
             {
                 LoadPlayScene().Forget();
             }
         }
 
-        [ClientRpc]
-        private void SetPlayerIdClientRpc(ulong clientId)
+        [Rpc(SendTo.NotServer, RequireOwnership = false)]
+        private void SetPlayerIdRpc(ulong clientId)
         {
             _playerIdCollection[clientId] = true;
         }
@@ -125,6 +142,11 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         {
             await LobbyManager.Instance.DeleteLobby();
             SceneLoader.LoadNetworkScene(SceneConstants.Gameplay);
+        }
+
+        private void OnDestroy()
+        {
+            MultiplayerManager.Instance.OnClientApprove -= OnClientApprove;
         }
     }
 }

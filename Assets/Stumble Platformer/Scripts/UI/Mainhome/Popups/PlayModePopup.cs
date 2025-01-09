@@ -42,7 +42,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
 
             PlayGameConfig.Current = new()
             {
-                PlayLevelName = "Level 24"
+                PlayLevelName = levelName
             };
 
             WaitingPopup.Setup().ShowWaiting();

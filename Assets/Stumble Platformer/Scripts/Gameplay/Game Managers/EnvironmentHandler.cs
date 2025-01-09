@@ -5,9 +5,7 @@ using Unity.Netcode;
 using GlobalScripts.Utils;
 using UnityEngine.SceneManagement;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
-using StumblePlatformer.Scripts.Common.Enums;
 using Cysharp.Threading.Tasks;
-using StumblePlatformer.Scripts.Multiplayers;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {

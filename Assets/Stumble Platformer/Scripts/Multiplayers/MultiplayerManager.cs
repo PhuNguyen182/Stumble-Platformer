@@ -31,15 +31,21 @@ namespace StumblePlatformer.Scripts.Multiplayers
         public Action OnFailToJoinGame;
         public Action OnTryingToJoinGame;
         public Action OnPlayerDataNetworkListChanged;
+        public Action OnClientApprove;
 
         public Action<ulong> OnPlayerDisconnected;
         public Action<string, LoadSceneMode, List<ulong>, List<ulong>> OnSceneLoadEventCompleted;
 
-        public int PlayerAmount { get; private set; }
-        public int CurrentParticipant { get; private set; }
+        public NetworkVariable<bool> IsPrivateRoom { get; private set; }
+        public NetworkVariable<int> MaxPlayerAmount { get; private set; }
+        public NetworkVariable<int> ParticipantCount { get; private set; }
 
         protected override void OnAwake()
         {
+            IsPrivateRoom = new();
+            MaxPlayerAmount = new();
+            ParticipantCount = new();
+
             _playerDatas.OnListChanged += OnPlayerDatasListChanged;
             CarrierCollection ??= GetComponent<CarrierCollection>();
         }
@@ -63,7 +69,9 @@ namespace StumblePlatformer.Scripts.Multiplayers
             NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback_Server;
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback_Server;
             NetworkManager.Singleton.StartHost();
+
             NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
+            ParticipantCount.Value = NetworkManager.Singleton.ConnectedClientsIds.Count;
         }
 
         public void StartClient()
@@ -100,7 +108,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         public void SetPlayerCountInRoom(int amount)
         {
-            PlayerAmount = amount;
+            MaxPlayerAmount.Value = amount;
         }
 
         public PlayerData GetPlayerData(int index)
@@ -129,7 +137,8 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         private void ConnectionApprovalCallback(NetworkManager.ConnectionApprovalRequest approvalRequest, NetworkManager.ConnectionApprovalResponse approvalResponse)
         {
-            if(NetworkManager.Singleton.ConnectedClientsIds.Count > PlayerAmount)
+            OnClientApprove?.Invoke();
+            if (NetworkManager.Singleton.ConnectedClientsIds.Count > MaxPlayerAmount.Value)
             {
                 approvalResponse.Approved = false;
                 approvalResponse.Reason = "Room is full!";
@@ -143,7 +152,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 return;
             }
 
-            CurrentParticipant = NetworkManager.Singleton.ConnectedClientsIds.Count;
+            ParticipantCount.Value = NetworkManager.Singleton.ConnectedClientsIds.Count;
             approvalResponse.Approved = true;
         }
 

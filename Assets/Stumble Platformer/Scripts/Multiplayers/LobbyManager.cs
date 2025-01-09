@@ -72,14 +72,13 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         private void ListenHeartBeat()
         {
-            if (IsHostLobby())
+            _heartBeatTime -= Time.deltaTime;
+            if (_heartBeatTime <= 0)
             {
-                _heartBeatTime -= Time.deltaTime;
-                if(_heartBeatTime <= 0)
-                {
-                    _heartBeatTime = MaxHeartBeatTime;
+                _heartBeatTime = MaxHeartBeatTime;
+
+                if (IsHostLobby())
                     LobbyService.Instance.SendHeartbeatPingAsync(_joinedLobby.Id);
-                }
             }
         }
 
@@ -137,18 +136,13 @@ namespace StumblePlatformer.Scripts.Multiplayers
             catch(LobbyServiceException e)
             {
                 DebugUtils.LogError(e.Message);
+                return;
             }
         }
 
-        public bool HasLobby()
-        {
-            return _joinedLobby != null;
-        }
+        public bool HasLobby() => _joinedLobby != null;
 
-        public Lobby GetCurrentLobby()
-        {
-            return _joinedLobby;
-        }
+        public Lobby GetCurrentLobby() => _joinedLobby;
 
         public async UniTask<string> GetRelayJoinCode(Allocation allocation)
         {
@@ -181,6 +175,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
         public async UniTask<bool> CreateLobby(string lobbyName, bool isPrivate)
         {
             OnCreateLobbyStarted?.Invoke();
+            MultiplayerManager.Instance.IsPrivateRoom.Value = isPrivate;
 
             try
             {
