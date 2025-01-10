@@ -20,10 +20,6 @@ namespace StumblePlatformer.Scripts.Multiplayers
 {
     public class LobbyManager : PersistentSingleton<LobbyManager>
     {
-        private const float MaxHeartBeatTime = 15f;
-        private const float ListLobbiesTimerMax = 3f;
-        private const string KeyRelayJoinCode = "RelayJoinCode";
-
         private float _heartBeatTime = 0;
         private float _listLobbiesTimer = 0;
         private Lobby _joinedLobby;
@@ -65,7 +61,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
             _listLobbiesTimer -= Time.deltaTime;
             if (_listLobbiesTimer <= 0f)
             {
-                _listLobbiesTimer = ListLobbiesTimerMax;
+                _listLobbiesTimer = MultiplayerConstants.ListLobbiesTimerMax;
                 ListLobbies().Forget();
             }
         }
@@ -75,7 +71,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
             _heartBeatTime -= Time.deltaTime;
             if (_heartBeatTime <= 0)
             {
-                _heartBeatTime = MaxHeartBeatTime;
+                _heartBeatTime = MultiplayerConstants.MaxHeartBeatTime;
 
                 if (IsHostLobby())
                     LobbyService.Instance.SendHeartbeatPingAsync(_joinedLobby.Id);
@@ -97,7 +93,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
         {
             try
             {
-                Allocation relayAllocation = await RelayService.Instance.CreateAllocationAsync(MultiplayerManager.MaxPlayerCount - 1);
+                Allocation relayAllocation = await RelayService.Instance.CreateAllocationAsync(MultiplayerConstants.MaxPlayerCount - 1);
                 return relayAllocation;
             }
             catch(RelayServiceException e)
@@ -184,7 +180,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                     IsPrivate = isPrivate
                 };
 
-                _joinedLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, MultiplayerManager.MaxPlayerCount, options);
+                _joinedLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, MultiplayerConstants.MaxPlayerCount, options);
                 Allocation relayAllocation = await AllocateRelay();
                 string relayAllocationCode = await GetRelayJoinCode(relayAllocation);
 
@@ -192,7 +188,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 {
                     Data = new Dictionary<string, DataObject>
                     {
-                        {KeyRelayJoinCode, new DataObject(DataObject.VisibilityOptions.Member, relayAllocationCode) }
+                        {MultiplayerConstants.KeyRelayJoinCode, new DataObject(DataObject.VisibilityOptions.Member, relayAllocationCode) }
                     }
                 });
 
@@ -222,7 +218,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 else 
                     _joinedLobby = await LobbyService.Instance.JoinLobbyByCodeAsync(joinCode);
 
-                string relayJoinCode = _joinedLobby.Data[KeyRelayJoinCode].Value;
+                string relayJoinCode = _joinedLobby.Data[MultiplayerConstants.KeyRelayJoinCode].Value;
                 JoinAllocation joinAllocation = await JoinRelay(relayJoinCode);
 
                 if (NetworkManager.Singleton.TryGetComponent(out UnityTransport transport))

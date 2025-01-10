@@ -21,13 +21,6 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         private NetworkList<PlayerData> _playerDatas = new();
 
-        private const string DefaultIP = "127.0.0.1";
-        private const ushort DefaultPort = 7777;
-
-        public const int MinPlayerCount = 1;
-        public const int MaxPlayerCount = 7;
-        public const int AcceptablePlayerCount = 2;
-
         public Action OnFailToJoinGame;
         public Action OnTryingToJoinGame;
         public Action OnPlayerDataNetworkListChanged;
@@ -58,7 +51,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
         public void StartSingleMode()
         {
             if (NetworkManager.Singleton.TryGetComponent(out UnityTransport transport))
-                transport.SetConnectionData(DefaultIP, DefaultPort);
+                transport.SetConnectionData(MultiplayerConstants.DefaultIP, MultiplayerConstants.DefaultPort);
             
             NetworkManager.Singleton.StartHost();
         }
