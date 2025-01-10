@@ -37,6 +37,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
         {
             base.DoAppear();
             UpdatePlayerCount(playerCountField.text);
+            roomName.text = $"PlayRoom{Random.Range(100000, 1000000)}";
         }
 
         private void RegisterButtons()
@@ -45,7 +46,6 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
             createPublicRoomButton.onClick.AddListener(CreatePublicRoom);
             createPrivateRoomButton.onClick.AddListener(CreatePrivateRoom);
             playerCountField.onValueChanged.AddListener(UpdatePlayerCount);
-            roomName.text = $"PlayRoom{Random.Range(100000, 1000000)}";
         }
 
         private void UpdatePlayerCount(string value)
@@ -80,7 +80,9 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 
         private async UniTask CreateRoomAsync(bool isPrivate)
         {
-            MessagePopup.Setup().ShowWaiting().SetMessage("Creating Room").ShowCloseButton(false);
+            MessagePopup.Setup().ShowWaiting()
+                        .SetMessage("Creating Room")
+                        .ShowCloseButton(false);
             bool canCreateRoom = await LobbyManager.Instance.CreateLobby(roomName.text, isPrivate);
 
             if (canCreateRoom)

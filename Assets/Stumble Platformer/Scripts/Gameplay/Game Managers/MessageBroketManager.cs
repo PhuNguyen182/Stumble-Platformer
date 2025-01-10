@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using StumblePlatformer.Scripts.Common.Messages;
 using MessagePipe;
 
@@ -26,7 +23,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         {
             _builder.AddMessageBroker<RespawnMessage>();
             _builder.AddMessageBroker<ReportPlayerHealthMessage>();
-            _builder.AddMessageBroker<SetupLevelMessage>();
             _builder.AddMessageBroker<KillCharactersMessage>();
             _builder.AddMessageBroker<PlayerDamageMessage>();
             _builder.AddMessageBroker<EndGameMessage>();

@@ -30,7 +30,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
             }
             else if(GameplaySetup.PlayMode == GameMode.Multiplayer)
             {
-                ulong clientId = NetworkManager.Singleton.LocalClient.ClientId;
+                ulong winnerClientId = playerController.OwnerClientId;
             }
         }
     }

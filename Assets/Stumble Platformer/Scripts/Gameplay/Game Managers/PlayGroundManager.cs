@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.SceneManagement;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
@@ -11,7 +12,6 @@ using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using Cysharp.Threading.Tasks;
-using UnityEngine.SceneManagement;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -174,7 +174,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public override void OnDestroy()
         {
-            NetworkManager.Singleton?.Shutdown();
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+                NetworkManager.Singleton?.Shutdown();
+            
+            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
+                MultiplayerManager.Instance.Shutdown();
+            
             base.OnDestroy();
         }
     }
