@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3281889953
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (8)
@@ -212,6 +216,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2211993315
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4
@@ -305,6 +313,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 391259605
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (4)
@@ -406,6 +418,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1502963047
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -537,6 +553,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 533079569
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (14)
@@ -619,6 +639,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: 2036154020379591230, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2127025082
+      objectReference: {fileID: 0}
     - target: {fileID: 2077791096249176859, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23
@@ -830,6 +854,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2742282980
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (3)
@@ -979,6 +1007,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2764487917
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
@@ -1064,6 +1096,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3511557686
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (10)
@@ -1157,6 +1193,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 330772289
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -1234,6 +1274,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4040017485
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -1311,6 +1355,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1092065712
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -1388,6 +1436,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2491415677
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (4)
@@ -1481,6 +1533,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: 2036154020379591230, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4244718675
+      objectReference: {fileID: 0}
     - target: {fileID: 2077791096249176859, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -1558,6 +1614,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 814189179
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
@@ -1659,6 +1719,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3170449122
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -1720,6 +1784,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2295093270
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -1914,6 +1982,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: 2036154020379591230, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1509604988
+      objectReference: {fileID: 0}
     - target: {fileID: 2077791096249176859, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
@@ -1991,6 +2063,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2847171518
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -2068,6 +2144,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 487520434
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -2172,6 +2252,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4294033715
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -2265,6 +2349,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1847718595
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (11)
@@ -2358,6 +2446,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2845390815
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (1)
@@ -2463,6 +2555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1701689647
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (2)
@@ -2556,6 +2652,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: 2036154020379591230, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4242350052
+      objectReference: {fileID: 0}
     - target: {fileID: 2077791096249176859, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
@@ -2633,6 +2733,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: 2036154020379591230, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3007446997
+      objectReference: {fileID: 0}
     - target: {fileID: 2077791096249176859, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23
@@ -2710,6 +2814,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2450330363
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -2787,6 +2895,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2945050107
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (13)
@@ -2880,6 +2992,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2744076393
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
@@ -2965,6 +3081,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2661513885
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -3042,6 +3162,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 308647365
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (2)
@@ -3143,6 +3267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: 2036154020379591230, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1347135755
+      objectReference: {fileID: 0}
     - target: {fileID: 2077791096249176859, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23
@@ -3432,6 +3560,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2415252162
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -3493,6 +3625,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4100662770
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -3586,6 +3722,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2728759850
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (3)
@@ -3698,6 +3838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2704722591
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
@@ -3855,6 +3999,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4260750930
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -3932,6 +4080,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3439065601
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -4062,6 +4214,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3505512146
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer
@@ -4167,6 +4323,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3480122956
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (12)
@@ -4260,6 +4420,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3744958164
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (6)
@@ -4411,6 +4575,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3233207334
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (6)
@@ -4512,6 +4680,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1931643244
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
@@ -4597,6 +4769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2261065705
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -4674,6 +4850,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2831027051
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (9)
@@ -4767,6 +4947,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 732870331
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -4844,6 +5028,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3178145130
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball
@@ -5450,6 +5638,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2929158016
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (2)
@@ -5590,6 +5782,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3662977983
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (5)
@@ -5691,6 +5887,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1156201810
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -5768,6 +5968,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2453559722
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (16)
@@ -5861,6 +6065,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: 2036154020379591230, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4117794021
+      objectReference: {fileID: 0}
     - target: {fileID: 2077791096249176859, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23
@@ -5938,6 +6146,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2706945142
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -6064,6 +6276,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 843861878
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (1)
@@ -6182,6 +6398,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1737004301
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
@@ -6267,6 +6487,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: 2036154020379591230, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2236102001
+      objectReference: {fileID: 0}
     - target: {fileID: 2077791096249176859, guid: 5b6ec09ebcd65554db073deed69b0652, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -6344,6 +6568,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4116871034
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (15)
@@ -6437,6 +6665,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -3087302430040466844, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4027873300
+      objectReference: {fileID: 0}
     - target: {fileID: 2001971898843584889, guid: 821bb9ec313da2540b05eb5cb05f6733, type: 3}
       propertyPath: rotateSpeed
       value: 15
@@ -6557,6 +6789,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2010052931
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
@@ -6642,6 +6878,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1955003274}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3499809175
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (7)
@@ -6760,6 +7000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385254474629105131}
   - component: {fileID: 8839447532017761259}
+  - component: {fileID: 8839447532017761261}
   - component: {fileID: 8839447532017761260}
   m_Layer: 0
   m_Name: Level Identifier
@@ -6813,6 +7054,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveTitle: Don't Fall
   playDuration: 45
+--- !u!114 &8839447532017761261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844125545043861795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 373218296
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

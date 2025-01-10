@@ -196,6 +196,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 652737771
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -274,6 +278,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4053007375
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -356,6 +364,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3192550836
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -434,6 +446,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1233613015
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -512,6 +528,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1838822350
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -590,6 +610,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 613442137
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -668,6 +692,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1559078094
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -746,6 +774,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2769521130
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -824,6 +856,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2209097562
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -902,6 +938,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1096272434
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -1050,6 +1090,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 496737580
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -1128,6 +1172,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2689590054
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -1210,6 +1258,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 110426496
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -1288,6 +1340,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1162496422
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -1447,6 +1503,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 323581884
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -1525,6 +1585,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 769480200
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -1603,6 +1667,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3442626512
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -1685,6 +1753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1080903301
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -1767,6 +1839,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3239015876
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -1845,6 +1921,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1546666157
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -1927,6 +2007,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 94743069
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -2016,6 +2100,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1197904947
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -2094,6 +2182,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1785314075
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -2172,6 +2264,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1721841077
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -2250,6 +2346,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2096896487
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -2382,6 +2482,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1443649722
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -2460,6 +2564,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 481112354
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -2608,6 +2716,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2078643030
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -2686,6 +2798,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 199667223
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -2904,6 +3020,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3472353255
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -2982,6 +3102,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 6798132
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -3137,6 +3261,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2107259282
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -3215,6 +3343,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3289110162
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -3304,6 +3436,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2555204645
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -3382,6 +3518,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3918199385
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -3464,6 +3604,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 170960050
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -3612,6 +3756,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1573610553
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -3705,6 +3853,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 220980944
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -3783,6 +3935,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3376754601
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -3872,6 +4028,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2693952975
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -3950,6 +4110,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3580974758
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -4028,6 +4192,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 959739286
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -4110,6 +4278,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3134192834
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -4188,6 +4360,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3500892840
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -4270,6 +4446,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1529276103
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -4425,6 +4605,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 894977275
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -4503,6 +4687,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3613352151
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -4699,6 +4887,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 488779396
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -4788,6 +4980,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 265793165
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -4866,6 +5062,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2694345880
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -4955,6 +5155,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 720489621
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -5044,6 +5248,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3731868283
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -5122,6 +5330,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2911931314
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -5200,6 +5412,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 120402554
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -5278,6 +5494,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 534390962
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -5430,6 +5650,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2350819728
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -5508,6 +5732,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2030523560
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -5590,6 +5818,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 221498042
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -5668,6 +5900,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1590223407
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -5746,6 +5982,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1671974616
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -5824,6 +6064,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3384454445
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -5902,6 +6146,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3990820714
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -5980,6 +6228,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1675452028
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -6069,6 +6321,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1989956434
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -6147,6 +6403,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1716751725
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -6236,6 +6496,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2332559041
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -6318,6 +6582,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2824214087
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -6499,6 +6767,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 437673338
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -6577,6 +6849,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4108952698
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -6736,6 +7012,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 142292461
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -6825,6 +7105,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4004590819
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -6918,6 +7202,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 497881614
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -6996,6 +7284,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 386947392
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -7085,6 +7377,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 354726514
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -7163,6 +7459,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1560969809
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -7252,6 +7552,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2837560615
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -7341,6 +7645,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2019899779
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -7430,6 +7738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1715396504
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -7519,6 +7831,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 828596423
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -7597,6 +7913,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 906722499
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -7675,6 +7995,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1544085476
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -7753,6 +8077,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3906209112
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -7842,6 +8170,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3677637514
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -7920,6 +8252,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 700738535
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -8013,6 +8349,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3987177231
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -8095,6 +8435,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3220409084
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -8173,6 +8517,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1415993657
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -8251,6 +8599,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2513424209
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -8340,6 +8692,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1128669178
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -8418,6 +8774,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3254294763
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -8511,6 +8871,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4162752025
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -8604,6 +8968,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3075606639
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -8693,6 +9061,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2626132419
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -8782,6 +9154,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2222969815
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -8871,6 +9247,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1406130851
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -8960,6 +9340,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 982087707
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9038,6 +9422,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2225528671
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9116,6 +9504,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2233352763
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9194,6 +9586,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1495736003
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9272,6 +9668,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4061065287
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9361,6 +9761,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2438834090
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9439,6 +9843,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3704383236
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9517,6 +9925,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2190810789
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9595,6 +10007,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2808396655
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9673,6 +10089,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3324036272
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9751,6 +10171,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 36591750
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9851,6 +10275,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 995803394
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -9940,6 +10368,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2741411537
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -10018,6 +10450,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2792679577
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -10096,6 +10532,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 243939797
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -10174,6 +10614,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1401992173}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2341941721
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
@@ -10263,6 +10707,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1312344030
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -10341,6 +10789,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2461415606
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -10430,6 +10882,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3660926645
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -10519,6 +10975,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 925844077
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -10619,6 +11079,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2955825928
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -10708,6 +11172,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1818016769
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -10786,6 +11254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 62564497
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -10864,6 +11336,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3747362293
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -10953,6 +11429,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3532089853
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -11031,6 +11511,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1401992173}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3721663382
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
@@ -11120,6 +11604,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2784449480
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -11198,6 +11686,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1849253832
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -11287,6 +11779,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1134406948
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -11365,6 +11861,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1283433895
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -11443,6 +11943,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1189866203
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -11521,6 +12025,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 103105539
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -11603,6 +12111,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1525481308
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -11681,6 +12193,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1967544771
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -11759,6 +12275,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3168624676
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -11837,6 +12357,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4201403026
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -11926,6 +12450,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 119572383
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -12026,6 +12554,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3879155086
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -12104,6 +12636,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2099808743
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -12186,6 +12722,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1701488667
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -12264,6 +12804,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 103640930
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -12342,6 +12886,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3488851863
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -12431,6 +12979,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3956301192
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -12520,6 +13072,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3315042497
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -12598,6 +13154,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3536040798
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -12691,6 +13251,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4035436968
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -12864,6 +13428,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3042595550
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -12975,6 +13543,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 662577913
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -13064,6 +13636,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1700245817
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -13175,6 +13751,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2985871962
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -13253,6 +13833,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2279790239
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -13353,6 +13937,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3945552293
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -13512,6 +14100,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3758217603
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -13601,6 +14193,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1153259933
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -13690,6 +14286,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 788295739
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -13779,6 +14379,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2745156128
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -13857,6 +14461,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4100622771
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -13950,6 +14558,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4196359091
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -14039,6 +14651,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2040491559
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -14128,6 +14744,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 75049752
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -14206,6 +14826,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3899334700
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -14284,6 +14908,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2833527893
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -14373,6 +15001,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2707241344
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -14462,6 +15094,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3308256023
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -14551,6 +15187,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2521546090
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -14721,6 +15361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4280650527
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -14810,6 +15454,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2103501416
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -14899,6 +15547,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1490536949
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -14988,6 +15640,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3817588235
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -15110,6 +15766,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2704899204
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -15221,6 +15881,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4265726760
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -15310,6 +15974,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 232030704
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -15403,6 +16071,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1754599994
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -15617,6 +16289,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2996296273
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -15776,6 +16452,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3120110965
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -15858,6 +16538,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4088308150
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -15947,6 +16631,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4180828711
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -16036,6 +16724,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3918915295
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -16125,6 +16817,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1321475684
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -16203,6 +16899,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 924694430
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -16351,6 +17051,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2797205009
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -16429,6 +17133,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1332472171
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -16540,6 +17248,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1093604191
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -16640,6 +17352,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1135095504
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -16718,6 +17434,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2946802139
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -16807,6 +17527,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 704655035
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -16922,6 +17646,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2627177265
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -17000,6 +17728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 984947940
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -17159,6 +17891,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3001064200
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -17252,6 +17988,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 576069805
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -17334,6 +18074,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1020926993
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -17412,6 +18156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 170265212
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -17534,6 +18282,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 830023101
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -17623,6 +18375,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2461010857
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -17723,6 +18479,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1628163121
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -17823,6 +18583,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4278933042
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -17912,6 +18676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 169411855
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -18001,6 +18769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2138519433
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -18090,6 +18862,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2093513219
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -18201,6 +18977,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2571546570
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -18301,6 +19081,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4001282327
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -18613,6 +19397,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2745172593
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -18772,6 +19560,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3284311913
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -18883,6 +19675,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 207956961
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -18972,6 +19768,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1836365618
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -19061,6 +19861,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3564314354
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -19172,6 +19976,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4280402866
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -19272,6 +20080,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2668274951
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -19361,6 +20173,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2236100854
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -19461,6 +20277,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1382811169
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -19861,6 +20681,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1725382796
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -19939,6 +20763,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3127305006
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -20039,6 +20867,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2406802352
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -20139,6 +20971,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 354227237
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -20217,6 +21053,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2993885621
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -20306,6 +21146,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2698720864
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -20395,6 +21239,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2876236003
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -20473,6 +21321,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2623287741
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -20562,6 +21414,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 107568324
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -20662,6 +21518,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1815716404
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -20751,6 +21611,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3458836945
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -20851,6 +21715,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1609537722
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -20929,6 +21797,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 961253766
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -21022,6 +21894,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 343476355
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -21100,6 +21976,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 951630740
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -21200,6 +22080,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3948715678
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -21289,6 +22173,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 945585747
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -21459,6 +22347,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2638206593
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -21570,6 +22462,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3113065504
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -21659,6 +22555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3791038138
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -21748,6 +22648,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1916354506
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -21859,6 +22763,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3551333031
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -21959,6 +22867,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3948870748
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -22070,6 +22982,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3779624890
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -22170,6 +23086,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 773255099
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -22270,6 +23190,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4219947643
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -22422,6 +23346,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1049918106
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -22635,6 +23563,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3062038269
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -22751,6 +23683,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3078545367
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -22829,6 +23765,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 204626815
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -22911,6 +23851,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2496652073
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -23011,6 +23955,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1203986759
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -23232,6 +24180,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 954379259
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -23332,6 +24284,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2854853752
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -23410,6 +24366,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3970474741
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -23521,6 +24481,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2632362576
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -23632,6 +24596,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 477580437
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -23721,6 +24689,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2021388425
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -23810,6 +24782,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1687627295
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -23888,6 +24864,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3385213378
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -23966,6 +24946,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1891742990
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -24066,6 +25050,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1315683713
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -24155,6 +25143,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 74739993
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -24244,6 +25236,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3706591934
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -24344,6 +25340,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2187619073
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -24422,6 +25422,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1401992173}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1128091415
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
@@ -24511,6 +25515,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1401992173}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3901717429
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
@@ -24611,6 +25619,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3577676494
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -24689,6 +25701,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1401992173}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 541025607
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
@@ -24800,6 +25816,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2571007338
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -24900,6 +25920,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3347458355
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -25022,6 +26046,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3588803887
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -25295,6 +26323,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2838686677
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -25384,6 +26416,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3080903930
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -25477,6 +26513,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1888528725
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -25577,6 +26617,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3641853990
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -25666,6 +26710,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2281871637
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -25759,6 +26807,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1590385252
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -25837,6 +26889,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 297189449
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -25959,6 +27015,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3652266020
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -26048,6 +27108,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2096030866
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -26203,6 +27267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2023287247
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -26292,6 +27360,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 399234122
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -26370,6 +27442,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 148508965
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -26525,6 +27601,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2111520644
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -26636,6 +27716,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3369787577
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -26747,6 +27831,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3887108701
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -26836,6 +27924,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1251853522
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -26925,6 +28017,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4049143217
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -29054,6 +30150,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3613979273
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -29132,6 +30232,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4102607682
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -29221,6 +30325,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 314277014
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -29310,6 +30418,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2252662156
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -29403,6 +30515,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2296715013
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -29492,6 +30608,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2090136886
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -29607,6 +30727,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2496977177
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -29685,6 +30809,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 822005979
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -29774,6 +30902,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 174190508
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -29867,6 +30999,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2707698411
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -29956,6 +31092,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 510448715
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -30045,6 +31185,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1571735024
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -30149,6 +31293,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3626698728
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -30238,6 +31386,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1331558614
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -30327,6 +31479,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 814360719
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -30416,6 +31572,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2091610721
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -30505,6 +31665,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1655063399
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -30605,6 +31769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 586070626
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -30683,6 +31851,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1385744193
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -30805,6 +31977,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1997802143
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -30894,6 +32070,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3827420188
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -30987,6 +32167,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1850846261
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -31076,6 +32260,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1829681661
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -31165,6 +32353,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2451740929
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -31254,6 +32446,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2823276756
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -31343,6 +32539,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2664206783
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -31421,6 +32621,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2839917247
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -31499,6 +32703,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1401992173}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 430170224
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
@@ -31588,6 +32796,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2547932308
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -31677,6 +32889,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2504758627
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -31777,6 +32993,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 223815360
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -31877,6 +33097,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3072718170
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -32069,6 +33293,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3733845901
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -32158,6 +33386,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3012415459
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -32269,6 +33501,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3971844451
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -32413,6 +33649,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4098203344
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -32513,6 +33753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1585347182
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -32602,6 +33846,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 645920142
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -32702,6 +33950,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 560267481
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -32791,6 +34043,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1385468574
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -32902,6 +34158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2099931248
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -32991,6 +34251,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1200196992
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -33069,6 +34333,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4259440825
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -33169,6 +34437,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2648062242
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -33258,6 +34530,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1788483654
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -33347,6 +34623,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1111922607
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -33436,6 +34716,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3932512639
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -33536,6 +34820,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1950192540
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -33625,6 +34913,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 661555696
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -33714,6 +35006,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2426416118
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -33803,6 +35099,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3577613027
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -33892,6 +35192,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 46204165
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -34117,6 +35421,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 214339431
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -34195,6 +35503,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 59898161
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -34284,6 +35596,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4008291262
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -34384,6 +35700,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 67097611
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -34484,6 +35804,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 33451607
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -34573,6 +35897,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 462567969
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -34666,6 +35994,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1292629436
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -34755,6 +36087,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3266085978
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -34844,6 +36180,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4098054805
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -34933,6 +36273,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 261384227
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -35022,6 +36366,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 923547441
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -35144,6 +36492,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4139749570
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -35325,6 +36677,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3396830357
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -35414,6 +36770,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3901727000
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -35503,6 +36863,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1970419631
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -35768,6 +37132,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1807089251
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -35868,6 +37236,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3641535994
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -35968,6 +37340,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2198399649
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -36057,6 +37433,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1853456724
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -36146,6 +37526,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2722469831
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -36235,6 +37619,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1105903703
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -36324,6 +37712,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1401992173}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4178208147
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
@@ -36446,6 +37838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 49486022
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -36568,6 +37964,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1790674302
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -36668,6 +38068,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4056774212
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -36790,6 +38194,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2044957341
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -36879,6 +38287,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1283728526
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -36979,6 +38391,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1407901384
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -37068,6 +38484,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2867947268
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -37161,6 +38581,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2749180491
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -37261,6 +38685,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2025228372}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 430836589
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Dark
@@ -37365,6 +38793,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3301965999
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -37534,6 +38966,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3201599874
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -37623,6 +39059,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3979320740
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -37701,6 +39141,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1861523895
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -37790,6 +39234,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 49097034
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -37890,6 +39338,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1227521863}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 318676570
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Droping Platform Light
@@ -37996,6 +39448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385254474629105131}
   - component: {fileID: 8839447532017761259}
+  - component: {fileID: 8839447532017761261}
   - component: {fileID: 8839447532017761260}
   m_Layer: 0
   m_Name: Level Identifier
@@ -38049,6 +39502,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveTitle: Don't Fall
   playDuration: 120
+--- !u!114 &8839447532017761261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844125545043861795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3685615014
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

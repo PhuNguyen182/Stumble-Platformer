@@ -95,6 +95,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 NetworkManager.Singleton.ConnectionApprovalCallback -= ConnectionApprovalCallback;
                 NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback_Server;
                 NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback_Server;
+                NetworkManager.Singleton.SceneManager.OnLoadEventCompleted -= HandleSceneLoadEventCompleted;
             }
 
             else if(GameplaySetup.PlayerType == PlayerType.Client)

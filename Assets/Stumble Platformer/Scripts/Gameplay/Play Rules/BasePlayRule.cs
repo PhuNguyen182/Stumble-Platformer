@@ -37,6 +37,11 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             OnStart();
             RegisterCommonMessage();
             UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
+
+            if(TryGetComponent<NetworkObject>(out var networkObject))
+            {
+                networkObject.Spawn();
+            }
         }
 
         protected virtual void OnStart() { }
@@ -110,13 +115,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public void EndLevel(LevelEndMessage message)
         {
-            if (CurrentPlayerID != message.ID)
-                return;
-
-            environmentHandler.SetLevelActive(false);
-            environmentHandler.SetLevelSecondaryComponentActive(false);
-            gameStateController.EndLevel(message.Result);
-            OnLevelEnded(message.Result);
+            EndLevelServerRpc(message.ID, (int)message.Result, message.ClientID);
         }
 
         public void EndGame(EndGameMessage message)
@@ -126,6 +125,38 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
             gameStateController.EndGame(message.Result);
             OnEndGame(message.Result);
+        }
+
+        [ServerRpc(RequireOwnership = false)]
+        private void EndLevelServerRpc(int playerId, int endResult, ulong clientId)
+        {
+            EndLevelClientRpc(playerId, endResult, clientId);
+        }
+
+        [ClientRpc(RequireOwnership = false)]
+        private void EndLevelClientRpc(int playerId, int endResult, ulong clientId)
+        {
+            if (CurrentPlayerID != playerId)
+                return;
+
+            environmentHandler.SetLevelActive(false);
+            environmentHandler.SetLevelSecondaryComponentActive(false);
+
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            {
+                EndResult result = (EndResult)endResult;
+                gameStateController.EndLevel(result);
+                OnLevelEnded(result);
+            }
+
+            else
+            {
+                ulong currentClientId = NetworkManager.Singleton.LocalClient.ClientId;
+                EndResult networkResult = clientId == currentClientId 
+                                          ? EndResult.Win : EndResult.Lose;
+                gameStateController.EndLevel(networkResult);
+                OnLevelEnded(networkResult);
+            }
         }
 
         public override void OnDestroy()
