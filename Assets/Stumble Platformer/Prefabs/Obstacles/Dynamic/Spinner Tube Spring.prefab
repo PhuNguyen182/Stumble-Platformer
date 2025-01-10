@@ -344,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleBody: {fileID: 8026505842351740373}
   networkObject: {fileID: 4063310837438358038}
+  initializedIsKinematic: 0
 --- !u!1 &9012227874906562128
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
     {
         [SerializeField] private Rigidbody obstacleBody;
         [SerializeField] private NetworkObject networkObject;
+        [SerializeField] private bool initializedIsKinematic;
+
+        private void Awake()
+        {
+            initializedIsKinematic = obstacleBody.isKinematic;
+        }
 
         private void Start()
         {
@@ -18,13 +24,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void SpawnNetworkObject()
         {
-            bool isKinematic = obstacleBody ?? obstacleBody.isKinematic;
             if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
                 if (!IsSpawned)
                 {
                     networkObject.Spawn();
-                    obstacleBody.isKinematic = isKinematic;
+                    obstacleBody.isKinematic = initializedIsKinematic;
                 }
             }
             else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
@@ -32,7 +37,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
                 {
                     networkObject.Spawn();
-                    obstacleBody.isKinematic = isKinematic;
+                    obstacleBody.isKinematic = initializedIsKinematic;
                 }
             }
         }

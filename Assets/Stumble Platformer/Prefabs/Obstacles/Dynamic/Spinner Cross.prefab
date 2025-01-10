@@ -397,3 +397,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleBody: {fileID: 7562109356194673677}
   networkObject: {fileID: 1624862272064931588}
+  initializedIsKinematic: 0

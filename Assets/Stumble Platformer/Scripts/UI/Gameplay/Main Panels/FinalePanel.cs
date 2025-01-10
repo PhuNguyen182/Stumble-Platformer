@@ -30,6 +30,7 @@ namespace StumblePlatformer.Scripts.UI.Gameplay.MainPanels
         public void Show()
         {
             gameObject.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
 
         public void SetEndGameResult(EndResult endResult)
