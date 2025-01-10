@@ -6,6 +6,7 @@ using GlobalScripts.SceneUtils;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.UI.Lobby.Popups;
+using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.Gameplay;
 using Cysharp.Threading.Tasks;
 
@@ -17,9 +18,6 @@ namespace StumblePlatformer.Scripts.UI.Lobby
         [SerializeField] private Button createRoomButton;
         [SerializeField] private Button joinPublicRoomButton;
         [SerializeField] private Button joinPrivateRoomButton;
-
-        private const string JoinRoomPopupPath = "Popups/Lobby/Join Room Popup.prefab";
-        private const string CreateRoomPopupPath = "Popups/Lobby/Create Room Popup.prefab";
 
         private void Awake()
         {
@@ -34,8 +32,8 @@ namespace StumblePlatformer.Scripts.UI.Lobby
 
         private void PreloadPopups()
         {
-            JoinRoomPopup.PreloadFromAddress(JoinRoomPopupPath).Forget();
-            CreateRoomPopup.PreloadFromAddress(CreateRoomPopupPath).Forget();
+            JoinRoomPopup.PreloadFromAddress(CommonPopupPaths.JoinRoomPopupPath).Forget();
+            CreateRoomPopup.PreloadFromAddress(CommonPopupPaths.CreateRoomPopupPath).Forget();
         }
 
         private void RegisterButtons()
@@ -54,7 +52,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby
 
         private void OnOpenCreateRoom()
         {
-            CreateRoomPopup.CreateFromAddress(CreateRoomPopupPath).Forget();
+            CreateRoomPopup.CreateFromAddress(CommonPopupPaths.CreateRoomPopupPath).Forget();
         }
 
         private void OnJoinPublicRoom()
@@ -64,7 +62,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby
 
         private void OnJoinPrivateRoom()
         {
-            JoinRoomPopup.CreateFromAddress(JoinRoomPopupPath).Forget();
+            JoinRoomPopup.CreateFromAddress(CommonPopupPaths.JoinRoomPopupPath).Forget();
         }
 
         private async UniTask JoinPublicRoomAsync()

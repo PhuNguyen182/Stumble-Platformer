@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.UI.Mainhome.SettingPanels;
 using StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
@@ -24,8 +25,6 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
         [Space(10)]
         [SerializeField] private CharacterVisual characterVisual;
 
-        private const string PlayGamePopupPath = "Popups/Mainhome/Play Game Popup.prefab";
-
         private void Awake()
         {
             PreloadPopups();
@@ -34,7 +33,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         private void PreloadPopups()
         {
-            PlayModePopup.PreloadFromAddress(PlayGamePopupPath).Forget();
+            PlayModePopup.PreloadFromAddress(CommonPopupPaths.PlayGamePopupPath).Forget();
         }
 
         private void RegisterButtonClicks()
@@ -59,7 +58,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         private void PlayGame()
         {
-            PlayModePopup.CreateFromAddress(PlayGamePopupPath).Forget();
+            PlayModePopup.CreateFromAddress(CommonPopupPaths.PlayGamePopupPath).Forget();
         }
 
         private void OnDestroy()

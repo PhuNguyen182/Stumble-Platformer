@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using GlobalScripts.Utils;
+using StumblePlatformer.Scripts.Common.Constants;
 using TMPro;
 
 #if UNITASK_ADDRESSABLE_SUPPORT
@@ -16,14 +17,10 @@ public class MessagePopup : MonoBehaviour
     [SerializeField] private Animator popupAnimator;
 
     private static MessagePopup _instance;
-    public static bool IsPreload { get; set; }
-    public const string MessagePopupPath = "Popups/Message Popup";
-
-    private const string OpenTrigger = "Open";
     private const string CloseTrigger = "Close";
-
-    private readonly int _openHash = Animator.StringToHash(OpenTrigger);
     private readonly int _closeHash = Animator.StringToHash(CloseTrigger);
+
+    public static bool IsPreload { get; set; }
 
     private void Awake()
     {
@@ -34,7 +31,7 @@ public class MessagePopup : MonoBehaviour
     {
         if (_instance == null)
         {
-            _instance = Instantiate(Resources.Load<MessagePopup>(MessagePopupPath));
+            _instance = Instantiate(Resources.Load<MessagePopup>(CommonPopupPaths.MessagePopupPath));
         }
 
         _instance.gameObject.SetActive(true);

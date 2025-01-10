@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using GlobalScripts.Utils;
 using TMPro;
+using StumblePlatformer.Scripts.Common.Constants;
 
 #if UNITASK_ADDRESSABLE_SUPPORT
 using Cysharp.Threading.Tasks;
@@ -19,13 +20,12 @@ public class WaitingPopup : MonoBehaviour
     private IDisposable _waitDispose;
 
     public static bool IsPreload { get; set; }
-    public const string WaitingBoxPath = "Popups/Waiting Popup";
 
     public static WaitingPopup Setup(bool persistant = true)
     {
         if (_instance == null)
         {
-            _instance = Instantiate(Resources.Load<WaitingPopup>(WaitingBoxPath));
+            _instance = Instantiate(Resources.Load<WaitingPopup>(CommonPopupPaths.WaitingBoxPath));
         }
 
         _instance.gameObject.SetActive(true);

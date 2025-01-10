@@ -235,13 +235,13 @@
             ]
         },
         {
-            "name": "Common",
-            "id": "86e452fb-a574-4ede-9c9e-34549b4bc634",
+            "name": "Mainhome",
+            "id": "48811c70-cd9f-46fc-8f21-634dfb8993d5",
             "actions": [
                 {
-                    "name": "Exit",
+                    "name": "Quit",
                     "type": "Button",
-                    "id": "f8233480-b518-491a-9304-e9f3bec457b6",
+                    "id": "f2334708-7c30-42e3-a3d8-4ced211b5c98",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -251,12 +251,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "2f4fec68-5f90-4ec2-becd-44cfa3f35f06",
+                    "id": "39091fbe-0468-4b24-8e19-e7989e1d3c5f",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Exit",
+                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

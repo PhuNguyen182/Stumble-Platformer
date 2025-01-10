@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using StumblePlatformer.Scripts.GameDatas;
 using StumblePlatformer.Scripts.UI.Mainhome.Popups;
+using StumblePlatformer.Scripts.Common.Constants;
 using Cysharp.Threading.Tasks;
 using TMPro;
 
@@ -13,8 +14,6 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
     {
         [SerializeField] private Button profileButton;
         [SerializeField] private TMP_Text playerNameText;
-
-        private const string ProfilePopupPath = "Popups/Mainhome/Player Profile Popup.prefab";
 
         private void Awake()
         {
@@ -29,7 +28,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         private void PreloadPopups()
         {
-            ProfilePopup.PreloadFromAddress(ProfilePopupPath).Forget();
+            ProfilePopup.PreloadFromAddress(CommonPopupPaths.ProfilePopupPath).Forget();
         }
 
         private void LoadProfileOnAwake()
@@ -52,7 +51,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         private async UniTask OpenProfilePopup()
         {
-            var popup = await ProfilePopup.CreateFromAddress(ProfilePopupPath);
+            var popup = await ProfilePopup.CreateFromAddress(CommonPopupPaths.ProfilePopupPath);
             popup.SetProfileBox(this);
         }
 

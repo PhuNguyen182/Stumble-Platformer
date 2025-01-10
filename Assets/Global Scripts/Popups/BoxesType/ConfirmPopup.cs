@@ -1,15 +1,16 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Cysharp.Threading.Tasks;
 using TMPro;
 
 public class ConfirmPopup : BasePopup<ConfirmPopup>
 {
     [Header("Notice Texts")]
     [SerializeField] private TMP_Text titleMessage;
+    [SerializeField] private TMP_Text messageText;
     [SerializeField] private TMP_Text yesText;
     [SerializeField] private TMP_Text noText;
-    [SerializeField] private TMP_Text messageText;
 
     [Header("Executionable Buttons")]
     [SerializeField] private Button yesButton;
@@ -21,6 +22,9 @@ public class ConfirmPopup : BasePopup<ConfirmPopup>
     private Action _onNoClick;
 
     private bool _isAutoLockEscape = false;
+
+    private const string ClosePopupTrigger = "Close";
+    private readonly int _closePopupHash = Animator.StringToHash(ClosePopupTrigger);
 
     protected override void OnAwake()
     {
@@ -92,7 +96,8 @@ public class ConfirmPopup : BasePopup<ConfirmPopup>
 
     public ConfirmPopup EnableBackground()
     {
-        backGround.SetActive(true);
+        if (backGround != null)
+            backGround.SetActive(true);
         return this;
     }
 
@@ -121,7 +126,16 @@ public class ConfirmPopup : BasePopup<ConfirmPopup>
 
     protected override void DoClose()
     {
-        // Perform animation here
+        CloseAsync().Forget();
+    }
+
+    private async UniTask CloseAsync()
+    {
+        if (PopupAnimator)
+        {
+            PopupAnimator.SetTrigger(_closePopupHash);
+            await UniTask.WaitForSeconds(0.167f, cancellationToken: destroyCancellationToken);
+        }
         base.DoClose();
     }
 }
