@@ -51,9 +51,10 @@ MonoBehaviour:
     PlayerPrefab: {fileID: 0}
     Prefabs:
       NetworkPrefabsLists:
-      - {fileID: 11400000, guid: 30993014a9f07c4469433742e3417a0e, type: 2}
+      - {fileID: 11400000, guid: 6267cd8b7ffa0de46b901bc569d38726, type: 2}
+      - {fileID: 11400000, guid: 281392dfb588a404093603a4aabcdf3d, type: 2}
     TickRate: 30
-    ClientConnectionBufferTimeout: 60
+    ClientConnectionBufferTimeout: 500
     ConnectionApproval: 1
     ConnectionData: 
     EnableTimeResync: 0
@@ -64,7 +65,7 @@ MonoBehaviour:
     RecycleNetworkIds: 1
     NetworkIdRecycleDelay: 120
     RpcHashSize: 0
-    LoadSceneTimeOut: 120
+    LoadSceneTimeOut: 500
     SpawnTimeout: 10
     EnableNetworkLogs: 1
     OldPrefabList: []

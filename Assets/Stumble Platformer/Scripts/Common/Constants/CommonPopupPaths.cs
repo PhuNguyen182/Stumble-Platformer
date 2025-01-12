@@ -9,5 +9,6 @@ namespace StumblePlatformer.Scripts.Common.Constants
         public const string PlayGamePopupPath = "Popups/Mainhome/Play Game Popup.prefab";
         public const string ProfilePopupPath = "Popups/Mainhome/Player Profile Popup.prefab";
         public const string ConfirmPopupPath = "Popups/Mainhome/Confirm Popup.prefab";
+        public const string InfoPopupPath = "Popups/Mainhome/Info Popup.prefab";
     }
 }

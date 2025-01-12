@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Common.Constants;
+using StumblePlatformer.Scripts.UI.Mainhome.Popups;
 using GlobalScripts.Audios;
 using TMPro;
 
@@ -12,6 +14,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.SettingPanels
     {
         [SerializeField] private Button backButton;
         [SerializeField] private Button resetButton;
+        [SerializeField] private Button infoButton;
 
         [Header("Sliders")]
         [SerializeField] private Slider rotateXCamera;
@@ -33,6 +36,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.SettingPanels
         private void Awake()
         {
             RegisterSliders();
+            InfoPopup.PreloadFromAddress(CommonPopupPaths.InfoPopupPath).Forget();
         }
 
         protected override void Start()
@@ -45,6 +49,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.SettingPanels
         {
             backButton.onClick.AddListener(BackToMain);
             resetButton.onClick.AddListener(ResetSettings);
+            infoButton.onClick.AddListener(OpenInfoPopup);
 
             rotateXCamera.onValueChanged.AddListener(UpdateRotateX);
             rotateYCamera.onValueChanged.AddListener(UpdateRotateY);
@@ -67,6 +72,11 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.SettingPanels
             masterVolumeValueText.text = $"{masterVolume.value * 100:F0}";
             musicVolumeValueText.text = $"{musicVolume.value * 100:F0}";
             soundFXVolumeValueText.text = $"{soundFXVolume.value * 100:F0}";
+        }
+
+        private void OpenInfoPopup()
+        {
+            InfoPopup.CreateFromAddress(CommonPopupPaths.InfoPopupPath).Forget();
         }
 
         private void ResetSettings()
@@ -106,6 +116,11 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.SettingPanels
         {
             AudioManager.Instance.SoundVolume = volume;
             soundFXVolumeValueText.text = $"{volume * 100:F0}";
+        }
+
+        private void OnDestroy()
+        {
+            InfoPopup.Release();
         }
     }
 }

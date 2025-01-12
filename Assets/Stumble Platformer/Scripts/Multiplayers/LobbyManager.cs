@@ -18,7 +18,7 @@ using GlobalScripts;
 
 namespace StumblePlatformer.Scripts.Multiplayers
 {
-    public class LobbyManager : PersistentSingleton<LobbyManager>
+    public class LobbyManager : MonoBehaviour
     {
         private float _heartBeatTime = 0;
         private float _listLobbiesTimer = 0;
@@ -32,10 +32,13 @@ namespace StumblePlatformer.Scripts.Multiplayers
         public Action OnJoinFailed;
         
         public Action<List<Lobby>> OnLobbyListChanged;
+        public static LobbyManager Instance { get; private set; }
 
-        protected override void OnAwake()
+        private void Awake()
         {
+            Instance = this;
             InitializeUnityAuthentication().Forget();
+            DontDestroyOnLoad(gameObject);
         }
 
         private void Update()

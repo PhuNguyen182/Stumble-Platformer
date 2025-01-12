@@ -49,6 +49,11 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             SetHostNoticeActive();
         }
 
+        private void Update()
+        {
+            OnClientApprove();
+        }
+
         private void RegisterButtons()
         {
             readyButton.onClick.AddListener(ReadyToPlay);

@@ -37,6 +37,11 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
 
         private void SelectSinglePlayMode()
         {
+            SelectSinglePlayModeAsync().Forget();
+        }
+
+        private async UniTask SelectSinglePlayModeAsync()
+        {
             GameplaySetup.PlayMode = GameMode.SinglePlayer;
             string levelName = levelNameCollection.GetRandomName();
 
@@ -46,6 +51,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.Popups
             };
 
             WaitingPopup.Setup().ShowWaiting();
+            await SceneLoader.LoadScene(SceneConstants.Lobby);
             MultiplayerManager.Instance.StartSingleMode();
             SceneLoader.LoadNetworkScene(SceneConstants.Gameplay);
         }

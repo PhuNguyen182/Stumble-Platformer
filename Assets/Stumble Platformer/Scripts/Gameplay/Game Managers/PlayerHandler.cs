@@ -110,6 +110,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 if (hasSkin)
                     player.PlayerGraphics.SetCharacterVisual(characterSkin);
 
+                _currentPlayer.SetCharacterInput(inputReceiver);
                 SetPlayerPhysicsActive(player, false);
             }
         }

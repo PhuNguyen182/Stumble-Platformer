@@ -52,8 +52,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             if(other.TryGetComponent(out DeadZone deadZone))
             {
-                if (_healthPoint > 0)
-                    OnDeadZone(deadZone);
+                if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+                {
+                    if (_healthPoint > 0)
+                        OnDeadZone(deadZone);
+                }
+
+                else OnDeadZone(deadZone);
             }
         }
 
