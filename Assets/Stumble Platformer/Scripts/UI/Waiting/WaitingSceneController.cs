@@ -6,8 +6,9 @@ using Unity.Netcode;
 using StumblePlatformer.Scripts.Gameplay;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.Common.Enums;
-using StumblePlatformer.Scripts.Gameplay.Databases;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
+using StumblePlatformer.Scripts.Gameplay.Databases;
+using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.GameDatas;
 using GlobalScripts.SceneUtils;
 using Cysharp.Threading.Tasks;
@@ -47,6 +48,9 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         {
             OnClientApprove();
             SetHostNoticeActive();
+
+            ConfirmPopup.PreloadFromAddress(CommonPopupPaths.ConfirmPopupPath).Forget();
+            MultiplayerManager.Instance.OnPlayerDisconnected += OnCharacterDisconnected;
         }
 
         private void Update()
@@ -81,14 +85,13 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
         private void SetHostNoticeActive()
         {
-            bool isHost = GameplaySetup.PlayerType == PlayerType.Host;
+            bool isHost = GameplaySetup.PlayerType == PlayerType.Host
+                          || GameplaySetup.PlayerType == PlayerType.Server;
             bool isPrivate = MultiplayerManager.Instance.IsPrivateRoom.Value;
 
             hostNotice.SetActive(isHost && isPrivate);
             if(isHost && isPrivate && LobbyManager.Instance.HasLobby())
-            {
                 roomCodeText.text = LobbyManager.Instance.GetCurrentLobby().LobbyCode;
-            }
         }
 
         private void ReadyToPlay()
@@ -143,6 +146,23 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             _playerIdCollection[clientId] = true;
         }
 
+        private void OnCharacterDisconnected(ulong clientId)
+        {
+            if (clientId == NetworkManager.ServerClientId)
+            {
+                // If the Host or Server is disabled
+                ShowDisconnectedPopup().Forget();
+            }
+        }
+
+        private async UniTask ShowDisconnectedPopup()
+        {
+            var confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
+            confirmPopup.OnCloseBox = BackMainHome;
+            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!")
+                        .ShowCloseButton(true);
+        }
+
         private async UniTask LoadPlayScene()
         {
             await LobbyManager.Instance.DeleteLobby();
@@ -151,7 +171,9 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
         private void OnDestroy()
         {
+            ConfirmPopup.Release();
             MultiplayerManager.Instance.OnClientApprove -= OnClientApprove;
+            MultiplayerManager.Instance.OnPlayerDisconnected -= OnCharacterDisconnected;
         }
     }
 }
