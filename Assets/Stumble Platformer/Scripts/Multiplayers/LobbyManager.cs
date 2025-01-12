@@ -221,6 +221,12 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 else 
                     _joinedLobby = await LobbyService.Instance.JoinLobbyByCodeAsync(joinCode);
 
+                if (_joinedLobby.Data == null || _joinedLobby.Data.Count <= 0)
+                {
+                    _joinedLobby = null;
+                    return false;
+                }
+
                 string relayJoinCode = _joinedLobby.Data[MultiplayerConstants.KeyRelayJoinCode].Value;
                 JoinAllocation joinAllocation = await JoinRelay(relayJoinCode);
 

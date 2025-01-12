@@ -40,7 +40,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             characterVisual.SetMove(moveSpeed);
             characterVisual.SetRunning(true);
 
-            MultiplayerManager.Instance.OnClientApprove += OnClientApprove;
+            WaitingPopup.Setup().HideWaiting();
         }
 
         private void Start()
@@ -64,7 +64,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         {
             int participants = MultiplayerManager.Instance.ParticipantCount.Value;
             int maxPlayerCount = MultiplayerManager.Instance.MaxPlayerAmount.Value;
-            participantCount.text = $"{participants}/{maxPlayerCount}";
+            participantCount.text = maxPlayerCount != 0 ? $"{participants}/{maxPlayerCount}" : "Waiting...";
 
             _isReady = participants >= maxPlayerCount;
             readyButton.interactable = _isReady;

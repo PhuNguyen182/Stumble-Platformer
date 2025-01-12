@@ -6,7 +6,6 @@ using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.Gameplay;
-using GlobalScripts.SceneUtils;
 using Sirenix.OdinInspector;
 using TMPro;
 
@@ -55,7 +54,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
             {
                 Close();
                 MessagePopup.Setup().ShowWaiting()
-                            .SetMessage("Room not found!")
+                            .SetMessage("Cannot find open room!")
                             .ShowCloseButton(true);
             }
         }

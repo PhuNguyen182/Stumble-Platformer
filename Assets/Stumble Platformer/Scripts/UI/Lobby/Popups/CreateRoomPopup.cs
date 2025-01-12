@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using GlobalScripts.SceneUtils;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Multiplayers.Datas;
@@ -20,8 +19,6 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
         [SerializeField] private TMP_InputField playerCountField;
         [SerializeField] private TMP_InputField roomName;
 
-        private const int MinPlayerCount = 1;
-        private const int MaxPlayerCount = 7;
         private const string ClosePopupTrigger = "Close";
         private readonly int _closePopupHash = Animator.StringToHash(ClosePopupTrigger);
 
@@ -51,12 +48,12 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
         private void UpdatePlayerCount(string value)
         {
             if (string.IsNullOrEmpty(value))
-                _playerCount = int.Parse($"{MinPlayerCount}");
+                _playerCount = int.Parse($"{MultiplayerConstants.MinPlayerCount}");
             
             else
             {
                 _playerCount = int.Parse(value);
-                _playerCount = Mathf.Clamp(_playerCount, MinPlayerCount, MaxPlayerCount);
+                _playerCount = Mathf.Clamp(_playerCount, MultiplayerConstants.MinPlayerCount, MultiplayerConstants.MaxPlayerCount);
             }
 
             playerCountField.text = $"{_playerCount}";
@@ -87,6 +84,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
             if (canCreateRoom)
             {
                 MessagePopup.Setup().HideWaiting();
+                WaitingPopup.Setup().ShowWaiting();
                 LobbySceneController.Instance.LoadWaitingScene();
                 MultiplayerManager.Instance.SetPlayerCountInRoom(_playerCount);
                 InjectPlayEntry();

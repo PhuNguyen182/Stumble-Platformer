@@ -172,14 +172,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 MultiplayerManager.Instance.OnSceneLoadEventCompleted -= HandleSceneLoadEventCompleted;
         }
 
-        public override void OnDestroy()
+        private void ShutdownNetwork()
         {
+            if (NetworkManager.Singleton == null)
+                return;
+
             if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
                 NetworkManager.Singleton?.Shutdown();
-            
+
             else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
                 MultiplayerManager.Instance.Shutdown();
-            
+        }
+
+        public override void OnDestroy()
+        {
+            ShutdownNetwork();
             base.OnDestroy();
         }
     }

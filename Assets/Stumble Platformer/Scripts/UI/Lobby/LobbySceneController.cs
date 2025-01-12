@@ -9,11 +9,10 @@ using StumblePlatformer.Scripts.UI.Lobby.Popups;
 using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.Gameplay;
 using Cysharp.Threading.Tasks;
-using Unity.Netcode;
 
 namespace StumblePlatformer.Scripts.UI.Lobby
 {
-    public class LobbySceneController : NetworkBehaviour
+    public class LobbySceneController : MonoBehaviour
     {
         [SerializeField] private Button backHomeButton;
         [SerializeField] private Button createRoomButton;
@@ -48,15 +47,6 @@ namespace StumblePlatformer.Scripts.UI.Lobby
             joinPrivateRoomButton.onClick.AddListener(OnJoinPrivateRoom);
         }
 
-        private void SelfSpawnNetwork()
-        {
-            if (TryGetComponent<NetworkObject>(out var networkObject))
-            {
-                if (!networkObject.IsSpawned && IsServer)
-                    networkObject.Spawn();
-            }
-        }
-
         private void BackToMainHome()
         {
             WaitingPopup.Setup().ShowWaiting();
@@ -87,6 +77,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby
             {
                 MessagePopup.Setup().HideWaiting();
                 GameplaySetup.PlayerType = PlayerType.Client;
+                WaitingPopup.Setup().ShowWaiting();
                 LoadWaitingScene();
             }
             else
@@ -97,20 +88,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby
 
         public void LoadWaitingScene()
         {
-            //SelfSpawnNetwork();
-            //LoadSceneServerRpc();
             SceneLoader.LoadScene(SceneConstants.Waiting).Forget();
-        }
-
-        [ServerRpc()]
-        private void LoadSceneServerRpc()
-        {
-            LoadSceneClientRpc();
-        }
-
-        [ClientRpc()]
-        private void LoadSceneClientRpc()
-        {
         }
 
         private void ReleasePopups()
@@ -119,9 +97,8 @@ namespace StumblePlatformer.Scripts.UI.Lobby
             CreateRoomPopup.Release();
         }
 
-        public override void OnDestroy()
+        private void OnDestroy()
         {
-            base.OnDestroy();
             ReleasePopups();
         }
     }

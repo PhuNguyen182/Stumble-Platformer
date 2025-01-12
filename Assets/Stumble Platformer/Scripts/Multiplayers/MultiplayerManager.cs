@@ -80,13 +80,21 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         public void RemovePlayer(ulong clientId)
         {
-            NetworkManager.Singleton.DisconnectClient(clientId);
-            OnClientDisconnectCallback_Server(clientId);
+            if(IsServer)
+                NetworkManager.Singleton.DisconnectClient(clientId);
+            else
+                Shutdown();
+        }
+
+        public void LeaveRoom()
+        {
+            ulong localClientId = NetworkManager.Singleton.LocalClient.ClientId;
+            RemovePlayer(localClientId);
         }
 
         public void Shutdown()
         {
-            if (GameplaySetup.PlayerType == PlayerType.Host)
+            if (IsServer)
             {
                 NetworkManager.Singleton.ConnectionApprovalCallback -= ConnectionApprovalCallback;
                 NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback_Server;
@@ -94,7 +102,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 NetworkManager.Singleton.SceneManager.OnLoadEventCompleted -= HandleSceneLoadEventCompleted;
             }
 
-            else if(GameplaySetup.PlayerType == PlayerType.Client)
+            else
             {
                 NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback_Client;
                 NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback_Client;
@@ -165,7 +173,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 if (_playerDatas[i].ClientID == clientId)
                 {
                     _playerDatas.RemoveAt(i);
-                    return;
+                    break;
                 }
             }
         }
@@ -186,7 +194,8 @@ namespace StumblePlatformer.Scripts.Multiplayers
         private void OnPlayerDatasListChanged(NetworkListEvent<PlayerData> changeEvent)
         {
             if (IsServer)
-                ParticipantCount.Value = NetworkManager.Singleton.ConnectedClientsIds.Count;
+                ParticipantCount.Value = _playerDatas.Count;
+
             OnPlayerDataNetworkListChanged?.Invoke();
         }
 
