@@ -154,11 +154,28 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             {
                 // Server ID acts like the last ID from connected clients Ids
                 int playerCount = NetworkManager.Singleton.ConnectedClientsIds.Count;
-                ulong serverClientId = NetworkManager.Singleton.ConnectedClientsIds[playerCount - 1];
 
-                if (clientId == serverClientId)
-                    ShowDisconnectedPopup().Forget();
+                if (playerCount - 1 < 0)
+                {
+                    // If room is full
+                    ShowRoomFullPopup().Forget();
+                }
+
+                else
+                {
+                    ulong serverClientId = NetworkManager.Singleton.ConnectedClientsIds[playerCount - 1];
+
+                    if (clientId == serverClientId)
+                        ShowDisconnectedPopup().Forget();
+                }
             }
+        }
+
+        private async UniTask ShowRoomFullPopup()
+        {
+            var confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
+            confirmPopup.AddMessageOK("Error!", "Room Is Full!", BackMainHome)
+                        .ShowCloseButton(true);
         }
 
         private async UniTask ShowDisconnectedPopup()

@@ -143,7 +143,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
         private void ConnectionApprovalCallback(NetworkManager.ConnectionApprovalRequest approvalRequest, NetworkManager.ConnectionApprovalResponse approvalResponse)
         {
             OnClientApprove?.Invoke();
-            if (NetworkManager.Singleton.ConnectedClientsIds.Count > MaxPlayerAmount.Value)
+            if (NetworkManager.Singleton.ConnectedClientsIds.Count >= MaxPlayerAmount.Value)
             {
                 approvalResponse.Approved = false;
                 approvalResponse.Reason = "Room is full!";
