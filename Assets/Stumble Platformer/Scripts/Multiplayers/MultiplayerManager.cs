@@ -66,7 +66,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback_Server;
             NetworkManager.Singleton.StartHost();
 
-            NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
+            //NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
             ParticipantCount.Value = NetworkManager.Singleton.ConnectedClientsIds.Count;
         }
 
@@ -199,8 +199,8 @@ namespace StumblePlatformer.Scripts.Multiplayers
             OnPlayerDataNetworkListChanged?.Invoke();
         }
 
-        [ServerRpc(RequireOwnership = false)]
-        private void SetPlayerSkinServerRpc(string playerSkin, ServerRpcParams serverRpcParams = default)
+        [Rpc(SendTo.Server, RequireOwnership = false)]
+        private void SetPlayerSkinServerRpc(string playerSkin, RpcParams serverRpcParams = default)
         {
             int playerIndex = GetPlayerDataIndexFromClientId(serverRpcParams.Receive.SenderClientId);
             PlayerData playerData = _playerDatas[playerIndex];
@@ -208,8 +208,8 @@ namespace StumblePlatformer.Scripts.Multiplayers
             _playerDatas[playerIndex] = playerData;
         }
 
-        [ServerRpc(RequireOwnership = false)]
-        private void SetPlayerNameServerRpc(string playerName, ServerRpcParams serverRpcParams = default)
+        [Rpc(SendTo.Server, RequireOwnership = false)]
+        private void SetPlayerNameServerRpc(string playerName, RpcParams serverRpcParams = default)
         {
             int playerIndex = GetPlayerDataIndexFromClientId(serverRpcParams.Receive.SenderClientId);
             PlayerData playerData = _playerDatas[playerIndex];
@@ -217,8 +217,8 @@ namespace StumblePlatformer.Scripts.Multiplayers
             _playerDatas[playerIndex] = playerData;
         }
 
-        [ServerRpc(RequireOwnership = false)]
-        private void SetPlayerIDServerRpc(string playerId, ServerRpcParams serverRpcParams = default)
+        [Rpc(SendTo.Server, RequireOwnership = false)]
+        private void SetPlayerIDServerRpc(string playerId, RpcParams serverRpcParams = default)
         {
             int playerIndex = GetPlayerDataIndexFromClientId(serverRpcParams.Receive.SenderClientId);
             PlayerData playerData = _playerDatas[playerIndex];

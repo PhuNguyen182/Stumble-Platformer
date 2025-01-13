@@ -127,13 +127,13 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             OnEndGame(message.Result);
         }
 
-        [ServerRpc(RequireOwnership = false)]
+        [Rpc(SendTo.Server, RequireOwnership = false)]
         private void EndLevelServerRpc(int playerId, int endResult, ulong clientId)
         {
             EndLevelClientRpc(playerId, endResult, clientId);
         }
 
-        [ClientRpc(RequireOwnership = false)]
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
         private void EndLevelClientRpc(int playerId, int endResult, ulong clientId)
         {
             if (CurrentPlayerID != playerId)

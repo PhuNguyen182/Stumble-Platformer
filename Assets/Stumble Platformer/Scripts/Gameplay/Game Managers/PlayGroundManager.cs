@@ -81,8 +81,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             else if(GameplaySetup.PlayMode == GameMode.Multiplayer)
             {
                 if (IsServer)
-                    MultiplayerManager.Instance.OnSceneLoadEventCompleted += HandleSceneLoadEventCompleted;
+                    NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
             }
+            Debug.Log(MultiplayerManager.Instance.CarrierCollection.PlayEntryCarrier.NetworkData.Value.PlayLevelName.Value);
         }
 
         public void SetupLevel(EnvironmentIdentifier environmentIdentifier)
@@ -164,12 +165,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut) 
         {
             GenerateLevel().Forget();
-        }
-
-        public override void OnNetworkDespawn()
-        {
-            if (IsServer)
-                MultiplayerManager.Instance.OnSceneLoadEventCompleted -= HandleSceneLoadEventCompleted;
         }
 
         private void ShutdownNetwork()

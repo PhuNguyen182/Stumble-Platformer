@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.Common.Constants;
 using GlobalScripts.SceneUtils;
-using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -24,6 +24,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private void InitializeService()
         {
             _messageBroketManager = new();
+            _messageBroketManager.Forget();
             playDataCollectionInitializer.Initialize();
         }
 
@@ -42,9 +43,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private async UniTask ShowDisconnectedPopup()
         {
-            var confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
-            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!", BackMainHome)
-                        .ShowCloseButton(true);
+            ConfirmPopup confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
+            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!", BackMainHome).ShowCloseButton(true);
         }
 
         private void BackMainHome()
@@ -59,7 +59,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             await SceneLoader.LoadScene(SceneConstants.Mainhome);
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             NetworkManager.Singleton.OnClientDisconnectCallback -= OnCharacterDisconnected;
         }

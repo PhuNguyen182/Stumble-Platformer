@@ -76,9 +76,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 
         private async UniTask CreateRoomAsync(bool isPrivate)
         {
-            MessagePopup.Setup().ShowWaiting()
-                        .SetMessage("Creating Room")
-                        .ShowCloseButton(false);
+            MessagePopup.Setup().ShowWaiting().SetMessage("Creating Room").ShowCloseButton(false);
             bool canCreateRoom = await LobbyManager.Instance.CreateLobby(roomName.text, isPrivate);
 
             if (canCreateRoom)
@@ -92,9 +90,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 
             else
             {
-                MessagePopup.Setup().ShowWaiting()
-                            .SetMessage("Cannot create play room now!")
-                            .ShowCloseButton(true);
+                MessagePopup.Setup().ShowWaiting().SetMessage("Cannot create play room now!").ShowCloseButton(true);
             }
         }
 

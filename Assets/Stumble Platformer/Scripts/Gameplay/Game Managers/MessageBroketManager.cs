@@ -28,5 +28,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             _builder.AddMessageBroker<EndGameMessage>();
             _builder.AddMessageBroker<LevelEndMessage>();
         }
+
+        public void Forget()
+        {
+
+        }
     }
 }

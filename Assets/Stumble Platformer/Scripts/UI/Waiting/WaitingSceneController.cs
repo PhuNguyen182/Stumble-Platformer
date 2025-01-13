@@ -32,7 +32,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         private int _participants;
         private int _maxPlayerCount;
         private bool _isReady = false;
-        private Dictionary<ulong, bool> _playerIdCollection = new();
+        private Dictionary<ulong, bool> _joinedPlayersIdsCollection = new();
 
         private void Awake()
         {
@@ -80,9 +80,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         {
             string skin = GameDataManager.Instance.PlayerProfile.SkinName;
             if (characterVisualDatabase.TryGetCharacterSkin(skin, out var characterSkin))
-            {
                 characterVisual.UpdateSkin(characterSkin);
-            }
         }
 
         private void SetHostNoticeActive()
@@ -124,11 +122,11 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         {
             bool allPlayerReady = true;
             SetPlayerIdClientRpc(rpcParams.Receive.SenderClientId);
-            _playerIdCollection[rpcParams.Receive.SenderClientId] = true;
+            _joinedPlayersIdsCollection[rpcParams.Receive.SenderClientId] = true;
 
             foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
             {
-                if (!_playerIdCollection.ContainsKey(clientId) || !_playerIdCollection[clientId])
+                if (!_joinedPlayersIdsCollection.ContainsKey(clientId) || !_joinedPlayersIdsCollection[clientId])
                 {
                     allPlayerReady = false;
                     break;
@@ -145,17 +143,16 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
         private void SetPlayerIdClientRpc(ulong clientId)
         {
-            if (!_playerIdCollection.TryAdd(clientId, true))
-                _playerIdCollection[clientId] = true;
+            if (!_joinedPlayersIdsCollection.TryAdd(clientId, true))
+                _joinedPlayersIdsCollection[clientId] = true;
         }
 
         private void OnCharacterDisconnected(ulong clientId)
         {
+            // Server ID acts like the last ID from connected clients Ids
             if (!NetworkManager.Singleton.IsServer)
             {
-                // Server ID acts like the last ID from connected clients Ids
                 int playerCount = NetworkManager.Singleton.ConnectedClientsIds.Count;
-
                 if (playerCount - 1 < 0)    
                     ShowRoomFullPopup().Forget(); // If room is full
 
@@ -170,16 +167,14 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
         private async UniTask ShowRoomFullPopup()
         {
-            var confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
-            confirmPopup.AddMessageOK("Error!", "Room Is Full!", BackMainHome)
-                        .ShowCloseButton(true);
+            ConfirmPopup confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
+            confirmPopup.AddMessageOK("Error!", "Room Is Full!", BackMainHome).ShowCloseButton(true);
         }
 
         private async UniTask ShowDisconnectedPopup()
         {
-            var confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
-            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!", BackMainHome)
-                        .ShowCloseButton(true);
+            ConfirmPopup confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
+            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!", BackMainHome).ShowCloseButton(true);
         }
 
         private async UniTask LoadPlayScene()

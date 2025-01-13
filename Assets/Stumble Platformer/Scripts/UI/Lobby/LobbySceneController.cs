@@ -78,7 +78,6 @@ namespace StumblePlatformer.Scripts.UI.Lobby
                 MessagePopup.Setup().HideWaiting();
                 GameplaySetup.PlayerType = PlayerType.Client;
                 WaitingPopup.Setup().ShowWaiting();
-                LoadWaitingScene();
             }
             else
             {
