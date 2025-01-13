@@ -29,18 +29,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void OnCharacterDisconnected(ulong clientId)
         {
-            if (clientId == NetworkManager.ServerClientId)
+            if (!NetworkManager.Singleton.IsServer)
             {
-                // If the Host or Server is disabled
-                ShowDisconnectedPopup().Forget();
+                // Server ID acts like the last ID from connected clients Ids
+                int playerCount = NetworkManager.Singleton.ConnectedClientsIds.Count;
+                ulong serverClientId = NetworkManager.Singleton.ConnectedClientsIds[playerCount - 1];
+
+                if (clientId == serverClientId)
+                    ShowDisconnectedPopup().Forget();
             }
         }
 
         private async UniTask ShowDisconnectedPopup()
         {
             var confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
-            confirmPopup.OnCloseBox = BackMainHome;
-            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!")
+            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!", BackMainHome)
                         .ShowCloseButton(true);
         }
 

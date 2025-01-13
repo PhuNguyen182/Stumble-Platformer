@@ -29,6 +29,8 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         [SerializeField] private Button readyButton;
         [SerializeField] private Button backButton;
 
+        private int _participants;
+        private int _maxPlayerCount;
         private bool _isReady = false;
         private Dictionary<ulong, bool> _playerIdCollection = new();
 
@@ -66,11 +68,11 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
         private void OnClientApprove()
         {
-            int participants = MultiplayerManager.Instance.ParticipantCount.Value;
-            int maxPlayerCount = MultiplayerManager.Instance.MaxPlayerAmount.Value;
-            participantCount.text = maxPlayerCount != 0 ? $"{participants}/{maxPlayerCount}" : "Waiting...";
+            _participants = MultiplayerManager.Instance.ParticipantCount.Value;
+            _maxPlayerCount = MultiplayerManager.Instance.MaxPlayerAmount.Value;
+            participantCount.text = _maxPlayerCount != 0 ? $"{_participants}/{_maxPlayerCount}" : "Waiting";
 
-            _isReady = participants >= maxPlayerCount;
+            _isReady = _participants >= _maxPlayerCount;
             readyButton.interactable = _isReady;
         }
 
@@ -148,18 +150,21 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
         private void OnCharacterDisconnected(ulong clientId)
         {
-            if (clientId == NetworkManager.ServerClientId)
+            if (!NetworkManager.Singleton.IsServer)
             {
-                // If the Host or Server is disabled
-                ShowDisconnectedPopup().Forget();
+                // Server ID acts like the last ID from connected clients Ids
+                int playerCount = NetworkManager.Singleton.ConnectedClientsIds.Count;
+                ulong serverClientId = NetworkManager.Singleton.ConnectedClientsIds[playerCount - 1];
+
+                if (clientId == serverClientId)
+                    ShowDisconnectedPopup().Forget();
             }
         }
 
         private async UniTask ShowDisconnectedPopup()
         {
             var confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
-            confirmPopup.OnCloseBox = BackMainHome;
-            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!")
+            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!", BackMainHome)
                         .ShowCloseButton(true);
         }
 
