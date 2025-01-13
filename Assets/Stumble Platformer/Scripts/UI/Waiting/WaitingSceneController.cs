@@ -16,7 +16,7 @@ using TMPro;
 
 namespace StumblePlatformer.Scripts.UI.Waiting
 {
-    public class WaitingSceneController : MonoBehaviour
+    public class WaitingSceneController : NetworkBehaviour
     {
         [SerializeField] private float moveSpeed = 1f;
         [SerializeField] private CharacterVisual characterVisual;
@@ -98,7 +98,6 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
         private void ReadyToPlay()
         {
-            WaitingPopup.Setup().ShowWaiting();
             SetPlayerReady();
         }
 
@@ -117,14 +116,14 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
         private void SetPlayerReady()
         {
-            SetPlayerIdRpc();
+            SetPlayerIdServerRpc();
         }
 
         [Rpc(SendTo.Server, RequireOwnership = false)]
-        private void SetPlayerIdRpc(ServerRpcParams rpcParams = default)
+        private void SetPlayerIdServerRpc(RpcParams rpcParams = default)
         {
             bool allPlayerReady = true;
-            SetPlayerIdRpc(rpcParams.Receive.SenderClientId);
+            SetPlayerIdClientRpc(rpcParams.Receive.SenderClientId);
             _playerIdCollection[rpcParams.Receive.SenderClientId] = true;
 
             foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
@@ -138,14 +137,16 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
             if (allPlayerReady && _isReady)
             {
+                WaitingPopup.Setup().ShowWaiting();
                 LoadPlayScene().Forget();
             }
         }
 
-        [Rpc(SendTo.NotServer, RequireOwnership = false)]
-        private void SetPlayerIdRpc(ulong clientId)
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        private void SetPlayerIdClientRpc(ulong clientId)
         {
-            _playerIdCollection[clientId] = true;
+            if (!_playerIdCollection.TryAdd(clientId, true))
+                _playerIdCollection[clientId] = true;
         }
 
         private void OnCharacterDisconnected(ulong clientId)
@@ -155,16 +156,12 @@ namespace StumblePlatformer.Scripts.UI.Waiting
                 // Server ID acts like the last ID from connected clients Ids
                 int playerCount = NetworkManager.Singleton.ConnectedClientsIds.Count;
 
-                if (playerCount - 1 < 0)
-                {
-                    // If room is full
-                    ShowRoomFullPopup().Forget();
-                }
+                if (playerCount - 1 < 0)    
+                    ShowRoomFullPopup().Forget(); // If room is full
 
                 else
                 {
                     ulong serverClientId = NetworkManager.Singleton.ConnectedClientsIds[playerCount - 1];
-
                     if (clientId == serverClientId)
                         ShowDisconnectedPopup().Forget();
                 }
@@ -191,7 +188,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             SceneLoader.LoadNetworkScene(SceneConstants.Gameplay);
         }
 
-        private void OnDestroy()
+        public override void OnDestroy()
         {
             ConfirmPopup.Release();
             MultiplayerManager.Instance.OnClientApprove -= OnClientApprove;

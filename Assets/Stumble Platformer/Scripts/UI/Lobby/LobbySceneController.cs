@@ -88,7 +88,7 @@ namespace StumblePlatformer.Scripts.UI.Lobby
 
         public void LoadWaitingScene()
         {
-            SceneLoader.LoadScene(SceneConstants.Waiting).Forget();
+            SceneLoader.LoadNetworkScene(SceneConstants.Waiting);
         }
 
         private void ReleasePopups()
