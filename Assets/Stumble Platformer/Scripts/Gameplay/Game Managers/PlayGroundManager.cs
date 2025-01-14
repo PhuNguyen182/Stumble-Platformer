@@ -18,6 +18,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
     public class PlayGroundManager : NetworkBehaviour
     {
         [SerializeField] private bool isTesting;
+        [SerializeField] private NetworkObject testPlayer;
         
         [Space(10)]
         [SerializeField] private InputReceiver inputReceiver;
@@ -87,7 +88,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut) 
         {
-            GenerateLevel().Forget();
+            // To do: this funcyion in work only for spawning network object, not for loading scene from addressable
+            Debug.Log("Spawning");
+            WaitingPopup.Setup().HideWaiting();
+            NetworkManager.SpawnManager.InstantiateAndSpawn(testPlayer);
         }
 
         public void SetupLevel(EnvironmentIdentifier environmentIdentifier)
@@ -113,16 +117,19 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             playGamePanel?.SetPlayObjectActive(false);
             playGamePanel?.SetLevelObjective(PlayRule.ObjectiveTitle);
             playGamePanel?.SetLevelName(environmentHandler.EnvironmentIdentifier.LevelName);
-            
-            playerHandler.SpawnPlayer();
-            cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
-            cameraHandler.ResetCurrentCameraFollow();
+
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            {
+                playerHandler.SpawnPlayer();
+                cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
+                cameraHandler.ResetCurrentCameraFollow();
+            }
 
             cameraHandler.SetFollowCameraActive(true);
             await UniTask.NextFrame(destroyCancellationToken);
             cameraHandler.SetFollowCameraActive(false);
             SetupPlayRule(PlayRule);
-            
+
             WaitingPopup.Setup().HideWaiting();
             await environmentHandler.WaitForTeaser();
             playGamePanel?.SetLevelNameActive(false);
@@ -131,15 +138,32 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             if (playGamePanel)
                 await playGamePanel.CountDown();
-            
+
             cameraHandler.SetFollowCameraActive(true);
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            {
+                PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
+                PlayRule.IsActive = true;
+
+                playerHandler.SetPlayerActive(true);
+                playerHandler.SetPlayerPhysicsActive(true);
+            }
+
+            environmentHandler.SetLevelSecondaryComponentActive(true);
+            inputReceiver.IsActive = true;
+        }
+
+        private void SpawnPlayer()
+        {
+            playerHandler.SpawnPlayer();
+            cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
+            cameraHandler.ResetCurrentCameraFollow();
+
             PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
             PlayRule.IsActive = true;
 
             playerHandler.SetPlayerActive(true);
             playerHandler.SetPlayerPhysicsActive(true);
-            environmentHandler.SetLevelSecondaryComponentActive(true);
-            inputReceiver.IsActive = true;
         }
 
         private void SetupPlayRule(BasePlayRule playRule)

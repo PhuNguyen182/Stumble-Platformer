@@ -3500,6 +3500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTesting: 0
+  testPlayer: {fileID: -4958939914948388291, guid: 4af7a8d5f86130e40936b0fb4e7d9edb, type: 3}
   inputReceiver: {fileID: 1004334421}
   cameraHandler: {fileID: 700064963}
   playerHandler: {fileID: 950352270}
