@@ -43,8 +43,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private async UniTask ShowDisconnectedPopup()
         {
+            Cursor.lockState = CursorLockMode.None;
             ConfirmPopup confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
-            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!", BackMainHome).ShowCloseButton(true);
+            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!", BackMainHome)
+                        .SetCanvasMode(true).ShowCloseButton(true);
         }
 
         private void BackMainHome()
@@ -57,11 +59,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             WaitingPopup.Setup().ShowWaiting();
             MultiplayerManager.Instance.Shutdown();
             await SceneLoader.LoadScene(SceneConstants.Mainhome);
-        }
-
-        private void OnDisable()
-        {
-            NetworkManager.Singleton.OnClientDisconnectCallback -= OnCharacterDisconnected;
         }
     }
 }

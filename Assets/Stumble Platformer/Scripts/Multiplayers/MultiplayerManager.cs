@@ -65,8 +65,6 @@ namespace StumblePlatformer.Scripts.Multiplayers
             NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback_Server;
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback_Server;
             NetworkManager.Singleton.StartHost();
-
-            //NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
             ParticipantCount.Value = NetworkManager.Singleton.ConnectedClientsIds.Count;
         }
 

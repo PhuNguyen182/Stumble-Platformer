@@ -26,12 +26,12 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         [Header("UI Elements")]
         [SerializeField] private TMP_Text roomCodeText;
         [SerializeField] private TMP_Text participantCount;
-        [SerializeField] private Button readyButton;
         [SerializeField] private Button backButton;
 
         private int _participants;
         private int _maxPlayerCount;
         private bool _isReady = false;
+        private bool _ableToLoadScene = false;
         private Dictionary<ulong, bool> _joinedPlayersIdsCollection = new();
 
         private void Awake()
@@ -58,11 +58,19 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         private void Update()
         {
             OnClientApprove();
+
+            if (_isReady)
+            {
+                if (!_ableToLoadScene)
+                {
+                    _ableToLoadScene = true;
+                    ReadyToPlay();
+                }
+            }
         }
 
         private void RegisterButtons()
         {
-            readyButton.onClick.AddListener(ReadyToPlay);
             backButton.onClick.AddListener(BackMainHome);
         }
 
@@ -70,10 +78,8 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         {
             _participants = MultiplayerManager.Instance.ParticipantCount.Value;
             _maxPlayerCount = MultiplayerManager.Instance.MaxPlayerAmount.Value;
-            participantCount.text = _maxPlayerCount != 0 ? $"{_participants}/{_maxPlayerCount}" : "Waiting";
-
+            participantCount.text = _maxPlayerCount != 0 ? $"Waiting for players: {_participants}/{_maxPlayerCount}" : "Waiting";
             _isReady = _participants >= _maxPlayerCount;
-            readyButton.interactable = _isReady;
         }
 
         private void UpdateSkin()
@@ -168,13 +174,13 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         private async UniTask ShowRoomFullPopup()
         {
             ConfirmPopup confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
-            confirmPopup.AddMessageOK("Error!", "Room Is Full!", BackMainHome).ShowCloseButton(true);
+            confirmPopup.AddMessageOK("Error!", "Room Is Full!", BackMainHome).SetCanvasMode(false).ShowCloseButton(true);
         }
 
         private async UniTask ShowDisconnectedPopup()
         {
             ConfirmPopup confirmPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
-            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!", BackMainHome).ShowCloseButton(true);
+            confirmPopup.AddMessageOK("Error!", "Server Is Disconnected!", BackMainHome).SetCanvasMode(false).ShowCloseButton(true);
         }
 
         private async UniTask LoadPlayScene()

@@ -46,7 +46,8 @@ namespace StumblePlatformer.Scripts.UI.Mainhome
             ConfirmPopup quitPopup = await ConfirmPopup.CreateFromAddress(CommonPopupPaths.ConfirmPopupPath);
             quitPopup.AddMessageYesNo("Quit Game", "Do you want to leave game?"
                     , onYesClick: QuitGame
-                    , OnCloseBoxAction: () => _isQuitPress = false);
+                    , OnCloseBoxAction: () => _isQuitPress = false)
+                    .SetCanvasMode(false);
         }
 
         private void QuitGame()

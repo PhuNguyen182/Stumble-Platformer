@@ -83,7 +83,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 if (IsServer)
                     NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
             }
-            Debug.Log(MultiplayerManager.Instance.CarrierCollection.PlayEntryCarrier.NetworkData.Value.PlayLevelName.Value);
+        }
+
+        private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut) 
+        {
+            Debug.Log("In Level");
+            GenerateLevel().Forget();
         }
 
         public void SetupLevel(EnvironmentIdentifier environmentIdentifier)
@@ -160,11 +165,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 playGamePanel.UpdateTimeRule(survivalRule.PlayDuration);
                 survivalRule.SetPlayRuleTimer(playGamePanel.PlayRuleTimer);
             }
-        }
-
-        private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut) 
-        {
-            GenerateLevel().Forget();
         }
 
         private void ShutdownNetwork()

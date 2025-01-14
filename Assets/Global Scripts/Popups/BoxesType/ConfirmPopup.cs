@@ -94,6 +94,12 @@ public class ConfirmPopup : BasePopup<ConfirmPopup>
         return EnableBackground();
     }
 
+    public ConfirmPopup SetCanvasMode(bool isOverlay)
+    {
+        popupCanvas.renderMode = isOverlay ? RenderMode.ScreenSpaceOverlay : RenderMode.ScreenSpaceCamera;
+        return this;
+    }
+
     public ConfirmPopup EnableBackground()
     {
         if (backGround != null)
