@@ -670,7 +670,11 @@ MonoBehaviour:
     To Move
 
 
-    Press <color=#99EEFF>[Space]</color> To Jump'
+    Use <color=#99EEFF>[Mouse]</color>  To Control Your View
+
+
+    Press
+    <color=#99EEFF>[Space]</color> To Jump'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c9f0ab9a170fa4c3596972aa1db04a9a, type: 2}
   m_sharedMaterial: {fileID: 2081446301306759604, guid: c9f0ab9a170fa4c3596972aa1db04a9a, type: 2}

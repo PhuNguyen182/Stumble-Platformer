@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using StumblePlatformer.Scripts.Multiplayers;
-using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Multiplayers.Datas;
-using StumblePlatformer.Scripts.Gameplay;
 using Cysharp.Threading.Tasks;
 using TMPro;
 

@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GlobalScripts.SceneUtils;
-using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.UI.Lobby.Popups;
 using StumblePlatformer.Scripts.Common.Constants;
-using StumblePlatformer.Scripts.Gameplay;
 using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.UI.Lobby

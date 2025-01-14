@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
-using StumblePlatformer.Scripts.Gameplay;
 using StumblePlatformer.Scripts.GameDatas;
 using StumblePlatformer.Scripts.Multiplayers.Datas;
 using StumblePlatformer.Scripts.Multiplayers.Carriers;
-using StumblePlatformer.Scripts.Common.Enums;
 using Unity.Services.Authentication;
 using Unity.Netcode.Transports.UTP;
 
