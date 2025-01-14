@@ -76,7 +76,6 @@ namespace StumblePlatformer.Scripts.UI.Lobby
             if (canJoin)
             {
                 MessagePopup.Setup().HideWaiting();
-                GameplaySetup.PlayerType = PlayerType.Client;
                 WaitingPopup.Setup().ShowWaiting();
                 // This is automatically enter the Waiting Scene if server has entered the Waiting Scene
             }

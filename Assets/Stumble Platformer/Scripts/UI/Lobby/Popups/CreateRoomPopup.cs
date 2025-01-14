@@ -62,14 +62,12 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
         private void CreatePublicRoom()
         {
             Close();
-            GameplaySetup.PlayerType = PlayerType.Host;
             CreateRoomAsync(false).Forget();
         }
 
         private void CreatePrivateRoom()
         {
             Close();
-            GameplaySetup.PlayerType = PlayerType.Host;
             MultiplayerManager.Instance.SetPlayerCountInRoom(_playerCount);
             CreateRoomAsync(true).Forget();
         }

@@ -29,7 +29,6 @@ namespace StumblePlatformer.Scripts.UI.Mainhome
         private void Start()
         {
             WaitingPopup.Setup().HideWaiting();
-            GameplaySetup.PlayerType = PlayerType.None;
         }
 
         private void Update()
