@@ -130,7 +130,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             SetPlayerIdClientRpc(rpcParams.Receive.SenderClientId);
             _joinedPlayersIdsCollection[rpcParams.Receive.SenderClientId] = true;
 
-            foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+            foreach (ulong clientId in NetworkManager.ConnectedClientsIds)
             {
                 if (!_joinedPlayersIdsCollection.ContainsKey(clientId) || !_joinedPlayersIdsCollection[clientId])
                 {
@@ -142,11 +142,12 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             if (allPlayerReady && _isReady)
             {
                 WaitingPopup.Setup().ShowWaiting();
-                LoadPlayScene().Forget();
+                if (IsServer)
+                    LoadPlayScene().Forget();
             }
         }
 
-        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        [Rpc(SendTo.Owner, RequireOwnership = false)]
         private void SetPlayerIdClientRpc(ulong clientId)
         {
             if (!_joinedPlayersIdsCollection.TryAdd(clientId, true))
@@ -156,15 +157,15 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         private void OnCharacterDisconnected(ulong clientId)
         {
             // Server ID acts like the last ID from connected clients Ids
-            if (!NetworkManager.Singleton.IsServer)
+            if (!NetworkManager.IsServer)
             {
-                int playerCount = NetworkManager.Singleton.ConnectedClientsIds.Count;
+                int playerCount = NetworkManager.ConnectedClientsIds.Count;
                 if (playerCount - 1 < 0)    
                     ShowRoomFullPopup().Forget(); // If room is full
 
                 else
                 {
-                    ulong serverClientId = NetworkManager.Singleton.ConnectedClientsIds[playerCount - 1];
+                    ulong serverClientId = NetworkManager.ConnectedClientsIds[playerCount - 1];
                     if (clientId == serverClientId)
                         ShowDisconnectedPopup().Forget();
                 }

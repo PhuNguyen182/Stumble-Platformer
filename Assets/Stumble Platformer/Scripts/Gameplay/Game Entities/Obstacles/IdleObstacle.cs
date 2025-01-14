@@ -28,7 +28,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             {
                 if (!IsSpawned)
                 {
-                    networkObject.Spawn();
+                    networkObject.Spawn(true);
                     obstacleBody.isKinematic = initializedIsKinematic;
                 }
             }
@@ -36,7 +36,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             {
                 if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
                 {
-                    networkObject.Spawn();
+                    networkObject.Spawn(true);
                     obstacleBody.isKinematic = initializedIsKinematic;
                 }
             }

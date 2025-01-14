@@ -88,7 +88,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void SpawnMultiplayerPlayer()
         {
-            foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+            foreach (ulong clientId in NetworkManager.ConnectedClientsIds)
             {
                 int playerIndex = MultiplayerManager.Instance.GetPlayerDataIndexFromClientId(clientId);
                 Vector3 playerPosition = environmentHandler.EnvironmentIdentifier.SpawnCharacterArea
@@ -98,7 +98,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 PlayerController player = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
                 
                 if (player.NetworkObject != null)
-                    player.NetworkObject.SpawnAsPlayerObject(clientId, true);
+                    player.NetworkObject.SpawnWithOwnership(clientId, true);
                 
                 if(string.CompareOrdinal(playerData.PlayerID.Value, MultiplayerManager.Instance.GetCurrentPlayerID()) == 0)
                     _currentPlayer = player;

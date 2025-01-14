@@ -72,7 +72,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             {
                 if (!IsSpawned)
                 {
-                    networkObject.Spawn();
+                    networkObject.Spawn(true);
                     platformBody.isKinematic = isKinematic;
                 }
             }
@@ -80,7 +80,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             {
                 if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
                 {
-                    networkObject.Spawn();
+                    networkObject.Spawn(true);
                     platformBody.isKinematic = isKinematic;
                 }
             }

@@ -81,13 +81,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             else if(GameplaySetup.PlayMode == GameMode.Multiplayer)
             {
                 if (IsServer)
-                    NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
+                    NetworkManager.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
             }
         }
 
         private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut) 
         {
-            Debug.Log("In Level");
             GenerateLevel().Forget();
         }
 
@@ -123,7 +122,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             await UniTask.NextFrame(destroyCancellationToken);
             cameraHandler.SetFollowCameraActive(false);
             SetupPlayRule(PlayRule);
-
+            
             WaitingPopup.Setup().HideWaiting();
             await environmentHandler.WaitForTeaser();
             playGamePanel?.SetLevelNameActive(false);
@@ -169,11 +168,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void ShutdownNetwork()
         {
-            if (NetworkManager.Singleton == null)
+            if (NetworkManager == null)
                 return;
 
             if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-                NetworkManager.Singleton?.Shutdown();
+                NetworkManager?.Shutdown();
 
             else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
                 MultiplayerManager.Instance.Shutdown();

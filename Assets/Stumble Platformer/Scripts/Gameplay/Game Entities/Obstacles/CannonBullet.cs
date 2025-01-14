@@ -76,12 +76,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
                 if (!IsSpawned)
-                    networkObject.Spawn();
+                    networkObject.Spawn(true);
             }
             else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
             {
                 if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
-                    networkObject.Spawn();
+                    networkObject.Spawn(true);
             }
         }
 

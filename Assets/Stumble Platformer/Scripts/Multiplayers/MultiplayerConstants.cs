@@ -5,7 +5,11 @@ namespace StumblePlatformer.Scripts.Multiplayers
         public const string DefaultIP = "127.0.0.1";
         public const ushort DefaultPort = 7777;
 
+#if UNITY_EDITOR
         public const int MinPlayerCount = 1;
+#else
+        public const int MinPlayerCount = 2;
+#endif
         public const int MaxPlayerCount = 7;
         public const int AcceptablePlayerCount = 2;
 

@@ -54,37 +54,37 @@ namespace StumblePlatformer.Scripts.Multiplayers
             if (NetworkManager.Singleton.TryGetComponent(out UnityTransport transport))
                 transport.SetConnectionData(MultiplayerConstants.DefaultIP, MultiplayerConstants.DefaultPort);
             
-            NetworkManager.Singleton.StartHost();
+            NetworkManager.StartHost();
         }
 
         public void StartHost()
         {
-            NetworkManager.Singleton.ConnectionApprovalCallback += ConnectionApprovalCallback;
-            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback_Server;
-            NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback_Server;
-            NetworkManager.Singleton.StartHost();
-            ParticipantCount.Value = NetworkManager.Singleton.ConnectedClientsIds.Count;
+            NetworkManager.ConnectionApprovalCallback += ConnectionApprovalCallback;
+            NetworkManager.OnClientConnectedCallback += OnClientConnectedCallback_Server;
+            NetworkManager.OnClientDisconnectCallback += OnClientDisconnectCallback_Server;
+            NetworkManager.StartHost();
+            ParticipantCount.Value = NetworkManager.ConnectedClientsIds.Count;
         }
 
         public void StartClient()
         {
             OnTryingToJoinGame?.Invoke();
-            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback_Client;
-            NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback_Client;
-            NetworkManager.Singleton.StartClient();
+            NetworkManager.OnClientConnectedCallback += OnClientConnectedCallback_Client;
+            NetworkManager.OnClientDisconnectCallback += OnClientDisconnectCallback_Client;
+            NetworkManager.StartClient();
         }
 
         public void RemovePlayer(ulong clientId)
         {
             if(IsServer)
-                NetworkManager.Singleton.DisconnectClient(clientId);
+                NetworkManager.DisconnectClient(clientId);
             else
                 Shutdown();
         }
 
         public void LeaveRoom()
         {
-            ulong localClientId = NetworkManager.Singleton.LocalClient.ClientId;
+            ulong localClientId = NetworkManager.LocalClient.ClientId;
             RemovePlayer(localClientId);
         }
 
@@ -92,19 +92,19 @@ namespace StumblePlatformer.Scripts.Multiplayers
         {
             if (IsServer)
             {
-                NetworkManager.Singleton.ConnectionApprovalCallback -= ConnectionApprovalCallback;
-                NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback_Server;
-                NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback_Server;
-                NetworkManager.Singleton.SceneManager.OnLoadEventCompleted -= HandleSceneLoadEventCompleted;
+                NetworkManager.ConnectionApprovalCallback -= ConnectionApprovalCallback;
+                NetworkManager.OnClientConnectedCallback -= OnClientConnectedCallback_Server;
+                NetworkManager.OnClientDisconnectCallback -= OnClientDisconnectCallback_Server;
+                NetworkManager.SceneManager.OnLoadEventCompleted -= HandleSceneLoadEventCompleted;
             }
 
             else
             {
-                NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback_Client;
-                NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectCallback_Client;
+                NetworkManager.OnClientConnectedCallback -= OnClientConnectedCallback_Client;
+                NetworkManager.OnClientDisconnectCallback -= OnClientDisconnectCallback_Client;
             }
 
-            NetworkManager.Singleton.Shutdown();
+            NetworkManager.Shutdown();
         }
 
         public void SetPlayerCountInRoom(int amount)
@@ -139,7 +139,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
         private void ConnectionApprovalCallback(NetworkManager.ConnectionApprovalRequest approvalRequest, NetworkManager.ConnectionApprovalResponse approvalResponse)
         {
             OnClientApprove?.Invoke();
-            if (NetworkManager.Singleton.ConnectedClientsIds.Count >= MaxPlayerAmount.Value)
+            if (NetworkManager.ConnectedClientsIds.Count >= MaxPlayerAmount.Value)
             {
                 approvalResponse.Approved = false;
                 approvalResponse.Reason = "Room is full!";

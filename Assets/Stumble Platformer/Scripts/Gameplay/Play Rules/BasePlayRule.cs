@@ -40,7 +40,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
             if(TryGetComponent<NetworkObject>(out var networkObject))
             {
-                networkObject.Spawn();
+                if (IsServer)
+                    networkObject.Spawn(true);
             }
         }
 
@@ -151,7 +152,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
             else
             {
-                ulong currentClientId = NetworkManager.Singleton.LocalClient.ClientId;
+                ulong currentClientId = NetworkManager.LocalClient.ClientId;
                 EndResult networkResult = clientId == currentClientId 
                                           ? EndResult.Win : EndResult.Lose;
                 gameStateController.EndLevel(networkResult);
