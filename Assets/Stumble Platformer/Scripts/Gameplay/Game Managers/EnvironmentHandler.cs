@@ -84,7 +84,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public async UniTask GenerateLevel(string levelName)
         {
-            string path = $"Normal Levels/{levelName}.unity";
+            string path = $"Normal Levels/{levelName}/{levelName}.unity";
             await AddressablesUtils.LoadSceneViaAddressable(path, LoadSceneMode.Additive);
         }
     }
