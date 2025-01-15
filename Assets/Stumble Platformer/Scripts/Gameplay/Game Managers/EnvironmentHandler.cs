@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
-using GlobalScripts.Utils;
 using UnityEngine.SceneManagement;
+using UnityEngine.AddressableAssets;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
@@ -12,6 +13,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
     public class EnvironmentHandler : NetworkBehaviour
     {
         [SerializeField] private CameraHandler cameraHandler;
+
+        private AsyncOperationHandle<GameObject> _levelLoadOperation;
 
         public CameraHandler CameraHandler => cameraHandler;
         public EnvironmentIdentifier EnvironmentIdentifier { get; private set; }
@@ -82,10 +85,17 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             SetupCamera();
         }
 
-        public async UniTask GenerateLevel(string levelName)
+        public void GenerateLevel(string levelName)
         {
-            string path = $"Normal Levels/{levelName}/{levelName}.unity";
-            await AddressablesUtils.LoadSceneViaAddressable(path, LoadSceneMode.Additive);
+            if (NetworkManager.Singleton.IsServer)
+                NetworkManager.Singleton.SceneManager.LoadScene(levelName, LoadSceneMode.Additive);
+        }
+
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+            if (_levelLoadOperation.IsValid())
+                Addressables.Release(_levelLoadOperation);
         }
     }
 }

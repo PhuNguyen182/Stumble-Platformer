@@ -88,6 +88,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void SpawnMultiplayerPlayer()
         {
+            if (!IsServer)
+                return;
+
             foreach (ulong clientId in NetworkManager.ConnectedClientsIds)
             {
                 int playerIndex = MultiplayerManager.Instance.GetPlayerDataIndexFromClientId(clientId);

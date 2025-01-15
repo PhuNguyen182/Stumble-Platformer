@@ -9,7 +9,7 @@ using StumblePlatformer.Scripts.Common.Enums;
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
     [RequireComponent(typeof(Rigidbody))] 
-    public class CannonBullet : NetworkBehaviour, IObstacleDamager
+    public class CannonBullet : Unity.Netcode.NetworkBehaviour, IObstacleDamager
     {
         [SerializeField] private float attackForce = 10f;
         [SerializeField] private float stunDuration = 3f;

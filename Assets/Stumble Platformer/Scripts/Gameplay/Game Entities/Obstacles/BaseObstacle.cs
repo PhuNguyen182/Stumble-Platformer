@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using GlobalScripts.UpdateHandlerPattern;
-using StumblePlatformer.Scripts.Common.Enums;
 using Sirenix.OdinInspector;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
@@ -15,6 +14,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         [SerializeField] protected bool attackOnce;
         [SerializeField] protected float attactForce = 15f;
         [SerializeField] protected float stunDuration = 1.5f;
+        [SerializeField] protected bool isKinematic;
         [SerializeField] protected Rigidbody obstacleBody;
         [SerializeField] protected NetworkObject networkObject;
         
@@ -43,7 +43,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         public virtual void OnAwake()
         {
-            networkObject ??= GetComponent<NetworkObject>();
+            if (networkObject == null)
+                TryGetComponent(out networkObject);
+
+            isKinematic = obstacleBody ?? obstacleBody.isKinematic;
         }
 
         public virtual void SetObstacleActive(bool active)
@@ -98,29 +101,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             builder.RegisterTo(this.destroyCancellationToken);
         }
 
-        private void SpawnNetworkObject()
+        protected virtual void SpawnNetworkObject()
         {
-            bool isKinematic = obstacleBody ?? obstacleBody.isKinematic;
-            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-            {
-                if (!IsSpawned)
-                {
-                    networkObject.Spawn(true);
-
-                    if (obstacleBody)
-                        obstacleBody.isKinematic = isKinematic;
-                }
-            }
-            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
-            {
-                if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
-                {
-                    networkObject.Spawn(true);
-
-                    if (obstacleBody)
-                        obstacleBody.isKinematic = isKinematic;
-                }
-            }
+            if (obstacleBody)
+                obstacleBody.isKinematic = isKinematic;
         }
 
 #if UNITY_EDITOR

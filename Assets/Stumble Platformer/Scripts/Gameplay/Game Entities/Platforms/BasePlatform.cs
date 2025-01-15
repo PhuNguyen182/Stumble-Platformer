@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GlobalScripts.UpdateHandlerPattern;
-using StumblePlatformer.Scripts.Common.Enums;
 using Unity.Netcode;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
@@ -11,6 +10,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
     {
         [SerializeField] protected Rigidbody platformBody;
         [SerializeField] protected NetworkObject networkObject;
+        [SerializeField] protected bool isKinematic;
 
         public bool IsActive { get; set; }
         public bool IsPlatformActive { get; set; }
@@ -28,7 +28,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             SpawnNetworkObject();
         }
 
-        protected virtual void OnAwake() { }
+        protected virtual void OnAwake()
+        {
+            isKinematic = platformBody.isKinematic;
+        }
 
         protected virtual void OnStart() { }
 
@@ -67,23 +70,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void SpawnNetworkObject()
         {
-            bool isKinematic = platformBody.isKinematic;
-            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-            {
-                if (!IsSpawned)
-                {
-                    networkObject.Spawn(true);
-                    platformBody.isKinematic = isKinematic;
-                }
-            }
-            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
-            {
-                if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
-                {
-                    networkObject.Spawn(true);
-                    platformBody.isKinematic = isKinematic;
-                }
-            }
+            platformBody.isKinematic = isKinematic;
         }
 
         public override void OnDestroy()

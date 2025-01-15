@@ -26,6 +26,96 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stumble Platformer/Scenes/Gameplay.unity
     guid: 9e48f6c00c276bc49bc9fbbcea769a2d
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 1.unity
+    guid: 4c0e00946bfb42c4a8da92c03112a766
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 2.unity
+    guid: 5de78a29a67fb224d89f80feb835f1ac
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 3.unity
+    guid: 8b8887ef521c732448f223ea46886214
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 4.unity
+    guid: bdcc38e90d9feab4f911bc3c21ec42fd
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 5.unity
+    guid: 320b0be232d4e9e4d8806bab77cd3fc2
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 6.unity
+    guid: 9294434272e8b614c8cb48010789134c
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 7.unity
+    guid: 3e42fc4af4304a34384693f5e1e0787d
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 8.unity
+    guid: 5e5cb3ecdf65a984d968c3602986c283
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 9.unity
+    guid: 61aa26a75b71a08478208a81e4906b29
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 10.unity
+    guid: c5f04866166bda5429aa367652663288
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 11.unity
+    guid: 8b7cf2b64d9a52d46ae48b2d6ac6b38e
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 12.unity
+    guid: d3d602f53189af745aa906186c116868
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 13.unity
+    guid: ee95f4cd60f777549819e9e004782854
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 14.unity
+    guid: e2c5a3bd17824e146be21de2f83201d7
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 15.unity
+    guid: 8ef8351a7e5babb4eb516bc46d52f962
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 16.unity
+    guid: 07cdfe74f3d4bb84292e66138efd78a3
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 17.unity
+    guid: 8c185e04cd2bc304ea53f72ae97569bd
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 18.unity
+    guid: dabe464d0aaddb94ba11e396672da78c
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 19.unity
+    guid: d8b2ef0283f897d438dd0fe1b4f01f00
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 20.unity
+    guid: 90e66bb7016d6324eb7545907407a5b7
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 21.unity
+    guid: 064f56df9af907e4db3d7630c0ba88c8
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 22.unity
+    guid: 1bb42b1aa055fff42b60aac4a77c0c69
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 23.unity
+    guid: 81fd929356c498b4988d91c4856ae87d
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 24.unity
+    guid: fa82cc017ed652e4bb448b80b35654ba
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 25.unity
+    guid: 485179e62d788994d94fec95f258e618
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 26.unity
+    guid: 1688e614e66df9c4aac0ebec4c8b5f29
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 27.unity
+    guid: 105927d2844d8b24095df886f0653c4b
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 28.unity
+    guid: 06af4df2bd3676e4fa3b189e0953f957
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 29.unity
+    guid: 80dd04aebcaad9c4ea2799507f5c8cdc
+  - enabled: 1
+    path: Assets/Stumble Platformer/Prefabs/Level Platforms/Normal Levels/Level 30.unity
+    guid: 7ecc030cf1478ca4a95389a2975c1e99
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 26792e7767b0f2c45af846b120211ffd, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 69f2201d104ad49448c918fa2d1f67cd, type: 2}

@@ -38,9 +38,9 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             RegisterCommonMessage();
             UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
 
-            if(TryGetComponent<NetworkObject>(out var networkObject))
+            if (TryGetComponent<NetworkObject>(out var networkObject))
             {
-                if (IsServer)
+                if (NetworkManager.Singleton.IsServer && !networkObject.IsSpawned)
                     networkObject.Spawn(true);
             }
         }

@@ -6,40 +6,40 @@ using StumblePlatformer.Scripts.Common.Enums;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
-    public class IdleObstacle : NetworkBehaviour
+    public class IdleObstacle : BaseObstacle
     {
-        [SerializeField] private Rigidbody obstacleBody;
-        [SerializeField] private NetworkObject networkObject;
         [SerializeField] private bool initializedIsKinematic;
 
-        private void Awake()
+        public override void OnAwake()
         {
             initializedIsKinematic = obstacleBody.isKinematic;
         }
 
-        private void Start()
+        protected override void SpawnNetworkObject()
         {
-            SpawnNetworkObject();
+            if (GameplaySetup.PlayMode == GameMode.Multiplayer)
+            {
+                if (NetworkManager.Singleton.IsServer)
+                {
+                    networkObject.Spawn(true);
+                    obstacleBody.isKinematic = initializedIsKinematic;
+                }
+            }
         }
 
-        private void SpawnNetworkObject()
+        public override void ExitDamage(Collision collision)
         {
-            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-            {
-                if (!IsSpawned)
-                {
-                    networkObject.Spawn(true);
-                    obstacleBody.isKinematic = initializedIsKinematic;
-                }
-            }
-            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
-            {
-                if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
-                {
-                    networkObject.Spawn(true);
-                    obstacleBody.isKinematic = initializedIsKinematic;
-                }
-            }
+            
+        }
+
+        public override void DamageCharacter(Collision collision)
+        {
+            
+        }
+
+        public override void ObstacleAction()
+        {
+            
         }
     }
 }

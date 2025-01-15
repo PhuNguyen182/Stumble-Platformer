@@ -54,7 +54,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             builder.RegisterTo(this.destroyCancellationToken);
         }
 
-        private async UniTask GenerateLevel()
+        private void GenerateLevel()
         {
             if (isTesting)
                 return;
@@ -69,29 +69,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             else if(GameplaySetup.PlayMode == GameMode.Multiplayer)
                 levelName = MultiplayerManager.Instance.CarrierCollection.PlayEntryCarrier.NetworkData.Value.PlayLevelName.Value;
 
-            await environmentHandler.GenerateLevel(levelName);
+            environmentHandler.GenerateLevel(levelName);
         }
 
         public override void OnNetworkSpawn()
         {
-            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-            {
-                GenerateLevel().Forget();
-            }
-
-            else if(GameplaySetup.PlayMode == GameMode.Multiplayer)
-            {
-                if (IsServer)
-                    NetworkManager.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
-            }
+            if (IsServer)
+                NetworkManager.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
         }
 
         private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut) 
         {
-            // To do: this funcyion in work only for spawning network object, not for loading scene from addressable
-            Debug.Log("Spawning");
-            WaitingPopup.Setup().HideWaiting();
-            NetworkManager.SpawnManager.InstantiateAndSpawn(testPlayer);
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            if (string.CompareOrdinal(sceneName, currentSceneName) == 0)
+                GenerateLevel();
         }
 
         public void SetupLevel(EnvironmentIdentifier environmentIdentifier)
@@ -118,7 +109,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             playGamePanel?.SetLevelObjective(PlayRule.ObjectiveTitle);
             playGamePanel?.SetLevelName(environmentHandler.EnvironmentIdentifier.LevelName);
 
-            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            //if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
                 playerHandler.SpawnPlayer();
                 cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
@@ -140,7 +131,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 await playGamePanel.CountDown();
 
             cameraHandler.SetFollowCameraActive(true);
-            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            //if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
                 PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
                 PlayRule.IsActive = true;
@@ -151,19 +142,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             environmentHandler.SetLevelSecondaryComponentActive(true);
             inputReceiver.IsActive = true;
-        }
-
-        private void SpawnPlayer()
-        {
-            playerHandler.SpawnPlayer();
-            cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
-            cameraHandler.ResetCurrentCameraFollow();
-
-            PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
-            PlayRule.IsActive = true;
-
-            playerHandler.SetPlayerActive(true);
-            playerHandler.SetPlayerPhysicsActive(true);
         }
 
         private void SetupPlayRule(BasePlayRule playRule)

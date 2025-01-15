@@ -59,6 +59,9 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         {
             OnClientApprove();
 
+            if (Input.GetKeyDown(KeyCode.S))
+                NetworkManager.Singleton.SceneManager.LoadScene("Level 30", UnityEngine.SceneManagement.LoadSceneMode.Single);
+
             if (_isReady)
             {
                 if (!_ableToLoadScene)
@@ -80,6 +83,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             _maxPlayerCount = MultiplayerManager.Instance.MaxPlayerAmount.Value;
             participantCount.text = _maxPlayerCount != 0 ? $"Waiting for players: {_participants}/{_maxPlayerCount}" : "Waiting";
             _isReady = _participants >= _maxPlayerCount;
+            backButton.interactable = !_isReady;
         }
 
         private void UpdateSkin()

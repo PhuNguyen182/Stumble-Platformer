@@ -15,6 +15,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected override void OnAwake()
         {
+            base.OnAwake();
             RegisterPlatform();
         }
 

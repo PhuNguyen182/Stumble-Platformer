@@ -31,6 +31,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected override void OnAwake()
         {
+            base.OnAwake();
             _rotateAxis = rotateAxis switch
             {
                 RotateAxis.X => Vector3.right,

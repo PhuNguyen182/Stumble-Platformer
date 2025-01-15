@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GlobalScripts.SceneUtils;
-using StumblePlatformer.Scripts.Multiplayers;
-using StumblePlatformer.Scripts.UI.Lobby.Popups;
+using StumblePlatformer.Scripts.Gameplay;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.Constants;
+using StumblePlatformer.Scripts.UI.Lobby.Popups;
+using StumblePlatformer.Scripts.Multiplayers;
 using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.UI.Lobby
@@ -28,7 +30,8 @@ namespace StumblePlatformer.Scripts.UI.Lobby
 
         private void Start()
         {
-            WaitingPopup.Setup().HideWaiting();
+            if (GameplaySetup.PlayMode == GameMode.Multiplayer)
+                WaitingPopup.Setup().HideWaiting();
         }
 
         private void PreloadPopups()
