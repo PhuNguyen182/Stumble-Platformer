@@ -12,6 +12,8 @@ using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using Cysharp.Threading.Tasks;
+using GlobalScripts.SceneUtils;
+using GlobalScripts;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -31,6 +33,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         [SerializeField] private EndGamePanel endGamePanel;
         [SerializeField] private FinalePanel finalePanel;
 
+        private string _levelName = "";
         private GameStateController _gameStateController;
         
         public BasePlayRule PlayRule { get; private set; }
@@ -44,6 +47,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             Cursor.lockState = CursorLockMode.Locked;
 #endif
             SetupGameplay();
+            GetLevelEntry();
         }
 
         private void SetupGameplay()
@@ -54,35 +58,45 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             builder.RegisterTo(this.destroyCancellationToken);
         }
 
-        private void GenerateLevel()
+        private void GetLevelEntry()
         {
             if (isTesting)
                 return;
 
-            string levelName = "";
             if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
                 if (PlayGameConfig.Current != null)
-                    levelName = PlayGameConfig.Current.PlayLevelName;
+                    _levelName = PlayGameConfig.Current.PlayLevelName;
             }
 
             else if(GameplaySetup.PlayMode == GameMode.Multiplayer)
-                levelName = MultiplayerManager.Instance.CarrierCollection.PlayEntryCarrier.NetworkData.Value.PlayLevelName.Value;
-
-            environmentHandler.GenerateLevel(levelName);
+                _levelName = MultiplayerManager.Instance.CarrierCollection.PlayEntryCarrier.NetworkData.Value.PlayLevelName.Value;
         }
 
         public override void OnNetworkSpawn()
         {
             if (IsServer)
-                NetworkManager.SceneManager.OnLoadEventCompleted += HandleSceneLoadEventCompleted;
+                NetworkManager.SceneManager.OnSceneEvent += HandleOnSceneEvent;
         }
 
-        private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut) 
+        private void HandleOnSceneEvent(SceneEvent sceneEvent)
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            if (string.CompareOrdinal(sceneName, currentSceneName) == 0)
-                GenerateLevel();
+            switch (sceneEvent.SceneEventType)
+            {
+                case SceneEventType.LoadComplete:
+                    {
+                        DebugUtils.Log("Load Completed");
+                        break;
+                    }
+                case SceneEventType.LoadEventCompleted:
+                    {
+                        if (string.CompareOrdinal(sceneEvent.SceneName, SceneConstants.Gameplay) == 0)
+                            NetworkManager.Singleton.SceneManager.LoadScene(_levelName, LoadSceneMode.Additive);
+                        
+                        DebugUtils.Log("Load Event Completed" + sceneEvent.ClientId);
+                        break;
+                    }
+            }
         }
 
         public void SetupLevel(EnvironmentIdentifier environmentIdentifier)
@@ -109,12 +123,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             playGamePanel?.SetLevelObjective(PlayRule.ObjectiveTitle);
             playGamePanel?.SetLevelName(environmentHandler.EnvironmentIdentifier.LevelName);
 
-            //if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-            {
-                playerHandler.SpawnPlayer();
-                cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
-                cameraHandler.ResetCurrentCameraFollow();
-            }
+            playerHandler.SpawnPlayer();
+            cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
+            cameraHandler.ResetCurrentCameraFollow();
 
             cameraHandler.SetFollowCameraActive(true);
             await UniTask.NextFrame(destroyCancellationToken);
@@ -131,17 +142,27 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 await playGamePanel.CountDown();
 
             cameraHandler.SetFollowCameraActive(true);
-            //if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-            {
-                PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
-                PlayRule.IsActive = true;
+            PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
+            PlayRule.IsActive = true;
 
-                playerHandler.SetPlayerActive(true);
-                playerHandler.SetPlayerPhysicsActive(true);
-            }
+            playerHandler.SetPlayerActive(true);
+            playerHandler.SetPlayerPhysicsActive(true);
 
             environmentHandler.SetLevelSecondaryComponentActive(true);
             inputReceiver.IsActive = true;
+        }
+
+        private void SpawnPlayer()
+        {
+            playerHandler.SpawnPlayer();
+            cameraHandler.SetFollowTarget(playerHandler.CurrentPlayer.transform);
+            cameraHandler.ResetCurrentCameraFollow();
+
+            PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
+            PlayRule.IsActive = true;
+
+            playerHandler.SetPlayerActive(true);
+            playerHandler.SetPlayerPhysicsActive(true);
         }
 
         private void SetupPlayRule(BasePlayRule playRule)

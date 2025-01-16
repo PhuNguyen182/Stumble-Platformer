@@ -59,9 +59,6 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         {
             OnClientApprove();
 
-            if (Input.GetKeyDown(KeyCode.S))
-                NetworkManager.Singleton.SceneManager.LoadScene("Level 30", UnityEngine.SceneManagement.LoadSceneMode.Single);
-
             if (_isReady)
             {
                 if (!_ableToLoadScene)

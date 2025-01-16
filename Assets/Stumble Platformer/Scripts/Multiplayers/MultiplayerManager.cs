@@ -95,7 +95,6 @@ namespace StumblePlatformer.Scripts.Multiplayers
                 NetworkManager.ConnectionApprovalCallback -= ConnectionApprovalCallback;
                 NetworkManager.OnClientConnectedCallback -= OnClientConnectedCallback_Server;
                 NetworkManager.OnClientDisconnectCallback -= OnClientDisconnectCallback_Server;
-                NetworkManager.SceneManager.OnLoadEventCompleted -= HandleSceneLoadEventCompleted;
             }
 
             else
@@ -129,11 +128,6 @@ namespace StumblePlatformer.Scripts.Multiplayers
             }
 
             return -1;
-        }
-
-        private void HandleSceneLoadEventCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
-        {
-            OnSceneLoadEventCompleted?.Invoke(sceneName, loadSceneMode, clientsCompleted, clientsTimedOut);
         }
 
         private void ConnectionApprovalCallback(NetworkManager.ConnectionApprovalRequest approvalRequest, NetworkManager.ConnectionApprovalResponse approvalResponse)

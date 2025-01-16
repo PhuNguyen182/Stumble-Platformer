@@ -87,8 +87,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public void GenerateLevel(string levelName)
         {
-            if (NetworkManager.Singleton.IsServer)
-                NetworkManager.Singleton.SceneManager.LoadScene(levelName, LoadSceneMode.Additive);
+            NetworkManager.Singleton.SceneManager.LoadScene(levelName, LoadSceneMode.Additive);
         }
 
         public override void OnDestroy()
