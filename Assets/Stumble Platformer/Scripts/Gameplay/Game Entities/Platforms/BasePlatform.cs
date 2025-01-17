@@ -70,7 +70,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void SpawnNetworkObject()
         {
-            platformBody.isKinematic = isKinematic;
+            if (NetworkManager.Singleton.IsServer)
+            {
+                if (!networkObject.IsSpawned)
+                    networkObject.Spawn(true);
+
+                platformBody.isKinematic = isKinematic;
+            }
         }
 
         public override void OnDestroy()

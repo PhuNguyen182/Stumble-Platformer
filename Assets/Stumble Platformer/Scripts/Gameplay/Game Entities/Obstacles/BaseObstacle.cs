@@ -103,8 +103,17 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         protected virtual void SpawnNetworkObject()
         {
-            if (obstacleBody)
-                obstacleBody.isKinematic = isKinematic;
+            if (NetworkManager.Singleton.IsServer)
+            {
+                if (GameplaySetup.PlayMode == Common.Enums.GameMode.Multiplayer)
+                {
+                    if (!networkObject.IsSpawned)
+                        networkObject.Spawn(true);
+                }
+
+                if (obstacleBody)
+                    obstacleBody.isKinematic = isKinematic;
+            }
         }
 
 #if UNITY_EDITOR

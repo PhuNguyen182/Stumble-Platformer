@@ -7,6 +7,7 @@ using UnityEngine.AddressableAssets;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Cysharp.Threading.Tasks;
+using GlobalScripts;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -18,6 +19,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public CameraHandler CameraHandler => cameraHandler;
         public EnvironmentIdentifier EnvironmentIdentifier { get; private set; }
+
+        public override void OnNetworkSpawn()
+        {
+            DebugUtils.Log(nameof(EnvironmentHandler));
+        }
 
         public void SetLevelActive(bool active) => EnvironmentIdentifier.SetLevelActive(active);
 

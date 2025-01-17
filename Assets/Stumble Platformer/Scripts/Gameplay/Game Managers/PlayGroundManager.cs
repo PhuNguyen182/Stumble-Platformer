@@ -21,6 +21,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
     {
         [SerializeField] private bool isTesting;
         [SerializeField] private NetworkObject testPlayer;
+        [SerializeField] private NetworkObject testLevel;
         
         [Space(10)]
         [SerializeField] private InputReceiver inputReceiver;
@@ -44,10 +45,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         {
             Instance = this;
 #if !UNITY_EDITOR
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
 #endif
             SetupGameplay();
             GetLevelEntry();
+        }
+
+        private void LoadScene(string sceneName)
+        {
+            NetworkManager.SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         }
 
         private void SetupGameplay()
@@ -75,28 +81,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public override void OnNetworkSpawn()
         {
-            if (IsServer)
-                NetworkManager.SceneManager.OnSceneEvent += HandleOnSceneEvent;
+            //if (IsServer)
+            {
+                NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoad;
+            }
         }
 
-        private void HandleOnSceneEvent(SceneEvent sceneEvent)
+        private void HandleSceneLoad(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
         {
-            switch (sceneEvent.SceneEventType)
+            for (int i = 0; i < clientsCompleted.Count; i++)
             {
-                case SceneEventType.LoadComplete:
-                    {
-                        DebugUtils.Log("Load Completed");
-                        break;
-                    }
-                case SceneEventType.LoadEventCompleted:
-                    {
-                        if (string.CompareOrdinal(sceneEvent.SceneName, SceneConstants.Gameplay) == 0)
-                            NetworkManager.Singleton.SceneManager.LoadScene(_levelName, LoadSceneMode.Additive);
-                        
-                        DebugUtils.Log("Load Event Completed" + sceneEvent.ClientId);
-                        break;
-                    }
+                Debug.Log(clientsCompleted[i]);
             }
+
+            if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
+                LoadScene(_levelName);
         }
 
         public void SetupLevel(EnvironmentIdentifier environmentIdentifier)

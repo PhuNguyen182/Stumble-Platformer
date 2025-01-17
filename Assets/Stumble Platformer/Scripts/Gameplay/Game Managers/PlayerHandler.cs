@@ -12,6 +12,7 @@ using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.GameDatas;
 using TMPro;
+using GlobalScripts;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -53,6 +54,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         }
 #endif
         #endregion
+
+        public override void OnNetworkSpawn()
+        {
+            DebugUtils.Log(nameof(PlayerHandler));
+        }
 
         public void SpawnPlayer()
         {

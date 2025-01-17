@@ -21,7 +21,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             {
                 if (NetworkManager.Singleton.IsServer)
                 {
-                    networkObject.Spawn(true);
+                    if (!networkObject.IsSpawned)
+                        networkObject.Spawn(true);
+
                     obstacleBody.isKinematic = initializedIsKinematic;
                 }
             }

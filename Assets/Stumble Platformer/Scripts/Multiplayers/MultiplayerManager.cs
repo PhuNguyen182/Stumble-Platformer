@@ -59,19 +59,19 @@ namespace StumblePlatformer.Scripts.Multiplayers
 
         public void StartHost()
         {
-            NetworkManager.ConnectionApprovalCallback += ConnectionApprovalCallback;
-            NetworkManager.OnClientConnectedCallback += OnClientConnectedCallback_Server;
-            NetworkManager.OnClientDisconnectCallback += OnClientDisconnectCallback_Server;
-            NetworkManager.StartHost();
+            NetworkManager.Singleton.ConnectionApprovalCallback += ConnectionApprovalCallback;
+            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback_Server;
+            NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback_Server;
+            NetworkManager.Singleton.StartHost();
             ParticipantCount.Value = NetworkManager.ConnectedClientsIds.Count;
         }
 
         public void StartClient()
         {
             OnTryingToJoinGame?.Invoke();
-            NetworkManager.OnClientConnectedCallback += OnClientConnectedCallback_Client;
-            NetworkManager.OnClientDisconnectCallback += OnClientDisconnectCallback_Client;
-            NetworkManager.StartClient();
+            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback_Client;
+            NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectCallback_Client;
+            NetworkManager.Singleton.StartClient();
         }
 
         public void RemovePlayer(ulong clientId)

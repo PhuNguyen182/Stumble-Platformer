@@ -604,6 +604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 6489361910671194663}
   networkObject: {fileID: -8007379367896033723}
+  isKinematic: 1
   playerMask:
     serializedVersion: 2
     m_Bits: 8

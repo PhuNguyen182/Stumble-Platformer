@@ -404,6 +404,7 @@ MonoBehaviour:
   attackOnce: 0
   attactForce: 5
   stunDuration: 1.5
+  isKinematic: 1
   obstacleBody: {fileID: 4759218423390310066}
   networkObject: {fileID: -1406811806395325934}
   obstacleAttackers:
