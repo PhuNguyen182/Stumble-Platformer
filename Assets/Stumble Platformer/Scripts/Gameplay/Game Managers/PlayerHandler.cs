@@ -27,6 +27,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private RespawnArea _currentCheckPoint;
         private PlayerController _currentPlayer;
+        private PlayerController _tempPlayer;
 
         public PlayerController CurrentPlayer => _currentPlayer;
         public int PlayerInstanceID => _currentPlayer.gameObject.GetInstanceID();
@@ -104,24 +105,30 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                                                            .CharacterSpawnPositions[playerIndex];
 
                 PlayerData playerData = MultiplayerManager.Instance.GetPlayerData(playerIndex);
-                PlayerController player = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
+                _tempPlayer = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
                 
-                if (player.NetworkObject != null)
-                    player.NetworkObject.SpawnWithOwnership(clientId, true);
-                
-                if(string.CompareOrdinal(playerData.PlayerID.Value, MultiplayerManager.Instance.GetCurrentPlayerID()) == 0)
-                    _currentPlayer = player;
+                if (_tempPlayer.NetworkObject != null)
+                    _tempPlayer.NetworkObject.SpawnWithOwnership(clientId, true);
+
+                SetCurrentPlayerRpc(playerData);
 
                 CharacterSkin characterSkin;
                 string skin = playerData.PlayerSkin.Value;
                 bool hasSkin = playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin(skin, out characterSkin);
 
                 if (hasSkin)
-                    player.PlayerGraphics.SetCharacterVisual(characterSkin);
+                    _tempPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);
 
                 _currentPlayer.SetCharacterInput(inputReceiver);
-                SetPlayerPhysicsActive(player, false);
+                SetPlayerPhysicsActive(_tempPlayer, false);
             }
+        }
+
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        private void SetCurrentPlayerRpc(PlayerData playerData)
+        {
+            if (string.CompareOrdinal(playerData.PlayerID.Value, MultiplayerManager.Instance.GetCurrentPlayerID()) == 0)
+                _currentPlayer = _tempPlayer;
         }
 
         public void SetPlayerCompleteLevel(bool isCompleted) 

@@ -148,7 +148,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             }
         }
 
-        [Rpc(SendTo.Owner, RequireOwnership = false)]
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = true)]
         private void SetPlayerIdClientRpc(ulong clientId)
         {
             if (!_joinedPlayersIdsCollection.TryAdd(clientId, true))

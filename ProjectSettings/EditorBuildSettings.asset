@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Stumble Platformer/Scenes/Loading.unity
     guid: 74116b5f85f683342b1a68ad5e6c98e6
   - enabled: 1
+    path: Assets/Temps/Scenes/Test Gameplay.unity
+    guid: acbf1b8958be71247ad36a0907dc2d6c
+  - enabled: 1
+    path: Assets/Temps/Scenes/Test Scene.unity
+    guid: 06a77165d838cb14e8a4595795e6e4ea
+  - enabled: 1
     path: Assets/Stumble Platformer/Scenes/Mainhome.unity
     guid: 909bdd20df9c41042960ee2ecefc2622
   - enabled: 1

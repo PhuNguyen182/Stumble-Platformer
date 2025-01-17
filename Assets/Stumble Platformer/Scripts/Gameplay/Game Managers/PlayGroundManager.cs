@@ -48,12 +48,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             //Cursor.lockState = CursorLockMode.Locked;
 #endif
             SetupGameplay();
-            GetLevelEntry();
-        }
-
-        private void LoadScene(string sceneName)
-        {
-            NetworkManager.SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         }
 
         private void SetupGameplay()
@@ -81,21 +75,25 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public override void OnNetworkSpawn()
         {
-            //if (IsServer)
+            if (IsServer)
             {
-                NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoad;
+                if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+                {
+                    environmentHandler.GenerateLevel(_levelName);
+                }
+
+                else
+                    NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoad;
             }
         }
 
         private void HandleSceneLoad(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
         {
-            for (int i = 0; i < clientsCompleted.Count; i++)
-            {
-                Debug.Log(clientsCompleted[i]);
-            }
-
             if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
-                LoadScene(_levelName);
+            {
+                GetLevelEntry(); // Fix the play level scene, use level 8 as the sample
+                NetworkManager.SceneManager.LoadScene("Level 8", LoadSceneMode.Additive);
+            }
         }
 
         public void SetupLevel(EnvironmentIdentifier environmentIdentifier)

@@ -52,7 +52,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
 
         private void Start()
         {
-            PlayGroundManager.Instance.SetupLevel(this);
+            if (PlayGroundManager.Instance != null)
+                PlayGroundManager.Instance.SetupLevel(this);
         }
 
         public void SetLevelActive(bool active) => PlayLevel.SetLevelActive(active);
