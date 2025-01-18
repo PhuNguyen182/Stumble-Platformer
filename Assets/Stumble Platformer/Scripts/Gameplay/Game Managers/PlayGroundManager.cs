@@ -76,23 +76,25 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         public override void OnNetworkSpawn()
         {
             if (IsServer)
-            {
-                if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-                {
-                    environmentHandler.GenerateLevel(_levelName);
-                }
-
-                else
-                    NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoad;
-            }
+                NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoad;
         }
 
         private void HandleSceneLoad(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
         {
-            if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
+            GetLevelEntry();
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
-                GetLevelEntry(); // Fix the play level scene, use level 8 as the sample
-                NetworkManager.SceneManager.LoadScene("Level 8", LoadSceneMode.Additive);
+                if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
+                    environmentHandler.GenerateLevel(_levelName);
+            }
+
+            else
+            {
+                if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
+                {
+                    // Fix the play level scene, use level 8 as the sample
+                    NetworkManager.SceneManager.LoadScene("Level 8", LoadSceneMode.Additive);
+                }
             }
         }
 

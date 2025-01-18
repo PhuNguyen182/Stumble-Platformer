@@ -14,9 +14,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         [SerializeField] private PlayDataCollectionInitializer playDataCollectionInitializer;
 
         private MessageBroketManager _messageBroketManager;
+        public static GameplayInitializer Instance { get; private set; }
 
         private void Awake()
         {
+            Instance = this;
             InitializeService();
             NetworkManager.Singleton.OnClientDisconnectCallback += OnCharacterDisconnected;
         }
@@ -59,6 +61,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             WaitingPopup.Setup().ShowWaiting();
             MultiplayerManager.Instance.Shutdown();
             await SceneLoader.LoadScene(SceneConstants.Mainhome);
+        }
+
+        public bool IsAllMessagesInit()
+        {
+            return _messageBroketManager != null && _messageBroketManager.IsInitialize;
         }
     }
 }

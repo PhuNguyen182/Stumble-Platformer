@@ -58,7 +58,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public override void OnNetworkSpawn()
         {
-            DebugUtils.Log(nameof(PlayerHandler));
+            
         }
 
         public void SpawnPlayer()

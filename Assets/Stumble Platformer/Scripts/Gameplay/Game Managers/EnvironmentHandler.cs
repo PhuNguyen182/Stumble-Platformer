@@ -22,7 +22,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public override void OnNetworkSpawn()
         {
-            DebugUtils.Log(nameof(EnvironmentHandler));
+            
         }
 
         public void SetLevelActive(bool active) => EnvironmentIdentifier.SetLevelActive(active);

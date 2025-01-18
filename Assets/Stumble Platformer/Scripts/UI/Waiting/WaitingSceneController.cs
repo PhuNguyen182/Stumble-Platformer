@@ -196,6 +196,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
             ConfirmPopup.Release();
             MultiplayerManager.Instance.OnClientApprove -= OnClientApprove;
             MultiplayerManager.Instance.OnPlayerDisconnected -= OnCharacterDisconnected;
+            base.OnDestroy();
         }
     }
 }

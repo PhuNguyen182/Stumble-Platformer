@@ -30,7 +30,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected virtual void OnAwake()
         {
-            isKinematic = platformBody.isKinematic;
+            if (platformBody != null)
+                isKinematic = platformBody.isKinematic;
         }
 
         protected virtual void OnStart() { }
@@ -75,13 +76,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 if (!networkObject.IsSpawned)
                     networkObject.Spawn(true);
 
-                platformBody.isKinematic = isKinematic;
+                if (platformBody != null)
+                    platformBody.isKinematic = isKinematic;
             }
         }
 
         public override void OnDestroy()
         {
             UpdateHandlerManager.Instance.RemoveFixedUpdateBehaviour(this);
+            base.OnDestroy();
         }
     }
 }

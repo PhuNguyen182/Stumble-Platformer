@@ -9,6 +9,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private readonly IServiceProvider _provider;
         private readonly BuiltinContainerBuilder _builder;
 
+        public bool IsInitialize { get; private set; }
+
         public MessageBroketManager()
         {
             _builder = new();
@@ -17,6 +19,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             AddMeggageBrokers();
             _provider = _builder.BuildServiceProvider();
             GlobalMessagePipe.SetProvider(_provider);
+            IsInitialize = true;
         }
 
         private void AddMeggageBrokers()

@@ -32,10 +32,15 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         public virtual bool IsActive { get; set; }
         public string ObjectiveTitle => objectiveTitle;
 
+        public override void OnNetworkSpawn()
+        {
+            if (GameplayInitializer.Instance != null && GameplayInitializer.Instance.IsAllMessagesInit())
+                RegisterCommonMessage();
+        }
+
         private void Start()
         {
             OnStart();
-            RegisterCommonMessage();
             UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
 
             if (TryGetComponent<NetworkObject>(out var networkObject))
@@ -164,6 +169,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             messageDisposable.Dispose();
             UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);
+            base.OnDestroy();
         }
     }
 }
