@@ -93,7 +93,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
                 {
                     // Fix the play level scene, use level 8 as the sample
-                    NetworkManager.SceneManager.LoadScene("Level 8", LoadSceneMode.Additive);
+                    NetworkManager.SceneManager.LoadScene("Test Gameplay", LoadSceneMode.Additive);
                 }
             }
         }

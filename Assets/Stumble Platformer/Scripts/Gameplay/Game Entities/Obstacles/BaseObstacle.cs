@@ -3,20 +3,18 @@ using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Netcode;
 using GlobalScripts.UpdateHandlerPattern;
 using Sirenix.OdinInspector;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
-    public abstract class BaseObstacle : NetworkBehaviour, IObstacle, IObstacleDamager, IObstacleCollider, IFixedUpdateHandler
+    public abstract class BaseObstacle : MonoBehaviour, IObstacle, IObstacleDamager, IObstacleCollider, IFixedUpdateHandler
     {
         [SerializeField] protected bool attackOnce;
         [SerializeField] protected float attactForce = 15f;
         [SerializeField] protected float stunDuration = 1.5f;
         [SerializeField] protected bool isKinematic;
         [SerializeField] protected Rigidbody obstacleBody;
-        [SerializeField] protected NetworkObject networkObject;
         
         [Header("Obstacle Strikers")]
         [SerializeField] protected ObstacleAttacker[] obstacleAttackers;
@@ -31,7 +29,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void Start()
         {
-            SpawnNetworkObject();
             UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
         }
 
@@ -43,9 +40,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         public virtual void OnAwake()
         {
-            if (networkObject == null)
-                TryGetComponent(out networkObject);
-
             isKinematic = obstacleBody ?? obstacleBody.isKinematic;
         }
 
@@ -101,31 +95,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             builder.RegisterTo(this.destroyCancellationToken);
         }
 
-        protected virtual void SpawnNetworkObject()
+        private void OnDestroy()
         {
-            if (NetworkManager.Singleton.IsServer)
-            {
-                if (GameplaySetup.PlayMode == Common.Enums.GameMode.Multiplayer)
-                {
-                    if (!networkObject.IsSpawned)
-                        networkObject.Spawn(true);
-                }
-
-                if (obstacleBody)
-                    obstacleBody.isKinematic = isKinematic;
-            }
-        }
-
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            networkObject ??= GetComponent<NetworkObject>();
-        }
-#endif
-
-        public override void OnDestroy()
-        {
-            base.OnDestroy();
             UpdateHandlerManager.Instance.RemoveFixedUpdateBehaviour(this);
         }
     }

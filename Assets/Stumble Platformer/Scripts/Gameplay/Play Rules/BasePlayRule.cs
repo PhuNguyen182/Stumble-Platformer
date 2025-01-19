@@ -36,10 +36,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             if (GameplayInitializer.Instance != null && GameplayInitializer.Instance.IsAllMessagesInit())
                 RegisterCommonMessage();
-        }
 
-        private void Start()
-        {
             OnStart();
             UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
 
@@ -48,6 +45,10 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
                 if (NetworkManager.Singleton.IsServer && !networkObject.IsSpawned)
                     networkObject.Spawn(true);
             }
+        }
+
+        private void Start()
+        {
         }
 
         protected virtual void OnStart() { }

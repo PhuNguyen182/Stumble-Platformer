@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5580889896405151436}
   - component: {fileID: 5037200199772179814}
   - component: {fileID: 263667635957929465}
-  - component: {fileID: 1476949188289538389}
+  - component: {fileID: 3346258461777508228}
   - component: {fileID: 3692979937395698885}
   m_Layer: 8
   m_Name: Spinner Ground
@@ -246,7 +246,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1476949188289538389
+--- !u!114 &3346258461777508228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 263667635957929465}
-  networkObject: {fileID: 1476949188289538389}
+  networkObject: {fileID: 3346258461777508228}
   isKinematic: 0
   playerMask:
     serializedVersion: 2

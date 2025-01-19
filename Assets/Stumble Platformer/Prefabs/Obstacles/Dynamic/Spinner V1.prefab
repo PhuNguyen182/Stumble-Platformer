@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 3128535052994507227}
   - component: {fileID: 2726814819727514167}
   - component: {fileID: 7450794122147179097}
-  - component: {fileID: 1908371599629481436}
-  - component: {fileID: -745877966177718218}
   m_Layer: 0
   m_Name: Spinner V1
   m_TagString: Untagged
@@ -156,41 +154,6 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1908371599629481436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85080619881720203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2476861158
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
---- !u!114 &-745877966177718218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85080619881720203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbc7a5bda96a6804590fe29f84f5418d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstacleBody: {fileID: 2726814819727514167}
-  networkObject: {fileID: 1908371599629481436}
 --- !u!1 &2942356076839247564
 GameObject:
   m_ObjectHideFlags: 0

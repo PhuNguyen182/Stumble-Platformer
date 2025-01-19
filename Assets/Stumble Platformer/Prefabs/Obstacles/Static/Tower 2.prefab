@@ -14,10 +14,8 @@ GameObject:
   - component: {fileID: 8767815009039503983}
   - component: {fileID: 4424142825840815407}
   - component: {fileID: 4251295857923937528}
-  - component: {fileID: -8968974015018830634}
   - component: {fileID: -7340481700778909292}
   - component: {fileID: 3437711500828187635}
-  - component: {fileID: 1536101638502367110}
   m_Layer: 0
   m_Name: Tower 2
   m_TagString: Untagged
@@ -161,27 +159,6 @@ CapsuleCollider:
   m_Height: 2.1500986
   m_Direction: 1
   m_Center: {x: 0.000015258789, y: 1.0750003, z: 0.0000076293945}
---- !u!114 &-8968974015018830634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2792580087097471771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2696733005
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &-7340481700778909292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,8 +174,8 @@ MonoBehaviour:
   attackOnce: 0
   attactForce: 15
   stunDuration: 1.5
+  isKinematic: 0
   obstacleBody: {fileID: 0}
-  networkObject: {fileID: -8968974015018830634}
   obstacleAttackers:
   - {fileID: 3437711500828187635}
   pushForce: 6
@@ -216,24 +193,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canFreeCheckBodyType: 0
---- !u!114 &1536101638502367110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2792580087097471771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TransitionStateInfoList:
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: 2081823275
-    DestinationState: -16205478
-    TransitionDuration: 0
-    TriggerNameHash: -16205478
-    TransitionIndex: 0
-  m_Animator: {fileID: 8767815009039503983}

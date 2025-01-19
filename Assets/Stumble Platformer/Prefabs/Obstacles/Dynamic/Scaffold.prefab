@@ -634,7 +634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7933815227059490533}
-  - component: {fileID: 7082191244696374764}
+  - component: {fileID: 2452975170640356698}
   - component: {fileID: 6111612942177203215}
   m_Layer: 8
   m_Name: Scaffold
@@ -659,7 +659,7 @@ Transform:
   - {fileID: 8370124448288013419}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7082191244696374764
+--- !u!114 &2452975170640356698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -693,7 +693,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 0}
-  networkObject: {fileID: 7082191244696374764}
+  networkObject: {fileID: 0}
+  isKinematic: 0
   dummyPlatforms:
   - {fileID: 3420422312754657167}
   - {fileID: 6016630495877206966}

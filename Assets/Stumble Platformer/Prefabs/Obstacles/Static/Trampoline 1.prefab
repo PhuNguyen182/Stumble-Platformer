@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1690987759882793004}
   - component: {fileID: 4635598865165312666}
-  - component: {fileID: 2377543834147972407}
   - component: {fileID: 6124475231083676389}
-  - component: {fileID: 5340522684252933285}
   m_Layer: 0
   m_Name: Trampoline 1
   m_TagString: Untagged
@@ -58,27 +56,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2377543834147972407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5932123130820492431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3789429845
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &6124475231083676389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,33 +71,12 @@ MonoBehaviour:
   attackOnce: 0
   attactForce: 15
   stunDuration: 1.5
+  isKinematic: 0
   obstacleBody: {fileID: 0}
-  networkObject: {fileID: 2377543834147972407}
   obstacleAttackers: []
   pushForce: 9
   dummyPlatform: {fileID: 1726769111572687027}
   platformAnimator: {fileID: 4635598865165312666}
---- !u!114 &5340522684252933285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5932123130820492431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TransitionStateInfoList:
-  - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: -1751638056
-    DestinationState: -295492061
-    TransitionDuration: 0
-    TriggerNameHash: -16205478
-    TransitionIndex: 0
-  m_Animator: {fileID: 4635598865165312666}
 --- !u!1 &6877595906980273305
 GameObject:
   m_ObjectHideFlags: 0

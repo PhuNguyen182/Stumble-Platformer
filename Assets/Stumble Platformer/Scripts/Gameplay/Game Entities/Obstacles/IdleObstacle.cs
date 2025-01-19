@@ -15,20 +15,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             initializedIsKinematic = obstacleBody.isKinematic;
         }
 
-        protected override void SpawnNetworkObject()
-        {
-            if (GameplaySetup.PlayMode == GameMode.Multiplayer)
-            {
-                if (NetworkManager.Singleton.IsServer)
-                {
-                    if (!networkObject.IsSpawned)
-                        networkObject.Spawn(true);
-
-                    obstacleBody.isKinematic = initializedIsKinematic;
-                }
-            }
-        }
-
         public override void ExitDamage(Collision collision)
         {
             

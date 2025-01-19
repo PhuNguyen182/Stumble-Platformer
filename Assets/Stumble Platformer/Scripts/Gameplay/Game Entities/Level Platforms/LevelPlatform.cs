@@ -57,12 +57,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
         {
             for (int i = 0; i < obstacles.Length; i++)
             {
-                obstacles[i].SetObstacleActive(active);
+                if (obstacles[i] != null)
+                    obstacles[i].SetObstacleActive(active);
             }
 
             for (int i = 0; i < platforms.Length; i++)
             {
-                platforms[i].SetPlatformActive(active);
+                if (platforms[i] != null)
+                    platforms[i].SetPlatformActive(active);
             }
         }
 
