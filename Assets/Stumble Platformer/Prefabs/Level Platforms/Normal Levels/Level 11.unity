@@ -22746,6 +22746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 8817415692825140982, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1516543076
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28957,6 +28961,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2929304021525437015, guid: 88ccaf7248ca3384da98eb19cee5b0a7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1622741338
+      objectReference: {fileID: 0}
     - target: {fileID: 3860584366247577048, guid: 88ccaf7248ca3384da98eb19cee5b0a7, type: 3}
       propertyPath: m_Name
       value: Spinner Turn Table (1)
@@ -29814,6 +29822,10 @@ PrefabInstance:
     - target: {fileID: 1525856659717591361, guid: 88ccaf7248ca3384da98eb19cee5b0a7, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929304021525437015, guid: 88ccaf7248ca3384da98eb19cee5b0a7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3325774113
       objectReference: {fileID: 0}
     - target: {fileID: 3860584366247577048, guid: 88ccaf7248ca3384da98eb19cee5b0a7, type: 3}
       propertyPath: m_Name

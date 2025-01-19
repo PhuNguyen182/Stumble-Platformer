@@ -2290,6 +2290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 8817415692825140982, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3748439878
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5008,6 +5012,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 156255510933733789, guid: 66fc4f492363f924ba9e9888c3d884ac, type: 3}
   m_PrefabInstance: {fileID: 683657999}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &683658001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3768155440663738773, guid: 66fc4f492363f924ba9e9888c3d884ac, type: 3}
+  m_PrefabInstance: {fileID: 683657999}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e04a77dadf45494b9717303efd10c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &683707671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7193,6 +7208,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1211271651
+      objectReference: {fileID: 0}
     - target: {fileID: 7690183822067194171, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_Name
       value: Spinner Ground (2)
@@ -7269,6 +7288,10 @@ PrefabInstance:
     - target: {fileID: 1535074824807871626, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3552620688
       objectReference: {fileID: 0}
     - target: {fileID: 7690183822067194171, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_Name
@@ -12280,7 +12303,7 @@ PrefabInstance:
       objectReference: {fileID: 231218960}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: obstacles.Array.size
-      value: 54
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.size
@@ -12526,6 +12549,10 @@ PrefabInstance:
       propertyPath: obstacles.Array.data[53]
       value: 
       objectReference: {fileID: 664524573}
+    - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
+      propertyPath: obstacles.Array.data[54]
+      value: 
+      objectReference: {fileID: 683658001}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: respawnAreas.Array.data[0]
       value: 
@@ -13395,6 +13422,10 @@ PrefabInstance:
     - target: {fileID: 1535074824807871626, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 187949278
       objectReference: {fileID: 0}
     - target: {fileID: 7690183822067194171, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_Name

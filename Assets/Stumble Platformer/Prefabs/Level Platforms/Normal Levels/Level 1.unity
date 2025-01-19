@@ -3688,7 +3688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2895128753
+  GlobalObjectIdHash: 3393490348
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -6970,7 +6970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 2167183842
+      value: 501799216
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7606,7 +7606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 251751774
+      value: 450446413
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10981,6 +10981,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 8817415692825140982, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1652969541
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11888,7 +11892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 2748545685
+      value: 3474039271
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13363,7 +13367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 1981191574
+      value: 1331449115
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14099,7 +14103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 2054814132
+      value: 3183887464
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x

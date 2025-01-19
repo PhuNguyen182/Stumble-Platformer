@@ -1075,6 +1075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 99043146}
   networkObject: {fileID: 99043147}
+  isKinematic: 0
   platformCollider: {fileID: 99043145}
   dummyPlatform: {fileID: 392690086}
   movingType: 2
@@ -8576,6 +8577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 724332984}
   networkObject: {fileID: 724332988}
+  isKinematic: 0
   platformCollider: {fileID: 724332983}
   dummyPlatform: {fileID: 370687409}
   movingType: 2
@@ -15740,6 +15742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1521332021}
   networkObject: {fileID: 1521332024}
+  isKinematic: 0
   platformCollider: {fileID: 1521332020}
   dummyPlatform: {fileID: 678342890}
   movingType: 2
@@ -19009,6 +19012,10 @@ PrefabInstance:
     - target: {fileID: 3009833869975578739, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
       propertyPath: m_Name
       value: Finish Zone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817415692825140982, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3068190479
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

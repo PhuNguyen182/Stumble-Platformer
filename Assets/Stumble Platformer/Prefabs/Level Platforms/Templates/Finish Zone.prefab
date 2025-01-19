@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 1522525417245392236}
   - component: {fileID: 3658593626993904038}
   - component: {fileID: 6868390585954236988}
-  - component: {fileID: 8817415692825140982}
   - component: {fileID: 956190600383168380}
   m_Layer: 0
   m_Name: Finish Zone
@@ -214,27 +213,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4, y: 5.5, z: 0.88}
   m_Center: {x: 0, y: 2.25, z: 0.45}
---- !u!114 &8817415692825140982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3009833869975578739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 0
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &956190600383168380
 MonoBehaviour:
   m_ObjectHideFlags: 0

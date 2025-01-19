@@ -5796,7 +5796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 2621345261
+      value: 3982279063
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10299,7 +10299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 290644149
+  GlobalObjectIdHash: 1559005072
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -13791,7 +13791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 3611873266
+      value: 3551486446
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15418,7 +15418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 968756804
+      value: 162993086
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15795,6 +15795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 3241672536405601490}
   networkObject: {fileID: 6566003781777906202}
+  isKinematic: 0
   platformCollider: {fileID: 7873958740831109168}
   dummyPlatform: {fileID: 9063621795571697052}
   movingType: 2
@@ -16398,7 +16399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1901081977
+  GlobalObjectIdHash: 18805284
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -18580,6 +18581,10 @@ PrefabInstance:
     - target: {fileID: 3009833869975578739, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
       propertyPath: m_Name
       value: Finish Zone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817415692825140982, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1826569055
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

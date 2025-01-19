@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8283559726975666955}
   - component: {fileID: 8276342982056247363}
   - component: {fileID: 2380850459448753861}
-  - component: {fileID: 326213418456649158}
+  - component: {fileID: 5380879070170775741}
   - component: {fileID: 5998545790362410785}
   m_Layer: 8
   m_Name: Dropping Platform
@@ -107,7 +107,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &326213418456649158
+--- !u!114 &5380879070170775741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,15 +119,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1444548670
+  GlobalObjectIdHash: 2144576753
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
+  SynchronizeTransform: 0
   ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 0
   DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
+  AutoObjectParentSync: 0
 --- !u!114 &5998545790362410785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 8283559726975666955}
-  networkObject: {fileID: 326213418456649158}
+  networkObject: {fileID: 0}
+  isKinematic: 0
   delayOnStepped: 0.2
   droppingDuration: 1
   platformAnimator: {fileID: 2380850459448753861}

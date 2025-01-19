@@ -7,7 +7,6 @@ using UnityEngine.AddressableAssets;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Cysharp.Threading.Tasks;
-using GlobalScripts;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {

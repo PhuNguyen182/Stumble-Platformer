@@ -4931,6 +4931,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1787362569
+      objectReference: {fileID: 0}
     - target: {fileID: 3692979937395698885, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: rotateSpeed
       value: -60
@@ -8466,6 +8470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 626335735}
   networkObject: {fileID: 626335736}
+  isKinematic: 0
   platformCollider: {fileID: 626335734}
   dummyPlatform: {fileID: 843883209}
   movingType: 2
@@ -10067,6 +10072,10 @@ PrefabInstance:
     - target: {fileID: 1535074824807871626, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3059968912
       objectReference: {fileID: 0}
     - target: {fileID: 3692979937395698885, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: rotateSpeed
@@ -11735,6 +11744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 8817415692825140982, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2941798551
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12645,6 +12658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1025815581}
   networkObject: {fileID: 1025815584}
+  isKinematic: 0
   platformCollider: {fileID: 1025815580}
   dummyPlatform: {fileID: 55355685}
   movingType: 2
@@ -13300,6 +13314,10 @@ PrefabInstance:
     - target: {fileID: 1535074824807871626, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1306686804
       objectReference: {fileID: 0}
     - target: {fileID: 3692979937395698885, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: rotateSpeed
@@ -16731,6 +16749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1303410898}
   networkObject: {fileID: 1303410901}
+  isKinematic: 0
   platformCollider: {fileID: 1303410897}
   dummyPlatform: {fileID: 731602918}
   movingType: 2
@@ -19558,6 +19577,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1747415027
+      objectReference: {fileID: 0}
     - target: {fileID: 3692979937395698885, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: rotateSpeed
       value: -60
@@ -20178,6 +20201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1523951038}
   networkObject: {fileID: 1523951041}
+  isKinematic: 0
   platformCollider: {fileID: 1523951037}
   dummyPlatform: {fileID: 454707033}
   movingType: 2
@@ -20578,6 +20602,10 @@ PrefabInstance:
     - target: {fileID: 1535074824807871626, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3509653511
       objectReference: {fileID: 0}
     - target: {fileID: 3692979937395698885, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: rotateSpeed
@@ -24214,6 +24242,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1946448919
+      objectReference: {fileID: 0}
     - target: {fileID: 3692979937395698885, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: rotateSpeed
       value: -60
@@ -27336,6 +27368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 2045515055}
   networkObject: {fileID: 2045515058}
+  isKinematic: 0
   platformCollider: {fileID: 2045515054}
   dummyPlatform: {fileID: 443307609}
   movingType: 2

@@ -2429,6 +2429,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3607629195
+      objectReference: {fileID: 0}
     - target: {fileID: 7690183822067194171, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_Name
       value: Spinner Ground
@@ -9769,6 +9773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 753333636}
   networkObject: {fileID: 753333637}
+  isKinematic: 0
   platformCollider: {fileID: 753333635}
   dummyPlatform: {fileID: 480016829}
   movingType: 2
@@ -14354,6 +14359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 8817415692825140982, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2324685716
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16945,6 +16954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1205564813}
   networkObject: {fileID: 1205564816}
+  isKinematic: 0
   platformCollider: {fileID: 1205564812}
   dummyPlatform: {fileID: 187901766}
   movingType: 2
@@ -22325,6 +22335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1541700751}
   networkObject: {fileID: 1541700754}
+  isKinematic: 0
   platformCollider: {fileID: 1541700750}
   dummyPlatform: {fileID: 912042222}
   movingType: 2
@@ -23561,6 +23572,10 @@ PrefabInstance:
     - target: {fileID: 1535074824807871626, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 708028859
       objectReference: {fileID: 0}
     - target: {fileID: 3692979937395698885, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: rotateSpeed

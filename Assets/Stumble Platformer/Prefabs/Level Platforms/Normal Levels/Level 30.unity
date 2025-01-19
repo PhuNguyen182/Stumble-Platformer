@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Dropping Platform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1144719214
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -216,6 +220,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 53958994}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &53958996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 53958994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &84650154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1039,6 +1054,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Dropping Platform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 998066584
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -1117,6 +1136,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 379615856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &379615858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 379615856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &390717984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5051,6 +5081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Dropping Platform (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2086886588
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -5129,6 +5163,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 1153441141}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1153441143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 1153441141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1153936214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6284,6 +6329,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Dropping Platform (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1217512992
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -6362,6 +6411,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 1339334951}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1339334953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 1339334951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1367465418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6568,6 +6628,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Dropping Platform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3842851890
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -6646,6 +6710,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 1389356644}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1389356646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 1389356644}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1392600877
 GameObject:
   m_ObjectHideFlags: 0
@@ -7426,6 +7501,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Dropping Platform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3034909058
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -7504,6 +7583,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 1563712895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1563712897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 1563712895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1568842284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8360,7 +8450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.size
-      value: 20
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: obstacles.Array.data[0]
@@ -8701,19 +8791,31 @@ PrefabInstance:
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[20]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1389356646}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[21]
       value: 
-      objectReference: {fileID: 1759109673}
+      objectReference: {fileID: 379615858}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[22]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1761611148}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[23]
       value: 
-      objectReference: {fileID: 549675339}
+      objectReference: {fileID: 53958996}
+    - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
+      propertyPath: platforms.Array.data[24]
+      value: 
+      objectReference: {fileID: 1153441143}
+    - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
+      propertyPath: platforms.Array.data[25]
+      value: 
+      objectReference: {fileID: 1563712897}
+    - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
+      propertyPath: platforms.Array.data[26]
+      value: 
+      objectReference: {fileID: 1339334953}
     - target: {fileID: 8915250333110935567, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -9224,6 +9326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Dropping Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1364995808
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -9302,6 +9408,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 1761611146}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1761611148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 1761611146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1779084950
 PrefabInstance:
   m_ObjectHideFlags: 0

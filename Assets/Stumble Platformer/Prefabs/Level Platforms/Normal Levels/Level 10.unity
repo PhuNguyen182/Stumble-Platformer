@@ -12865,6 +12865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 833371883}
   networkObject: {fileID: 833371884}
+  isKinematic: 0
   platformCollider: {fileID: 833371882}
   dummyPlatform: {fileID: 94908283}
   movingType: 2
@@ -16258,6 +16259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1025240036}
   networkObject: {fileID: 1025240039}
+  isKinematic: 0
   platformCollider: {fileID: 1025240035}
   dummyPlatform: {fileID: 1642864904}
   movingType: 2
@@ -20601,6 +20603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 8817415692825140982, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1409739764
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21467,6 +21473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1287593540}
   networkObject: {fileID: 1287593543}
+  isKinematic: 0
   platformCollider: {fileID: 1287593539}
   dummyPlatform: {fileID: 815917140}
   movingType: 2
@@ -22739,6 +22746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1342572236}
   networkObject: {fileID: 1342572240}
+  isKinematic: 0
   platformCollider: {fileID: 1342572235}
   dummyPlatform: {fileID: 1081529762}
   movingType: 2
@@ -25314,6 +25322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1507141102}
   networkObject: {fileID: 1507141106}
+  isKinematic: 0
   platformCollider: {fileID: 1507141101}
   dummyPlatform: {fileID: 294853984}
   movingType: 2
@@ -28756,6 +28765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1719059447}
   networkObject: {fileID: 1719059450}
+  isKinematic: 0
   platformCollider: {fileID: 1719059446}
   dummyPlatform: {fileID: 1092610338}
   movingType: 2
@@ -30893,6 +30903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1735542362}
   networkObject: {fileID: 1735542365}
+  isKinematic: 0
   platformCollider: {fileID: 1735542361}
   dummyPlatform: {fileID: 599335589}
   movingType: 2
@@ -37923,6 +37934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 2123282371}
   networkObject: {fileID: 2123282374}
+  isKinematic: 0
   platformCollider: {fileID: 2123282370}
   dummyPlatform: {fileID: 944305412}
   movingType: 2

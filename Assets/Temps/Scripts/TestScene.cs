@@ -25,7 +25,7 @@ public class TestScene : NetworkBehaviour
     {
         if (string.CompareOrdinal(sceneName, "Test Gameplay") == 0)
         {
-            //NetworkManager.SceneManager.LoadScene("Level 8", LoadSceneMode.Additive);
+            NetworkManager.SceneManager.LoadScene("Level 21", LoadSceneMode.Additive);
         }
     }
 }

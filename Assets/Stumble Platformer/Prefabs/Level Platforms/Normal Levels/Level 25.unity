@@ -2744,8 +2744,6 @@ GameObject:
   - component: {fileID: 159844530}
   - component: {fileID: 159844532}
   - component: {fileID: 159844528}
-  - component: {fileID: 159844534}
-  - component: {fileID: 159844533}
   m_Layer: 9
   m_Name: Moving Platform (10)
   m_TagString: Untagged
@@ -2767,6 +2765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 159844531}
   networkObject: {fileID: 159844532}
+  isKinematic: 0
   platformCollider: {fileID: 159844530}
   dummyPlatform: {fileID: 75413650}
   movingType: 1
@@ -2873,49 +2872,6 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &159844533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159844527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &159844534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159844527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!1 &165088997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,8 +3478,6 @@ GameObject:
   - component: {fileID: 227248039}
   - component: {fileID: 227248038}
   - component: {fileID: 227248036}
-  - component: {fileID: 227248041}
-  - component: {fileID: 227248040}
   - component: {fileID: 227248042}
   m_Layer: 9
   m_Name: Moving Platform (16)
@@ -3546,6 +3500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 227248039}
   networkObject: {fileID: 227248042}
+  isKinematic: 0
   platformCollider: {fileID: 227248038}
   dummyPlatform: {fileID: 631926111}
   movingType: 1
@@ -3631,49 +3586,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &227248040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227248035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &227248041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227248035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &227248042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3866,8 +3778,6 @@ GameObject:
   - component: {fileID: 236794600}
   - component: {fileID: 236794599}
   - component: {fileID: 236794598}
-  - component: {fileID: 236794602}
-  - component: {fileID: 236794601}
   - component: {fileID: 236794603}
   m_Layer: 9
   m_Name: Moving Platform (6)
@@ -3916,6 +3826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 236794600}
   networkObject: {fileID: 236794603}
+  isKinematic: 0
   platformCollider: {fileID: 236794599}
   dummyPlatform: {fileID: 1791650488}
   movingType: 1
@@ -3975,49 +3886,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &236794601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236794596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &236794602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236794596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &236794603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4159,6 +4027,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1439660721
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -5051,8 +4923,6 @@ GameObject:
   - component: {fileID: 329335163}
   - component: {fileID: 329335162}
   - component: {fileID: 329335161}
-  - component: {fileID: 329335165}
-  - component: {fileID: 329335164}
   - component: {fileID: 329335166}
   m_Layer: 9
   m_Name: Moving Platform (1)
@@ -5101,6 +4971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 329335163}
   networkObject: {fileID: 329335166}
+  isKinematic: 0
   platformCollider: {fileID: 329335162}
   dummyPlatform: {fileID: 1082044711}
   movingType: 1
@@ -5160,49 +5031,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &329335164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329335159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &329335165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329335159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &329335166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5624,6 +5452,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1627723530
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -6504,8 +6336,6 @@ GameObject:
   - component: {fileID: 439696867}
   - component: {fileID: 439696866}
   - component: {fileID: 439696865}
-  - component: {fileID: 439696869}
-  - component: {fileID: 439696868}
   - component: {fileID: 439696870}
   m_Layer: 9
   m_Name: Moving Platform (8)
@@ -6554,6 +6384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 439696867}
   networkObject: {fileID: 439696870}
+  isKinematic: 0
   platformCollider: {fileID: 439696866}
   dummyPlatform: {fileID: 193998715}
   movingType: 1
@@ -6613,49 +6444,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &439696868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439696863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &439696869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439696863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &439696870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6995,8 +6783,6 @@ GameObject:
   - component: {fileID: 487649181}
   - component: {fileID: 487649180}
   - component: {fileID: 487649178}
-  - component: {fileID: 487649183}
-  - component: {fileID: 487649182}
   - component: {fileID: 487649184}
   m_Layer: 9
   m_Name: Moving Platform (11)
@@ -7019,6 +6805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 487649181}
   networkObject: {fileID: 487649184}
+  isKinematic: 0
   platformCollider: {fileID: 487649180}
   dummyPlatform: {fileID: 1805178587}
   movingType: 1
@@ -7104,49 +6891,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &487649182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487649177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &487649183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487649177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &487649184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7183,6 +6927,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2836975207
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -7797,6 +7545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dropping Platform (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 161778589
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -8310,6 +8062,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 638570182
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -9216,8 +8972,6 @@ GameObject:
   - component: {fileID: 655921252}
   - component: {fileID: 655921251}
   - component: {fileID: 655921250}
-  - component: {fileID: 655921254}
-  - component: {fileID: 655921253}
   - component: {fileID: 655921255}
   m_Layer: 9
   m_Name: Moving Platform (3)
@@ -9266,6 +9020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 655921252}
   networkObject: {fileID: 655921255}
+  isKinematic: 0
   platformCollider: {fileID: 655921251}
   dummyPlatform: {fileID: 1934198803}
   movingType: 1
@@ -9325,49 +9080,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &655921253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655921248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &655921254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655921248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &655921255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10496,8 +10208,6 @@ GameObject:
   - component: {fileID: 747464621}
   - component: {fileID: 747464620}
   - component: {fileID: 747464618}
-  - component: {fileID: 747464623}
-  - component: {fileID: 747464622}
   - component: {fileID: 747464624}
   m_Layer: 9
   m_Name: Moving Platform (12)
@@ -10520,6 +10230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 747464621}
   networkObject: {fileID: 747464624}
+  isKinematic: 0
   platformCollider: {fileID: 747464620}
   dummyPlatform: {fileID: 817690161}
   movingType: 1
@@ -10605,49 +10316,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &747464622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747464617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &747464623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747464617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &747464624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11467,6 +11135,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 252246560
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -13346,6 +13018,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1577161781
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -16232,8 +15908,6 @@ GameObject:
   - component: {fileID: 1227645886}
   - component: {fileID: 1227645885}
   - component: {fileID: 1227645884}
-  - component: {fileID: 1227645888}
-  - component: {fileID: 1227645887}
   - component: {fileID: 1227645889}
   m_Layer: 9
   m_Name: Moving Platform (5)
@@ -16282,6 +15956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1227645886}
   networkObject: {fileID: 1227645889}
+  isKinematic: 0
   platformCollider: {fileID: 1227645885}
   dummyPlatform: {fileID: 397179211}
   movingType: 1
@@ -16341,49 +16016,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1227645887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227645882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1227645888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227645882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &1227645889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16929,6 +16561,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4178257580
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -17770,6 +17406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dropping Platform (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1907354940
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -18055,8 +17695,6 @@ GameObject:
   - component: {fileID: 1339014576}
   - component: {fileID: 1339014580}
   - component: {fileID: 1339014575}
-  - component: {fileID: 1339014579}
-  - component: {fileID: 1339014578}
   m_Layer: 9
   m_Name: Moving Platform
   m_TagString: Untagged
@@ -18104,6 +17742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1339014577}
   networkObject: {fileID: 1339014580}
+  isKinematic: 0
   platformCollider: {fileID: 1339014576}
   dummyPlatform: {fileID: 775396738}
   movingType: 1
@@ -18163,49 +17802,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1339014578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339014573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1339014579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339014573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &1339014580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19418,8 +19014,6 @@ GameObject:
   - component: {fileID: 1388869337}
   - component: {fileID: 1388869336}
   - component: {fileID: 1388869335}
-  - component: {fileID: 1388869339}
-  - component: {fileID: 1388869338}
   - component: {fileID: 1388869340}
   m_Layer: 9
   m_Name: Moving Platform (2)
@@ -19468,6 +19062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1388869337}
   networkObject: {fileID: 1388869340}
+  isKinematic: 0
   platformCollider: {fileID: 1388869336}
   dummyPlatform: {fileID: 260166722}
   movingType: 1
@@ -19527,49 +19122,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1388869338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388869333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1388869339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388869333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &1388869340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19858,8 +19410,6 @@ GameObject:
   - component: {fileID: 1426288051}
   - component: {fileID: 1426288050}
   - component: {fileID: 1426288048}
-  - component: {fileID: 1426288053}
-  - component: {fileID: 1426288052}
   - component: {fileID: 1426288054}
   m_Layer: 9
   m_Name: Moving Platform (13)
@@ -19882,6 +19432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1426288051}
   networkObject: {fileID: 1426288054}
+  isKinematic: 0
   platformCollider: {fileID: 1426288050}
   dummyPlatform: {fileID: 675880333}
   movingType: 1
@@ -19967,49 +19518,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1426288052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426288047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1426288053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426288047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &1426288054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20217,8 +19725,6 @@ GameObject:
   - component: {fileID: 1458972648}
   - component: {fileID: 1458972647}
   - component: {fileID: 1458972645}
-  - component: {fileID: 1458972650}
-  - component: {fileID: 1458972649}
   - component: {fileID: 1458972651}
   m_Layer: 9
   m_Name: Moving Platform (15)
@@ -20241,6 +19747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1458972648}
   networkObject: {fileID: 1458972651}
+  isKinematic: 0
   platformCollider: {fileID: 1458972647}
   dummyPlatform: {fileID: 1540354149}
   movingType: 1
@@ -20326,49 +19833,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1458972649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458972644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1458972650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458972644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &1458972651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22389,8 +21853,6 @@ GameObject:
   - component: {fileID: 1591635383}
   - component: {fileID: 1591635382}
   - component: {fileID: 1591635381}
-  - component: {fileID: 1591635385}
-  - component: {fileID: 1591635384}
   - component: {fileID: 1591635386}
   m_Layer: 9
   m_Name: Moving Platform (4)
@@ -22439,6 +21901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1591635383}
   networkObject: {fileID: 1591635386}
+  isKinematic: 0
   platformCollider: {fileID: 1591635382}
   dummyPlatform: {fileID: 1022394734}
   movingType: 1
@@ -22498,49 +21961,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1591635384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591635379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1591635385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591635379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &1591635386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22862,8 +22282,6 @@ GameObject:
   - component: {fileID: 1641549580}
   - component: {fileID: 1641549579}
   - component: {fileID: 1641549577}
-  - component: {fileID: 1641549582}
-  - component: {fileID: 1641549581}
   - component: {fileID: 1641549583}
   m_Layer: 9
   m_Name: Moving Platform (14)
@@ -22886,6 +22304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1641549580}
   networkObject: {fileID: 1641549583}
+  isKinematic: 0
   platformCollider: {fileID: 1641549579}
   dummyPlatform: {fileID: 1760791826}
   movingType: 1
@@ -22971,49 +22390,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1641549581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641549576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1641549582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641549576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &1641549583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23260,6 +22636,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3037222324
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -23681,6 +23061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dropping Platform (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 133562447
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -23887,8 +23271,6 @@ GameObject:
   - component: {fileID: 1713268058}
   - component: {fileID: 1713268057}
   - component: {fileID: 1713268055}
-  - component: {fileID: 1713268060}
-  - component: {fileID: 1713268059}
   - component: {fileID: 1713268061}
   m_Layer: 9
   m_Name: Moving Platform (9)
@@ -23911,6 +23293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1713268058}
   networkObject: {fileID: 1713268061}
+  isKinematic: 0
   platformCollider: {fileID: 1713268057}
   dummyPlatform: {fileID: 476782108}
   movingType: 1
@@ -23996,49 +23379,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1713268059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713268054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1713268060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713268054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &1713268061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26380,6 +25720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dropping Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1718952540
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.7490196
@@ -27226,8 +26570,6 @@ GameObject:
   - component: {fileID: 1925996943}
   - component: {fileID: 1925996942}
   - component: {fileID: 1925996941}
-  - component: {fileID: 1925996945}
-  - component: {fileID: 1925996944}
   - component: {fileID: 1925996946}
   m_Layer: 9
   m_Name: Moving Platform (7)
@@ -27276,6 +26618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1925996943}
   networkObject: {fileID: 1925996946}
+  isKinematic: 0
   platformCollider: {fileID: 1925996942}
   dummyPlatform: {fileID: 523764044}
   movingType: 1
@@ -27335,49 +26678,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1925996944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925996939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1925996945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925996939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!114 &1925996946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29708,6 +29008,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 326027239
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b

@@ -950,6 +950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dropping Platform Start
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3179360881
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.75
@@ -1482,6 +1486,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2748035101
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -2181,6 +2189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dropping Platform Start
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4273874579
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.75
@@ -2714,6 +2726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dropping Platform Start
       objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1937505156
+      objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
       value: 0.75
@@ -2817,6 +2833,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1548713281
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -4448,6 +4468,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2308007941
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -8752,6 +8776,10 @@ PrefabInstance:
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Dropping Platform Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4059411960
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
