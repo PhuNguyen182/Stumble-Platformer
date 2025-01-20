@@ -3,7 +3,6 @@ using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.CommonMovement;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 
@@ -37,18 +36,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void OnPlatformTriggerEnter(Collider collider)
         {
-            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
-            {
-                parentSetter.SetParent(transform);
-            }
         }
 
         private void OnPlatformTriggerExit(Collider collider)
         {
-            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
-            {
-                parentSetter.SetParent(null);
-            }
         }
 
         public override void SetObstacleActive(bool active)

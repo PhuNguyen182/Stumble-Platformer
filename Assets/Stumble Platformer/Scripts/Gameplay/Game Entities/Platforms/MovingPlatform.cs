@@ -1,23 +1,14 @@
 using R3;
 using R3.Triggers;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
-    [Serializable]
-    public enum MovingType
-    {
-        None = 0,
-        Restart = 1,
-        PingPong = 2
-    }
-
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(BoxCollider))]
     public class MovingPlatform : BasePlatform
@@ -60,7 +51,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public override void OnPlatformCollide(Collision collision)
         {
-            
+
         }
 
         public override void OnPlatformStay(Collision collision)
@@ -99,18 +90,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected void OnPlatformTriggerEnter(Collider collider)
         {
-            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
-            {
-                parentSetter.SetParent(transform);
-            }
         }
 
         protected void OnPlatformTriggerExit(Collider collider)
         {
-            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
-            {
-                parentSetter.SetParent(null);
-            }
         }
 
         protected virtual void ResetWaypoints()
@@ -122,23 +105,27 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         protected void RegisterDummyPlatform()
         {
             var builder = Disposable.CreateBuilder();
-            
+
             dummyPlatform.OnTriggerEnterAsObservable()
                          .Subscribe(OnPlatformTriggerEnter)
                          .AddTo(ref builder);
-            
+
             dummyPlatform.OnTriggerExitAsObservable()
                          .Subscribe(OnPlatformTriggerExit)
                          .AddTo(ref builder);
-            
-            builder.RegisterTo(this.destroyCancellationToken);
+
+            builder.RegisterTo(destroyCancellationToken);
         }
 
         protected void MovePlatform()
         {
             Vector3 dir = (lastPosition - firstPosition).normalized;
             Vector3 movement = platformBody.position + dir * usedSpeed * Time.fixedDeltaTime;
-            platformBody.transform.position = movement;
+
+            if (usePhysics)
+                platformBody.transform.position = movement;
+            else
+                platformBody.MovePosition(movement);
         }
 
         protected virtual void OnPlatformTargeted()

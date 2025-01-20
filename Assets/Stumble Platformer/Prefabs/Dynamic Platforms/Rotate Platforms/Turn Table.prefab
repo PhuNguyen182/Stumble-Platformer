@@ -188,7 +188,8 @@ MonoBehaviour:
   followLocalPosition: 0
   localPosition: {x: 0, y: 0, z: 0}
   parent: {fileID: 0}
-  usePhysics: 0
+  pivot: {fileID: 0}
+  usePhysics: 1
   rotateSpeed: 100
   rotateAxis: 2
 --- !u!1 &931647500584133755

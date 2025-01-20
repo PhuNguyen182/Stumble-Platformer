@@ -3,10 +3,8 @@ using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Common.Enums;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
-using GlobalScripts.Extensions;
+using StumblePlatformer.Scripts.Common.Enums;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
@@ -20,9 +18,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         [SerializeField] private bool followLocalPosition;
         [SerializeField] private Vector3 localPosition;
         [SerializeField] private Transform parent;
+        [SerializeField] private Rigidbody pivot;
 
         [Header("Rotation")]
-        [SerializeField] private bool usePhysics;
         [SerializeField] private float rotateSpeed = 10f;
         [SerializeField] private RotateAxis rotateAxis;
 
@@ -108,35 +106,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void OnPlatformTriggerEnter(Collider collider)
         {
-            if (!collider.HasLayer(playerMask))
-            {
-                if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
-                {
-                    parentSetter.SetParent(platformBody.transform);
-                }
-            }
         }
 
         private void OnPlatformTriggerStay(Collider collider)
         {
-            if (collider.transform.parent != null && collider.transform.parent.GetInstanceID() != platformBody.transform.GetInstanceID())
-                return;
-
-            if (collider.HasLayer(playerMask))
-            {
-                if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
-                {
-                    parentSetter.SetParent(platformBody.transform);
-                }
-            }
         }
 
         private void OnPlatformTriggerExit(Collider collider)
         {
-            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
-            {
-                parentSetter.SetParent(null);
-            }
         }
 
 #if UNITY_EDITOR

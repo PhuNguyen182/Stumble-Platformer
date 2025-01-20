@@ -12164,6 +12164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 887061364}
   networkObject: {fileID: 887061366}
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 887061363}
   dummyPlatform: {fileID: 280602737}
@@ -17270,6 +17271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1240439941}
   networkObject: {fileID: 1240439945}
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1240439940}
   dummyPlatform: {fileID: 653475810}
@@ -23127,6 +23129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1600992252}
   networkObject: {fileID: 1600992256}
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1600992251}
   dummyPlatform: {fileID: 613523640}
@@ -31395,6 +31398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 2075602100}
   networkObject: {fileID: 2075602104}
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 2075602099}
   dummyPlatform: {fileID: 88158645}

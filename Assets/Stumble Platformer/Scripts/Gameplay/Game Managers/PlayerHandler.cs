@@ -108,7 +108,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 _tempPlayer = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
                 
                 if (_tempPlayer.NetworkObject != null)
-                    _tempPlayer.NetworkObject.SpawnWithOwnership(clientId, true);
+                    _tempPlayer.NetworkObject.SpawnAsPlayerObject(clientId, true);
 
                 SetCurrentPlayerRpc(playerData);
 

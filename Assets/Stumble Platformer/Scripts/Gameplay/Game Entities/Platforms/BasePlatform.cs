@@ -10,6 +10,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
     {
         [SerializeField] protected Rigidbody platformBody;
         [SerializeField] protected NetworkObject networkObject;
+        [SerializeField] protected bool usePhysics;
         [SerializeField] protected bool isKinematic;
 
         public bool IsActive { get; set; }

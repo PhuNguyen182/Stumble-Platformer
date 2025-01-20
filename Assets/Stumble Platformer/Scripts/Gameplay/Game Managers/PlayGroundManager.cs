@@ -85,7 +85,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
                 if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
-                    environmentHandler.GenerateLevel("Level 21");
+                    environmentHandler.GenerateLevel("Level 8");
             }
 
             else

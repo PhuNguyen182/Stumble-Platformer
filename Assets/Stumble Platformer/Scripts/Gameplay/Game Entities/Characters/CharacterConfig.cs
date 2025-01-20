@@ -11,6 +11,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         public float MoveSpeed;
         public float DashSpeed;
         public float MaxSpeed;
+        [Tooltip("This Value Has Been Squared")] 
         public float MinSpeed;
         public float CheckFallSpeed;
         public float RotateVelocityThreshold;

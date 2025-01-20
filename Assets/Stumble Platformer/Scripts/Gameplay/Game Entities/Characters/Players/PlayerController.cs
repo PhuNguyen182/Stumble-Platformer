@@ -8,7 +8,7 @@ using Unity.Netcode;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerController : NetworkBehaviour, ISetCharacterInput, ICharacterMovement, ICharacterParentSetter, IDamageable, ISetCharacterActive
+    public class PlayerController : NetworkBehaviour, ISetCharacterInput, ICharacterMovement, IDamageable, ISetCharacterActive
     {
         [SerializeField] private PlayerHealth playerHealth;
 
@@ -26,14 +26,16 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private bool _isAirDashing;
         private bool _isJumpPressed;
+        private bool _isInputMoving;
+        private float _groundDirectionWeight;
         private bool _isStunning;
 
         private float _stunDuration = 0;
         private InputReceiver _inputReceiver;
 
         private Vector3 _moveInput;
-        private Vector3 _flatMoveVelocity;
         private Vector3 _moveVelocity;
+        private Vector3 _velocity;
 
         private Rigidbody _playerBody;
         public bool IsActive { get; set; }
@@ -73,45 +75,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             }
         }
 
-        public void ResetPlayerOrientation(Quaternion orientation)
-        {
-            characterPivot.localRotation = orientation;
-        }
-
-        public void SetCharacterInput(InputReceiver inputReceiver)
-        {
-            _inputReceiver = inputReceiver;
-        }
-
-        public void SetupPlayerGraphic()
-        {
-            if (playerGraphics.CharacterVisual != null)
-                characterVisual = playerGraphics.CharacterVisual;
-        }
-
-        public void AfterRespawn()
-        {
-            _stunDuration = 0;
-            _isStunning = false;
-            playerHealth.OnRespawn();
-        }
-
-        private void StunningTimer()
-        {
-            if (_stunDuration > 0)
-                _stunDuration = _stunDuration - Time.deltaTime;
-
-            if (_stunDuration <= 0)
-            {
-                _stunDuration = 0;
-                
-                if (!_isAirDashing && groundChecker.IsGrounded)
-                    SetStunningState(false);
-            }
-
-            _isStunning = _stunDuration > 0;
-        }
-
         private void ReceiveInput()
         {
             if (!IsOwner)
@@ -119,6 +82,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             if (IsActive)
             {
+                _isInputMoving = _moveInput != Vector3.zero;
                 _isJumpPressed = _inputReceiver.IsJumpPressed;
                 _moveInput = _inputReceiver.RotateAndScaleInput(_inputReceiver.Movement);
             }
@@ -135,44 +99,72 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Move()
         {
-            if (_moveInput != Vector3.zero)
+            MoveCharacterPosition();
+            AnimateCharacterMovement();
+        }
+
+        private void MoveCharacterPosition()
+        {
+            if (!_isInputMoving)
             {
-                _moveVelocity = _moveInput.normalized * characterConfig.MoveSpeed;
-                _moveVelocity.y = _playerBody.velocity.y;
-                _playerBody.velocity = _moveVelocity;
+                _playerBody.ClampVelocity(characterConfig.MaxSpeed);
+                return;
             }
 
-            _playerBody.ClampVelocity(characterConfig.MaxSpeed);
-            _flatMoveVelocity = _playerBody.GetFlatVelocity();
+            _moveVelocity = _moveInput.normalized * characterConfig.MoveSpeed;
+            _moveVelocity.y = _playerBody.velocity.y;
 
-            bool isInputMoving = _moveInput != Vector3.zero;
-            bool isRunning = _flatMoveVelocity.magnitude > characterConfig.MinSpeed && groundChecker.IsGrounded;
+            if (groundChecker.GroundVelocity != Vector3.zero)
+            {
+                _groundDirectionWeight = Vector3.Dot(_moveVelocity, groundChecker.GroundVelocity);
+                _groundDirectionWeight = Mathf.Clamp(_groundDirectionWeight, 0, 1);
+                _velocity = _moveVelocity + _groundDirectionWeight * groundChecker.GroundVelocity;
+            }
+
+            else
+            {
+                _groundDirectionWeight = 0;
+                _velocity = _moveVelocity;
+            }
+
+            _playerBody.velocity = _velocity;
+            _playerBody.ClampVelocity(characterConfig.MaxSpeed);
+        }
+
+        private void AnimateCharacterMovement()
+        {
+            Vector3 playerLocalVelocity = _playerBody.velocity - groundChecker.GroundVelocity;
+            float moveThreshold = playerLocalVelocity.sqrMagnitude / (characterConfig.MoveSpeed * characterConfig.MoveSpeed);
+            
+            bool isRunningOnPlatform = playerLocalVelocity.sqrMagnitude > characterConfig.MinSpeed;
+            bool isRunningOnGround = _playerBody.velocity.sqrMagnitude > characterConfig.MinSpeed && groundChecker.IsGrounded;
+            bool isRunning = !groundChecker.IsPlatformGround ? isRunningOnGround : isRunningOnPlatform;
             bool isFalling = !groundChecker.IsGrounded && playerPhysics.IsFalling();
-            float moveThreshold = _flatMoveVelocity.magnitude / characterConfig.MoveSpeed;
 
             characterVisual.SetRunning(isRunning);
-            characterVisual.SetInputMoving(isInputMoving);
             characterVisual.SetMove(moveThreshold);
+            characterVisual.SetInputMoving(_isInputMoving);
             characterVisual.SetFalling(isFalling);
 
-            bool isDustEffect = _isStunning ? false : groundChecker.IsGrounded && !groundChecker.IsPlatformGround && isInputMoving;
+            bool isDustGrounding = groundChecker.IsGrounded && !groundChecker.IsPlatformGround && _isInputMoving;
+            bool isDustEffect = _isStunning ? false : isDustGrounding;
             playerGraphics.SetDustEffectActive(isDustEffect);
         }
 
         private void Turn()
         {
-            if(_flatMoveVelocity.sqrMagnitude > characterConfig.RotateVelocityThreshold && !_isStunning)
-            {
-                Quaternion inversedRotation = Quaternion.Inverse(transform.localRotation);
-                float angle = Mathf.Atan2(_playerBody.velocity.x, _playerBody.velocity.z) * Mathf.Rad2Deg;
-                Quaternion toRotation = Quaternion.Euler(0, angle + inversedRotation.eulerAngles.y, 0);
-                
-                if (transform.parent != null)
-                    toRotation = toRotation * Quaternion.Inverse(transform.parent.rotation);
+            if (_playerBody.velocity.sqrMagnitude <= characterConfig.RotateVelocityThreshold || _isStunning)
+                return;
 
-                characterPivot.localRotation = Quaternion.Slerp(characterPivot.localRotation, toRotation
-                                                                , Time.deltaTime * characterConfig.RotationSmoothFactor);
-            }
+            Quaternion inversedRotation = Quaternion.Inverse(transform.localRotation);
+            float angle = Mathf.Atan2(_playerBody.velocity.x, _playerBody.velocity.z) * Mathf.Rad2Deg;
+            Quaternion toRotation = Quaternion.Euler(0, angle + inversedRotation.eulerAngles.y, 0);
+
+            if (transform.parent != null)
+                toRotation = toRotation * Quaternion.Inverse(transform.parent.rotation);
+
+            characterPivot.localRotation = Quaternion.Slerp(characterPivot.localRotation, toRotation
+                                                            , Time.deltaTime * characterConfig.RotationSmoothFactor);
         }
 
         private void Jump()
@@ -199,7 +191,29 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             }
 
             if (playerPhysics.IsJumping())
-                characterVisual.SetJump(true);
+                characterVisual.SetJump(!groundChecker.IsPlatformGround);
+        }
+
+        private void StunningTimer()
+        {
+            if (_stunDuration > 0)
+                _stunDuration = _stunDuration - Time.deltaTime;
+
+            if (_stunDuration <= 0)
+            {
+                _stunDuration = 0;
+                
+                if (!_isAirDashing && groundChecker.IsGrounded)
+                    SetStunningState(false);
+            }
+
+            _isStunning = _stunDuration > 0;
+        }
+
+        private void SetStunningState(bool isStunning)
+        {
+            playerPhysics.SetFreezeRotation(isStunning);
+            characterVisual.SetStumble(isStunning);
         }
 
         public void OnGrounded()
@@ -211,27 +225,27 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 characterVisual.SetStumble(false);
         }
 
-        private void SetStunningState(bool isStunning)
+        public void ResetPlayerOrientation(Quaternion orientation)
         {
-            playerPhysics.SetFreezeRotation(isStunning);
-            characterVisual.SetStumble(isStunning);
+            characterPivot.localRotation = orientation;
         }
 
-        public void SetParent(Transform parent, bool stayWorldPosition = true)
+        public void SetCharacterInput(InputReceiver inputReceiver)
         {
-            if (!IsOwner) 
-                return;
-
-            if (parent != null)
-                transform.SetParent(parent, stayWorldPosition);
-            else 
-                transform.SetParent(null);
+            _inputReceiver = inputReceiver;
         }
 
-        public bool SetNetworkParent(NetworkObject parent)
+        public void SetupPlayerGraphic()
         {
-            if (!IsOwner) return false;
-            return parent ? NetworkObject.TrySetParent(parent) : NetworkObject.TryRemoveParent();
+            if (playerGraphics.CharacterVisual != null)
+                characterVisual = playerGraphics.CharacterVisual;
+        }
+
+        public void AfterRespawn()
+        {
+            _stunDuration = 0;
+            _isStunning = false;
+            playerHealth.OnRespawn();
         }
 
         public void SetCharacterActive(bool active)
