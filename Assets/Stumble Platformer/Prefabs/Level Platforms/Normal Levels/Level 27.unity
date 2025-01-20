@@ -317,10 +317,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 4287076803
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform
@@ -366,12 +362,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 4287076803
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -546,10 +542,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 4201299347
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (3)
@@ -595,12 +587,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 4201299347
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -631,10 +623,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 945590249
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (7)
@@ -680,12 +668,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 945590249
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1175,10 +1163,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1002978586
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (6)
@@ -1224,12 +1208,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1002978586
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1656,10 +1640,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1407091776
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (1)
@@ -1705,12 +1685,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1407091776
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1951,10 +1931,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1046274575
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (2)
@@ -2000,12 +1976,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1046274575
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2532,10 +2508,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 2056360535
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (11)
@@ -2581,12 +2553,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 2056360535
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2770,10 +2742,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 43277650
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (5)
@@ -2819,12 +2787,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 43277650
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2855,10 +2823,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1743794932
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (8)
@@ -2904,12 +2868,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1743794932
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3049,10 +3013,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1965890397
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (4)
@@ -3098,12 +3058,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1965890397
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3516,10 +3476,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 2526615058
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (10)
@@ -3565,12 +3521,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 2526615058
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3634,10 +3590,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 850153584
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (9)
@@ -3683,12 +3635,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 850153584
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

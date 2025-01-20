@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 9031650497770284040}
-  networkObject: {fileID: 0}
+  usePhysics: 1
   isKinematic: 0
   playerMask:
     serializedVersion: 2
@@ -166,7 +166,7 @@ MonoBehaviour:
   followLocalPosition: 0
   localPosition: {x: 0, y: 0, z: 0}
   parent: {fileID: 0}
-  usePhysics: 0
+  pivot: {fileID: 0}
   rotateSpeed: 50
   rotateAxis: 2
 --- !u!1 &3776535388026505987

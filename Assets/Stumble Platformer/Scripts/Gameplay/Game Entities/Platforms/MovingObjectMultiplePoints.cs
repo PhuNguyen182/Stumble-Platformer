@@ -33,7 +33,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
             maxStep = positions.Length;
             order = MovingPlatformOrder.Ascending;
-            RegisterDummyPlatform();
         }
 
         public override void PlatformAction()

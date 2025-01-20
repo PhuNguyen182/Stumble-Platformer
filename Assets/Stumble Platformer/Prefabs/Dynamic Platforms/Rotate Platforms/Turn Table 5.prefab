@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3629200612416774150}
   - component: {fileID: 1019917709493387448}
   - component: {fileID: 1760277020924984004}
-  - component: {fileID: -840065504603502832}
   - component: {fileID: 9212310045381804654}
   m_Layer: 8
   m_Name: Turn Table 5
@@ -85,27 +84,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-840065504603502832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 252346040055020544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1315380579
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &9212310045381804654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1760277020924984004}
-  networkObject: {fileID: -840065504603502832}
+  usePhysics: 1
+  isKinematic: 0
   playerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -128,7 +107,7 @@ MonoBehaviour:
   followLocalPosition: 0
   localPosition: {x: 0, y: 0, z: 0}
   parent: {fileID: 0}
-  usePhysics: 0
+  pivot: {fileID: 0}
   rotateSpeed: 30
   rotateAxis: 3
 --- !u!1 &1238926663396939716

@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GlobalScripts.UpdateHandlerPattern;
-using Unity.Netcode;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
-    public abstract class BasePlatform : NetworkBehaviour, IPlatform, ISetPlatformActive, IFixedUpdateHandler
+    public abstract class BasePlatform : MonoBehaviour, IPlatform, ISetPlatformActive, IFixedUpdateHandler
     {
         [SerializeField] protected Rigidbody platformBody;
-        [SerializeField] protected NetworkObject networkObject;
         [SerializeField] protected bool usePhysics;
         [SerializeField] protected bool isKinematic;
 
@@ -78,10 +76,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 platformBody.isKinematic = isKinematic;
         }
 
-        public override void OnDestroy()
+        private void OnDestroy()
         {
             UpdateHandlerManager.Instance.RemoveFixedUpdateBehaviour(this);
-            base.OnDestroy();
         }
     }
 }

@@ -1,9 +1,6 @@
-using R3;
-using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 using StumblePlatformer.Scripts.Common.Enums;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
@@ -11,7 +8,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
     public class RotatePlatform : BasePlatform
     {
         [SerializeField] private LayerMask playerMask;
-        [SerializeField] private DummyPlatform[] dummyPlatforms;
 
         [Space(10)]
         [SerializeField] private bool checkLocalPosition;
@@ -37,8 +33,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 RotateAxis.Z => Vector3.forward,
                 _ => Vector3.zero
             };
-
-            RegisterPlatform();
         }
 
         public override void SetPlatformActive(bool active)
@@ -77,31 +71,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 else
                     platformBody.transform.rotation = _rotation;
             }
-        }
-
-        private void RegisterPlatform()
-        {
-            var builder = Disposable.CreateBuilder();
-
-            for (int i = 0; i < dummyPlatforms.Length; i++)
-            {
-                if (dummyPlatforms[i] == null)
-                    continue;
-
-                dummyPlatforms[i].OnTriggerEnterAsObservable()
-                                 .Subscribe(OnPlatformTriggerEnter)
-                                 .AddTo(ref builder);
-
-                dummyPlatforms[i].OnTriggerStayAsObservable()
-                                 .Subscribe(OnPlatformTriggerStay)
-                                 .AddTo(ref builder);
-
-                dummyPlatforms[i].OnTriggerExitAsObservable()
-                                 .Subscribe(OnPlatformTriggerExit)
-                                 .AddTo(ref builder);
-            }
-            
-            builder.RegisterTo(this.destroyCancellationToken);
         }
 
         private void OnPlatformTriggerEnter(Collider collider)

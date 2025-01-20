@@ -3253,10 +3253,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1404520197
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform
@@ -3301,9 +3297,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1404520197
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12146,10 +12142,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 3322113446
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (1)
@@ -12194,9 +12186,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 3322113446
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22474,10 +22466,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
-    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 3559944014
-      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (2)
@@ -22522,9 +22510,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 3559944014
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,5 +1,3 @@
-using R3;
-using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,7 +44,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             usedSpeed = movementSpeed;
             firstPosition = startPosition;
             lastPosition = endPosition;
-            RegisterDummyPlatform();
         }
 
         public override void OnPlatformCollide(Collision collision)
@@ -102,27 +99,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             endPosition = transform.position;
         }
 
-        protected void RegisterDummyPlatform()
-        {
-            var builder = Disposable.CreateBuilder();
-
-            dummyPlatform.OnTriggerEnterAsObservable()
-                         .Subscribe(OnPlatformTriggerEnter)
-                         .AddTo(ref builder);
-
-            dummyPlatform.OnTriggerExitAsObservable()
-                         .Subscribe(OnPlatformTriggerExit)
-                         .AddTo(ref builder);
-
-            builder.RegisterTo(destroyCancellationToken);
-        }
-
         protected void MovePlatform()
         {
             Vector3 dir = (lastPosition - firstPosition).normalized;
             Vector3 movement = platformBody.position + dir * usedSpeed * Time.fixedDeltaTime;
 
-            if (usePhysics)
+            if (!usePhysics)
                 platformBody.transform.position = movement;
             else
                 platformBody.MovePosition(movement);

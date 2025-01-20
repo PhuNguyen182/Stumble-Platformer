@@ -514,7 +514,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1525856659717591361}
   - component: {fileID: 6489361910671194663}
-  - component: {fileID: 2929304021525437015}
   - component: {fileID: 8303217204862203232}
   m_Layer: 0
   m_Name: Spinner Turn Table
@@ -567,27 +566,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2929304021525437015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3860584366247577048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 303374322
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &8303217204862203232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 6489361910671194663}
-  networkObject: {fileID: 0}
+  usePhysics: 1
   isKinematic: 1
   playerMask:
     serializedVersion: 2
@@ -615,7 +593,7 @@ MonoBehaviour:
   followLocalPosition: 0
   localPosition: {x: 0, y: 0, z: 0}
   parent: {fileID: 0}
-  usePhysics: 0
+  pivot: {fileID: 0}
   rotateSpeed: 50
   rotateAxis: 2
 --- !u!1 &4697480655411274637

@@ -2646,7 +2646,6 @@ GameObject:
   - component: {fileID: 159844529}
   - component: {fileID: 159844531}
   - component: {fileID: 159844530}
-  - component: {fileID: 159844532}
   - component: {fileID: 159844528}
   m_Layer: 9
   m_Name: Moving Platform (10)
@@ -2668,8 +2667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 159844531}
-  networkObject: {fileID: 159844532}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 159844530}
   dummyPlatform: {fileID: 0}
@@ -2755,27 +2753,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &159844532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159844527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2174893649
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &165088997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,7 +3263,6 @@ GameObject:
   - component: {fileID: 227248039}
   - component: {fileID: 227248038}
   - component: {fileID: 227248036}
-  - component: {fileID: 227248042}
   m_Layer: 9
   m_Name: Moving Platform (16)
   m_TagString: Untagged
@@ -3307,8 +3283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 227248039}
-  networkObject: {fileID: 227248042}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 227248038}
   dummyPlatform: {fileID: 0}
@@ -3394,27 +3369,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &227248042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227248035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2593099695
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &228493572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3586,7 +3540,6 @@ GameObject:
   - component: {fileID: 236794600}
   - component: {fileID: 236794599}
   - component: {fileID: 236794598}
-  - component: {fileID: 236794603}
   m_Layer: 9
   m_Name: Moving Platform (6)
   m_TagString: Untagged
@@ -3632,8 +3585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 236794600}
-  networkObject: {fileID: 236794603}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 236794599}
   dummyPlatform: {fileID: 0}
@@ -3694,27 +3646,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &236794603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236794596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 55182097
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &244195550
 GameObject:
   m_ObjectHideFlags: 0
@@ -4557,7 +4488,6 @@ GameObject:
   - component: {fileID: 329335163}
   - component: {fileID: 329335162}
   - component: {fileID: 329335161}
-  - component: {fileID: 329335166}
   m_Layer: 9
   m_Name: Moving Platform (1)
   m_TagString: Untagged
@@ -4603,8 +4533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 329335163}
-  networkObject: {fileID: 329335166}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 329335162}
   dummyPlatform: {fileID: 0}
@@ -4665,27 +4594,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &329335166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329335159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1674970482
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &333493595
 GameObject:
   m_ObjectHideFlags: 0
@@ -5796,7 +5704,6 @@ GameObject:
   - component: {fileID: 439696867}
   - component: {fileID: 439696866}
   - component: {fileID: 439696865}
-  - component: {fileID: 439696870}
   m_Layer: 9
   m_Name: Moving Platform (8)
   m_TagString: Untagged
@@ -5842,8 +5749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 439696867}
-  networkObject: {fileID: 439696870}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 439696866}
   dummyPlatform: {fileID: 0}
@@ -5904,27 +5810,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &439696870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439696863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3682575188
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &451503156
 GameObject:
   m_ObjectHideFlags: 0
@@ -6147,7 +6032,6 @@ GameObject:
   - component: {fileID: 487649181}
   - component: {fileID: 487649180}
   - component: {fileID: 487649178}
-  - component: {fileID: 487649184}
   m_Layer: 9
   m_Name: Moving Platform (11)
   m_TagString: Untagged
@@ -6168,8 +6052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 487649181}
-  networkObject: {fileID: 487649184}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 487649180}
   dummyPlatform: {fileID: 0}
@@ -6255,27 +6138,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &487649184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487649177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2469155954
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1001 &488855371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8066,7 +7928,6 @@ GameObject:
   - component: {fileID: 655921252}
   - component: {fileID: 655921251}
   - component: {fileID: 655921250}
-  - component: {fileID: 655921255}
   m_Layer: 9
   m_Name: Moving Platform (3)
   m_TagString: Untagged
@@ -8112,8 +7973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 655921252}
-  networkObject: {fileID: 655921255}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 655921251}
   dummyPlatform: {fileID: 0}
@@ -8174,27 +8034,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &655921255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655921248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1032056819
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1001 &659501198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9206,7 +9045,6 @@ GameObject:
   - component: {fileID: 747464621}
   - component: {fileID: 747464620}
   - component: {fileID: 747464618}
-  - component: {fileID: 747464624}
   m_Layer: 9
   m_Name: Moving Platform (12)
   m_TagString: Untagged
@@ -9227,8 +9065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 747464621}
-  networkObject: {fileID: 747464624}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 747464620}
   dummyPlatform: {fileID: 0}
@@ -9314,27 +9151,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &747464624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747464617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2129131844
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &756668963
 GameObject:
   m_ObjectHideFlags: 0
@@ -14366,7 +14182,6 @@ GameObject:
   - component: {fileID: 1227645886}
   - component: {fileID: 1227645885}
   - component: {fileID: 1227645884}
-  - component: {fileID: 1227645889}
   m_Layer: 9
   m_Name: Moving Platform (5)
   m_TagString: Untagged
@@ -14412,8 +14227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1227645886}
-  networkObject: {fileID: 1227645889}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1227645885}
   dummyPlatform: {fileID: 0}
@@ -14474,27 +14288,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1227645889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227645882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 618863238
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1001 &1237501169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16151,7 +15944,6 @@ GameObject:
   - component: {fileID: 1339014574}
   - component: {fileID: 1339014577}
   - component: {fileID: 1339014576}
-  - component: {fileID: 1339014580}
   - component: {fileID: 1339014575}
   m_Layer: 9
   m_Name: Moving Platform
@@ -16198,8 +15990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1339014577}
-  networkObject: {fileID: 1339014580}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1339014576}
   dummyPlatform: {fileID: 0}
@@ -16260,27 +16051,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1339014580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339014573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2685235906
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1001 &1345648084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17472,7 +17242,6 @@ GameObject:
   - component: {fileID: 1388869337}
   - component: {fileID: 1388869336}
   - component: {fileID: 1388869335}
-  - component: {fileID: 1388869340}
   m_Layer: 9
   m_Name: Moving Platform (2)
   m_TagString: Untagged
@@ -17518,8 +17287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1388869337}
-  networkObject: {fileID: 1388869340}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1388869336}
   dummyPlatform: {fileID: 0}
@@ -17580,27 +17348,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1388869340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388869333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4240008772
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &1392600877
 GameObject:
   m_ObjectHideFlags: 0
@@ -17790,7 +17537,6 @@ GameObject:
   - component: {fileID: 1426288051}
   - component: {fileID: 1426288050}
   - component: {fileID: 1426288048}
-  - component: {fileID: 1426288054}
   m_Layer: 9
   m_Name: Moving Platform (13)
   m_TagString: Untagged
@@ -17811,8 +17557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1426288051}
-  networkObject: {fileID: 1426288054}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1426288050}
   dummyPlatform: {fileID: 0}
@@ -17898,27 +17643,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1426288054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426288047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1872731794
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &1430614587
 GameObject:
   m_ObjectHideFlags: 0
@@ -18105,7 +17829,6 @@ GameObject:
   - component: {fileID: 1458972648}
   - component: {fileID: 1458972647}
   - component: {fileID: 1458972645}
-  - component: {fileID: 1458972651}
   m_Layer: 9
   m_Name: Moving Platform (15)
   m_TagString: Untagged
@@ -18126,8 +17849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1458972648}
-  networkObject: {fileID: 1458972651}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1458972647}
   dummyPlatform: {fileID: 0}
@@ -18213,27 +17935,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1458972651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458972644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3537317785
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &1471400809
 GameObject:
   m_ObjectHideFlags: 0
@@ -19981,7 +19682,6 @@ GameObject:
   - component: {fileID: 1591635383}
   - component: {fileID: 1591635382}
   - component: {fileID: 1591635381}
-  - component: {fileID: 1591635386}
   m_Layer: 9
   m_Name: Moving Platform (4)
   m_TagString: Untagged
@@ -20027,8 +19727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1591635383}
-  networkObject: {fileID: 1591635386}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1591635382}
   dummyPlatform: {fileID: 0}
@@ -20089,27 +19788,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1591635386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591635379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3457317274
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1001 &1612951075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20410,7 +20088,6 @@ GameObject:
   - component: {fileID: 1641549580}
   - component: {fileID: 1641549579}
   - component: {fileID: 1641549577}
-  - component: {fileID: 1641549583}
   m_Layer: 9
   m_Name: Moving Platform (14)
   m_TagString: Untagged
@@ -20431,8 +20108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1641549580}
-  networkObject: {fileID: 1641549583}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1641549579}
   dummyPlatform: {fileID: 0}
@@ -20518,27 +20194,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1641549583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641549576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3899295587
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &1646821474
 GameObject:
   m_ObjectHideFlags: 0
@@ -21399,7 +21054,6 @@ GameObject:
   - component: {fileID: 1713268058}
   - component: {fileID: 1713268057}
   - component: {fileID: 1713268055}
-  - component: {fileID: 1713268061}
   m_Layer: 9
   m_Name: Moving Platform (9)
   m_TagString: Untagged
@@ -21420,8 +21074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1713268058}
-  networkObject: {fileID: 1713268061}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1713268057}
   dummyPlatform: {fileID: 0}
@@ -21507,27 +21160,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1713268061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713268054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2598002821
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1001 &1724201787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24296,7 +23928,6 @@ GameObject:
   - component: {fileID: 1925996943}
   - component: {fileID: 1925996942}
   - component: {fileID: 1925996941}
-  - component: {fileID: 1925996946}
   m_Layer: 9
   m_Name: Moving Platform (7)
   m_TagString: Untagged
@@ -24342,8 +23973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1925996943}
-  networkObject: {fileID: 1925996946}
-  usePhysics: 0
+  usePhysics: 1
   isKinematic: 0
   platformCollider: {fileID: 1925996942}
   dummyPlatform: {fileID: 0}
@@ -24404,27 +24034,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1925996946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925996939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3422504048
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &1928684826
 GameObject:
   m_ObjectHideFlags: 0

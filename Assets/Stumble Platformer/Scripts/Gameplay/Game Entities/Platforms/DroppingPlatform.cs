@@ -2,10 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Netcode;
 using GlobalScripts.UpdateHandlerPattern;
-using StumblePlatformer.Scripts.Multiplayers.Datas;
-using StumblePlatformer.Scripts.Multiplayers;
 using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
@@ -49,15 +46,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected override void SpawnSelf()
         {
-            if (NetworkManager.Singleton.IsServer)
-            {
-                if (!networkObject.IsSpawned)
-                {
-                    string currentId = MultiplayerManager.Instance.GetCurrentPlayerID();
-                    PlayerData currentData = MultiplayerManager.Instance.GetPlayerData(currentId);
-                    networkObject.SpawnWithOwnership(currentData.ClientID, true);
-                }
-            }
         }
 
         public void OnUpdate(float deltaTime)
@@ -126,9 +114,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         }
 #endif
 
-        public override void OnDestroy()
+        private void OnDestroy()
         {
-            base.OnDestroy();
             _block.Clear();
             UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);
         }
