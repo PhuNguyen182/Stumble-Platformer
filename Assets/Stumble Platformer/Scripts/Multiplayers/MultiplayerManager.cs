@@ -119,6 +119,17 @@ namespace StumblePlatformer.Scripts.Multiplayers
             return _playerDatas[index];
         }
 
+        public PlayerData GetPlayerData(string playerId)
+        {
+            for (int i = 0; i < _playerDatas.Count; i++)
+            {
+                if (string.CompareOrdinal(playerId, _playerDatas[i].PlayerID.Value) == 0)
+                    return _playerDatas[i];
+            }
+
+            return default;
+        }
+
         public int GetPlayerDataIndexFromClientId(ulong clientId)
         {
             for (int i = 0; i < _playerDatas.Count; i++)

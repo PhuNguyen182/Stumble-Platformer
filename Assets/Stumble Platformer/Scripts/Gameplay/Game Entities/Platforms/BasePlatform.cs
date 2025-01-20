@@ -36,6 +36,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected virtual void OnStart() { }
 
+        protected virtual void SpawnSelf() { }
+
         public virtual void OnFixedUpdate()
         {
             PlatformAction();

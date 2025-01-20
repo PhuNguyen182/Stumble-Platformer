@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2921266936
+  GlobalObjectIdHash: 1212267992
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 6223801605178619259}
   networkObject: {fileID: 4515100705803598445}
+  isKinematic: 0
   playerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -179,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8861142048361636002}
   - component: {fileID: 7822154957080021926}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +619,7 @@ GameObject:
   - component: {fileID: 5338171849442256900}
   - component: {fileID: 6629294331058463833}
   - component: {fileID: 9169660849473406161}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: obstacle_15_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}

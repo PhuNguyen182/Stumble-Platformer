@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 8029197129773887937}
   - component: {fileID: 4279784927996453059}
   - component: {fileID: 8693297471814021393}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: obstacle_26_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4201275825430497152}
   - component: {fileID: 4321526087976407585}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3117271241
+  GlobalObjectIdHash: 4122467076
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -697,6 +697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 3686672575203659586}
   networkObject: {fileID: -2106780314201391424}
+  isKinematic: 0
   playerMask:
     serializedVersion: 2
     m_Bits: 8

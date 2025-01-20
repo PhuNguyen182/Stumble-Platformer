@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1314658272048691069}
   - component: {fileID: 3978901550688316168}
   - component: {fileID: 8325607947401631490}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: obstacle_16_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 263667635957929465}
   - component: {fileID: 3346258461777508228}
   - component: {fileID: 3692979937395698885}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Spinner Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2721645364
+  GlobalObjectIdHash: 4095756924
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 6577845080189316544}
   - component: {fileID: 5037753252147667010}
   - component: {fileID: 648176909488600965}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Dummy Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
