@@ -73,18 +73,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             }
         }
 
-        private void OnPlatformTriggerEnter(Collider collider)
-        {
-        }
-
-        private void OnPlatformTriggerStay(Collider collider)
-        {
-        }
-
-        private void OnPlatformTriggerExit(Collider collider)
-        {
-        }
-
 #if UNITY_EDITOR
         private void OnValidate()
         {

@@ -157,11 +157,6 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 8
-  dummyPlatforms:
-  - {fileID: 8960407883997501068}
-  - {fileID: 933684002597135269}
-  - {fileID: 2167308102862774661}
-  - {fileID: 2660161712784375279}
   checkLocalPosition: 0
   followLocalPosition: 0
   localPosition: {x: 0, y: 0, z: 0}
@@ -181,7 +176,7 @@ GameObject:
   - component: {fileID: 9181532640100428192}
   - component: {fileID: 3045631826547597445}
   - component: {fileID: 2660161712784375279}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Dummy Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +272,7 @@ GameObject:
   - component: {fileID: 5714771263104098456}
   - component: {fileID: 2262096876524179021}
   - component: {fileID: 8960407883997501068}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Dummy Platform (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +368,7 @@ GameObject:
   - component: {fileID: 4021188713159735428}
   - component: {fileID: 452195353843946668}
   - component: {fileID: 933684002597135269}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Dummy Platform (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +464,7 @@ GameObject:
   - component: {fileID: 5329492151687561188}
   - component: {fileID: 5497409833228981823}
   - component: {fileID: 2167308102862774661}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Dummy Platform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

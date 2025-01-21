@@ -16,6 +16,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
         [SerializeField] private PlayerPhysics playerPhysics;
 
         private Vector3 _checkPosition;
+        private Vector3 _checkVelocityPosition;
+        private Vector3 _tempGroundVelocity;
+
         private Collider[] _groundCollider;
         private Collider[] _platformCollider;
 
@@ -53,8 +56,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
                     if (_groundCollider[i].TryGetComponent(out WalkableSurface walkableSurface))
                     {
                         playerPhysics.SetLinearDrag(walkableSurface.LinearDrag);
-                        playerPhysics.SetAngularDrag(walkableSurface.AngularDrag);
                         playerPhysics.SetJumpRestriction(walkableSurface.JumpRestriction);
+                        playerPhysics.SetAngularDrag(walkableSurface.AngularDrag);
                     }
                 }
             }
@@ -62,15 +65,26 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
             if (!IsPlatformGround)
             {
                 GroundVelocity = Vector3.zero;
-                return;
+                Array.Clear(_platformCollider, 0, _platformCollider.Length);
             }
 
-            for (int i = 0; i < _platformCollider.Length; i++)
+            else
             {
-                if (_platformCollider[i])
+                for (int i = 0; i < _platformCollider.Length; i++)
                 {
-                    if (_platformCollider[i].attachedRigidbody != null)
-                        GroundVelocity = _platformCollider[i].attachedRigidbody.GetPointVelocity(transform.position - Vector3.down * 0.01f);
+                    if (!_platformCollider[i])
+                        continue;
+
+                    if (!_platformCollider[i].attachedRigidbody)
+                        continue;
+
+                    _checkVelocityPosition = transform.position + Vector3.down * 0.01f;
+                    _tempGroundVelocity = _platformCollider[i].attachedRigidbody.GetPointVelocity(_checkVelocityPosition);
+
+                    if (_tempGroundVelocity == Vector3.zero)
+                        continue;
+
+                    GroundVelocity = _tempGroundVelocity;
                 }
             }
         }

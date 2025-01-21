@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1314658272048691069}
   - component: {fileID: 3978901550688316168}
   - component: {fileID: 8325607947401631490}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: obstacle_16_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,8 +263,6 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 8
-  dummyPlatforms:
-  - {fileID: 648176909488600965}
   checkLocalPosition: 0
   followLocalPosition: 0
   localPosition: {x: 0, y: 0, z: 0}
@@ -284,7 +282,7 @@ GameObject:
   - component: {fileID: 6577845080189316544}
   - component: {fileID: 5037753252147667010}
   - component: {fileID: 648176909488600965}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Dummy Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

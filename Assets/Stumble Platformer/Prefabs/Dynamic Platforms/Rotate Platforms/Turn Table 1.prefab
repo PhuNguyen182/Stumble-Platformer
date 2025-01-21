@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5141677659393152057}
   - component: {fileID: 919945222481325185}
   - component: {fileID: 6223801605178619259}
+  - component: {fileID: 1433436148001084473}
   - component: {fileID: 1994514837238411901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Turn Table 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,6 +120,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &1433436148001084473
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901927743018089528}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2957219022396420203, guid: 4dde91166d8cbec49b2e4c3b690c7222, type: 3}
 --- !u!114 &1994514837238411901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,11 +160,6 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 8
-  dummyPlatforms:
-  - {fileID: 4357138294302436671}
-  - {fileID: 225912650559780456}
-  - {fileID: 7125317718856441750}
-  - {fileID: 9172397986420638252}
   checkLocalPosition: 0
   followLocalPosition: 0
   localPosition: {x: 0, y: 0, z: 0}
@@ -159,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8861142048361636002}
   - component: {fileID: 7822154957080021926}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +232,7 @@ GameObject:
   - component: {fileID: 7997842393422561981}
   - component: {fileID: 6281954736121341675}
   - component: {fileID: 225912650559780456}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dummy Platform (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +328,7 @@ GameObject:
   - component: {fileID: 3697323523057542286}
   - component: {fileID: 7403740195608813529}
   - component: {fileID: 9172397986420638252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dummy Platform (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +505,7 @@ GameObject:
   - component: {fileID: 5065718134250318771}
   - component: {fileID: 9113974384007764166}
   - component: {fileID: 4357138294302436671}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dummy Platform (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +601,7 @@ GameObject:
   - component: {fileID: 1530003847786711389}
   - component: {fileID: 4563965303238873344}
   - component: {fileID: 7125317718856441750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dummy Platform (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +696,6 @@ GameObject:
   - component: {fileID: 5995832141460450577}
   - component: {fileID: 5338171849442256900}
   - component: {fileID: 6629294331058463833}
-  - component: {fileID: 9169660849473406161}
   m_Layer: 9
   m_Name: obstacle_15_002
   m_TagString: Untagged
@@ -751,25 +768,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &9169660849473406161
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8769064520953486680}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2957219022396420203, guid: 4dde91166d8cbec49b2e4c3b690c7222, type: 3}

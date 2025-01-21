@@ -17,8 +17,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         [Header("Movement")]
         [SerializeField] protected float movementSpeed = 3f;
+        [SerializeField] protected float slowDownSpeed = 0.1f;
         [SerializeField] protected float toleranceOffset = 0.1f;
         [SerializeField] protected float movementDelayAmount = 1f;
+        [SerializeField] protected bool slowDownWhenCloseToStopPosition = true;
 
         [Header("Platform Tools")]
         [SerializeField] protected bool resetWaypoints;
@@ -31,6 +33,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected float usedSpeed = 0;
         protected float delayAmount = 0;
+        protected float slowDownDistance = 0;
 
         protected Vector3 firstPosition;
         protected Vector3 lastPosition;
@@ -44,6 +47,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             usedSpeed = movementSpeed;
             firstPosition = startPosition;
             lastPosition = endPosition;
+            slowDownDistance = movementSpeed * 1.5f;
         }
 
         public override void OnPlatformCollide(Collision collision)
@@ -63,7 +67,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         public override void PlatformAction()
         {
-            usedSpeed = IsPlatformActive ? movementSpeed : 0;
             if (transform.IsCloseTo(lastPosition, toleranceOffset))
             {
                 SetPlatformActive(false);
@@ -78,9 +81,22 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 }
             }
 
+            else if(slowDownWhenCloseToStopPosition && transform.IsCloseTo(lastPosition, slowDownDistance))
+            {
+                SmoothMovementSpeed(lastPosition);
+                MovePlatform();
+            }
+
+            else if (slowDownWhenCloseToStopPosition && transform.IsCloseTo(firstPosition, slowDownDistance))
+            {
+                SmoothMovementSpeed(firstPosition);
+                MovePlatform();
+            }
+
             else
             {
                 delayAmount = 0;
+                usedSpeed = IsPlatformActive ? movementSpeed : 0;
                 MovePlatform();
             }
         }
@@ -108,6 +124,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 platformBody.transform.position = movement;
             else
                 platformBody.MovePosition(movement);
+        }
+
+        protected void SmoothMovementSpeed(Vector3 toPosition)
+        {
+            float speedInterpolate = transform.GetDistance(toPosition) / slowDownDistance;
+            float smoothedSpeed = Mathf.Lerp(1, movementSpeed, speedInterpolate);
+            usedSpeed = smoothedSpeed;
         }
 
         protected virtual void OnPlatformTargeted()

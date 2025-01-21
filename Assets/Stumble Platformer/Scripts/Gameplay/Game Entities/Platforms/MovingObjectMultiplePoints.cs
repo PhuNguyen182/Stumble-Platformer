@@ -70,6 +70,18 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                 }
             }
 
+            else if (slowDownWhenCloseToStopPosition && transform.IsCloseTo(lastPosition, slowDownDistance))
+            {
+                SmoothMovementSpeed(lastPosition);
+                MovePlatform();
+            }
+
+            else if (slowDownWhenCloseToStopPosition && transform.IsCloseTo(firstPosition, slowDownDistance))
+            {
+                SmoothMovementSpeed(firstPosition);
+                MovePlatform();
+            }
+
             else
             {
                 delayAmount = 0;
