@@ -6,9 +6,9 @@ using GlobalScripts.Extensions;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
-    public class MovingObjectMultiplePoints : MovingPlatform
+    public class MultiplePointsMovingPlatform : MovingPlatform
     {
-        [SerializeField] private bool isRevertible;
+        [SerializeField] private bool isRevertible = true;
 
         [Header("Waypoints")]
         [SerializeField] private Vector3[] positions = new Vector3[2];
@@ -41,8 +41,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             {
                 SetPlatformActive(false);
 
-                if (delayAmount < movementDelayAmount)
-                    delayAmount += Time.fixedDeltaTime;
+                if (delayTimer < movementDelayAmount)
+                    delayTimer += Time.fixedDeltaTime;
 
                 else
                 {
@@ -51,7 +51,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
                         if (order == MovingPlatformOrder.Ascending)
                         {
                             AscendingPositions();
-                            if (stepCount == maxStep)
+                            if (stepCount == maxStep - 1)
                                 order = MovingPlatformOrder.Descending;
                         }
 
@@ -84,7 +84,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
             else
             {
-                delayAmount = 0;
+                delayTimer = 0;
                 MovePlatform();
             }
         }

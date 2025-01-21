@@ -118,7 +118,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 _groundDirectionWeight = Vector3.Dot(_moveVelocity, groundChecker.GroundVelocity);
                 _groundDirectionWeight = Mathf.Clamp(_groundDirectionWeight, 0, 1);
-                _velocity = _moveVelocity + _groundDirectionWeight * groundChecker.GroundVelocity;
+                _velocity = _moveVelocity + _groundDirectionWeight * groundChecker.GroundVelocity.GetFlatVector();
             }
 
             else

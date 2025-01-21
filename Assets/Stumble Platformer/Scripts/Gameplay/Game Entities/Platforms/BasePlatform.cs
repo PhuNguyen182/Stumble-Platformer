@@ -8,8 +8,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
     public abstract class BasePlatform : MonoBehaviour, IPlatform, ISetPlatformActive, IFixedUpdateHandler
     {
         [SerializeField] protected Rigidbody platformBody;
-        [SerializeField] protected bool usePhysics;
-        [SerializeField] protected bool isKinematic;
+        [SerializeField] protected bool usePhysics = true;
 
         public bool IsActive { get; set; }
         public bool IsPlatformActive { get; set; }
@@ -24,13 +23,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         {
             OnStart();
             UpdateHandlerManager.Instance.AddFixedUpdateBehaviour(this);
-            SpawnNetworkObject();
         }
 
         protected virtual void OnAwake()
         {
-            if (platformBody != null)
-                isKinematic = platformBody.isKinematic;
         }
 
         protected virtual void OnStart() { }
@@ -68,12 +64,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         private void OnCollisionExit(Collision collision)
         {
             OnPlatformExit(collision);
-        }
-
-        private void SpawnNetworkObject()
-        {
-            if (platformBody != null)
-                platformBody.isKinematic = isKinematic;
         }
 
         private void OnDestroy()

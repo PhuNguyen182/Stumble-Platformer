@@ -7568,7 +7568,7 @@ PrefabInstance:
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[0]
       value: 
-      objectReference: {fileID: 6143160236561553478}
+      objectReference: {fileID: 8652189768567871304}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: respawnAreas.Array.size
       value: 3
@@ -14283,7 +14283,7 @@ GameObject:
   - component: {fileID: 8652189768567871303}
   - component: {fileID: 3241672536405601490}
   - component: {fileID: 7873958740831109168}
-  - component: {fileID: 6143160236561553478}
+  - component: {fileID: 8652189768567871304}
   m_Layer: 9
   m_Name: Moving Platform
   m_TagString: Untagged
@@ -15730,32 +15730,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 12, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6143160236561553478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5247594116507344955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f2c610cbcb09847bdf3f8a02b688b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformBody: {fileID: 3241672536405601490}
-  usePhysics: 1
-  isKinematic: 0
-  platformCollider: {fileID: 7873958740831109168}
-  dummyPlatform: {fileID: 0}
-  movingType: 2
-  movementSpeed: 12
-  toleranceOffset: 0.1
-  movementDelayAmount: 1
-  resetWaypoints: 0
-  checkDummyPlatform: 0
-  dummyPlatformHeight: 0.1
-  startPosition: {x: 0, y: 10, z: 129}
-  endPosition: {x: 0, y: 20, z: 185}
 --- !u!1001 &6158322695461770276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21212,6 +21186,39 @@ Transform:
   - {fileID: 7943237063984987921}
   m_Father: {fileID: 1724201792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8652189768567871304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5247594116507344955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da76e4d63e6d3264690b4660794028e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformBody: {fileID: 3241672536405601490}
+  usePhysics: 1
+  isKinematic: 0
+  platformCollider: {fileID: 7873958740831109168}
+  dummyPlatform: {fileID: 0}
+  movingType: 2
+  movementSpeed: 12
+  slowDownSpeed: 0.1
+  toleranceOffset: 0.1
+  movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
+  resetWaypoints: 0
+  checkDummyPlatform: 0
+  dummyPlatformHeight: 0.1
+  startPosition: {x: 0, y: 0, z: 0}
+  endPosition: {x: 0, y: 0, z: 0}
+  isRevertible: 1
+  positions:
+  - {x: 0, y: 10, z: 129}
+  - {x: 0, y: 10, z: 185}
+  - {x: 0, y: 20, z: 185}
 --- !u!33 &8652215617574107797
 MeshFilter:
   m_ObjectHideFlags: 0

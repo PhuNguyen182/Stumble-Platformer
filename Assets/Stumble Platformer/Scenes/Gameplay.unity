@@ -330,6 +330,10 @@ PrefabInstance:
       propertyPath: inputReceiver
       value: 
       objectReference: {fileID: 8953011765460182005}
+    - target: {fileID: 7575983721287950110, guid: 7e3bb243b29b61143ae7da8799ee9812, type: 3}
+      propertyPath: m_UpdateMethod
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
