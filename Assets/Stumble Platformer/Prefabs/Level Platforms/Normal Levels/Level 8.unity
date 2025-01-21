@@ -11756,9 +11756,6 @@ GameObject:
   - component: {fileID: 887061364}
   - component: {fileID: 887061363}
   - component: {fileID: 887061362}
-  - component: {fileID: 887061366}
-  - component: {fileID: 887061368}
-  - component: {fileID: 887061367}
   m_Layer: 9
   m_Name: Moving Platform (1)
   m_TagString: Untagged
@@ -11780,15 +11777,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 887061364}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 887061363}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -14, y: 10, z: 247}
   endPosition: {x: -14, y: 10, z: 304}
@@ -11865,70 +11861,6 @@ Transform:
   - {fileID: 1117126806}
   m_Father: {fileID: 1724201792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &887061366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887061361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 377722772
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
---- !u!114 &887061367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887061361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &887061368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887061361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
 --- !u!1 &888889607
 GameObject:
   m_ObjectHideFlags: 0
@@ -16861,9 +16793,6 @@ GameObject:
   - component: {fileID: 1240439941}
   - component: {fileID: 1240439940}
   - component: {fileID: 1240439939}
-  - component: {fileID: 1240439944}
-  - component: {fileID: 1240439943}
-  - component: {fileID: 1240439945}
   m_Layer: 9
   m_Name: Moving Platform (3)
   m_TagString: Untagged
@@ -16885,15 +16814,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1240439941}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 1240439940}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 16, y: 10, z: 247}
   endPosition: {x: 16, y: 10, z: 304}
@@ -16969,70 +16897,6 @@ Transform:
   - {fileID: 661012603}
   m_Father: {fileID: 1724201792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1240439943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240439938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1240439944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240439938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
---- !u!114 &1240439945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240439938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2629946568
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &1240455881
 GameObject:
   m_ObjectHideFlags: 0
@@ -22717,9 +22581,6 @@ GameObject:
   - component: {fileID: 1600992252}
   - component: {fileID: 1600992251}
   - component: {fileID: 1600992250}
-  - component: {fileID: 1600992255}
-  - component: {fileID: 1600992254}
-  - component: {fileID: 1600992256}
   m_Layer: 9
   m_Name: Moving Platform (2)
   m_TagString: Untagged
@@ -22741,15 +22602,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1600992252}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 1600992251}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -10, y: 10, z: 336}
   endPosition: {x: -10, y: 10, z: 379}
@@ -22824,70 +22684,6 @@ Transform:
   - {fileID: 114498763}
   m_Father: {fileID: 1724201792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1600992254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600992249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1600992255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600992249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
---- !u!114 &1600992256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600992249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2914369099
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1001 &1614251337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30984,9 +30780,6 @@ GameObject:
   - component: {fileID: 2075602100}
   - component: {fileID: 2075602099}
   - component: {fileID: 2075602098}
-  - component: {fileID: 2075602103}
-  - component: {fileID: 2075602102}
-  - component: {fileID: 2075602104}
   m_Layer: 9
   m_Name: Moving Platform (4)
   m_TagString: Untagged
@@ -31008,15 +30801,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 2075602100}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 2075602099}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 10, y: 10, z: 336}
   endPosition: {x: 10, y: 10, z: 379}
@@ -31091,70 +30883,6 @@ Transform:
   - {fileID: 1300839209}
   m_Father: {fileID: 1724201792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2075602102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075602097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2075602103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075602097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseUnreliableDeltas: 0
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
-  UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 0
-  InLocalSpace: 0
-  Interpolate: 1
-  SlerpPosition: 0
---- !u!114 &2075602104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075602097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1125399453
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1001 &2082895065
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12477,15 +12477,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 833371883}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 833371882}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 0.75
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -19, y: 10, z: 53}
   endPosition: {x: -13, y: 10, z: 71}
@@ -15707,15 +15706,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1025240036}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 1025240035}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 15
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 30, y: 5, z: 366}
   endPosition: {x: 7, y: 5, z: 384}
@@ -20661,15 +20659,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1287593540}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 1287593539}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 0.75
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 19, y: 10, z: 53}
   endPosition: {x: 13, y: 10, z: 71}
@@ -21845,7 +21842,7 @@ GameObject:
   - component: {fileID: 1342572237}
   - component: {fileID: 1342572236}
   - component: {fileID: 1342572235}
-  - component: {fileID: 1342572234}
+  - component: {fileID: 1342572238}
   m_Layer: 9
   m_Name: Moving Platform (2)
   m_TagString: Untagged
@@ -21853,32 +21850,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1342572234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342572233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f2c610cbcb09847bdf3f8a02b688b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformBody: {fileID: 1342572236}
-  usePhysics: 1
-  isKinematic: 0
-  platformCollider: {fileID: 1342572235}
-  dummyPlatform: {fileID: 0}
-  movingType: 2
-  movementSpeed: 9
-  toleranceOffset: 0.1
-  movementDelayAmount: 1
-  resetWaypoints: 0
-  checkDummyPlatform: 0
-  dummyPlatformHeight: 0.1
-  startPosition: {x: 0, y: 10, z: 249}
-  endPosition: {x: 0, y: 5, z: 284}
 --- !u!65 &1342572235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21952,6 +21923,36 @@ Transform:
   - {fileID: 1846855391}
   m_Father: {fileID: 1724201792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1342572238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342572233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da76e4d63e6d3264690b4660794028e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformBody: {fileID: 1342572236}
+  usePhysics: 1
+  platformCollider: {fileID: 1342572235}
+  movingType: 2
+  movementSpeed: 9
+  slowDownSpeed: 0.1
+  toleranceOffset: 0.1
+  movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
+  resetWaypoints: 0
+  dummyPlatformHeight: 0.1
+  startPosition: {x: 0, y: 0, z: 0}
+  endPosition: {x: 0, y: 0, z: 0}
+  isRevertible: 1
+  positions:
+  - {x: 0, y: 10, z: 249}
+  - {x: 0, y: 5, z: 249}
+  - {x: 0, y: 5, z: 284}
 --- !u!114 &1357580644 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8832059359400890384, guid: 09cc4d19ffe4c1949986f64ec4726fc5, type: 3}
@@ -24375,15 +24376,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1507141102}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 1507141101}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 0, y: 10, z: 180}
   endPosition: {x: 0, y: 10, z: 191}
@@ -27653,15 +27653,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1719059447}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 1719059446}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 15
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -8, y: 5, z: 316}
   endPosition: {x: -30, y: 5, z: 334}
@@ -27886,7 +27885,7 @@ PrefabInstance:
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[1]
       value: 
-      objectReference: {fileID: 1342572234}
+      objectReference: {fileID: 1342572238}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[2]
       value: 
@@ -29723,15 +29722,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1735542362}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 1735542361}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 15
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -30, y: 5, z: 366}
   endPosition: {x: -8, y: 5, z: 384}
@@ -36686,15 +36684,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 2123282371}
   usePhysics: 1
-  isKinematic: 0
   platformCollider: {fileID: 2123282370}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 15
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 8, y: 5, z: 316}
   endPosition: {x: 30, y: 5, z: 334}

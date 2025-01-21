@@ -85,14 +85,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
                 if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
-                    environmentHandler.GenerateLevel("Level 3");
+                    environmentHandler.GenerateLevel(_levelName);
             }
 
             else
             {
                 if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
                 {
-                    environmentHandler.GenerateLevel("Level 1");
+                    environmentHandler.GenerateLevel(_levelName);
                 }
             }
         }
