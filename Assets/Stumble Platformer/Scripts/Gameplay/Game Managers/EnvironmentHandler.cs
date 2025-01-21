@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
-using UnityEngine.AddressableAssets;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
@@ -14,22 +12,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
     {
         [SerializeField] private CameraHandler cameraHandler;
 
-        private AsyncOperationHandle<GameObject> _levelLoadOperation;
-
         public CameraHandler CameraHandler => cameraHandler;
         public EnvironmentIdentifier EnvironmentIdentifier { get; private set; }
 
-        public override void OnNetworkSpawn()
-        {
-            
-        }
+        public override void OnNetworkSpawn() { }
 
         public void SetLevelActive(bool active) => EnvironmentIdentifier.SetLevelActive(active);
 
-        public void SetLevelSecondaryComponentActive(bool active)
-        {
-            EnvironmentIdentifier.PlayLevel.SetSecondaryLevelComponentActive(active);
-        }
+        public void SetLevelSecondaryComponentActive(bool active) => EnvironmentIdentifier.PlayLevel.SetSecondaryLevelComponentActive(active);
 
         public void SetEnvironmentIdentifier(EnvironmentIdentifier environmentIdentifier)
         {
@@ -45,10 +35,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             cameraHandler.SetTeaserCameraActive(false);
         }
 
-        private void SetupSky()
-        {
-            RenderSettings.skybox = EnvironmentIdentifier.Skybox;
-        }
+        private void SetupSky() => RenderSettings.skybox = EnvironmentIdentifier.Skybox;
 
         private void SetupLight()
         {
@@ -93,13 +80,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         public void GenerateLevel(string levelName)
         {
             NetworkManager.Singleton.SceneManager.LoadScene(levelName, LoadSceneMode.Additive);
-        }
-
-        public override void OnDestroy()
-        {
-            base.OnDestroy();
-            if (_levelLoadOperation.IsValid())
-                Addressables.Release(_levelLoadOperation);
         }
     }
 }

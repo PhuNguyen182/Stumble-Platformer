@@ -9,7 +9,7 @@ using StumblePlatformer.Scripts.Common.Enums;
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
     [RequireComponent(typeof(Rigidbody))] 
-    public class CannonBullet : Unity.Netcode.NetworkBehaviour, IObstacleDamager
+    public class CannonBullet : MonoBehaviour, IObstacleDamager
     {
         [SerializeField] private float attackForce = 10f;
         [SerializeField] private float stunDuration = 3f;
@@ -44,9 +44,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         public void DamageCharacter(Collision collision)
         {
-            if (!IsOwner)
-                return;
-
             if (!collision.transform.TryGetComponent(out ICharacterMovement character) || !collision.transform.TryGetComponent(out IDamageable damageable))
                 return;
 
@@ -73,16 +70,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void SpawnNetworkObject()
         {
-            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-            {
-                if (!IsSpawned)
-                    networkObject.Spawn(true);
-            }
-            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
-            {
-                if (GameplaySetup.PlayerType == PlayerType.Host || GameplaySetup.PlayerType == PlayerType.Server)
-                    networkObject.Spawn(true);
-            }
+            
         }
 
         private void OnCollisionEnter(Collision collision)

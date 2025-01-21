@@ -566,6 +566,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3503694609737173241, guid: 81f16d12226e19344ad10941db19e789, type: 3}
+      propertyPath: cameraHandler
+      value: 
+      objectReference: {fileID: 1363367369556941645}
+    - target: {fileID: 3503694609737173241, guid: 81f16d12226e19344ad10941db19e789, type: 3}
       propertyPath: inputReceiver
       value: 
       objectReference: {fileID: 8953011765460182005}

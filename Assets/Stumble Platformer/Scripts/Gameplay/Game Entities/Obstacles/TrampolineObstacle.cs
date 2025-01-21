@@ -3,7 +3,7 @@ using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
@@ -44,10 +44,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void OnTrampolineCollide(Collider collider)
         {
-            if(collider.attachedRigidbody != null)
+            if (collider.attachedRigidbody != null)
             {
-                if (collider.TryGetComponent(out ICharacterMovement characterMovement))
+                if (collider.TryGetComponent(out PlayerController characterMovement))
                     characterMovement.OnGrounded();
+
+                if (collider.attachedRigidbody.isKinematic || !characterMovement.IsOwner)
+                    return;
 
                 collider.attachedRigidbody.velocity = transform.up * pushForce;
                 platformAnimator.SetTrigger(_pushHash);

@@ -15,17 +15,18 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
     {
         [SerializeField] protected string objectiveTitle;
 
-        protected IDisposable messageDisposable;
-        protected DisposableBagBuilder bagBuilder;
         protected PlayerHandler playerHandler;
-        protected EnvironmentHandler environmentHandler;
         protected CameraHandler cameraHandler;
+        protected EnvironmentHandler environmentHandler;
+        protected GameStateController gameStateController;
 
-        protected ISubscriber<ReportPlayerHealthMessage> playerHealthSubscriber;
+        protected DisposableBagBuilder bagBuilder;
+        protected IDisposable messageDisposable;
+
         protected ISubscriber<EndGameMessage> endGameSubscriber;
         protected ISubscriber<LevelEndMessage> levelEndSubscriber;
+        protected ISubscriber<ReportPlayerHealthMessage> playerHealthSubscriber;
         protected ISubscriber<PlayerDamageMessage> playerDamageSubscriber;
-        protected GameStateController gameStateController;
 
         public int CurrentPlayerID { get; set; }
         public int PlayerHealth { get; set; }
@@ -34,21 +35,15 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnNetworkSpawn()
         {
-            if (GameplayInitializer.Instance != null && GameplayInitializer.Instance.IsAllMessagesInit())
-                RegisterCommonMessage();
-
             OnStart();
-            UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
+            RegisterCommonMessage();
 
-            if (TryGetComponent<NetworkObject>(out var networkObject))
+            UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
+            if (TryGetComponent(out NetworkObject networkObject))
             {
                 if (NetworkManager.Singleton.IsServer && !networkObject.IsSpawned)
                     networkObject.Spawn(true);
             }
-        }
-
-        private void Start()
-        {
         }
 
         protected virtual void OnStart() { }
@@ -89,7 +84,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             OnPlayerHealthUpdate();
         }
 
-
         public abstract void StartGame();
         public abstract void OnEndGame(EndResult endResult);
         public abstract void OnLevelEnded(EndResult endResult);
@@ -122,7 +116,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public void EndLevel(LevelEndMessage message)
         {
-            EndLevelServerRpc(message.ID, (int)message.Result, message.ClientID);
+            EndLevelRpc(message.ID, (int)message.Result, message.ClientID);
         }
 
         public void EndGame(EndGameMessage message)
@@ -134,18 +128,9 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             OnEndGame(message.Result);
         }
 
-        [Rpc(SendTo.Server, RequireOwnership = false)]
-        private void EndLevelServerRpc(int playerId, int endResult, ulong clientId)
-        {
-            EndLevelClientRpc(playerId, endResult, clientId);
-        }
-
         [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
-        private void EndLevelClientRpc(int playerId, int endResult, ulong clientId)
+        private void EndLevelRpc(int playerId, int endResult, ulong clientId)
         {
-            if (CurrentPlayerID != playerId)
-                return;
-
             environmentHandler.SetLevelActive(false);
             environmentHandler.SetLevelSecondaryComponentActive(false);
 

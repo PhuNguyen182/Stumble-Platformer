@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 8549143127106003607}
   - component: {fileID: 3763299582114930328}
   - component: {fileID: 2657774391931106603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dummy Platform (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 4546335672535860705}
   - component: {fileID: 8670220141710561959}
   - component: {fileID: 3940533145836084733}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dummy Platform (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,8 +313,9 @@ GameObject:
   - component: {fileID: 7063787264519675170}
   - component: {fileID: 8613107619301777634}
   - component: {fileID: 144310102565083817}
+  - component: {fileID: 29383586715798592}
   - component: {fileID: 658955851958123159}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,6 +387,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &29383586715798592
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085375781327393976}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &658955851958123159
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -420,7 +448,7 @@ GameObject:
   - component: {fileID: 7221301920790841155}
   - component: {fileID: 423670182756431826}
   - component: {fileID: 309396662524318453}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dummy Platform (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +541,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1525856659717591361}
-  - component: {fileID: 6489361910671194663}
   - component: {fileID: 8303217204862203232}
   m_Layer: 0
   m_Name: Spinner Turn Table
@@ -539,33 +566,6 @@ Transform:
   - {fileID: 7272675518101770959}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6489361910671194663
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3860584366247577048}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &8303217204862203232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,17 +578,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a5f45903dcba444855635138be761d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformBody: {fileID: 6489361910671194663}
+  platformBody: {fileID: 29383586715798592}
   usePhysics: 1
-  isKinematic: 1
   playerMask:
     serializedVersion: 2
     m_Bits: 8
-  dummyPlatforms:
-  - {fileID: 3940533145836084733}
-  - {fileID: 8959339732002982861}
-  - {fileID: 309396662524318453}
-  - {fileID: 2657774391931106603}
   checkLocalPosition: 0
   followLocalPosition: 0
   localPosition: {x: 0, y: 0, z: 0}
@@ -663,7 +657,7 @@ GameObject:
   - component: {fileID: 8494666235644458438}
   - component: {fileID: 7550510001521198008}
   - component: {fileID: 8959339732002982861}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dummy Platform (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

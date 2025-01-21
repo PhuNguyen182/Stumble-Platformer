@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using GlobalScripts.Extensions;
-using Unity.Netcode;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {

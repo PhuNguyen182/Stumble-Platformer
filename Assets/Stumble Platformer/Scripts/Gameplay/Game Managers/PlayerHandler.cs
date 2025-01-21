@@ -12,7 +12,6 @@ using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.GameDatas;
 using TMPro;
-using GlobalScripts;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
@@ -56,10 +55,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 #endif
         #endregion
 
-        public override void OnNetworkSpawn()
-        {
-            
-        }
+        public override void OnNetworkSpawn() { }
 
         public void SpawnPlayer()
         {
@@ -77,16 +73,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             _currentPlayer = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
             _currentPlayer.NetworkObject.SpawnAsPlayerObject(0, true);
 
-            CharacterSkin characterSkin;
             string skin = GameDataManager.Instance.PlayerProfile.SkinName;
-            bool hasSkin = playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin(skin, out characterSkin);
-
-            if (hasSkin)
+            if (playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin(skin, out CharacterSkin characterSkin))
                 _currentPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);
 
-            int lifeCount = isTest ? 1000 : CharacterConstants.MaxLife;
-            OriginPlayerHealth = lifeCount;
-            _currentPlayer.PlayerHealth.SetHealth(lifeCount);
+            OriginPlayerHealth = isTest ? 1000 : CharacterConstants.MaxLife;
+            _currentPlayer.PlayerHealth.SetHealth(OriginPlayerHealth);
             _currentPlayer.SetCharacterInput(inputReceiver);
 
             SetPlayerCompleteLevel(false);
@@ -106,41 +98,60 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
                 PlayerData playerData = MultiplayerManager.Instance.GetPlayerData(playerIndex);
                 _tempPlayer = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
-                
+
                 if (_tempPlayer.NetworkObject != null)
                     _tempPlayer.NetworkObject.SpawnAsPlayerObject(clientId, true);
 
                 SetCurrentPlayerRpc(playerData);
-
-                CharacterSkin characterSkin;
                 string skin = playerData.PlayerSkin.Value;
-                bool hasSkin = playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin(skin, out characterSkin);
 
-                if (hasSkin)
+                if (playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin(skin, out CharacterSkin characterSkin))
                     _tempPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);
-
-                _currentPlayer.SetCharacterInput(inputReceiver);
-                SetPlayerPhysicsActive(_tempPlayer, false);
             }
         }
+
+        public void SetPlayerActive(bool active) => SerPlayerActiveRpc(active);
+
+        public void SetPlayerCompleteLevel(bool isCompleted) => SetPlayerCompleteLevelRpc(isCompleted);
+
+        public void SetPlayerPhysicsActive(bool active) => SetPlayerPhysicsActiveRpc(active);
 
         [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
         private void SetCurrentPlayerRpc(PlayerData playerData)
         {
             if (string.CompareOrdinal(playerData.PlayerID.Value, MultiplayerManager.Instance.GetCurrentPlayerID()) == 0)
-                _currentPlayer = _tempPlayer;
+            {
+                NetworkObject player = NetworkManager.Singleton.SpawnManager
+                                       .GetPlayerNetworkObject(playerData.ClientID);
+
+                if (player.TryGetComponent(out _currentPlayer))
+                {
+                    _currentPlayer.SetCharacterInput(inputReceiver);
+                    SetPlayerPhysicsActive(false);
+                }
+            }
         }
 
-        public void SetPlayerCompleteLevel(bool isCompleted) 
-        { 
-            _currentPlayer.PlayerHealth.SetPlayerCompleteLevel(isCompleted);
-        } 
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        private void SerPlayerActiveRpc(bool active)
+        {
+            if (_currentPlayer)
+                _currentPlayer.IsActive = active;
+        }
 
-        public void SetPlayerActive(bool active) => _currentPlayer.IsActive = active;
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        private void SetPlayerCompleteLevelRpc(bool isCompleted)
+        {
+            if (_currentPlayer != null)
+                _currentPlayer.PlayerHealth.SetPlayerCompleteLevel(isCompleted);
+        }
 
-        public void SetPlayerPhysicsActive(bool active) => _currentPlayer.SetCharacterActive(active);
-
-        public void SetPlayerPhysicsActive(PlayerController player, bool active) => player.SetCharacterActive(active);
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        private void SetPlayerPhysicsActiveRpc(bool active)
+        {
+            if (_currentPlayer != null)
+                _currentPlayer.SetCharacterActive(active);
+        }
 
         public void RespawnPlayer()
         {
