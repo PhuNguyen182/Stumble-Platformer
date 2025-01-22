@@ -44,7 +44,6 @@ namespace StumblePlatformer.Scripts.Multiplayers
         private void Update()
         {
             ListenHeartBeat();
-            HandlePeriodicListLobbies();
         }
 
         private void HandlePeriodicListLobbies()

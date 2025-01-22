@@ -110,7 +110,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             }
         }
 
-        public void SetPlayerActive(bool active) => SerPlayerActiveRpc(active);
+        public void SetPlayerActive(bool active) => SetPlayerActiveRpc(active);
 
         public void SetPlayerCompleteLevel(bool isCompleted) => SetPlayerCompleteLevelRpc(isCompleted);
 
@@ -133,7 +133,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         }
 
         [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
-        private void SerPlayerActiveRpc(bool active)
+        private void SetPlayerActiveRpc(bool active)
         {
             if (_currentPlayer)
                 _currentPlayer.IsActive = active;

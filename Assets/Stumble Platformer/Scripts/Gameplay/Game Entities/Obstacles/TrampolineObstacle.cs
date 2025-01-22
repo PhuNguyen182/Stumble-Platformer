@@ -46,11 +46,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         {
             if (collider.attachedRigidbody != null)
             {
+                if (collider.attachedRigidbody.isKinematic)
+                    return;
+
                 if (collider.TryGetComponent(out PlayerController characterMovement))
                     characterMovement.OnGrounded();
-
-                if (collider.attachedRigidbody.isKinematic || !characterMovement.IsOwner)
-                    return;
 
                 collider.attachedRigidbody.velocity = transform.up * pushForce;
                 platformAnimator.SetTrigger(_pushHash);

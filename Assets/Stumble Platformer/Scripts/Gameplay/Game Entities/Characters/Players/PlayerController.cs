@@ -63,6 +63,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             if (IsOwner)
             {
                 groundChecker.CheckGround();
+                _isInputMoving = _moveInput != Vector3.zero;
 
                 if (!_isStunning && !_isAirDashing)
                 {
@@ -82,7 +83,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             if (IsActive)
             {
-                _isInputMoving = _moveInput != Vector3.zero;
                 _isJumpPressed = _inputReceiver.IsJumpPressed;
                 _moveInput = _inputReceiver.RotateAndScaleInput(_inputReceiver.Movement);
             }
@@ -105,29 +105,27 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void MoveCharacterPosition()
         {
-            if (!_isInputMoving)
+            if (_isInputMoving)
             {
-                _playerBody.ClampVelocity(characterConfig.MaxSpeed);
-                return;
+                _moveVelocity = _moveInput.normalized * characterConfig.MoveSpeed;
+                _moveVelocity.y = _playerBody.velocity.y;
+
+                if (groundChecker.GroundVelocity != Vector3.zero)
+                {
+                    _groundDirectionWeight = Vector3.Dot(_moveVelocity, groundChecker.GroundVelocity);
+                    _groundDirectionWeight = Mathf.Clamp(_groundDirectionWeight, 0, 1);
+                    _velocity = _moveVelocity + _groundDirectionWeight * groundChecker.GroundVelocity.GetFlatVector();
+                }
+
+                else
+                {
+                    _groundDirectionWeight = 0;
+                    _velocity = _moveVelocity;
+                }
+
+                _playerBody.velocity = _velocity;
             }
 
-            _moveVelocity = _moveInput.normalized * characterConfig.MoveSpeed;
-            _moveVelocity.y = _playerBody.velocity.y;
-
-            if (groundChecker.GroundVelocity != Vector3.zero)
-            {
-                _groundDirectionWeight = Vector3.Dot(_moveVelocity, groundChecker.GroundVelocity);
-                _groundDirectionWeight = Mathf.Clamp(_groundDirectionWeight, 0, 1);
-                _velocity = _moveVelocity + _groundDirectionWeight * groundChecker.GroundVelocity.GetFlatVector();
-            }
-
-            else
-            {
-                _groundDirectionWeight = 0;
-                _velocity = _moveVelocity;
-            }
-
-            _playerBody.velocity = _velocity;
             _playerBody.ClampVelocity(characterConfig.MaxSpeed);
         }
 
@@ -153,7 +151,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Turn()
         {
-            if (_playerBody.velocity.sqrMagnitude <= characterConfig.RotateVelocityThreshold || _isStunning)
+            if (_playerBody.velocity.GetFlatVector().sqrMagnitude <= characterConfig.RotateVelocityThreshold || _isStunning)
                 return;
 
             Quaternion inversedRotation = Quaternion.Inverse(transform.localRotation);

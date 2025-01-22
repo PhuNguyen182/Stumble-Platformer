@@ -9576,16 +9576,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 753333636}
-  usePhysics: 0
-  isKinematic: 0
+  usePhysics: 1
   platformCollider: {fileID: 753333635}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 15
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 0, y: 5, z: 266}
   endPosition: {x: 0, y: 5, z: 298}
@@ -16593,16 +16592,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1205564813}
-  usePhysics: 0
-  isKinematic: 0
+  usePhysics: 1
   platformCollider: {fileID: 1205564812}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 15
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 12, y: 0, z: 379}
   endPosition: {x: 12, y: 0, z: 414}
@@ -21906,16 +21904,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1541700751}
-  usePhysics: 0
-  isKinematic: 0
+  usePhysics: 1
   platformCollider: {fileID: 1541700750}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 15
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -12, y: 0, z: 379}
   endPosition: {x: -12, y: 0, z: 414}

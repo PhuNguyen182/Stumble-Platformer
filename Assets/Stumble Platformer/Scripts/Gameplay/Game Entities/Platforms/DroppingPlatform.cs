@@ -44,10 +44,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
         }
 
-        protected override void SpawnSelf()
-        {
-        }
-
         public void OnUpdate(float deltaTime)
         {
             if (_isSteppedOn && _platformDuration < droppingDuration)

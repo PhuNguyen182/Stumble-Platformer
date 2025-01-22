@@ -31,8 +31,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected virtual void OnStart() { }
 
-        protected virtual void SpawnSelf() { }
-
         public virtual void OnFixedUpdate()
         {
             PlatformAction();
@@ -44,11 +42,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         }
 
         public abstract void PlatformAction();
-
         public abstract void OnPlatformCollide(Collision collision);
-
         public abstract void OnPlatformStay(Collision collision);
-
         public abstract void OnPlatformExit(Collision collision);
 
         private void OnCollisionEnter(Collision collision)

@@ -33,15 +33,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         }
 
         public abstract void ExitDamage(Collision collision);
-
         public abstract void DamageCharacter(Collision collision);
-
         public abstract void ObstacleAction();
 
-        public virtual void OnAwake()
-        {
-            isKinematic = obstacleBody ?? obstacleBody.isKinematic;
-        }
+        public virtual void OnAwake() { }
 
         public virtual void SetObstacleActive(bool active)
         {
