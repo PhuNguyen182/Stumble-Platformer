@@ -8,6 +8,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
     {
         public string ObjectiveTitle { get; }
         public int CurrentPlayerID { get; set; }
+        public bool IsEndGame { get; set; }
 
         public void StartGame();
         public void EndGame(EndGameMessage message);

@@ -78,8 +78,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
                     if (!_platformCollider[i].attachedRigidbody)
                         continue;
 
-                    _checkVelocityPosition = transform.position + Vector3.down * 0.01f;
-                    _tempGroundVelocity = _platformCollider[i].attachedRigidbody.GetPointVelocity(_checkVelocityPosition);
+                    _tempGroundVelocity = _platformCollider[i].attachedRigidbody.GetPointVelocity(transform.position);
 
                     if (_tempGroundVelocity == Vector3.zero)
                         continue;

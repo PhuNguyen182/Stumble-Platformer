@@ -19,6 +19,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         protected override void OnStart()
         {
+            base.OnStart();
             _hasLosedGame = false;
             _currentTimer = playDuration;
         }
@@ -48,7 +49,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
                         _currentTimer = 0;
                         _playRuleTimer.UpdateTime(_currentTimer);
 
-                        // If in siggle mode
                         EndLevel(new LevelEndMessage
                         {
                             ID = CurrentPlayerID,
@@ -71,7 +71,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnLevelEnded(EndResult endResult)
         {
-            // If in single mode
             EndGame(new EndGameMessage
             {
                 ID = CurrentPlayerID,

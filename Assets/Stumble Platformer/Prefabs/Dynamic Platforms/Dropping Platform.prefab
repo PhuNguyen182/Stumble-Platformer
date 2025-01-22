@@ -120,7 +120,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 8283559726975666955}
   usePhysics: 0
-  isKinematic: 0
   delayOnStepped: 0.2
   droppingDuration: 1
   platformAnimator: {fileID: 2380850459448753861}

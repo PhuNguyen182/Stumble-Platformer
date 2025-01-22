@@ -3,6 +3,7 @@ using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using GlobalScripts.UpdateHandlerPattern;
 using Sirenix.OdinInspector;
 
@@ -18,6 +19,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         
         [Header("Obstacle Strikers")]
         [SerializeField] protected ObstacleAttacker[] obstacleAttackers;
+
+        protected bool hasNetworkObject;
+        protected NetworkObject obstacleNetworkObject;
 
         public bool IsActive { get; set; }
 
@@ -36,7 +40,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         public abstract void DamageCharacter(Collision collision);
         public abstract void ObstacleAction();
 
-        public virtual void OnAwake() { }
+        public virtual void OnAwake()
+        {
+            hasNetworkObject = TryGetComponent(out obstacleNetworkObject);
+        }
 
         public virtual void SetObstacleActive(bool active)
         {
@@ -51,6 +58,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         public virtual void OnFixedUpdate()
         {
             ObstacleAction();
+        }
+
+        [Rpc(SendTo.Server, RequireOwnership = false)]
+        protected void SpawnSelfRpc()
+        {
+            obstacleNetworkObject.enabled = true;
+            if (hasNetworkObject && !obstacleNetworkObject.IsSpawned)
+                obstacleNetworkObject.Spawn(true);
         }
 
         protected void DamageTargetOnStay(Collision collision)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using GlobalScripts.UpdateHandlerPattern;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
@@ -9,6 +10,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
     {
         [SerializeField] protected Rigidbody platformBody;
         [SerializeField] protected bool usePhysics = true;
+
+        protected bool hasNetworkObject;
+        protected NetworkObject obstacleNetworkObject;
 
         public bool IsActive { get; set; }
         public bool IsPlatformActive { get; set; }
@@ -34,6 +38,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         public virtual void OnFixedUpdate()
         {
             PlatformAction();
+        }
+
+        [Rpc(SendTo.Server, RequireOwnership = false)]
+        protected void SpawnSelfRpc()
+        {
+            obstacleNetworkObject.enabled = true;
+            if (hasNetworkObject && !obstacleNetworkObject.IsSpawned)
+                obstacleNetworkObject.Spawn(true);
         }
 
         public virtual void SetPlatformActive(bool active)

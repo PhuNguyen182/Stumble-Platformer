@@ -8226,7 +8226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 626335735}
   usePhysics: 1
-  platformCollider: {fileID: 626335734}
   movingType: 2
   movementSpeed: 12
   slowDownSpeed: 0.1
@@ -12110,9 +12109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1025815581}
   usePhysics: 1
-  platformCollider: {fileID: 1025815580}
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
   slowDownSpeed: 0.1
   toleranceOffset: 0.125
   movementDelayAmount: 1.5
@@ -16132,9 +16130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1303410898}
   usePhysics: 1
-  platformCollider: {fileID: 1303410897}
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
   slowDownSpeed: 0.1
   toleranceOffset: 0.125
   movementDelayAmount: 1.5
@@ -19515,9 +19512,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1523951038}
   usePhysics: 1
-  platformCollider: {fileID: 1523951037}
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
   slowDownSpeed: 0.1
   toleranceOffset: 0.125
   movementDelayAmount: 1.5
@@ -26661,7 +26657,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 2045515055}
   usePhysics: 1
-  platformCollider: {fileID: 2045515054}
   movingType: 2
   movementSpeed: 12
   slowDownSpeed: 0.1

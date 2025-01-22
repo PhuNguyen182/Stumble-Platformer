@@ -52,7 +52,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnLevelEnded(EndResult endResult)
         {
-            // If in single mode
             EndGame(new EndGameMessage
             {
                 ID = CurrentPlayerID,

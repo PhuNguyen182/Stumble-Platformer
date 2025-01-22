@@ -12477,7 +12477,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 833371883}
   usePhysics: 1
-  platformCollider: {fileID: 833371882}
   movingType: 2
   movementSpeed: 9
   slowDownSpeed: 0.1
@@ -15706,9 +15705,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1025240036}
   usePhysics: 1
-  platformCollider: {fileID: 1025240035}
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
   slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
@@ -20659,7 +20657,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1287593540}
   usePhysics: 1
-  platformCollider: {fileID: 1287593539}
   movingType: 2
   movementSpeed: 9
   slowDownSpeed: 0.1
@@ -21937,7 +21934,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1342572236}
   usePhysics: 1
-  platformCollider: {fileID: 1342572235}
   movingType: 2
   movementSpeed: 9
   slowDownSpeed: 0.1
@@ -24376,7 +24372,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1507141102}
   usePhysics: 1
-  platformCollider: {fileID: 1507141101}
   movingType: 2
   movementSpeed: 9
   slowDownSpeed: 0.1
@@ -27653,9 +27648,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1719059447}
   usePhysics: 1
-  platformCollider: {fileID: 1719059446}
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
   slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
@@ -29722,9 +29716,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1735542362}
   usePhysics: 1
-  platformCollider: {fileID: 1735542361}
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
   slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
@@ -36684,9 +36677,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 2123282371}
   usePhysics: 1
-  platformCollider: {fileID: 2123282370}
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
   slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1

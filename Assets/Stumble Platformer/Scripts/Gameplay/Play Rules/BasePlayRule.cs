@@ -28,9 +28,10 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         protected ISubscriber<ReportPlayerHealthMessage> playerHealthSubscriber;
         protected ISubscriber<PlayerDamageMessage> playerDamageSubscriber;
 
+        public bool IsActive { get; set; }
+        public bool IsEndGame { get; set; }
         public int CurrentPlayerID { get; set; }
         public int PlayerHealth { get; set; }
-        public virtual bool IsActive { get; set; }
         public string ObjectiveTitle => objectiveTitle;
 
         public override void OnNetworkSpawn()
@@ -46,7 +47,10 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             }
         }
 
-        protected virtual void OnStart() { }
+        protected virtual void OnStart()
+        {
+            IsEndGame = false;
+        }
 
         protected void RegisterCommonMessage()
         {
@@ -116,14 +120,12 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public void EndLevel(LevelEndMessage message)
         {
+            IsEndGame = true;
             EndLevelRpc(message.ID, (int)message.Result, message.ClientID);
         }
 
         public void EndGame(EndGameMessage message)
         {
-            if (CurrentPlayerID != message.ID)
-                return;
-
             gameStateController.EndGame(message.Result);
             OnEndGame(message.Result);
         }

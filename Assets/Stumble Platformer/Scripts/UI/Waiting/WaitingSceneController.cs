@@ -142,7 +142,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
             if (allPlayerReady && _isReady)
             {
-                WaitingPopup.Setup().ShowWaiting();
+                ShowWaitingRpc();
                 if (IsServer)
                     LoadPlayScene().Forget();
             }
@@ -153,6 +153,12 @@ namespace StumblePlatformer.Scripts.UI.Waiting
         {
             if (!_joinedPlayersIdsCollection.TryAdd(clientId, true))
                 _joinedPlayersIdsCollection[clientId] = true;
+        }
+
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        private void ShowWaitingRpc()
+        {
+            WaitingPopup.Setup().ShowWaiting();
         }
 
         private void OnCharacterDisconnected(ulong clientId)

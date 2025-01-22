@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3258091048586910271, guid: 0ba25ab1b9991824e8a14f282776fcd2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 494
+      value: 495
       objectReference: {fileID: 0}
     - target: {fileID: 3258091048586910271, guid: 0ba25ab1b9991824e8a14f282776fcd2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1880,7 +1880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6897924464786010925, guid: de6490fa27131f149bb744df696be949, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 494
+      value: 495
       objectReference: {fileID: 0}
     - target: {fileID: 6897924464786010925, guid: de6490fa27131f149bb744df696be949, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2590,7 +2590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3258091048586910271, guid: 0ba25ab1b9991824e8a14f282776fcd2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 494
+      value: 495
       objectReference: {fileID: 0}
     - target: {fileID: 3258091048586910271, guid: 0ba25ab1b9991824e8a14f282776fcd2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2857,7 +2857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997593448061452469, guid: 0d36dc4d720ef814f8b14c26659cb1e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 488.5
+      value: 489.5
       objectReference: {fileID: 0}
     - target: {fileID: 6997593448061452469, guid: 0d36dc4d720ef814f8b14c26659cb1e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4097,7 +4097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440878261437324524, guid: 4c642f17eff2b3f44b38bee54cb72c9f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 494
+      value: 495
       objectReference: {fileID: 0}
     - target: {fileID: 1440878261437324524, guid: 4c642f17eff2b3f44b38bee54cb72c9f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5062,7 +5062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3258091048586910271, guid: 0ba25ab1b9991824e8a14f282776fcd2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 499.5
+      value: 500.5
       objectReference: {fileID: 0}
     - target: {fileID: 3258091048586910271, guid: 0ba25ab1b9991824e8a14f282776fcd2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5493,15 +5493,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 400641730}
   usePhysics: 1
-  isKinematic: 0
-  platformCollider: {fileID: 400641729}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 8, y: 20, z: 293}
   endPosition: {x: 8, y: 20, z: 310}
@@ -5840,15 +5838,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 443166998}
   usePhysics: 1
-  isKinematic: 0
-  platformCollider: {fileID: 443166997}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 10, y: 20, z: 247}
   endPosition: {x: 10, y: 20, z: 261}
@@ -6034,7 +6030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997593448061452469, guid: 0d36dc4d720ef814f8b14c26659cb1e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 499.5
+      value: 500.5
       objectReference: {fileID: 0}
     - target: {fileID: 6997593448061452469, guid: 0d36dc4d720ef814f8b14c26659cb1e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11661,7 +11657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490142433793618633, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 497
+      value: 495
       objectReference: {fileID: 0}
     - target: {fileID: 2490142433793618633, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14449,15 +14445,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1054939553}
   usePhysics: 1
-  isKinematic: 0
-  platformCollider: {fileID: 1054939552}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -10, y: 20, z: 247}
   endPosition: {x: -10, y: 20, z: 261}
@@ -15295,7 +15289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997593448061452469, guid: 0d36dc4d720ef814f8b14c26659cb1e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 488.5
+      value: 489.5
       objectReference: {fileID: 0}
     - target: {fileID: 6997593448061452469, guid: 0d36dc4d720ef814f8b14c26659cb1e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18201,7 +18195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997593448061452469, guid: 0d36dc4d720ef814f8b14c26659cb1e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 499.5
+      value: 500.5
       objectReference: {fileID: 0}
     - target: {fileID: 6997593448061452469, guid: 0d36dc4d720ef814f8b14c26659cb1e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19987,6 +19981,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3514460336138863274, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
+      propertyPath: force
+      value: 24.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4537403717380330499, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
       propertyPath: forceMagnitude
       value: 28
@@ -21351,7 +21349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6897924464786010925, guid: de6490fa27131f149bb744df696be949, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 494
+      value: 495
       objectReference: {fileID: 0}
     - target: {fileID: 6897924464786010925, guid: de6490fa27131f149bb744df696be949, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23649,15 +23647,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1750921546}
   usePhysics: 1
-  isKinematic: 0
-  platformCollider: {fileID: 1750921545}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -12, y: 20, z: 343}
   endPosition: {x: -12, y: 20, z: 370}
@@ -23891,7 +23887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3258091048586910271, guid: 0ba25ab1b9991824e8a14f282776fcd2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 499.5
+      value: 500.5
       objectReference: {fileID: 0}
     - target: {fileID: 3258091048586910271, guid: 0ba25ab1b9991824e8a14f282776fcd2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23964,15 +23960,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1793831234}
   usePhysics: 1
-  isKinematic: 0
-  platformCollider: {fileID: 1793831233}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -6, y: 20, z: 293}
   endPosition: {x: -6, y: 20, z: 310}
@@ -25959,15 +25953,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1949424754}
   usePhysics: 1
-  isKinematic: 0
-  platformCollider: {fileID: 1949424753}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -12, y: 20, z: 388}
   endPosition: {x: -12, y: 20, z: 410}
@@ -26304,15 +26296,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1974521630}
   usePhysics: 1
-  isKinematic: 0
-  platformCollider: {fileID: 1974521629}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 12, y: 20, z: 343}
   endPosition: {x: 12, y: 20, z: 370}
@@ -27309,15 +27299,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 2036861351}
   usePhysics: 1
-  isKinematic: 0
-  platformCollider: {fileID: 2036861350}
-  dummyPlatform: {fileID: 0}
   movingType: 2
   movementSpeed: 9
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 12, y: 20, z: 388}
   endPosition: {x: 12, y: 20, z: 410}
@@ -28525,7 +28513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997593448061452469, guid: 0d36dc4d720ef814f8b14c26659cb1e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 499.5
+      value: 500.5
       objectReference: {fileID: 0}
     - target: {fileID: 6997593448061452469, guid: 0d36dc4d720ef814f8b14c26659cb1e7, type: 3}
       propertyPath: m_LocalRotation.w

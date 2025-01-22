@@ -34,6 +34,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         {
             if (!NetworkManager.Singleton.IsServer)
             {
+                if (PlayGroundManager.Instance.PlayRule.IsEndGame)
+                    return;
+
                 // Server ID acts like the last ID from connected clients Ids
                 int playerCount = NetworkManager.Singleton.ConnectedClientsIds.Count;
                 ulong serverClientId = NetworkManager.Singleton.ConnectedClientsIds[playerCount - 1];

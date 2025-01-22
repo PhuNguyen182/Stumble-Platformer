@@ -10,7 +10,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
     [RequireComponent(typeof(BoxCollider))]
     public class MovingPlatform : BasePlatform
     {
-        [SerializeField] protected BoxCollider platformCollider;
         [SerializeField] protected MovingType movingType = MovingType.PingPong;
 
         [Header("Movement")]
@@ -150,7 +149,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         private void FetchComponents()
         {
             platformBody ??= GetComponent<Rigidbody>();
-            platformCollider ??= GetComponent<BoxCollider>();
         }
 
 #if UNITY_EDITOR

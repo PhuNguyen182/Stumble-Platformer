@@ -9577,9 +9577,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 753333636}
   usePhysics: 1
-  platformCollider: {fileID: 753333635}
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
   slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
@@ -16593,9 +16592,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1205564813}
   usePhysics: 1
-  platformCollider: {fileID: 1205564812}
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
   slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
@@ -21905,9 +21903,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1541700751}
   usePhysics: 1
-  platformCollider: {fileID: 1541700750}
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
   slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
