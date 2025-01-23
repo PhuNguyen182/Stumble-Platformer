@@ -1,22 +1,26 @@
 using R3;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cysharp.Threading.Tasks;
-using StumblePlatformer.Scripts.Common.Messages;
-using StumblePlatformer.Scripts.Common.SingleConfigs;
+using Unity.Netcode;
+using UnityEngine.SceneManagement;
+using StumblePlatformer.Scripts.Multiplayers;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.PlayRules;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
+using StumblePlatformer.Scripts.Common.SingleConfigs;
 using StumblePlatformer.Scripts.Gameplay.Inputs;
-using MessagePipe;
+using GlobalScripts.SceneUtils;
+using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
-    public class PlayGroundManager : MonoBehaviour
+    public class PlayGroundManager : NetworkBehaviour
     {
         [SerializeField] private bool isTesting;
+        [SerializeField] private NetworkObject testPlayer;
+        [SerializeField] private NetworkObject testLevel;
         
         [Space(10)]
         [SerializeField] private InputReceiver inputReceiver;
@@ -29,61 +33,70 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         [SerializeField] private EndGamePanel endGamePanel;
         [SerializeField] private FinalePanel finalePanel;
 
+        private string _levelName = "";
         private GameStateController _gameStateController;
         
-        private IDisposable _initLevelDisposable;
-        private ISubscriber<SetupLevelMessage> _initLevelSubscriber;
-
         public BasePlayRule PlayRule { get; private set; }
+        public CameraHandler CameraHandler => cameraHandler;
+        public static PlayGroundManager Instance { get; private set; }
 
         private void Awake()
         {
+            Instance = this;
 #if !UNITY_EDITOR
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
 #endif
+            SetupGameStateMachine();
         }
 
-        private void Start()
+        private void SetupGameStateMachine()
         {
-            SetupGameplay();
-            InitializeMessage();
-            GenerateLevel().Forget();
-        }
-
-        private void SetupGameplay()
-        {
+            DisposableBuilder builder = Disposable.CreateBuilder();
             _gameStateController = new(cameraHandler, environmentHandler, endGamePanel, finalePanel);
-            var builder = Disposable.CreateBuilder();
+
             _gameStateController.AddTo(ref builder);
-            builder.RegisterTo(this.destroyCancellationToken);
+            builder.RegisterTo(destroyCancellationToken);
         }
 
-        private void InitializeMessage()
-        {
-            _initLevelSubscriber = GlobalMessagePipe.GetSubscriber<SetupLevelMessage>();
-
-            var builder = MessagePipe.DisposableBag.CreateBuilder();
-            _initLevelSubscriber.Subscribe(SetupLevel).AddTo(builder);
-            _initLevelDisposable = builder.Build();
-        }
-
-        private async UniTask GenerateLevel()
+        private void GetLevelEntry()
         {
             if (isTesting)
                 return;
 
-            if (PlayGameConfig.Current != null)
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
-                string levelName = PlayGameConfig.Current.PlayLevelName;
-                await environmentHandler.GenerateLevel(levelName);
-                WaitingPopup.Setup().HideWaiting();
+                if (PlayGameConfig.Current != null)
+                    _levelName = PlayGameConfig.Current.PlayLevelName;
+            }
+
+            else if(GameplaySetup.PlayMode == GameMode.Multiplayer)
+                _levelName = MultiplayerManager.Instance.CarrierCollection.PlayEntryCarrier.NetworkData.Value.PlayLevelName.Value;
+        }
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsServer)
+                NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += HandleSceneLoad;
+        }
+
+        private void HandleSceneLoad(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
+        {
+            GetLevelEntry();
+
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            {
+                if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
+                    environmentHandler.GenerateLevel(_levelName);
+            }
+
+            else
+            {
+                if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
+                    environmentHandler.GenerateLevel(_levelName);
             }
         }
 
-        private void SetupLevel(SetupLevelMessage message)
-        {
-            SetupPlayLevel(message.EnvironmentIdentifier).Forget();
-        }
+        public void SetupLevel(EnvironmentIdentifier environmentIdentifier) => SetupPlayLevel(environmentIdentifier).Forget();
 
         private async UniTask SetupPlayLevel(EnvironmentIdentifier environmentIdentifier)
         {
@@ -113,20 +126,20 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             cameraHandler.SetFollowCameraActive(false);
             SetupPlayRule(PlayRule);
 
+            WaitingPopup.Setup().HideWaiting();
             await environmentHandler.WaitForTeaser();
             playGamePanel?.SetLevelNameActive(false);
             playGamePanel?.SetPlayObjectActive(true);
             PlayRule.StartGame();
 
-            if (playGamePanel)
-                await playGamePanel.CountDown();
-            
+            await playGamePanel.CountDown();
             cameraHandler.SetFollowCameraActive(true);
-            PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
             PlayRule.IsActive = true;
 
             playerHandler.SetPlayerActive(true);
             playerHandler.SetPlayerPhysicsActive(true);
+            playerHandler.ActivateAllPlayer();
+
             environmentHandler.SetLevelSecondaryComponentActive(true);
             inputReceiver.IsActive = true;
         }
@@ -153,11 +166,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 playGamePanel.UpdateTimeRule(survivalRule.PlayDuration);
                 survivalRule.SetPlayRuleTimer(playGamePanel.PlayRuleTimer);
             }
-        }
-
-        private void OnDestroy()
-        {
-            _initLevelDisposable.Dispose();
         }
     }
 }

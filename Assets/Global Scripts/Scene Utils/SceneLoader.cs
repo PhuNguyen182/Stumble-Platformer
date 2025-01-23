@@ -6,6 +6,9 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using GlobalScripts.Utils;
+#if NGO_SUPPORT
+using Unity.Netcode;
+#endif
 
 namespace GlobalScripts.SceneUtils
 {
@@ -38,6 +41,13 @@ namespace GlobalScripts.SceneUtils
                 await UniTask.NextFrame();
             }
         }
+
+#if NGO_SUPPORT
+        public static void LoadNetworkScene(string sceneName, LoadSceneMode loadMode = LoadSceneMode.Single)
+        {
+            NetworkManager.Singleton.SceneManager.LoadScene(sceneName, loadMode);
+        }
+#endif
 
 #if UNITASK_ADDRESSABLE_SUPPORT
         public static async UniTask LoadSceneViaAddressable(string key, LoadSceneMode loadMode = LoadSceneMode.Single

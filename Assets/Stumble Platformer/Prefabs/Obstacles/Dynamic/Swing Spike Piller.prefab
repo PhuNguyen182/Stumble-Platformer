@@ -464,6 +464,7 @@ MonoBehaviour:
   attackOnce: 0
   attactForce: 12
   stunDuration: 1.5
+  isKinematic: 1
   obstacleBody: {fileID: 578900498216856955}
   obstacleAttackers:
   - {fileID: 1337726159544110842}

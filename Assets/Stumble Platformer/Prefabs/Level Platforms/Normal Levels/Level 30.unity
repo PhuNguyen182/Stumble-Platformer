@@ -130,9 +130,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4084875923
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1144719214
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -212,6 +220,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 53958994}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &53958996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 53958994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &84650154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -220,6 +239,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1235355091
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (20)
@@ -293,6 +316,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2084613840
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (8)
@@ -370,6 +397,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3514361409
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (9)
@@ -447,6 +478,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4190453047
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -573,8 +608,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e820ba8ee7db5c74fb390162c663f55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  labelColor: {r: 0, g: 0, b: 0, a: 1}
   mainCharacterSpawnPosition: {x: 0, y: 10.25, z: 0}
-  characterSpawnPositions: []
+  characterSpawnPositions:
+  - {x: 0, y: 10.25, z: 0}
+  - {x: 2.49375, y: 10.25, z: 4.275}
+  - {x: -2.49375, y: 10.25, z: 4.275}
+  - {x: -4.9875, y: 10.25, z: 0}
+  - {x: -2.49375, y: 10.25, z: -4.275}
+  - {x: 2.49375, y: 10.25, z: -4.275}
+  - {x: 4.9875, y: 10.25, z: 0}
 --- !u!4 &231218961
 Transform:
   m_ObjectHideFlags: 0
@@ -598,6 +641,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1307471145
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (5)
@@ -691,6 +738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 420533806
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -918,6 +969,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 869379871
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (19)
@@ -991,9 +1046,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4024378695
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 998066584
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -1073,6 +1136,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 379615856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &379615858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 379615856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &390717984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1081,6 +1155,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3956621238
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (21)
@@ -1210,6 +1288,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1701552794
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (7)
@@ -1303,6 +1385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1690258673
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (10)
@@ -1474,6 +1560,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3404121481
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (8)
@@ -1563,6 +1653,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1048427282
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (1)
@@ -1636,6 +1730,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2586189374
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (11)
@@ -1729,6 +1827,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1951666809
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (9)
@@ -1818,6 +1920,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2729989710
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (23)
@@ -1895,6 +2001,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2519462393
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (25)
@@ -1968,6 +2078,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2212394494
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (19)
@@ -2045,6 +2159,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2782322728
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (2)
@@ -2118,6 +2236,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1595875959
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (6)
@@ -2211,6 +2333,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4020982683
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (6)
@@ -2284,6 +2410,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 256685116
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (12)
@@ -2435,6 +2565,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1735240360
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (3)
@@ -2528,6 +2662,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2081838457
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (31)
@@ -2679,6 +2817,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2064389044
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (13)
@@ -2752,6 +2894,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 117790462
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (22)
@@ -2825,6 +2971,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 11969503
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (4)
@@ -2918,6 +3068,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 218099273
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (14)
@@ -2995,6 +3149,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 641038969
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (17)
@@ -3068,6 +3226,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 639691682
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (4)
@@ -3145,6 +3307,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1301333947
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (7)
@@ -3218,6 +3384,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3940340054
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (4)
@@ -3392,6 +3562,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1999343559
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball
@@ -3481,6 +3655,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2022197050
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (26)
@@ -3554,6 +3732,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3879496986
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (11)
@@ -3627,6 +3809,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 481286601
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (14)
@@ -3700,6 +3886,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3881896463
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (1)
@@ -3793,6 +3983,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1004090549
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (2)
@@ -3964,6 +4158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1286437224
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (5)
@@ -4037,6 +4235,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2529860884
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (16)
@@ -4114,6 +4316,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2796275639
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (8)
@@ -4207,6 +4413,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1806242181
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (6)
@@ -4300,6 +4510,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 942355060
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (6)
@@ -4377,6 +4591,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1027393841
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (30)
@@ -4450,6 +4668,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1565168595
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (21)
@@ -4523,6 +4745,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1622868061
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (9)
@@ -4616,6 +4842,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4007493771
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (16)
@@ -4689,6 +4919,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3420953048
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (18)
@@ -4762,6 +4996,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3079442486
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (13)
@@ -4835,9 +5073,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 307597634
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2086886588
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -4917,6 +5163,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 1153441141}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1153441143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 1153441141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1153936214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4925,6 +5182,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2826806428
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -5246,6 +5507,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3663699784
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (24)
@@ -5319,6 +5584,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1870604441
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (17)
@@ -5392,6 +5661,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3993113919
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (10)
@@ -5469,6 +5742,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2980304324
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (1)
@@ -5562,6 +5839,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1835996315
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -5671,6 +5952,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4165964552
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4
@@ -5764,6 +6049,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2231465589
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (2)
@@ -5857,6 +6146,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4118173179
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (5)
@@ -6028,9 +6321,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2625027922
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1217512992
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -6110,6 +6411,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 1339334951}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1339334953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 1339334951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1367465418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6118,6 +6430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1747616509
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -6227,6 +6543,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 268777014
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (15)
@@ -6300,9 +6620,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 701642568
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3842851890
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -6382,6 +6710,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 1389356644}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1389356646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 1389356644}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1392600877
 GameObject:
   m_ObjectHideFlags: 0
@@ -6462,6 +6801,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1515483030
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (27)
@@ -6535,6 +6878,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1735581847
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (4)
@@ -6697,6 +7044,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 8132800
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -6806,6 +7157,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 208646004
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (10)
@@ -6879,6 +7234,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1075737743
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -6988,6 +7347,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 136887489
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (3)
@@ -7130,9 +7493,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3186612979
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3034909058
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -7212,6 +7583,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 1563712895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1563712897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 1563712895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1568842284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7220,6 +7602,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2027468517
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -7329,6 +7715,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2741371403
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (11)
@@ -7406,6 +7796,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2211187010
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (10)
@@ -7499,6 +7893,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1839308041
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (3)
@@ -7592,6 +7990,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 338344469
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (12)
@@ -7665,6 +8067,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1430617027
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (29)
@@ -7738,6 +8144,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 350658653
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (7)
@@ -7831,6 +8241,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2925248188
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (28)
@@ -8036,7 +8450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.size
-      value: 20
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: obstacles.Array.data[0]
@@ -8377,19 +8791,31 @@ PrefabInstance:
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[20]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1389356646}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[21]
       value: 
-      objectReference: {fileID: 1759109673}
+      objectReference: {fileID: 379615858}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[22]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1761611148}
     - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: platforms.Array.data[23]
       value: 
-      objectReference: {fileID: 549675339}
+      objectReference: {fileID: 53958996}
+    - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
+      propertyPath: platforms.Array.data[24]
+      value: 
+      objectReference: {fileID: 1153441143}
+    - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
+      propertyPath: platforms.Array.data[25]
+      value: 
+      objectReference: {fileID: 1563712897}
+    - target: {fileID: 6675362383200654569, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
+      propertyPath: platforms.Array.data[26]
+      value: 
+      objectReference: {fileID: 1339334953}
     - target: {fileID: 8915250333110935567, guid: bb32fe2c466994348a5002d0f070cfdb, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -8730,6 +9156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 455255473
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (15)
@@ -8807,6 +9237,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 720947493
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (22)
@@ -8884,9 +9318,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3618306959
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1364995808
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -8966,6 +9408,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6860205729353869684, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
   m_PrefabInstance: {fileID: 1761611146}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1761611148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+  m_PrefabInstance: {fileID: 1761611146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f74aba6176f2564495e436c017c24a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1779084950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9052,6 +9505,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3195114830
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (7)
@@ -9129,6 +9586,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 218164938
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (20)
@@ -9206,6 +9667,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 148195887
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2
@@ -9390,6 +9855,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3096196648
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (18)
@@ -9463,6 +9932,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 169772389
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (8)
@@ -9536,6 +10009,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2170659403
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (11)
@@ -9672,6 +10149,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3384873875
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (23)
@@ -9745,6 +10226,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3629433066
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (9)
@@ -9818,6 +10303,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -445185688336633174, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2913268876
+      objectReference: {fileID: 0}
     - target: {fileID: 4090482008659141742, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: m_Name
       value: Spinning Platform (5)
@@ -9912,6 +10401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385254474629105131}
   - component: {fileID: 8839447532017761259}
+  - component: {fileID: 8839447532017761261}
   - component: {fileID: 8839447532017761260}
   m_Layer: 0
   m_Name: Level Identifier
@@ -9965,6 +10455,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveTitle: Don't Fall
   playDuration: 60
+--- !u!114 &8839447532017761261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844125545043861795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2883035128
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

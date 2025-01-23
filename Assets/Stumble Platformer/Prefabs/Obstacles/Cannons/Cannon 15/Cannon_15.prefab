@@ -45,7 +45,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1465828555447153772}
   - component: {fileID: 2536375752923729500}
+  - component: {fileID: -8378474462316752815}
   - component: {fileID: 1166904363980215763}
+  - component: {fileID: 1008273582112014215}
   m_Layer: 0
   m_Name: Cannon_15
   m_TagString: Untagged
@@ -91,6 +93,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8378474462316752815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465828555447153773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3821110466
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &1166904363980215763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +130,7 @@ MonoBehaviour:
   attactForce: 15
   stunDuration: 1.5
   obstacleBody: {fileID: 0}
+  networkObject: {fileID: -8378474462316752815}
   obstacleAttackers: []
   shotPoint: {fileID: 2171824982654110474}
   cannonAnimator: {fileID: 2536375752923729500}
@@ -115,6 +139,27 @@ MonoBehaviour:
   shotDelay: 0.25
   shotVelocity: 18
   shotInterval: 2
+--- !u!114 &1008273582112014215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465828555447153773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 2081823275
+    DestinationState: -118708495
+    TransitionDuration: 0
+    TriggerNameHash: -118708495
+    TransitionIndex: 0
+  m_Animator: {fileID: 2536375752923729500}
 --- !u!1 &1465828556777871008
 GameObject:
   m_ObjectHideFlags: 0

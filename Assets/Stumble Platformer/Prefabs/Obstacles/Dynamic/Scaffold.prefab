@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 8402444137444704039}
   - component: {fileID: 8706416615976151837}
   - component: {fileID: 3618196798009616119}
+  - component: {fileID: 9085398048183403345}
   m_Layer: 8
   m_Name: obstacle_24_001
   m_TagString: Untagged
@@ -227,6 +228,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationAxis: 0
   rotationSpeed: 100
+--- !u!114 &9085398048183403345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546685910043742593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1 &1129958674810917934
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7933815227059490533}
+  - component: {fileID: 2452975170640356698}
   - component: {fileID: 6111612942177203215}
   m_Layer: 8
   m_Name: Scaffold
@@ -626,6 +659,27 @@ Transform:
   - {fileID: 8370124448288013419}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2452975170640356698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2652878764239443821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 277357933
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &6111612942177203215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,6 +693,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 0}
+  networkObject: {fileID: 0}
+  isKinematic: 0
   dummyPlatforms:
   - {fileID: 3420422312754657167}
   - {fileID: 6016630495877206966}

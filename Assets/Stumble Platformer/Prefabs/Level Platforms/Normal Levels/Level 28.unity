@@ -192,6 +192,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 655047372
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -301,9 +305,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -4963151712754084786, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 108698963
+      objectReference: {fileID: 0}
     - target: {fileID: 4049745283082159242, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_Name
       value: Flip Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621917031203909070, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: activateDuration
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7974083397757602902, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_LocalPosition.x
@@ -374,6 +386,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 895985666
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (23)
@@ -447,6 +463,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3836610022
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (4)
@@ -619,8 +639,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e820ba8ee7db5c74fb390162c663f55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  labelColor: {r: 0, g: 0, b: 0, a: 1}
   mainCharacterSpawnPosition: {x: 0, y: 0.1, z: 0}
-  characterSpawnPositions: []
+  characterSpawnPositions:
+  - {x: 0, y: 0.1, z: 0}
+  - {x: -3, y: 0.1, z: 0}
+  - {x: 3, y: 0.1, z: 0}
+  - {x: 0, y: 0.1, z: 1}
+  - {x: 0, y: 0.1, z: -1}
+  - {x: 0, y: 0.1, z: 3}
+  - {x: 0, y: 0.1, z: -3}
 --- !u!4 &231218961
 Transform:
   m_ObjectHideFlags: 0
@@ -824,6 +852,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2170245934
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (31)
@@ -949,6 +981,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3425254337
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -1047,6 +1083,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 367425541
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (10)
@@ -1120,6 +1160,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3374567273
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (8)
@@ -1255,6 +1299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 727105001
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (36)
@@ -1328,6 +1376,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 812723720
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (3)
@@ -1569,6 +1621,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 690554024
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (6)
@@ -1725,6 +1781,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 675508458
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2
@@ -1860,6 +1920,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2427940854
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -2243,9 +2307,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -4963151712754084786, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3154218898
+      objectReference: {fileID: 0}
     - target: {fileID: 4049745283082159242, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_Name
       value: Flip Door (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621917031203909070, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: activateDuration
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7974083397757602902, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2316,6 +2388,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1554140816
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (14)
@@ -2472,6 +2548,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 658942540
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (19)
@@ -2614,6 +2694,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2965166232
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -3312,6 +3396,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 368494371
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (22)
@@ -3385,9 +3473,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -4963151712754084786, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1499958958
+      objectReference: {fileID: 0}
     - target: {fileID: 4049745283082159242, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_Name
       value: Flip Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621917031203909070, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: activateDuration
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7974083397757602902, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3553,9 +3649,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -4963151712754084786, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1178731730
+      objectReference: {fileID: 0}
     - target: {fileID: 4049745283082159242, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_Name
       value: Flip Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621917031203909070, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
+      propertyPath: activateDuration
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7974083397757602902, guid: 32597611709bb1444b1b36373bec5ded, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3747,6 +3851,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4153680421
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (28)
@@ -3820,6 +3928,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1867440419
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (12)
@@ -3893,6 +4005,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4016948452
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (39)
@@ -3966,6 +4082,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 652497705}
     m_Modifications:
+    - target: {fileID: -8968974015018830634, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1367404778
+      objectReference: {fileID: 0}
     - target: {fileID: 2792580087097471771, guid: f59db876ad59fe043b81b1c011028da4, type: 3}
       propertyPath: m_Name
       value: Tower 2 (5)
@@ -4056,6 +4176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385254474629105131}
   - component: {fileID: 8839447532017761259}
+  - component: {fileID: 8839447532017761261}
   - component: {fileID: 8839447532017761260}
   m_Layer: 0
   m_Name: Level Identifier
@@ -4109,6 +4230,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveTitle: Don't Fall
   playDuration: 60
+--- !u!114 &8839447532017761261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844125545043861795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2649730070
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

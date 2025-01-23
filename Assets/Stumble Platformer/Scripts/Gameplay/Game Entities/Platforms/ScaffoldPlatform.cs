@@ -15,6 +15,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected override void OnAwake()
         {
+            base.OnAwake();
             RegisterPlatform();
         }
 
@@ -55,18 +56,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         private void OnPlatformTriggerEnter(Collider collider)
         {
-            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
-            {
-                parentSetter.SetParent(transform);
-            }
         }
 
         private void OnPlatformTriggerExit(Collider collider)
         {
-            if (collider.TryGetComponent(out ICharacterParentSetter parentSetter))
-            {
-                parentSetter.SetParent(null);
-            }
         }
     }
 }

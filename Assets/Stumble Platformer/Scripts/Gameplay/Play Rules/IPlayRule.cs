@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Gameplay.GameManagers;
 using StumblePlatformer.Scripts.Common.Messages;
@@ -7,7 +8,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
     public interface IPlayRule
     {
         public string ObjectiveTitle { get; }
-        public int CurrentPlayerID { get; set; }
+        public bool IsEndGame { get; set; }
 
         public void StartGame();
         public void EndGame(EndGameMessage message);

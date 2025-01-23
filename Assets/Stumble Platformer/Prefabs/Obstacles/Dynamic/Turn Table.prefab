@@ -325,6 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3122242403378848964}
   - component: {fileID: 1346355564919510673}
+  - component: {fileID: -6893043682323354605}
   - component: {fileID: 5534611677917283942}
   m_Layer: 0
   m_Name: Turn Table
@@ -377,6 +378,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6893043682323354605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157241822457313259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 640458001
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &5534611677917283942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1346355564919510673}
+  networkObject: {fileID: 0}
+  isKinematic: 0
   playerMask:
     serializedVersion: 2
     m_Bits: 0

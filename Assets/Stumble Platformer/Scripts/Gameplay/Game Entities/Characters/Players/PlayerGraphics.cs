@@ -1,19 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
+using StumblePlatformer.Scripts.Gameplay.GameManagers;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
 using StumblePlatformer.Scripts.Gameplay.Databases;
+using TMPro;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerGraphics : MonoBehaviour
+    public class PlayerGraphics : NetworkBehaviour
     {
+        [SerializeField] private TMP_Text playerNameText;
+        [SerializeField] private Canvas playerNameCanvas;
         [SerializeField] private Transform characterPivot;
         [SerializeField] private CharacterVisual characterVisual;
         [SerializeField] private ParticleSystem dustStep;
         [SerializeField] private PlayerEffectDatabase effectCollection;
 
+        private Transform _cameraTransform;
+        private Quaternion _originalOrientation;
+
         public CharacterVisual CharacterVisual => characterVisual;
+
+        private void Start()
+        {
+            _originalOrientation = playerNameCanvas.transform.rotation;
+            _cameraTransform = PlayGroundManager.Instance.CameraHandler.MainCamera.transform;
+            playerNameCanvas.worldCamera = PlayGroundManager.Instance.CameraHandler.MainCamera;
+        }
+
+        public void UpdateCanvas()
+        {
+            if (_cameraTransform != null)
+                playerNameCanvas.transform.rotation = _cameraTransform.rotation * _originalOrientation;
+        }
+
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        public void SetPlayerNameRpc(string playerName)
+        {
+            playerNameText.text = playerName;
+        }
 
         public void SetCharacterVisual(CharacterSkin characterSkin)
         {

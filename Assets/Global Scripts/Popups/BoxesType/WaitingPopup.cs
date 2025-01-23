@@ -1,8 +1,9 @@
 ﻿using R3;
 using System;
 using UnityEngine;
-using TMPro;
 using GlobalScripts.Utils;
+using TMPro;
+using StumblePlatformer.Scripts.Common.Constants;
 
 #if UNITASK_ADDRESSABLE_SUPPORT
 using Cysharp.Threading.Tasks;
@@ -19,13 +20,12 @@ public class WaitingPopup : MonoBehaviour
     private IDisposable _waitDispose;
 
     public static bool IsPreload { get; set; }
-    public const string WaitingBoxPath = "Popups/Waiting Popup";
 
-    public static WaitingPopup Setup(bool persistant = false)
+    public static WaitingPopup Setup(bool persistant = true)
     {
         if (_instance == null)
         {
-            _instance = Instantiate(Resources.Load<WaitingPopup>(WaitingBoxPath));
+            _instance = Instantiate(Resources.Load<WaitingPopup>(CommonPopupPaths.WaitingBoxPath));
         }
 
         _instance.gameObject.SetActive(true);
@@ -51,8 +51,8 @@ public class WaitingPopup : MonoBehaviour
 
             if (_opHandle.Status == AsyncOperationStatus.Succeeded)
             {
-                instance = SimplePool.Spawn(_opHandle.Result).GetComponent<WaitingPopup>();
-                instance.gameObject.SetActive(true);
+                if (SimplePool.Spawn(_opHandle.Result).TryGetComponent(out instance))
+                    instance.gameObject.SetActive(true);
             }
 
             else Release();
@@ -113,5 +113,6 @@ public class WaitingPopup : MonoBehaviour
     private void OnDestroy()
     {
         _waitDispose?.Dispose();
+        Release();
     }
 }

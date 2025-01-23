@@ -34,6 +34,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         protected override void OnAwake()
         {
+            base.OnAwake();
             _block = new();
             SetPlatformColor(false);
         }

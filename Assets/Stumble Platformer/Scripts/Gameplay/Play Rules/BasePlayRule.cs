@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.Gameplay.GameManagers;
@@ -10,35 +11,45 @@ using MessagePipe;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
-    public abstract class BasePlayRule : MonoBehaviour, IPlayRule, IUpdateHandler, ISetPlayerHandler, ISetCameraHandler, ISetEnvironmentHandler
+    public abstract class BasePlayRule : NetworkBehaviour, IPlayRule, IUpdateHandler, ISetPlayerHandler, ISetCameraHandler, ISetEnvironmentHandler
     {
         [SerializeField] protected string objectiveTitle;
 
-        protected IDisposable messageDisposable;
-        protected DisposableBagBuilder bagBuilder;
         protected PlayerHandler playerHandler;
-        protected EnvironmentHandler environmentHandler;
         protected CameraHandler cameraHandler;
-
-        protected ISubscriber<ReportPlayerHealthMessage> playerHealthSubscriber;
-        protected ISubscriber<EndGameMessage> endGameSubscriber;
-        protected ISubscriber<LevelEndMessage> levelEndSubscriber;
-        protected ISubscriber<PlayerDamageMessage> playerDamageSubscriber;
+        protected EnvironmentHandler environmentHandler;
         protected GameStateController gameStateController;
 
-        public int CurrentPlayerID { get; set; }
+        protected DisposableBagBuilder bagBuilder;
+        protected IDisposable messageDisposable;
+
+        protected ISubscriber<EndGameMessage> endGameSubscriber;
+        protected ISubscriber<LevelEndMessage> levelEndSubscriber;
+        protected ISubscriber<ReportPlayerHealthMessage> playerHealthSubscriber;
+        protected ISubscriber<PlayerDamageMessage> playerDamageSubscriber;
+
+        public bool IsActive { get; set; }
         public int PlayerHealth { get; set; }
-        public virtual bool IsActive { get; set; }
+        public bool IsEndGame { get; set; }
         public string ObjectiveTitle => objectiveTitle;
 
-        private void Start()
+        public override void OnNetworkSpawn()
         {
             OnStart();
             RegisterCommonMessage();
+
             UpdateHandlerManager.Instance.AddUpdateBehaviour(this);
+            if (TryGetComponent(out NetworkObject networkObject))
+            {
+                if (NetworkManager.Singleton.IsServer && !networkObject.IsSpawned)
+                    networkObject.Spawn(true);
+            }
         }
 
-        protected virtual void OnStart() { }
+        protected virtual void OnStart()
+        {
+            IsEndGame = false;
+        }
 
         protected void RegisterCommonMessage()
         {
@@ -61,21 +72,14 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public void DamagePlayer(PlayerDamageMessage message)
         {
-            if (CurrentPlayerID != message.ID)
-                return;
-
             OnPlayerDamage();
         }
 
         protected void UpdateHealth(ReportPlayerHealthMessage message)
         {
-            if (message.PlayerID != CurrentPlayerID)
-                return;
-
             PlayerHealth = message.Health;
             OnPlayerHealthUpdate();
         }
-
 
         public abstract void StartGame();
         public abstract void OnEndGame(EndResult endResult);
@@ -109,28 +113,44 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public void EndLevel(LevelEndMessage message)
         {
-            if (CurrentPlayerID != message.ID)
-                return;
-
-            environmentHandler.SetLevelActive(false);
-            environmentHandler.SetLevelSecondaryComponentActive(false);
-            gameStateController.EndLevel(message.Result);
-            OnLevelEnded(message.Result);
+            IsEndGame = true;
+            EndLevelRpc((int)message.Result, message.ClientID);
         }
 
         public void EndGame(EndGameMessage message)
         {
-            if (CurrentPlayerID != message.ID)
-                return;
-
             gameStateController.EndGame(message.Result);
             OnEndGame(message.Result);
         }
 
-        private void OnDestroy()
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        private void EndLevelRpc(int endResult, ulong clientId)
+        {
+            environmentHandler.SetLevelActive(false);
+            environmentHandler.SetLevelSecondaryComponentActive(false);
+
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            {
+                EndResult result = (EndResult)endResult;
+                gameStateController.EndLevel(result);
+                OnLevelEnded(result);
+            }
+
+            else
+            {
+                EndResult networkResult = GetMultiplayEndResult(clientId);
+                gameStateController.EndLevel(networkResult);
+                OnLevelEnded(networkResult);
+            }
+        }
+
+        protected abstract EndResult GetMultiplayEndResult(ulong clientId);
+
+        public override void OnDestroy()
         {
             messageDisposable.Dispose();
             UpdateHandlerManager.Instance.RemoveUpdateBehaviour(this);
+            base.OnDestroy();
         }
     }
 }

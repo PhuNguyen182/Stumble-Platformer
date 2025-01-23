@@ -50,9 +50,9 @@ MonoBehaviour:
   attackOnce: 0
   attactForce: 15
   stunDuration: 1.5
+  isKinematic: 0
   obstacleBody: {fileID: 0}
   obstacleAttackers: []
-  attackInterval: 0.5
   pointA: {fileID: 1431508934105433728}
   pointB: {fileID: 2476915984441317338}
   laserRay: {fileID: 7293281821684223144}

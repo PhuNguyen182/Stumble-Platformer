@@ -3,7 +3,7 @@ using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Miscs;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
@@ -18,6 +18,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         public override void OnAwake()
         {
+            base.OnAwake();
             RegisterTrampoline();
         }
 
@@ -43,14 +44,26 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 
         private void OnTrampolineCollide(Collider collider)
         {
-            if(collider.attachedRigidbody != null)
+            if (collider.attachedRigidbody != null)
             {
-                if (collider.TryGetComponent(out ICharacterMovement characterMovement))
-                    characterMovement.OnGrounded();
+                if (collider.attachedRigidbody.isKinematic)
+                    return;
 
-                collider.attachedRigidbody.velocity = transform.up * pushForce;
-                platformAnimator.SetTrigger(_pushHash);
+                if (collider.TryGetComponent(out PlayerController characterMovement) && characterMovement.IsOwner)
+                {
+                    characterMovement.OnGrounded();
+                    Jump(collider);
+                }
+
+                if (!characterMovement) // Prevent animate push twice
+                    Jump(collider);
             }
+        }
+
+        private void Jump(Collider collider)
+        {
+            collider.attachedRigidbody.velocity = transform.up * pushForce;
+            platformAnimator.SetTrigger(_pushHash);
         }
     }
 }

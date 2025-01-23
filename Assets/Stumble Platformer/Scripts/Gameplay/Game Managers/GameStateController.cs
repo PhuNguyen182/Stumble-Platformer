@@ -3,10 +3,11 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
 using GlobalScripts.SceneUtils;
-using Cysharp.Threading.Tasks;
+using GlobalScripts;
 using Stateless;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
@@ -98,12 +99,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void OnPlayGame()
         {
-            Debug.Log("Playing");
+            DebugUtils.Log("Playing");
         }
 
         private void OnLevelEnded(EndResult endResult)
         {
-            Debug.Log($"Level Ended {endResult}");
+            DebugUtils.Log($"Level Ended {endResult}");
             _finalePanel.SetEndGameResult(endResult);
             _endGamePanel?.SetLevelEndBannerActive(endResult, true);
             OnFinishLevel(endResult).Forget();
@@ -116,7 +117,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void OnEndGame(EndResult result)
         {
-            Debug.Log($"End Game {result}");
+            DebugUtils.Log($"End Game {result}");
         }
 
         private void QuitPlay()

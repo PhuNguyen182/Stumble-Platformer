@@ -32,7 +32,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void StartGame()
         {
-            _lifeCounter.gameObject.SetActive(true);
+            bool active = GameplaySetup.PlayMode == GameMode.SinglePlayer;
+            _lifeCounter.gameObject.SetActive(active);
         }
 
         public void SetLifeCounter(LifeCounter lifeCounter)
@@ -51,10 +52,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnLevelEnded(EndResult endResult)
         {
-            // If in single mode
             EndGame(new EndGameMessage
             {
-                ID = CurrentPlayerID,
                 Result = endResult
             });
         }
@@ -66,16 +65,26 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnPlayerHealthUpdate()
         {
-            _lifeCounter.UpdateLife(PlayerHealth);
+            if (GameplaySetup.PlayMode != GameMode.SinglePlayer)
+                return;
 
-            if (PlayerHealth <= 0)
+            _lifeCounter.UpdateLife(PlayerHealth);
+            if (PlayerHealth > 0)
+                return;
+
+            EndLevel(new LevelEndMessage
             {
-                EndLevel(new LevelEndMessage
-                {
-                    ID = CurrentPlayerID,
-                    Result = EndResult.Lose
-                });
-            }
+                Result = EndResult.Lose
+            });
+        }
+
+        protected override EndResult GetMultiplayEndResult(ulong clientId)
+        {
+            ulong currentClientId = NetworkManager.LocalClient.ClientId;
+            EndResult networkResult = clientId == currentClientId
+                                      ? EndResult.Win : EndResult.Lose;
+            return networkResult;
+
         }
     }
 }

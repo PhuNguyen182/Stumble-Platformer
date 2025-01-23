@@ -580,6 +580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider Obstacle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 757930343
+      objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -29.5
@@ -657,6 +661,10 @@ PrefabInstance:
     - target: {fileID: 1734873191053309627, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_Name
       value: Slider Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2477369730
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -772,6 +780,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4515100705803598445, guid: ae13bab4afdf25443a8111081886874a, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3041997721
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -794,7 +806,7 @@ GameObject:
   - component: {fileID: 73788773}
   - component: {fileID: 73788772}
   - component: {fileID: 73788771}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +835,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73788769}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1279,6 +1291,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1977222505
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (22)
@@ -1345,6 +1361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2135463588
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (13)
@@ -1663,7 +1683,7 @@ GameObject:
   - component: {fileID: 134126620}
   - component: {fileID: 134126619}
   - component: {fileID: 134126618}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1692,7 +1712,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134126616}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2016,102 +2036,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7069667961274371921, guid: cef6d7c73e479e6499ada9ec05bfac99, type: 3}
   m_PrefabInstance: {fileID: 186558025}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &187901764
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 187901765}
-  - component: {fileID: 187901768}
-  - component: {fileID: 187901767}
-  - component: {fileID: 187901766}
-  m_Layer: 9
-  m_Name: Dummy Platform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &187901765
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187901764}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.475, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1205564810}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &187901766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187901764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d1c0412ecb6c842848943cf663a44b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCustomCheck: 0
-  platformCollider: {fileID: 187901767}
---- !u!65 &187901767
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187901764}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 14, y: 0.1, z: 18}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &187901768
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187901764}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &193166166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2186,7 +2110,7 @@ GameObject:
   - component: {fileID: 205719676}
   - component: {fileID: 205719675}
   - component: {fileID: 205719674}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2215,7 +2139,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205719672}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2349,6 +2273,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201792}
     m_Modifications:
+    - target: {fileID: 1476949188289538389, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2641701362
+      objectReference: {fileID: 0}
     - target: {fileID: 1535074824807871626, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4
@@ -2405,6 +2333,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3607629195
+      objectReference: {fileID: 0}
     - target: {fileID: 7690183822067194171, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_Name
       value: Spinner Ground
@@ -2448,8 +2380,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e820ba8ee7db5c74fb390162c663f55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCharacterSpawnPosition: {x: 0, y: 0, z: 0}
-  characterSpawnPositions: []
+  labelColor: {r: 0, g: 0, b: 0, a: 1}
+  mainCharacterSpawnPosition: {x: 0, y: 0.25, z: 0}
+  characterSpawnPositions:
+  - {x: 0, y: 0.25, z: 0}
+  - {x: -1, y: 0.25, z: 0}
+  - {x: 1, y: 0.25, z: 0}
+  - {x: -2, y: 0.25, z: 0}
+  - {x: 2, y: 0.25, z: 0}
+  - {x: -3, y: 0.25, z: 0}
+  - {x: 3, y: 0.25, z: 0}
 --- !u!4 &231218961
 Transform:
   m_ObjectHideFlags: 0
@@ -2459,7 +2399,7 @@ Transform:
   m_GameObject: {fileID: 231218959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2670,6 +2610,10 @@ PrefabInstance:
     - target: {fileID: 1734873191053309627, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_Name
       value: Slider Obstacle (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2942705476
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2938,6 +2882,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1618056229
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (8)
@@ -3128,6 +3076,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -388061890018147882, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3117272828
+      objectReference: {fileID: 0}
     - target: {fileID: 4778495857272154189, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
       propertyPath: m_Name
       value: Swing Axe
@@ -3206,6 +3158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3036093225
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (25)
@@ -3272,6 +3228,10 @@ PrefabInstance:
       propertyPath: m_AutoConfigureConnectedAnchor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2204100946971600481, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4146000292
+      objectReference: {fileID: 0}
     - target: {fileID: 5513136350503385702, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
       propertyPath: m_Name
       value: Spin Door (3)
@@ -3334,6 +3294,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4145444562
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (17)
@@ -3462,6 +3426,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2415957929
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (8)
@@ -3796,6 +3764,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: -65
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1544322050
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4062,6 +4034,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 1968281093931625338, guid: 09cc4d19ffe4c1949986f64ec4726fc5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 180383375
+      objectReference: {fileID: 0}
     - target: {fileID: 3700469980044298865, guid: 09cc4d19ffe4c1949986f64ec4726fc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25
@@ -4128,6 +4104,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 568266228
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (1)
@@ -4205,6 +4185,10 @@ PrefabInstance:
     - target: {fileID: 1734873191053309627, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_Name
       value: Slider Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3302274499
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4462,6 +4446,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1913299561
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (3)
@@ -4811,7 +4799,7 @@ GameObject:
   - component: {fileID: 412784608}
   - component: {fileID: 412784607}
   - component: {fileID: 412784606}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4840,7 +4828,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412784604}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4912,6 +4900,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1697328082
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer
@@ -5047,6 +5039,10 @@ PrefabInstance:
     - target: {fileID: 1734873191053309627, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_Name
       value: Slider Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1520656002
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5250,6 +5246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider Obstacle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1675586003
+      objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -60
@@ -5381,102 +5381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0760a35757f853f4a8790dcd518382ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &480016827
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 480016828}
-  - component: {fileID: 480016831}
-  - component: {fileID: 480016830}
-  - component: {fileID: 480016829}
-  m_Layer: 9
-  m_Name: Dummy Platform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &480016828
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480016827}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.475, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 753333633}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &480016829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480016827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d1c0412ecb6c842848943cf663a44b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCustomCheck: 0
-  platformCollider: {fileID: 480016830}
---- !u!65 &480016830
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480016827}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 15.96, y: 0.1, z: 18}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &480016831
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480016827}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &481647416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5549,6 +5453,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: -65
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2744446161
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5571,7 +5479,7 @@ GameObject:
   - component: {fileID: 489012737}
   - component: {fileID: 489012736}
   - component: {fileID: 489012735}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5600,7 +5508,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489012733}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5672,6 +5580,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1891676783
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (2)
@@ -5935,6 +5847,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1578677994
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (5)
@@ -6138,6 +6054,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1636018256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6219,6 +6139,10 @@ PrefabInstance:
     - target: {fileID: 5454427547545618187, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
       propertyPath: rotateSpeed
       value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 103206510
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6316,6 +6240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1100867067
+      objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6404,6 +6332,10 @@ PrefabInstance:
     - target: {fileID: 1734873191053309627, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_Name
       value: Slider Obstacle (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3275120065
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6730,6 +6662,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2033226923
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (1)
@@ -6936,6 +6872,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4136513757
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (11)
@@ -7196,7 +7136,7 @@ GameObject:
   - component: {fileID: 608093491}
   - component: {fileID: 608093490}
   - component: {fileID: 608093489}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7225,7 +7165,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608093487}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7297,6 +7237,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -96128013292786049, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1237082528
+      objectReference: {fileID: 0}
     - target: {fileID: 266053040904790612, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7616,6 +7560,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2040332139
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (11)
@@ -7755,6 +7703,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3392792001
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (6)
@@ -7839,6 +7791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668785592}
   - component: {fileID: 668785591}
+  - component: {fileID: 668785594}
   - component: {fileID: 668785593}
   m_Layer: 0
   m_Name: Level Identifier
@@ -7906,6 +7859,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveTitle: Race To Finish
+--- !u!114 &668785594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668785590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3546928559
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &669706298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8103,6 +8077,10 @@ PrefabInstance:
     - target: {fileID: 315690699675087855, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
       propertyPath: m_AutoConfigureConnectedAnchor
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204100946971600481, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2022563125
       objectReference: {fileID: 0}
     - target: {fileID: 5513136350503385702, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
       propertyPath: m_Name
@@ -8352,6 +8330,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2775988050
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (6)
@@ -8476,6 +8458,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3969457639
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (14)
@@ -8622,6 +8608,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2421473153
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (2)
@@ -8903,6 +8893,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 133663411
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8943,6 +8937,10 @@ PrefabInstance:
     - target: {fileID: 1734873191053309627, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_Name
       value: Slider Obstacle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1644954093
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9091,7 +9089,7 @@ GameObject:
   - component: {fileID: 743338478}
   - component: {fileID: 743338477}
   - component: {fileID: 743338476}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9120,7 +9118,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743338474}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -9192,6 +9190,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 1968281093931625338, guid: 09cc4d19ffe4c1949986f64ec4726fc5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1168344715
+      objectReference: {fileID: 0}
     - target: {fileID: 3700469980044298865, guid: 09cc4d19ffe4c1949986f64ec4726fc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25
@@ -9455,6 +9457,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 61084251
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (5)
@@ -9545,7 +9551,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 480016828}
   - {fileID: 896419333}
   - {fileID: 1739321444}
   - {fileID: 489012734}
@@ -9571,14 +9576,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 753333636}
-  platformCollider: {fileID: 753333635}
-  dummyPlatform: {fileID: 480016829}
+  usePhysics: 1
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 0, y: 5, z: 266}
   endPosition: {x: 0, y: 5, z: 298}
@@ -9601,8 +9606,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 16, y: 1, z: 18}
+  m_Center: {x: -1, y: 0.05, z: 0}
 --- !u!54 &753333636
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9913,6 +9918,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider Obstacle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3990707389
+      objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60
@@ -10165,6 +10174,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 1968281093931625338, guid: 09cc4d19ffe4c1949986f64ec4726fc5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3398937201
+      objectReference: {fileID: 0}
     - target: {fileID: 3700469980044298865, guid: 09cc4d19ffe4c1949986f64ec4726fc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35
@@ -10243,6 +10256,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
       objectReference: {fileID: 0}
@@ -10281,6 +10306,14 @@ PrefabInstance:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998205806289429831, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3896535360
       objectReference: {fileID: 0}
     - target: {fileID: 4266959397090065436, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: pushForce
@@ -10447,7 +10480,7 @@ GameObject:
   - component: {fileID: 791175087}
   - component: {fileID: 791175086}
   - component: {fileID: 791175085}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10476,7 +10509,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791175083}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -10970,6 +11003,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1469163709
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4
@@ -11160,6 +11197,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1907257512
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (9)
@@ -11296,6 +11337,10 @@ PrefabInstance:
       propertyPath: m_AutoConfigureConnectedAnchor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2204100946971600481, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 94632033
+      objectReference: {fileID: 0}
     - target: {fileID: 5513136350503385702, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
       propertyPath: m_Name
       value: Spin Door (4)
@@ -11358,6 +11403,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2155791895
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (23)
@@ -11606,6 +11655,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3907415690
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (12)
@@ -11793,6 +11846,10 @@ PrefabInstance:
     - target: {fileID: 5454427547545618187, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
       propertyPath: rotateSpeed
       value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 881495486
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12185,7 +12242,7 @@ GameObject:
   - component: {fileID: 896419336}
   - component: {fileID: 896419335}
   - component: {fileID: 896419334}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12214,7 +12271,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896419332}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -12412,6 +12469,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30
       objectReference: {fileID: 0}
@@ -12450,6 +12519,14 @@ PrefabInstance:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998205806289429831, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1112834498
       objectReference: {fileID: 0}
     - target: {fileID: 4266959397090065436, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: pushForce
@@ -12659,102 +12736,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8998218857373699074, guid: 461c909d68db44a4db8f266bcb1087f6, type: 3}
   m_PrefabInstance: {fileID: 908532558}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &912042220
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 912042221}
-  - component: {fileID: 912042224}
-  - component: {fileID: 912042223}
-  - component: {fileID: 912042222}
-  m_Layer: 9
-  m_Name: Dummy Platform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &912042221
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912042220}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.475, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1541700748}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &912042222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912042220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d1c0412ecb6c842848943cf663a44b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCustomCheck: 0
-  platformCollider: {fileID: 912042223}
---- !u!65 &912042223
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912042220}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 14, y: 0.1, z: 18}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &912042224
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912042220}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &912503809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12887,6 +12868,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 1968281093931625338, guid: 09cc4d19ffe4c1949986f64ec4726fc5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3141355898
+      objectReference: {fileID: 0}
     - target: {fileID: 3700469980044298865, guid: 09cc4d19ffe4c1949986f64ec4726fc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35
@@ -12953,6 +12938,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3815702776
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (7)
@@ -13082,6 +13071,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20
       objectReference: {fileID: 0}
@@ -13120,6 +13121,14 @@ PrefabInstance:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998205806289429831, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2700336173
       objectReference: {fileID: 0}
     - target: {fileID: 4266959397090065436, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: pushForce
@@ -13415,6 +13424,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotate Cross Tube
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3488875692
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13447,6 +13460,10 @@ PrefabInstance:
     - target: {fileID: 315690699675087855, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
       propertyPath: m_AutoConfigureConnectedAnchor
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204100946971600481, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2383282626
       objectReference: {fileID: 0}
     - target: {fileID: 5513136350503385702, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
       propertyPath: m_Name
@@ -13634,6 +13651,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -96128013292786049, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1318339972
+      objectReference: {fileID: 0}
     - target: {fileID: 266053040904790612, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12
@@ -13707,6 +13728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4131710794
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (10)
@@ -13784,6 +13809,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1270055090
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (4)
@@ -13972,6 +14001,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 8817415692825140982, guid: 5ddb85cdbf086bd4eabdf30d9f59966c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2324685716
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14059,6 +14092,10 @@ PrefabInstance:
     - target: {fileID: 5454427547545618187, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
       propertyPath: rotateSpeed
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2812307585
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14204,6 +14241,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30
       objectReference: {fileID: 0}
@@ -14242,6 +14291,14 @@ PrefabInstance:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998205806289429831, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2595331229
       objectReference: {fileID: 0}
     - target: {fileID: 4266959397090065436, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: pushForce
@@ -14519,6 +14576,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3846350704
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14537,6 +14598,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -388061890018147882, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 744228497
+      objectReference: {fileID: 0}
     - target: {fileID: 3307389963919175602, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
       propertyPath: startTime
       value: 0
@@ -14712,6 +14777,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider Obstacle (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4185838662
+      objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.5
@@ -14789,6 +14858,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 559735541
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (3)
@@ -15428,6 +15501,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 31814108
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (1)
@@ -15556,6 +15633,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 255858280
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer
@@ -15889,6 +15970,10 @@ PrefabInstance:
     - target: {fileID: 1734873191053309627, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_Name
       value: Slider Obstacle (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 733987870
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16278,7 +16363,7 @@ GameObject:
   - component: {fileID: 1189978498}
   - component: {fileID: 1189978497}
   - component: {fileID: 1189978496}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16307,7 +16392,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189978494}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -16483,7 +16568,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 187901765}
   - {fileID: 1457639811}
   - {fileID: 1575147069}
   - {fileID: 412784605}
@@ -16507,14 +16591,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1205564813}
-  platformCollider: {fileID: 1205564812}
-  dummyPlatform: {fileID: 187901766}
+  usePhysics: 1
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: 12, y: 0, z: 379}
   endPosition: {x: 12, y: 0, z: 414}
@@ -16537,8 +16621,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 14, y: 1, z: 18}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!54 &1205564813
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16844,6 +16928,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1140731454
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer
@@ -17045,6 +17133,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2355157793
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (5)
@@ -17128,6 +17220,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10
       objectReference: {fileID: 0}
@@ -17166,6 +17270,14 @@ PrefabInstance:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998205806289429831, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 241753174
       objectReference: {fileID: 0}
     - target: {fileID: 4266959397090065436, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: pushForce
@@ -17266,6 +17378,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2897898684
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (7)
@@ -17516,6 +17632,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -1406811806395325934, guid: f75500f38123b5d458c38470529a48cf, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1918248950
+      objectReference: {fileID: 0}
     - target: {fileID: 2785061632572779001, guid: f75500f38123b5d458c38470529a48cf, type: 3}
       propertyPath: rotateSpeed
       value: 100
@@ -17594,6 +17714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider Obstacle (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2445990918
+      objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.5
@@ -17671,6 +17795,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -388061890018147882, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 79597588
+      objectReference: {fileID: 0}
     - target: {fileID: 3307389963919175602, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
       propertyPath: startTime
       value: 1
@@ -17965,7 +18093,7 @@ GameObject:
   - component: {fileID: 1318199547}
   - component: {fileID: 1318199546}
   - component: {fileID: 1318199545}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17994,7 +18122,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318199543}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -18263,6 +18391,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 873285100
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (15)
@@ -18537,6 +18669,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1827367412
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (16)
@@ -18621,6 +18757,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201792}
     m_Modifications:
+    - target: {fileID: -2106780314201391424, guid: 317e06a2a3d4a9241873f9f338ca181d, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2731790473
+      objectReference: {fileID: 0}
     - target: {fileID: 4617546402438342298, guid: 317e06a2a3d4a9241873f9f338ca181d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12
@@ -18808,6 +18948,10 @@ PrefabInstance:
     - target: {fileID: 5454427547545618187, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
       propertyPath: rotateSpeed
       value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 400210263
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19151,6 +19295,10 @@ PrefabInstance:
       propertyPath: m_AutoConfigureConnectedAnchor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2204100946971600481, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 444164519
+      objectReference: {fileID: 0}
     - target: {fileID: 5513136350503385702, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
       propertyPath: m_Name
       value: Spin Door (5)
@@ -19213,6 +19361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1025133779
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (7)
@@ -19305,7 +19457,7 @@ GameObject:
   - component: {fileID: 1417061815}
   - component: {fileID: 1417061814}
   - component: {fileID: 1417061813}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19334,7 +19486,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417061811}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -20169,6 +20321,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: -65
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1533971806
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20191,7 +20347,7 @@ GameObject:
   - component: {fileID: 1457639814}
   - component: {fileID: 1457639813}
   - component: {fileID: 1457639812}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20220,7 +20376,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457639810}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -20369,6 +20525,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3289973540
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (10)
@@ -20791,6 +20951,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: -60
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1915492599
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20886,7 +21050,7 @@ GameObject:
   - component: {fileID: 1499965866}
   - component: {fileID: 1499965865}
   - component: {fileID: 1499965864}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20915,7 +21079,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499965862}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -21192,7 +21356,7 @@ GameObject:
   - component: {fileID: 1518793499}
   - component: {fileID: 1518793498}
   - component: {fileID: 1518793497}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21221,7 +21385,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518793495}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -21355,6 +21519,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3596851577
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (24)
@@ -21711,7 +21879,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 912042221}
   - {fileID: 1771481266}
   - {fileID: 73788770}
   - {fileID: 791175084}
@@ -21735,14 +21902,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformBody: {fileID: 1541700751}
-  platformCollider: {fileID: 1541700750}
-  dummyPlatform: {fileID: 912042222}
+  usePhysics: 1
   movingType: 2
-  movementSpeed: 15
+  movementSpeed: 12
+  slowDownSpeed: 0.1
   toleranceOffset: 0.1
   movementDelayAmount: 1
+  slowDownWhenCloseToStopPosition: 1
   resetWaypoints: 0
-  checkDummyPlatform: 0
   dummyPlatformHeight: 0.1
   startPosition: {x: -12, y: 0, z: 379}
   endPosition: {x: -12, y: 0, z: 414}
@@ -21765,8 +21932,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 14, y: 1, z: 18}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!54 &1541700751
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22208,6 +22375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider Obstacle (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3995408547
+      objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.5
@@ -22307,6 +22478,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -1280239500190412532, guid: 514fa7d5dc1eeec4a80e3bd9691a57fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2872482580
+      objectReference: {fileID: 0}
     - target: {fileID: 1079716844749580471, guid: 514fa7d5dc1eeec4a80e3bd9691a57fd, type: 3}
       propertyPath: m_Name
       value: Push Pillar
@@ -22380,6 +22555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2273412558
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (21)
@@ -22472,7 +22651,7 @@ GameObject:
   - component: {fileID: 1575147072}
   - component: {fileID: 1575147071}
   - component: {fileID: 1575147070}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22501,7 +22680,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575147068}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -22836,6 +23015,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201792}
     m_Modifications:
+    - target: {fileID: 1476949188289538389, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 774590920
+      objectReference: {fileID: 0}
     - target: {fileID: 1535074824807871626, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4
@@ -22891,6 +23074,10 @@ PrefabInstance:
     - target: {fileID: 1535074824807871626, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346258461777508228, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 708028859
       objectReference: {fileID: 0}
     - target: {fileID: 3692979937395698885, guid: 978a81405a54f4247bd8602d0b4f79f7, type: 3}
       propertyPath: rotateSpeed
@@ -22980,6 +23167,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3218468261
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (19)
@@ -23170,6 +23361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -388061890018147882, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 177146542
+      objectReference: {fileID: 0}
     - target: {fileID: 3307389963919175602, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
       propertyPath: startTime
       value: 0
@@ -23336,6 +23531,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -388061890018147882, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3037595411
+      objectReference: {fileID: 0}
     - target: {fileID: 3307389963919175602, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
       propertyPath: startTime
       value: 0.75
@@ -23692,6 +23891,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4229980974
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (4)
@@ -23959,6 +24162,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 2204100946971600481, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 427184862
+      objectReference: {fileID: 0}
     - target: {fileID: 5513136350503385702, guid: f9cf4d1e88c54f4449465160a99626fe, type: 3}
       propertyPath: m_Name
       value: Spin Door
@@ -24145,6 +24352,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1388813251
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (4)
@@ -24274,6 +24485,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2998205806289429831, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3667833092
+      objectReference: {fileID: 0}
     - target: {fileID: 4266959397090065436, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: pushForce
       value: 18
@@ -24311,6 +24526,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 508625989
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (9)
@@ -24388,6 +24607,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -96128013292786049, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2788724259
+      objectReference: {fileID: 0}
     - target: {fileID: 266053040904790612, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12
@@ -26592,6 +26815,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1815557629
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (3)
@@ -26787,6 +27014,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2998205806289429831, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3320848703
+      objectReference: {fileID: 0}
     - target: {fileID: 4266959397090065436, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: pushForce
       value: 18
@@ -26828,7 +27059,7 @@ GameObject:
   - component: {fileID: 1739321447}
   - component: {fileID: 1739321446}
   - component: {fileID: 1739321445}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26857,7 +27088,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739321443}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -27145,6 +27376,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2395385160
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (20)
@@ -27277,7 +27512,7 @@ GameObject:
   - component: {fileID: 1766170384}
   - component: {fileID: 1766170383}
   - component: {fileID: 1766170382}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27306,7 +27541,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766170380}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -27444,7 +27679,7 @@ GameObject:
   - component: {fileID: 1771481269}
   - component: {fileID: 1771481268}
   - component: {fileID: 1771481267}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27473,7 +27708,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771481265}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -27735,7 +27970,7 @@ GameObject:
   - component: {fileID: 1789666458}
   - component: {fileID: 1789666457}
   - component: {fileID: 1789666456}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27764,7 +27999,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789666454}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -28713,7 +28948,7 @@ GameObject:
   - component: {fileID: 1850270324}
   - component: {fileID: 1850270323}
   - component: {fileID: 1850270322}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28742,7 +28977,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850270320}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -29055,6 +29290,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -388061890018147882, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2644462482
+      objectReference: {fileID: 0}
     - target: {fileID: 3307389963919175602, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
       propertyPath: startTime
       value: 1
@@ -29160,7 +29399,7 @@ GameObject:
   - component: {fileID: 1879891018}
   - component: {fileID: 1879891017}
   - component: {fileID: 1879891016}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29189,7 +29428,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879891014}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -29261,6 +29500,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1851950307
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer
@@ -29346,6 +29589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider Obstacle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2274881933
+      objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.5
@@ -29427,7 +29674,7 @@ GameObject:
   - component: {fileID: 1883348087}
   - component: {fileID: 1883348086}
   - component: {fileID: 1883348085}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29456,7 +29703,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883348083}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -29714,6 +29961,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -1406811806395325934, guid: f75500f38123b5d458c38470529a48cf, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3289304227
+      objectReference: {fileID: 0}
     - target: {fileID: 2785061632572779001, guid: f75500f38123b5d458c38470529a48cf, type: 3}
       propertyPath: rotateSpeed
       value: -100
@@ -29981,6 +30232,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3205376576
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (8)
@@ -30248,6 +30503,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -1280239500190412532, guid: 514fa7d5dc1eeec4a80e3bd9691a57fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 458679402
+      objectReference: {fileID: 0}
     - target: {fileID: 1079716844749580471, guid: 514fa7d5dc1eeec4a80e3bd9691a57fd, type: 3}
       propertyPath: m_Name
       value: Push Pillar (1)
@@ -30321,6 +30580,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3417307579
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer
@@ -30677,6 +30940,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 291272751
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (2)
@@ -31017,6 +31284,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 172558096268210238, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1327509293
+      objectReference: {fileID: 0}
     - target: {fileID: 1459518572145716450, guid: cbf00dd9ca5eef24fbaee54cfb60bad5, type: 3}
       propertyPath: m_Name
       value: Rotate Hammer (18)
@@ -31106,6 +31377,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -31144,6 +31427,14 @@ PrefabInstance:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998205806289429831, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1319493310
       objectReference: {fileID: 0}
     - target: {fileID: 4266959397090065436, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: pushForce
@@ -31456,6 +31747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider Obstacle (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1935239974
+      objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.5
@@ -31661,7 +31956,7 @@ GameObject:
   - component: {fileID: 2074094228}
   - component: {fileID: 2074094227}
   - component: {fileID: 2074094226}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31690,7 +31985,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074094224}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -31828,7 +32123,7 @@ GameObject:
   - component: {fileID: 2085895021}
   - component: {fileID: 2085895020}
   - component: {fileID: 2085895019}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31857,7 +32152,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085895017}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -31929,6 +32224,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 815277194
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (6)
@@ -32192,6 +32491,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: -388061890018147882, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2617300940
+      objectReference: {fileID: 0}
     - target: {fileID: 3307389963919175602, guid: ae5d3fde03c37b442b6a0fd58dc2185c, type: 3}
       propertyPath: startTime
       value: 0.25
@@ -32286,6 +32589,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20
       objectReference: {fileID: 0}
@@ -32324,6 +32639,14 @@ PrefabInstance:
     - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450369868571639916, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998205806289429831, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1426388688
       objectReference: {fileID: 0}
     - target: {fileID: 4266959397090065436, guid: f2db74fde18cead4ea6455fb8353e369, type: 3}
       propertyPath: pushForce
@@ -32373,6 +32696,10 @@ PrefabInstance:
     - target: {fileID: 1734873191053309627, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_Name
       value: Slider Obstacle (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482017011002207397, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2434771221
       objectReference: {fileID: 0}
     - target: {fileID: 8384447001122736629, guid: 6f7d72fd0acc9e7489d1bad1c958b7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32565,7 +32892,7 @@ GameObject:
   - component: {fileID: 2139531083}
   - component: {fileID: 2139531082}
   - component: {fileID: 2139531081}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: box_010 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32594,7 +32921,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139531079}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c33432bc335e840ba330bba2bddf15, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -5,12 +5,12 @@ using UnityEditor;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 {
-    [CustomEditor(typeof(MovingObjectMultiplePoints)), CanEditMultipleObjects]
+    [CustomEditor(typeof(MultiplePointsMovingPlatform)), CanEditMultipleObjects]
     public class MovingObjectPositionHandle : Editor
     {
         protected virtual void OnSceneGUI()
         {
-            MovingObjectMultiplePoints movingPlatform = (MovingObjectMultiplePoints)target;
+            MultiplePointsMovingPlatform movingPlatform = (MultiplePointsMovingPlatform)target;
             int positionCount = movingPlatform.Positions.Length;
             Vector3[] positions = new Vector3[positionCount];
 

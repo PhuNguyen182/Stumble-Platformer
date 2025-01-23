@@ -10,7 +10,8 @@ using Cysharp.Threading.Tasks;
 
 public abstract class BasePopup : MonoBehaviour
 {
-    public RectTransform ContentPanel;
+    [SerializeField] public Animator PopupAnimator;
+    [SerializeField] public RectTransform ContentPanel;
     [SerializeField] protected Canvas popupCanvas;
     [SerializeField] protected RectTransform mainPanel;
 
@@ -20,6 +21,7 @@ public abstract class BasePopup : MonoBehaviour
 
     [SerializeField] protected bool isAnim = true;
 
+    private bool _isCanvasValid;
     private bool _isApplicationQuitting; 
 
     protected Action actionOpenSaveBox;
@@ -34,9 +36,9 @@ public abstract class BasePopup : MonoBehaviour
 
     private void Awake()
     {
-        bool isCanvasValid = TryGetComponent(out popupCanvas);
+        _isCanvasValid = TryGetComponent(out popupCanvas);
 
-        if (isCanvasValid && IsPopup)
+        if (_isCanvasValid && IsPopup)
         {
             popupCanvas.renderMode = RenderMode.ScreenSpaceCamera;
             popupCanvas.worldCamera = Camera.main;
@@ -70,7 +72,14 @@ public abstract class BasePopup : MonoBehaviour
         OnStart();
     }
 
-    protected virtual void DoAppear() { }
+    protected virtual void DoAppear()
+    {
+        if (_isCanvasValid && IsPopup)
+        {
+            if (!popupCanvas.worldCamera)
+                popupCanvas.worldCamera = Camera.main;
+        }
+    }
 
     protected virtual void DoDisappear() { }
 
@@ -222,8 +231,8 @@ public class BasePopup<TPopup> : BasePopup where TPopup : BasePopup
 
             if (_opHandle.Status == AsyncOperationStatus.Succeeded)
             {
-                instance = SimplePool.Spawn(_opHandle.Result).GetComponent<TPopup>();
-                instance.gameObject.SetActive(true);
+                if (SimplePool.Spawn(_opHandle.Result).TryGetComponent(out instance))
+                    instance.gameObject.SetActive(true);
             }
 
             else Release();

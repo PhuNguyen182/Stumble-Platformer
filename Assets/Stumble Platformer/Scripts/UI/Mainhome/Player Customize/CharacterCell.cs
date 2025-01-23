@@ -12,9 +12,11 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize
         [SerializeField] private Image icon;
         [SerializeField] private GameObject selectMark;
         [SerializeField] private Button cellButton;
+        [SerializeField] private RectTransform rectTransform;
 
         public Action<string> OnCellClick;
         public string ID => id;
+        public RectTransform RectTransform => rectTransform;
 
         private void Awake()
         {

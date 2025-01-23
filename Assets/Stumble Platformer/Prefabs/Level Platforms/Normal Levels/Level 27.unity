@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1101949909
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4 (2)
@@ -358,12 +362,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 4287076803
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -505,8 +509,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e820ba8ee7db5c74fb390162c663f55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  labelColor: {r: 0, g: 0, b: 0, a: 1}
   mainCharacterSpawnPosition: {x: 0, y: 15.3, z: 0}
-  characterSpawnPositions: []
+  characterSpawnPositions:
+  - {x: 0, y: 15.3, z: 0}
+  - {x: 2.49375, y: 15.3, z: 4.275}
+  - {x: -2.49375, y: 15.3, z: 4.275}
+  - {x: -4.9875, y: 15.3, z: 0}
+  - {x: -2.49375, y: 15.3, z: -4.275}
+  - {x: 2.49375, y: 15.3, z: -4.275}
+  - {x: 4.9875, y: 15.3, z: 0}
 --- !u!4 &231218961
 Transform:
   m_ObjectHideFlags: 0
@@ -575,12 +587,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 4201299347
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -656,12 +668,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 945590249
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -692,9 +704,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 992714619
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1178088514
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -1188,12 +1208,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1002978586
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1224,9 +1244,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3147883854
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1498921196
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -1394,9 +1422,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3689559452
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2320260289
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -1495,9 +1531,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2498660711
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3803811024
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -1641,12 +1685,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1407091776
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1677,9 +1721,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4168001592
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4279303948
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -1924,12 +1976,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1046274575
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1960,6 +2012,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -2924563878459811069, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1484243511
+      objectReference: {fileID: 0}
     - target: {fileID: 4494186003428286850, guid: bddf09020e4e12c4aaadeeb54df9c35f, type: 3}
       propertyPath: m_Name
       value: Trampoline 4
@@ -2355,6 +2411,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1168528022
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (2)
@@ -2493,12 +2553,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 2056360535
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2727,12 +2787,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 43277650
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2808,12 +2868,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1743794932
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2844,9 +2904,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2395998606
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1801197259
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -2990,12 +3058,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 1965890397
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3026,9 +3094,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2736650426
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 378459897
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -3445,12 +3521,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 2526615058
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3559,12 +3635,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
-      propertyPath: usePhysics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591175250373566146, guid: 201cc4bea9fb8a843bfec979b5494d55, type: 3}
       propertyPath: rotateSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GlobalObjectIdHash
+      value: 850153584
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3595,6 +3671,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201790}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2868509133
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball
@@ -3834,6 +3914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385254474629105131}
   - component: {fileID: 8839447532017761259}
+  - component: {fileID: 8839447532017761261}
   - component: {fileID: 8839447532017761260}
   m_Layer: 0
   m_Name: Level Identifier
@@ -3887,6 +3968,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveTitle: Don't Fall
   playDuration: 60
+--- !u!114 &8839447532017761261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844125545043861795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 62775421
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

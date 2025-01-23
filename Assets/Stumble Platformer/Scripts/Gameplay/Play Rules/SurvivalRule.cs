@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Common.Messages;
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Common.Enums;
+using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
+using StumblePlatformer.Scripts.Multiplayers.Datas;
+using StumblePlatformer.Scripts.Multiplayers;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
@@ -19,13 +22,15 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         protected override void OnStart()
         {
+            base.OnStart();
             _hasLosedGame = false;
             _currentTimer = playDuration;
         }
 
         public override void StartGame()
         {
-            _playRuleTimer.gameObject.SetActive(true);
+            bool active = GameplaySetup.PlayMode == GameMode.SinglePlayer;
+            _playRuleTimer.gameObject.SetActive(active);
         }
 
         public void SetPlayRuleTimer(PlayRuleTimer playRuleTimer)
@@ -35,22 +40,42 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnUpdate(float deltatime)
         {
-            if(_currentTimer > 0 && !_hasLosedGame)
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
-                _currentTimer -= Time.deltaTime;
-                _playRuleTimer.UpdateTime(_currentTimer);
-
-                if (_currentTimer <= 0 && !_hasLosedGame)
+                if (_currentTimer > 0 && !_hasLosedGame)
                 {
-                    _currentTimer = 0;
+                    _currentTimer -= Time.deltaTime;
                     _playRuleTimer.UpdateTime(_currentTimer);
 
-                    // If in siggle mode
-                    EndLevel(new LevelEndMessage
+                    if (_currentTimer <= 0 && !_hasLosedGame)
                     {
-                        ID = CurrentPlayerID,
-                        Result = EndResult.Win
-                    });
+                        _currentTimer = 0;
+                        _playRuleTimer.UpdateTime(_currentTimer);
+
+                        EndLevel(new LevelEndMessage
+                        {
+                            Result = EndResult.Win
+                        });
+                    }
+                }
+            }
+
+            else
+            {
+                int playerCount = MultiplayerManager.Instance.GetPlayerCount();
+                if (!IsEndGame && playerCount == 1)
+                {
+                    PlayerData remainPlayerData = MultiplayerManager.Instance
+                                                  .GetPlayerData(0);
+                    ulong currentClientId = NetworkManager.LocalClient.ClientId;
+
+                    if (remainPlayerData.ClientID == currentClientId)
+                    {
+                        EndLevel(new LevelEndMessage
+                        {
+                            Result = EndResult.Win
+                        });
+                    }
                 }
             }
         }
@@ -67,10 +92,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnLevelEnded(EndResult endResult)
         {
-            // If in single mode
             EndGame(new EndGameMessage
             {
-                ID = CurrentPlayerID,
                 Result = endResult
             });
         }
@@ -79,10 +102,14 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             _hasLosedGame = true;
             EndLevel(new LevelEndMessage
-            {            
-                ID = CurrentPlayerID,
+            {
                 Result = EndResult.Lose
             });
+        }
+
+        protected override EndResult GetMultiplayEndResult(ulong clientId)
+        {
+            return _hasLosedGame ? EndResult.Lose : EndResult.Win;
         }
     }
 }

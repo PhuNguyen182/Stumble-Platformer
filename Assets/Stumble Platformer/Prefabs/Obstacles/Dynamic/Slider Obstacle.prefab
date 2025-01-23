@@ -100,6 +100,7 @@ MonoBehaviour:
   attackOnce: 0
   attactForce: 6
   stunDuration: 1.5
+  isKinematic: 0
   obstacleBody: {fileID: 0}
   obstacleAttackers:
   - {fileID: 8939087255180391996}
@@ -129,6 +130,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   moveAxis: {x: 1, y: 0, z: 0}
+  useRotationAsDirection: 0
   moveDistance: 6
   duration: 2
   useRandomDelay: 0
@@ -307,6 +309,7 @@ MonoBehaviour:
   moveAxis: {x: 1, y: 0, z: 0}
   moveDistance: 6
   duration: 2
+  useRotationAsDirection: 0
   useRandomDelay: 0
   maxRandomDelay: 1
 --- !u!114 &8939087255180391996

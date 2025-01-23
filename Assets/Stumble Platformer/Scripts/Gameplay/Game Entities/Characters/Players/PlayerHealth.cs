@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
 using StumblePlatformer.Scripts.Common.Enums;
-using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
@@ -20,9 +20,15 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private bool _hasFinishLevel = false;
         private bool _canTakeDamage = true;
+        private bool _hasPlayerController;
 
         public int CheckPointIndex => _checkPointIndex;
         public int HealthPoint => _healthPoint;
+
+        private void Awake()
+        {
+            _hasPlayerController = TryGetComponent(out playerController);
+        }
 
         private void Start()
         {
@@ -31,6 +37,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnTriggerEnter(Collider other)
         {
+            if (!playerController.IsOwner)
+                return;
+
             if(other.TryGetComponent(out FinishZone finishZone))
             {
                 OnFinishZone(finishZone);
@@ -43,20 +52,32 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
             if(other.TryGetComponent(out DeadZone deadZone))
             {
-                if (_healthPoint > 0)
-                    OnDeadZone(deadZone);
+                if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+                {
+                    if (_healthPoint > 0)
+                        OnDeadZone(deadZone);
+                }
+
+                else OnDeadZone(deadZone);
             }
         }
 
         private async UniTask OnDeadZoneDelay()
         {
             await UniTask.WaitForSeconds(deadDelayAmount, cancellationToken: destroyCancellationToken);
-            playerController.SetCharacterActive(false);
 
-            if (_healthPoint > 0)
-                playerMessages.RespawnPlayer();
-            else 
-                Kill();
+            if (_hasPlayerController)
+                playerController.SetCharacterActive(false);
+
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
+            {
+                if (_healthPoint > 0)
+                    playerMessages.RespawnPlayer();
+                else
+                    Kill();
+            }
+
+            else playerMessages.RespawnPlayer();
         }
 
         public void Kill()
@@ -64,7 +85,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             if (_hasFinishLevel) 
                 return;
 
-            playerController.SetCharacterActive(false);
+            if (_hasPlayerController)
+                playerController.SetCharacterActive(false);
+
             playerGraphics.CharacterVisual.SetLose();
         }
 
@@ -102,8 +125,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnFinishZone(FinishZone finishZone)
         {
-            playerController.IsActive = false;
-            finishZone.ReportFinish(playerController);
+            if (_hasPlayerController)
+            {
+                playerController.IsActive = false;
+                finishZone.ReportFinish(playerController);
+            }
         }
 
         private void OnRespawnArea(RespawnArea respawnArea)
@@ -114,19 +140,23 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void OnDeadZone(DeadZone deadZone)
         {
-            if (!playerController.IsActive)
+            if (_hasPlayerController && !playerController.IsActive)
                 return;
 
             playerController.IsActive = false;
             deadZone.PlayDeathEffect(transform.position);
 
-            HealthDamage damage = new HealthDamage
+            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
             {
-                DamageAmount = 1,
-                DamageType = deadZone.DamageType
-            };
+                HealthDamage damage = new HealthDamage
+                {
+                    DamageAmount = 1,
+                    DamageType = deadZone.DamageType
+                };
+                KillOneLife(damage);
+            }
 
-            KillOneLife(damage);
+            playerMessages.PlayerDamage();
             OnDeadZoneDelay().Forget();
         }
 
@@ -134,7 +164,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             TakeDamage(damageData);
             playerMessages.ReportHealth(HealthPoint);
-            playerMessages.PlayerDamage();
         }
     }
 }

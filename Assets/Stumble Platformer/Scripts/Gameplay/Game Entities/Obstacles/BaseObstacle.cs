@@ -3,6 +3,7 @@ using R3.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using GlobalScripts.UpdateHandlerPattern;
 using Sirenix.OdinInspector;
 
@@ -13,10 +14,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         [SerializeField] protected bool attackOnce;
         [SerializeField] protected float attactForce = 15f;
         [SerializeField] protected float stunDuration = 1.5f;
+        [SerializeField] protected bool isKinematic;
         [SerializeField] protected Rigidbody obstacleBody;
         
         [Header("Obstacle Strikers")]
         [SerializeField] protected ObstacleAttacker[] obstacleAttackers;
+
+        protected bool hasNetworkObject;
+        protected NetworkObject obstacleNetworkObject;
 
         public bool IsActive { get; set; }
 
@@ -32,12 +37,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         }
 
         public abstract void ExitDamage(Collision collision);
-
         public abstract void DamageCharacter(Collision collision);
-
         public abstract void ObstacleAction();
 
-        public virtual void OnAwake() { }
+        public virtual void OnAwake()
+        {
+            hasNetworkObject = TryGetComponent(out obstacleNetworkObject);
+        }
 
         public virtual void SetObstacleActive(bool active)
         {
@@ -54,6 +60,14 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             ObstacleAction();
         }
 
+        [Rpc(SendTo.Server, RequireOwnership = false)]
+        protected void SpawnSelfRpc()
+        {
+            obstacleNetworkObject.enabled = true;
+            if (hasNetworkObject && !obstacleNetworkObject.IsSpawned)
+                obstacleNetworkObject.Spawn(true);
+        }
+
         protected void DamageTargetOnStay(Collision collision)
         {
             if (!attackOnce)
@@ -61,7 +75,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         }
 
         [Button]
-        private void GetObstacleAttackers()
+        public void GetObstacleAttackers()
         {
             obstacleAttackers = transform.GetComponentsInChildren<ObstacleAttacker>();
         }

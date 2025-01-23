@@ -217,11 +217,15 @@ MonoBehaviour:
   attackOnce: 0
   attactForce: 6.5
   stunDuration: 1.5
+  isKinematic: 1
   obstacleBody: {fileID: 2867282813558781987}
   obstacleAttackers:
   - {fileID: 1103353277837438427}
   rotateSpeed: 150
+  invertTimer: 6
+  nextInversionTimer: 3
   rotateAxis: 3
+  rotateMode: 0
 --- !u!1 &5297544367350146822
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using StumblePlatformer.Scripts.Gameplay.Databases;
+using StumblePlatformer.Scripts.Common.Constants;
+using StumblePlatformer.Scripts.UI.Mainhome.SettingPanels;
 using StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
-using StumblePlatformer.Scripts.UI.Mainhome.SettingPanels;
-using StumblePlatformer.Scripts.Common.SingleConfigs;
-using GlobalScripts.SceneUtils;
+using StumblePlatformer.Scripts.UI.Mainhome.Popups;
 using Cysharp.Threading.Tasks;
 
 namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
@@ -26,12 +24,16 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         [Space(10)]
         [SerializeField] private CharacterVisual characterVisual;
-        [SerializeField] private LevelNameCollection levelNameCollection;
 
         private void Awake()
         {
-            UpdateSkin();
+            PreloadPopups();
             RegisterButtonClicks();
+        }
+
+        private void PreloadPopups()
+        {
+            PlayModePopup.PreloadFromAddress(CommonPopupPaths.PlayGamePopupPath).Forget();
         }
 
         private void RegisterButtonClicks()
@@ -39,11 +41,6 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
             playButton.onClick.AddListener(PlayGame);
             customizeButton.onClick.AddListener(OpenCharacterCustomize);
             settingButton.onClick.AddListener(OpenSetting);
-        }
-
-        public void UpdateSkin()
-        {
-            // To do: get skin index and update the visual
         }
 
         private void OpenSetting()
@@ -55,18 +52,18 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
         private void OpenCharacterCustomize()
         {
             ExitPanel();
+            playerCustomizePanel.ScrollToCurrentSkin();
             playerCustomizePanel.EnterPanel();
         }
 
         private void PlayGame()
         {
-            string levelName = levelNameCollection.GetRandomName();
-            PlayGameConfig.Current = new PlayGameConfig
-            {
-                PlayLevelName = levelName
-            };
+            PlayModePopup.CreateFromAddress(CommonPopupPaths.PlayGamePopupPath).Forget();
+        }
 
-            SceneBridge.LoadNextScene(SceneConstants.Gameplay).Forget();
+        private void OnDestroy()
+        {
+            PlayModePopup.Release();
         }
     }
 }

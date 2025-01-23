@@ -130,9 +130,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 701707847
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3944803070
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -231,6 +239,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1420082244
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (18)
@@ -423,8 +435,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e820ba8ee7db5c74fb390162c663f55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  labelColor: {r: 0, g: 0, b: 0, a: 1}
   mainCharacterSpawnPosition: {x: 0, y: 6.25, z: 0}
-  characterSpawnPositions: []
+  characterSpawnPositions:
+  - {x: 0, y: 6.25, z: 0}
+  - {x: 2.49375, y: 6.25, z: 4.275}
+  - {x: -2.49375, y: 6.25, z: 4.275}
+  - {x: -4.9875, y: 6.25, z: 0}
+  - {x: -2.49375, y: 6.25, z: -4.275}
+  - {x: 2.49375, y: 6.25, z: -4.275}
+  - {x: 4.9875, y: 6.25, z: 0}
 --- !u!4 &231218961
 Transform:
   m_ObjectHideFlags: 0
@@ -448,6 +468,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2900571496
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (26)
@@ -726,6 +750,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 397189108
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (13)
@@ -871,6 +899,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2159226379
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (8)
@@ -964,6 +996,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3773253463
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (7)
@@ -1135,6 +1171,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1774030945
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (3)
@@ -1228,6 +1268,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3407441978
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer
@@ -1317,6 +1361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2478743497
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (4)
@@ -1410,6 +1458,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3274855010
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -1519,6 +1571,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2431749694
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (14)
@@ -1612,6 +1668,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2131352464
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (21)
@@ -1694,9 +1754,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4082358227
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 629794913
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -1795,6 +1863,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 554199642
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (24)
@@ -1888,9 +1960,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2752219945
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2703103804
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -1989,6 +2069,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1352113563
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (1)
@@ -2082,6 +2166,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3989363412
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (25)
@@ -2164,6 +2252,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 536054828
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -2269,9 +2361,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 383525044
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4172012069
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -2370,6 +2470,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2596909811
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (22)
@@ -2553,6 +2657,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1828260582
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (27)
@@ -2721,6 +2829,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 950516694
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2772,6 +2884,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1193791458
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (2)
@@ -2869,6 +2985,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3873537013
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (6)
@@ -3040,6 +3160,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1544422942
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball
@@ -3126,6 +3250,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3992025872
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (5)
@@ -3496,6 +3624,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 830126413
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (23)
@@ -3578,6 +3710,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2938768593
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (12)
@@ -3746,6 +3882,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 145048580
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3775,6 +3915,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 207074221
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (3)
@@ -3872,6 +4016,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 862509808
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (2)
@@ -4106,6 +4254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2724070080
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (20)
@@ -4199,9 +4351,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3148032214
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 485514532
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -4300,6 +4460,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1302201215
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (11)
@@ -4457,6 +4621,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1666950860
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4486,6 +4654,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2664536032
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -5086,6 +5258,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 750953588
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (15)
@@ -5179,6 +5355,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -5982893123976939845, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2983396178
+      objectReference: {fileID: 0}
     - target: {fileID: 5377822119573838812, guid: 201f73a56062b964c9714e1dbcba0562, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -5288,6 +5468,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2650091909
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (17)
@@ -5445,6 +5629,10 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 6950424116510232516, guid: b163cbd43be4c944aaf0cb6262ae45b9, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1240808324
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5474,6 +5662,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3621968694
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (19)
@@ -5567,9 +5759,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2725313254
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 531254052
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -5712,9 +5912,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201791}
     m_Modifications:
+    - target: {fileID: 326213418456649158, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1075674572
+      objectReference: {fileID: 0}
     - target: {fileID: 1519203287672990974, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: m_Name
       value: Start Dropping Platform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380879070170775741, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 507581883
       objectReference: {fileID: 0}
     - target: {fileID: 5998545790362410785, guid: 632ddba38b462e54798623d8a645d4fd, type: 3}
       propertyPath: originalColor.b
@@ -5813,6 +6021,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2775526213
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (9)
@@ -5906,6 +6118,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2942063500820362374, guid: d1418d51402a81943b9326b584face25, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2664496836
+      objectReference: {fileID: 0}
     - target: {fileID: 638853447646506587, guid: d1418d51402a81943b9326b584face25, type: 3}
       propertyPath: m_Name
       value: Swing Ball (1)
@@ -6046,6 +6262,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 418141462
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (10)
@@ -6139,6 +6359,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1724201789}
     m_Modifications:
+    - target: {fileID: -2672337364741309148, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1876682072
+      objectReference: {fileID: 0}
     - target: {fileID: 1941939773437671880, guid: 49b6c3ba5ea9a4a46866561569801678, type: 3}
       propertyPath: m_Name
       value: Swing Hammer (16)
@@ -6249,6 +6473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385254474629105131}
   - component: {fileID: 8839447532017761259}
+  - component: {fileID: 8839447532017761261}
   - component: {fileID: 8839447532017761260}
   m_Layer: 0
   m_Name: Level Identifier
@@ -6302,6 +6527,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveTitle: Don't Fall
   playDuration: 60
+--- !u!114 &8839447532017761261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844125545043861795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 4007109512
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -15,8 +15,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         [SerializeField] private TeaserCamera teaserCamera;
         [SerializeField] private CameraPointer cameraPointer;
 
+        public Camera MainCamera { get; private set; }
+
         private void Awake()
         {
+            MainCamera = Camera.main;
             if (cinemachineBrain != null)
                 cinemachineBrain.useGUILayout = false;
         }

@@ -1,26 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using UnityEngine.SceneManagement;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms;
 using Cysharp.Threading.Tasks;
-using GlobalScripts.Utils;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
-    public class EnvironmentHandler : MonoBehaviour
+    public class EnvironmentHandler : NetworkBehaviour
     {
         [SerializeField] private CameraHandler cameraHandler;
 
         public CameraHandler CameraHandler => cameraHandler;
         public EnvironmentIdentifier EnvironmentIdentifier { get; private set; }
 
+        public override void OnNetworkSpawn() { }
+
         public void SetLevelActive(bool active) => EnvironmentIdentifier.SetLevelActive(active);
 
-        public void SetLevelSecondaryComponentActive(bool active)
-        {
-            EnvironmentIdentifier.PlayLevel.SetSecondaryLevelComponentActive(active);
-        }
+        public void SetLevelSecondaryComponentActive(bool active) => EnvironmentIdentifier.PlayLevel.SetSecondaryLevelComponentActive(active);
 
         public void SetEnvironmentIdentifier(EnvironmentIdentifier environmentIdentifier)
         {
@@ -36,10 +35,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             cameraHandler.SetTeaserCameraActive(false);
         }
 
-        private void SetupSky()
-        {
-            RenderSettings.skybox = EnvironmentIdentifier.Skybox;
-        }
+        private void SetupSky() => RenderSettings.skybox = EnvironmentIdentifier.Skybox;
 
         private void SetupLight()
         {
@@ -81,10 +77,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             SetupCamera();
         }
 
-        public async UniTask GenerateLevel(string levelName)
+        public void GenerateLevel(string levelName)
         {
-            string path = $"Normal Levels/{levelName}.unity";
-            await AddressablesUtils.LoadSceneViaAddressable(path, LoadSceneMode.Additive);
+            NetworkManager.Singleton.SceneManager.LoadScene(levelName, LoadSceneMode.Additive);
         }
     }
 }

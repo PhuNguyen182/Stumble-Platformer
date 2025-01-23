@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
+using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Damageables;
+using StumblePlatformer.Scripts.Common.Enums;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
 {
@@ -12,6 +14,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         [SerializeField] private float attackForce = 10f;
         [SerializeField] private float stunDuration = 3f;
         [SerializeField] private Rigidbody bulletBody;
+        [SerializeField] private NetworkObject networkObject;
 
         private const float MaxImpactForce = 9;
         private const string DeadZoneTag = "DeadZone";
@@ -22,6 +25,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         private void Awake()
         {
             _currentScale = transform.localScale;
+        }
+
+        private void Start()
+        {
+            //SpawnNetworkObject();
         }
 
         private void OnEnable()
@@ -58,6 +66,11 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             }
 
             _characterIdCollection.Add(characterID);
+        }
+
+        private void SpawnNetworkObject()
+        {
+            
         }
 
         private void OnCollisionEnter(Collision collision)
