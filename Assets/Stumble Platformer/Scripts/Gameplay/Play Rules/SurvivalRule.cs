@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
+using StumblePlatformer.Scripts.Common.Enums;
 using StumblePlatformer.Scripts.Common.Messages;
 using StumblePlatformer.Scripts.UI.Gameplay.MainPanels;
-using StumblePlatformer.Scripts.Common.Enums;
+using StumblePlatformer.Scripts.Multiplayers.Datas;
+using StumblePlatformer.Scripts.Multiplayers;
 
 namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 {
@@ -56,6 +59,25 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
                     }
                 }
             }
+
+            else
+            {
+                int playerCount = MultiplayerManager.Instance.GetPlayerCount();
+                if (!IsEndGame && playerCount == 1)
+                {
+                    PlayerData remainPlayerData = MultiplayerManager.Instance
+                                                  .GetPlayerData(0);
+                    ulong currentClientId = NetworkManager.LocalClient.ClientId;
+
+                    if (remainPlayerData.ClientID == currentClientId)
+                    {
+                        EndLevel(new LevelEndMessage
+                        {
+                            Result = EndResult.Win
+                        });
+                    }
+                }
+            }
         }
 
         public override void OnEndGame(EndResult endResult)
@@ -80,9 +102,14 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             _hasLosedGame = true;
             EndLevel(new LevelEndMessage
-            {            
+            {
                 Result = EndResult.Lose
             });
+        }
+
+        protected override EndResult GetMultiplayEndResult(ulong clientId)
+        {
+            return _hasLosedGame ? EndResult.Lose : EndResult.Win;
         }
     }
 }

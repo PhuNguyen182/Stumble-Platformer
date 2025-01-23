@@ -3,7 +3,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
     public struct MultiplayerConstants
     {
         public const string DefaultIP = "127.0.0.1";
-        public const ushort DefaultPort = 7777;
+        public const ushort DefaultPort = 9998;
 
 #if UNITY_EDITOR
         public const int MinPlayerCount = 1;

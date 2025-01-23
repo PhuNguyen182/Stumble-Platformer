@@ -77,5 +77,14 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
                 Result = EndResult.Lose
             });
         }
+
+        protected override EndResult GetMultiplayEndResult(ulong clientId)
+        {
+            ulong currentClientId = NetworkManager.LocalClient.ClientId;
+            EndResult networkResult = clientId == currentClientId
+                                      ? EndResult.Win : EndResult.Lose;
+            return networkResult;
+
+        }
     }
 }

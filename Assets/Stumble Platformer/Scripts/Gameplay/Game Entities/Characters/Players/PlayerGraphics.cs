@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using StumblePlatformer.Scripts.Gameplay.GameManagers;
 using StumblePlatformer.Scripts.Gameplay.GameEntities.CharacterVisuals;
 using StumblePlatformer.Scripts.Gameplay.Databases;
@@ -8,7 +9,7 @@ using TMPro;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 {
-    public class PlayerGraphics : MonoBehaviour
+    public class PlayerGraphics : NetworkBehaviour
     {
         [SerializeField] private TMP_Text playerNameText;
         [SerializeField] private Canvas playerNameCanvas;
@@ -35,7 +36,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 playerNameCanvas.transform.rotation = _cameraTransform.rotation * _originalOrientation;
         }
 
-        public void SetPlayerName(string playerName)
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        public void SetPlayerNameRpc(string playerName)
         {
             playerNameText.text = playerName;
         }

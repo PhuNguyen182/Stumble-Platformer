@@ -29,8 +29,8 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         protected ISubscriber<PlayerDamageMessage> playerDamageSubscriber;
 
         public bool IsActive { get; set; }
-        public bool IsEndGame { get; set; }
         public int PlayerHealth { get; set; }
+        public bool IsEndGame { get; set; }
         public string ObjectiveTitle => objectiveTitle;
 
         public override void OnNetworkSpawn()
@@ -138,13 +138,13 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
             else
             {
-                ulong currentClientId = NetworkManager.LocalClient.ClientId;
-                EndResult networkResult = clientId == currentClientId 
-                                          ? EndResult.Win : EndResult.Lose;
+                EndResult networkResult = GetMultiplayEndResult(clientId);
                 gameStateController.EndLevel(networkResult);
                 OnLevelEnded(networkResult);
             }
         }
+
+        protected abstract EndResult GetMultiplayEndResult(ulong clientId);
 
         public override void OnDestroy()
         {

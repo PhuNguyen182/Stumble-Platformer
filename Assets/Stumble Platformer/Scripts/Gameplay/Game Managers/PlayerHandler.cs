@@ -118,7 +118,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         public void ActivateAllPlayer() => ActivateAllPlayerRpc();
 
-        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        [Rpc(SendTo.Server, RequireOwnership = false)]
         private void ActivateAllPlayerRpc()
         {
             foreach(ulong clientId in NetworkManager.ConnectedClientsIds)
@@ -129,7 +129,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 if (playerObject.TryGetComponent(out PlayerController player))
                 {
                     player.IsActive = true;
-                    player.SetCharacterActive(true);
+                    player.SetCharacterActiveRpc(true);
                 }
             }
         }
@@ -145,7 +145,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 if (player.TryGetComponent(out _currentPlayer))
                 {
                     _currentPlayer.SetCharacterInput(inputReceiver);
-                    _currentPlayer.PlayerGraphics.SetPlayerName(playerData.PlayerName.Value);
+                    _currentPlayer.PlayerGraphics.SetPlayerNameRpc(playerData.PlayerName.Value);
                     SetPlayerPhysicsActive(false);
                 }
             }

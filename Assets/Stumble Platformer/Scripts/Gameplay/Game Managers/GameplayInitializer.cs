@@ -32,18 +32,27 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
         private void OnCharacterDisconnected(ulong clientId)
         {
-            if (!NetworkManager.Singleton.IsServer)
-            {
-                if (PlayGroundManager.Instance.PlayRule.IsEndGame)
-                    return;
+            OnCharacterDisconnectedDelayed(clientId).Forget();
+        }
 
-                // Server ID acts like the last ID from connected clients Ids
-                int playerCount = NetworkManager.Singleton.ConnectedClientsIds.Count;
-                ulong serverClientId = NetworkManager.Singleton.ConnectedClientsIds[playerCount - 1];
+        private async UniTask OnCharacterDisconnectedDelayed(ulong clientId)
+        {
+            if (NetworkManager.Singleton.IsServer)
+                return;
 
-                if (clientId == serverClientId)
-                    ShowDisconnectedPopup().Forget();
-            }
+            await UniTask.WaitForSeconds(1f, cancellationToken: destroyCancellationToken);
+            if (destroyCancellationToken.IsCancellationRequested)
+                return;
+
+            if (PlayGroundManager.Instance.PlayRule.IsEndGame)
+                return;
+
+            // Server ID acts like the last ID from connected clients Ids
+            int playerCount = NetworkManager.Singleton.ConnectedClientsIds.Count;
+            ulong serverClientId = NetworkManager.Singleton.ConnectedClientsIds[playerCount - 1];
+
+            if (clientId == serverClientId)
+                ShowDisconnectedPopup().Forget();
         }
 
         private async UniTask ShowDisconnectedPopup()

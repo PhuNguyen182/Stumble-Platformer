@@ -44,6 +44,8 @@ namespace StumblePlatformer.Scripts.Multiplayers
             DontDestroyOnLoad(gameObject);
         }
 
+        public int GetPlayerCount() => _playerDatas.Count;
+
         public string GetCurrentPlayerID()
         {
             return AuthenticationService.Instance.PlayerId;

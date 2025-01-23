@@ -156,6 +156,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 KillOneLife(damage);
             }
 
+            playerMessages.PlayerDamage();
             OnDeadZoneDelay().Forget();
         }
 
@@ -163,7 +164,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             TakeDamage(damageData);
             playerMessages.ReportHealth(HealthPoint);
-            playerMessages.PlayerDamage();
         }
     }
 }

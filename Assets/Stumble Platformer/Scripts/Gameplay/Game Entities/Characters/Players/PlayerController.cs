@@ -245,6 +245,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             playerHealth.OnRespawn();
         }
 
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        public void SetCharacterActiveRpc(bool active)
+        {
+            SetCharacterActive(active);
+        }
+
         public void SetCharacterActive(bool active)
         {
             playerPhysics.SetCharacterActive(active);
