@@ -140,6 +140,11 @@ namespace GlobalScripts.Audios
                 PlayMusic(bgm, loop, volume);
         }
 
+        public void PlayBackgroundMusic(AudioClip backgroundMusic, bool loop = true, float volume = 1)
+        {
+            PlayMusic(backgroundMusic, loop, volume);
+        }
+
         public void StopMusic()
         {
             musicSource.Stop();

@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 1981644438855724521}
   - component: {fileID: 5854944832655831362}
   - component: {fileID: 7734739557449189571}
+  - component: {fileID: 8229069379702893162}
   m_Layer: 5
   m_Name: Join Room Button
   m_TagString: Untagged
@@ -296,6 +297,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8229069379702893162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295900509214017495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 5854944832655831362}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: f6bea621509eb684386b8197a401b5c9, type: 3}
 --- !u!1 &3020731969696484638
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,6 +882,7 @@ GameObject:
   - component: {fileID: 974335783995125854}
   - component: {fileID: 1227055898707715902}
   - component: {fileID: 1398627256862005223}
+  - component: {fileID: 4555620702589203438}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -997,6 +1014,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4555620702589203438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6286613040632091781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1227055898707715902}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: ed2c9e925ea2c2b4f92e22531d920bbb, type: 3}
 --- !u!1 &6402861581536737309
 GameObject:
   m_ObjectHideFlags: 0

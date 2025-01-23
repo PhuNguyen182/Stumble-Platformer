@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8891956553199210952}
   - component: {fileID: 3399783568674466380}
   - component: {fileID: 6610914788855811671}
+  - component: {fileID: 2693666250582725613}
   m_Layer: 5
   m_Name: Character Cell
   m_TagString: Untagged
@@ -142,6 +143,21 @@ MonoBehaviour:
   selectMark: {fileID: 8888607194558684501}
   cellButton: {fileID: 3399783568674466380}
   rectTransform: {fileID: 393516742186852881}
+--- !u!114 &2693666250582725613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577260360708211193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 3399783568674466380}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: f6bea621509eb684386b8197a401b5c9, type: 3}
 --- !u!1 &3637591156475908779
 GameObject:
   m_ObjectHideFlags: 0

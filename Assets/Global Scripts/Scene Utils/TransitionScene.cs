@@ -51,22 +51,8 @@ namespace GlobalScripts.SceneUtils
                 await SceneLoader.LoadScene(nextSceneName);
 
                 AudioManager.Instance.StopMusic();
-                BackgroundMusicType bgm = GetMusicBySceneName(nextSceneName);
-                AudioManager.Instance.PlayBackgroundMusic(bgm, volume: 0.6f);
-
                 SceneBridge.Bridge = null;
             }
-        }
-
-        private BackgroundMusicType GetMusicBySceneName(string sceneName)
-        {
-            if (string.CompareOrdinal(sceneName, SceneConstants.Mainhome) == 0)
-                return BackgroundMusicType.Mainhome;
-
-            if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
-                return BackgroundMusicType.Gameplay;
-
-            return BackgroundMusicType.None;
         }
 
         public async UniTask UnloadTransition()
