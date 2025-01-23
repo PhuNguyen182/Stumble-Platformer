@@ -103,10 +103,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                     _tempPlayer.NetworkObject.SpawnAsPlayerObject(clientId, true);
 
                 SetCurrentPlayerRpc(playerData);
-                string skin = playerData.PlayerSkin.Value;
-
-                if (playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin(skin, out CharacterSkin characterSkin))
-                    _tempPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);
             }
         }
 
@@ -149,6 +145,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                     SetPlayerPhysicsActive(false);
                 }
             }
+
+            string skin = playerData.PlayerSkin.Value;
+            if (playDataCollectionInitializer.CharacterVisualDatabase.TryGetCharacterSkin(skin, out CharacterSkin characterSkin))
+                _tempPlayer.PlayerGraphics.SetCharacterVisual(characterSkin);
         }
 
         [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]

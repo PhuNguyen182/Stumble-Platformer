@@ -844,6 +844,7 @@ GameObject:
   - component: {fileID: 529321319156153567}
   - component: {fileID: 2700095925836386807}
   - component: {fileID: 1574441521533893976}
+  - component: {fileID: 2733141157429047109}
   m_Layer: 5
   m_Name: Info Button
   m_TagString: Untagged
@@ -973,6 +974,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2733141157429047109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883137340804996653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2700095925836386807}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: ed2c9e925ea2c2b4f92e22531d920bbb, type: 3}
 --- !u!1 &1003392306653315728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1136,7 @@ GameObject:
   - component: {fileID: 5710665590782335435}
   - component: {fileID: 6639171532560913275}
   - component: {fileID: 882969219587330385}
+  - component: {fileID: 6850735977309241373}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -1251,6 +1268,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6850735977309241373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081634860906179777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 6639171532560913275}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: ed2c9e925ea2c2b4f92e22531d920bbb, type: 3}
 --- !u!1 &1246687501955215027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4280,6 +4312,7 @@ GameObject:
   - component: {fileID: 4875777601990091698}
   - component: {fileID: 2117152213817685663}
   - component: {fileID: 4242306660102289140}
+  - component: {fileID: 2054321046365393564}
   m_Layer: 5
   m_Name: Reset Button
   m_TagString: Untagged
@@ -4412,6 +4445,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2054321046365393564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363913128114480695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2117152213817685663}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: ed2c9e925ea2c2b4f92e22531d920bbb, type: 3}
 --- !u!1 &7370505497794390166
 GameObject:
   m_ObjectHideFlags: 0
