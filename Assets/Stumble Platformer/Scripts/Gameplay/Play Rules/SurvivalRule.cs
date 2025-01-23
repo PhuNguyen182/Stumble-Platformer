@@ -51,7 +51,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
                         EndLevel(new LevelEndMessage
                         {
-                            ID = CurrentPlayerID,
                             Result = EndResult.Win
                         });
                     }
@@ -73,7 +72,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             EndGame(new EndGameMessage
             {
-                ID = CurrentPlayerID,
                 Result = endResult
             });
         }
@@ -83,7 +81,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
             _hasLosedGame = true;
             EndLevel(new LevelEndMessage
             {            
-                ID = CurrentPlayerID,
                 Result = EndResult.Lose
             });
         }

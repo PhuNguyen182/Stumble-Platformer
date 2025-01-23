@@ -54,7 +54,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         {
             EndGame(new EndGameMessage
             {
-                ID = CurrentPlayerID,
                 Result = endResult
             });
         }
@@ -66,19 +65,17 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public override void OnPlayerHealthUpdate()
         {
-            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-            {
-                _lifeCounter.UpdateLife(PlayerHealth);
+            if (GameplaySetup.PlayMode != GameMode.SinglePlayer)
+                return;
 
-                if (PlayerHealth <= 0)
-                {
-                    EndLevel(new LevelEndMessage
-                    {
-                        ID = CurrentPlayerID,
-                        Result = EndResult.Lose
-                    });
-                }
-            }
+            _lifeCounter.UpdateLife(PlayerHealth);
+            if (PlayerHealth > 0)
+                return;
+
+            EndLevel(new LevelEndMessage
+            {
+                Result = EndResult.Lose
+            });
         }
     }
 }

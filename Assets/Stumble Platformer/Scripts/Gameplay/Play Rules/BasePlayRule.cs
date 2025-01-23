@@ -30,7 +30,6 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public bool IsActive { get; set; }
         public bool IsEndGame { get; set; }
-        public int CurrentPlayerID { get; set; }
         public int PlayerHealth { get; set; }
         public string ObjectiveTitle => objectiveTitle;
 
@@ -115,7 +114,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         public void EndLevel(LevelEndMessage message)
         {
             IsEndGame = true;
-            EndLevelRpc(message.ID, (int)message.Result, message.ClientID);
+            EndLevelRpc((int)message.Result, message.ClientID);
         }
 
         public void EndGame(EndGameMessage message)
@@ -125,7 +124,7 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
         }
 
         [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
-        private void EndLevelRpc(int playerId, int endResult, ulong clientId)
+        private void EndLevelRpc(int endResult, ulong clientId)
         {
             environmentHandler.SetLevelActive(false);
             environmentHandler.SetLevelSecondaryComponentActive(false);

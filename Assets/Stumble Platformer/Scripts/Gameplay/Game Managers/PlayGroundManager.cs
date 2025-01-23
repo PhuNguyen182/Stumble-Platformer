@@ -134,7 +134,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             await playGamePanel.CountDown();
             cameraHandler.SetFollowCameraActive(true);
-            PlayRule.CurrentPlayerID = playerHandler.CurrentPlayer.PlayerID;
             PlayRule.IsActive = true;
 
             playerHandler.SetPlayerActive(true);

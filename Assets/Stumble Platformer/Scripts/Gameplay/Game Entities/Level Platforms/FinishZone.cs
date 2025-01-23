@@ -27,7 +27,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                 levelEndMessage = new()
                 {
                     ClientID = ulong.MaxValue,
-                    ID = playerController.gameObject.GetInstanceID(),
                     Result = EndResult.Win
                 };
             }
@@ -37,7 +36,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.LevelPlatforms
                 levelEndMessage = new()
                 {
                     ClientID = playerController.OwnerClientId,
-                    ID = playerController.gameObject.GetInstanceID(),
                     Result = EndResult.Win
                 };
             }
