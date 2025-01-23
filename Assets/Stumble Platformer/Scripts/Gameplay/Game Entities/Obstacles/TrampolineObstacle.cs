@@ -13,6 +13,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
         [SerializeField] private float pushForce = 8;
         [SerializeField] private DummyPlatform dummyPlatform;
         [SerializeField] private Animator platformAnimator;
+        [SerializeField] private AudioSource trampolineAudio;
+        [SerializeField] private AudioClip trampolineClip;
 
         private readonly int _pushHash = Animator.StringToHash("Push");
 
@@ -52,6 +54,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 if (collider.TryGetComponent(out PlayerController characterMovement) && characterMovement.IsOwner)
                 {
                     characterMovement.OnGrounded();
+                    trampolineAudio.PlayOneShot(trampolineClip, 0.175f);
                     Jump(collider);
                 }
 

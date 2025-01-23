@@ -5,6 +5,7 @@ using StumblePlatformer.Scripts.Gameplay.Inputs;
 using StumblePlatformer.Scripts.UI.Mainhome.MainPanels;
 using StumblePlatformer.Scripts.Common.Constants;
 using Cysharp.Threading.Tasks;
+using GlobalScripts.Audios;
 
 namespace StumblePlatformer.Scripts.UI.Mainhome
 {
@@ -12,6 +13,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome
     {
         [SerializeField] private MainPanel mainPanel;
         [SerializeField] private MainhomeInput mainhomeInput;
+        [SerializeField] private AudioClip mainMenuBgm;
 
         private bool _isQuitPress = false;
 
@@ -26,6 +28,7 @@ namespace StumblePlatformer.Scripts.UI.Mainhome
 
         private void Start()
         {
+            PlaySound();
             WaitingPopup.Setup().HideWaiting();
         }
 
@@ -45,6 +48,14 @@ namespace StumblePlatformer.Scripts.UI.Mainhome
                     , onYesClick: QuitGame
                     , OnCloseBoxAction: () => _isQuitPress = false)
                     .SetCanvasMode(false);
+        }
+
+        private void PlaySound()
+        {
+            if (!AudioManager.Instance.IsMusicPlaying())
+            {
+                AudioManager.Instance.PlayBackgroundMusic(mainMenuBgm);
+            }
         }
 
         private void QuitGame()

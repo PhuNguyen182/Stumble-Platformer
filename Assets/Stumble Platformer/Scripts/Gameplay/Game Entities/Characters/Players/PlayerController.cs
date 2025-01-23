@@ -19,6 +19,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         [Header("Graphics")]
         [SerializeField] private PlayerGraphics playerGraphics;
         [SerializeField] private CharacterVisual characterVisual;
+        [SerializeField] private PlayerSound playerSound;
 
         [Header("Settings")]
         [SerializeField] private Transform characterPivot;
@@ -170,6 +171,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             {
                 if (groundChecker.IsGrounded)
                 {
+                    playerSound.PlayJumpSound();
                     float jumpHeight = characterConfig.JumpHeight * playerPhysics.JumpRestriction;
                     _moveVelocity = new Vector3(_playerBody.velocity.x, jumpHeight, _playerBody.velocity.z);
                     _playerBody.velocity = _moveVelocity;
@@ -183,6 +185,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                         _moveVelocity = characterPivot.forward * characterConfig.DashSpeed;
                         _playerBody.velocity = _moveVelocity;
                         characterVisual.SetStumble(true);
+                        playerSound.PlayJumpSound();
                     }
                 }
             }
@@ -266,6 +269,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 _isStunning = true;
                 _stunDuration = damageData.StunDuration;
 
+                playerSound.PlayHurtSound();
                 playerPhysics.TakePhysicsDamage(damageData);
                 SetStunningState(true);
             }
@@ -274,7 +278,9 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         public void TakeHealthDamage(HealthDamage damageData)
         {
             if (IsOwner)
+            {
                 playerHealth.TakeDamage(damageData);
+            }
         }
 
         public int GetCheckPointIndex()

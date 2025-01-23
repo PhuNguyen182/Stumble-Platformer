@@ -6,11 +6,13 @@ using Cysharp.Threading.Tasks;
 using StumblePlatformer.Scripts.Multiplayers;
 using StumblePlatformer.Scripts.Common.Constants;
 using GlobalScripts.SceneUtils;
+using GlobalScripts.Audios;
 
 namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 {
     public class GameplayInitializer : MonoBehaviour
     {
+        [SerializeField] private AudioClip gameplayClip;
         [SerializeField] private PlayDataCollectionInitializer playDataCollectionInitializer;
 
         private MessageBroketManager _messageBroketManager;
@@ -21,6 +23,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             Instance = this;
             InitializeService();
             NetworkManager.Singleton.OnClientDisconnectCallback += OnCharacterDisconnected;
+        }
+
+        private void Start()
+        {
+            AudioManager.Instance.StopMusic();
+            AudioManager.Instance.PlayBackgroundMusic(gameplayClip, volume: 0.15f);
         }
 
         private void InitializeService()

@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 4052939462807914706}
   - component: {fileID: 9192201298321735360}
   - component: {fileID: 3305639009908028123}
+  - component: {fileID: 6799742166292378394}
   m_Layer: 5
   m_Name: Add Button
   m_TagString: Untagged
@@ -353,6 +354,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6799742166292378394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219401753732714537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 9192201298321735360}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: 34ac60af566a1824cb71e05dcfb380e6, type: 3}
 --- !u!1 &1288082302760619819
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +537,7 @@ GameObject:
   - component: {fileID: 770503196261809}
   - component: {fileID: 5340202975122919093}
   - component: {fileID: 7340560598163289031}
+  - component: {fileID: 2218732929151632896}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -652,6 +669,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2218732929151632896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587650567348740631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 5340202975122919093}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: ed2c9e925ea2c2b4f92e22531d920bbb, type: 3}
 --- !u!1 &1817659885714915414
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +937,7 @@ GameObject:
   - component: {fileID: 3874344710085113041}
   - component: {fileID: 5017127594930546694}
   - component: {fileID: 3352960027948899741}
+  - component: {fileID: 8907574941447997979}
   m_Layer: 5
   m_Name: Create Public Room Button
   m_TagString: Untagged
@@ -1036,6 +1069,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8907574941447997979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2261601425364744375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 5017127594930546694}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: f6bea621509eb684386b8197a401b5c9, type: 3}
 --- !u!1 &2448920511856136348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,6 +1864,7 @@ GameObject:
   - component: {fileID: 6789572226833449008}
   - component: {fileID: 8792571648885253165}
   - component: {fileID: 8424600181906536983}
+  - component: {fileID: 4798312937811502581}
   m_Layer: 5
   m_Name: Create Private Room Button
   m_TagString: Untagged
@@ -1947,6 +1996,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4798312937811502581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502023491782647861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 8792571648885253165}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: f6bea621509eb684386b8197a401b5c9, type: 3}
 --- !u!1 &5568358809268251138
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,6 +2179,7 @@ GameObject:
   - component: {fileID: 1646050730760626742}
   - component: {fileID: 4031967340683313681}
   - component: {fileID: 3930005561808762889}
+  - component: {fileID: 591346710210334259}
   m_Layer: 5
   m_Name: Subtract Button
   m_TagString: Untagged
@@ -2244,6 +2309,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &591346710210334259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6870839576012501351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e2814f92062054cbc17e34315424f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 4031967340683313681}
+  volumeScale: 0.6
+  clip: {fileID: 8300000, guid: 34ac60af566a1824cb71e05dcfb380e6, type: 3}
 --- !u!1 &7155376229681052816
 GameObject:
   m_ObjectHideFlags: 0

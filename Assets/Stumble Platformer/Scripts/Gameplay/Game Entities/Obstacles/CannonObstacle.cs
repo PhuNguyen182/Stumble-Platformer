@@ -11,6 +11,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
     {
         [SerializeField] private Transform shotPoint;
         [SerializeField] private Animator cannonAnimator;
+        [SerializeField] private AudioClip cannonClip;
+        [SerializeField] private AudioSource cannonAudio;
         [SerializeField] private bool check;
 
         [Header("Shooting")]
@@ -51,6 +53,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
             CannonBullet cannonBullet = SimplePool.Spawn(bulletPrefab, BulletContainer.Transform
                                                          , shotPoint.position, Quaternion.identity);
             cannonBullet.ModifyScale(transform.localScale);
+            cannonAudio.PlayOneShot(cannonClip, 0.2f);
             cannonBullet.Shoot(shotForce);
         }
 

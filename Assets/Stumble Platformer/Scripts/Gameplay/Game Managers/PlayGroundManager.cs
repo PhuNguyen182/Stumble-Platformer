@@ -19,8 +19,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
     public class PlayGroundManager : NetworkBehaviour
     {
         [SerializeField] private bool isTesting;
-        [SerializeField] private NetworkObject testPlayer;
-        [SerializeField] private NetworkObject testLevel;
         
         [Space(10)]
         [SerializeField] private InputReceiver inputReceiver;

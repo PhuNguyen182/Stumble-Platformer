@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33001b47dfe9e4a4ab8a5339043680e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameplayClip: {fileID: 8300000, guid: 04977cb874810ce488ab2b23860cbc6f, type: 3}
   playDataCollectionInitializer: {fileID: 3465897431032311112}
 --- !u!114 &3465897431032311112
 MonoBehaviour:
@@ -143,8 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTesting: 0
-  testPlayer: {fileID: -4958939914948388291, guid: 4af7a8d5f86130e40936b0fb4e7d9edb, type: 3}
-  testLevel: {fileID: 1370525780684183565, guid: 6c5d1002205e08643af2f755f1cb242f, type: 3}
   inputReceiver: {fileID: 0}
   cameraHandler: {fileID: 0}
   playerHandler: {fileID: 3503694609737173241}
