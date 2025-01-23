@@ -11,6 +11,8 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
 {
     public class CreateRoomPopup : BasePopup<CreateRoomPopup>
     {
+        [SerializeField] private Button addButton;
+        [SerializeField] private Button subtractButton;
         [SerializeField] private Button closeButton;
         [SerializeField] private Button createPublicRoomButton;
         [SerializeField] private Button createPrivateRoomButton;
@@ -38,9 +40,21 @@ namespace StumblePlatformer.Scripts.UI.Lobby.Popups
         private void RegisterButtons()
         {
             closeButton.onClick.AddListener(Close);
+            addButton.onClick.AddListener(() => ModifyPlayerCount(1));
+            subtractButton.onClick.AddListener(() => ModifyPlayerCount(-1));
+
             createPublicRoomButton.onClick.AddListener(CreatePublicRoom);
             createPrivateRoomButton.onClick.AddListener(CreatePrivateRoom);
             playerCountField.onValueChanged.AddListener(UpdatePlayerCount);
+        }
+
+        private void ModifyPlayerCount(int number)
+        {
+            string value = playerCountField.text;
+            _playerCount = int.Parse(value);
+            _playerCount = _playerCount + number;
+            _playerCount = Mathf.Clamp(_playerCount, MultiplayerConstants.MinPlayerCount, MultiplayerConstants.MaxPlayerCount);
+            playerCountField.text = $"{_playerCount}";
         }
 
         private void UpdatePlayerCount(string value)

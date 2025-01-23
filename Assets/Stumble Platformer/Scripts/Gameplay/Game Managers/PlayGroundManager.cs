@@ -167,23 +167,5 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
                 survivalRule.SetPlayRuleTimer(playGamePanel.PlayRuleTimer);
             }
         }
-
-        private void ShutdownNetwork()
-        {
-            if (NetworkManager == null)
-                return;
-
-            if (GameplaySetup.PlayMode == GameMode.SinglePlayer)
-                NetworkManager.Shutdown();
-
-            else if (GameplaySetup.PlayMode == GameMode.Multiplayer)
-                MultiplayerManager.Instance.Shutdown();
-        }
-
-        public override void OnDestroy()
-        {
-            ShutdownNetwork();
-            base.OnDestroy();
-        }
     }
 }
