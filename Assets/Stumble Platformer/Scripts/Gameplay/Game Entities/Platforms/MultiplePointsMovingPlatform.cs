@@ -33,6 +33,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
             maxStep = positions.Length;
             order = MovingPlatformOrder.Ascending;
+            CalculateSlowPlatformSpeed();
         }
 
         public override void PlatformAction()
@@ -94,6 +95,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             firstPosition = positions[stepCount];
             lastPosition = positions[(stepCount + 1) % positions.Length];
             stepCount = (stepCount + 1) % positions.Length;
+            CalculateSlowPlatformSpeed();
         }
 
         private void DescendingPositions()
@@ -101,6 +103,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             firstPosition = positions[stepCount];
             lastPosition = positions[(stepCount - 1) % positions.Length];
             stepCount = (stepCount - 1) % positions.Length;
+            CalculateSlowPlatformSpeed();
+        }
+
+        protected override void CalculateSlowPlatformSpeed()
+        {
+            if (slowDownWhenCloseToStopPosition)
+                slowDownDistance = Vector3.Distance(firstPosition, lastPosition) / 2f;
         }
 
         protected override void ResetWaypoints()

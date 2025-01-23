@@ -73,17 +73,11 @@ namespace StumblePlatformer.Scripts.Gameplay.PlayRules
 
         public void DamagePlayer(PlayerDamageMessage message)
         {
-            if (CurrentPlayerID != message.ID)
-                return;
-
             OnPlayerDamage();
         }
 
         protected void UpdateHealth(ReportPlayerHealthMessage message)
         {
-            if (message.PlayerID != CurrentPlayerID)
-                return;
-
             PlayerHealth = message.Health;
             OnPlayerHealthUpdate();
         }

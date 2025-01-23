@@ -14,7 +14,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
 
         [Header("Movement")]
         [SerializeField] protected float movementSpeed = 3f;
-        [SerializeField] protected float slowDownSpeed = 0.1f;
+        [SerializeField] protected float slowSpeedOnWayPoint = 0.5f;
         [SerializeField] protected float toleranceOffset = 0.1f;
         [SerializeField] protected float movementDelayAmount = 1f;
         [SerializeField] protected bool slowDownWhenCloseToStopPosition = true;
@@ -43,23 +43,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             usedSpeed = movementSpeed;
             firstPosition = startPosition;
             lastPosition = endPosition;
-            slowDownDistance = movementSpeed * 1.5f;
+            CalculateSlowPlatformSpeed();
         }
 
-        public override void OnPlatformCollide(Collision collision)
-        {
-
-        }
-
-        public override void OnPlatformStay(Collision collision)
-        {
-
-        }
-
-        public override void OnPlatformExit(Collision collision)
-        {
-
-        }
+        public override void OnPlatformCollide(Collision collision) { }
+        public override void OnPlatformStay(Collision collision) { }
+        public override void OnPlatformExit(Collision collision) { }
 
         public override void PlatformAction()
         {
@@ -97,6 +86,12 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
             }
         }
 
+        protected virtual void CalculateSlowPlatformSpeed()
+        {
+            if (slowDownWhenCloseToStopPosition)
+                slowDownDistance = Vector3.Distance(startPosition, endPosition) / 2f;
+        }
+
         protected void OnPlatformTriggerEnter(Collider collider)
         {
         }
@@ -125,7 +120,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Platforms
         protected void SmoothMovementSpeed(Vector3 toPosition)
         {
             float speedInterpolate = transform.GetDistance(toPosition) / slowDownDistance;
-            float smoothedSpeed = Mathf.Lerp(1, movementSpeed, speedInterpolate);
+            float smoothedSpeed = Mathf.Lerp(slowSpeedOnWayPoint, movementSpeed, speedInterpolate);
             usedSpeed = smoothedSpeed;
         }
 

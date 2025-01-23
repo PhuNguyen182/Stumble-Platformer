@@ -139,6 +139,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
 
             playerHandler.SetPlayerActive(true);
             playerHandler.SetPlayerPhysicsActive(true);
+            playerHandler.ActivateAllPlayer();
 
             environmentHandler.SetLevelSecondaryComponentActive(true);
             inputReceiver.IsActive = true;

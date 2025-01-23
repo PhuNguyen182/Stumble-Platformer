@@ -49,12 +49,21 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Obstacles
                 if (collider.attachedRigidbody.isKinematic)
                     return;
 
-                if (collider.TryGetComponent(out PlayerController characterMovement))
+                if (collider.TryGetComponent(out PlayerController characterMovement) && characterMovement.IsOwner)
+                {
                     characterMovement.OnGrounded();
+                    Jump(collider);
+                }
 
-                collider.attachedRigidbody.velocity = transform.up * pushForce;
-                platformAnimator.SetTrigger(_pushHash);
+                if (!characterMovement) // Prevent animate push twice
+                    Jump(collider);
             }
+        }
+
+        private void Jump(Collider collider)
+        {
+            collider.attachedRigidbody.velocity = transform.up * pushForce;
+            platformAnimator.SetTrigger(_pushHash);
         }
     }
 }

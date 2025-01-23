@@ -105,7 +105,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void MoveCharacterPosition()
         {
-            if (_isInputMoving)
+            if (_isInputMoving && !_isStunning)
             {
                 _moveVelocity = _moveInput.normalized * characterConfig.MoveSpeed;
                 _moveVelocity.y = _playerBody.velocity.y;
