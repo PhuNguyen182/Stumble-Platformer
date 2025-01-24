@@ -9,6 +9,7 @@ using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.UI.Lobby.Popups;
 using StumblePlatformer.Scripts.Multiplayers;
 using Cysharp.Threading.Tasks;
+using StumblePlatformer.Scripts.GameManagers;
 
 namespace StumblePlatformer.Scripts.UI.Lobby
 {
@@ -43,9 +44,9 @@ namespace StumblePlatformer.Scripts.UI.Lobby
         private void RegisterButtons()
         {
             backHomeButton.onClick.AddListener(BackToMainHome);
-            createRoomButton.onClick.AddListener(OnOpenCreateRoom);
-            joinPublicRoomButton.onClick.AddListener(OnJoinPublicRoom);
-            joinPrivateRoomButton.onClick.AddListener(OnJoinPrivateRoom);
+            createRoomButton.onClick.AddListener(() => OnOpenCreateRoom().Forget());
+            joinPublicRoomButton.onClick.AddListener(() => OnJoinPublicRoom().Forget());
+            joinPrivateRoomButton.onClick.AddListener(() => OnJoinPrivateRoom().Forget());
         }
 
         private void BackToMainHome()
@@ -54,19 +55,25 @@ namespace StumblePlatformer.Scripts.UI.Lobby
             SceneLoader.LoadScene(SceneConstants.Mainhome).Forget();
         }
 
-        private void OnOpenCreateRoom()
+        private async UniTask OnOpenCreateRoom()
         {
-            CreateRoomPopup.CreateFromAddress(CommonPopupPaths.CreateRoomPopupPath).Forget();
+            bool isConnected = await GameManager.Instance.ConectionHandler.CheckConnection();
+            if (isConnected)
+                await CreateRoomPopup.CreateFromAddress(CommonPopupPaths.CreateRoomPopupPath);
         }
 
-        private void OnJoinPublicRoom()
+        private async UniTask OnJoinPublicRoom()
         {
-            JoinPublicRoomAsync().Forget();
+            bool isConnected = await GameManager.Instance.ConectionHandler.CheckConnection();
+            if (isConnected)
+                await JoinPublicRoomAsync();
         }
 
-        private void OnJoinPrivateRoom()
+        private async UniTask OnJoinPrivateRoom()
         {
-            JoinRoomPopup.CreateFromAddress(CommonPopupPaths.JoinRoomPopupPath).Forget();
+            bool isConnected = await GameManager.Instance.ConectionHandler.CheckConnection();
+            if (isConnected)
+                await JoinRoomPopup.CreateFromAddress(CommonPopupPaths.JoinRoomPopupPath);
         }
 
         private async UniTask JoinPublicRoomAsync()

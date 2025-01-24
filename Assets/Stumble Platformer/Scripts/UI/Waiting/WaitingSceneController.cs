@@ -172,7 +172,7 @@ namespace StumblePlatformer.Scripts.UI.Waiting
 
                 else
                 {
-                    ulong serverClientId = NetworkManager.ConnectedClientsIds[playerCount - 1];
+                    ulong serverClientId = MultiplayerManager.Instance.GetServerClientID();
                     if (clientId == serverClientId)
                         ShowDisconnectedPopup().Forget();
                 }
