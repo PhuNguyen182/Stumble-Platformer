@@ -70,8 +70,8 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters
 
             if (_rotationActive)
             {
-                _adjacentLeg += _mouseDelta.y * heightOffsetSpeed;
-                _yRotation -= _mouseDelta.x * rotationSpeed;
+                _adjacentLeg -= _mouseDelta.y * heightOffsetSpeed;
+                _yRotation += _mouseDelta.x * rotationSpeed;
 
                 _adjacentLeg = Mathf.Clamp(_adjacentLeg, minCameraHeight, _maxHeight);
                 _oppositeLeg = Mathf.Sqrt(cameraDistance * cameraDistance - _adjacentLeg * _adjacentLeg);

@@ -42,9 +42,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         private void Awake()
         {
             Instance = this;
-#if !UNITY_EDITOR
-            //Cursor.lockState = CursorLockMode.Locked;
-#endif
             SetupGameStateMachine();
         }
 
