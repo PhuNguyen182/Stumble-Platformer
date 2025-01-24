@@ -12852,6 +12852,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3514460336138863274, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
+      propertyPath: force
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 4537403717380330499, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
       propertyPath: forceMagnitude
       value: 26
@@ -13583,6 +13587,10 @@ PrefabInstance:
     - target: {fileID: 266053040904790612, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514460336138863274, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
+      propertyPath: force
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4537403717380330499, guid: 72ea5dacec4b26a4f8db60fe8870903f, type: 3}
       propertyPath: forceMagnitude

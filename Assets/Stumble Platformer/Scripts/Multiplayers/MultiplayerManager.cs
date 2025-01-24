@@ -17,15 +17,14 @@ namespace StumblePlatformer.Scripts.Multiplayers
         [SerializeField] public NetworkObject networkObject;
         [SerializeField] public CarrierCollection CarrierCollection;
 
+        private IReadOnlyList<ulong> _connectedIds;
         private NetworkList<PlayerData> _playerDatas = new();
 
         public Action OnFailToJoinGame;
         public Action OnTryingToJoinGame;
         public Action OnPlayerDataNetworkListChanged;
         public Action OnClientApprove;
-
         public Action<ulong> OnPlayerDisconnected;
-        public Action<string, LoadSceneMode, List<ulong>, List<ulong>> OnSceneLoadEventCompleted;
 
         public NetworkVariable<bool> IsPrivateRoom { get; private set; }
         public NetworkVariable<int> MaxPlayerAmount { get; private set; }
@@ -45,6 +44,18 @@ namespace StumblePlatformer.Scripts.Multiplayers
         }
 
         public int GetPlayerCount() => _playerDatas.Count;
+
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        public void SetupConnectedIDsRpc()
+        {
+            _connectedIds = NetworkManager.ConnectedClientsIds;
+        }
+
+        public ulong GetServerClientID()
+        {
+            int count = _connectedIds.Count;
+            return _connectedIds[count - 1];
+        }
 
         public string GetCurrentPlayerID()
         {
@@ -225,6 +236,7 @@ namespace StumblePlatformer.Scripts.Multiplayers
         {
             int playerIndex = GetPlayerDataIndexFromClientId(serverRpcParams.Receive.SenderClientId);
             PlayerData playerData = _playerDatas[playerIndex];
+            playerData.IsServer = IsServer;
             playerData.PlayerID = playerId;
             _playerDatas[playerIndex] = playerData;
         }

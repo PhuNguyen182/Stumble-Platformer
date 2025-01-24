@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using StumblePlatformer.Scripts.GameManagers;
 using StumblePlatformer.Scripts.Common.Constants;
 using StumblePlatformer.Scripts.UI.Mainhome.SettingPanels;
 using StumblePlatformer.Scripts.UI.Mainhome.PlayerCustomize;
-using StumblePlatformer.Scripts.Gameplay.GameEntities.Characters;
 using StumblePlatformer.Scripts.UI.Mainhome.Popups;
 using Cysharp.Threading.Tasks;
 
@@ -21,9 +21,6 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
         [SerializeField] private Button playButton;
         [SerializeField] private Button settingButton;
         [SerializeField] private Button customizeButton;
-
-        [Space(10)]
-        [SerializeField] private CharacterVisual characterVisual;
 
         private void Awake()
         {
@@ -58,7 +55,14 @@ namespace StumblePlatformer.Scripts.UI.Mainhome.MainPanels
 
         private void PlayGame()
         {
-            PlayModePopup.CreateFromAddress(CommonPopupPaths.PlayGamePopupPath).Forget();
+            OnClickPlayGame().Forget();
+        }
+
+        private async UniTask OnClickPlayGame()
+        {
+            bool isConnected = await GameManager.Instance.ConectionHandler.CheckConnection();
+            if(isConnected)
+                await PlayModePopup.CreateFromAddress(CommonPopupPaths.PlayGamePopupPath);
         }
 
         private void OnDestroy()

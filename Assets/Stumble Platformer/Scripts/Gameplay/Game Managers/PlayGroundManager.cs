@@ -36,6 +36,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
         
         public BasePlayRule PlayRule { get; private set; }
         public CameraHandler CameraHandler => cameraHandler;
+        public ulong ServerClientID { get; private set; }
         public static PlayGroundManager Instance { get; private set; }
 
         private void Awake()
@@ -90,7 +91,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             else
             {
                 if (string.CompareOrdinal(sceneName, SceneConstants.Gameplay) == 0)
+                {
                     environmentHandler.GenerateLevel(_levelName);
+                    MultiplayerManager.Instance.SetupConnectedIDsRpc();
+                }
             }
         }
 

@@ -1,9 +1,13 @@
+using UnityEngine;
 using StumblePlatformer.Scripts.GameDatas;
+using StumblePlatformer.Scripts.GameManagers.PeriodicallyHandlers;
 
 namespace StumblePlatformer.Scripts.GameManagers
 {
     public class GameManager : PersistentSingleton<GameManager>
     {
+        [SerializeField] public ConectionHandler ConectionHandler;
+
         private void SaveGameData()
         {
             GameDataManager.Instance.SaveData();

@@ -54,8 +54,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         public void SetDustEffectActive(bool isActive)
         {
-            var emission = dustStep.emission;
-            emission.enabled = isActive;
+            SetDustEffectActiveRpc(isActive);
         }
 
         public void PlayDeadEffect()
@@ -63,6 +62,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
             Vector3 position = transform.position + Vector3.up * 0.5f;
             SimplePool.Spawn(effectCollection.LaserDeadEffect, EffectContainer.Transform
                              , position, Quaternion.identity);
+        }
+
+        [Rpc(SendTo.ClientsAndHost, RequireOwnership = false)]
+        private void SetDustEffectActiveRpc(bool isActive)
+        {
+            var emission = dustStep.emission;
+            emission.enabled = isActive;
         }
     }
 }
