@@ -9,6 +9,7 @@ namespace StumblePlatformer.Scripts.Multiplayers.Datas
 {
     public struct PlayerData : IEquatable<PlayerData>, INetworkSerializable
     {
+        public bool IsServer;
         public ulong ClientID;
         public FixedString64Bytes PlayerSkin;
         public FixedString64Bytes PlayerName;
@@ -16,6 +17,9 @@ namespace StumblePlatformer.Scripts.Multiplayers.Datas
 
         public bool Equals(PlayerData other)
         {
+            if (IsServer != other.IsServer)
+                return false;
+
             if (ClientID != other.ClientID) 
                 return false;
 
@@ -33,6 +37,7 @@ namespace StumblePlatformer.Scripts.Multiplayers.Datas
 
         public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
         {
+            serializer.SerializeValue(ref IsServer);
             serializer.SerializeValue(ref ClientID);
             serializer.SerializeValue(ref PlayerSkin);
             serializer.SerializeValue(ref PlayerName);
