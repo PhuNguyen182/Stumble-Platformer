@@ -23,6 +23,10 @@ namespace StumblePlatformer.Scripts.Gameplay.GameManagers
             Instance = this;
             InitializeService();
             NetworkManager.Singleton.OnClientDisconnectCallback += OnCharacterDisconnected;
+
+#if !UNITY_EDITOR
+            Cursor.lockState = CursorLockMode.Locked;
+#endif
         }
 
         private void Start()
