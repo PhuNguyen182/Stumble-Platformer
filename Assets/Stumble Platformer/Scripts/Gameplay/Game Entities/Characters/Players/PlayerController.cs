@@ -53,7 +53,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void Update()
         {
-            ReceiveInput();
             StunningTimer();
             playerGraphics.UpdateCanvas();
         }
@@ -62,6 +61,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
         {
             if (IsOwner)
             {
+                ReceiveInput();
                 groundChecker.CheckGround();
                 _isInputMoving = _moveInput != Vector3.zero;
 
@@ -78,13 +78,13 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
 
         private void ReceiveInput()
         {
-            if (!IsOwner)
-                return;
-
             if (IsActive)
             {
                 _isJumpPressed = _inputReceiver.IsJumpPressed;
                 _moveInput = _inputReceiver.RotateAndScaleInput(_inputReceiver.Movement);
+
+                if (groundChecker.IsGrounded)
+                    OnGrounded();
             }
 
             else
@@ -92,9 +92,6 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 _isJumpPressed = false;
                 _moveInput = Vector3.zero;
             }
-
-            if (groundChecker.IsGrounded)
-                OnGrounded();
         }
 
         private void Move()
@@ -190,7 +187,7 @@ namespace StumblePlatformer.Scripts.Gameplay.GameEntities.Characters.Players
                 }
             }
 
-            if (playerPhysics.IsJumping())
+            if (playerPhysics.IsJumping() && !groundChecker.IsGrounded)
                 characterVisual.SetJump(!groundChecker.IsPlatformGround);
         }
 
